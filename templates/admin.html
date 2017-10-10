@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Hello-books Book Admin Page</title>
+
+  <!-- Import materialize min.css for styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- Import Google fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <ul id="dropdown" class="dropdown-content">
+    <li><a href="addbook.html">Add Book</a></li>
+    <li class="divider"></li>
+    <li><a href="borrowrequests.html">View Borrow Requests</a></li>
+    <li class="divider"></li>
+    <li><a href="returnrequests.html">View Return Requests</a></li>
+    <li class="divider"></li>
+  </ul>
+  <div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper teal darken-2">
+      <img src="./images/logo.png" class="img-logo left">
+      <h4 class="left">Admin</h4>
+      <ul class="right hide-on-med-and-down">
+        <!-- Dropdown Trigger -->
+        
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown">Menu<i class="material-icons right">dehaze</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+  <div class="section">
+      <a href="addbook.html" class="btn-floating btn-large orange right"><i class="material-icons medium">add</i></a>
+  <h3 class="center">Books Catalog</h3>
+  <div class="divider"></div>
+      
+      <table class="striped centered responsive-table">
+        <thead>
+          <tr>
+              <th>Book Title</th>
+              <th>Author</th>
+              <th>Image URL</th>
+               <th>Subject</th>
+              <th>Quantity</th>
+              <th>Description</th>
+              <th colspan="2">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Half of a yellow sun</td>
+            <td>Chimamanda Ngozi Adichie</td>
+            <td>./images/book-halfyellow.png</td>
+            <td>Fiction</td>
+            <td>10</td>
+            <td>A masterly, haunting novel from a writer heralded by The Washington Post Book World as “the 21st-century daughter
+              of Chinua Achebe,” Half of a Yellow Sun recreates a seminal moment in modern African history: Biafra’s impassioned
+              struggle to establish an independent republic in Nigeria, and the chilling violence that followed.</td>
+               <td><a href="addbook.html"><i class="material-icons">edit</i></a></td>
+               <td><a><i class="material-icons">delete</i></a></td>
+          </tr>
+          <tr>
+            <td>Purple Hibiscus</td>
+            <td>Chimamanda Ngozi Adichie</td>
+            <td>http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png</td>
+            <td>Fiction</td>
+            <td>8</td>
+            <td>Fifteen-year-old Kambili’s world is circumscribed by the high walls and frangipani trees of her family compound. 
+                Her wealthy Catholic father, under whose shadow Kambili lives, while generous and politically active in the 
+                community, is repressive and fanatically religious at home.</td>
+                                    
+            <td><a href="addbook.html"><i class="material-icons">edit</i></a></td>
+            <td><a><i class="material-icons">delete</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+            
+  </div>
+
+  <footer class="page-footer teal lighten-2">
+          </div>
+          <div class="footer-copyright">
+            <div class="container center-align yellow-text text-lighten-2">
+            © 2017 Copyright Hello-books
+            </div>
+          </div>
+        </footer>
+  
+  <!-- Import jquery.js and then materialize.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+ 
+</body>
