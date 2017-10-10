@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Hello-books Book Favorites Page</title>
+
+  <!-- Import materialize min.css for styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- Import Google fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body class="grey lighten-4">
+
+
+  <ul id="dropdown" class="dropdown-content">
+    <li><a href="login.html">Sign In</a></li>
+    <li class="divider"></li>
+    <li><a href="signup.html">Sign Up</a></li>
+    <li class="divider"></li>
+    <li><a href="index.html">Books Catalog</a></li>
+    <li class="divider"></li>
+    <li><a href="index.html">Borrow a book</a></li>
+    <li class="divider"></li>
+    <li><a href="returnbook.html">Return a book</a></li>
+    <li class="divider"></li>
+    <li><a href="profile.html">My Profile</a></li>
+    <li class="divider"></li>
+    <li><a href="favorites.html">My Favorites</a></li>
+  </ul>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper teal darken-2">
+        <img src="./images/logo.png" class="img-logo">
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown">Menu<i class="material-icons right">dehaze</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="row container">
+    <div class="col s7 card-panel" id="favorites">
+      <h5 class="center">My Favorites</h5>
+      <div>
+
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="./images/book-halfyellow.png" class="favorite-img">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>Title:Half of a yellow sun</p>
+              <p>Author:Chimamanda Ngozi Adichie</p>
+
+            </div>
+            <div class="card-action">
+              <a href="borrow.html">Borrow book</a>
+              <a href="bookdetails.html">View book</a>
+              <i class="material-icons right red-text text-darken-1 hoverable">delete</i>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="http://chimamanda.com/wp-content/uploads/2013/04/americanah.png" class="favorite-img">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>Title:Americanah</p>
+              <p>Author:Chimamanda Ngozi Adichie</p>
+
+            </div>
+            <div class="card-action">
+              <a href="borrow.html">Borrow book</a>
+              <a href="bookdetails.html">View book</a>
+              <i class="material-icons right red-text text-darken-1 hoverable">delete</i>
+            </div>
+          </div>
+        </div>
+
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png" class="favorite-img">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>Title:Purple hibiscus</p>
+              <p>Author:Chimamanda Ngozi Adichie</p>
+
+            </div>
+            <div class="card-action">
+              <a href="borrow.html">Borrow book</a>
+              <a href="bookdetails.html">View book</a>
+              <i class="material-icons right red-text text-darken-1 hoverable">delete</i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col s1"></div>
+    <div class="col s4 card-panel" id="borrowed">
+      <h5 class="center">Borrowed Books</h5>
+      <div class="divider"></div>
+      <div class="left">
+        <a href="bookdetails.html"><img src="images/book-halfyellow.png" class="responsive-img form-logo"></a>
+      </div>
+      <div>
+        <p>Title:Half of a yellow sun</p>
+        <p>Author:Chimamanda Ngozi Adichie</p>
+        <p><a href="returnbook.html" class="orange-text lighten-2">Return book</a></p>
+      </div>
+      <div class="clearfix"></div>
+      <div class="divider"></div>
+
+      <div class="left">
+        <a href="bookdetails.html"><img src="http://chimamanda.com/wp-content/uploads/2013/04/americanah.png" class="responsive-img form-logo"></a>
+      </div>
+      <div>
+        <p>Title:Americanah</p>
+        <p>Author:Chimamanda Ngozi Adichie</p>
+        <p><a href="returnbook.html" class="orange-text lighten-2">Return book</a></p>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  </br>
+  </br>
+  <footer class="page-footer teal lighten-2">
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align yellow-text text-lighten-2">
+        © 2017 Copyright Hello-books
+      </div>
+    </div>
+  </footer>
+  <!-- Import jquery.js and then materialize.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
