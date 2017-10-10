@@ -1,0 +1,22 @@
+.form-logo{
+    width:100px; 
+    height:100px;
+}
+.img-logo{
+    width:64px; 
+    height:64px;
+}
+.books-image{
+    height:300px;
+    width:200px;
+}
+.parallax-container {
+      height: 400px;
+      opacity: 0.8;
+    }
+.book-text{
+    font-size: 12px;
+}
+.favorite-img{
+    height:150px;
+}
