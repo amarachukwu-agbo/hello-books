@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Hello-books Return Book Page</title>
+
+    <!-- Import materialize min.css for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- Import Google fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body class="grey lighten-4">
+
+
+    <ul id="dropdown" class="dropdown-content">
+        <li><a href="login.html">Sign In</a></li>
+        <li class="divider"></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li class="divider"></li>
+        <li><a href="index.html">Books Catalog</a></li>
+        <li class="divider"></li>
+        <li><a href="index.html">Borrow a book</a></li>
+        <li class="divider"></li>
+        <li><a href="returnbook.html">Return a book</a></li>
+        <li class="divider"></li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="favorites.html">My Favourites</a></li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper teal darken-2">
+            <img src="./images/logo.png" class="img-logo">
+            <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown">Menu<i class="material-icons right">dehaze</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row card-panel">
+            <form>
+                <div class=" row center-align teal lighten-2">
+                    <h5 class="yellow-text">Return book</h5>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input disabled id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input disabled id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input disabled id="email" type="email" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input disabled id="book" type="text" class="disabled">
+                        <label for="book">Book Title</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input disabled id="author" type="text" class="disabled">
+                        <label for="author">Author</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class=" date-field col s12">
+                        <input id="date" type="text" class="datepicker" required>
+                        <label for="date">Date of return</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="text-area col s12">
+                        <input id="text1" type="text" data-length="50">
+                        <label for="text1">Comments</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button class="btn waves-effect yellow-text waves-light" type="submit" name="action">Send request <i class="material-icons right">send</i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><br><br>
+    <footer class="page-footer teal lighten-2">
+        </div>
+        <div class="footer-copyright">
+            <div class="container center-align yellow-text text-lighten-2">
+                © 2017 Copyright Hello-books
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import jquery.js and then materialize.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15, // Creates a dropdown of 15 years to control year,
+                today: 'Today',
+                clear: 'Clear',
+                close: 'Ok',
+                closeOnSelect: false // Close upon selecting a date,
+            });
+            $('input#input_text, textarea#textarea1').characterCounter();
+        });
+    </script>
+</body>
