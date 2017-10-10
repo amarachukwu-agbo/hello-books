@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html>
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Hello-books Book Details Page</title>
+
+  <!-- Import materialize min.css for styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- Import Google fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body class="grey lighten-4">
+
+
+  <ul id="dropdown" class="dropdown-content">
+    <li><a href="login.html">Sign In</a></li>
+    <li class="divider"></li>
+    <li><a href="signup.html">Sign Up</a></li>
+    <li class="divider"></li>
+    <li><a href="index.html">Books Catalog</a></li>
+    <li class="divider"></li>
+    <li><a href="index.html">Borrow a book</a></li>
+    <li class="divider"></li>
+    <li><a href="returnbook.html">Return a book</a></li>
+    <li class="divider"></li>
+    <li><a href="profile.html">My Profile</a></li>
+    <li class="divider"></li>
+    <li><a href="favorites.html">My Favourites</a></li>
+  </ul>
+  <div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper teal darken-2">
+      <img src="./images/logo.png" class="img-logo">
+      <ul class="right hide-on-med-and-down">
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown">Menu<i class="material-icons right">dehaze</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+  <div class="container">
+    <div class="col s12 m7">
+      <h2 class="header grey-text text-darken-2">Half of a Yellow Sun</h2>
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="./images/book-halfyellow.png" height=500px;>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <div class="row">
+              <p>Author: Chimamanda Ngozi Adichie</p>
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+              <p>Category: Fiction </p>
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+              <p>Copies Borrowed: 4</p>
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+              <p>Copies Available: 3</p>
+            </div>
+            <div class="divider"></div>
+
+            <h4 class="card-title"> Description</h4>
+
+            <p>A masterly, haunting novel from a writer heralded by The Washington Post Book World as “the 21st-century daughter
+              of Chinua Achebe,” Half of a Yellow Sun recreates a seminal moment in modern African history: Biafra’s impassioned
+              struggle to establish an independent republic in Nigeria, and the chilling violence that followed. Published
+              in 2006, Half of A Yellow Sun garnered numerous accolades and was awarded the Orange Prize for Fiction in 2007.</p>
+          </div>
+          <div class="card-action">
+            <a class="btn waves-effect waves-light" href="borrow.html">Borrow book</a>
+            <div>
+              <i class="material-icons right">favorite_border</i>
+            </div>
+            <div>
+              <i class="material-icons right">thumb_up</i>
+            </div>
+            <div>
+              <i class="material-icons right">thumb_down</i>
+            </div>
+            <div>
+              <i class="material-icons right">comment</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br>
+
+    <h5 class="header center-align">Reviews</h5>
+    <div class="card-panel">
+
+      <div class="card-panel grey lighten-4">
+        <h6><i class="material-icons prefix">account_circle</i>Ada Green</h6>
+        <span>This book is very educational. I have learnt a lot about Nigeria's history from it.
+          </span>
+      </div>
+      <div class="card-panel grey lighten-4">
+        <h6><i class="material-icons prefix">account_circle</i>John Bush</h6>
+        <span>Very interesting read. I highly recommend to anyone looking to learn about the Biafran war</span>
+        </span>
+      </div>
+    </div>
+  </div><br><br>
+
+   <footer class="page-footer teal lighten-2">
+          </div>
+          <div class="footer-copyright">
+            <div class="container center-align yellow-text text-lighten-2">
+            © 2017 Copyright Hello-books
+            </div>
+          </div>
+        </footer>
+
+  <!-- Import jquery.js and then materialize.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!--<script>
+        $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });</script>-->
+</body>
+
+</html>
