@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Hello-books Book Details Page</title>
+
+  <!-- Import materialize min.css for styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- Import Google fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+<ul id="dropdown" class="dropdown-content">
+    <li><a href="addbook.html">Add Book</a></li>
+    <li class="divider"></li>
+    <li><a href="borrowrequests.html">View Borrow Requests</a></li>
+    <li class="divider"></li>
+    <li><a href="returnrequests.html">View Return Requests</a></li>
+    <li class="divider"></li>
+  </ul>
+  <div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper teal darken-2">
+      <img src="./images/logo.png" class="img-logo left">
+      <h4 class="left">Admin</h4>
+      <ul class="right hide-on-med-and-down">
+        <!-- Dropdown Trigger -->
+        
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown">Menu<i class="material-icons right">dehaze</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+
+  <div class="container grey lighten-4">
+      
+     <div class="row card-panel">
+                        <form>
+                            <div class=" row center-align teal lighten-2">
+                                <h5 class="yellow-text">Add book to catalog</h5>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="title" type="text" class="validate">
+                                    <label for="title">Book Title</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="author" type="text" class="validate">
+                                    <label for="last_name">Author</label>
+                                </div>
+                            </div>
+                            
+                           <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="imageurl" type="text" class="validate">
+                                    <label for="imageurl">Image URL</label>
+                                </div>
+                            </div>
+
+                           
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="book" type="text" class="validate">
+                                    <label for="book">Subject</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="author" type="number" class="validate">
+                                    <label for="quantity">Quantity</label>
+                                </div>
+                            </div>
+                            
+                             <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="description" class="materialize-textarea" data-length="58"></textarea>
+                                    <label for="description">Description</label>
+                                </div>
+                            </div>
+                           
+                            <div class="row">
+                                <div class="col s12 center-align">
+                            <button class="btn waves-effect yellow-text waves-light" type="submit" name="action"><i class="material-icons">add</i></button>
+                                </div>
+                            </div>
+  </div>
+  </div><br><br>
+  </div>
+  <footer class="page-footer teal lighten-2">
+          </div>
+          <div class="footer-copyright">
+            <div class="container center-align yellow-text text-lighten-2">
+            © 2017 Copyright Hello-books
+            </div>
+          </div>
+        </footer>
+  
+  <!-- Import jquery.js and then materialize.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script>
+      $(document).ready(function() {
+    $('input#input_text, textarea#textarea1').characterCounter();
+  });
+  </script>
+</body>
