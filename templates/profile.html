@@ -1,118 +1,119 @@
 <!DOCTYPE html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8">
-  <title>Hello-books Book Profile Page</title>
 
-  <!-- Import materialize min.css for styling -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <!-- Import Google fonts-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Hello-books Book Profile Page</title>
+
+    <!-- Import materialize min.css for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- Import Google fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body>
 
 
-  <ul id="dropdown" class="dropdown-content">
-    <li><a href="login.html">Sign In</a></li>
-    <li class="divider"></li>
-    <li><a href="signup.html">Sign Up</a></li>
-    <li class="divider"></li>
-    <li><a href="index.html">Books Catalog</a></li>
-    <li class="divider"></li>
-    <li><a href="index.html">Borrow a book</a></li>
-    <li class="divider"></li>
-    <li><a href="returnbook.html">Return a book</a></li>
-    <li class="divider"></li>
-    <li><a href="profile.html">My Profile</a></li>
-    <li class="divider"></li>
-    <li><a href="favorites.html">My Favourites</a></li>
-  </ul>
-  <div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper teal darken-2">
-      <img src="./images/logo.png" class="img-logo">
-      <ul class="right hide-on-med-and-down">
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown">Menu<i class="material-icons right">dehaze</i></a></li>
-      </ul>
+    <ul id="dropdown" class="dropdown-content">
+        <li><a href="login.html">Sign In</a></li>
+        <li class="divider"></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li class="divider"></li>
+        <li><a href="index.html">Books Catalog</a></li>
+        <li class="divider"></li>
+        <li><a href="index.html">Borrow a book</a></li>
+        <li class="divider"></li>
+        <li><a href="returnbook.html">Return a book</a></li>
+        <li class="divider"></li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="favorites.html">My Favourites</a></li>
+    </ul>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper teal darken-2">
+                <img src="./images/logo.png" class="img-logo">
+                <ul class="right hide-on-med-and-down">
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown">Menu<i class="material-icons right">dehaze</i></a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
-  </nav>
-  </div>
-  <div class="section grey lighten-4">
-      <div class="container">
+    <div class="section grey lighten-4">
+        <div class="container">
             <div class=" col s4 center">
-                <img src="./images/profile2.png" class="form-logo responsive-img circle" >
+                <img src="./images/profile2.png" class="form-logo responsive-img circle">
             </div>
             <div class="divider"></div><br>
             <div class="row">
-                        <form>
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="first_name" type="text" class="validate required">
-                                    <label for="first_name">First Name</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="last_name" type="text" class="validate required">
-                                    <label for="last_name">Last Name</label>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">email</i>
-                                    <input id="email" type="email" class="validate required">
-                                    <label for="email" data-error="wrong" data-success="right">Email</label>
-                                </div>
-                                <div class="input-field col s6">
-                                     <i class="material-icons prefix">location_on</i>
-                                    <input id="address" type="text" class="validate">
-                                    <label for="address">Adress</label>
-                                </div>
+                <form>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="first_name" type="text" class="validate required">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="last_name" type="text" class="validate required">
+                        <label for="last_name">Last Name</label>
+                    </div>
+            </div>
 
-                            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate required">
+                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">location_on</i>
+                    <input id="address" type="text" class="validate">
+                    <label for="address">Adress</label>
+                </div>
 
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">phone</i>
-                                    <input id="phone1" type="tel" class="validate">
-                                    <label for="phone1">Phone number 1</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">phone</i>
-                                    <input id="phone2" type="tel" class="validate">
-                                    <label for="phone2">Phone number 2</label>
-                                </div>
-                                
-                            </div>
+            </div>
 
-                            <br><br>
-                            <div class="row">
-                                <div class="col s12 center-align">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right">send</i></button><br><br>
-                                </div>
-                            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone1" type="tel" class="validate">
+                    <label for="phone1">Phone number 1</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone2" type="tel" class="validate">
+                    <label for="phone2">Phone number 2</label>
+                </div>
+
+            </div>
+
+            <br><br>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right">send</i></button><br><br>
+                </div>
+            </div>
             </form>
-            </div>
-      </div>
-  </div>
-  <footer class="page-footer teal lighten-2">
-          </div>
-          <div class="footer-copyright">
+        </div>
+    </div>
+    </div>
+    <footer class="page-footer teal lighten-2">
+        </div>
+        <div class="footer-copyright">
             <div class="container center-align yellow-text text-lighten-2">
-            © 2017 Copyright Hello-books
+                © 2017 Copyright Hello-books
             </div>
-          </div>
-        </footer>
-  
-  <!-- Import jquery.js and then materialize.js -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <!--<script>
+        </div>
+    </footer>
+
+    <!-- Import jquery.js and then materialize.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--<script>
         $(document).ready(function(){
     $('.collapsible').collapsible();
   });</script>-->
