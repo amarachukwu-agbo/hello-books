@@ -1,0 +1,47 @@
+{
+  "books": [
+    {
+      "id": "1234",
+      "title": "qqq",
+      "author": "yyy",
+      "description": "ppp",
+      "imageURL": "ppp",
+      "subject": "qqq",
+      "quantity": "111",
+      "upvotes": 4,
+      "downvotes": 1
+    },
+    {
+      "id": "1235",
+      "title": "dde",
+      "author": "222",
+      "description": "222",
+      "imageURL": "qqq",
+      "subject": "qqq",
+      "quantity": "qqq",
+      "downvotes": 2,
+      "upvotes": 1
+    },
+  {
+      "id": "1236",
+      "title": "dde",
+      "author": "222",
+      "description": "222",
+      "imageURL": "qqq",
+      "subject": "qqq",
+      "quantity": "qqq",
+      "downvotes": 2,
+      "upvotes": 7
+    },
+    {
+      "id": "1235",
+      "title": "dde",
+      "author": "222",
+      "description": "222",
+      "imageURL": "qqq",
+      "subject": "qqq",
+      "quantity": "qqq",
+      "downvotes": 2
+    }
+  ]
+}
