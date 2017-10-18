@@ -1,0 +1,368 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Hello-books Index Page</title>
+
+  <!-- Import materialize min.css for styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- Import Google fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  <ul id="dropdown" class="dropdown-content">
+    <li><a href="login.html">Sign In</a></li>
+    <li class="divider"></li>
+    <li><a href="signup.html">Sign Up</a></li>
+    <li class="divider"></li>
+    <li><a href="index.html">Books Catalog</a></li>
+    <li class="divider"></li>
+    <li><a href="index.html">Borrow a book</a></li>
+    <li class="divider"></li>
+    <li><a href="returnbook.html">Return a book</a></li>
+    <li class="divider"></li>
+    <li><a href="profile.html">My Profile</a></li>
+    <li class="divider"></li>
+    <li><a href="favorites.html">My Favourites</a></li>
+  </ul>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper teal darken-2">
+        <img src="/images/logo.png" class="img-logo left">
+        <div class="row">
+          <div class="col s3 offset-s4">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" placeholder="search for book..." />
+                <label for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
+          <div class="col s4">
+            <ul class="right hide-on-med-and-down col s4">
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown">Menu<i class="material-icons right">dehaze</i></a></li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </nav>
+  </div>
+  <div class="parallax-container z-depth-4">
+    <div class="parallax"> <img src="./images/lib.jpg"></div>
+    <div class=" center-align">
+      <h1 class="yellow-text text-lighten-1">Welcome to Hello-books</h2>
+        <h3 class="yellow-text text-lighten-1">Managing library operations just got easier!!!</h1>
+      <h4 class="yellow-text text-lighten-1"> You can rent and return books and lots more. </h4><br>
+      <a href="login.html" class="btn btn-large yellow-text waves-effect waves-light">Get Started</a>
+    </div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h4 class="header grey-text text-darken-3">Available books</h4>
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="images/book-halfyellow.png" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Half of a yellow sun</p>
+            <p class="book-text blue-text">Chimamanda Ngozi Adichie</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Puple hibiscus</p>
+            <p class="book-text blue-text">Chimamanda Ngozi Adichie</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="http://chimamanda.com/wp-content/uploads/2013/04/book-thingaround.png" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">The thing around your neck</p>
+            <p class="book-text blue-text">Chimamanda Ngozi Adichie</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="http://chimamanda.com/wp-content/uploads/2013/04/americanah.png" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Amaericanah</p>
+            <p class="book-text blue-text">Chimamanda Ngozi Adichie</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://upload.wikimedia.org/wikipedia/en/6/65/ThingsFallApart.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Things fall apart</p>
+            <p class="book-text blue-text">Chinua Achebe</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcQ0nLBAG6p4T1waERQC-d5vmFYIq9TU5sgvdYkpnrPhe0TBnW0d" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">There was a country</p>
+            <p class="book-text blue-text">Chinua Achebe</p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row container">
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://www.booktopia.com.au/http_coversbooktopiacomau/big/9781407132082/the-hunger-games.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Hunger Games</p>
+            <p class="book-text blue-text">Susan Calvin</p>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://www.booktopia.com.au/http_coversbooktopiacomau/9780349410913/140xNxcome-sundown.jpg.pagespeed.ic.ucE7XkysTw.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Come sun down</p>
+            <p class="book-text blue-text">Nora Roberts</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://www.booktopia.com.au/http_coversbooktopiacomau/9780749958480/140xNxhaunted-in-death-eternity-in-death.jpg.pagespeed.ic.AZENuWU7Ov.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Haunted in death/Eternity in death</p>
+            <p class="book-text blue-text">J.D.Robb</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://www.booktopia.com.au/http_coversbooktopiacomau/9780749959326/140xNxthe-collector.jpg.pagespeed.ic.Wp9qFUOOPw.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">The Collector</p>
+            <p class="book-text blue-text">Nora Roberts</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://www.booktopia.com.au/http_coversbooktopiacomau/9780349415796/140xNxsecrets-in-death.jpg.pagespeed.ic.ZI4rgU80p8.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Secrets in death</p>
+            <p class="book-text blue-text">J.D.Robb</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://www.booktopia.com.au/http_coversbooktopiacomau/9780749928865/140xNxvision-in-white.jpg.pagespeed.ic.xDMOyTHP4o.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Vision in white</p>
+            <p class="book-text blue-text">Nora Roberts</p>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div><br>
+
+    <div class="row container">
+      <h4 class="header grey-text text-darken-3">Reader's Favorites</h4>
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="images/book-halfyellow.png" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Half of a yellow sun</p>
+            <p class="book-text blue-text">Chimamanda Ngozi Adichie</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Purple Hibiscus</p>
+            <p class="book-text blue-text">Chimamanda Ngozi Adichie</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="http://chimamanda.com/wp-content/uploads/2013/04/book-thingaround.png" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">The thing around your neck</p>
+            <p class="book-text blue-text">Chimamanda Ngozi Adichie</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="http://chimamanda.com/wp-content/uploads/2013/04/americanah.png" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Americanah</p>
+            <p class="book-text blue-text">Chimamanda Ngozi Adichie</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://www.booktopia.com.au/http_coversbooktopiacomau/9780749928865/140xNxvision-in-white.jpg.pagespeed.ic.xDMOyTHP4o.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Vision in white</p>
+            <p class="book-text blue-text">Nora Roberts</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <a href="bookdetails.html"><img src="https://www.booktopia.com.au/http_coversbooktopiacomau/9780349415796/140xNxsecrets-in-death.jpg.pagespeed.ic.ZI4rgU80p8.jpg" class="responsive-img"></a>
+          </div>
+          <div class="card-content">
+            <p class="book-text truncate blue-text">Secrets in death</p>
+            <p class="book-text blue-text">J.D.Robb</p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <footer class="page-footer teal lighten-2">
+    <div class="container">
+      <div class="row">
+        <h5 class="yellow-text text-lighten-2 center-align">Quick Links</h5>
+        <ul>
+          <li class="col s3"><a class="yellow-text text-lighten-2" href="signup.html">Sign up</a></li>
+          <li class="col s3"><a class="yellow-text text-lighten-2" href="login.html">Log In</a></li>
+          <li class="col s3"><a class="yellow-text text-lighten-2" href="index.html">Books Catalog</a></li>
+          <li class="col s3"><a class="yellow-text text-lighten-2" href="index.html">Borrow a book</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align yellow-text text-lighten-2">
+        © 2017 Copyright Hello-books
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Import jquery.js and then materialize.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!--<script>
+        $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });</script>-->
+  <script>
+    $(document).ready(function () {
+      $('.parallax').parallax();
+    });
+  </script>
+</body>
+
+</html>
