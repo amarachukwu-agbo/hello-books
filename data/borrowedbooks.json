@@ -1,0 +1,29 @@
+{
+  "requests": [
+    {
+      "userId": "1236",
+      "bookId": "3",
+      "borrowDate": "2017-10-20T23:08:26.036Z"
+    },
+    {
+      "userId": "1236",
+      "bookId": "4",
+      "borrowDate": "2017-10-20T23:08:26.036Z"
+    },
+    {
+      "userId": "1236",
+      "bookId": "1",
+      "borrowDate": "2017-10-21T14:45:08.268Z"
+    },
+    {
+      "userId": "1236",
+      "bookId": "2",
+      "borrowDate": "2017-10-21T14:45:08.268Z"
+    },
+    {
+      "userId": "1236",
+      "bookId": "2",
+      "borrowDate": "2017-10-21T15:06:42.125Z"
+    }
+  ]
+}
