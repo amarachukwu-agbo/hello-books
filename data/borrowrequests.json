@@ -1,0 +1,20 @@
+{
+  "requests": [
+    {
+      "userId": "1236",
+      "bookId": "2",
+      "reason": "Assignment",
+      "returnDate": "21/01/2017",
+      "comments": "Nil",
+      "createdDate": "2017-10-20T23:08:26.036Z"
+    },
+     {
+      "userId": "1235",
+      "bookId": "4",
+      "reason": "Assignment",
+      "returnDate": "21/01/2017",
+      "comments": "Nil",
+      "createdDate": "2017-10-20T23:08:26.036Z"
+    }
+  ]
+}
