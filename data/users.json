@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "1234",
+      "first name": "Ada",
+      "last name": "Greene",
+      "email": "agree@gmail.com",
+      "password": "4reww1@@#",
+      "borrowedBooks": [],
+      "notifications": [],
+      "favorites": [
+        "1"
+      ]
+    },
+    {
+      "id": "1235",
+      "first name": "John",
+      "last name": "Greene",
+      "email": "jgree@gmail.com",
+      "password": "6655%%%%ss",
+      "favorites": [
+        "2",
+        "1"
+      ],
+      "notifications": [
+        "Your request to borrow Half of a yellow sun was declined."
+      ]
+    },
+    {
+      "id": "1236",
+      "first name": "Sally",
+      "last name": "Meade",
+      "email": "smeade@gmail.com",
+      "password": "bbygii%^^^",
+      "borrowedBooks": [
+        "3",
+        "1",
+        "2",
+        "2"
+      ],
+      "favorites": [
+        "1"
+      ]
+    }
+  ]
+}
