@@ -2,8 +2,9 @@
   "name": "hello-books",
   "version": "1.0.0",
   "description": "Hello-Books is a simple application that helps manage a library and its processes like stocking, tracking and renting books. With this application users are able to find and rent books. The application also has an admin section where the admin can do things like add books, delete books, increase the quantity of a book etc.",
-  "main": "index.js",
+  "main": "./server/index.js",
   "scripts": {
+    "scss" : "./node_modules/.bin/node-sass --watch ./templates/scss/style.scss -o ./templates/css",
     "build": "babel ./server -d ./dist",
     "serve": "node ./dist/index.js",
     "start": "nodemon ./server/index.js --exec babel-node",
