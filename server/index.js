@@ -35,7 +35,8 @@ app.post('/api/books', (req, res) => {
     req.body.subject,
     req.body.quantity,
   );
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint to modify a book
@@ -52,7 +53,8 @@ app.put('/api/books/:bookId', (req, res) => {
     req.body.subject,
     req.body.quantity,
   );
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint for a user to upvote a book
@@ -61,7 +63,8 @@ app.put('/api/books/:bookId', (req, res) => {
 app.post('/api/users/upvote/books/:bookId', (req, res) => {
   const newUser = new User();
   const result = newUser.upvoteBook(req.params.bookId);
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint for a user to downvote a book
@@ -70,7 +73,8 @@ app.post('/api/users/upvote/books/:bookId', (req, res) => {
 app.post('/api/users/downvote/books/:bookId', (req, res) => {
   const newUser = new User();
   const result = newUser.downvoteBook(req.params.bookId);
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint to get books with most upvotes. Fix Blocker
@@ -86,7 +90,8 @@ app.get('/api/books?sort=upvotes&order=desc', (req, res) => {
 app.post('/api/users/:userId/fav/:bookId', (req, res) => {
   const newUser = new User();
   const result = newUser.favoriteBook(req.params.userId, req.params.bookId);
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint to get a user's favorite books
@@ -95,7 +100,8 @@ app.post('/api/users/:userId/fav/:bookId', (req, res) => {
 app.get('/api/users/:userId/favbooks', (req, res) => {
   const newUser = new User();
   const result = newUser.getFavoriteBooks(req.params.userId);
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint for a user to review a book
@@ -105,7 +111,8 @@ app.get('/api/users/:userId/favbooks', (req, res) => {
 app.post('/api/users/:userId/review/:bookId', (req, res) => {
   const newUser = new User();
   const result = newUser.reviewBook(req.params.userId, req.params.bookId, req.body.review);
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint for a user to send a borrow request
@@ -121,7 +128,8 @@ app.post('/api/users/:userId/borrow/:bookId', (req, res) => {
     req.body.returnDate,
     req.body.comments,
   );
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint for a user to send a return request
@@ -131,7 +139,8 @@ app.post('/api/users/:userId/borrow/:bookId', (req, res) => {
 app.post('/api/users/:userId/return/:bookId', (req, res) => {
   const newUser = new User();
   const result = newUser.sendReturnRequest(req.params.userId, req.params.bookId, req.body.comments);
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint for an admin to accept or decline a borrow request
@@ -145,7 +154,8 @@ app.put('/api/users/:userId/borrow/:bookId', (req, res) => {
     req.params.bookId,
     req.body.action,
   );
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 /* API endpoint for an admin to accept or decline a return request
@@ -159,7 +169,8 @@ app.put('/api/users/:userId/return/:bookId', (req, res) => {
     req.params.bookId,
     req.body.action,
   );
-  res.json(result);
+  res.status(result.statusCode);
+  res.json(result.message);
 });
 
 export default app;
