@@ -4,11 +4,11 @@
   "description": "Hello-Books is a simple application that helps manage a library and its processes like stocking, tracking and renting books. With this application users are able to find and rent books. The application also has an admin section where the admin can do things like add books, delete books, increase the quantity of a book etc.",
   "main": "./server/index.js",
   "scripts": {
-    "scss" : "./node_modules/.bin/node-sass --watch ./templates/scss/style.scss -o ./templates/css",
+    "scss": "./node_modules/.bin/node-sass --watch ./templates/scss/style.scss -o ./templates/css",
     "build": "babel ./server -d ./dist",
     "serve": "node ./dist/index.js",
     "start": "nodemon ./server/index.js --exec babel-node",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --compilers js:babel-register"
   },
   "repository": {
     "type": "git",
@@ -25,13 +25,19 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.0.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "nodemon": "^1.12.1"
+    "eslint-plugin-mocha": "^4.11.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "supertest": "^3.0.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
