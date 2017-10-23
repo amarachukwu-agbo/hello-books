@@ -6,10 +6,33 @@
       "last name": "Greene",
       "email": "agree@gmail.com",
       "password": "4reww1@@#",
-      "borrowedBooks": [],
-      "notifications": [],
+      "borrowedBooks": [
+        "3"
+      ],
+      "notifications": [
+        "Your request to return 3 was declined.",
+        "Your request to return book 3 was declined.",
+        "Your request to return book 3 was declined",
+        "Your request to return book 3 was declined",
+        "Your request to borrow Sacrets in Death was declined.",
+        "Your request to return book 3 was declined",
+        "Your request to borrow 3 was declined.",
+        "Your request to return book 3 was declined",
+        "Your request to borrow 3 was declined",
+        "Your request to return book 3 was declined",
+        "Your request to borrow book 3 was declined",
+        "Your request to return book 3 was declined",
+        "Your request to borrow book 3 was declined",
+        "Your request to return book 3 was declined",
+        "Your request to borrow book 3 was declined",
+        "Your request to return book 3 was declined",
+        "Your request to borrow book 3 was declined",
+        "Your request to return book 3 was declined",
+        "Your request to borrow book 3 was declined"
+      ],
       "favorites": [
-        "1"
+        "1",
+        "2"
       ]
     },
     {
@@ -37,9 +60,6 @@
         "1",
         "2",
         "2"
-      ],
-      "favorites": [
-        "1"
       ]
     }
   ]
