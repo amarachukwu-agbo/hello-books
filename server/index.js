@@ -162,3 +162,4 @@ app.put('/api/users/:userId/return/:bookId', (req, res) => {
   res.json(result);
 });
 
+export default app;
