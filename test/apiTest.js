@@ -135,7 +135,7 @@ describe('API Endpoint Tests', () => {
         })
         .end((err, res) => {
           expect(res.statusCode).to.equal(201);
-          expect(res.body).to.be.a('string')
+          expect(res.body).to.be.a('string');
           expect(res.body).to.equal('Favorited Book');
           done();
         });
@@ -176,7 +176,7 @@ describe('API Endpoint Tests', () => {
         .post('/api/users/upvote/books/2')
         .end((err, res) => {
           expect(res.statusCode).to.equal(201);
-          expect(res.body).to.be.a('string')
+          expect(res.body).to.be.a('string');
           expect(res.body).to.equal('Successfully upvoted book');
           done();
         });
@@ -199,7 +199,7 @@ describe('API Endpoint Tests', () => {
         .post('/api/users/downvote/books/2')
         .end((err, res) => {
           expect(res.statusCode).to.equal(201);
-          expect(res.body).to.be.a('string')
+          expect(res.body).to.be.a('string');
           expect(res.body).to.equal('Successfully downvoted book');
           done();
         });
@@ -464,5 +464,3 @@ describe('API Endpoint Tests', () => {
     });
   });
 });
-
-

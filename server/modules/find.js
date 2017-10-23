@@ -2,7 +2,7 @@
 import readData from './readData';
 
 /* Function finds the index of a request
-@params userId, bookId are the ids of the user 
+@params userId, bookId are the ids of the user
 and the book in the request.
 @params file is the json file with the request objects */
 
