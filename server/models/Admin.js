@@ -35,6 +35,19 @@ export default class Admin extends User {
     this.subject = subject;
     this.quantity = quantity;
 
+    // Check if all arguments are available
+    if (
+      id === undefined ||
+      author === undefined ||
+      description === undefined ||
+      imageURL === undefined ||
+      subject === undefined ||
+      quantity === undefined
+    ) {
+      return { statusCode: '400', message: 'Some fields missing' };
+    }
+
+    const data = readData(booksFile);
     const obj = {
       id,
       title,
@@ -44,10 +57,9 @@ export default class Admin extends User {
       subject,
       quantity,
     };
-    const data = readData(booksFile);
     data.books.push(obj);
     updateData(booksFile, data);
-    return obj;
+    return { statusCode: '201', message: obj };
   }
 
   /* Method modifies a book
@@ -68,6 +80,21 @@ export default class Admin extends User {
     this.subject = subject;
     this.quantity = quantity;
 
+    // Check if book id is valid
+    const index = findBook(id);
+    if (index < 0) return { statusCode: '404', message: 'Book not found' };
+
+    // Check if all arguments are available
+    if (
+      author === undefined ||
+      description === undefined ||
+      imageURL === undefined ||
+      subject === undefined ||
+      quantity === undefined
+    ) {
+      return { statusCode: '400', message: 'Some fields missing' };
+    }
+
     const obj = {
       id,
       title,
@@ -82,7 +109,7 @@ export default class Admin extends User {
     data.books[objIndex] = obj;
     if (objIndex < 0) return ('Book not Found');
     updateData(booksFile, data);
-    return obj;
+    return { statusCode: '201', message: 'Successfully Updated book' };
   }
 
   /* Method accepts or declines a borrow request
@@ -94,11 +121,8 @@ export default class Admin extends User {
     this.bookId = bookId;
     this.action = action;
 
-    // Check if borrow request exists in borrowrequests.json
     const data = readData(borrowReqFile);
     const requestIndex = find(userId, bookId, borrowReqFile);
-    if (requestIndex < 0) return ('Request not found');
-
     const booksData = readData(booksFile);
     const bookIndex = findBook(bookId);
     const usersData = readData(usersFile);
@@ -109,7 +133,7 @@ export default class Admin extends User {
     let notification;
 
     switch (action) {
-      case 'Accept': 
+      case 'Accept':
 
         // Decrement book quantity
         booksData.books[bookIndex].quantity -= 1;
@@ -142,12 +166,12 @@ export default class Admin extends User {
         writeData(booksFile, booksData);
         writeData(usersFile, usersData);
         writeData(borrowedBooksFile, borrowed);
-        return obj;
+        return { statusCode: '201', message: `Successfully borrowed book ${bookId}` };
 
       case 'Decline':
 
         // Put notification in user's notifications
-        notification = `Your request to borrow ${booksData.books[bookIndex].title} was declined.`;
+        notification = `Your request to borrow book ${bookId} was declined`;
         if (usersData.users[userIndex].notifications) {
           usersData.users[userIndex].notifications.push(notification);
         } else {
@@ -160,10 +184,10 @@ export default class Admin extends User {
         // Update modified files
         writeData(usersFile, usersData);
         writeData(borrowReqFile, data);
-        return obj;
+        return { statusCode: '201', message: notification };
 
       default:
-        return ('Bad Request');
+        return { statusCode: '400', message: 'Bad request' };
     }
   }
 
@@ -176,11 +200,8 @@ export default class Admin extends User {
     this.bookId = bookId;
     this.action = action;
 
-    // Check if borrow request exists in borrowrequests.json
-    const data = readData(returnReqFile);
     const requestIndex = find(userId, bookId, returnReqFile);
-    if (requestIndex < 0) return ('Request not found');
-
+    const data = readData(returnReqFile);
     const booksData = readData(booksFile);
     const bookIndex = findBook(bookId);
     const usersData = readData(usersFile);
@@ -189,7 +210,6 @@ export default class Admin extends User {
     const borrowedIndex = find(userId, bookId, borrowedBooksFile);
     const index = usersData.users[userIndex].borrowedBooks.findIndex(book =>
       book === bookId);
-    let obj;
     let notification;
 
     switch (action) {
@@ -197,10 +217,6 @@ export default class Admin extends User {
 
         // Increment book quantity
         booksData.books[bookIndex].quantity += 1;
-        obj = {
-          userId,
-          bookId,
-        };
 
         // Remove from borrowedbooks.json
         borrowed.requests.splice(borrowedIndex, 1);
@@ -216,11 +232,11 @@ export default class Admin extends User {
         writeData(booksFile, booksData);
         writeData(usersFile, usersData);
         writeData(borrowedBooksFile, borrowed);
-        return obj;
+        return { statusCode: '201', message: `Successfully returned book ${bookId}` };
 
       case 'Decline':
         // Add notiication to user's notifications
-        notification = `Your request to return ${booksData.books[bookIndex].title} was declined.`;
+        notification = `Your request to return book ${bookId} was declined`;
         if (usersData.users[userIndex].notifications) {
           usersData.users[userIndex].notifications.push(notification);
         } else {
@@ -233,11 +249,10 @@ export default class Admin extends User {
         // Update modified files
         writeData(usersFile, usersData);
         writeData(returnReqFile, data);
-        return obj;
+        return { statusCode: '201', message: notification };
 
       default:
-        return ('Bad Request');
+        return { statusCode: '400', message: 'Bad request' };
     }
   }
-
 }

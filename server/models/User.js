@@ -10,7 +10,6 @@ const createdDate = new Date();
 const booksFile = './data/books.json';
 const usersFile = './data/users.json';
 const borrowReqFile = './data/borrowrequests.json';
-const borrowedBooksFile = './data/borrowedbooks.json';
 const returnReqFile = './data/returnrequests.json';
 
 export default class User {
@@ -23,7 +22,7 @@ export default class User {
     // Check if book is in books.json file
     let booksData = readData(booksFile);
     const bookIndex = findBook(bookId);
-    if (bookIndex < 0) return ('Cannot Upvote unavailable book');
+    if (bookIndex < 0) return { statusCode: '404', message: 'Book not found' };
 
     // Increment count
     if (booksData.books[bookIndex].upvotes) {
@@ -32,7 +31,7 @@ export default class User {
       booksData.books[bookIndex].upvotes = 1;
     }
     booksData = updateData(booksFile, booksData);
-    return booksData.books[bookIndex];
+    return { statusCode: '201', message: 'Successfully upvoted book' };
   }
 
   /* Method votes down a book
@@ -44,7 +43,7 @@ export default class User {
     // Check if book is available in books.json file
     let booksData = readData(booksFile);
     const bookIndex = findBook(bookId);
-    if (bookIndex < 0) return ('Cannot Downvote unavailable book');
+    if (bookIndex < 0) return { statusCode: '404', message: 'Book not found' };
 
     // Increment downvote count
     if (booksData.books[bookIndex].downvotes) {
@@ -53,7 +52,7 @@ export default class User {
       booksData.books[bookIndex].downvotes = 1;
     }
     booksData = updateData(booksFile, booksData);
-    return booksData.books[bookIndex];
+    return { statusCode: '201', message: 'Successfully downvoted book' };
   }
 
   /* Method favorites up a book
@@ -71,8 +70,8 @@ export default class User {
     const bookIndex = findBook(bookId);
     const usersData = readData(usersFile);
     const userIndex = findUser(userId);
-    if (userIndex < 0) return ('Cannot Find user');
-    if (bookIndex < 0) return ('Cannot Favorite unavailable book');
+    if (userIndex < 0) return { statusCode: '402', message: 'Unauthenticated user' };
+    if (bookIndex < 0) return { statusCode: '404', message: 'Book not found' };
 
     /* Check if book is already a user's favorite. If not add to
     user's favorites and increment book's favorite count in books.json file */
@@ -85,7 +84,7 @@ export default class User {
         } else {
           booksData.books[bookIndex].favorites = 1;
         }
-      } else return ('Already made book a favorite');
+      } else return { statusCode: '201', message: 'Favorited Book' };
     } else {
       usersData.users[userIndex].favorites = [bookId];
       if (booksData.books[bookIndex].favorites) {
@@ -98,7 +97,7 @@ export default class User {
     // Update modified files
     writeData(usersFile, usersData);
     booksData = updateData(booksFile, booksData);
-    return booksData.books[bookIndex];
+    return { statusCode: '201', message: 'Favorited Book' };
   }
 
   /* Method gets a user's favorite books
@@ -109,10 +108,10 @@ export default class User {
     // Check if user is in database
     const usersData = readData(usersFile);
     const userIndex = findUser(userId);
-    if (userIndex < 0) return ('Cannot Find user');
+    if (userIndex < 0) return { statusCode: '402', message: 'Unauthenticated user' };
 
     // Check if user has favorite books
-    if (!usersData.users[userIndex].favorites) return ('No Favorite books');
+    if (!usersData.users[userIndex].favorites) return { statusCode: '404', message: 'Favorites not found' };
 
     // Push each favorite book to favorites book array
     const booksData = readData(booksFile);
@@ -122,7 +121,7 @@ export default class User {
       const bookObject = booksData.books.filter(book => book.id === fav);
       favoriteBooks = [...favoriteBooks, ...bookObject];
     });
-    return favoriteBooks;
+    return { statusCode: '200', message: favoriteBooks };
   }
 
   /* Method lets a user review a book
@@ -138,11 +137,11 @@ export default class User {
     let booksData = readData(booksFile);
     const bookIndex = findBook(bookId);
     const userIndex = findUser(userId);
-    if (userIndex < 0) return ('Cannot Find user');
-    if (bookIndex < 0) return ('Cannot review unavailable book');
+    if (userIndex < 0) return { statusCode: '402', message: 'Unauthenticated user' };
+    if (bookIndex < 0) return { statusCode: '404', message: 'Book not found' };
 
     // Push review to book's reviews array
-    if (review === undefined) return ('Bad request, empty body');
+    if (review === undefined) return { statusCode: '400', message: 'Bad request, empty body' };
     if (booksData.books[bookIndex].reviews) {
       const obj = {};
       obj[userId] = review;
@@ -151,7 +150,7 @@ export default class User {
       booksData.books[bookIndex].reviews = [{ userId: review }];
     }
     booksData = updateData(booksFile, booksData);
-    return booksData.books[bookIndex];
+    return { statusCode: '201', message: `Successfully reviewed book ${bookId}` };
   }
 
   /* Method lets a user send  a borrow request for a book
@@ -170,16 +169,13 @@ export default class User {
     const booksData = readData(booksFile);
     const index = findBook(bookId);
     const userIndex = findUser(userId);
-    if (userIndex < 0) return ('User not found');
-    if (index < 0) return ('Book not found');
-    if (booksData.books[index].quantity === 0) {
-      return ('Book not Available');
-    }
+    if (userIndex < 0) return { statusCode: '402', message: 'Unauthenticated user' };
+    if (index < 0) return { statusCode: '404', message: 'Book not found' };
 
     // Check if user has sent request before
     const borrowReq = readData(borrowReqFile);
     const reqIndex = find(userId, bookId, borrowReqFile);
-    if (reqIndex >= 0) return 'Already Sent request';
+    if (reqIndex >= 0) return { statusCode: '201', message: 'Borrow request sent' };
 
     // Push request to borrowrequests.json file
     const obj = {
@@ -192,7 +188,7 @@ export default class User {
     };
     borrowReq.requests.push(obj);
     writeData(borrowReqFile, borrowReq);
-    return obj;
+    return { statusCode: '201', message: 'Borrow request sent' };
   }
 
   /* Method lets a user send  a return request for a book
@@ -206,14 +202,15 @@ export default class User {
 
     // Check if user and book are available in database
     const userIndex = findUser(userId);
-    if (userIndex < 0) return ('User not found');
-    const index = find(userId, bookId, borrowedBooksFile);
-    if (index < 0) return ('Cannot send request; book not borrowed');
+    if (userIndex < 0) return { statusCode: '402', message: 'Unauthenticated user' };
+
+    const bookIndex = findBook(bookId);
+    if (bookIndex < 0) return { statusCode: '404', message: 'Book not found' };
 
     // Check if user has sent request before
     const returnrequests = readData(returnReqFile);
     const requestIndex = find(userId, bookId, returnReqFile);
-    if (requestIndex >= 0) return ('Already sent return request');
+    if (requestIndex >= 0) return { statusCode: '201', message: 'Return request sent' };
 
     // Push request to returnrequests.json
     const obj = {
@@ -224,6 +221,6 @@ export default class User {
     };
     returnrequests.requests.push(obj);
     writeData(returnReqFile, returnrequests);
-    return obj;
+    return { statusCode: '201', message: 'Return request sent' };
   }
 }
