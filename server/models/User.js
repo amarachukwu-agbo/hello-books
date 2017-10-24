@@ -166,7 +166,6 @@ export default class User {
     this.comments = comments;
 
     // Check if user and book are available in database
-    const booksData = readData(booksFile);
     const index = findBook(bookId);
     const userIndex = findUser(userId);
     if (userIndex < 0) return { statusCode: '402', message: 'Unauthenticated user' };

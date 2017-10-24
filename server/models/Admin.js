@@ -16,7 +16,6 @@ const borrowedBooksFile = './data/borrowedbooks.json';
 const returnReqFile = './data/returnrequests.json';
 
 export default class Admin extends User {
-
   /* Method adds a book
   @param bookId is the book's id
   @param title is the book's title
