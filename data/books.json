@@ -62,6 +62,24 @@
         },
         {
           "1234": "An amazing read"
+        },
+        {
+          "1234": "An amazing read"
+        },
+        {
+          "1234": "An amazing read"
+        },
+        {
+          "1234": "An amazing read"
+        },
+        {
+          "1234": "An amazing read"
+        },
+        {
+          "1234": "An amazing read"
+        },
+        {
+          "1234": "An amazing read"
         }
       ]
     },
@@ -73,10 +91,10 @@
       "imageURL": "http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png",
       "subject": "Fiction",
       "quantity": 18,
-      "downvotes": 26,
+      "downvotes": 32,
       "favorites": 2,
       "borrowCount": 1,
-      "upvotes": 26
+      "upvotes": 32
     },
     {
       "id": "3",
@@ -88,7 +106,7 @@
       "quantity": 3,
       "upvotes": 2,
       "downvotes": 1,
-      "borrowCount": 8
+      "borrowCount": 14
     },
     {
       "id": "4",
@@ -102,6 +120,60 @@
     {
       "id": "5",
       "title": "There was a country",
+      "author": "Chinua Achebe",
+      "description": "A history of the Biafran war",
+      "imageURL": "http://images.com/image.png",
+      "subject": "History",
+      "quantity": 20
+    },
+    {
+      "id": "7",
+      "title": "Things fall apart",
+      "author": "Chinua Achebe",
+      "description": "A history of the Biafran war",
+      "imageURL": "http://images.com/image.png",
+      "subject": "History",
+      "quantity": 20
+    },
+    {
+      "id": "7",
+      "title": "Things fall apart",
+      "author": "Chinua Achebe",
+      "description": "A history of the Biafran war",
+      "imageURL": "http://images.com/image.png",
+      "subject": "History",
+      "quantity": 20
+    },
+    {
+      "id": "7",
+      "title": "Things fall apart",
+      "author": "Chinua Achebe",
+      "description": "A history of the Biafran war",
+      "imageURL": "http://images.com/image.png",
+      "subject": "History",
+      "quantity": 20
+    },
+    {
+      "id": "7",
+      "title": "Things fall apart",
+      "author": "Chinua Achebe",
+      "description": "A history of the Biafran war",
+      "imageURL": "http://images.com/image.png",
+      "subject": "History",
+      "quantity": 20
+    },
+    {
+      "id": "7",
+      "title": "Things fall apart",
+      "author": "Chinua Achebe",
+      "description": "A history of the Biafran war",
+      "imageURL": "http://images.com/image.png",
+      "subject": "History",
+      "quantity": 20
+    },
+    {
+      "id": "7",
+      "title": "Things fall apart",
       "author": "Chinua Achebe",
       "description": "A history of the Biafran war",
       "imageURL": "http://images.com/image.png",
