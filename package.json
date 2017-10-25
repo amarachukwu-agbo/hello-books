@@ -7,6 +7,7 @@
     "scss": "./node_modules/.bin/node-sass --watch ./templates/scss/style.scss -o ./templates/css",
     "build": "babel ./server -d ./dist",
     "serve": "node ./dist/index.js",
+    "start": "./node_modules/.bin/babel-node ./server/index.js",
     "test": "./node_modules/.bin/mocha --compilers js:babel-register",
     "coverage":"./node_modules/.bin/istanbul cover  ./node_modules/mocha/bin/_mocha -- ./test/*.js -R spec --compilers js:babel-register",
     "report-coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
