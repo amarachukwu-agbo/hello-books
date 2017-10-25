@@ -2,4 +2,4 @@ language: node_js
 node_js:
 - "6"
 script: "npm run-script coverage"
-after_script: "npm run-script report-coverage"
+after_script: travis_wait "npm run-script report-coverage"
