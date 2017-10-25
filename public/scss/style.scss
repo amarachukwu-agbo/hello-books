@@ -1,0 +1,25 @@
+$formImage: 100px;
+$logoImage: 64px;
+
+.form-logo{
+    width: $formImage; 
+    height: $formImage;
+}
+.img-logo{
+    width: $logoImage; 
+    height: $logoImage;
+}
+.books-image{
+    height: 300px;
+    width: 200px;
+}
+.parallax-container {
+      height: 400px;
+      opacity: 0.8;
+    }
+.book-text{
+    font-size: 12px;
+}
+.favorite-img{
+    height: 150px;
+}
