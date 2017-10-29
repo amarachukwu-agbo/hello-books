@@ -4,3 +4,5 @@ npm-debug.log
 dist
 coverage
 .vscode
+jspm_packages
+docs.md
