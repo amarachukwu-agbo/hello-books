@@ -9,7 +9,7 @@ node_js:
   - node
 
 script: 
- - npm test
+ - npm run coverage
 
 after_success: 
- - npm run coveralls
+ - npm run report-coverage
