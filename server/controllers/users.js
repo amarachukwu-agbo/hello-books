@@ -1,16 +1,25 @@
-const models = require('../models');
+import bcryptjs from 'bcryptjs';
+import jsonwebtoken from 'jsonwebtoken';
+import User from '../module/User';
+
+const jwt = jsonwebtoken;
 
 module.exports = {
   createUser(req, res) {
-    return models.User
-      .create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        role: req.body.role,
-        password: req.body.password,
+    const hash = bcryptjs.hashSync(req.body.password, 8);
+    new User().signUp(
+      req.body.firstName,
+      req.body.lastName,
+      req.body.email,
+      req.body.role,
+      hash
+    )
+      .then((user) => {
+        const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, {
+          expiresIn: 86400
+        });
+        res.status(201).send({ msg: 'Sign up successful', token });
       })
-      .then(result => res.status(201).send(result))
       .catch(error => res.status(400).send(error));
   },
 };
