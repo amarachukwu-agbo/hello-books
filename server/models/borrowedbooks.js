@@ -1,5 +1,5 @@
-const uuidv4 = require('uuid/v4');
-const Sequelize = require('sequelize');
+import * as Sequelize from 'sequelize';
+import { v4 as uuidv4 } from 'uuid';
 
 module.exports = (sequelize) => {
   const BorrowedBooks = sequelize.define('BorrowedBooks', {
@@ -23,5 +23,3 @@ module.exports = (sequelize) => {
   };
   return BorrowedBooks;
 };
-
-
