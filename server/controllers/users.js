@@ -12,11 +12,11 @@ module.exports = {
       req.body.lastName,
       req.body.email,
       req.body.role,
-      hash
+      hash,
     )
       .then((user) => {
         const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, {
-          expiresIn: 86400
+          expiresIn: 86400,
         });
         res.status(201).send({ msg: 'Sign up successful', token });
       })
