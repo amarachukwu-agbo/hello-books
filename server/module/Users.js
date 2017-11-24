@@ -63,4 +63,5 @@ export default class Users {
     this.userId = userId;
     this.bookId = bookId;
     this.comments = comments;
+  }
 }

@@ -68,4 +68,5 @@ export default class Admin extends Users {
     this.userId = userId;
     this.bookId = bookId;
     this.action = action;
+  }
 }
