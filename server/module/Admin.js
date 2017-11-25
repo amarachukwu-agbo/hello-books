@@ -1,6 +1,6 @@
 // Import necessary modules
 import models from '../models';
-import Users from '../module/Users';
+import Users from '../module/User';
 
 export default class Admin extends Users {
   /* Method adds a book

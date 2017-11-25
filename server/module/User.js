@@ -1,6 +1,36 @@
 // Import necessary modules
+import models from '../models';
+
 
 export default class Users {
+  signUp(firstName, lastName, email, role, password) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.role = role;
+    this.password = password;
+
+    return models.User
+      .create({
+        firstName,
+        lastName,
+        email,
+        role,
+        password,
+      });
+  }
+
+  logIn(email, password) {
+    this.email = email;
+    this.password = password;
+
+    return models.User
+      .findOne({
+        where:
+          { email },
+      });
+  }
+
   /* Method votes up a book
   @param bookId is used to find the index of the book in the
   books.json file and the upvote count is incremented by 1 */

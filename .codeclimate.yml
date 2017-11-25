@@ -1,0 +1,4 @@
+exclude_patterns:
+- "server/migrations/"
+- "tests/"
+- "spec/"
