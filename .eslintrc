@@ -17,6 +17,7 @@
         "no-param-reassign": 0,
         "curly": ["error", "multi-line"],
         "import/no-unresolved": 0,
+        "import/extensions": 0,
         "no-shadow": ["error", { "allow": ["req", "res", "err"] }]
     }
 }
