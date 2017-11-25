@@ -19,6 +19,18 @@ export default class Users {
         password,
       });
   }
+
+  logIn(email, password) {
+    this.email = email;
+    this.password = password;
+
+    return models.User
+      .findOne({
+        where:
+          { email },
+      });
+  }
+
   /* Method votes up a book
   @param bookId is used to find the index of the book in the
   books.json file and the upvote count is incremented by 1 */
