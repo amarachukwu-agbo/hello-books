@@ -1,9 +1,8 @@
 // import necessary modules
 import bcryptjs from 'bcryptjs';
-import jsonwebtoken from 'jsonwebtoken';
 import User from '../module/User';
-// Module generates and verifies tokens
-const jwt = jsonwebtoken;
+import createToken from './auth/createToken';
+
 
 module.exports = {
   // Method registers a new user to the database
@@ -21,9 +20,7 @@ module.exports = {
     )
       .then((user) => {
         // Provides user with token
-        const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, {
-          expiresIn: 86400,
-        });
+        const token = createToken(user);
         res.status(201).send({ msg: 'Signup successful', token });
       })
       .catch(error => res.status(400).send(error));
@@ -45,9 +42,7 @@ module.exports = {
         const passwordMatch = bcryptjs.compareSync(req.body.password, user.password);
         if (!passwordMatch) return res.status(401).send({ msg: 'Authentication failed' });
         // Provides authenticated user with token
-        const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, {
-          expiresIn: 86400,
-        });
+        const token = createToken(user);
         res.status(201).send({ msg: 'Login successful', token });
       })
       .catch(error => res.status(500).send(error));
