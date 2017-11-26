@@ -1,12 +1,11 @@
-// const usersController = require('../controllers/users');
-import users from '../controllers/users';
-import books from '../controllers/books';
+// import necesary module
+import express from 'express';
 
-module.exports = (app) => {
-  app.get('/api', (req, res) => res.status(200).send({
-    message: 'Welcome to Hello-books API',
-  }));
+const router = express.Router();
 
-  app.post('/api/users', users.createUser);
-  app.post('/api/books', books.createBook);
-};
+// API index endpoint
+router.get('/', (req, res) => res.status(200).send({
+  message: 'Welcome to Hello-books API',
+}));
+
+export default router;

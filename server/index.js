@@ -3,6 +3,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 import dotenv from 'dotenv';
+import books from './routes/books';
+import users from './routes/users';
+import index from './routes/index';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -16,13 +19,15 @@ app.use(express.static(path.join(__dirname, '/../public')));
 app.set('views', path.join(__dirname, '/../templates'));
 app.set('view engine', 'ejs');
 
-// Import route handlers
-require('./routes')(app);
+// Specify route handlers
+app.use('/api/v1', index);
+app.use('/api/v1/users', users);
+app.use('/api/v1/books', books);
+
 
 // Configure server to listen on port 8000
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
-console.log(process.env.JWT_SECRET);
 
 // Specify routes
 app.get('/', (req, res) => {
