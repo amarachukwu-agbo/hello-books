@@ -1,6 +1,7 @@
 // Import necessary modules
+import bcryptjs from 'bcryptjs';
 import models from '../models';
-
+import createToken from '../controllers/auth/createToken';
 
 export default class Users {
   /* Method implements user registration
@@ -8,21 +9,22 @@ export default class Users {
   of user a stored in the User's table
   @return user object
   */
-  signUp(firstName, lastName, email, role, password) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.role = role;
-    this.password = password;
-
+  static signUp(req, res) {
+    const salt = bcryptjs.genSaltSync(10);
+    const hash = bcryptjs.hashSync(req.body.password, salt);
     return models.User
       .create({
-        firstName,
-        lastName,
-        email,
-        role,
-        password,
-      });
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        role: req.body.role,
+        password: hash,
+      }).then((user) => {
+        // Provides user with token
+        const token = createToken(user);
+        res.status(201).send({ msg: 'Signup successful', token });
+      })
+      .catch(error => res.status(500).send(error));
   }
   /* Method implements user login
   @params email is used to find a user stored in the User's table

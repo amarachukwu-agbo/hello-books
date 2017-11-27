@@ -4,30 +4,31 @@ import Users from '../module/User';
 
 export default class Admin extends Users {
   /* Method adds a book
-  @param bookId is the book's id
-  @param title is the book's title
-  @param author is the book's author
-  @param description is the book's description
-  @param imageURL is the book's image URL
-  @param subject is the book's subject
-  @param quantity is the book's quantity
+  * @param bookId is the book's id
+  * @param title is the book's title
+  * @param author is the book's author
+  * @param description is the book's description
+  * @param imageURL is the book's image URL
+  * @param subject is the book's subject
+  * @param quantity is the book's quantity
+  * @ return book object
+  * @return msg string
   */
-  addBook(title, author, description, imageURL, subject, quantity) {
-    this.title = title;
-    this.author = author;
-    this.description = description;
-    this.imageURL = imageURL;
-    this.subject = subject;
-    this.quantity = quantity;
-
+  static addBook(req, res) {
     return models.Book
       .create({
-        title,
-        author,
-        description,
-        subject,
-        imageURL,
-        quantity,
+        title: req.body.title,
+        author: req.body.author,
+        description: req.body.description,
+        subject: req.body.subject,
+        imageURL: req.body.imageURL,
+        quantity: req.body.quantity,
+      })
+      .then((book) => {
+        res.status(201).json({ msg: 'Successfully added book', book });
+      })
+      .catch((error) => {
+        res.status(500).json({ msg: error });
       });
   }
 
