@@ -7,23 +7,15 @@ import createToken from './auth/createToken';
 module.exports = {
   // Method registers a new user to the database
   createUser(req, res) {
-    // Generate an encrypted password using bcryptjs
-    const salt = bcryptjs.genSaltSync(10);
-    const hash = bcryptjs.hashSync(req.body.password, salt);
-    // Add new user to database
-    new User().signUp(
-      req.body.firstName,
-      req.body.lastName,
-      req.body.email,
-      req.body.role,
-      hash,
-    )
-      .then((user) => {
-        // Provides user with token
-        const token = createToken(user);
-        res.status(201).send({ msg: 'Signup successful', token });
-      })
-      .catch(error => res.status(400).send(error));
+    // Validate fields
+    if (
+      !req.body.email ||
+      !req.body.password ||
+      !req.body.role ||
+      !req.body.firstName ||
+      !req.body.lastName
+    ) return res.status(400).json({ msg: 'Some field missing' });
+    User.signUp(req, res);
   },
 
   authenticateUser(req, res) {
