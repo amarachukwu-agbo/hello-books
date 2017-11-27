@@ -47,4 +47,24 @@ module.exports = {
       })
       .catch(error => res.status(500).send(error));
   },
+
+  upVote(req, res) {
+    if (!req.params.bookId) return res.status(400).send({ msg: 'Book id required' });
+    new User().findBook(req.params.bookId)
+      .then((book) => {
+        if (!book) return { statusCode: 404, msg: 'Book not found' };
+        return book;
+      })
+      .then((book) => {
+        book.increment('upvotes');
+        return book;
+      })
+      .then((book) => {
+        console.log(book);
+        book.reload();
+        return book;
+      })
+      .then(book => res.status(201).send({ msg: `Upvotes increased to ${book.upvotes}` }))
+      .catch(error => res.status(500).send(error));
+  },
 };

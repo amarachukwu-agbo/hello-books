@@ -3,6 +3,11 @@ import models from '../models';
 
 
 export default class Users {
+  /* Method implements user registration
+  @params firstName, lastName, email, role and password
+  of user a stored in the User's table
+  @return user object 
+  */
   signUp(firstName, lastName, email, role, password) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -19,7 +24,10 @@ export default class Users {
         password,
       });
   }
-
+  /* Method implements user login
+  @params email is used to find a user stored in the User's table
+  @return user object 
+  */
   logIn(email, password) {
     this.email = email;
     this.password = password;
@@ -32,10 +40,16 @@ export default class Users {
   }
 
   /* Method votes up a book
-  @param bookId is used to find the index of the book in the
-  books.json file and the upvote count is incremented by 1 */
-  upvoteBook(bookId) {
+  @param bookId is used to find the book in the
+  Books table and the upvote count is incremented by 1 */
+  findBook(bookId) {
     this.bookId = bookId;
+
+    return models.Book
+      .find({
+        where:
+         { id: bookId },
+      });
   }
 
   /* Method votes down a book
