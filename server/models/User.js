@@ -63,6 +63,14 @@ module.exports = (sequelize) => {
       foreignKey: 'userId',
       as: 'userReviews',
     });
+    User.hasMany(models.Upvotes, {
+      foreignKey: 'userId',
+      as: 'userUpvotes',
+    });
+    User.hasMany(models.Downvotes, {
+      foreignKey: 'userId',
+      as: 'userDownvotes',
+    });
   };
   return User;
 };

@@ -57,24 +57,32 @@ module.exports = (sequelize) => {
   });
   Book.associate = (models) => {
     Book.hasMany(models.Review, {
-      foreignKey: 'id',
+      foreignKey: 'bookId',
       as: 'bookReviews',
     });
     Book.hasMany(models.BorrowedBooks, {
-      foreignKey: 'id',
+      foreignKey: 'bookId',
       as: 'borrowedBooks',
     });
     Book.hasMany(models.BorrowRequests, {
-      foreignKey: 'id',
+      foreignKey: 'bookId',
       as: 'borrowRequests',
     });
     Book.hasMany(models.ReturnRequests, {
-      foreignKey: 'id',
+      foreignKey: 'bookId',
       as: 'returnRequests',
     });
     Book.hasMany(models.Favorites, {
-      foreignKey: 'id',
+      foreignKey: 'bookId',
       as: 'favBook',
+    });
+    Book.hasMany(models.Upvotes, {
+      foreignKey: 'bookId',
+      as: 'bookUpvotes',
+    });
+    Book.hasMany(models.Downvotes, {
+      foreignKey: 'bookId',
+      as: 'bookDownvotes',
     });
   };
   return Book;
