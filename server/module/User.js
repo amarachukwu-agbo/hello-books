@@ -6,7 +6,7 @@ export default class Users {
   /* Method implements user registration
   @params firstName, lastName, email, role and password
   of user a stored in the User's table
-  @return user object 
+  @return user object
   */
   signUp(firstName, lastName, email, role, password) {
     this.firstName = firstName;
@@ -26,7 +26,7 @@ export default class Users {
   }
   /* Method implements user login
   @params email is used to find a user stored in the User's table
-  @return user object 
+  @return user object
   */
   logIn(email, password) {
     this.email = email;
