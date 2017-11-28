@@ -125,9 +125,31 @@ export default class Users {
   already a user's favorite.
   @param userId is used to find the index of the user in users.json
   file and the bookId is added to user's favorites. */
-  favoriteBook(userId, bookId) {
-    this.bookId = bookId;
-    this.userId = userId;
+  static favoriteBook(req, res) {
+    models.Book.findById(req.params.bookId)
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+
+        return models.Favorites.findOrCreate({
+          where: {
+            bookId: req.params.bookId,
+            userId: req.params.userId,
+          },
+        })
+          .spread((favorite, created) => {
+            if (created === true) {
+              book.increment('favCount');
+              return res.status(201).json({ msg: `Favorited book ${req.params.bookId}` });
+            }
+            return res.status(401).json({ msg: 'Already favorited book' });
+          })
+          .catch(error => res.status(400).send({
+            msg: 'Error favoriting book', error,
+          }));
+      })
+      .catch(error => res.status(400).json({
+        msg: 'Error favoriting book', error,
+      }));
   }
 
   /* Method gets a user's favorite books

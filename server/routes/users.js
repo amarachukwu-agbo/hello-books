@@ -11,5 +11,7 @@ router.post('/login', users.authenticateUser);
 router.post('/:userId/book/:bookId/upvote', verifyToken, users.upVote);
 // Endpoint for user to downvote a book
 router.post('/:userId/book/:bookId/downvote', verifyToken, users.downVote);
+// Endpoint to update a book
+router.post('/:userId/fav/:bookId', verifyToken, users.favoriteBook);
 
 export default router;

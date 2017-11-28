@@ -1,11 +1,11 @@
 const migration = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('Favorites', {
-      favId: {
+      id: {
         type: Sequelize.UUID,
         allowNull: false,
         primaryKey: true,
-        defaultValue: Sequelize.UUID4,
+        defaultValue: Sequelize.UUIDV4,
       },
       createdAt: {
         allowNull: false,
@@ -21,7 +21,7 @@ const migration = {
         allowNull: false,
         references: {
           model: 'Users',
-          key: 'userId',
+          key: 'id',
           as: 'userId',
         },
       },
@@ -30,7 +30,7 @@ const migration = {
         allowNull: false,
         references: {
           model: 'Books',
-          key: 'bookId',
+          key: 'id',
           as: 'bookId',
         },
       },
