@@ -209,7 +209,7 @@ export default class Users {
   /* Method lets a user get and sort all books using upvotes
   * @param req is the request is the request object
   * @param res is the response object
-  * @return book object is */
+  * @return book object is 
   static sortBooksWithUpvotes(req, res) {
     // console.log(req.params);
     return models.Book.findAll({
@@ -219,14 +219,27 @@ export default class Users {
     })
       .then(book => res.status(201).json(book))
       .catch(error => res.status(400).json(error));
-  }
+  }*/
 
   /* Method lets a user get all books in the database
   * @param req is the request is the request object
   * @param res is the response object
   * @return book object is */
   static getAllBooks(req, res) {
-    console.log(req.params);
+    if (req.query.sort && req.query.order) {
+      return models.Book.findAll({
+        include: [{
+          model: models.Review,
+          as: 'bookReviews',
+        }],
+        order: [
+          ['upvotes', 'DESC'],
+          [{ model: models.Review, as: 'bookReviews' }, 'createdAt', 'ASC'],
+        ],
+      })
+        .then(book => res.status(201).json(book))
+        .catch(error => res.status(400).json(error));
+    }
     return models.Book.findAll({
       // Join book reviews
       include: [{

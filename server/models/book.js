@@ -1,13 +1,12 @@
-import * as Sequelize from 'sequelize';
-import { v4 as uuidv4 } from 'uuid';
+const Sequelize = require('sequelize');
 
-const bookSchema = (sequelize) => {
+module.exports = (sequelize) => {
   const Book = sequelize.define('Book', {
     id: {
       type: Sequelize.UUID,
       allowNull: false,
       primaryKey: true,
-      defaultValue: uuidv4(),
+      defaultValue: Sequelize.UUID4,
     },
     title: {
       type: Sequelize.STRING,
@@ -72,19 +71,6 @@ const bookSchema = (sequelize) => {
       foreignKey: 'bookId',
       as: 'returnRequests',
     });
-    Book.hasMany(models.Favorites, {
-      foreignKey: 'bookId',
-      as: 'favBook',
-    });
-    Book.hasMany(models.Upvotes, {
-      foreignKey: 'bookId',
-      as: 'bookUpvotes',
-    });
-    Book.hasMany(models.Downvotes, {
-      foreignKey: 'bookId',
-      as: 'bookDownvotes',
-    });
   };
   return Book;
 };
-export default bookSchema;
