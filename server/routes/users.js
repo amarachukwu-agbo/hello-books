@@ -17,6 +17,4 @@ router.post('/:userId/fav/:bookId', verifyToken, users.favoriteBook);
 router.post('/:userId/review/:bookId', verifyToken, users.reviewBook);
 router.get('/:userId/favbooks', verifyToken, users.getFavoriteBooks);
 
-
-
 export default router;
