@@ -40,6 +40,12 @@ const userControllers = {
     User.favoriteBook(req, res);
   },
 
+  reviewBook(req, res) {
+    // Validate user's token
+    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    User.reviewBook(req, res);
+  },
+
 };
 
 export default userControllers;

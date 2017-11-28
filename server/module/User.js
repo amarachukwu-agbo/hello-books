@@ -119,12 +119,10 @@ export default class Users {
       .catch(error => res.status(500).json({ msg: error }));
   }
 
-  /* Method favorites up a book
-  @param bookId is used to find the index of the book in the
-  books.json file and increment favorites count if book is not
-  already a user's favorite.
-  @param userId is used to find the index of the user in users.json
-  file and the bookId is added to user's favorites. */
+  /* Method lets a user favorite a book
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return favoriteBook object */
   static favoriteBook(req, res) {
     models.Book.findById(req.params.bookId)
       .then((book) => {
@@ -159,13 +157,34 @@ export default class Users {
     this.userId = userId;
   }
   /* Method lets a user review a book
-  @param userId is used to find the index of the user in the users.json file
-  @param bookId  is used to find the index of the user in the users.json file
-  @param review is the review which is added to reviews of a book */
-  reviewBook(userId, bookId, review) {
-    this.userId = userId;
-    this.bookId = bookId;
-    this.review = review;
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return review object is */
+  static reviewBook(req, res) {
+    models.Book.findById(req.params.bookId)
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+
+        return models.Review.findOrCreate({
+          where: {
+            bookId: req.params.bookId,
+            userId: req.params.userId,
+            review: req.body.review,
+          },
+        })
+          .spread((review, created) => {
+            if (created === true) {
+              return res.status(201).json({ msg: `Successfully reviewed book ${req.params.bookId}`, review });
+            }
+            return res.status(403).json({ msg: 'Your review has already been created' });
+          })
+          .catch(error => res.status(400).send({
+            msg: 'Error reviewing book', error,
+          }));
+      })
+      .catch(error => res.status(400).json({
+        msg: 'Error reviewing book', error,
+      }));
   }
 
   /* Method lets a user send  a borrow request for a book
