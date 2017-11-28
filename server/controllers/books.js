@@ -1,7 +1,7 @@
 // import Admin class
 import Admin from '../module/Admin';
 
-module.exports = {
+const bookControllers = {
   // Add a new book to database
   createBook(req, res) {
     // Check the role of user from decoded token
@@ -10,3 +10,5 @@ module.exports = {
     Admin.addBook(req, res);
   },
 };
+
+export default bookControllers;

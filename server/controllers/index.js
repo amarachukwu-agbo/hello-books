@@ -2,7 +2,9 @@ import users from './users';
 import books from './books';
 
 
-module.exports = {
+const controllers = {
   users,
   books,
 };
+
+export default controllers;

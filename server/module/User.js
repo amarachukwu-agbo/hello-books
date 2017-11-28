@@ -10,8 +10,10 @@ export default class Users {
   @return user object
   */
   static signUp(req, res) {
+    // Hash user's password
     const salt = bcryptjs.genSaltSync(10);
     const hash = bcryptjs.hashSync(req.body.password, salt);
+    // Add user object to database
     return models.User
       .create({
         firstName: req.body.firstName,
@@ -22,43 +24,99 @@ export default class Users {
       }).then((user) => {
         // Provides user with token
         const token = createToken(user);
-        res.status(201).send({ msg: 'Signup successful', token });
+        res.status(201).json({ msg: 'Signup successful', token });
       })
-      .catch(error => res.status(500).send(error));
+      .catch(error => res.status(500).json(error));
   }
   /* Method implements user login
-  @params email is used to find a user stored in the User's table
-  @return user object
+  * @params email is used to find a user stored in the User's table
+  * @return user object
+  * @return msg string
   */
-  logIn(email, password) {
-    this.email = email;
-    this.password = password;
-
+  static logIn(req, res) {
+    // Check if user exists in database
     return models.User
       .findOne({
         where:
-          { email },
-      });
+          { email: req.body.email },
+      }).then((user) => {
+        if (!user) return res.status(404).json({ msg: 'User not found' });
+        // Checks if user-provided password is valid
+        const passwordMatch = bcryptjs.compareSync(req.body.password, user.password);
+        if (!passwordMatch) return res.status(401).send({ msg: 'Authentication failed' });
+        // Provides authenticated user with token
+        const token = createToken(user);
+        res.status(201).json({ msg: 'Login successful', token });
+      })
+      .catch(error => res.status(500).json(error));
   }
 
   /* Method votes up a book
-  @param bookId is used to find the book in the
-  Books table and the upvote count is incremented by 1 */
-  findBook(bookId) {
-    this.bookId = bookId;
-
-    return models.Book
-      .find({
-        where:
-         { id: bookId },
-      });
+  * @param req is the request object
+  * @param res is the response object
+  */
+  static upvoteBook(req, res) {
+    // Check if book exists in database
+    models.Book.findById(req.params.bookId)
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+        // Check if user has upvoted book before
+        models.Upvotes.findOrCreate({
+          where: {
+            bookId: req.params.bookId,
+            userId: req.params.userId,
+          },
+        }).spread((upvote, created) => {
+          console.log(created);
+          // Increment book upvotes if user has not upvoted book
+          if (created === true) {
+            book.increment('upvotes')
+              .then(incrementedBook =>
+                incrementedBook.reload())
+              .then((reloadedBook) => {
+                console.log(reloadedBook.upvotes);
+                return res.status.json({ msg: `Upvotes increased to ${reloadedBook.upvotes}` });
+              });
+          // .catch(error => res.status(500).json({ msg: error }));
+          }
+          return res.status(403).json({ msg: 'Already upvoted book' });
+        });
+      })
+      .catch(error => res.status(500).json({ msg: error }));
   }
 
-  /* Method votes down a book
-  @param bookId is used to find the index of the book in the
-  books.json file and the downvote count is incremented by 1 */
-  downvoteBook(bookId) {
-    this.bookId = bookId;
+
+  /* Method votes up a book
+  * @param req is the request object
+  * @param res is the response object
+  */
+  static downvoteBook(req, res) {
+    // Check if book exists in database
+    models.Book.findById(req.params.bookId)
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+        // Check if user has downvoted book before
+        models.Downvotes.findOrCreate({
+          where: {
+            bookId: req.params.bookId,
+            userId: req.params.userId,
+          },
+        }).spread((downvote, created) => {
+          // Increment book downvotes if user has not upvoted book
+          if (created === true) {
+            book.increment('downvotes')
+              .then(incrementedBook => incrementedBook.reload())
+              .then((reloadedBook) => {
+                console.log(reloadedBook.upvotes);
+                return res.status(201).json({ msg: `Downvotes increased to ${reloadedBook.downvotes}` });
+              });
+            // book.reload();
+            // console.log(book.downvotes);
+          }
+          return res.status(403).json({ msg: 'Already downvoted book' });
+        });
+      })
+      .catch(error => res.status(500).json({ msg: error }));
   }
 
   /* Method favorites up a book
