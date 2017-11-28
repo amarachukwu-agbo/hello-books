@@ -206,9 +206,16 @@ export default class Users {
       }));
   }
 
+  /* Method lets a user get and sort all books using upvotes
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return book object is */
   static sortBooksWithUpvotes(req, res) {
+    // console.log(req.params);
     return models.Book.findAll({
-      order: ['upvotes', 'DESC'],
+      order: [
+        ['upvotes', 'DESC'],
+      ],
     })
       .then(book => res.status(201).json(book))
       .catch(error => res.status(400).json(error));
@@ -219,6 +226,7 @@ export default class Users {
   * @param res is the response object
   * @return book object is */
   static getAllBooks(req, res) {
+    console.log(req.params);
     return models.Book.findAll({
       // Join book reviews
       include: [{
@@ -261,12 +269,34 @@ export default class Users {
   @param bookId  is used to find the index of the user in the users.json file
   @params reason, comments and returnDate are the user's reason, comments and
    the return date */
-  sendBorrowRequest(userId, bookId, reason, returnDate, comments) {
-    this.userId = userId;
-    this.bookId = bookId;
-    this.reason = reason;
-    this.returnDate = returnDate;
-    this.comments = comments;
+  static sendBorrowRequest(req, res) {
+    models.Book.findById(req.params.bookId)
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+        if (book.quantity === 0) return res.status(403).json({ msg: 'Book is not available' });
+
+        return models.BorrowRequests.findOrCreate({
+          where: {
+            bookId: req.params.bookId,
+            userId: req.params.userId,
+            reason: req.body.reason,
+            comments: req.body.comments,
+            returnDate: req.body.returnDate,
+          },
+        })
+          .spread((borrowRequest, created) => {
+            if (created === true) {
+              return res.status(201).json({ msg: 'Borrow request sent', borrowRequest });
+            }
+            return res.status(403).json({ msg: 'Your request has already been sent' });
+          })
+          .catch(error => res.status(400).send({
+            msg: 'Error sending borrow request', error,
+          }));
+      })
+      .catch(error => res.status(400).json({
+        msg: 'Error sending borrow request', error,
+      }));
   }
 
   /* Method lets a user send  a return request for a book
