@@ -1,7 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
 
-module.exports = (sequelize) => {
+const notificationSchema = (sequelize) => {
   const Notification = sequelize.define('Notification', {
     id: {
       type: Sequelize.UUID,
@@ -23,3 +23,5 @@ module.exports = (sequelize) => {
   };
   return Notification;
 };
+
+export default notificationSchema;

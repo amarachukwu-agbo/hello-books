@@ -1,7 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
 
-module.exports = (sequelize) => {
+const reviewSchema = (sequelize) => {
   const Review = sequelize.define('Review', {
     id: {
       type: Sequelize.UUID,
@@ -29,3 +29,5 @@ module.exports = (sequelize) => {
   };
   return Review;
 };
+
+export default reviewSchema;

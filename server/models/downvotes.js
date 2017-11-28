@@ -1,7 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
 
-module.exports = (sequelize) => {
+const downVoteSchema = (sequelize) => {
   const Downvotes = sequelize.define('Downvotes', {
     id: {
       type: Sequelize.UUID,
@@ -24,3 +24,5 @@ module.exports = (sequelize) => {
   };
   return Downvotes;
 };
+
+export default downVoteSchema;

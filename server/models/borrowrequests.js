@@ -1,7 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
 
-module.exports = (sequelize) => {
+const borrowRequestSchema = (sequelize) => {
   const BorrowRequests = sequelize.define('BorrowRequests', {
     id: {
       type: Sequelize.UUID,
@@ -36,3 +36,5 @@ module.exports = (sequelize) => {
   };
   return BorrowRequests;
 };
+
+export default borrowRequestSchema;

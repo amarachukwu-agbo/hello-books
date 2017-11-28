@@ -1,7 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
 
-module.exports = (sequelize) => {
+const favoriteSchema = (sequelize) => {
   const Favorites = sequelize.define('Favorites', {
     id: {
       type: Sequelize.UUID,
@@ -23,3 +23,5 @@ module.exports = (sequelize) => {
   };
   return Favorites;
 };
+
+export default favoriteSchema;
