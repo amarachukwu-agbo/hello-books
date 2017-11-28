@@ -1,4 +1,4 @@
-module.exports = {
+const migration = {
   up: (queryInterface, Sequelize) =>
     queryInterface.changeColumn('Books', 'id', {
       type: Sequelize.UUID,
@@ -14,3 +14,5 @@ module.exports = {
       autoIncrement: true,
     }),
 };
+
+export default migration;
