@@ -233,6 +233,29 @@ export default class Users {
       .catch(err => res.status(400).json(err));
   }
 
+  /* Method lets a user get all books in the database
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return book object is */
+  static getBook(req, res) {
+    return models.Book.find({
+      where: {
+        id: req.params.bookId,
+      },
+      // Join book reviews
+      include: [{
+        model: models.Review,
+        as: 'bookReviews',
+      }],
+    })
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+        return res.status(200).json({ msg: 'Successfully got book', book });
+      })
+      .catch(err => res.status(400).json(err));
+  }
+
+
   /* Method lets a user send  a borrow request for a book
   @param userId is used to find the index of the user in the users.json file
   @param bookId  is used to find the index of the user in the users.json file

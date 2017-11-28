@@ -62,6 +62,10 @@ const userControllers = {
     User.getAllBooks(req, res);
   },
 
+  getBook(req, res) {
+    User.getBook(req, res);
+  },
+
 };
 
 export default userControllers;
