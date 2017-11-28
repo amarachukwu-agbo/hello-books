@@ -8,4 +8,7 @@ const router = express.Router();
 // Endpoint to add a book
 router.post('/', verifyToken, books.createBook);
 
+// Endpoint to update a book
+router.put('/:bookId', verifyToken, books.updateBook);
+
 export default router;

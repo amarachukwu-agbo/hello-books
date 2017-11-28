@@ -33,22 +33,33 @@ export default class Admin extends Users {
   }
 
   /* Method modifies a book
-  @param bookId is the book's id
-  @param title is the book's <title></title>
-  @param author is the book's author
-  @param description is the book's description
-  @param imageURL is the book's image URL
-  @param subject is the book's subject
-  @param quantity is the book's quantity
+  * @param res is the response object
+  * @param req is the request object
+  * @return updatedBook object
   */
-  updateBook(id, title, author, description, imageURL, subject, quantity) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.description = description;
-    this.imageURL = imageURL;
-    this.subject = subject;
-    this.quantity = quantity;
+  static updateBook(req, res) {
+    return models.Book.findById(req.params.bookId)
+      .then((book) => {
+        // Check if book exists
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+        // Update book
+        return book.update({
+          id: req.params.bookId,
+          title: req.body.title || book.title,
+          author: req.body.author || book.author,
+          description: req.body.description || book.description,
+          subject: req.body.subject || book.subject,
+          imageURL: req.body.imageURL || book.imageURL,
+          quantity: req.body.quantity || book.quantity,
+        })
+          .then(updatedBook => res.status(201).json({
+            msg: 'Successfully updated book', updatedBook,
+          }))
+          .catch(error => res.status(500).json({
+            msg: 'Book not updated', error,
+          }));
+      })
+      .catch(error => res.status(500).json({ msg: 'Book not updated', error }));
   }
 
   /* Method accepts or declines a borrow request
