@@ -206,6 +206,33 @@ export default class Users {
       }));
   }
 
+  static sortBooksWithUpvotes(req, res) {
+    return models.Book.findAll({
+      order: ['upvotes', 'DESC'],
+    })
+      .then(book => res.status(201).json(book))
+      .catch(error => res.status(400).json(error));
+  }
+
+  /* Method lets a user get all books in the database
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return book object is */
+  static getAllBooks(req, res) {
+    return models.Book.findAll({
+      // Join book reviews
+      include: [{
+        model: models.Review,
+        as: 'bookReviews',
+      }],
+    })
+      .then((books) => {
+        if (!books) return res.status(404).json({ msg: 'No book found' });
+        return res.status(200).json({ msg: 'Successfully got all books', books });
+      })
+      .catch(err => res.status(400).json(err));
+  }
+
   /* Method lets a user send  a borrow request for a book
   @param userId is used to find the index of the user in the users.json file
   @param bookId  is used to find the index of the user in the users.json file

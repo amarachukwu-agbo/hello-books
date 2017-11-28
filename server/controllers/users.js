@@ -52,6 +52,16 @@ const userControllers = {
     User.getFavoriteBooks(req, res);
   },
 
+  sortBooksWithUpvotes(req, res) {
+    if (req.params.sort === 'upvotes' && req.params.order === 'desc') {
+      User.sortBooksWithUpvotes(req, res);
+    }
+  },
+
+  getAllBooks(req, res) {
+    User.getAllBooks(req, res);
+  },
+
 };
 
 export default userControllers;
