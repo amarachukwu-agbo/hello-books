@@ -119,31 +119,118 @@ export default class Users {
       .catch(error => res.status(500).json({ msg: error }));
   }
 
-  /* Method favorites up a book
-  @param bookId is used to find the index of the book in the
-  books.json file and increment favorites count if book is not
-  already a user's favorite.
-  @param userId is used to find the index of the user in users.json
-  file and the bookId is added to user's favorites. */
-  favoriteBook(userId, bookId) {
-    this.bookId = bookId;
-    this.userId = userId;
+  /* Method lets a user favorite a book
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return favoriteBook object */
+  static favoriteBook(req, res) {
+    models.Book.findById(req.params.bookId)
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+
+        return models.Favorites.findOrCreate({
+          where: {
+            bookId: req.params.bookId,
+            userId: req.params.userId,
+          },
+        })
+          .spread((favorite, created) => {
+            if (created === true) {
+              book.increment('favCount');
+              return res.status(201).json({ msg: `Favorited book ${req.params.bookId}` });
+            }
+            return res.status(401).json({ msg: 'Already favorited book' });
+          })
+          .catch(error => res.status(400).send({
+            msg: 'Error favoriting book', error,
+          }));
+      })
+      .catch(error => res.status(400).json({
+        msg: 'Error favoriting book', error,
+      }));
   }
 
   /* Method gets a user's favorite books
   @param userId is used to find the index of the user in the
   users.json file and get favorites book if any */
-  getFavoriteBooks(userId) {
-    this.userId = userId;
+  static getFavoriteBooks(req, res) {
+    return models.Favorites.findAll({
+      where: {
+        userId: req.params.userId,
+      },
+      include: [{
+        model: models.Book,
+        as: 'favBook',
+      }],
+    })
+      .then((books) => {
+        // Fix bug
+        if (!books) return res.status(404).json('No favorites');
+        return res.status(201).json(books);
+      })
+      .catch((error) => {
+        res.status(400).send({
+          msg: 'Error fetching favorites book',
+          error,
+        });
+      });
   }
   /* Method lets a user review a book
-  @param userId is used to find the index of the user in the users.json file
-  @param bookId  is used to find the index of the user in the users.json file
-  @param review is the review which is added to reviews of a book */
-  reviewBook(userId, bookId, review) {
-    this.userId = userId;
-    this.bookId = bookId;
-    this.review = review;
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return review object is */
+  static reviewBook(req, res) {
+    models.Book.findById(req.params.bookId)
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+
+        return models.Review.findOrCreate({
+          where: {
+            bookId: req.params.bookId,
+            userId: req.params.userId,
+            review: req.body.review,
+          },
+        })
+          .spread((review, created) => {
+            if (created === true) {
+              return res.status(201).json({ msg: `Successfully reviewed book ${req.params.bookId}`, review });
+            }
+            return res.status(403).json({ msg: 'Your review has already been created' });
+          })
+          .catch(error => res.status(400).send({
+            msg: 'Error reviewing book', error,
+          }));
+      })
+      .catch(error => res.status(400).json({
+        msg: 'Error reviewing book', error,
+      }));
+  }
+
+  static sortBooksWithUpvotes(req, res) {
+    return models.Book.findAll({
+      order: ['upvotes', 'DESC'],
+    })
+      .then(book => res.status(201).json(book))
+      .catch(error => res.status(400).json(error));
+  }
+
+  /* Method lets a user get all books in the database
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return book object is */
+  static getAllBooks(req, res) {
+    return models.Book.findAll({
+      // Join book reviews
+      include: [{
+        model: models.Review,
+        as: 'bookReviews',
+      }],
+    })
+      .then((books) => {
+        if (!books) return res.status(404).json({ msg: 'No book found' });
+        return res.status(200).json({ msg: 'Successfully got all books', books });
+      })
+      .catch(err => res.status(400).json(err));
   }
 
   /* Method lets a user send  a borrow request for a book

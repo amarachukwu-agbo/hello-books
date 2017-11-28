@@ -1,7 +1,9 @@
 // import necessary modules
 import express from 'express';
 import books from '../controllers/books';
+import users from '../controllers/users';
 import verifyToken from '../controllers/auth/verifyToken';
+
 
 const router = express.Router();
 
@@ -10,5 +12,10 @@ router.post('/', verifyToken, books.createBook);
 
 // Endpoint to update a book
 router.put('/:bookId', verifyToken, books.updateBook);
+
+// Endpoint to get book with most upvotes
+// router.get('/', users.sortBooksWithUpvotes);
+
+router.get('/', users.getAllBooks);
 
 export default router;

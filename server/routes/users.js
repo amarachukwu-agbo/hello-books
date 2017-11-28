@@ -11,5 +11,10 @@ router.post('/login', users.authenticateUser);
 router.post('/:userId/book/:bookId/upvote', verifyToken, users.upVote);
 // Endpoint for user to downvote a book
 router.post('/:userId/book/:bookId/downvote', verifyToken, users.downVote);
+// Endpoint to update a book
+router.post('/:userId/fav/:bookId', verifyToken, users.favoriteBook);
+// Endpoint for user to review a book
+router.post('/:userId/review/:bookId', verifyToken, users.reviewBook);
+router.get('/:userId/favbooks', verifyToken, users.getFavoriteBooks);
 
 export default router;

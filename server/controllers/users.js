@@ -25,17 +25,41 @@ const userControllers = {
   upVote(req, res) {
     // Validate user's token
     if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
-    // Validate bookId field
-    if (!req.params.bookId) return res.status(400).json({ msg: 'Book id required' });
     User.upvoteBook(req, res);
   },
 
   downVote(req, res) {
     // Validate user's token
     if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
-    // Validate bookId field
-    if (!req.params.bookId) return res.status(400).json({ msg: 'Book id required' });
     User.downvoteBook(req, res);
+  },
+
+  favoriteBook(req, res) {
+    // Validate user's token
+    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    User.favoriteBook(req, res);
+  },
+
+  reviewBook(req, res) {
+    // Validate user's token
+    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    User.reviewBook(req, res);
+  },
+
+  getFavoriteBooks(req, res) {
+    // Validate user's token
+    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    User.getFavoriteBooks(req, res);
+  },
+
+  sortBooksWithUpvotes(req, res) {
+    if (req.params.sort === 'upvotes' && req.params.order === 'desc') {
+      User.sortBooksWithUpvotes(req, res);
+    }
+  },
+
+  getAllBooks(req, res) {
+    User.getAllBooks(req, res);
   },
 
 };
