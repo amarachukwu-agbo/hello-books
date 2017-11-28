@@ -153,8 +153,27 @@ export default class Users {
   /* Method gets a user's favorite books
   @param userId is used to find the index of the user in the
   users.json file and get favorites book if any */
-  getFavoriteBooks(userId) {
-    this.userId = userId;
+  static getFavoriteBooks(req, res) {
+    return models.Favorites.findAll({
+      where: {
+        userId: req.params.userId,
+      },
+      include: [{
+        model: models.Book,
+        as: 'favBook',
+      }],
+    })
+      .then((books) => {
+        // Fix bug
+        if (!books) return res.status(404).json('No favorites');
+        return res.status(201).json(books);
+      })
+      .catch((error) => {
+        res.status(400).send({
+          msg: 'Error fetching favorites book',
+          error,
+        });
+      });
   }
   /* Method lets a user review a book
   * @param req is the request is the request object
