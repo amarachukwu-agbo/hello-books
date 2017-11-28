@@ -52,7 +52,9 @@ const userControllers = {
     User.getFavoriteBooks(req, res);
   },
 
+  // bug
   sortBooksWithUpvotes(req, res) {
+    // console.log(req.params);
     if (req.params.sort === 'upvotes' && req.params.order === 'desc') {
       User.sortBooksWithUpvotes(req, res);
     }
@@ -64,6 +66,12 @@ const userControllers = {
 
   getBook(req, res) {
     User.getBook(req, res);
+  },
+
+  sendBorrowRequest(req, res) {
+    // Validate user's token
+    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    User.sendBorrowRequest(req, res);
   },
 
 };

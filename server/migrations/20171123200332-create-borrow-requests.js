@@ -1,11 +1,11 @@
 const migration = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('BorrowRequests', {
-      requestId: {
+      id: {
         type: Sequelize.UUID,
         allowNull: false,
         primaryKey: true,
-        defaultValue: Sequelize.UUID4,
+        defaultValue: Sequelize.UUIDV4,
       },
       reason: {
         type: Sequelize.ENUM,

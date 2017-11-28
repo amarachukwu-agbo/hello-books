@@ -16,5 +16,6 @@ router.post('/:userId/fav/:bookId', verifyToken, users.favoriteBook);
 // Endpoint for user to review a book
 router.post('/:userId/review/:bookId', verifyToken, users.reviewBook);
 router.get('/:userId/favbooks', verifyToken, users.getFavoriteBooks);
+router.post('/:userId/borrow/:bookId', verifyToken, users.sendBorrowRequest);
 
 export default router;
