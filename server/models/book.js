@@ -1,7 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
 
-module.exports = (sequelize) => {
+const bookSchema = (sequelize) => {
   const Book = sequelize.define('Book', {
     id: {
       type: Sequelize.UUID,
@@ -87,3 +87,4 @@ module.exports = (sequelize) => {
   };
   return Book;
 };
+export default bookSchema;
