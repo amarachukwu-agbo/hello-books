@@ -14,8 +14,12 @@ router.post('/', verifyToken, books.createBook);
 router.put('/:bookId', verifyToken, books.updateBook);
 
 // Endpoint to get book with most upvotes
-// router.get('/', users.sortBooksWithUpvotes);
+router.get('/?sort=upvotes&order=desc', users.sortBooksWithUpvotes);
 
+// Endpoint to get all books
 router.get('/', users.getAllBooks);
+
+// Endpoint to get a book
+router.get('/:bookId', users.getBook);
 
 export default router;
