@@ -66,10 +66,39 @@ export default class Admin extends Users {
   @param bookId is the book's id
   @param action takes in 'Accept' or 'Decline'
   */
-  handleBorrowRequest(userId, bookId, action) {
-    this.userId = userId;
-    this.bookId = bookId;
-    this.action = action;
+  static handleBorrowRequest(req, res) {
+    const status = req.body.status;
+    return models.BorrowRequests.find({
+      where: {
+        userId: req.params.userId,
+        bookId: req.params.bookId,
+      },
+    })
+      .then((request) => {
+        if (!request) return res.status(404).json({ msg: 'Request not found' });
+        if (request.status !== 'Pending') return res.status(403).json({ msg: 'Already handled request' });
+
+        return request.update({
+          status: req.body.status,
+        })
+          .then((updatedRequest) => {
+            if (status === 'Accepted') {
+              models.BorrowedBooks.create({
+                userId: req.params.userId,
+                bookId: req.params.bookId,
+              });
+              models.Book.findById(req.params.bookId)
+                .then((book) => {
+                  book.increment('borrowCount');
+                  book.decrement('quantity');
+                })
+                .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
+              return res.status(201).json({ msg: 'Accepted request', updatedRequest });
+            }
+            return res.status(201).json({ msg: 'Declined request', updatedRequest });
+          })
+          .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
+      });
   }
 
   /* Method accepts or declines a return request
