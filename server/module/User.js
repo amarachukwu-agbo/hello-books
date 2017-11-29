@@ -57,7 +57,7 @@ export default class Users {
   */
   static upvoteBook(req, res) {
     // Check if book exists in database
-    models.Book.findById(req.params.bookId)
+    return models.Book.findById(req.params.bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
         // Check if user has upvoted book before
@@ -66,23 +66,35 @@ export default class Users {
             bookId: req.params.bookId,
             userId: req.params.userId,
           },
-        }).spread((upvote, created) => {
-          console.log(created);
-          // Increment book upvotes if user has not upvoted book
-          if (created === true) {
-            book.increment('upvotes')
-              .then(incrementedBook =>
-                incrementedBook.reload())
-              .then((reloadedBook) => {
-                console.log(reloadedBook.upvotes);
-                return res.status.json({ msg: `Upvotes increased to ${reloadedBook.upvotes}` });
-              });
-          // .catch(error => res.status(500).json({ msg: error }));
-          }
-          return res.status(403).json({ msg: 'Already upvoted book' });
-        });
+        })
+          .spread((upvote, created) => {
+            // Increment book upvotes if user has not upvoted book
+            if (created === true) {
+              return book.increment('upvotes')
+                // Increment upvotes and return current value
+                .then(incrementedBook => incrementedBook.reload())
+                .then(reloadedBook => res.status(201).json({
+                  msg: 'Successfully upvoted book',
+                  bookId: req.params.bookId,
+                  upvotes: reloadedBook.upvotes,
+                }))
+                .catch(error => res.status(500).json({
+                  msg: 'Error upvoting book',
+                  error,
+                }));
+            }
+            return res.status(403).json({ msg: 'Already upvoted book' });
+          })
+          .catch((error) => {
+            res.status(500).json({
+              msg: 'Error upvoting book',
+              error,
+            });
+          });
       })
-      .catch(error => res.status(500).json({ msg: error }));
+      .catch((error) => {
+        res.status(500).json({ msg: 'Error upvoting book', error });
+      });
   }
 
 
