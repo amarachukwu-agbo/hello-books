@@ -16,10 +16,15 @@ const borrowRequestSchema = (sequelize) => {
     },
     comments: {
       type: Sequelize.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     returnDate: {
       type: Sequelize.DATE,
+      allowNull: false,
+    },
+    status: {
+      type: Sequelize.STRING,
+      defaultValue: 'Pending',
       allowNull: false,
     },
   });

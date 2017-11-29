@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "HelloBooksDB-dev",
+    "database": "testingDB",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres",

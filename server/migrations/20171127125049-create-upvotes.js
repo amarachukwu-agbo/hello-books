@@ -1,10 +1,10 @@
-const migration = {
+module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('Upvotes', {
     id: {
       allowNull: false,
       primaryKey: true,
       type: Sequelize.UUID,
-      defaultValue: Sequelize.UUID4,
+      defaultValue: Sequelize.UUIDV4,
     },
     createdAt: {
       allowNull: false,
@@ -38,4 +38,3 @@ const migration = {
   down: queryInterface => queryInterface.dropTable('Upvotes'),
 };
 
-export default migration;

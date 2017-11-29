@@ -206,27 +206,25 @@ export default class Users {
       }));
   }
 
-  /* Method lets a user get and sort all books using upvotes
-  * @param req is the request is the request object
-  * @param res is the response object
-  * @return book object is */
-  static sortBooksWithUpvotes(req, res) {
-    // console.log(req.params);
-    return models.Book.findAll({
-      order: [
-        ['upvotes', 'DESC'],
-      ],
-    })
-      .then(book => res.status(201).json(book))
-      .catch(error => res.status(400).json(error));
-  }
-
   /* Method lets a user get all books in the database
   * @param req is the request is the request object
   * @param res is the response object
   * @return book object is */
   static getAllBooks(req, res) {
-    console.log(req.params);
+    if (req.query.sort === 'upvotes' && req.query.order === 'desc') {
+      return models.Book.findAll({
+        include: [{
+          model: models.Review,
+          as: 'bookReviews',
+        }],
+        order: [
+          ['upvotes', 'DESC'],
+          [{ model: models.Review, as: 'bookReviews' }, 'createdAt', 'ASC'],
+        ],
+      })
+        .then(book => res.status(201).json(book))
+        .catch(error => res.status(400).json(error));
+    }
     return models.Book.findAll({
       // Join book reviews
       include: [{
@@ -241,8 +239,8 @@ export default class Users {
       .catch(err => res.status(400).json(err));
   }
 
-  /* Method lets a user get all books in the database
-  * @param req is the request is the request object
+  /* Method lets a user get a book in the database
+  * @param req is the request object
   * @param res is the response object
   * @return book object is */
   static getBook(req, res) {
@@ -265,23 +263,25 @@ export default class Users {
 
 
   /* Method lets a user send  a borrow request for a book
-  @param userId is used to find the index of the user in the users.json file
-  @param bookId  is used to find the index of the user in the users.json file
-  @params reason, comments and returnDate are the user's reason, comments and
-   the return date */
+  @param req is the request object
+  @param res is the response object
+  @return json object */
   static sendBorrowRequest(req, res) {
     models.Book.findById(req.params.bookId)
       .then((book) => {
+        // Check if book is in database
         if (!book) return res.status(404).json({ msg: 'Book not found' });
+        // Check if book is available
         if (book.quantity === 0) return res.status(403).json({ msg: 'Book is not available' });
-
+        // Check if user has sent request before
         return models.BorrowRequests.findOrCreate({
           where: {
             bookId: req.params.bookId,
             userId: req.params.userId,
-            reason: req.body.reason,
             comments: req.body.comments,
             returnDate: req.body.returnDate,
+            reason: req.body.reason,
+            status: 'Pending',
           },
         })
           .spread((borrowRequest, created) => {
@@ -290,7 +290,7 @@ export default class Users {
             }
             return res.status(403).json({ msg: 'Your request has already been sent' });
           })
-          .catch(error => res.status(400).send({
+          .catch(error => res.status(400).json({
             msg: 'Error sending borrow request', error,
           }));
       })
@@ -300,12 +300,33 @@ export default class Users {
   }
 
   /* Method lets a user send  a return request for a book
-  @param userId is used to find the index of the user in the users.json file
-  @param bookId  is used to find the index of the user in the users.json file
-  @param comments is the user's comments */
-  sendReturnRequest(userId, bookId, comments) {
-    this.userId = userId;
-    this.bookId = bookId;
-    this.comments = comments;
+  @param req is request object
+  @param res is response object
+  @return request object */
+  static sendReturnRequest(req, res) {
+    return models.BorrowedBooks.find({
+      where: {
+        userId: req.params.userId,
+        bookId: req.params.bookId,
+      },
+    })
+      .then((borrowed) => {
+        if (!borrowed) return res.status(404).json({ msg: 'Book not borrowed' });
+        models.ReturnRequests.findOrCreate({
+          where: {
+            userId: req.params.userId,
+            bookId: req.params.bookId,
+            comments: req.body.comments,
+          },
+        })
+          .spread((request, created) => {
+            if (created === true) {
+              return res.status(201).json({ msg: 'Return request sent', request });
+            }
+            return res.status(403).json({ msg: 'Your request has already been sent' });
+          })
+          .catch(error => res.status(400).json({ msg: 'Error sending request', error }));
+      })
+      .catch(error => res.status(400).json({ msg: 'Error sending request', error }));
   }
 }

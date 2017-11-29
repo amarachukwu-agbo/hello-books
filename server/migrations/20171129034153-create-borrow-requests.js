@@ -1,24 +1,29 @@
-const migration = {
+module.exports = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('BorrowRequests', {
       id: {
-        type: Sequelize.UUID,
         allowNull: false,
         primaryKey: true,
+        type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
       },
       reason: {
         type: Sequelize.ENUM,
-        values: ['Research', 'Assignment', 'Leisure reading'],
+        values: ['Research', 'Leisure reading', 'Assignment'],
         allowNull: false,
       },
       comments: {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      status: {
+        type: Sequelize.STRING,
+        defaultValue: 'Pending',
         allowNull: false,
       },
       returnDate: {
-        type: Sequelize.DATE,
         allowNull: false,
+        type: Sequelize.DATE,
       },
       createdAt: {
         allowNull: false,
@@ -34,7 +39,7 @@ const migration = {
         allowNull: false,
         references: {
           model: 'Users',
-          key: 'userId',
+          key: 'id',
           as: 'userId',
         },
       },
@@ -43,13 +48,10 @@ const migration = {
         allowNull: false,
         references: {
           model: 'Books',
-          key: 'bookId',
+          key: 'id',
           as: 'bookId',
         },
       },
-
     }),
-  down: queryInterface => queryInterface.dropTable('BorrowRequests'),
+  down: (queryInterface => queryInterface.dropTable('BorrowRequests')),
 };
-
-export default migration;
