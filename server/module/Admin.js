@@ -67,7 +67,6 @@ export default class Admin extends Users {
   @param action takes in 'Accept' or 'Decline'
   */
   static handleBorrowRequest(req, res) {
-    const status = req.body.status;
     return models.BorrowRequests.find({
       where: {
         userId: req.params.userId,
@@ -82,7 +81,7 @@ export default class Admin extends Users {
           status: req.body.status,
         })
           .then((updatedRequest) => {
-            if (status === 'Accepted') {
+            if (req.body.status === 'Accepted') {
               models.BorrowedBooks.create({
                 userId: req.params.userId,
                 bookId: req.params.bookId,

@@ -82,7 +82,10 @@ const userControllers = {
     if (req.decoded.role !== 'Admin') return res.status(401).json({ msg: 'Unauthorized user' });
     // Validate status field
     if (!req.body.status) return res.status(400).json({ msg: 'Status is missing' });
-    Admin.handleBorrowRequest(req, res); 
+    if (req.body.status !== 'Accepted' || req.body.status !== 'Declined') {
+      return res.status(400).json({ msg: 'Invalid status' });
+    }
+    Admin.handleBorrowRequest(req, res);
   },
 };
 
