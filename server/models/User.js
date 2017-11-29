@@ -39,10 +39,6 @@ const userSchema = (sequelize) => {
   });
   // 1 to many notifucations
   User.associate = (models) => {
-    User.hasMany(models.Notification, {
-      foreignKey: 'userId',
-      as: 'userNotifications',
-    });
     User.hasMany(models.Favorites, {
       foreignKey: 'userId',
       as: 'userFavorites',

@@ -290,7 +290,7 @@ export default class Users {
             }
             return res.status(403).json({ msg: 'Your request has already been sent' });
           })
-          .catch(error => res.status(400).send({
+          .catch(error => res.status(400).json({
             msg: 'Error sending borrow request', error,
           }));
       })
@@ -300,12 +300,33 @@ export default class Users {
   }
 
   /* Method lets a user send  a return request for a book
-  @param userId is used to find the index of the user in the users.json file
-  @param bookId  is used to find the index of the user in the users.json file
-  @param comments is the user's comments */
-  sendReturnRequest(userId, bookId, comments) {
-    this.userId = userId;
-    this.bookId = bookId;
-    this.comments = comments;
+  @param req is request object
+  @param res is response object
+  @return request object */
+  static sendReturnRequest(req, res) {
+    return models.BorrowedBooks.find({
+      where: {
+        userId: req.params.userId,
+        bookId: req.params.bookId,
+      },
+    })
+      .then((borrowed) => {
+        if (!borrowed) return res.status(404).json({ msg: 'Book not borrowed' });
+        models.ReturnRequests.findOrCreate({
+          where: {
+            userId: req.params.userId,
+            bookId: req.params.bookId,
+            comments: req.body.comments,
+          },
+        })
+          .spread((request, created) => {
+            if (created === true) {
+              return res.status(201).json({ msg: 'Return request sent', request });
+            }
+            return res.status(403).json({ msg: 'Your request has already been sent' });
+          })
+          .catch(error => res.status(400).json({ msg: 'Error sending request', error }));
+      })
+      .catch(error => res.status(400).json({ msg: 'Error sending request', error }));
   }
 }

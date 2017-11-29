@@ -16,7 +16,7 @@ const borrowRequestSchema = (sequelize) => {
     },
     comments: {
       type: Sequelize.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     returnDate: {
       type: Sequelize.DATE,

@@ -1,11 +1,11 @@
-const migration = {
+module.exports = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('Books', {
-      bookId: {
+      id: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID,
-        defaultValue: Sequelize.UUID4,
+        defaultValue: Sequelize.UUIDV4,
       },
       title: {
         type: Sequelize.STRING,
@@ -61,5 +61,3 @@ const migration = {
     }),
   down: queryInterface => queryInterface.dropTable('Books'),
 };
-
-export default migration;

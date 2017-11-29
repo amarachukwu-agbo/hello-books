@@ -1,3 +1,5 @@
+import { v4 as uuid4 } from 'uuid';
+
 const Sequelize = require('sequelize');
 
 module.exports = (sequelize) => {
@@ -6,7 +8,7 @@ module.exports = (sequelize) => {
       type: Sequelize.UUID,
       allowNull: false,
       primaryKey: true,
-      defaultValue: Sequelize.UUID4,
+      defaultValue: uuid4(),
     },
     title: {
       type: Sequelize.STRING,

@@ -14,7 +14,7 @@ module.exports = {
       },
       comments: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       status: {
         type: Sequelize.STRING,
@@ -55,5 +55,3 @@ module.exports = {
     }),
   down: (queryInterface => queryInterface.dropTable('BorrowRequests')),
 };
-
-

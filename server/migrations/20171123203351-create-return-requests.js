@@ -1,15 +1,15 @@
-const migration = {
+module.exports = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('ReturnRequests', {
-      requestId: {
+      id: {
         type: Sequelize.UUID,
         primaryKey: true,
         allowNull: false,
-        defaultValue: Sequelize.UUID4,
+        defaultValue: Sequelize.UUIDV4,
       },
       comments: {
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,
@@ -25,7 +25,7 @@ const migration = {
         allowNull: false,
         references: {
           model: 'Users',
-          key: 'userId',
+          key: 'id',
           as: 'userId',
         },
       },
@@ -34,12 +34,16 @@ const migration = {
         allowNull: false,
         references: {
           model: 'Books',
-          key: 'bookId',
+          key: 'id',
           as: 'bookId',
         },
+      },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: 'Pending',
       },
     }),
   down: queryInterface => queryInterface.dropTable('ReturnRequests'),
 };
 
-export default migration;

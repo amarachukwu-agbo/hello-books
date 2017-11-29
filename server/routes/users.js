@@ -22,5 +22,6 @@ router.get('/:userId/favbooks', verifyToken, users.getFavoriteBooks);
 router.post('/:userId/borrow/:bookId', verifyToken, users.sendBorrowRequest);
 // Endpoint for Admin to handle borrow requests
 router.put('/:userId/borrow/:bookId', verifyToken, users.handleBorrowRequest);
+router.post('/:userId/return/:bookId', verifyToken, users.sendReturnRequest);
 
 export default router;

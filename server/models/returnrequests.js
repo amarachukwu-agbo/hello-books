@@ -11,7 +11,12 @@ const returnRequestSchema = (sequelize) => {
     },
     comments: {
       type: Sequelize.TEXT,
+      allowNull: true,
+    },
+    status: {
+      type: Sequelize.UUID,
       allowNull: false,
+      defaultValue: true,
     },
   });
   ReturnRequests.associate = (models) => {
