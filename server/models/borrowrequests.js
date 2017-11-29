@@ -22,6 +22,11 @@ const borrowRequestSchema = (sequelize) => {
       type: Sequelize.DATE,
       allowNull: false,
     },
+    status: {
+      type: Sequelize.STRING,
+      defaultValue: 'Pending',
+      allowNull: false,
+    },
   });
   BorrowRequests.associate = (models) => {
     BorrowRequests.belongsTo(models.User, {
