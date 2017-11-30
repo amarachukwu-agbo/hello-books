@@ -15,5 +15,7 @@
     "password": "triumph22",
     "username": "postgres"
   },
-  "production": "use_env_variable"
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+  }
 }
