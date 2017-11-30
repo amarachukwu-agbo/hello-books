@@ -1,14 +1,23 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=0294cf1ff75240d3563e7388a3258a210210240cc214354b4e5ccfd4c5f7650a
-
+sudo: required
+dist: trusty
 language: node_js
 
 node_js:
   - node
   - "6"
 
+services:
+  - postgresql
+
+addons:
+  postgresql: "9.6"
+
 before_script:
+  - npm install 
+  - psql -c 'create database hellobooks_test;' -U postgres
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
