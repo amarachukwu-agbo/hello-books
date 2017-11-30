@@ -134,13 +134,13 @@ export default class Admin extends Users {
               // Change borrowed book status to returned
               borrowed.update({ status: 'Returned' })
                 .then(updated => updated.reload())
-                .then(reloaded => res.status(201).json({ msg: 'accepted', reloaded }))
+                .then(borrowRequest => res.status(201).json({ msg: 'Request Accepted', borrowRequest }))
                 .catch(err => res.status(500).json({ msg: 'err', err }));
             })
             .catch(error => res.status(500).json({ msg: 'Error', error }));
         }
         return res.status(201).json({
-          msg: 'Request declined',
+          msg: 'Request Declined',
           requestId: request.id,
           book: req.params.bookId,
           user: req.params.userId,
