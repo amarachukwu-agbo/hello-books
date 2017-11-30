@@ -74,29 +74,33 @@ export default class Admin extends Users {
       },
     })
       .then((request) => {
-        if (!request) return res.status(404).json({ msg: 'Request not found' });
-        if (request.status !== 'Pending') return res.status(403).json({ msg: 'Already handled request' });
-
-        return request.update({
-          status: req.body.status,
-        })
-          .then((updatedRequest) => {
-            if (req.body.status === 'Accepted') {
-              models.BorrowedBooks.create({
-                userId: req.params.userId,
-                bookId: req.params.bookId,
-              });
-              models.Book.findById(req.params.bookId)
-                .then((book) => {
-                  book.increment('borrowCount');
-                  book.decrement('quantity');
-                })
-                .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
-              return res.status(201).json({ msg: 'Accepted request', updatedRequest });
-            }
-            return res.status(201).json({ msg: 'Declined request', updatedRequest });
+        if (!request) return res.status(404).json({ msg: 'Borrow request not found' });
+        if (request.status === 'Pending') {
+          return request.update({
+            status: req.body.status,
           })
-          .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
+            .then((updatedRequest) => {
+              // Add books to BorrowedBooksTable
+              if (req.body.status === 'Accepted') {
+                // Add books to BorrowedBooksTable
+                models.BorrowedBooks.create({
+                  userId: req.params.userId,
+                  bookId: req.params.bookId,
+                });
+                // Increment borrow count and decrement quantity
+                models.Book.findById(req.params.bookId)
+                  .then((book) => {
+                    book.increment('borrowCount');
+                    book.decrement('quantity');
+                  })
+                  .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
+                return res.status(201).json({ msg: 'Accepted request', updatedRequest });
+              }
+              return res.status(201).json({ msg: 'Declined request', updatedRequest });
+            })
+            .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
+        }
+        return res.status(403).json({ msg: 'Request has already been handled' });
       });
   }
 
