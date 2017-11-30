@@ -14,5 +14,6 @@
     "dialect": "postgres",
     "password": "triumph22",
     "username": "postgres"
-  }
+  },
+  "production": "use_env_variable"
 }

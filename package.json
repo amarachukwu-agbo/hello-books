@@ -9,6 +9,7 @@
   "scripts": {
     "scss": "./node_modules/.bin/node-sass --watch ./templates/scss/style.scss -o ./templates/css",
     "build": "babel ./server -d ./dist",
+    "heroku-postbuild": "npm install --production",
     "serve": "node ./dist/index.js",
     "start": "./node_modules/.bin/babel-node ./server/index.js",
     "test": "./node_modules/.bin/babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/test/*.js --timeout 10000 --compilers:js babel-core/register",
