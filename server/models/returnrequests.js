@@ -14,9 +14,9 @@ const returnRequestSchema = (sequelize) => {
       allowNull: true,
     },
     status: {
-      type: Sequelize.UUID,
+      type: Sequelize.STRING,
       allowNull: false,
-      defaultValue: true,
+      defaultValue: 'Pending',
     },
   });
   ReturnRequests.associate = (models) => {

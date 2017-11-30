@@ -27,35 +27,58 @@ const userControllers = {
   // Method lets user upvote book
   upVote(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    if (req.decoded.id !== req.params.userId) {
+      return res.status(401).json({
+        msg: 'You are not authorised to upvote a book',
+      });
+    }
     User.upvoteBook(req, res);
   },
 
   // Method lets user downvote book
   downVote(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    if (req.decoded.id !== req.params.userId) {
+      return res.status(401).json({
+        msg: 'You are not authorized to downvote a book',
+      });
+    }
     User.downvoteBook(req, res);
   },
 
   // Method lets user favorite book
   favoriteBook(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    if (req.decoded.id !== req.params.userId) {
+      return res.status(401).json({
+        msg: 'You are not authorised to handle request',
+      });
+    }
     User.favoriteBook(req, res);
   },
 
   // Method allows user post a review
   reviewBook(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
-    User.reviewBook(req, res);
+    if (req.decoded.id !== req.params.userId) {
+      return res.status(401).json({
+        msg: 'You are not authorised to review a book',
+      });
+    }
+    if (req.body.review) {
+      User.reviewBook(req, res);
+    }
+    return res.status(400).json({ msg: 'Review missing' });
   },
 
   // Method gets user's favorite books
   getFavoriteBooks(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
+    if (req.decoded.id !== req.params.userId) {
+      return res.status(401).json({
+        msg: 'You are not authorised to favorite a book',
+      });
+    }
     User.getFavoriteBooks(req, res);
   },
 
@@ -72,14 +95,25 @@ const userControllers = {
   // Method allows authenticated user borrow a book
   sendBorrowRequest(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) return res.status(401).json({ msg: 'Unauthorized User' });
-    User.sendBorrowRequest(req, res);
+    if (req.decoded.id !== req.params.userId) {
+      return res.status(401).json({
+        msg: 'You are not authorised to borrow book',
+      });
+    }
+    if (req.body.reason && req.body.returnDate) {
+      User.sendBorrowRequest(req, res);
+    }
+    return res.status(400).json({ msg: 'Some fields missing' });
   },
 
   // Method allows authenticated admin accept or reject borrow request
   handleBorrowRequest(req, res) {
     // Validate user as Admin
-    if (req.decoded.role !== 'Admin') return res.status(401).json({ msg: 'Unauthorized user' });
+    if (req.decoded.role !== 'Admin') {
+      return res.status(401).json({
+        msg: 'You are not authorised to handle request',
+      });
+    }
     // Validate status field
     if (!req.body.status) return res.status(400).json({ msg: 'Status is missing' });
     if (req.body.status === 'Accepted' || req.body.status === 'Declined') {

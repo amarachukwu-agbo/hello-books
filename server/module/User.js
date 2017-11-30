@@ -297,29 +297,29 @@ export default class Users {
         // Check if book is available
         if (book.quantity === 0) return res.status(403).json({ msg: 'Book is not available' });
         // Check if user has sent request before
-        return models.BorrowRequests.findOrCreate({
+        return models.BorrowRequests.find({
           where: {
             bookId: req.params.bookId,
             userId: req.params.userId,
-            comments: req.body.comments,
-            returnDate: req.body.returnDate,
-            reason: req.body.reason,
             status: 'Pending',
           },
         })
-          .spread((borrowRequest, created) => {
-            if (created === true) {
-              return res.status(201).json({ msg: 'Borrow request sent', borrowRequest });
+          .then((borrowRequest) => {
+            if (!borrowRequest) {
+              return models.BorrowRequests.create({
+                bookId: req.params.bookId,
+                userId: req.params.userId,
+                reason: req.body.reason,
+                returnDate: req.body.returnDate,
+                comments: req.body.comments,
+              })
+                .then(request => res.status(201).json({ msg: 'Borrow request sent', request }))
+                .catch(error => res.status(400).json({ msg: 'Failed', error }));
             }
-            return res.status(403).json({ msg: 'Your request has already been sent' });
+            return res.status(403).json({ msg: 'Already sent request' });
           })
-          .catch(error => res.status(400).json({
-            msg: 'Error sending borrow request', error,
-          }));
-      })
-      .catch(error => res.status(400).json({
-        msg: 'Error sending borrow request', error,
-      }));
+          .catch(error => res.status(500).json(error));
+      }).catch(error => res.status(500).json(error));
   }
 
   /* Method lets a user send  a return request for a book
@@ -335,16 +335,22 @@ export default class Users {
     })
       .then((borrowed) => {
         if (!borrowed) return res.status(404).json({ msg: 'Book not borrowed' });
-        models.ReturnRequests.findOrCreate({
+        models.ReturnRequests.find({
           where: {
             userId: req.params.userId,
             bookId: req.params.bookId,
-            comments: req.body.comments,
+            status: 'Pending',
           },
         })
-          .spread((request, created) => {
-            if (created === true) {
-              return res.status(201).json({ msg: 'Return request sent', request });
+          .then((request) => {
+            if (!request) {
+              return models.ReturnRequests.create({
+                bookId: req.params.bookId,
+                userId: req.paraams.userId,
+                comments: req.params.comments,
+              })
+                .then(returnRequest => res.status(201).json({ msg: 'Success', returnRequest }))
+                .catch(error => res.status(400).send(error));
             }
             return res.status(403).json({ msg: 'Your request has already been sent' });
           })
