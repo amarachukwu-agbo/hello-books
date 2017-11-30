@@ -23,5 +23,6 @@ router.post('/:userId/borrow/:bookId', verifyToken, users.sendBorrowRequest);
 // Endpoint for Admin to handle borrow requests
 router.put('/:userId/borrow/:bookId', verifyToken, users.handleBorrowRequest);
 router.post('/:userId/return/:bookId', verifyToken, users.sendReturnRequest);
+router.put('/:userId/return/:bookId', verifyToken, users.handleReturnRequest);
 
 export default router;

@@ -15,6 +15,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+      status: {
+        type: Sequelize.ENUM,
+        allowNull: false,
+        values: ['Returned', 'Not returned'],
+        default: 'Not returned',
+      },
       userId: {
         type: Sequelize.UUID,
         onDelete: 'CASCADE',

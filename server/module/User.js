@@ -72,11 +72,11 @@ export default class Users {
             if (created === true) {
               return book.increment('upvotes')
                 // Increment upvotes and return current value
-                .then(incrementedBook => incrementedBook.reload())
-                .then(reloadedBook => res.status(201).json({
+                .then(upVote => upVote.reload())
+                .then(upvotedBook => res.status(201).json({
                   msg: 'Successfully upvoted book',
                   bookId: req.params.bookId,
-                  upvotes: reloadedBook.upvotes,
+                  upvotes: upvotedBook.upvotes,
                 }))
                 .catch(error => res.status(500).json({
                   msg: 'Error upvoting book',
@@ -118,11 +118,11 @@ export default class Users {
           if (created === true) {
             return book.increment('downvotes')
             // Increment upvotes and return current value
-              .then(incrementedBook => incrementedBook.reload())
-              .then(reloadedBook => res.status(201).json({
+              .then(downVote => downVote.reload())
+              .then(downvotedBook => res.status(201).json({
                 msg: 'Successfully downvoted book',
                 bookId: req.params.bookId,
-                downvotes: reloadedBook.downvotes,
+                downvotes: downvotedBook.downvotes,
               }))
               .catch(error => res.status(500).json({
                 msg: 'Error downvoting book',
@@ -188,9 +188,8 @@ export default class Users {
       }],
     })
       .then((books) => {
-        // Fix bug
-        if (!books) return res.status(404).json('No favorites');
-        return res.status(201).json(books);
+        if (books.length > 0) return res.status(201).json(books);
+        return res.status(404).json('No favorites');
       })
       .catch((error) => {
         res.status(400).send({

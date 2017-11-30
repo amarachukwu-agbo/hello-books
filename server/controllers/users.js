@@ -127,6 +127,20 @@ const userControllers = {
     User.sendReturnRequest(req, res);
   },
 
+  handleReturnRequest(req, res) {
+    // Validate user as Admin
+    if (req.decoded.role !== 'Admin') {
+      return res.status(401).json({
+        msg: 'You are not authorised to handle return request',
+      });
+    }
+    // Validate status field
+    if (!req.body.status) return res.status(400).json({ msg: 'Status is missing' });
+    if (req.body.status === 'Accepted' || req.body.status === 'Declined') {
+      Admin.handleReturnRequest(req, res);
+    }
+    return res.status(400).json({ msg: 'Invalid status' });
+  },
 };
 
 
