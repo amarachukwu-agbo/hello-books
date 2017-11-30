@@ -98,13 +98,13 @@ export default class Users {
   }
 
 
-  /* Method votes up a book
+  /* Method votes down a book
   * @param req is the request object
   * @param res is the response object
   */
   static downvoteBook(req, res) {
     // Check if book exists in database
-    models.Book.findById(req.params.bookId)
+    return models.Book.findById(req.params.bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
         // Check if user has downvoted book before
@@ -114,21 +114,33 @@ export default class Users {
             userId: req.params.userId,
           },
         }).spread((downvote, created) => {
-          // Increment book downvotes if user has not upvoted book
+          // Increment book upvotes if user has not upvoted book
           if (created === true) {
-            book.increment('downvotes')
+            return book.increment('downvotes')
+            // Increment upvotes and return current value
               .then(incrementedBook => incrementedBook.reload())
-              .then((reloadedBook) => {
-                console.log(reloadedBook.upvotes);
-                return res.status(201).json({ msg: `Downvotes increased to ${reloadedBook.downvotes}` });
-              });
-            // book.reload();
-            // console.log(book.downvotes);
+              .then(reloadedBook => res.status(201).json({
+                msg: 'Successfully downvoted book',
+                bookId: req.params.bookId,
+                downvotes: reloadedBook.downvotes,
+              }))
+              .catch(error => res.status(500).json({
+                msg: 'Error downvoting book',
+                error,
+              }));
           }
           return res.status(403).json({ msg: 'Already downvoted book' });
-        });
+        })
+          .catch((error) => {
+            res.status(500).json({
+              msg: 'Error downvoting book',
+              error,
+            });
+          });
       })
-      .catch(error => res.status(500).json({ msg: error }));
+      .catch((error) => {
+        res.status(500).json({ msg: 'Error downvoting book', error });
+      });
   }
 
   /* Method lets a user favorite a book
