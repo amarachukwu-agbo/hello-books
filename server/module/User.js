@@ -188,9 +188,8 @@ export default class Users {
       }],
     })
       .then((books) => {
-        // Fix bug
-        if (!books) return res.status(404).json('No favorites');
-        return res.status(201).json(books);
+        if (books.length > 0) return res.status(201).json(books);
+        return res.status(404).json('No favorites');
       })
       .catch((error) => {
         res.status(400).send({

@@ -104,9 +104,47 @@ export default class Admin extends Users {
   @param bookId is the book's id
   @param action takes in 'Accept' or 'Decline'
   */
-  handleReturnRequest(userId, bookId, action) {
-    this.userId = userId;
-    this.bookId = bookId;
-    this.action = action;
+  static handleReturnRequest(req, res) {
+    return models.ReturnRequests.find({
+      where: {
+        userId: req.params.userId,
+        bookId: req.params.bookId,
+      },
+    })
+      .then((request) => {
+        // Check if request exists
+        if (!request) return res.status(404).json({ msg: 'Request not found' });
+        // Check if request has already been handled
+        if (request.status !== 'Pending') return res.status(403).json({ msg: 'Already handled request' });
+        // Update request status
+        request.update({ status: req.body.status });
+        // Accepted request
+        if (req.body.status === 'Accepted') {
+          // Increment book quantity
+          models.Book.findById(req.params.bookId)
+            .then(book => book.increment('quantity'));
+          return models.BorrowedBooks.find({
+            where: {
+              bookId: req.params.bookId,
+              userId: req.params.userId,
+              status: 'Not returned',
+            },
+          })
+            .then((borrowed) => {
+              // Change borrowed book status to returned
+              borrowed.update({ status: 'Returned' })
+                .then(updated => updated.reload())
+                .then(reloaded => res.status(201).json({ msg: 'accepted', reloaded }))
+                .catch(err => res.status(500).json({ msg: 'err', err }));
+            })
+            .catch(error => res.status(500).json({ msg: 'Error', error }));
+        }
+        return res.status(201).json({
+          msg: 'Request declined',
+          requestId: request.id,
+          book: req.params.bookId,
+          user: req.params.userId,
+        });
+      }).catch(err => res.status(500).json(err));
   }
 }

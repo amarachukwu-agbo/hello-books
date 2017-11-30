@@ -93,6 +93,10 @@ const userControllers = {
     User.sendReturnRequest(req, res);
   },
 
+  handleReturnRequest(req, res) {
+    Admin.handleReturnRequest(req, res);
+  },
+
 };
 
 

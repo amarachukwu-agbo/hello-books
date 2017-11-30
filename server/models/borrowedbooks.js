@@ -9,6 +9,12 @@ const borrowedBookSchema = (sequelize) => {
       primaryKey: true,
       defaultValue: uuidv4(),
     },
+    status: {
+      type: Sequelize.ENUM,
+      allowNull: false,
+      values: ['Returned', 'Not returned'],
+      default: 'Not returned',
+    },
   });
   BorrowedBooks.associate = (models) => {
     BorrowedBooks.belongsTo(models.User, {
