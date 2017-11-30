@@ -21,9 +21,9 @@ describe('API Endpoints Test', () => {
         .end((err, res) => {
           expect(res.statusCode).to.equal(201);
           expect(res.body).to.be.a('json');
-          //expect(res.body.length).to.equal(2);
-          //expect(res.body[0]).to.equal('Signup successful');
-          //expect(res.body[1]).to.be('string');
+          // expect(res.body.length).to.equal(2);
+          // expect(res.body[0]).to.equal('Signup successful');
+          // expect(res.body[1]).to.be('string');
           done();
         });
     });
