@@ -10,7 +10,7 @@ const userSchema = {
 const validateUser = (req, res, next) => {
   const result = Joi.validate(req.body, userSchema, { allowUnknown: false, abortEarly: false });
   if (result.error) {
-    res.status(400).json({ msg: 'Signup unsuccessful', error: result.error.toString() });
+    return res.status(400).json({ msg: 'Signup unsuccessful', error: result.error.toString() });
   }
   next();
 };
