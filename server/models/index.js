@@ -1,12 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import { Sequelize } from 'sequelize';
-import * as databaseConfig from '../config/config';
+import * as databaseConfig from '../config/config.json';
 
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
 console.log(env);
-const config = databaseConfig.production;
+const config = databaseConfig[env];
 console.log(databaseConfig);
 console.log(config);
 
