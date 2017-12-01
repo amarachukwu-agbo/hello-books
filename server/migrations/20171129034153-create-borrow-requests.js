@@ -3,9 +3,9 @@ module.exports = {
     queryInterface.createTable('BorrowRequests', {
       id: {
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        type: Sequelize.INTEGER,
       },
       reason: {
         type: Sequelize.ENUM,
@@ -34,7 +34,7 @@ module.exports = {
         type: Sequelize.DATE,
       },
       userId: {
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         allowNull: false,
         references: {
@@ -44,7 +44,7 @@ module.exports = {
         },
       },
       bookId: {
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Books',

@@ -2,10 +2,12 @@
 import express from 'express';
 import users from '../controllers/users';
 import verifyToken from '../controllers/auth/verifyToken';
+import verifyFields from '../controllers/validation/verifyFields';
+import emailCheck from '../controllers/validation/email';
 
 const router = express.Router();
 // Endpoint for user to signup
-router.post('/signup', users.createUser);
+router.post('/signup', verifyFields, emailCheck, users.createUser);
 // Endpoint for user to signin
 router.post('/login', users.authenticateUser);
 // Endpoint for user to upvote a book

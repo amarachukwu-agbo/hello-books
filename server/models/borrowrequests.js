@@ -1,13 +1,12 @@
 import * as Sequelize from 'sequelize';
-import { v4 as uuidv4 } from 'uuid';
 
 const borrowRequestSchema = (sequelize) => {
   const BorrowRequests = sequelize.define('BorrowRequests', {
     id: {
-      type: Sequelize.UUID,
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
-      defaultValue: uuidv4(),
+      type: Sequelize.INTEGER,
     },
     reason: {
       type: Sequelize.ENUM,

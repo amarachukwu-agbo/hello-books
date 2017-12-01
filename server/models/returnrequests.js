@@ -1,13 +1,12 @@
 import * as Sequelize from 'sequelize';
-import { v4 as uuidv4 } from 'uuid';
 
 const returnRequestSchema = (sequelize) => {
   const ReturnRequests = sequelize.define('ReturnRequests', {
     id: {
-      type: Sequelize.UUID,
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
-      defaultValue: uuidv4(),
+      type: Sequelize.INTEGER,
     },
     comments: {
       type: Sequelize.TEXT,

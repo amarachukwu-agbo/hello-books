@@ -1,13 +1,12 @@
 import * as Sequelize from 'sequelize';
-import { v4 as uuidv4 } from 'uuid';
 
 const reviewSchema = (sequelize) => {
   const Review = sequelize.define('Review', {
     id: {
-      type: Sequelize.UUID,
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
-      defaultValue: uuidv4(),
+      type: Sequelize.INTEGER,
     },
     review: {
       type: Sequelize.STRING,
