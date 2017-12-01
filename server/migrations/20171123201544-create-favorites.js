@@ -2,10 +2,10 @@ module.exports = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('Favorites', {
       id: {
-        type: Sequelize.UUID,
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
-        defaultValue: Sequelize.UUIDV4,
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.DATE,
       },
       userId: {
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         allowNull: false,
         references: {
@@ -26,7 +26,7 @@ module.exports = {
         },
       },
       bookId: {
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Books',

@@ -2,9 +2,9 @@ module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('Downvotes', {
     id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV4,
+      type: Sequelize.INTEGER,
     },
     createdAt: {
       allowNull: false,
@@ -15,7 +15,7 @@ module.exports = {
       type: Sequelize.DATE,
     },
     userId: {
-      type: Sequelize.UUID,
+      type: Sequelize.INTEGER,
       onDelete: 'CASCADE',
       allowNull: false,
       references: {
@@ -25,7 +25,7 @@ module.exports = {
       },
     },
     bookId: {
-      type: Sequelize.UUID,
+      type: Sequelize.INTEGER,
       allowNull: false,
       onDelete: 'CASCADE',
       references: {
