@@ -57,7 +57,7 @@ export default class Users {
         if (!user) return res.status(404).json({ msg: 'User not found' });
         // Checks if user-provided password is valid
         const passwordMatch = bcryptjs.compareSync(req.body.password, user.password);
-        if (!passwordMatch) return res.status(401).send({ msg: 'Authentication failed' });
+        if (!passwordMatch) return res.status(401).json({ msg: 'Authentication failed' });
         // Provides authenticated user with token
         const token = createToken(user);
         res.status(201).json({ msg: 'Login successful', token });

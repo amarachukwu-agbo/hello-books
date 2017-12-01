@@ -15,21 +15,35 @@ export default class Admin extends Users {
   * @return msg string
   */
   static addBook(req, res) {
-    return models.Book
-      .create({
+    models.Book.find({
+      where: {
         title: req.body.title,
-        author: req.body.author,
-        description: req.body.description,
-        subject: req.body.subject,
-        imageURL: req.body.imageURL,
-        quantity: req.body.quantity,
-      })
+      },
+    })
       .then((book) => {
-        res.status(201).json({ msg: 'Successfully added book', book });
+        if (book) {
+          return res.status(400).json({
+            msg: 'Book could not be added',
+            error: 'Book title already exists',
+          });
+        }
+        return models.Book
+          .create({
+            title: req.body.title,
+            author: req.body.author,
+            description: req.body.description,
+            subject: req.body.subject,
+            imageURL: req.body.imageURL,
+            quantity: req.body.quantity,
+          })
+          .then((bookEntry) => {
+            res.status(201).json({ msg: 'Successfully added book', bookEntry });
+          })
+          .catch((error) => {
+            res.status(400).json({ msg: 'Book could not be added', error });
+          });
       })
-      .catch((error) => {
-        res.status(500).json({ msg: error });
-      });
+      .catch(error => res.status(400).json({ msg: 'Book could not be added', error }));
   }
 
   /* Method modifies a book
