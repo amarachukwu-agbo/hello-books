@@ -6,6 +6,7 @@ import testData from './testdata';
 const request = supertest;
 
 describe('API Endpoints Test', () => {
+<<<<<<< HEAD
   const {
     user,
     incompleteUser,
@@ -13,6 +14,11 @@ describe('API Endpoints Test', () => {
     unregisteredUser,
   } = testData;
   let userToken;
+=======
+  const user = testData.user;
+  const incompleteUser = testData.incompleteUser;
+  const invalidUser = testData.invalidUser;
+>>>>>>> c06628f28b5b457cfafa7f89cb5c249599365928
 
   describe('Register a user', () => {
     it('should return success message and a token', (done) => {
@@ -63,6 +69,7 @@ describe('API Endpoints Test', () => {
           expect(res.body).to.have.property('error');
           expect(res.body.msg).to.deep.equal('Signup unsuccessful');
           expect(res.body.error).to.deep.equal('Email already exists. Input a different email');
+<<<<<<< HEAD
           done();
         });
     });
@@ -130,8 +137,12 @@ describe('API Endpoints Test', () => {
           expect(res.body).to.have.property('msg');
           expect(res.body.msg).to.deep.equal('Authentication failed');
           expect(res.body).to.not.have.property('token');
+=======
+>>>>>>> c06628f28b5b457cfafa7f89cb5c249599365928
           done();
         });
     });
   });
+
+  
 });
