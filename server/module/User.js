@@ -24,7 +24,7 @@ export default class Users {
       }).then((user) => {
         // Provides user with token
         const token = createToken(user);
-        res.status(201).json({ msg: 'Signup successful', token: token });
+        res.status(201).json({ msg: 'Signup successful', token });
       })
       .catch(error => res.status(500).json(error));
   }
