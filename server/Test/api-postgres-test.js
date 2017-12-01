@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import supertest from 'supertest';
 import app from '../index';
-import testData from './testData';
+import testData from './testdata';
 
 const request = supertest;
 
