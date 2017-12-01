@@ -1,14 +1,12 @@
-import { v4 as uuid4 } from 'uuid';
-
 const Sequelize = require('sequelize');
 
 module.exports = (sequelize) => {
   const Book = sequelize.define('Book', {
     id: {
-      type: Sequelize.UUID,
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
-      defaultValue: uuid4(),
+      type: Sequelize.INTEGER,
     },
     title: {
       type: Sequelize.STRING,
