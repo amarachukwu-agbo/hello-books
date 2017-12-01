@@ -5,11 +5,7 @@ import * as databaseConfig from '../config/config.json';
 
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-console.log(env);
 const config = databaseConfig[env];
-console.log(databaseConfig);
-console.log(config);
-
 const db = {};
 let sequelize;
 

@@ -12,8 +12,8 @@
     "heroku-postbuild": "npm install --production",
     "serve": "node ./dist/index.js",
     "start": "./node_modules/.bin/babel-node ./server/index.js",
-    "test": "set NODE_ENV=test && sequelize db:migrate && babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/*.js --timeout 10000 --compilers:js babel-core/register",
-    "tests": " set NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/*.js --timeout 10000 --compilers:js babel-core/register",
+    "test": "set NODE_ENV=test && sequelize db:migrate && babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/api-postgres-test.js --timeout 10000 --compilers:js babel-core/register",
+    "tests": " set NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/api-postgres-test.js --timeout 10000 --compilers:js babel-core/register",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
