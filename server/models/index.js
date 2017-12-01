@@ -5,10 +5,10 @@ import * as databaseConfig from '../config/config';
 
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-const config = databaseConfig[env];
+console.log(env);
+const config = databaseConfig.production;
 console.log(databaseConfig);
 console.log(config);
-console.log(env);
 
 const db = {};
 let sequelize;
