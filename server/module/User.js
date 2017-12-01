@@ -13,20 +13,34 @@ export default class Users {
     // Hash user's password
     const salt = bcryptjs.genSaltSync(10);
     const hash = bcryptjs.hashSync(req.body.password, salt);
-    // Add user object to database
-    return models.User
-      .create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        role: req.body.role,
-        password: hash,
-      }).then((user) => {
-        // Provides user with token
-        const token = createToken(user);
-        res.status(201).json({ msg: 'Signup successful', token });
+    let userRole;
+
+    // Assign the first user to sign up Admin role
+    models.User.findAll({})
+      .then((users) => {
+        console.log(users.length);
+        if (users.length === 0) {
+          userRole = 'Admin';
+        } else {
+          userRole = 'User';
+        }
+        return models.User
+          .create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: hash,
+            role: userRole,
+          })
+          .then((user) => {
+            // Provides user with token
+            const token = createToken(user);
+            res.status(201).json({ msg: 'Signup successful', token });
+          })
+          .catch(error => res.status(400).json(error));
       })
-      .catch(error => res.status(500).json(error));
+      .catch(error => res.status(400).json(error));
+    // Add user object to database
   }
   /* Method implements user login
   * @params email is used to find a user stored in the User's table
@@ -43,7 +57,7 @@ export default class Users {
         if (!user) return res.status(404).json({ msg: 'User not found' });
         // Checks if user-provided password is valid
         const passwordMatch = bcryptjs.compareSync(req.body.password, user.password);
-        if (!passwordMatch) return res.status(401).send({ msg: 'Authentication failed' });
+        if (!passwordMatch) return res.status(401).json({ msg: 'Authentication failed' });
         // Provides authenticated user with token
         const token = createToken(user);
         res.status(201).json({ msg: 'Login successful', token });

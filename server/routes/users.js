@@ -4,12 +4,13 @@ import users from '../controllers/users';
 import verifyToken from '../controllers/auth/verifyToken';
 import verifyFields from '../controllers/validation/verifyFields';
 import emailCheck from '../controllers/validation/email';
+import loginCheck from '../controllers/validation/login';
 
 const router = express.Router();
 // Endpoint for user to signup
 router.post('/signup', verifyFields, emailCheck, users.createUser);
 // Endpoint for user to signin
-router.post('/login', users.authenticateUser);
+router.post('/login', loginCheck, users.authenticateUser);
 // Endpoint for user to upvote a book
 router.post('/:userId/book/:bookId/upvote', verifyToken, users.upVote);
 // Endpoint for user to downvote a book

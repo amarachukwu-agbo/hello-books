@@ -5,14 +5,6 @@ import Admin from '../module/Admin';
 const userControllers = {
   // Method registers a new user to the database
   createUser(req, res) {
-    // Validate fields
-    if (
-      !req.body.email ||
-      !req.body.password ||
-      !req.body.role ||
-      !req.body.firstName ||
-      !req.body.lastName
-    ) return res.status(400).json({ msg: 'Some field missing' });
     User.signUp(req, res);
   },
 
