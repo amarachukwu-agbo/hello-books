@@ -7,6 +7,9 @@ import emailCheck from '../controllers/validation/email';
 import loginCheck from '../controllers/validation/login';
 import validateReviewSchema from '../controllers/validation/review';
 import validateParamsSchema from '../controllers/validation/params';
+import validateBorrowBookSchema from '../controllers/validation/borrowbook';
+import validateReturnRequestSchema from '../controllers/validation/returnrequest';
+import validateHandleRequestSchema from '../controllers/validation/handlerequest';
 
 
 const router = express.Router();
@@ -25,10 +28,10 @@ router.post('/:userId/review/:bookId', verifyToken, validateReviewSchema, users.
 // Endpoint for user to get favorite books
 router.get('/:userId/favbooks', verifyToken, validateParamsSchema, users.getFavoriteBooks);
 // Endpoint for user to borrow a book
-router.post('/:userId/borrow/:bookId', verifyToken, users.sendBorrowRequest);
+router.post('/:userId/borrow/:bookId', verifyToken, validateBorrowBookSchema, users.sendBorrowRequest);
 // Endpoint for Admin to handle borrow requests
-router.put('/:userId/borrow/:bookId', verifyToken, users.handleBorrowRequest);
-router.post('/:userId/return/:bookId', verifyToken, users.sendReturnRequest);
-router.put('/:userId/return/:bookId', verifyToken, users.handleReturnRequest);
+router.put('/:userId/borrow/:bookId', verifyToken, validateHandleRequestSchema, users.handleBorrowRequest);
+router.post('/:userId/return/:bookId', verifyToken, validateReturnRequestSchema, users.sendReturnRequest);
+router.put('/:userId/return/:bookId', verifyToken, validateHandleRequestSchema, users.handleReturnRequest);
 
 export default router;

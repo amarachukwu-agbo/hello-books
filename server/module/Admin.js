@@ -52,13 +52,14 @@ export default class Admin extends Users {
   * @return updatedBook object
   */
   static updateBook(req, res) {
-    return models.Book.findById(req.params.bookId)
+    const bookId = parseInt(req.params.bookId, 10);
+    return models.Book.findById(bookId)
       .then((book) => {
         // Check if book exists
         if (!book) return res.status(404).json({ msg: 'Book not found' });
         // Update book
         return book.update({
-          id: req.params.bookId,
+          id: bookId,
           title: req.body.title || book.title,
           author: req.body.author || book.author,
           description: req.body.description || book.description,
@@ -81,10 +82,13 @@ export default class Admin extends Users {
   @param action takes in 'Accept' or 'Decline'
   */
   static handleBorrowRequest(req, res) {
+    const userId = parseInt(req.params.userId, 10);
+    const bookId = parseInt(req.params.bookId, 10);
     return models.BorrowRequests.find({
       where: {
-        userId: req.params.userId,
-        bookId: req.params.bookId,
+        userId,
+        bookId,
+        status: 'Pending',
       },
     })
       .then((request) => {
@@ -93,24 +97,24 @@ export default class Admin extends Users {
           return request.update({
             status: req.body.status,
           })
-            .then((updatedRequest) => {
+            .then((borrowRequest) => {
               // Add books to BorrowedBooksTable
               if (req.body.status === 'Accepted') {
                 // Add books to BorrowedBooksTable
                 models.BorrowedBooks.create({
-                  userId: req.params.userId,
-                  bookId: req.params.bookId,
+                  userId,
+                  bookId,
                 });
                 // Increment borrow count and decrement quantity
-                models.Book.findById(req.params.bookId)
+                models.Book.findById(bookId)
                   .then((book) => {
                     book.increment('borrowCount');
                     book.decrement('quantity');
                   })
                   .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
-                return res.status(201).json({ msg: 'Accepted request', updatedRequest });
+                return res.status(201).json({ msg: 'Accepted request, book borrowed', borrowRequest });
               }
-              return res.status(201).json({ msg: 'Declined request', updatedRequest });
+              return res.status(201).json({ msg: 'Declined request', borrowRequest });
             })
             .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
         }
@@ -123,10 +127,13 @@ export default class Admin extends Users {
   @param action takes in 'Accept' or 'Decline'
   */
   static handleReturnRequest(req, res) {
+    const userId = parseInt(req.params.userId, 10);
+    const bookId = parseInt(req.params.bookId, 10);
     return models.ReturnRequests.find({
       where: {
-        userId: req.params.userId,
-        bookId: req.params.bookId,
+        userId,
+        bookId,
+        status: 'Pending',
       },
     })
       .then((request) => {
@@ -143,8 +150,8 @@ export default class Admin extends Users {
             .then(book => book.increment('quantity'));
           return models.BorrowedBooks.find({
             where: {
-              bookId: req.params.bookId,
-              userId: req.params.userId,
+              bookId,
+              userId,
               status: 'Not returned',
             },
           })
@@ -152,7 +159,7 @@ export default class Admin extends Users {
               // Change borrowed book status to returned
               borrowed.update({ status: 'Returned' })
                 .then(updated => updated.reload())
-                .then(borrowRequest => res.status(201).json({ msg: 'Request Accepted', borrowRequest }))
+                .then(returnRequest => res.status(201).json({ msg: 'Request Accepted', returnRequest }))
                 .catch(err => res.status(500).json({ msg: 'err', err }));
             })
             .catch(error => res.status(500).json({ msg: 'Error', error }));
@@ -160,8 +167,8 @@ export default class Admin extends Users {
         return res.status(201).json({
           msg: 'Request Declined',
           requestId: request.id,
-          book: req.params.bookId,
-          user: req.params.userId,
+          book: bookId,
+          user: userId,
         });
       }).catch(err => res.status(500).json(err));
   }

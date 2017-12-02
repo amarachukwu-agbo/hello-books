@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.ENUM,
         allowNull: false,
         values: ['Returned', 'Not returned'],
-        default: 'Not returned',
+        defaultValue: 'Not returned',
       },
       userId: {
         type: Sequelize.INTEGER,
