@@ -41,9 +41,9 @@ const userControllers = {
   // Method lets user favorite book
   favoriteBook(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) {
+    if (req.decoded.id !== parseInt(req.params.userId, 10)) {
       return res.status(401).json({
-        msg: 'You are not authorised to handle request',
+        msg: 'You are not authorised to favorite book',
       });
     }
     User.favoriteBook(req, res);
@@ -63,9 +63,9 @@ const userControllers = {
   // Method gets user's favorite books
   getFavoriteBooks(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) {
+    if (req.decoded.id !== parseInt(req.params.userId, 10)) {
       return res.status(401).json({
-        msg: 'You are not authorised to favorite a book',
+        msg: 'You are not authorised to get favorite books',
       });
     }
     User.getFavoriteBooks(req, res);

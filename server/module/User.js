@@ -169,24 +169,38 @@ export default class Users {
   * @param res is the response object
   * @return favoriteBook object */
   static favoriteBook(req, res) {
-    models.Book.findById(req.params.bookId)
+    const bookId = parseInt(req.params.bookId, 10);
+    const userId = parseInt(req.params.userId, 10);
+    models.Book.findById(bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
 
+        // Check if user has already added book to favorites
         return models.Favorites.findOrCreate({
           where: {
-            bookId: req.params.bookId,
-            userId: req.params.userId,
+            bookId,
+            userId,
           },
         })
           .spread((favorite, created) => {
+            // If book is not in user's favorites
             if (created === true) {
-              book.increment('favCount');
-              return res.status(201).json({ msg: `Favorited book ${req.params.bookId}` });
+              // Increase favCount of book
+              return book.increment('favCount')
+                .then(favBook => favBook.reload())
+                .then((favorites) => {
+                  // Return json object
+                  res.status(201).json({
+                    msg: `Favorited book ${req.params.bookId}`,
+                    favorite,
+                    bookFavoriteCount: favorites.favCount,
+                  });
+                });
             }
-            return res.status(401).json({ msg: 'Already favorited book' });
+            // If book is in user's favorites
+            return res.status(403).json({ msg: 'Already favorited book' });
           })
-          .catch(error => res.status(400).send({
+          .catch(error => res.status(400).json({
             msg: 'Error favoriting book', error,
           }));
       })
@@ -199,9 +213,10 @@ export default class Users {
   @param userId is used to find the index of the user in the
   users.json file and get favorites book if any */
   static getFavoriteBooks(req, res) {
+    const userId = parseInt(req.params.userId, 10);
     return models.Favorites.findAll({
       where: {
-        userId: req.params.userId,
+        userId,
       },
       include: [{
         model: models.Book,
@@ -209,8 +224,13 @@ export default class Users {
       }],
     })
       .then((books) => {
-        if (books.length > 0) return res.status(201).json(books);
-        return res.status(404).json('No favorites');
+        if (books.length > 0) {
+          return res.status(201).json({
+            msg: 'Your favorite books were successfully retrieved',
+            favorites: books,
+          });
+        }
+        return res.status(404).json({ msg: 'You have no favorites' });
       })
       .catch((error) => {
         res.status(400).send({
@@ -224,20 +244,23 @@ export default class Users {
   * @param res is the response object
   * @return review object is */
   static reviewBook(req, res) {
+    const bookId = parseInt(req.params.bookId, 10);
+    const userId = parseInt(req.params.userId, 10);
+
     models.Book.findById(req.params.bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
 
         return models.Review.findOrCreate({
           where: {
-            bookId: req.params.bookId,
-            userId: req.params.userId,
+            bookId,
+            userId,
             review: req.body.review,
           },
         })
           .spread((review, created) => {
             if (created === true) {
-              return res.status(201).json({ msg: `Successfully reviewed book ${req.params.bookId}`, review });
+              return res.status(201).json({ msg: `Successfully reviewed book ${bookId}`, review });
             }
             return res.status(403).json({ msg: 'Your review has already been created' });
           })

@@ -526,7 +526,7 @@ describe('API Endpoints Test', () => {
           expect(res.body).to.have.property('book');
           expect(res.body.book).to.have.any.keys('bookReviews');
           expect(res.body.book).to.be.an('object');
-          expect(res.body.book).to.have.any.keys('bookId', 'userId', 'quantity', 'author', 'description', 'subject');    
+          expect(res.body.book).to.have.any.keys('bookId', 'userId', 'quantity', 'author', 'description', 'subject');
           expect(res.body.book).to.have.any.keys('createdAt', 'updatedAt', 'upvotes', 'downvotes', 'borrowCount', 'favCount');
           expect(res.body.book.bookReviews).to.be.an('array');
           expect(res.body.book.bookReviews[0]).to.have.any.keys('bookId', 'userId', 'review', 'createdAt', 'updatedAt');
@@ -545,7 +545,6 @@ describe('API Endpoints Test', () => {
           done();
         });
     });
-
     it('should return 404 status if book is not found ', (done) => {
       request(app)
         .get('/api/v1/books/81')
@@ -554,6 +553,117 @@ describe('API Endpoints Test', () => {
           expect(res.body).to.have.property('msg');
           expect(res.body.msg).to.deep.equal('Book not found');
           expect(res.body).to.have.not.have.property('book');
+          done();
+        });
+    });
+  });
+
+  describe('An authenticated user can favorite a book', () => {
+    it('should return 201 status and favorite object', (done) => {
+      request(app)
+        .post('/api/v1/users/2/fav/1')
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(201);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Favorited book 1');
+          expect(res.body).to.have.property('favorite');
+          expect(res.body.favorite).to.have.any.keys('id', 'bookId', 'userId');
+          expect(res.body.favorite).to.have.any.keys('createdAt', 'updatedAt');
+          expect(res.body).to.have.property('bookFavoriteCount');
+          expect(res.body.bookFavoriteCount).to.deep.equal(1);
+          done();
+        });
+    });
+    it('should return 400 status and error if bookId is negative ', (done) => {
+      request(app)
+        .post('/api/v1/users/2/fav/-11')
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Params must be positive');
+          expect(res.body).to.have.not.have.property('favorite');
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+    it('should return 404 status if book is not found ', (done) => {
+      request(app)
+        .post('/api/v1/users/2/fav/81')
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(404);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Book not found');
+          expect(res.body).to.have.not.have.property('favorite');
+          done();
+        });
+    });
+    it('should return 403 status if book is already in favorites ', (done) => {
+      request(app)
+        .post('/api/v1/users/2/fav/1')
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(403);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Already favorited book');
+          expect(res.body).to.have.not.have.property('favorite');
+          done();
+        });
+    });
+  });
+
+
+  describe('An authenticated user can get his favorite books', () => {
+    it('should return 201 status and favorites', (done) => {
+      request(app)
+        .get('/api/v1/users/2/favbooks')
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(201);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Your favorite books were successfully retrieved');
+          expect(res.body).to.have.property('favorites');
+          expect(res.body.favorites[0]).to.have.any.keys('id', 'bookId', 'userId');
+          expect(res.body.favorites[0]).to.have.any.keys('createdAt', 'updatedAt');
+          done();
+        });
+    });
+    it('should return 400 status and error if bookId is negative ', (done) => {
+      request(app)
+        .post('/api/v1/users/2/fav/-11')
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Params must be positive');
+          expect(res.body).to.have.not.have.property('favorites');
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+    it('should return 404 status if book is not found ', (done) => {
+      request(app)
+        .post('/api/v1/users/2/fav/81')
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(404);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Book not found');
+          expect(res.body).to.have.not.have.property('favorites');
+          done();
+        });
+    });
+    it('should return 403 status if book is already in favorites ', (done) => {
+      request(app)
+        .post('/api/v1/users/2/fav/1')
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(403);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Already favorited book');
+          expect(res.body).to.have.not.have.property('favorites');
           done();
         });
     });
