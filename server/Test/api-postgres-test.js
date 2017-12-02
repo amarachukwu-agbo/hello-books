@@ -668,4 +668,88 @@ describe('API Endpoints Test', () => {
         });
     });
   });
+
+  describe('An authenticated admin can update a book', () => {
+    it('should return 201 status and updated book', (done) => {
+      request(app)
+        .put('/api/v1/books/1')
+        .set('Authorization', `Token ${adminToken}`)
+        .send({ title: 'Americanah' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(201);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Successfully updated book');
+          expect(res.body).to.have.property('updatedBook');
+          expect(res.body.updatedBook).to.have.any.keys('id', 'bookId', 'userId');
+          expect(res.body.updatedBook).to.have.any.keys('createdAt', 'updatedAt');
+          done();
+        });
+    });
+    it('should return 400 status and error if bookId is negative ', (done) => {
+      request(app)
+        .put('/api/v1/books/-1')
+        .set('Authorization', `Token ${adminToken}`)
+        .send({ title: 'Americanah' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Book not updated');
+          expect(res.body).to.have.not.have.property('updatedBook');
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+    it('should return 404 status if book is not found ', (done) => {
+      request(app)
+        .put('/api/v1/books/54')
+        .set('Authorization', `Token ${adminToken}`)
+        .send({ title: 'Americanah' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(404);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Book not found');
+          expect(res.body).to.have.not.have.property('error');
+          done();
+        });
+    });
+    it('should return 400 status if request body is empty ', (done) => {
+      request(app)
+        .put('/api/v1/books/1')
+        .set('Authorization', `Token ${adminToken}`)
+        .send({})
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Nothing to update');
+          expect(res.body).to.have.not.have.property('updatedBook');
+          done();
+        });
+    });
+    it('should return 401 status if user tries to update book ', (done) => {
+      request(app)
+        .put('/api/v1/books/1')
+        .set('Authorization', `Token ${userToken}`)
+        .send({ title: 'Americanah' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(401);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('You are not authorised to update book');
+          expect(res.body).to.have.not.have.property('updatedBook');
+          done();
+        });
+    });
+    it('should return 400 status if admin tries to update book with invalid data ', (done) => {
+      request(app)
+        .put('/api/v1/books/1')
+        .set('Authorization', `Token ${adminToken}`)
+        .send({ title: 1 })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Book not updated');
+          expect(res.body).to.have.not.have.property('updatedBook');
+          done();
+        });
+    });
+  });
 });
