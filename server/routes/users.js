@@ -31,7 +31,9 @@ router.get('/:userId/favbooks', verifyToken, validateParamsSchema, users.getFavo
 router.post('/:userId/borrow/:bookId', verifyToken, validateBorrowBookSchema, users.sendBorrowRequest);
 // Endpoint for Admin to handle borrow requests
 router.put('/:userId/borrow/:bookId', verifyToken, validateHandleRequestSchema, users.handleBorrowRequest);
+// Endpoint for user to return book
 router.post('/:userId/return/:bookId', verifyToken, validateReturnRequestSchema, users.sendReturnRequest);
+// Endpoint for Admin to handle return requests
 router.put('/:userId/return/:bookId', verifyToken, validateHandleRequestSchema, users.handleReturnRequest);
 
 export default router;

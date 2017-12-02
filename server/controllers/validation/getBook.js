@@ -1,3 +1,4 @@
+// Validation middleware for getBook route
 import Joi from 'joi';
 
 const querySchema = {

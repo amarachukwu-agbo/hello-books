@@ -1,3 +1,4 @@
+// Validation middleware for login route
 import Joi from 'joi';
 
 const loginSchema = {

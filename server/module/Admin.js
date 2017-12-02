@@ -4,17 +4,13 @@ import Users from '../module/User';
 
 export default class Admin extends Users {
   /* Method adds a book
-  * @param bookId is the book's id
-  * @param title is the book's title
-  * @param author is the book's author
-  * @param description is the book's description
-  * @param imageURL is the book's image URL
-  * @param subject is the book's subject
-  * @param quantity is the book's quantity
+  * @param response is response object
+  * @param request object
   * @ return book object
   * @return msg string
   */
   static addBook(req, res) {
+    // Check whether book with same title exists
     models.Book.find({
       where: {
         title: req.body.title,
@@ -27,6 +23,7 @@ export default class Admin extends Users {
             error: 'Book title already exists',
           });
         }
+        // if book title does not exist create book
         return models.Book
           .create({
             title: req.body.title,
@@ -78,8 +75,9 @@ export default class Admin extends Users {
   }
 
   /* Method accepts or declines a borrow request
-  @param bookId is the book's id
-  @param action takes in 'Accept' or 'Decline'
+  * @param bookId is the book's id
+  * @param action takes in 'Accepted' or 'Declined'
+  * @return request object
   */
   static handleBorrowRequest(req, res) {
     const userId = parseInt(req.params.userId, 10);
@@ -123,8 +121,9 @@ export default class Admin extends Users {
   }
 
   /* Method accepts or declines a return request
-  @param bookId is the book's id
-  @param action takes in 'Accept' or 'Decline'
+  * @param bookId is the book's id
+  * @param action takes in 'Accepted' or 'Declined'
+  * @return request object
   */
   static handleReturnRequest(req, res) {
     const userId = parseInt(req.params.userId, 10);
