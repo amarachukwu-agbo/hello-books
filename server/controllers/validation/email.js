@@ -1,3 +1,4 @@
+// Validation middleware for unique mail in database
 // Import models
 import models from '../../models';
 

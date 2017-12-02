@@ -5,9 +5,9 @@ import createToken from '../controllers/auth/createToken';
 
 export default class Users {
   /* Method implements user registration
-  @params firstName, lastName, email, role and password
-  of user a stored in the User's table
-  @return user object
+  * @param res is response object
+  * @param req is request object
+  * @return user object
   */
   static signUp(req, res) {
     // Hash user's password
@@ -42,8 +42,10 @@ export default class Users {
       .catch(error => res.status(400).json(error));
     // Add user object to database
   }
+
   /* Method implements user login
-  * @params email is used to find a user stored in the User's table
+  * @param req is request object
+  * @param res is response object
   * @return user object
   * @return msg string
   */
@@ -68,6 +70,7 @@ export default class Users {
   /* Method votes up a book
   * @param req is the request object
   * @param res is the response object
+  * @param upvote object
   */
   static upvoteBook(req, res) {
     // Check if book exists in database
@@ -119,6 +122,7 @@ export default class Users {
   /* Method votes down a book
   * @param req is the request object
   * @param res is the response object
+  * @return is downvote object
   */
   static downvoteBook(req, res) {
     // Check if book exists in database
@@ -210,10 +214,13 @@ export default class Users {
   }
 
   /* Method gets a user's favorite books
-  @param userId is used to find the index of the user in the
-  users.json file and get favorites book if any */
+  * @param req is the request is the request object
+  * @param res is the response object
+  * @return favoriteBook object
+  */
   static getFavoriteBooks(req, res) {
     const userId = parseInt(req.params.userId, 10);
+    // Find user's favorites
     return models.Favorites.findAll({
       where: {
         userId,
@@ -251,6 +258,7 @@ export default class Users {
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
 
+        // Check if review exists
         return models.Review.findOrCreate({
           where: {
             bookId,
@@ -259,9 +267,11 @@ export default class Users {
           },
         })
           .spread((review, created) => {
+            // If not create review
             if (created === true) {
               return res.status(201).json({ msg: `Successfully reviewed book ${bookId}`, review });
             }
+            // No review created
             return res.status(403).json({ msg: 'Your review has already been created' });
           })
           .catch(error => res.status(400).send({
@@ -276,9 +286,11 @@ export default class Users {
   /* Method lets a user get all books in the database
   * @param req is the request is the request object
   * @param res is the response object
-  * @return book object is */
+  * @return book object
+  */
   static getAllBooks(req, res) {
     if (req.query.sort === 'upvotes' && req.query.order === 'desc') {
+      // Find all books and include reviews
       return models.Book.findAll({
         include: [{
           model: models.Review,
@@ -309,7 +321,8 @@ export default class Users {
   /* Method lets a user get a book in the database
   * @param req is the request object
   * @param res is the response object
-  * @return book object is */
+  * @return book object
+  */
   static getBook(req, res) {
     return models.Book.find({
       where: {
@@ -332,7 +345,8 @@ export default class Users {
   /* Method lets a user send  a borrow request for a book
   @param req is the request object
   @param res is the response object
-  @return json object */
+  @return borrow request object
+  */
   static sendBorrowRequest(req, res) {
     const bookId = parseInt(req.params.bookId, 10);
     const userId = parseInt(req.params.userId, 10);
@@ -363,6 +377,7 @@ export default class Users {
         })
           .then((borrowRequest) => {
             if (!borrowRequest) {
+              // Send request if it does not exist in database
               return models.BorrowRequests.create({
                 bookId,
                 userId,
@@ -382,11 +397,13 @@ export default class Users {
   /* Method lets a user send  a return request for a book
   @param req is request object
   @param res is response object
-  @return request object */
+  @return return request object
+  */
   static sendReturnRequest(req, res) {
     const userId = parseInt(req.params.userId, 10);
     const bookId = parseInt(req.params.bookId, 10);
 
+    // Check if user borrowed book
     return models.BorrowedBooks.find({
       where: {
         userId,
@@ -395,6 +412,7 @@ export default class Users {
     })
       .then((borrowed) => {
         if (!borrowed) return res.status(404).json({ msg: 'Book not borrowed' });
+        // Check if request has already been sent
         models.ReturnRequests.find({
           where: {
             userId,
@@ -403,6 +421,7 @@ export default class Users {
           },
         })
           .then((request) => {
+            // Send request if it does not exist
             if (!request) {
               return models.ReturnRequests.create({
                 bookId,

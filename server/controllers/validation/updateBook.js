@@ -1,3 +1,4 @@
+// Validation middleware for updateBook route
 import Joi from 'joi';
 
 const updateBookSchema = {

@@ -1,3 +1,4 @@
+// Validation middleware for signUp route
 import Joi from 'joi';
 
 const userSchema = {

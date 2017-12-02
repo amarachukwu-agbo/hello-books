@@ -1,3 +1,4 @@
+// Validation middleware to check valid params
 import Joi from 'joi';
 
 const paramsSchema = {
