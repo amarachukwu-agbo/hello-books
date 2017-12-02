@@ -19,9 +19,9 @@ const userControllers = {
   // Method lets user upvote book
   upVote(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) {
+    if (req.decoded.id !== parseInt(req.params.userId, 10)) {
       return res.status(401).json({
-        msg: 'You are not authorised to upvote a book',
+        msg: 'You are not authorized to upvote book',
       });
     }
     User.upvoteBook(req, res);
@@ -30,9 +30,9 @@ const userControllers = {
   // Method lets user downvote book
   downVote(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) {
+    if (req.decoded.id !== parseInt(req.params.userId, 10)) {
       return res.status(401).json({
-        msg: 'You are not authorized to downvote a book',
+        msg: 'You are not authorized to downvote book',
       });
     }
     User.downvoteBook(req, res);

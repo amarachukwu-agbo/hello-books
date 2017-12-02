@@ -71,7 +71,8 @@ export default class Users {
   */
   static upvoteBook(req, res) {
     // Check if book exists in database
-    return models.Book.findById(req.params.bookId)
+    const bookId = parseInt(req.params.bookId, 10);
+    return models.Book.findById(bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
         // Check if user has upvoted book before
@@ -87,12 +88,15 @@ export default class Users {
               return book.increment('upvotes')
                 // Increment upvotes and return current value
                 .then(upVote => upVote.reload())
-                .then(upvotedBook => res.status(201).json({
+                .then(upvoteEntry => res.status(201).json({
                   msg: 'Successfully upvoted book',
-                  bookId: req.params.bookId,
-                  upvotes: upvotedBook.upvotes,
+                  upvote: {
+                    userId: req.params.userId,
+                    bookId: req.params.bookId,
+                    upvotes: upvoteEntry.upvotes,
+                  },
                 }))
-                .catch(error => res.status(500).json({
+                .catch(error => res.status(400).json({
                   msg: 'Error upvoting book',
                   error,
                 }));
@@ -100,14 +104,14 @@ export default class Users {
             return res.status(403).json({ msg: 'Already upvoted book' });
           })
           .catch((error) => {
-            res.status(500).json({
+            res.status(400).json({
               msg: 'Error upvoting book',
               error,
             });
           });
       })
       .catch((error) => {
-        res.status(500).json({ msg: 'Error upvoting book', error });
+        res.status(400).json({ msg: 'Error upvoting book', error });
       });
   }
 
@@ -135,8 +139,11 @@ export default class Users {
               .then(downVote => downVote.reload())
               .then(downvotedBook => res.status(201).json({
                 msg: 'Successfully downvoted book',
-                bookId: req.params.bookId,
-                downvotes: downvotedBook.downvotes,
+                downvote: {
+                  userId: req.params.userId,
+                  bookId: req.params.bookId,
+                  downvotes: downvotedBook.downvotes,
+                },
               }))
               .catch(error => res.status(500).json({
                 msg: 'Error downvoting book',
