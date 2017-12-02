@@ -290,7 +290,7 @@ export default class Users {
   static getBook(req, res) {
     return models.Book.find({
       where: {
-        id: req.params.bookId,
+        id: parseInt(req.params.bookId, 10),
       },
       // Join book reviews
       include: [{

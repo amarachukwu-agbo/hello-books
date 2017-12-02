@@ -2,8 +2,8 @@ import Joi from 'joi';
 
 const paramsSchema = {
   params: {
-    bookId: Joi.number().integer().positive().required(),
-    userId: Joi.number().integer().positive().required(),
+    bookId: Joi.number().integer().positive(),
+    userId: Joi.number().integer().positive(),
   },
 };
 

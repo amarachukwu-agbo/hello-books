@@ -494,4 +494,68 @@ describe('API Endpoints Test', () => {
         });
     });
   });
+
+  describe('Get all books in database', () => {
+    it('should return 201 and all books including their reviews', (done) => {
+      request(app)
+        .get('/api/v1/books')
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(200);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Successfully got all books');
+          expect(res.body).to.have.property('books');
+          expect(res.body.books[0]).to.have.any.keys('bookReviews');
+          expect(res.body.books).to.be.an('array');
+          expect(res.body.books[0]).to.have.any.keys('bookId', 'userId', 'quantity', 'author', 'description', 'subject');
+          expect(res.body.books[0]).to.have.any.keys('createdAt', 'updatedAt', 'upvotes', 'downvotes', 'borrowCount', 'favCount');
+          expect(res.body.books[0].bookReviews).to.be.an('array');
+          expect(res.body.books[0].bookReviews[0]).to.have.any.keys('bookId', 'userId', 'review', 'createdAt', 'updatedAt');
+          done();
+        });
+    });
+  });
+
+  describe('Get a book in database', () => {
+    it('should return 201 status and all books including their reviews', (done) => {
+      request(app)
+        .get('/api/v1/books/1')
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(200);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Successfully got book');
+          expect(res.body).to.have.property('book');
+          expect(res.body.book).to.have.any.keys('bookReviews');
+          expect(res.body.book).to.be.an('object');
+          expect(res.body.book).to.have.any.keys('bookId', 'userId', 'quantity', 'author', 'description', 'subject');    
+          expect(res.body.book).to.have.any.keys('createdAt', 'updatedAt', 'upvotes', 'downvotes', 'borrowCount', 'favCount');
+          expect(res.body.book.bookReviews).to.be.an('array');
+          expect(res.body.book.bookReviews[0]).to.have.any.keys('bookId', 'userId', 'review', 'createdAt', 'updatedAt');
+          done();
+        });
+    });
+    it('should return 400 status and error if bookId is negative ', (done) => {
+      request(app)
+        .get('/api/v1/books/-1')
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Params must be positive');
+          expect(res.body).to.have.not.have.property('book');
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+
+    it('should return 404 status if book is not found ', (done) => {
+      request(app)
+        .get('/api/v1/books/81')
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(404);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Book not found');
+          expect(res.body).to.have.not.have.property('book');
+          done();
+        });
+    });
+  });
 });
