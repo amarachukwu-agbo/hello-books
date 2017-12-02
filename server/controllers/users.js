@@ -52,15 +52,12 @@ const userControllers = {
   // Method allows user post a review
   reviewBook(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) {
+    if (req.decoded.id !== parseInt(req.params.userId, 10)) {
       return res.status(401).json({
-        msg: 'You are not authorised to review a book',
+        msg: 'You are not authorized to review book',
       });
     }
-    if (req.body.review) {
-      User.reviewBook(req, res);
-    }
-    return res.status(400).json({ msg: 'Review missing' });
+    User.reviewBook(req, res);
   },
 
   // Method gets user's favorite books

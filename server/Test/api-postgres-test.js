@@ -246,4 +246,108 @@ describe('API Endpoints Test', () => {
         });
     });
   });
+
+  describe('An authenticated user can review a book', () => {
+    it('should return 201 status', (done) => {
+      request(app)
+        .post('/api/v1/users/2/review/1')
+        .set('Authorization', `Token ${userToken}`)
+        .send({ review: 'An amazing read. I loved it!!!' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(201);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Successfully reviewed book 1');
+          expect(res.body).to.have.property('review');
+          expect(res.body.review).to.have.any.keys('bookId', 'userId', 'review', 'createdAt');
+          done();
+        });
+    });
+    it('should return 403 error if no token is provided', (done) => {
+      request(app)
+        .post('/api/v1/users/2/review/1')
+        .send({ review: 'An amazing read. I loved it!!!' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(403);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('No token provided');
+          expect(res.body).to.not.have.property('review');
+          done();
+        });
+    });
+    it('should return 400 error if bookId or userId are not positive integers', (done) => {
+      request(app)
+        .post('/api/v1/users/-2/review/-1')
+        .send({ review: 'An amazing read. I loved it!!!' })
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Your review could not be completed');
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+    it('should return 400 error if review is empty', (done) => {
+      request(app)
+        .post('/api/v1/users/2/review/1')
+        .send({ review: '' })
+        .set('Authorization', `Token ${userToken}`)
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Your review could not be completed');
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+    it('should return 403 error if review already exists', (done) => {
+      request(app)
+        .post('/api/v1/users/2/review/1')
+        .set('Authorization', `Token ${userToken}`)
+        .send({ review: 'An amazing read. I loved it!!!' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(403);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Your review has already been created');
+          done();
+        });
+    });
+    it('should return 400 error if review is a number', (done) => {
+      request(app)
+        .post('/api/v1/users/2/review/1')
+        .set('Authorization', `Token ${userToken}`)
+        .send({ review: 1 })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Your review could not be completed');
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+    it('should return 401 error if a user tries to review a book with a token not matched to userId', (done) => {
+      request(app)
+        .post('/api/v1/users/2/review/1')
+        .set('Authorization', `Token ${adminToken}`)
+        .send({ review: 'Love this book' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(401);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('You are not authorized to review book');
+          done();
+        });
+    });
+    it('should return 404 error if a user tries to review a book not in database', (done) => {
+      request(app)
+        .post('/api/v1/users/2/review/100')
+        .set('Authorization', `Token ${userToken}`)
+        .send({ review: 'Love this book' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(404);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg).to.deep.equal('Book not found');
+          done();
+        });
+    });
+  });
 });
