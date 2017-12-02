@@ -88,6 +88,7 @@ export default class Admin extends Users {
       where: {
         userId,
         bookId,
+        status: 'Pending',
       },
     })
       .then((request) => {
@@ -132,6 +133,7 @@ export default class Admin extends Users {
       where: {
         userId,
         bookId,
+        status: 'Pending',
       },
     })
       .then((request) => {
