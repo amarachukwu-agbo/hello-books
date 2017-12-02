@@ -84,15 +84,12 @@ const userControllers = {
   // Method allows authenticated user borrow a book
   sendBorrowRequest(req, res) {
     // Validate user's token
-    if (req.decoded.id !== req.params.userId) {
+    if (req.decoded.id !== parseInt(req.params.userId, 10)) {
       return res.status(401).json({
         msg: 'You are not authorised to borrow book',
       });
     }
-    if (req.body.reason && req.body.returnDate) {
-      User.sendBorrowRequest(req, res);
-    }
-    return res.status(400).json({ msg: 'Some fields missing' });
+    User.sendBorrowRequest(req, res);
   },
 
   // Method allows authenticated admin accept or reject borrow request
@@ -123,12 +120,7 @@ const userControllers = {
         msg: 'You are not authorised to handle return request',
       });
     }
-    // Validate status field
-    if (!req.body.status) return res.status(400).json({ msg: 'Status is missing' });
-    if (req.body.status === 'Accepted' || req.body.status === 'Declined') {
-      Admin.handleReturnRequest(req, res);
-    }
-    return res.status(400).json({ msg: 'Invalid status' });
+    Admin.handleReturnRequest(req, res);
   },
 };
 

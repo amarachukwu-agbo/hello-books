@@ -12,7 +12,7 @@ const borrowedBookSchema = (sequelize) => {
       type: Sequelize.ENUM,
       allowNull: false,
       values: ['Returned', 'Not returned'],
-      default: 'Not returned',
+      defaultValue: 'Not returned',
     },
   });
   BorrowedBooks.associate = (models) => {

@@ -334,7 +334,20 @@ export default class Users {
   @param res is the response object
   @return json object */
   static sendBorrowRequest(req, res) {
-    models.Book.findById(req.params.bookId)
+    const bookId = parseInt(req.params.bookId, 10);
+    const userId = parseInt(req.params.userId, 10);
+
+    models.BorrowedBooks.find({
+      where: {
+        bookId,
+        userId,
+        status: 'Not returned',
+      },
+    }).then((borrow) => {
+      if (borrow) return res.status(403).json({ msg: 'You have not returned book' });
+    });
+
+    models.Book.findById(bookId)
       .then((book) => {
         // Check if book is in database
         if (!book) return res.status(404).json({ msg: 'Book not found' });
@@ -343,16 +356,16 @@ export default class Users {
         // Check if user has sent request before
         return models.BorrowRequests.find({
           where: {
-            bookId: req.params.bookId,
-            userId: req.params.userId,
+            bookId,
+            userId,
             status: 'Pending',
           },
         })
           .then((borrowRequest) => {
             if (!borrowRequest) {
               return models.BorrowRequests.create({
-                bookId: req.params.bookId,
-                userId: req.params.userId,
+                bookId,
+                userId,
                 reason: req.body.reason,
                 returnDate: req.body.returnDate,
                 comments: req.body.comments,
@@ -371,27 +384,30 @@ export default class Users {
   @param res is response object
   @return request object */
   static sendReturnRequest(req, res) {
+    const userId = parseInt(req.params.userId, 10);
+    const bookId = parseInt(req.params.bookId, 10);
+
     return models.BorrowedBooks.find({
       where: {
-        userId: req.params.userId,
-        bookId: req.params.bookId,
+        userId,
+        bookId,
       },
     })
       .then((borrowed) => {
         if (!borrowed) return res.status(404).json({ msg: 'Book not borrowed' });
         models.ReturnRequests.find({
           where: {
-            userId: req.params.userId,
-            bookId: req.params.bookId,
+            userId,
+            bookId,
             status: 'Pending',
           },
         })
           .then((request) => {
             if (!request) {
               return models.ReturnRequests.create({
-                bookId: req.params.bookId,
-                userId: req.paraams.userId,
-                comments: req.params.comments,
+                bookId,
+                userId,
+                comments: req.body.comments,
               })
                 .then(returnRequest => res.status(201).json({ msg: 'Success', returnRequest }))
                 .catch(error => res.status(400).send(error));

@@ -5,6 +5,8 @@ import users from '../controllers/users';
 import verifyToken from '../controllers/auth/verifyToken';
 import verifyBookSchema from '../controllers/validation/book';
 import verifyParamsSchema from '../controllers/validation/params';
+import verifyUpdateBookSchema from '../controllers/validation/updateBook';
+import verifyQuerySchema from '../controllers/validation/getBook';
 
 const router = express.Router();
 
@@ -12,13 +14,13 @@ const router = express.Router();
 router.post('/', verifyToken, verifyBookSchema, books.createBook);
 
 // Endpoint to update a book
-router.put('/:bookId', verifyToken, books.updateBook);
+router.put('/:bookId', verifyToken, verifyUpdateBookSchema, books.updateBook);
 
 // // Endpoint to get book with most upvotes
-router.get('/?sort=upvotes&order=desc', users.getAllBooks);
+router.get('/?sort=upvotes&order=desc', verifyQuerySchema, users.getAllBooks);
 
 // Endpoint to get all books
-router.get('/', users.getAllBooks);
+router.get('/', verifyQuerySchema, users.getAllBooks);
 
 // Endpoint to get a book
 router.get('/:bookId', verifyParamsSchema, users.getBook);

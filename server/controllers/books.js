@@ -13,16 +13,21 @@ const bookControllers = {
     }
     Admin.addBook(req, res);
   },
-
+  // Update a book in the database
   updateBook(req, res) {
     // Check the role of user from decoded token
     // If 'User' return error else add book
+    console.log(req.decoded.role);
     if (req.decoded.role !== 'Admin') {
       return res.status(401).send({
         msg: 'You are not authorised to update book',
       });
     }
-    if (!req.body) return res.status(400).send({ msg: 'Nothing to update' });
+    // Check if object is empty
+    if (Object.keys(req.body).length === 0) {
+      return res.status(400).json({ msg: 'Nothing to update' });
+    }
+    // If not empty, update book
     Admin.updateBook(req, res);
   },
 };
