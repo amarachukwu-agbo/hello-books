@@ -4,7 +4,7 @@ import books from '../controllers/books';
 import users from '../controllers/users';
 import verifyToken from '../controllers/auth/verifyToken';
 import verifyBookSchema from '../controllers/validation/book';
-
+import verifyParamsSchema from '../controllers/validation/params';
 
 const router = express.Router();
 
@@ -21,6 +21,6 @@ router.get('/?sort=upvotes&order=desc', users.getAllBooks);
 router.get('/', users.getAllBooks);
 
 // Endpoint to get a book
-router.get('/:bookId', users.getBook);
+router.get('/:bookId', verifyParamsSchema, users.getBook);
 
 export default router;

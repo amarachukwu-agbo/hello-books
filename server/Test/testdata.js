@@ -11,6 +11,12 @@ const testData = {
     email: 'gody@gmail.com',
     password: 'hhhhhh',
   },
+  secondUser: {
+    firstName: 'Grace',
+    lastName: 'Peters',
+    email: 'gracep@gmail.com',
+    password: 'hhhhhh',
+  },
   incompleteUser: {
     firstName: 'Ama',
     lastName: 'Agbo',

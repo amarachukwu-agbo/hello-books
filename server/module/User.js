@@ -71,7 +71,8 @@ export default class Users {
   */
   static upvoteBook(req, res) {
     // Check if book exists in database
-    return models.Book.findById(req.params.bookId)
+    const bookId = parseInt(req.params.bookId, 10);
+    return models.Book.findById(bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
         // Check if user has upvoted book before
@@ -87,12 +88,15 @@ export default class Users {
               return book.increment('upvotes')
                 // Increment upvotes and return current value
                 .then(upVote => upVote.reload())
-                .then(upvotedBook => res.status(201).json({
+                .then(upvoteEntry => res.status(201).json({
                   msg: 'Successfully upvoted book',
-                  bookId: req.params.bookId,
-                  upvotes: upvotedBook.upvotes,
+                  upvote: {
+                    userId: req.params.userId,
+                    bookId: req.params.bookId,
+                    upvotes: upvoteEntry.upvotes,
+                  },
                 }))
-                .catch(error => res.status(500).json({
+                .catch(error => res.status(400).json({
                   msg: 'Error upvoting book',
                   error,
                 }));
@@ -100,14 +104,14 @@ export default class Users {
             return res.status(403).json({ msg: 'Already upvoted book' });
           })
           .catch((error) => {
-            res.status(500).json({
+            res.status(400).json({
               msg: 'Error upvoting book',
               error,
             });
           });
       })
       .catch((error) => {
-        res.status(500).json({ msg: 'Error upvoting book', error });
+        res.status(400).json({ msg: 'Error upvoting book', error });
       });
   }
 
@@ -135,8 +139,11 @@ export default class Users {
               .then(downVote => downVote.reload())
               .then(downvotedBook => res.status(201).json({
                 msg: 'Successfully downvoted book',
-                bookId: req.params.bookId,
-                downvotes: downvotedBook.downvotes,
+                downvote: {
+                  userId: req.params.userId,
+                  bookId: req.params.bookId,
+                  downvotes: downvotedBook.downvotes,
+                },
               }))
               .catch(error => res.status(500).json({
                 msg: 'Error downvoting book',
@@ -162,24 +169,38 @@ export default class Users {
   * @param res is the response object
   * @return favoriteBook object */
   static favoriteBook(req, res) {
-    models.Book.findById(req.params.bookId)
+    const bookId = parseInt(req.params.bookId, 10);
+    const userId = parseInt(req.params.userId, 10);
+    models.Book.findById(bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
 
+        // Check if user has already added book to favorites
         return models.Favorites.findOrCreate({
           where: {
-            bookId: req.params.bookId,
-            userId: req.params.userId,
+            bookId,
+            userId,
           },
         })
           .spread((favorite, created) => {
+            // If book is not in user's favorites
             if (created === true) {
-              book.increment('favCount');
-              return res.status(201).json({ msg: `Favorited book ${req.params.bookId}` });
+              // Increase favCount of book
+              return book.increment('favCount')
+                .then(favBook => favBook.reload())
+                .then((favorites) => {
+                  // Return json object
+                  res.status(201).json({
+                    msg: `Favorited book ${req.params.bookId}`,
+                    favorite,
+                    bookFavoriteCount: favorites.favCount,
+                  });
+                });
             }
-            return res.status(401).json({ msg: 'Already favorited book' });
+            // If book is in user's favorites
+            return res.status(403).json({ msg: 'Already favorited book' });
           })
-          .catch(error => res.status(400).send({
+          .catch(error => res.status(400).json({
             msg: 'Error favoriting book', error,
           }));
       })
@@ -192,9 +213,10 @@ export default class Users {
   @param userId is used to find the index of the user in the
   users.json file and get favorites book if any */
   static getFavoriteBooks(req, res) {
+    const userId = parseInt(req.params.userId, 10);
     return models.Favorites.findAll({
       where: {
-        userId: req.params.userId,
+        userId,
       },
       include: [{
         model: models.Book,
@@ -202,8 +224,13 @@ export default class Users {
       }],
     })
       .then((books) => {
-        if (books.length > 0) return res.status(201).json(books);
-        return res.status(404).json('No favorites');
+        if (books.length > 0) {
+          return res.status(201).json({
+            msg: 'Your favorite books were successfully retrieved',
+            favorites: books,
+          });
+        }
+        return res.status(404).json({ msg: 'You have no favorites' });
       })
       .catch((error) => {
         res.status(400).send({
@@ -217,20 +244,23 @@ export default class Users {
   * @param res is the response object
   * @return review object is */
   static reviewBook(req, res) {
+    const bookId = parseInt(req.params.bookId, 10);
+    const userId = parseInt(req.params.userId, 10);
+
     models.Book.findById(req.params.bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
 
         return models.Review.findOrCreate({
           where: {
-            bookId: req.params.bookId,
-            userId: req.params.userId,
+            bookId,
+            userId,
             review: req.body.review,
           },
         })
           .spread((review, created) => {
             if (created === true) {
-              return res.status(201).json({ msg: `Successfully reviewed book ${req.params.bookId}`, review });
+              return res.status(201).json({ msg: `Successfully reviewed book ${bookId}`, review });
             }
             return res.status(403).json({ msg: 'Your review has already been created' });
           })
@@ -283,7 +313,7 @@ export default class Users {
   static getBook(req, res) {
     return models.Book.find({
       where: {
-        id: req.params.bookId,
+        id: parseInt(req.params.bookId, 10),
       },
       // Join book reviews
       include: [{
