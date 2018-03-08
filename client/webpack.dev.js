@@ -6,7 +6,7 @@ module.exports = webpackMerge(common, {
   devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
-    './client/src/index'
+    './client/src/index',
   ],
   mode: 'development',
   plugins: [
