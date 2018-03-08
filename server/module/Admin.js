@@ -17,7 +17,7 @@ export default class Admin extends Users {
       },
     })
       .then((book) => {
-        if (book) {  
+        if (book) {
           return res.status(400).json({
             msg: 'Book could not be added',
             error: 'Book title already exists',

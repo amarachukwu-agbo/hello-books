@@ -16,7 +16,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-        //include: path.join(__dirname, 'client'),
         exclude: /node_modules/,
       },
       {
@@ -24,13 +23,11 @@ module.exports = {
         use: {
           loader: 'style-loader!css-loader!sass-loader',
         },
-        //include: path.join(__dirname, 'client'),
       },
       {
         test: /\.(png|svg|gif|jpg)$/,
         use: {
           loader: 'file-loader',
-          //include: path.join(__dirname, 'client'),
         },
       },
     ],
