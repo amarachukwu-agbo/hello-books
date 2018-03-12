@@ -5,6 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/static/',
   },
   plugins: [
     new cleanWebPackPlugin(['dist']),
@@ -20,9 +21,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: {
-          loader: 'style-loader!css-loader!sass-loader',
-        },
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" },
+        ]
       },
       {
         test: /\.(png|svg|gif|jpg)$/,
