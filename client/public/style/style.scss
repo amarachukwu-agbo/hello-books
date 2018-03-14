@@ -14,11 +14,15 @@ $logoImage: 64px;
     width: 200px;
 }
 .parallax-container {
-      height: 400px;
-      opacity: 0.8;
-    }
+    height: 400px;
+    opacity: 0.8;
+}
 .book-text{
     font-size: 12px;
+}
+.error{
+    color: red;
+    font-size: 0.8em;
 }
 .favorite-img{
     height: 150px;
