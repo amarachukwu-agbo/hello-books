@@ -1,5 +1,7 @@
 $formImage: 100px;
 $logoImage: 64px;
+$errorColor: red;
+$errorSize: 1.2rem;
 
 .form-logo{
     width: $formImage; 
@@ -20,9 +22,23 @@ $logoImage: 64px;
 .book-text{
     font-size: 12px;
 }
-.error{
-    color: red;
+.validationError{
+    color: $errorColor;
     font-size: 0.8em;
+}
+.error {
+    color: $errorColor;
+    font-size: 0.8em;
+    margin-left: 20%;
+}
+.signUpError {
+    color: $errorColor;
+    font-size: $errorSize;
+
+}
+.signUpSuccess{
+    color: green;
+    font-size: $errorSize;
 }
 .favorite-img{
     height: 150px;
