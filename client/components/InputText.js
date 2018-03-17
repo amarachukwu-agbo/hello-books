@@ -1,6 +1,6 @@
-import React from 'react';
-
-const inputText = ({ input, label, type, icon, meta: { touched, error }}) => (
+const inputText = ({
+  input, label, type, icon, meta: { touched, error },
+}) => (
     <div>
         <i className="material-icons prefix">{ icon }</i>
         <label className = "flow-text truncate"> { label } </label>

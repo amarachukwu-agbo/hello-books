@@ -8,12 +8,10 @@ import rootReducer from '../reducers/index';
 const initialState = {};
 export const history = createHistory();
 const middleware = routerMiddleware(history);
-const store = createStore(rootReducer,
-                initialState,
-                composeWithDevTools(
-                    applyMiddleware(thunk, middleware)
-                )
-            );
-
+const store = createStore(
+  rootReducer,
+  initialState,
+  composeWithDevTools(applyMiddleware(thunk, middleware)),
+);
 
 export default store;

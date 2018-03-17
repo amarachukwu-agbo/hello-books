@@ -1,7 +1,8 @@
-export const updatetextFields = () => {
-    $(document).ready(function () {
-        Materialize.updateTextFields();
-    });
-}
+const updatetextFields = () => {
+  $(document).ready(() => {
+    Materialize.updateTextFields();
+  });
+};
 
-        
+export default updatetextFields;
+
