@@ -1,6 +1,7 @@
+import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import style from '../public/style/style.scss';
+import '../public/style/style.scss';
 import store, { history } from './store';
 import App from '../components/App';
 

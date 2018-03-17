@@ -1,3 +1,5 @@
+import React from 'react';
+
 const inputText = ({
   input, label, type, icon, meta: { touched, error },
 }) => (

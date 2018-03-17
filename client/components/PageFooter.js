@@ -1,3 +1,5 @@
+import React from 'react';
+
 const PageFooter = () => (
         <footer className="page-footer teal lighten-2">
                 <div className="footer-copyright">
