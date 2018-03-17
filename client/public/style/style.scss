@@ -1,17 +1,17 @@
-$formImage: 100px;
-$logoImage: 64px;
-$errorColor: red;
-$errorSize: 1.2rem;
-$sucessColor: green;
+$form-image: 100px;
+$logo-image: 64px;
+$error-color: #ff0000;
+$error-size: 1.2rem;
+$sucess-color: #008000;
 
 .form-logo {
-  width: $formImage; 
-  height: $formImage;
+  height: $form-image;
+  width: $form-image;
 }
 
 .img-logo {
-  width: $logoImage; 
-  height: $logoImage;
+  height: $logo-image;
+  width: $logo-image;
 }
 
 .books-image {
@@ -27,25 +27,21 @@ $sucessColor: green;
 .book-text {
   font-size: 12px;
 }
-.validationError {
-  color: $errorColor;
-  font-size: 0.8em;
-}
 
 .error {
-  color: $errorColor;
+  color: $error-color;
   font-size: 0.8em;
   margin-left: 20%;
 }
 
-.signUpError {
-  color: $errorColor;
-  font-size: $errorSize;
+.sign-up-error {
+  color: $error-color;
+  font-size: $error-size;
 }
 
-.signUpSuccess {
-  color: $sucessColor;
-  font-size: $errorSize;
+.sign-up-success {
+  color: $sucess-color;
+  font-size: $error-size;
 }
 
 .favorite-img {
