@@ -7,6 +7,9 @@
         "node": true,
         "es6": true
     },
+    "plugins": [
+        "react"
+    ],
     "rules": {
         "no-console" : 0,
         "linebreak-style" : 0,
@@ -17,7 +20,11 @@
         "no-param-reassign": 0,
         "curly": ["error", "multi-line"],
         "import/no-unresolved": 0,
+        "import/no-extraneous-dependencies": 0,
         "import/extensions": 0,
-        "no-shadow": ["error", { "allow": ["req", "res", "err"] }]
+        "no-undef": 0,
+        "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
     }
 }

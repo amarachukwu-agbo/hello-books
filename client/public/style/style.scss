@@ -1,0 +1,49 @@
+$form-image: 100px;
+$logo-image: 64px;
+$error-color: #ff0000;
+$error-size: 1.2rem;
+$sucess-color: #008000;
+
+.form-logo {
+  height: $form-image;
+  width: $form-image;
+}
+
+.img-logo {
+  height: $logo-image;
+  width: $logo-image;
+}
+
+.books-image {
+  height: 300px;
+  width: 200px;
+}
+
+.parallax-container {
+  height: 400px;
+  opacity: 0.8;
+}
+
+.book-text {
+  font-size: 12px;
+}
+
+.error {
+  color: $error-color;
+  font-size: 0.8em;
+  margin-left: 20%;
+}
+
+.sign-up-error {
+  color: $error-color;
+  font-size: $error-size;
+}
+
+.sign-up-success {
+  color: $sucess-color;
+  font-size: $error-size;
+}
+
+.favorite-img {
+  height: 150px;
+}
