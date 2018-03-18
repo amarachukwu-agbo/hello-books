@@ -3,6 +3,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 
 import SignUpPage from './SignUp/SignUpPage';
+import LoginPage from './Login/LoginPage';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
             <Router history = { this.props.history }>
                 <Switch>
                     <Route path = '/signup' component = { SignUpPage } />
+                    <Route path = '/login' component = { LoginPage } />
                 </Switch>
             </Router>
     );

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { push } from 'react-router-redux';
 import { SIGN_UP_SUCCESS, SIGNING_UP, SIGN_UP_FAILURE } from './types';
 
-const apiURL = 'https://hellobooksv2.herokuapp.com/api/v1/users/signup';
+export const apiURL = 'https://hellobooksv2.herokuapp.com/api/v1';
 
 export const signUpSuccess = user => ({
   type: SIGN_UP_SUCCESS,
@@ -20,19 +20,18 @@ export const signingUp = () => ({
 
 export const signUp = user => (dispatch) => {
   dispatch(signingUp());
-  return axios.post(apiURL, user)
+  return axios.post(`${apiURL}/users/signup`, user)
     .then((response) => {
-      console.log(response);
       dispatch(signUpSuccess(response));
       localStorage.setItem('userToken', response.data.token);
-      dispatch(push('/'));
+      setTimeout(() => {
+        dispatch(push('/login'));
+      }, 2000);
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response.data);
         dispatch(signUpFailure(error.response.data.error));
       } else {
-        console.log(error);
         dispatch(signUpFailure(error.message));
       }
     });
