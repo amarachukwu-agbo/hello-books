@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import logo from '../../public/images/logo.png';
 import PageFooter from '../PageFooter';
 import SignUpForm from './SignUpForm';
+import { signUp } from '../../actions/userSignUp';
 
 class SignUpPage extends Component {
   constructor(props) {
     super(props);
     this.renderSignUpMessage = this.renderSignUpMessage.bind(this);
   }
+
   renderSignUpMessage() {
     let signUpMessage = '';
     if (this.props.isSigningUp) {
@@ -41,7 +43,7 @@ class SignUpPage extends Component {
                                         { this.renderSignUpMessage() }
                                     </span>
                                 </div>
-                                <SignUpForm />
+                                <SignUpForm handler = { this.props.signUp } />
                             </div>
                         </div>
                     </div>
@@ -53,6 +55,10 @@ class SignUpPage extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  signUp: (user) => { dispatch(signUp(user)); },
+});
+
 const mapStateToProps = state => ({
   error: state.auth.error,
   isSigningUp: state.auth.isSigningUp,
@@ -60,5 +66,4 @@ const mapStateToProps = state => ({
   user: state.auth.user,
 });
 
-export default connect(mapStateToProps)(SignUpPage);
-
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);

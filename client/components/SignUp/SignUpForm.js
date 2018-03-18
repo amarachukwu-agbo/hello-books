@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import InputText from '../InputText';
 import validate from '../../helpers/validations/signup';
 import '../../helpers/materialize';
-import { signUp } from '../../actions/userSignUp';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -16,8 +15,7 @@ class SignUpForm extends Component {
     const {
       firstName, lastName, email, password,
     } = values;
-    console.log(values);
-    this.props.signUp({
+    this.props.handler({
       firstName, lastName, email, password,
     });
   }
@@ -66,19 +64,16 @@ class SignUpForm extends Component {
                         <button className="btn waves-effect waves-light" type="submit" disabled={submitting} name="action">Submit <i className="material-icons right">send</i></button>
                     </div>
                 </div>
-                <p className="col s12 center-align">Have an account here already? <a href="/login">Sign In</a></p>
+                <p className="col s12 center-align">Have an account here already? <Link to ="/login">Sign In</Link></p>
             </form>
 
     );
   }
 }
-const mapDispatchToProps = dispatch => ({
-  signUp: (user) => { dispatch(signUp(user)); },
-});
 
 const reduxSignUp = reduxForm({
   form: 'signUp',
   validate,
 })(SignUpForm);
 
-export default connect(null, mapDispatchToProps)(reduxSignUp);
+export default reduxSignUp;
