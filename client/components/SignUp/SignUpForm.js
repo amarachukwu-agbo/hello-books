@@ -3,7 +3,6 @@ import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import InputText from '../InputText';
 import validate from '../../helpers/validations/signup';
-import '../../helpers/materialize';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -28,10 +27,10 @@ class SignUpForm extends Component {
                     <h5 className="white-text">Register</h5>
                 </div>
                 <div className="row">
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m12 l6">
                         <Field name="firstName" type="text" icon="account_circle" component={InputText} label="First Name"/>
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m12 l6">
                         <Field name="lastName" type="text" component={InputText} label="Last Name"/>
                     </div>
                 </div>
@@ -43,10 +42,10 @@ class SignUpForm extends Component {
                 </div>
 
                 <div className="row">
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m12 l6">
                         <Field name="password" type="password" label="Password" icon= "lock" component={InputText} />
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col s12 m12 l6">
                         <Field name="password2" type="password" label="Confirm Password" component={InputText} />
                     </div>
                 </div><br/>

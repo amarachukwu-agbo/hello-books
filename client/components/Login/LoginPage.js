@@ -28,9 +28,10 @@ class LoginPage extends Component {
 
   render() {
     return (
+      <div className = "row">
         <div className="row">
-            <div className="col s4 "></div>
-            <div className="col s4">
+            <div className="col s1 m3 l4 "></div>
+            <div className="col s10 m6 l4">
                 <div className="row card-panel">
                     <div className="row">
                         <div className="center-align">
@@ -45,8 +46,9 @@ class LoginPage extends Component {
                     </div>
                 </div>
             </div>
-            <div className="col s4"></div>
-            <PageFooter />
+            <div className="col s1 m3 l4"></div>
+        </div>
+        <PageFooter />
         </div>
     );
   }
