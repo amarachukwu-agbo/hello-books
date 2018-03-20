@@ -47,3 +47,25 @@ $sucess-color: #008000;
 .favorite-img {
   height: 150px;
 }
+
+.book-list {
+  width: 90%;
+}
+
+.parallax-container, .book-header {
+  font-family: 'Old Standard TT';
+  font-stretch: narrower;
+}
+
+.book-icon {
+  margin: 10px 10px 0px 0px; 
+}
+
+@media (max-width: 600px) {
+  .nav-wrapper .brand-logo img {
+    height: 56px;
+  }
+  .parallax-container {
+    height: 400px;
+  }
+}
