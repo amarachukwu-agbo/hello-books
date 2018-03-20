@@ -76,6 +76,7 @@
     "joi": "^13.0.2",
     "jsonfile": "^4.0.0",
     "jsonwebtoken": "^8.1.0",
+    "materialize-css": "^0.100.2",
     "pg": "^6.4.1",
     "pg-hstore": "^2.3.2",
     "react": "^16.2.0",
