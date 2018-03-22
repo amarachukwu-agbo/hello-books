@@ -86,8 +86,8 @@ export default class Users {
           },
         })
           .spread((upvote, created) => {
-            // Increment book upvotes if user has not upvoted book
             if (created === true) {
+              // Check if user has downvoted book before and delete entry if true
               return models.Downvotes.destroy({
                 where: {
                   bookId: req.params.bookId,
@@ -95,7 +95,9 @@ export default class Users {
                 },
               })
                 .then((rowDeleted) => {
+                  // Decrement book downvotes if user has downvoted book before
                   if (rowDeleted !== 0) book.decrement('downvotes');
+                  // Increment book upvotes and return book
                   book.increment('upvotes')
                     .then(upVote => upVote.reload())
                     .then(upvoteEntry => res.status(201).json({
@@ -132,7 +134,11 @@ export default class Users {
   }
 
 
-// New Downvote
+  /* Method votes down a book
+  * @param req is the request object
+  * @param res is the response object
+  * @return is downvote object
+  */
   static downvoteBook(req, res) {
     // Check if book exists in database
     const bookId = parseInt(req.params.bookId, 10);
@@ -147,7 +153,7 @@ export default class Users {
           },
         })
           .spread((upvote, created) => {
-            // Increment book upvotes if user has not upvoted book
+            // Check if user has upvoted book before and delete entry if true
             if (created === true) {
               return models.Upvotes.destroy({
                 where: {
@@ -156,7 +162,9 @@ export default class Users {
                 },
               })
                 .then((rowDeleted) => {
+                  // Decrement book upvotes if user has upvoted book before
                   if (rowDeleted !== 0) book.decrement('upvotes');
+                  // Increment book downvotes and return book
                   book.increment('downvotes')
                     .then(downVote => downVote.reload())
                     .then(downvoteEntry => res.status(201).json({
@@ -192,56 +200,6 @@ export default class Users {
       });
   }
 
-
-  /* Method votes down a book
-  * @param req is the request object
-  * @param res is the response object
-  * @return is downvote object
-  */
-  /* static downvoteBook(req, res) {
-    // Check if book exists in database
-    return models.Book.findById(req.params.bookId)
-      .then((book) => {
-        if (!book) return res.status(404).json({ msg: 'Book not found' });
-        // Check if user has downvoted book before
-        models.Downvotes.findOrCreate({
-          where: {
-            bookId: req.params.bookId,
-            userId: req.params.userId,
-          },
-        }).spread((downvote, created) => {
-          // Increment book upvotes if user has not upvoted book
-          if (created === true) {
-            return book.increment('downvotes')
-            // Increment upvotes and return current value
-              .then(downVote => downVote.reload())
-              .then(downvotedBook => res.status(201).json({
-                msg: 'Successfully downvoted book',
-                downvote: {
-                  userId: req.params.userId,
-                  bookId: req.params.bookId,
-                  downvotes: downvotedBook.downvotes,
-                },
-              }))
-              .catch(error => res.status(500).json({
-                msg: 'Error downvoting book',
-                error,
-              }));
-          }
-          return res.status(403).json({ msg: 'Already downvoted book' });
-        })
-          .catch((error) => {
-            res.status(500).json({
-              msg: 'Error downvoting book',
-              error,
-            });
-          });
-      })
-      .catch((error) => {
-        res.status(500).json({ msg: 'Error downvoting book', error });
-      });
-  }*/
-
   /* Method lets a user favorite a book
   * @param req is the request is the request object
   * @param res is the response object
@@ -271,7 +229,7 @@ export default class Users {
                   res.status(201).json({
                     msg: `Favorited book ${req.params.bookId}`,
                     favorite,
-                    bookFavoriteCount: favorites.favCount,
+                    book: favorites,
                   });
                 });
             }
@@ -282,7 +240,7 @@ export default class Users {
             msg: 'Error favoriting book', error,
           }));
       })
-      .catch(error => res.status(400).json({
+      .catch(error => res.status(500).json({
         msg: 'Error favoriting book', error,
       }));
   }
@@ -339,6 +297,10 @@ export default class Users {
             userId,
             review: req.body.review,
           },
+          include: [{
+            model: models.User,
+            as: 'user',
+          }],
         })
           .spread((review, created) => {
             // If not create review
@@ -403,10 +365,16 @@ export default class Users {
         id: parseInt(req.params.bookId, 10),
       },
       // Join book reviews
-      include: [{
-        model: models.Review,
-        as: 'bookReviews',
-      }],
+      include: [
+        {
+          model: models.Review,
+          as: 'bookReviews',
+          include: [{
+            model: models.User,
+            as: 'userReviews',
+          }],
+        },
+      ],
     })
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
