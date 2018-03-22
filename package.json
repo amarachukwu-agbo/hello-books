@@ -91,6 +91,7 @@
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.4.0",
     "supertest": "^3.0.0",
+    "url-loader": "^1.0.1",
     "webpack-dev-middleware": "^3.0.1",
     "webpack-hot-middleware": "^2.21.2"
   }

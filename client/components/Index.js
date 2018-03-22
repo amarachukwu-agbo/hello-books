@@ -44,7 +44,12 @@ class IndexPage extends Component {
                             </div>
                         }
                         { this.props.books &&
-                            <BooksList books = { this.props.books } />
+                            <div>
+                                <BooksList books = { this.props.books.slice(0, 7) } />
+                                <div className="row center">
+                                    <Link to = "/books"><button className= "btn btn-large red waves-effect waves-light">View All Books </button></Link>
+                                </div>
+                            </div>
                         }
                     </div>
                     <div className="container"><div className="divider z-depth-1"></div></div>
@@ -63,7 +68,7 @@ class IndexPage extends Component {
                             </div>
                         }
                         { this.props.upvotedBooks &&
-                            <BooksList books = { this.props.upvotedBooks } />
+                            <BooksList books = { this.props.upvotedBooks.slice(0, 7) }/>
                         }
                     </div>
                 </div>

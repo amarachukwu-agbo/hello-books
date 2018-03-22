@@ -52,7 +52,6 @@ export const getMostUpvotedBooks = () => (dispatch) => {
   dispatch(getUpvotedBooksRequest());
   return axios.get(`${apiURL}/books?sort=upvotes&order=desc`)
     .then((response) => {
-      console.log(response);
       dispatch(getUpvotedBooksSuccess(response.data));
     })
     .catch((error) => {

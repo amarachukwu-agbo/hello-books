@@ -38,9 +38,9 @@ class LoginPage extends Component {
                             <img src= { logo } alt="logo" className="form-logo" />
                         </div>
                     </div>
-                    <span className= { this.props.hasErrored ? 'sign-up-error' : 'sign-up-success' }>
+                    <div className="center"><span className= { this.props.hasErrored ? 'sign-up-error' : 'sign-up-success' }>
                       { this.renderLoginMessage() }
-                    </span>
+                    </span></div>
                     <div className="row">
                         <LoginForm handler = { this.props.loginUser } />
                     </div>
