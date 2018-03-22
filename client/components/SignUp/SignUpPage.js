@@ -29,8 +29,8 @@ class SignUpPage extends Component {
     return (
             <div className="grey lighten-4">
                 <div className="row">
-                    <div className="col s1 m1 l3 "></div>
-                    <div className="col s10 m10 l6">
+                    <div className="col s1 m2 l3 "></div>
+                    <div className="col s10 m8 l6">
                         <div className="row card-panel">
                             <div className="row">
                                 <div className="center-align">
@@ -47,7 +47,7 @@ class SignUpPage extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col s1 m10 l3"></div>
+                    <div className="col s1 m2 l3"></div>
                 </div>
                 <PageFooter />
             </div>
