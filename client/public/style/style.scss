@@ -58,6 +58,19 @@ $sucess-color: #008000;
   font-stretch: narrower;
 }
 
+.book-image {
+  min-height: 400px;
+}
+
+.card {
+  height: 400px;
+  width: 300px;
+}
+
+.card-image img {
+  height: 200px;
+}
+
 .book-icon {
   margin-bottom: 0;
   margin-left: 0;
@@ -69,7 +82,7 @@ $sucess-color: #008000;
   .brand-logo img {
     height: 56px;
   }
-
+  
   .parallax-container {
     height: 400px;
   }
