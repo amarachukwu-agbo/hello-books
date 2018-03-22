@@ -3,6 +3,7 @@ import { routerReducer } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 import auth from './userSignUp';
 import login from './login';
+import book from './book';
 import { books, mostUpvotedBooks } from './books';
 
 const rootReducer = combineReducers({
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
   auth,
   login,
   books,
+  book,
   mostUpvotedBooks,
   routing: routerReducer,
 });
