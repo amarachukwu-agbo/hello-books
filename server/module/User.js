@@ -62,7 +62,7 @@ export default class Users {
         if (!passwordMatch) return res.status(401).json({ msg: 'Authentication failed' });
         // Provides authenticated user with token
         const token = createToken(user);
-        res.status(201).json({ msg: 'Login successful', token });
+        res.status(201).json({ msg: 'Login successful', user, token });
       })
       .catch(error => res.status(500).json(error));
   }
@@ -88,22 +88,35 @@ export default class Users {
           .spread((upvote, created) => {
             // Increment book upvotes if user has not upvoted book
             if (created === true) {
-              return book.increment('upvotes')
-                // Increment upvotes and return current value
-                .then(upVote => upVote.reload())
-                .then(upvoteEntry => res.status(201).json({
-                  msg: 'Successfully upvoted book',
-                  upvote: {
-                    userId: req.params.userId,
-                    bookId: req.params.bookId,
-                    upvotes: upvoteEntry.upvotes,
-                  },
-                }))
-                .catch(error => res.status(400).json({
+              return models.Downvotes.destroy({
+                where: {
+                  bookId: req.params.bookId,
+                  userId: req.params.userId,
+                },
+              })
+                .then((rowDeleted) => {
+                  if (rowDeleted !== 0) book.decrement('downvotes');
+                  book.increment('upvotes')
+                    .then(upVote => upVote.reload())
+                    .then(upvoteEntry => res.status(201).json({
+                      msg: 'Successfully upvoted book',
+                      upvote: {
+                        userId: req.params.userId,
+                        bookId: req.params.bookId,
+                        book: upvoteEntry,
+                      },
+                    }))
+                    .catch(error => res.status(400).json({
+                      msg: 'Error upvoting book',
+                      error,
+                    }));
+                })
+                .catch(error => res.status(500).json({
                   msg: 'Error upvoting book',
                   error,
                 }));
             }
+
             return res.status(403).json({ msg: 'Already upvoted book' });
           })
           .catch((error) => {
@@ -119,12 +132,73 @@ export default class Users {
   }
 
 
+// New Downvote
+  static downvoteBook(req, res) {
+    // Check if book exists in database
+    const bookId = parseInt(req.params.bookId, 10);
+    return models.Book.findById(bookId)
+      .then((book) => {
+        if (!book) return res.status(404).json({ msg: 'Book not found' });
+        // Check if user has upvoted book before
+        models.Downvotes.findOrCreate({
+          where: {
+            bookId: req.params.bookId,
+            userId: req.params.userId,
+          },
+        })
+          .spread((upvote, created) => {
+            // Increment book upvotes if user has not upvoted book
+            if (created === true) {
+              return models.Upvotes.destroy({
+                where: {
+                  bookId: req.params.bookId,
+                  userId: req.params.userId,
+                },
+              })
+                .then((rowDeleted) => {
+                  if (rowDeleted !== 0) book.decrement('upvotes');
+                  book.increment('downvotes')
+                    .then(downVote => downVote.reload())
+                    .then(downvoteEntry => res.status(201).json({
+                      msg: 'Successfully downvoted book',
+                      upvote: {
+                        userId: req.params.userId,
+                        bookId: req.params.bookId,
+                        book: downvoteEntry,
+                      },
+                    }))
+                    .catch(error => res.status(400).json({
+                      msg: 'Error downvoting book',
+                      error,
+                    }));
+                })
+                .catch(error => res.status(500).json({
+                  msg: 'Error downvoting book',
+                  error,
+                }));
+            }
+
+            return res.status(403).json({ msg: 'Already downvoted book' });
+          })
+          .catch((error) => {
+            res.status(400).json({
+              msg: 'Error downvoting book',
+              error,
+            });
+          });
+      })
+      .catch((error) => {
+        res.status(400).json({ msg: 'Error downvoting book', error });
+      });
+  }
+
+
   /* Method votes down a book
   * @param req is the request object
   * @param res is the response object
   * @return is downvote object
   */
-  static downvoteBook(req, res) {
+  /* static downvoteBook(req, res) {
     // Check if book exists in database
     return models.Book.findById(req.params.bookId)
       .then((book) => {
@@ -166,7 +240,7 @@ export default class Users {
       .catch((error) => {
         res.status(500).json({ msg: 'Error downvoting book', error });
       });
-  }
+  }*/
 
   /* Method lets a user favorite a book
   * @param req is the request is the request object
@@ -232,7 +306,7 @@ export default class Users {
     })
       .then((books) => {
         if (books.length > 0) {
-          return res.status(201).json({
+          return res.status(200).json({
             msg: 'Your favorite books were successfully retrieved',
             favorites: books,
           });
@@ -301,7 +375,7 @@ export default class Users {
           [{ model: models.Review, as: 'bookReviews' }, 'createdAt', 'ASC'],
         ],
       })
-        .then(book => res.status(201).json(book))
+        .then(book => res.status(200).json(book))
         .catch(error => res.status(400).json(error));
     }
     return models.Book.findAll({
