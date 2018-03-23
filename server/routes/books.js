@@ -6,6 +6,7 @@ import verifyToken from '../controllers/auth/verifyToken';
 import verifyBookSchema from '../controllers/validation/book';
 import verifyParamsSchema from '../controllers/validation/params';
 import verifyUpdateBookSchema from '../controllers/validation/updateBook';
+import verifySearchBookSchema from '../controllers/validation/searchBook';
 import verifyQuerySchema from '../controllers/validation/getBook';
 
 const router = express.Router();
@@ -25,4 +26,7 @@ router.get('/', verifyQuerySchema, users.getAllBooks);
 // Endpoint to get a book
 router.get('/:bookId', verifyParamsSchema, users.getBook);
 
+router.post('/remove/:bookId', verifyToken, books.deleteBook);
+
+router.post('/search', verifySearchBookSchema, users.searchBooks);
 export default router;

@@ -18,6 +18,7 @@ const favoriteSchema = (sequelize) => {
     Favorites.belongsTo(models.Book, {
       foreignKey: 'bookId',
       as: 'favBook',
+      onDelete: 'CASCADE',
     });
   };
   return Favorites;

@@ -1,7 +1,10 @@
 // Import necessary modules
 import bcryptjs from 'bcryptjs';
+// import * as Sequelize from 'sequelize';
 import models from '../models';
 import createToken from '../controllers/auth/createToken';
+
+const Sequelize = require('sequelize');
 
 export default class Users {
   /* Method implements user registration
@@ -62,6 +65,7 @@ export default class Users {
         if (!passwordMatch) return res.status(401).json({ msg: 'Authentication failed' });
         // Provides authenticated user with token
         const token = createToken(user);
+        user.password = null;
         res.status(201).json({ msg: 'Login successful', user, token });
       })
       .catch(error => res.status(500).json(error));
@@ -297,10 +301,6 @@ export default class Users {
             userId,
             review: req.body.review,
           },
-          include: [{
-            model: models.User,
-            as: 'user',
-          }],
         })
           .spread((review, created) => {
             // If not create review
@@ -372,6 +372,9 @@ export default class Users {
           include: [{
             model: models.User,
             as: 'userReviews',
+            attributes: {
+              exclude: ['password'],
+            },
           }],
         },
       ],
@@ -383,6 +386,115 @@ export default class Users {
       .catch(err => res.status(400).json(err));
   }
 
+  /* Method gets a user in the database
+  * @param req is the request object
+  * @param res is the response object
+  * @return user object
+  */
+
+  static getUser(req, res) {
+    const userId = parseInt(req.params.userId, 10);
+
+    // Find user and include their favorites, borrowed books
+    // borrow requests and return requests
+    return models.User.find({
+      where: {
+        id: userId,
+      },
+      attributes: {
+        exclude: ['password'],
+      },
+      include: [
+        {
+          model: models.BorrowedBooks,
+          as: 'userBooks',
+          include: [{
+            model: models.Book,
+            as: 'borrowedBooks',
+            attributes: ['title', 'author'],
+          }],
+        },
+        {
+          model: models.BorrowRequests,
+          as: 'userBorrowRequests',
+          include: [{
+            model: models.Book,
+            as: 'borrowRequests',
+            attributes: ['title', 'author'],
+          }],
+        },
+        {
+          model: models.ReturnRequests,
+          as: 'userReturnRequests',
+          include: [{
+            model: models.Book,
+            as: 'returnRequests',
+            attributes: ['title', 'author'],
+          }],
+        },
+        {
+          model: models.Favorites,
+          as: 'userFavorites',
+          include: [{
+            model: models.Book,
+            as: 'favBook',
+            attributes: ['title', 'author'],
+          }],
+        },
+      ],
+    })
+      .then((user) => {
+        if (!user) return res.status(404).json({ msg: 'User not found' });
+        return res.status(200).json({ msg: 'Successfully got user', user });
+      })
+      .catch((error) => {
+        res.status(500).json({ msg: 'Could not get user', error });
+      });
+  }
+
+  /* Method lets a user get a book(s) in the database using search parameters
+  * @param req is the request object
+  * @param res is the response object
+  * @return book object
+  */
+
+  static searchBooks(req, res) {
+    const title = req.body.title || '';
+    const author = req.body.author || '';
+    const subject = req.body.subject || '';
+
+    models.Book.findAll({
+      where: {
+        [Sequelize.Op.or]: [
+          {
+            title: {
+              [Sequelize.Op.iLike]: title,
+            },
+          },
+          {
+            author: {
+              [Sequelize.Op.iLike]: author,
+            },
+          },
+          {
+            subject: {
+              [Sequelize.Op.iLike]: subject,
+            },
+          },
+        ],
+      },
+    })
+      .then((books) => {
+        if (books.length === 0) return res.status(404).json({ msg: 'No book was found' });
+        return res.status(200).json({
+          msg: 'Successfully retrieved books',
+          books,
+        });
+      })
+      .catch((error) => {
+        res.status(500).json({ msg: 'Unable to search for books', error });
+      });
+  }
 
   /* Method lets a user send  a borrow request for a book
   @param req is the request object

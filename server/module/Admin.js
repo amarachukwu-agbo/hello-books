@@ -43,6 +43,27 @@ export default class Admin extends Users {
       .catch(error => res.status(400).json({ msg: 'Book could not be added', error }));
   }
 
+  /* Method lets admin delete a book from the database
+  * @param req is the request object
+  * @param res is the response object
+  * @return object
+  */
+  static deleteBook(req, res) {
+    const bookId = parseInt(req.params.bookId, 10);
+    models.Book.destroy({
+      where: {
+        id: bookId,
+      },
+    }).then((bookDeleted) => {
+      if (bookDeleted !== 0) {
+        return res.status(201).json({ msg: 'Book deleted' });
+      }
+      return res.status(404).json({ msg: 'Book not found' });
+    }).catch((error) => {
+      res.status(500).json({ msg: 'Book could not be deleted', error });
+    });
+  }
+
   /* Method modifies a book
   * @param res is the response object
   * @param req is the request object
@@ -117,6 +138,66 @@ export default class Admin extends Users {
             .catch(error => res.status(400).json({ msg: 'Error handling request', error }));
         }
         return res.status(403).json({ msg: 'Request has already been handled' });
+      });
+  }
+
+  /* Method gets all borrow requests
+  * @param res is response object
+  * @param req is request object
+  * @return borrowRequest object
+  */
+  static getBorrowRequests(req, res) {
+    models.BorrowRequests.findAll({
+      include: [
+        {
+          model: models.User,
+          as: 'userBorrowRequests',
+          attributes: {
+            exclude: ['password'],
+          },
+        },
+        {
+          model: models.Book,
+          as: 'borrowRequests',
+        },
+      ],
+    })
+      .then((requests) => {
+        if (requests.length === 0) return res.status(404).json({ msg: 'No borrow requests' });
+        return res.status(200).json({ msg: 'Successfully got borrow requests', requests });
+      })
+      .catch((error) => {
+        res.status(500).json({ msg: 'Unable to get borrow requests', error });
+      });
+  }
+
+  /* Method gets all borrow requests
+  * @param res is response object
+  * @param req is request object
+  * @return borrowRequest object
+  */
+  static getReturnRequests(req, res) {
+    models.ReturnRequests.findAll({
+      include: [
+        {
+          model: models.User,
+          as: 'userReturnRequests',
+          attributes: {
+            exclude: ['password'],
+          },
+        },
+        {
+          model: models.Book,
+          as: 'returnRequests',
+        },
+      ],
+    })
+      .then((requests) => {
+        if (requests.length === 0) return res.status(404).json({ msg: 'No return requests' });
+        return res.status(200).json({ msg: 'Successfully got return requests', requests });
+      })
+      .catch((error) => {
+        res.status(500).json({ msg: 'Unable to get return requests', error });
       });
   }
 
