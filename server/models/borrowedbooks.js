@@ -24,6 +24,7 @@ const borrowedBookSchema = (sequelize) => {
     BorrowedBooks.belongsTo(models.Book, {
       foreignKey: 'bookId',
       as: 'borrowedBooks',
+      onDelete: 'CASCADE',
     });
   };
   return BorrowedBooks;

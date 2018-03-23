@@ -13,6 +13,24 @@ const bookControllers = {
     }
     Admin.addBook(req, res);
   },
+
+  deleteBook(req, res) {
+    // Check the role of user from decoded token
+    // If 'User' return error else delete book
+    if (req.decoded.role !== 'Admin') {
+      return res.status(401).json({
+        msg: 'You are not authorized to delete book',
+      });
+    }
+    const bookId = parseInt(req.params.bookId, 10);
+
+    // check if bookId is valid
+    if (typeof (bookId) === 'number' && bookId > 0) {
+      return Admin.deleteBook(req, res);
+    }
+    return res.status(400).json({ msg: 'bookId must be a positive integer' });
+  },
+
   // Update a book in the database
   updateBook(req, res) {
     // Check the role of user from decoded token

@@ -1,7 +1,10 @@
 // Import necessary modules
 import bcryptjs from 'bcryptjs';
+// import * as Sequelize from 'sequelize';
 import models from '../models';
 import createToken from '../controllers/auth/createToken';
+
+const Sequelize = require('sequelize');
 
 export default class Users {
   /* Method implements user registration
@@ -62,7 +65,8 @@ export default class Users {
         if (!passwordMatch) return res.status(401).json({ msg: 'Authentication failed' });
         // Provides authenticated user with token
         const token = createToken(user);
-        res.status(201).json({ msg: 'Login successful', token });
+        user.password = null;
+        res.status(201).json({ msg: 'Login successful', user, token });
       })
       .catch(error => res.status(500).json(error));
   }
@@ -86,24 +90,39 @@ export default class Users {
           },
         })
           .spread((upvote, created) => {
-            // Increment book upvotes if user has not upvoted book
             if (created === true) {
-              return book.increment('upvotes')
-                // Increment upvotes and return current value
-                .then(upVote => upVote.reload())
-                .then(upvoteEntry => res.status(201).json({
-                  msg: 'Successfully upvoted book',
-                  upvote: {
-                    userId: req.params.userId,
-                    bookId: req.params.bookId,
-                    upvotes: upvoteEntry.upvotes,
-                  },
-                }))
-                .catch(error => res.status(400).json({
+              // Check if user has downvoted book before and delete entry if true
+              return models.Downvotes.destroy({
+                where: {
+                  bookId: req.params.bookId,
+                  userId: req.params.userId,
+                },
+              })
+                .then((rowDeleted) => {
+                  // Decrement book downvotes if user has downvoted book before
+                  if (rowDeleted !== 0) book.decrement('downvotes');
+                  // Increment book upvotes and return book
+                  book.increment('upvotes')
+                    .then(upVote => upVote.reload())
+                    .then(upvoteEntry => res.status(201).json({
+                      msg: 'Successfully upvoted book',
+                      upvote: {
+                        userId: req.params.userId,
+                        bookId: req.params.bookId,
+                        book: upvoteEntry,
+                      },
+                    }))
+                    .catch(error => res.status(400).json({
+                      msg: 'Error upvoting book',
+                      error,
+                    }));
+                })
+                .catch(error => res.status(500).json({
                   msg: 'Error upvoting book',
                   error,
                 }));
             }
+
             return res.status(403).json({ msg: 'Already upvoted book' });
           })
           .catch((error) => {
@@ -126,45 +145,62 @@ export default class Users {
   */
   static downvoteBook(req, res) {
     // Check if book exists in database
-    return models.Book.findById(req.params.bookId)
+    const bookId = parseInt(req.params.bookId, 10);
+    return models.Book.findById(bookId)
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
-        // Check if user has downvoted book before
+        // Check if user has upvoted book before
         models.Downvotes.findOrCreate({
           where: {
             bookId: req.params.bookId,
             userId: req.params.userId,
           },
-        }).spread((downvote, created) => {
-          // Increment book upvotes if user has not upvoted book
-          if (created === true) {
-            return book.increment('downvotes')
-            // Increment upvotes and return current value
-              .then(downVote => downVote.reload())
-              .then(downvotedBook => res.status(201).json({
-                msg: 'Successfully downvoted book',
-                downvote: {
-                  userId: req.params.userId,
-                  bookId: req.params.bookId,
-                  downvotes: downvotedBook.downvotes,
-                },
-              }))
-              .catch(error => res.status(500).json({
-                msg: 'Error downvoting book',
-                error,
-              }));
-          }
-          return res.status(403).json({ msg: 'Already downvoted book' });
         })
+          .spread((upvote, created) => {
+            // Check if user has upvoted book before and delete entry if true
+            if (created === true) {
+              return models.Upvotes.destroy({
+                where: {
+                  bookId: req.params.bookId,
+                  userId: req.params.userId,
+                },
+              })
+                .then((rowDeleted) => {
+                  // Decrement book upvotes if user has upvoted book before
+                  if (rowDeleted !== 0) book.decrement('upvotes');
+                  // Increment book downvotes and return book
+                  book.increment('downvotes')
+                    .then(downVote => downVote.reload())
+                    .then(downvoteEntry => res.status(201).json({
+                      msg: 'Successfully downvoted book',
+                      downvote: {
+                        userId: req.params.userId,
+                        bookId: req.params.bookId,
+                        book: downvoteEntry,
+                      },
+                    }))
+                    .catch(error => res.status(400).json({
+                      msg: 'Error downvoting book',
+                      error,
+                    }));
+                })
+                .catch(error => res.status(500).json({
+                  msg: 'Error downvoting book',
+                  error,
+                }));
+            }
+
+            return res.status(403).json({ msg: 'Already downvoted book' });
+          })
           .catch((error) => {
-            res.status(500).json({
+            res.status(400).json({
               msg: 'Error downvoting book',
               error,
             });
           });
       })
       .catch((error) => {
-        res.status(500).json({ msg: 'Error downvoting book', error });
+        res.status(400).json({ msg: 'Error downvoting book', error });
       });
   }
 
@@ -197,7 +233,7 @@ export default class Users {
                   res.status(201).json({
                     msg: `Favorited book ${req.params.bookId}`,
                     favorite,
-                    bookFavoriteCount: favorites.favCount,
+                    book: favorites,
                   });
                 });
             }
@@ -208,7 +244,7 @@ export default class Users {
             msg: 'Error favoriting book', error,
           }));
       })
-      .catch(error => res.status(400).json({
+      .catch(error => res.status(500).json({
         msg: 'Error favoriting book', error,
       }));
   }
@@ -232,7 +268,7 @@ export default class Users {
     })
       .then((books) => {
         if (books.length > 0) {
-          return res.status(201).json({
+          return res.status(200).json({
             msg: 'Your favorite books were successfully retrieved',
             favorites: books,
           });
@@ -301,7 +337,7 @@ export default class Users {
           [{ model: models.Review, as: 'bookReviews' }, 'createdAt', 'ASC'],
         ],
       })
-        .then(book => res.status(201).json(book))
+        .then(book => res.status(200).json(book))
         .catch(error => res.status(400).json(error));
     }
     return models.Book.findAll({
@@ -329,10 +365,19 @@ export default class Users {
         id: parseInt(req.params.bookId, 10),
       },
       // Join book reviews
-      include: [{
-        model: models.Review,
-        as: 'bookReviews',
-      }],
+      include: [
+        {
+          model: models.Review,
+          as: 'bookReviews',
+          include: [{
+            model: models.User,
+            as: 'userReviews',
+            attributes: {
+              exclude: ['password'],
+            },
+          }],
+        },
+      ],
     })
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
@@ -341,6 +386,115 @@ export default class Users {
       .catch(err => res.status(400).json(err));
   }
 
+  /* Method gets a user in the database
+  * @param req is the request object
+  * @param res is the response object
+  * @return user object
+  */
+
+  static getUser(req, res) {
+    const userId = parseInt(req.params.userId, 10);
+
+    // Find user and include their favorites, borrowed books
+    // borrow requests and return requests
+    return models.User.find({
+      where: {
+        id: userId,
+      },
+      attributes: {
+        exclude: ['password'],
+      },
+      include: [
+        {
+          model: models.BorrowedBooks,
+          as: 'userBooks',
+          include: [{
+            model: models.Book,
+            as: 'borrowedBooks',
+            attributes: ['title', 'author'],
+          }],
+        },
+        {
+          model: models.BorrowRequests,
+          as: 'userBorrowRequests',
+          include: [{
+            model: models.Book,
+            as: 'borrowRequests',
+            attributes: ['title', 'author'],
+          }],
+        },
+        {
+          model: models.ReturnRequests,
+          as: 'userReturnRequests',
+          include: [{
+            model: models.Book,
+            as: 'returnRequests',
+            attributes: ['title', 'author'],
+          }],
+        },
+        {
+          model: models.Favorites,
+          as: 'userFavorites',
+          include: [{
+            model: models.Book,
+            as: 'favBook',
+            attributes: ['title', 'author'],
+          }],
+        },
+      ],
+    })
+      .then((user) => {
+        if (!user) return res.status(404).json({ msg: 'User not found' });
+        return res.status(200).json({ msg: 'Successfully got user', user });
+      })
+      .catch((error) => {
+        res.status(500).json({ msg: 'Could not get user', error });
+      });
+  }
+
+  /* Method lets a user get a book(s) in the database using search parameters
+  * @param req is the request object
+  * @param res is the response object
+  * @return book object
+  */
+
+  static searchBooks(req, res) {
+    const title = req.body.title || '';
+    const author = req.body.author || '';
+    const subject = req.body.subject || '';
+
+    models.Book.findAll({
+      where: {
+        [Sequelize.Op.or]: [
+          {
+            title: {
+              [Sequelize.Op.iLike]: title,
+            },
+          },
+          {
+            author: {
+              [Sequelize.Op.iLike]: author,
+            },
+          },
+          {
+            subject: {
+              [Sequelize.Op.iLike]: subject,
+            },
+          },
+        ],
+      },
+    })
+      .then((books) => {
+        if (books.length === 0) return res.status(404).json({ msg: 'No book was found' });
+        return res.status(200).json({
+          msg: 'Successfully retrieved books',
+          books,
+        });
+      })
+      .catch((error) => {
+        res.status(500).json({ msg: 'Unable to search for books', error });
+      });
+  }
 
   /* Method lets a user send  a borrow request for a book
   @param req is the request object

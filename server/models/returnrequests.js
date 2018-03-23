@@ -27,6 +27,7 @@ const returnRequestSchema = (sequelize) => {
     ReturnRequests.belongsTo(models.Book, {
       foreignKey: 'bookId',
       as: 'returnRequests',
+      onDelete: 'CASCADE',
     });
   };
   return ReturnRequests;

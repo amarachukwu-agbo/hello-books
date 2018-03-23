@@ -35,5 +35,6 @@ router.put('/:userId/borrow/:bookId', verifyToken, validateHandleRequestSchema, 
 router.post('/:userId/return/:bookId', verifyToken, validateReturnRequestSchema, users.sendReturnRequest);
 // Endpoint for Admin to handle return requests
 router.put('/:userId/return/:bookId', verifyToken, validateHandleRequestSchema, users.handleReturnRequest);
+router.get('/:userId', verifyToken, users.getUser);
 
 export default router;

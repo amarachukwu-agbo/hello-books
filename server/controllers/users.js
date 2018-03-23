@@ -16,6 +16,18 @@ const userControllers = {
     User.logIn(req, res);
   },
 
+  // Method gets a user's information
+  getUser(req, res) {
+    const userId = parseInt(req.params.userId, 10);
+
+    // Check if userId is valid
+    if (typeof (userId) === 'number' && userId > 0) {
+      return User.getUser(req, res);
+    }
+
+    return res.status(400).json({ msg: 'userId must be a positive integer' });
+  },
+
   // Method lets user upvote book
   upVote(req, res) {
     // Validate user's token
@@ -76,9 +88,41 @@ const userControllers = {
     User.getAllBooks(req, res);
   },
 
+  // Method searches for books on search parameters
+  searchBooks(req, res) {
+    // Check if there is a search parameter
+    if (Object.keys(req.body).length === 0) {
+      return res.status(400).json({ msg: 'No search parameter provided' });
+    }
+    // If not empty, search for books
+    return User.searchBooks(req, res);
+  },
+
   // Method gets a book in database
   getBook(req, res) {
     User.getBook(req, res);
+  },
+
+  // Method allows admin get borrow requests
+  getBorrowRequests(req, res) {
+    // Validate user as Admin
+    if (req.decoded.role !== 'Admin') {
+      return res.status(401).json({
+        msg: 'You are not authorised to view borrow requests',
+      });
+    }
+    Admin.getBorrowRequests(req, res);
+  },
+
+  // Method allows admin get return requests
+  getReturnRequests(req, res) {
+    // Validate user as Admin
+    if (req.decoded.role !== 'Admin') {
+      return res.status(401).json({
+        msg: 'You are not authorised to view reurn requests',
+      });
+    }
+    Admin.getReturnRequests(req, res);
   },
 
   // Method allows authenticated user borrow a book
