@@ -571,7 +571,7 @@ describe('API Endpoints Test', () => {
           expect(res.body.favorite).to.have.any.keys('id', 'bookId', 'userId');
           expect(res.body.favorite).to.have.any.keys('createdAt', 'updatedAt');
           expect(res.body).to.have.property('book');
-          expect(res.body.bookFavoriteCount).to.deep.equal(1);
+          expect(res.body.book.favCount).to.deep.equal(1);
           done();
         });
     });
