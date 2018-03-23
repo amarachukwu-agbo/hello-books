@@ -564,13 +564,13 @@ describe('API Endpoints Test', () => {
         .post('/api/v1/users/2/fav/1')
         .set('Authorization', `Token ${userToken}`)
         .end((err, res) => {
-          expect(res.statusCode).to.equal(201);
+          expect(res.statusCode).to.equal(200);
           expect(res.body).to.have.property('msg');
           expect(res.body.msg).to.deep.equal('Favorited book 1');
           expect(res.body).to.have.property('favorite');
           expect(res.body.favorite).to.have.any.keys('id', 'bookId', 'userId');
           expect(res.body.favorite).to.have.any.keys('createdAt', 'updatedAt');
-          expect(res.body).to.have.property('bookFavoriteCount');
+          expect(res.body).to.have.property('book');
           expect(res.body.bookFavoriteCount).to.deep.equal(1);
           done();
         });

@@ -173,7 +173,7 @@ export default class Users {
                     .then(downVote => downVote.reload())
                     .then(downvoteEntry => res.status(201).json({
                       msg: 'Successfully downvoted book',
-                      upvote: {
+                      downvote: {
                         userId: req.params.userId,
                         bookId: req.params.bookId,
                         book: downvoteEntry,
