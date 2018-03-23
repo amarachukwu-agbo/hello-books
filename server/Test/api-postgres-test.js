@@ -564,7 +564,7 @@ describe('API Endpoints Test', () => {
         .post('/api/v1/users/2/fav/1')
         .set('Authorization', `Token ${userToken}`)
         .end((err, res) => {
-          expect(res.statusCode).to.equal(200);
+          expect(res.statusCode).to.equal(201);
           expect(res.body).to.have.property('msg');
           expect(res.body.msg).to.deep.equal('Favorited book 1');
           expect(res.body).to.have.property('favorite');
@@ -616,12 +616,12 @@ describe('API Endpoints Test', () => {
 
 
   describe('An authenticated user can get his favorite books', () => {
-    it('should return 201 status and favorites', (done) => {
+    it('should return 200 status and favorites', (done) => {
       request(app)
         .get('/api/v1/users/2/favbooks')
         .set('Authorization', `Token ${userToken}`)
         .end((err, res) => {
-          expect(res.statusCode).to.equal(201);
+          expect(res.statusCode).to.equal(200);
           expect(res.body).to.have.property('msg');
           expect(res.body.msg).to.deep.equal('Your favorite books were successfully retrieved');
           expect(res.body).to.have.property('favorites');
