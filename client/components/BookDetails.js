@@ -5,18 +5,23 @@ class BookDetails extends Component {
   constructor(props) {
     super(props);
     this.favBook = this.favBook.bind(this);
+    this.upvoteBook = this.upvoteBook.bind(this);
+    this.downvoteBook = this.downvoteBook.bind(this);
   }
 
   favBook() {
-    const {
-      isAuthenticated,
-      favoriteBook,
-      user,
-      book,
-    } = this.props;
+    checkAuthentication(this.props.isAuthenticated);
+    this.props.favoriteBook(this.props.user.id, this.props.book.id);
+  }
 
-    checkAuthentication(isAuthenticated);
-    favoriteBook(user.id, book.id);
+  upvoteBook() {
+    checkAuthentication(this.props.isAuthenticated);
+    this.props.upvoteBook(this.props.user.id, this.props.book.id);
+  }
+
+  downvoteBook() {
+    checkAuthentication(this.props.isAuthenticated);
+    this.props.downvoteBook(this.props.user.id, this.props.book.id);
   }
 
   render() {
@@ -42,8 +47,12 @@ class BookDetails extends Component {
                       <div>
                           <button className="btn btn-small red">Borrow Book</button>
                           <div className="left">
-                          <button className="btn btn-small white teal-text left"><i className="material-icons prefix">thumb_up</i><span>{book.upvotes}</span></button>
-                          <button className="btn btn-small white teal-text left"><i className="material-icons prefix">thumb_down</i><span>{book.downvotes}</span></button>
+                          <button className="btn btn-small white teal-text left" onClick = { this.upvoteBook } disabled = { this.props.isUpvoting}>
+                            <i className="material-icons prefix">thumb_up</i><span>{book.upvotes}</span>
+                          </button>
+                          <button className="btn btn-small white teal-text left" onClick = { this.downvoteBook } disabled = { this.props.isDownvoting }>
+                            <i className="material-icons prefix">thumb_down</i><span>{book.downvotes}</span>
+                          </button>
                           <button className="btn btn-small white teal-text left" disabled = { this.props.isFavoriting } onClick={ this.favBook }>
                               <i className="material-icons prefix">favorite_border</i><span>{book.favCount}</span>
                           </button>

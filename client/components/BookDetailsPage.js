@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getBook, favoriteBook } from '../actions/book';
+import { getBook, favoriteBook, upvoteBook, downvoteBook } from '../actions/book';
 import PreLoader from './Preloader';
 import BookDetails from './BookDetails';
 import Review from './Reviews';
@@ -44,6 +44,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getBook: (bookId) => { dispatch(getBook(bookId)); },
   favoriteBook: (userId, bookId) => { dispatch(favoriteBook(userId, bookId)); },
+  upvoteBook: (userId, bookId) => { dispatch(upvoteBook(userId, bookId)); },
+  downvoteBook: (userId, bookId) => { dispatch(downvoteBook(userId, bookId)); },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookDetailsPage);
