@@ -5,12 +5,17 @@ import { GET_BOOK_SUCCESS,
   FAVORITE_REQUEST,
   FAVORITE_SUCCESS,
   FAVORITE_FAILURE,
+  UPVOTE_REQUEST,
+  UPVOTE_SUCCESS,
+  UPVOTE_FAILURE,
+  DOWNVOTE_REQUEST,
+  DOWNVOTE_SUCCESS,
+  DOWNVOTE_FAILURE,
 } from './types';
 
 
 import { apiURL } from './userSignUp';
 
-console.log(localStorage.getItem('userToken'));
 axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('userToken')}`;
 
 const getBookRequest = () => ({
@@ -68,6 +73,7 @@ const favoriteFailure = error => ({
 
 export const favoriteBook = (userId, bookId) => (dispatch) => {
   dispatch(favoriteRequest());
+  console.log(localStorage.getItem('userToken'));
   return axios.post(`${apiURL}/users/${userId}/fav/${bookId}`)
     .then((response) => {
       console.log(response);
@@ -79,6 +85,68 @@ export const favoriteBook = (userId, bookId) => (dispatch) => {
         dispatch(favoriteFailure(error.response.data.msg));
       } else {
         dispatch(favoriteFailure(error.message));
+      }
+    });
+};
+
+const upvoteRequest = () => ({
+  type: UPVOTE_REQUEST,
+});
+
+const upvoteSuccess = book => ({
+  type: UPVOTE_SUCCESS,
+  book,
+});
+
+const upvoteFailure = error => ({
+  type: UPVOTE_FAILURE,
+  error,
+});
+
+export const upvoteBook = (userId, bookId) => (dispatch) => {
+  dispatch(upvoteRequest());
+  return axios.post(`${apiURL}/users/${userId}/book/${bookId}/upvote`)
+    .then((response) => {
+      console.log(response);
+      dispatch(upvoteSuccess(response.data.upvote.book));
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.data);
+        dispatch(upvoteFailure(error.response.data.msg));
+      } else {
+        dispatch(upvoteFailure(error.message));
+      }
+    });
+};
+
+const downvoteRequest = () => ({
+  type: DOWNVOTE_REQUEST,
+});
+
+const downvoteSuccess = book => ({
+  type: DOWNVOTE_SUCCESS,
+  book,
+});
+
+const downvoteFailure = error => ({
+  type: DOWNVOTE_FAILURE,
+  error,
+});
+
+export const downvoteBook = (userId, bookId) => (dispatch) => {
+  dispatch(downvoteRequest());
+  return axios.post(`${apiURL}/users/${userId}/book/${bookId}/downvote`)
+    .then((response) => {
+      console.log(response);
+      dispatch(downvoteSuccess(response.data.downvote.book));
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.data);
+        dispatch(downvoteFailure(error.response.data.msg));
+      } else {
+        dispatch(downvoteFailure(error.message));
       }
     });
 };
