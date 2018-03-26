@@ -14,11 +14,14 @@ class IndexPage extends Component {
     this.props.getMostUpvotedBooks();
   }
   render() {
+    const style = {
+      backgroundImage: `url(${books2})`,
+      backgroundSize: 'cover',
+    };
     return (
             <div>
                 <Navbar />
-                <div className="parallax-container z-depth-4">
-                    <div className="parallax"> <img src= { books2 } className = "responsive-img" /></div>
+                <div className="parallax-container z-depth-5" style={ style }>
                     <div className="center-align">
                         <br/>
                         <h2 className="white-text text-darken-4 bold">Welcome to Hello-books</h2>
@@ -45,9 +48,9 @@ class IndexPage extends Component {
                         }
                         { this.props.books &&
                             <div>
-                                <BooksList books = { this.props.books.slice(0, 7) } />
+                                <BooksList books = { this.props.books.slice(0, 6) } />
                                 <div className="row center">
-                                    <Link to = "/books"><button className= "btn btn-large red waves-effect waves-light">View All Books </button></Link>
+                                    <Link to = "/books"><button className= "btn btn-medium red waves-effect waves-light">View All Books </button></Link>
                                 </div>
                             </div>
                         }
@@ -68,7 +71,7 @@ class IndexPage extends Component {
                             </div>
                         }
                         { this.props.upvotedBooks &&
-                            <BooksList books = { this.props.upvotedBooks.slice(0, 7) }/>
+                            <BooksList books = { this.props.upvotedBooks.slice(0, 6) }/>
                         }
                     </div>
                 </div>
