@@ -3,7 +3,14 @@ import { GET_BOOK_SUCCESS,
   GET_BOOK_FAILURE,
   FAVORITE_REQUEST,
   FAVORITE_SUCCESS,
-  FAVORITE_FAILURE } from '../actions/types';
+  FAVORITE_FAILURE,
+  UPVOTE_REQUEST,
+  UPVOTE_SUCCESS,
+  UPVOTE_FAILURE,
+  DOWNVOTE_REQUEST,
+  DOWNVOTE_SUCCESS,
+  DOWNVOTE_FAILURE,
+} from '../actions/types';
 
 const initialState = {};
 
@@ -48,6 +55,46 @@ const book = (state = initialState, action) => {
         ...state,
         book: { ...state.book, favCount: action.favCount },
         isFavoriting: false,
+      };
+    }
+    case UPVOTE_REQUEST: {
+      return {
+        ...state,
+        isUpvoting: true,
+      };
+    }
+    case UPVOTE_FAILURE: {
+      Materialize.toast(action.error, 1000);
+      return {
+        ...state,
+        isUpvoting: false,
+      };
+    }
+    case UPVOTE_SUCCESS: {
+      return {
+        ...state,
+        book: { ...state.book, upvotes: action.book.upvotes, downvotes: action.book.downvotes },
+        isUpvoting: false,
+      };
+    }
+    case DOWNVOTE_REQUEST: {
+      return {
+        ...state,
+        isDownvoting: true,
+      };
+    }
+    case DOWNVOTE_FAILURE: {
+      Materialize.toast(action.error, 1000);
+      return {
+        ...state,
+        isDownvoting: false,
+      };
+    }
+    case DOWNVOTE_SUCCESS: {
+      return {
+        ...state,
+        book: { ...state.book, upvotes: action.book.upvotes, downvotes: action.book.downvotes },
+        isDownvoting: false,
       };
     }
     default: {
