@@ -1,6 +1,11 @@
 import axios from 'axios';
-import { GET_BOOK_SUCCESS, GET_BOOK_REQUEST, GET_BOOK_FAILURE } from './types';
-import { FAVORITE_REQUEST, FAVORITE_SUCCESS, FAVORITE_FAILURE } from './types';
+import { GET_BOOK_SUCCESS,
+  GET_BOOK_REQUEST,
+  GET_BOOK_FAILURE,
+  FAVORITE_REQUEST,
+  FAVORITE_SUCCESS,
+  FAVORITE_FAILURE,
+} from './types';
 
 
 import { apiURL } from './userSignUp';
