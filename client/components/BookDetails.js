@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import checkAuthentication from '../helpers/auth';
 
 class BookDetails extends Component {
   constructor(props) {
@@ -14,9 +15,7 @@ class BookDetails extends Component {
       book,
     } = this.props;
 
-    if (!isAuthenticated) {
-      return Materialize.toast('You need to be logged in to access this feature', 1000, 'rounded');
-    }
+    checkAuthentication(isAuthenticated);
     favoriteBook(user.id, book.id);
   }
 
