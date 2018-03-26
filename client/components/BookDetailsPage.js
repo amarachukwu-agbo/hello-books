@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import getBook from '../actions/book';
+import { getBook, favoriteBook } from '../actions/book';
 import PreLoader from './Preloader';
 import BookDetails from './BookDetails';
 import Review from './Reviews';
@@ -12,7 +12,6 @@ class BookDetailsPage extends Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.props.isFetching) {
       return (
                 <div className="container">
@@ -30,7 +29,7 @@ class BookDetailsPage extends Component {
     }
     return (
             <div className="container">
-                { this.props.book && <BookDetails book = { this.props.book } /> }
+                { this.props.book && <BookDetails book = { this.props.book } { ...this.props }/> }
                 <br/>
                 { this.props.book && <Review reviews = { this.props.book.bookReviews }/> }
             </div>
@@ -40,9 +39,11 @@ class BookDetailsPage extends Component {
 
 const mapStateToProps = state => ({
   ...state.book,
+  ...state.login,
 });
 const mapDispatchToProps = dispatch => ({
   getBook: (bookId) => { dispatch(getBook(bookId)); },
+  favoriteBook: (userId, bookId) => { dispatch(favoriteBook(userId, bookId)); },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookDetailsPage);
