@@ -19,9 +19,9 @@ const Book = (props) => {
                     <p> Quantity| <span className="red-text text-darken-4 bold"> { book.quantity} </span></p>
                     <div className="divider"></div>
                     <div className="row">
-                        <div className="col s3 btn btn-small white teal-text book-icon"><i className="material-icons prefix">thumb_up</i><span>{book.upvotes}</span></div>
-                        <div className="col s3 btn btn-small white teal-text book-icon"><i className="material-icons prefix">favorite_border</i><span>{book.favCount}</span></div>
-                        <div className="col s3 btn btn-samll white teal-text book-icon"><i className="material-icons prefix">comment</i><span>{book.bookReviews.length}</span></div>
+                        <div className="col s3 btn btn-small btn-flat white teal-text book-icon"><i className="material-icons prefix">thumb_up</i><span>{book.upvotes}</span></div>
+                        <div className="col s3 btn btn-small btn-flat white teal-text book-icon"><i className="material-icons prefix">favorite_border</i><span>{book.favCount}</span></div>
+                        <div className="col s3 btn btn-samll btn-flat white teal-text book-icon"><i className="material-icons prefix">comment</i><span>{book.bookReviews.length}</span></div>
                     </div>
                 </div>
             </div>

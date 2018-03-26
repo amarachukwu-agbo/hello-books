@@ -2,7 +2,7 @@ import axios from 'axios';
 import { push } from 'react-router-redux';
 import { SIGN_UP_SUCCESS, SIGNING_UP, SIGN_UP_FAILURE } from './types';
 
-export const apiURL = 'https://hellobooksv2.herokuapp.com/api/v1';
+export const apiURL = 'https://hello-books-v2.herokuapp.com/api/v1';
 
 export const signUpSuccess = user => ({
   type: SIGN_UP_SUCCESS,

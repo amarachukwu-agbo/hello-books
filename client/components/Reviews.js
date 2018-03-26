@@ -10,13 +10,13 @@ class Review extends Component {
     if (!reviews.length) {
       return (
                 <div className = "row center">
-                   <p className="flow-text"> No Reviews yet.</p>
+                   <p> No Reviews yet.</p>
                 </div>
       );
     }
     return reviews.map((review, index) => (
                     <div className="card-panel grey lighten-5" key = { index }>
-                            <h6><i className="material-icons prefix">account_circle</i>{ review.userId }
+                            <h6><i className="material-icons prefix">account_circle</i>{ `${review.userReviews.firstName} ${review.userReviews.lastName}` }
                             <span className="right"> { review.createdAt.split('T')[0] } </span> </h6>
                             <span className="bold">
                                 { review.review }

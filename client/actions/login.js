@@ -7,7 +7,7 @@ const loggingIn = () => ({
   type: LOGGING_IN,
 });
 
-const loginSuccess = user => ({
+export const loginSuccess = user => ({
   type: LOGIN_SUCCESS,
   user,
 });
@@ -21,8 +21,10 @@ const loginUser = user => (dispatch) => {
   dispatch(loggingIn());
   return axios.post(`${apiURL}/users/login`, user)
     .then((response) => {
+      const userInfo = JSON.stringify(response.data.user);
       localStorage.setItem('userToken', response.data.token);
-      dispatch(loginSuccess(response.data.token));
+      localStorage.setItem('user', userInfo);
+      dispatch(loginSuccess(response.data.user));
       setTimeout(() => {
         dispatch(push('/'));
       }, 2000);
