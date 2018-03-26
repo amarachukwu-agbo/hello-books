@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import rootReducer from '../reducers/index';
+import { loginSuccess } from '../actions/login';
 
 const initialState = {};
 export const history = createHistory();
@@ -13,5 +14,12 @@ const store = createStore(
   initialState,
   composeWithDevTools(applyMiddleware(thunk, middleware)),
 );
+
+const userToken = localStorage.getItem('userToken');
+const userInfo = JSON.parse(localStorage.getItem('user'));
+
+if (userToken && userInfo) {
+  store.dispatch(loginSuccess(userInfo));
+}
 
 export default store;
