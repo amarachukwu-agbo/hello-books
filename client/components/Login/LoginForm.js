@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import validate from '../../helpers/validations/login';
-import InputText from '../../components/InputText';
+import { InputText } from '../../components/InputText';
 
 class LoginForm extends Component {
   constructor(props) {
