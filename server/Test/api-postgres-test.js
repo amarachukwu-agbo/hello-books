@@ -257,8 +257,8 @@ describe('API Endpoints Test', () => {
           expect(res.statusCode).to.equal(201);
           expect(res.body).to.have.property('msg');
           expect(res.body.msg).to.deep.equal('Successfully reviewed book 1');
-          expect(res.body).to.have.property('book');
-          expect(res.body.book).to.have.property('bookReviews');
+          expect(res.body).to.have.property('reviewedBook');
+          expect(res.body.reviewedBook).to.have.property('bookReviews');
           done();
         });
     });
