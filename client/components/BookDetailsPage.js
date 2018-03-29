@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getBook, favoriteBook, upvoteBook, downvoteBook } from '../actions/book';
+import { getBook, favoriteBook, upvoteBook, downvoteBook, borrowBook, reviewBook } from '../actions/book';
 import PreLoader from './Preloader';
 import BookDetails from './BookDetails';
 import Review from './Reviews';
@@ -31,7 +31,9 @@ class BookDetailsPage extends Component {
             <div className="container">
                 { this.props.book && <BookDetails book = { this.props.book } { ...this.props }/> }
                 <br/>
-                { this.props.book && <Review reviews = { this.props.book.bookReviews }/> }
+              { this.props.book &&
+                <Review reviews = { this.props.book.bookReviews } { ...this.props }/>
+              }
             </div>
     );
   }
@@ -46,6 +48,8 @@ const mapDispatchToProps = dispatch => ({
   favoriteBook: (userId, bookId) => { dispatch(favoriteBook(userId, bookId)); },
   upvoteBook: (userId, bookId) => { dispatch(upvoteBook(userId, bookId)); },
   downvoteBook: (userId, bookId) => { dispatch(downvoteBook(userId, bookId)); },
+  borrowBook: (userId, bookId) => { dispatch(borrowBook(userId, bookId)); },
+  reviewBook: (userId, bookId, review) => { dispatch(reviewBook(userId, bookId, review)); },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookDetailsPage);
