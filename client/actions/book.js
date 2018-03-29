@@ -11,6 +11,12 @@ import { GET_BOOK_SUCCESS,
   DOWNVOTE_REQUEST,
   DOWNVOTE_SUCCESS,
   DOWNVOTE_FAILURE,
+  BORROW_BOOK_SUCCESS,
+  BORROW_BOOK_REQUEST,
+  BORROW_BOOK_FAILURE,
+  REVIEW_BOOK_SUCCESS,
+  REVIEW_BOOK_REQUEST,
+  REVIEW_BOOK_FAILURE,
 } from './types';
 
 
@@ -147,6 +153,68 @@ export const downvoteBook = (userId, bookId) => (dispatch) => {
         dispatch(downvoteFailure(error.response.data.msg));
       } else {
         dispatch(downvoteFailure(error.message));
+      }
+    });
+};
+
+const borrowBookRequest = () => ({
+  type: BORROW_BOOK_REQUEST,
+});
+
+const borrowBookSuccess = borrowStatus => ({
+  type: BORROW_BOOK_SUCCESS,
+  borrowStatus,
+});
+
+const borrowBookFailure = error => ({
+  type: BORROW_BOOK_FAILURE,
+  error,
+});
+
+export const borrowBook = (userId, bookId) => (dispatch) => {
+  dispatch(borrowBookRequest());
+  return axios.post(`${apiURL}/users/${userId}/borrow/${bookId}/`)
+    .then((response) => {
+      console.log(response);
+      dispatch(borrowBookSuccess(response.data.msg));
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.data);
+        dispatch(borrowBookFailure(error.response.data.msg));
+      } else {
+        dispatch(borrowBookFailure(error.message));
+      }
+    });
+};
+
+const reviewBookRequest = () => ({
+  type: REVIEW_BOOK_REQUEST,
+});
+
+const reviewBookSuccess = book => ({
+  type: REVIEW_BOOK_SUCCESS,
+  book,
+});
+
+const reviewBookFailure = error => ({
+  type: REVIEW_BOOK_FAILURE,
+  error,
+});
+
+export const reviewBook = (userId, bookId, review) => (dispatch) => {
+  dispatch(reviewBookRequest());
+  return axios.post(`${apiURL}/users/${userId}/review/${bookId}/`, review)
+    .then((response) => {
+      console.log(response);
+      dispatch(reviewBookSuccess(response.data.reviewedBook));
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.data);
+        dispatch(reviewBookFailure(error.response.data.msg));
+      } else {
+        dispatch(reviewBookFailure(error.message));
       }
     });
 };

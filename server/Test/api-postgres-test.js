@@ -257,8 +257,8 @@ describe('API Endpoints Test', () => {
           expect(res.statusCode).to.equal(201);
           expect(res.body).to.have.property('msg');
           expect(res.body.msg).to.deep.equal('Successfully reviewed book 1');
-          expect(res.body).to.have.property('review');
-          expect(res.body.review).to.have.any.keys('bookId', 'userId', 'review', 'createdAt');
+          expect(res.body).to.have.property('reviewedBook');
+          expect(res.body.reviewedBook).to.have.property('bookReviews');
           done();
         });
     });
@@ -270,7 +270,7 @@ describe('API Endpoints Test', () => {
           expect(res.statusCode).to.equal(403);
           expect(res.body).to.have.property('msg');
           expect(res.body.msg).to.deep.equal('No token provided');
-          expect(res.body).to.not.have.property('review');
+          expect(res.body).to.not.have.property('book');
           done();
         });
     });

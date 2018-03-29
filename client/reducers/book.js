@@ -10,6 +10,12 @@ import { GET_BOOK_SUCCESS,
   DOWNVOTE_REQUEST,
   DOWNVOTE_SUCCESS,
   DOWNVOTE_FAILURE,
+  BORROW_BOOK_SUCCESS,
+  BORROW_BOOK_REQUEST,
+  BORROW_BOOK_FAILURE,
+  REVIEW_BOOK_SUCCESS,
+  REVIEW_BOOK_REQUEST,
+  REVIEW_BOOK_FAILURE,
 } from '../actions/types';
 
 const initialState = {};
@@ -95,6 +101,46 @@ const book = (state = initialState, action) => {
         ...state,
         book: { ...state.book, upvotes: action.book.upvotes, downvotes: action.book.downvotes },
         isDownvoting: false,
+      };
+    }
+    case BORROW_BOOK_REQUEST: {
+      return {
+        ...state,
+        isBorrowing: true,
+      };
+    }
+    case BORROW_BOOK_FAILURE: {
+      Materialize.toast(action.error, 1000);
+      return {
+        ...state,
+        isBorrowing: false,
+      };
+    }
+    case BORROW_BOOK_SUCCESS: {
+      return {
+        ...state,
+        isBorrowing: false,
+        borrowStatus: action.borrowStatus,
+      };
+    }
+    case REVIEW_BOOK_REQUEST: {
+      return {
+        ...state,
+        isReviewing: true,
+      };
+    }
+    case REVIEW_BOOK_FAILURE: {
+      Materialize.toast(action.error, 1000);
+      return {
+        ...state,
+        isReviewing: false,
+      };
+    }
+    case REVIEW_BOOK_SUCCESS: {
+      return {
+        ...state,
+        book: action.book,
+        isReviewing: false,
       };
     }
     default: {

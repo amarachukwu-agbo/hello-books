@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
-import InputText from '../InputText';
+import { InputText } from '../InputText';
 import validate from '../../helpers/validations/signup';
 
 class SignUpForm extends Component {

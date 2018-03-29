@@ -290,7 +290,26 @@ export default class Users {
     const bookId = parseInt(req.params.bookId, 10);
     const userId = parseInt(req.params.userId, 10);
 
-    models.Book.findById(req.params.bookId)
+    models.Book.find({
+      where: {
+        id: parseInt(req.params.bookId, 10),
+      },
+      // Join book reviews
+      include: [
+        {
+          model: models.Review,
+          as: 'bookReviews',
+          include: [
+            {
+              model: models.User,
+              as: 'userReviews',
+              attributes: {
+                exclude: ['password'],
+              },
+            }],
+        },
+      ],
+    })
       .then((book) => {
         if (!book) return res.status(404).json({ msg: 'Book not found' });
 
@@ -305,7 +324,9 @@ export default class Users {
           .spread((review, created) => {
             // If not create review
             if (created === true) {
-              return res.status(201).json({ msg: `Successfully reviewed book ${bookId}`, review });
+              return book.reload()
+                .then(reviewedBook =>
+                  res.status(201).json({ msg: `Successfully reviewed book ${bookId}`, reviewedBook }));
             }
             // No review created
             return res.status(403).json({ msg: 'Your review has already been created' });
