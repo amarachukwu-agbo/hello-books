@@ -1,4 +1,4 @@
-import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/types';
+import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE, LOG_OUT } from '../actions/types';
 
 const initialstate = {
   isLoggingIn: false,
@@ -37,6 +37,13 @@ const login = (state = initialstate, action) => {
         isAuthenticated: false,
         hasErrored: true,
         error: action.error,
+        user: null,
+      };
+    }
+    case LOG_OUT: {
+      return {
+        ...state,
+        isAuthenticated: false,
         user: null,
       };
     }
