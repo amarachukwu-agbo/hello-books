@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import logo from '../../public/images/logo.png';
 import PageFooter from '../PageFooter';
 import LoginForm from './LoginForm';
-import loginUser from '../../actions/login';
+import { loginUser } from '../../actions/login';
 
 class LoginPage extends Component {
   constructor(props) {

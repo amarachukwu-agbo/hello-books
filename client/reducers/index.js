@@ -4,6 +4,7 @@ import { reducer as formReducer } from 'redux-form';
 import auth from './userSignUp';
 import login from './login';
 import book from './book';
+import favorites from './favorites';
 import { books, mostUpvotedBooks } from './books';
 
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   books,
   book,
   mostUpvotedBooks,
+  favorites,
   routing: routerReducer,
 });
 
