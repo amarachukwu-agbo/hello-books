@@ -45,7 +45,7 @@ $sucess-color: #008000;
 }
 
 .favorite-img {
-  height: 150px;
+  height: 120px;
 }
 
 .book-list {
@@ -90,5 +90,9 @@ $sucess-color: #008000;
 
   .parallax-container {
     height: 400px;
+  }
+
+  .favorite-img {
+    height: 100px;
   }
 }
