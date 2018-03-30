@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { logOut } from '../actions/login';
 import logo from '../public/images/logo.png';
 
 class Navbar extends Component {
   render() {
+    const { user, isAuthenticated } = this.props;
     return (
             <div>
                 <div className="navbar-fixed">
                     <nav>
                         <div className="nav-wrapper teal darken-2">
-                            <a href="#!" className="brand-logo">
+                            <Link to="/" className="brand-logo">
                                 <img src={logo} className="img-logo" />
-                            </a>
+                            </Link>
                             <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
                             {
-                                this.props.isAuthenticated &&
+                                isAuthenticated &&
                                 <ul className="right hide-on-med-and-down">
-                                    <li><Link to="/favorites">Favorites</Link></li>
+                                    <li>{ `Welcome ${user.firstName}` } </li>
+                                    <li><Link to= { `/users/${user.id}/favorites` }>Favorites</Link></li>
                                     <li><Link to="/profile">Profile</Link></li>
-                                    <li>Log out</li>
+                                    <li><button className="btn btn-flat white-text" onClick={ this.props.logOut }>Log out</button></li>
                                 </ul>
                             }
-                            {!this.props.isAuthenticated &&
+                            {!isAuthenticated &&
                                 <ul className="right hide-on-med-and-down">
                                     <li><Link to="/signup">Sign up</Link></li>
                                     <li><Link to="/login">Login</Link></li>
@@ -34,9 +37,10 @@ class Navbar extends Component {
                 {
                     this.props.isAuthenticated &&
                     <ul className="side-nav" id="mobile-demo">
-                        <li><Link to="/favorites">Favorites</Link></li>
+                        <li>{ `Welcome ${user.firstName}` } </li>
+                        <li><Link to={ `/users/${user.id}/favorites` }>Favorites</Link></li>
                         <li><Link to="/profile">Profile</Link></li>
-                        <li>Log out</li>
+                        <li><button className="btn btn-flat white-text" onClick={ this.props.logOut }>Log out</button></li>
                     </ul>
                 }
                 {
@@ -53,6 +57,11 @@ class Navbar extends Component {
 
 const mapStateToProps = state => ({
   isAuthenticated: state.login.isAuthenticated,
+  user: state.login.user,
 });
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatchToProps = dispatch => ({
+  logOut: () => { dispatch(logOut()); },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

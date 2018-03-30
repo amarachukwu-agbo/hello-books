@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { push } from 'react-router-redux';
-import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE } from './types';
+import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE, LOG_OUT } from './types';
 import { apiURL } from './userSignUp';
 
 const loggingIn = () => ({
@@ -17,7 +17,11 @@ const loginFailure = error => ({
   error,
 });
 
-const loginUser = user => (dispatch) => {
+const logOutUser = () => ({
+  type: LOG_OUT,
+});
+
+export const loginUser = user => (dispatch) => {
   dispatch(loggingIn());
   return axios.post(`${apiURL}/users/login`, user)
     .then((response) => {
@@ -46,5 +50,10 @@ const loginUser = user => (dispatch) => {
     });
 };
 
-export default loginUser;
+export const logOut = () => (dispatch) => {
+  dispatch(logOutUser());
+  dispatch(push('/'));
+  localStorage.removeItem('userToken');
+  localStorage.removeItem('user');
+};
 
