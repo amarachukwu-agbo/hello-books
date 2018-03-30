@@ -5,6 +5,7 @@ import SignUpPage from './SignUp/SignUpPage';
 import LoginPage from './Login/LoginPage';
 import IndexPage from './Index';
 import Books from './Books';
+import User from './User';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
                     <Route exact path = '/login' component = { LoginPage } />
                     <Route exact path = '/' component = { IndexPage } />
                     <Route path = '/books' component = { Books } />
+                    <Route path = '/users' component = { User } />
                 </Switch>
             </Router>
     );
