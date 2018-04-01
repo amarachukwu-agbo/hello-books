@@ -6,6 +6,7 @@ import LoginPage from './Login/LoginPage';
 import IndexPage from './Index';
 import Books from './Books';
 import User from './User';
+import Admin from './Admin';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
                     <Route exact path = '/' component = { IndexPage } />
                     <Route path = '/books' component = { Books } />
                     <Route path = '/users' component = { User } />
+                    <Route path = '/admin' component = { Admin } />
                 </Switch>
             </Router>
     );

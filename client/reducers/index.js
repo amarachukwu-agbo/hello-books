@@ -6,6 +6,7 @@ import login from './login';
 import book from './book';
 import favorites from './favorites';
 import profile from './profile';
+import addBook from './addBook';
 import { books, mostUpvotedBooks } from './books';
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   login,
   books,
   book,
+  addBook,
   mostUpvotedBooks,
   favorites,
   profile,

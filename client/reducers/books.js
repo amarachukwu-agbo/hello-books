@@ -3,7 +3,10 @@ import { GET_BOOKS_SUCCESS,
   GET_BOOKS_FAILURE,
   GET_UPVOTED_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_REQUEST,
-  GET_UPVOTED_BOOKS_FAILURE } from '../actions/types';
+  GET_UPVOTED_BOOKS_FAILURE,
+  DELETE_BOOK_SUCCESS,
+  DELETE_BOOK_REQUEST,
+  DELETE_BOOK_FAILURE } from '../actions/types';
 
 const initialState = {};
 
@@ -14,6 +17,7 @@ export const books = (state = initialState, action) => {
         ...state,
         isFetching: true,
         books: null,
+        error: null,
       };
     }
     case GET_BOOKS_FAILURE: {
@@ -28,6 +32,29 @@ export const books = (state = initialState, action) => {
         ...state,
         isFetching: false,
         books: action.books,
+        error: null,
+      };
+    }
+    case DELETE_BOOK_SUCCESS: {
+      Materialize.toast('Book has been deleted', 2000);
+      return {
+        ...state,
+        books: [...state.books.slice(0, action.bookIndex),
+          ...state.books.slice(action.bookIndex + 1)],
+        isDeleting: false,
+      };
+    }
+    case DELETE_BOOK_FAILURE: {
+      Materialize.toast(`Book was not deleted. ${action.deleteError}`, 2000);
+      return {
+        ...state,
+        isDeleting: false,
+      };
+    }
+    case DELETE_BOOK_REQUEST: {
+      return {
+        ...state,
+        isDeleting: true,
       };
     }
     default: {
