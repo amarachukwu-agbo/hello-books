@@ -29,9 +29,15 @@ export const loginUser = user => (dispatch) => {
       localStorage.setItem('userToken', response.data.token);
       localStorage.setItem('user', userInfo);
       dispatch(loginSuccess(response.data.user));
-      setTimeout(() => {
-        dispatch(push('/'));
-      }, 2000);
+      if (response.data.user.role === 'Admin') {
+        setTimeout(() => {
+          dispatch(push('/admin'));
+        }, 1000);
+      } else {
+        setTimeout(() => {
+          dispatch(push('/'));
+        }, 2000);
+      }
     })
     .catch((error) => {
       if (error.response) {
