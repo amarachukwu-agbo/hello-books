@@ -5,9 +5,14 @@ import { GET_BOOKS_SUCCESS,
   GET_BOOKS_FAILURE,
   GET_UPVOTED_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_REQUEST,
-  GET_UPVOTED_BOOKS_FAILURE } from './types';
+  GET_UPVOTED_BOOKS_FAILURE,
+  DELETE_BOOK_SUCCESS,
+  DELETE_BOOK_REQUEST,
+  DELETE_BOOK_FAILURE } from './types';
 
 import { apiURL } from './userSignUp';
+
+axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('userToken')}`;
 
 const getBooksRequest = () => ({
   type: GET_BOOKS_REQUEST,
@@ -45,6 +50,37 @@ export const getBooks = () => (dispatch) => {
     })
     .catch((error) => {
       dispatch(getBooksFailure(error));
+    });
+};
+
+const deleteBookRequest = () => ({
+  type: DELETE_BOOK_REQUEST,
+});
+
+const deleteBookSuccess = bookIndex => ({
+  type: DELETE_BOOK_SUCCESS,
+  bookIndex,
+});
+
+const deleteBookFailure = deleteError => ({
+  type: DELETE_BOOK_FAILURE,
+  deleteError,
+});
+
+export const deleteBook = (bookId, index) => (dispatch) => {
+  dispatch(deleteBookRequest());
+  return axios.post(`${apiURL}/books/remove/${bookId}`)
+    .then((response) => {
+      console.log(response);
+      dispatch(deleteBookSuccess(index));
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.data);
+        dispatch(deleteBookFailure(error.response.data.msg));
+      } else {
+        dispatch(deleteBookFailure(error.message));
+      }
     });
 };
 
