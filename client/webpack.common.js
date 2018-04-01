@@ -30,6 +30,21 @@ module.exports = {
         ],
       },
       {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+          },
+        },
+      },
+      {
+        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: {
+          loader: 'file-loader',
+        },
+      },
+      {
         test: /\.(png|svg|gif|jpg)$/,
         use: {
           loader: 'url-loader',
