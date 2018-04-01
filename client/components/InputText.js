@@ -1,4 +1,6 @@
 import React from 'react';
+import DropdownList from 'react-widgets/lib/DropdownList';
+import 'react-widgets/lib/scss/react-widgets.scss';
 
 export const InputText = ({
   input, label, type, defaultValue, icon, meta: { touched, error }, ...rest
@@ -9,6 +11,16 @@ export const InputText = ({
         <input {...input} type={type} value= { defaultValue } { ...rest } />
         {touched && error && <span className = "error flow-text"> {error} </span>}
     </div>
+);
+
+export const renderDropdownList = ({
+  input, meta: { touched, error }, subjects, valueField, textField,
+}) => (
+      <div>
+          <DropdownList { ...input } onChange={input.onChange} data={subjects}
+          valueField={valueField} textField={textField}/>
+          {touched && error && <span className = "error flow-text"> {error} </span>}
+      </div>
 );
 
 export const TextArea = ({
