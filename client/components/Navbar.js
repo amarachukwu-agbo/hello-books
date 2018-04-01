@@ -16,8 +16,20 @@ class Navbar extends Component {
                                 <img src={logo} className="img-logo" />
                             </Link>
                             <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+
                             {
-                                isAuthenticated &&
+                                isAuthenticated && user.role === 'Admin' &&
+                                <ul className="right hide-on-med-and-down">
+                                    <li><Link to= '/admin'>Books Catalog</Link></li>
+                                    <li><Link to= '/admin/addBook'>Add Book</Link></li>
+                                    <li><Link to= '/admin/borrowRequests'>Borrow Requests</Link></li>
+                                    <li><Link to= '/admin/Requests'>Return Requests</Link></li>
+                                    <li><button className="btn btn-flat white-text" onClick={ this.props.logOut }>Log out</button></li>
+                                </ul>
+                            }
+
+                            {
+                                isAuthenticated && user.role === 'User' &&
                                 <ul className="right hide-on-med-and-down">
                                     <li>{ `Welcome ${user.firstName}` } </li>
                                     <li><Link to= { `/users/${user.id}/favorites` }>Favorites</Link></li>
@@ -25,6 +37,7 @@ class Navbar extends Component {
                                     <li><button className="btn btn-flat white-text" onClick={ this.props.logOut }>Log out</button></li>
                                 </ul>
                             }
+
                             {!isAuthenticated &&
                                 <ul className="right hide-on-med-and-down">
                                     <li><Link to="/signup">Sign up</Link></li>
@@ -35,7 +48,18 @@ class Navbar extends Component {
                     </nav>
                 </div>
                 {
-                    this.props.isAuthenticated &&
+                    isAuthenticated && user.role === 'Admin' &&
+                    <ul className="side-nav" id="mobile-demo">
+                        <li><Link to= '/admin'>Books Catalog</Link></li>
+                        <li><Link to= '/admin/addBook'>Add Book</Link></li>
+                        <li><Link to= '/admin/borrowRequests'>Borrow Requests</Link></li>
+                        <li><Link to= '/admin/returnRequests'>Return Requests</Link></li>
+                        <li><button className="btn btn-flat white-text" onClick={ this.props.logOut }>Log out</button></li>
+                    </ul>
+                }
+
+                {
+                    this.props.isAuthenticated && user.role === 'User' &&
                     <ul className="side-nav" id="mobile-demo">
                         <li>{ `Welcome ${user.firstName}` } </li>
                         <li><Link to={ `/users/${user.id}/favorites` }>Favorites</Link></li>
@@ -43,6 +67,7 @@ class Navbar extends Component {
                         <li><button className="btn btn-flat white-text" onClick={ this.props.logOut }>Log out</button></li>
                     </ul>
                 }
+
                 {
                     !this.props.isAuthenticated &&
                     <ul className="side-nav" id="mobile-demo">
