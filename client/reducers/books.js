@@ -39,7 +39,8 @@ export const books = (state = initialState, action) => {
       Materialize.toast('Book has been deleted', 2000);
       return {
         ...state,
-        books: [...state.books.slice(0, action.bookIndex), ...state.books.slice(action.bookIndex + 1)],
+        books: [...state.books.slice(0, action.bookIndex),
+          ...state.books.slice(action.bookIndex + 1)],
         isDeleting: false,
       };
     }

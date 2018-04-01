@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AdminBooks from './AdminBooks';
 import Navbar from './Navbar';
 import PageFooter from './PageFooter';
