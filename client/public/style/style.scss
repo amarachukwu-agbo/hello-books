@@ -3,6 +3,9 @@ $logo-image: 64px;
 $error-color: #ff0000;
 $error-size: 1.2rem;
 $sucess-color: #008000;
+$overlay-color: rgba(32, 40, 46, 0.5);
+$modal-color: #fff;
+$modal-box-color: rgba(0, 0, 0, 0.5);
 
 .form-logo {
   height: $form-image;
@@ -24,28 +27,27 @@ $sucess-color: #008000;
   opacity: 0.8;
 }
 
-.Modal {
-  position: absolute;
-  top: 0;
+.modal {
+  background-color: $modal-color;
+  bottom: 0;
+  box-shadow: 0 5px 20px 0 $modal-box-color;
   left: 20%;
-  right: 20%;
-  z-index: 2000;
-  max-height: 600px;
-  background-color: #fff;
   outline: none;
   overflow: auto;
-  bottom: 0;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
+  position: absolute;
+  right: 20%;
+  top: 0;
+  z-index: 2000;
 }
 
-.Overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+.overlay {
+  background-color: $overlay-color;
   bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
   z-index: 1000;
-  background-color: rgba(32, 40, 46, 0.5);
 }
 
 .book-text {
@@ -129,16 +131,16 @@ $sucess-color: #008000;
     height: 100px;
   }
 
-  .Modal {
-    position: absolute;
-    top: 0;
+  .modal {
+    background-color: $modal-color;
+    bottom: 0;
+    box-shadow: 0 5px 20px 0 $modal-box-color;
     left: 5%;
-    right: 5%;
-    z-index: 2000;
-    background-color: #fff;
     outline: none;
     overflow: auto;
-    bottom: 0;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 5%;
+    top: 0;
+    z-index: 2000;
   }
 }

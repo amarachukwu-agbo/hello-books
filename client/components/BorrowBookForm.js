@@ -14,13 +14,13 @@ class BorrowBookForm extends Component {
 
   submitForm(values) {
     console.log(values);
-    const request = { ...values, reason: values.reason.value }
+    const request = { ...values, reason: values.reason.value };
     this.props.borrowBook(this.props.user.id, this.props.book.id, request);
   }
 
   render() {
     const {
-      handleSubmit, submitting, user, book,
+      handleSubmit, submitting, book,
     } = this.props;
     console.log(book);
     return (

@@ -13,10 +13,11 @@ export const InputText = ({
 }) => (
     <div>
         { icon &&
-            <i className="material-icons prefix">{ icon }</i> 
+            <i className="material-icons prefix">{ icon }</i>
         }
         <label className = "flow-text truncate active"> { label } </label>
-        <input {...input} type={type} onChange={input.onChange} value = { defaultValue } { ...rest } />
+        <input {...input} type={type} onChange={input.onChange}
+        value = { defaultValue } { ...rest } />
         {touched && error && <span className = "error flow-text"> {error} </span>}
     </div>
 );
@@ -31,7 +32,9 @@ export const renderDropdownList = ({
       </div>
 );
 
-export const renderDateTimePicker = ({ input: { onChange, value }, showTime, icon, meta: { touched, error } }) => (
+export const renderDateTimePicker = ({
+    input: { onChange, value }, showTime, icon, meta: { touched, error }
+}) => (
     <div>
         <i className="material-icons prefix">{ icon }</i>
         <DateTimePicker onChange = { onChange } format = "DD MMM YYYY" time = { showTime}
