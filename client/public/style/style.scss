@@ -3,7 +3,7 @@ $logo-image: 64px;
 $error-color: #ff0000;
 $error-size: 1.2rem;
 $sucess-color: #008000;
-$overlay-color: rgba(32, 40, 46, 0.5);;
+$overlay-color: rgba(32, 40, 46, 0.5);
 $modal-color: #fff;
 $modal-box-color: rgba(0, 0, 0, 0.5);
 
@@ -37,7 +37,7 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   right: 20%;
   top: 0;
-  z-index: 2000; 
+  z-index: 2000;
 }
 
 .overlay {
@@ -47,7 +47,7 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1000;  
+  z-index: 1000;
 }
 
 .book-text {
@@ -141,6 +141,6 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     right: 5%;
     top: 0;
-    z-index: 2000; 
+    z-index: 2000;
   }
 }
