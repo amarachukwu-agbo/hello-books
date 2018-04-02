@@ -3,6 +3,11 @@ import { reduxForm, Field } from 'redux-form';
 import validate from '../helpers/validations/book';
 import { InputText, renderDropdownList } from '../components/InputText';
 
+export const subjects = [{ subject: 'Fiction', value: 'Fiction' }, { subject: 'Romance', value: 'Romance' }, { subject: 'Educational', value: 'Educational' },
+  { subject: 'Biography', value: 'Biography' }, { subject: 'Crime', value: 'Crime' }, { subject: 'Self-help', value: 'Self-help' },
+  { subject: 'Thriller', value: 'Thriller' }, { subject: 'Science Fiction', value: 'Science Fiction' }, { subject: 'Legends and Myths', value: 'Legends and Myths' },
+  { subject: 'History', value: 'History' }];
+
 class BookForm extends Component {
   constructor(props) {
     super(props);
@@ -11,16 +16,11 @@ class BookForm extends Component {
 
   submitForm(values) {
     this.props.addBook({ ...values, subject: values.subject.value });
-    console.log(this.props);
+    this.refs.bookForm.reset();
   }
 
   render() {
     const { handleSubmit, isAdding } = this.props;
-
-    const subjects = [{ subject: 'Fiction', value: 'Fiction' }, { subject: 'Romance', value: 'Romance' }, { subject: 'Educational', value: 'Educational' },
-      { subject: 'Biography', value: 'Biography' }, { subject: 'Crime', value: 'Crime' }, { subject: 'Self-help', value: 'Self-help' },
-      { subject: 'Thriller', value: 'Thriller' }, { subject: 'Science Fiction', value: 'Science Fiction' }, { subject: 'Legends and Myths', value: 'Legends and Myths' },
-      { subject: 'History', value: 'History' }];
 
     return (
             <form ref ="bookForm" onSubmit = { handleSubmit(this.submitForm) } >

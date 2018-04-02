@@ -4,6 +4,12 @@ import { GET_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_REQUEST,
   GET_UPVOTED_BOOKS_FAILURE,
+  ADDING_BOOK,
+  ADD_BOOK_SUCCESS,
+  ADD_BOOK_FAILURE,
+  EDIT_BOOK_SUCCESS,
+  EDIT_BOOK_REQUEST,
+  EDIT_BOOK_FAILURE,
   DELETE_BOOK_SUCCESS,
   DELETE_BOOK_REQUEST,
   DELETE_BOOK_FAILURE } from '../actions/types';
@@ -33,6 +39,52 @@ export const books = (state = initialState, action) => {
         isFetching: false,
         books: action.books,
         error: null,
+      };
+    }
+    case ADDING_BOOK: {
+      return {
+        ...state,
+        isAdding: true,
+        addBookError: null,
+      };
+    }
+    case ADD_BOOK_FAILURE: {
+      Materialize.toast(`Error adding book. ${action.error}`, 2000);
+      return {
+        ...state,
+        isAdding: false,
+        addBookError: action.error,
+      };
+    }
+    case ADD_BOOK_SUCCESS: {
+      Materialize.toast('Book has been added', 2000);
+      return {
+        ...state,
+        isAdding: false,
+        books: [...state.books, action.book],
+        addBookError: null,
+      };
+    }
+    case EDIT_BOOK_REQUEST: {
+      return {
+        ...state,
+        isEditing: true,
+      };
+    }
+    case EDIT_BOOK_FAILURE: {
+      Materialize.toast(`Error editing book. ${action.error}`, 2000);
+      return {
+        ...state,
+        isEditing: false,
+      };
+    }
+    case EDIT_BOOK_SUCCESS: {
+      Materialize.toast('Book has been updated', 2000);
+      return {
+        ...state,
+        isEditing: false,
+        books: [...state.books.slice(0, action.bookIndex), action.book,
+          ...state.books.slice(action.bookIndex + 1)],
       };
     }
     case DELETE_BOOK_SUCCESS: {
