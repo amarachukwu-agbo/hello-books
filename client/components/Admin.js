@@ -5,8 +5,7 @@ import AdminBooks from './AdminBooks';
 import Navbar from './Navbar';
 import PageFooter from './PageFooter';
 import Preloader from './Preloader';
-import addBook from '../actions/addBook';
-import { getBooks, deleteBook } from '../actions/books';
+import { getBooks, deleteBook, addBook, editBook } from '../actions/books';
 import BookForm from './BookForm';
 
 
@@ -65,11 +64,11 @@ class Admin extends Component {
 
 const mapStateToProps = state => ({
   ...state.books,
-  ...state.addBook,
 });
 const mapDispatchToProps = dispatch => ({
   getBooks: () => { dispatch(getBooks()); },
   deleteBook: (bookId, bookIndex) => { dispatch(deleteBook(bookId, bookIndex)); },
+  editBook: (bookId, bookIndex, book) => { dispatch(editBook(bookId, bookIndex, book)); },
   addBook: (book) => { dispatch(addBook(book)); },
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Admin);
