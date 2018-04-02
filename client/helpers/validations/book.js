@@ -18,7 +18,7 @@ const validate = (values) => {
   if (!values.imageURL || values.imageURL.trim() === '') {
     errors.imageURL = 'ImageURL is required';
   }
-  if (!values.quantity || values.quantity.trim() === '') {
+  if (!values.quantity) {
     errors.quantity = 'quantity is required';
   }
   if (values.quantity && values.quantity <= 0) {
