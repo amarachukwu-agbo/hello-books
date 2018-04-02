@@ -6,6 +6,12 @@ import { GET_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_REQUEST,
   GET_UPVOTED_BOOKS_FAILURE,
+  ADDING_BOOK,
+  ADD_BOOK_SUCCESS,
+  ADD_BOOK_FAILURE,
+  EDIT_BOOK_SUCCESS,
+  EDIT_BOOK_REQUEST,
+  EDIT_BOOK_FAILURE,
   DELETE_BOOK_SUCCESS,
   DELETE_BOOK_REQUEST,
   DELETE_BOOK_FAILURE } from './types';
@@ -53,6 +59,67 @@ export const getBooks = () => (dispatch) => {
     });
 };
 
+const addingBook = () => ({
+  type: ADDING_BOOK,
+});
+
+const addBookSuccess = book => ({
+  type: ADD_BOOK_SUCCESS,
+  book,
+});
+
+const addBookFailure = error => ({
+  type: ADD_BOOK_FAILURE,
+  error,
+});
+
+export const addBook = book => (dispatch) => {
+  dispatch(addingBook());
+  return axios.post(`${apiURL}/books`, book)
+    .then((response) => {
+      dispatch(addBookSuccess(response.data.bookEntry));
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response);
+        dispatch(addBookFailure(error.response.data.error));
+      } else {
+        dispatch(addBookFailure(error.message));
+      }
+    });
+};
+
+const editingBook = () => ({
+  type: EDIT_BOOK_REQUEST,
+});
+
+const editBookSuccess = (book, bookIndex) => ({
+  type: EDIT_BOOK_SUCCESS,
+  book,
+  bookIndex,
+});
+
+const editBookFailure = error => ({
+  type: EDIT_BOOK_FAILURE,
+  error,
+});
+
+export const editBook = (bookId, bookIndex, book) => (dispatch) => {
+  dispatch(editingBook());
+  return axios.put(`${apiURL}/books/${bookId}`, book)
+    .then((response) => {
+      dispatch(editBookSuccess(response.data.updatedBook, bookIndex));
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response);
+        dispatch(editBookFailure(error.response.data.error || error.response.data.msg));
+      } else {
+        dispatch(editBookFailure(error.message));
+      }
+    });
+};
+
 const deleteBookRequest = () => ({
   type: DELETE_BOOK_REQUEST,
 });
@@ -77,7 +144,7 @@ export const deleteBook = (bookId, index) => (dispatch) => {
     .catch((error) => {
       if (error.response) {
         console.log(error.response.data);
-        dispatch(deleteBookFailure(error.response.data.msg));
+        dispatch(deleteBookFailure(error.response.data.msg || error.response.data.error));
       } else {
         dispatch(deleteBookFailure(error.message));
       }
