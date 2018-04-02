@@ -117,6 +117,7 @@ const book = (state = initialState, action) => {
       };
     }
     case BORROW_BOOK_SUCCESS: {
+      Materialize.toast('Your borrow request has been sent. Check status in your profile', 2000);
       return {
         ...state,
         isBorrowing: false,

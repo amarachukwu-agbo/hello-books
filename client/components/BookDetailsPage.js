@@ -48,7 +48,7 @@ const mapDispatchToProps = dispatch => ({
   favoriteBook: (userId, bookId) => { dispatch(favoriteBook(userId, bookId)); },
   upvoteBook: (userId, bookId) => { dispatch(upvoteBook(userId, bookId)); },
   downvoteBook: (userId, bookId) => { dispatch(downvoteBook(userId, bookId)); },
-  borrowBook: (userId, bookId) => { dispatch(borrowBook(userId, bookId)); },
+  borrowBook: (userId, bookId, request) => { dispatch(borrowBook(userId, bookId, request)); },
   reviewBook: (userId, bookId, review) => { dispatch(reviewBook(userId, bookId, review)); },
 });
 

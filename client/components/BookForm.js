@@ -43,7 +43,7 @@ class BookForm extends Component {
                 <div className="row">
                     <div className="drop-down right">
                         <label>Subject</label>
-                        <Field name="subject" component={renderDropdownList} valueField="value" textField="subject" subjects= {subjects} />
+                        <Field name="subject" component={renderDropdownList} valueField="value" textField="subject" data= {subjects} />
                     </div>
                 </div>
                 <div className="row">
