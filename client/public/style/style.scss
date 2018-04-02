@@ -24,6 +24,29 @@ $sucess-color: #008000;
   opacity: 0.8;
 }
 
+.Modal {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  z-index: 2000;
+  background-color: #fff;
+  outline: none;
+  overflow: auto;
+  bottom: 0;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(32, 40, 46, 0.5);
+}
+
 .book-text {
   font-size: 12px;
 }
@@ -103,5 +126,18 @@ $sucess-color: #008000;
 
   .favorite-img {
     height: 100px;
+  }
+
+  .Modal {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    z-index: 2000;
+    background-color: #fff;
+    outline: none;
+    overflow: auto;
+    bottom: 0;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
   }
 }
