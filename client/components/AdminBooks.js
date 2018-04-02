@@ -35,8 +35,8 @@ class AdminBooks extends Component {
         <div className="review">
             <h4 className="center">Books Catalog</h4>
             <div className="divider"></div>
-            <Modal isOpen = { isOpen } onRequestClose = { this.toggleModal } className="Modal"
-            shouldCloseOnOverlayClick = { true } overlayClassName="Overlay" ariaHideApp = { false }>
+            <Modal isOpen = { isOpen } onRequestClose = { this.toggleModal } className="modal"
+            shouldCloseOnOverlayClick = { true } overlayClassName="overlay" ariaHideApp = { false }>
                 <div className="row">
                     <div className="col s1 m2 l3"></div>
                     <div className="card-panel col s12 m8 l6">
