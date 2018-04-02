@@ -3,12 +3,12 @@ import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-widgets/lib/scss/react-widgets.scss';
 
 export const InputText = ({
-  input, label, type, defaultValue, icon, meta: { touched, error }, ...rest
+  input, label, type, icon, meta: { touched, error }, ...rest
 }) => (
     <div>
         <i className="material-icons prefix">{ icon }</i>
-        <label className = "flow-text truncate"> { label } </label>
-        <input {...input} type={type} value= { defaultValue } { ...rest } />
+        <label className = "flow-text truncate active"> { label } </label>
+        <input {...input} type={type} onChange={input.onChange} { ...rest } />
         {touched && error && <span className = "error flow-text"> {error} </span>}
     </div>
 );
