@@ -33,7 +33,7 @@ export const renderDropdownList = ({
 );
 
 export const renderDateTimePicker = ({
-    input: { onChange, value }, showTime, icon, meta: { touched, error }
+  input: { onChange, value }, showTime, icon, meta: { touched, error },
 }) => (
     <div>
         <i className="material-icons prefix">{ icon }</i>
