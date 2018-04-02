@@ -171,9 +171,9 @@ const borrowBookFailure = error => ({
   error,
 });
 
-export const borrowBook = (userId, bookId) => (dispatch) => {
+export const borrowBook = (userId, bookId, request) => (dispatch) => {
   dispatch(borrowBookRequest());
-  return axios.post(`${apiURL}/users/${userId}/borrow/${bookId}/`)
+  return axios.post(`${apiURL}/users/${userId}/borrow/${bookId}/`, request)
     .then((response) => {
       console.log(response);
       dispatch(borrowBookSuccess(response.data.msg));
