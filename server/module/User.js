@@ -522,52 +522,53 @@ export default class Users {
   @param res is the response object
   @return borrow request object
   */
-  static sendBorrowRequest(req, res) {
-    const bookId = parseInt(req.params.bookId, 10);
-    const userId = parseInt(req.params.userId, 10);
+ static sendBorrowRequest(req, res) {
+  const bookId = parseInt(req.params.bookId, 10);
+  const userId = parseInt(req.params.userId, 10);
 
-    models.BorrowedBooks.find({
-      where: {
-        bookId,
-        userId,
-        status: 'Not returned',
-      },
-    }).then((borrow) => {
+  return models.BorrowedBooks.find({
+    where: {
+      bookId,
+      userId,
+      status: 'Not returned',
+    },
+  })
+    .then((borrow) => {
       if (borrow) return res.status(403).json({ msg: 'You have not returned book' });
-    });
-
-    models.Book.findById(bookId)
-      .then((book) => {
-        // Check if book is in database
-        if (!book) return res.status(404).json({ msg: 'Book not found' });
-        // Check if book is available
-        if (book.quantity === 0) return res.status(403).json({ msg: 'Book is not available' });
-        // Check if user has sent request before
-        return models.BorrowRequests.find({
-          where: {
-            bookId,
-            userId,
-            status: 'Pending',
-          },
-        })
-          .then((borrowRequest) => {
-            if (!borrowRequest) {
-              // Send request if it does not exist in database
-              return models.BorrowRequests.create({
-                bookId,
-                userId,
-                reason: req.body.reason,
-                returnDate: req.body.returnDate,
-                comments: req.body.comments,
-              })
-                .then(request => res.status(201).json({ msg: 'Borrow request sent', request }))
-                .catch(error => res.status(400).json({ msg: 'Failed', error }));
-            }
-            return res.status(403).json({ msg: 'Already sent request' });
+      models.Book.findById(bookId)
+        .then((book) => {
+          // Check if book is in database
+          if (!book) return res.status(404).json({ msg: 'Book not found' });
+          // Check if book is available
+          if (book.quantity === 0) return res.status(403).json({ msg: 'Book is not available' });
+          // Check if user has sent request before
+          return models.BorrowRequests.find({
+            where: {
+              bookId,
+              userId,
+              status: 'Pending',
+            },
           })
-          .catch(error => res.status(500).json(error));
-      }).catch(error => res.status(500).json(error));
-  }
+            .then((borrowRequest) => {
+              if (!borrowRequest) {
+                // Send request if it does not exist in database
+                return models.BorrowRequests.create({
+                  bookId,
+                  userId,
+                  reason: req.body.reason,
+                  returnDate: req.body.returnDate,
+                  comments: req.body.comments,
+                })
+                  .then(request => res.status(201).json({ msg: 'Borrow request sent', request }))
+                  .catch(error => res.status(400).json({ msg: 'Failed', error }));
+              }
+              return res.status(403).json({ msg: 'Already sent request' });
+            })
+            .catch(error => res.status(500).json(error));
+        })
+        .catch(error => res.status(500).json(error));
+    });
+}
 
   /* Method lets a user send  a return request for a book
   @param req is request object
