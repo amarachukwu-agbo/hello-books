@@ -30,8 +30,8 @@ class BorrowBookForm extends Component {
                 </div>
                 {
                     this.props.isBorrowing &&
-                    <div className="row sign-up-sucess">
-                        <p className="center"> Sending your borrow request... </p>
+                    <div className="row">
+                        <p className="center sign-up-success"> Sending your borrow request... </p>
                     </div>
                 }
 
