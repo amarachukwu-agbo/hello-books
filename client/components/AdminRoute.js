@@ -9,36 +9,35 @@ import { connect } from 'react-redux';
  */
 
 class AdminRoute extends React.Component {
+  render() {
+    const {
+      isAuthenticated,
+      user,
+      component: Component,
+      ...props
+    } = this.props;
 
-    render() {
-        const {
-            isAuthenticated,
-            user,
-            component: Component,
-            ...props
-        } = this.props
-        
-        return (
-            <Route
-                {...props}
-                render={props =>
-                    isAuthenticated && user.role === "Admin"
+    return (
+        <Route
+            {...props}
+                render={componentProps =>
+                    (isAuthenticated && user.role === 'Admin'
                         ?
                             <Component {...props} />
                         : (
                             <Redirect to={{
                                 pathname: '/',
-                                state: { from: props.location }
+                                state: { from: componentProps.location },
                             }} />
-                        )
+                        ))
                 }
             />
-        )
-    }
+    );
+  }
 }
 
 const mapStateToProps = state => ({
-    ...state.login,
+  ...state.login,
 });
 
-export default connect(mapStateToProps)(AdminRoute)
+export default connect(mapStateToProps)(AdminRoute);

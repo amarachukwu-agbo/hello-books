@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import checkAuthentication from '../helpers/auth';
 import BorrowBookForm from '../components/BorrowBookForm';

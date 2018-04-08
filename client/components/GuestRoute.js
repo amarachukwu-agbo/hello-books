@@ -9,31 +9,31 @@ import { Redirect } from 'react-router-dom';
  */
 
 class GuestRoute extends React.Component {
-    render() {
-        const {
-            isAuthenticated,
-            component: Component,
-            ...props
-        } = this.props        
-        return (
+  render() {
+    const {
+      isAuthenticated,
+      component: Component,
+      ...props
+    } = this.props;
+    return (
             <Route
                 {...props}
-                render={props =>
-                    !isAuthenticated
+                render={componentProps =>
+                    (!isAuthenticated
                         ? <Component {...props} />
                         : (
                             <Redirect to={{
                                 pathname: '/',
-                                state: { from: props.location }
+                                state: { from: componentProps.location },
                             }} />
-                        )
+                        ))
                 }
             />
-        )
-    }
+    );
+  }
 }
 
-const mapStateToProps = (state) => ({
-    ...state.login,
+const mapStateToProps = state => ({
+  ...state.login,
 });
 export default connect(mapStateToProps)(GuestRoute);

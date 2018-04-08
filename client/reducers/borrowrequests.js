@@ -6,7 +6,7 @@ import {
   HANDLE_BORROW_REQUEST_SUCCESS,
   HANDLE_BORROW_REQUEST_FAILURE,
 }
-from '../actions/types';
+  from '../actions/types';
 
 const initialState = {};
 
@@ -44,7 +44,7 @@ const borrowRequests = (state = initialState, action) => {
     case HANDLE_BORROW_REQUEST_SUCCESS: {
       return {
         ...state,
-        borrowRequests: [...state.borrowRequests.slice[0, action.index],
+        borrowRequests: [...state.borrowRequests.slice(0, action.index),
           { ...state.borrowRequests[action.index], status: action.status },
           ...state.borrowRequests.slice(action.index + 1)],
         isHandlingBorrowRequest: false,

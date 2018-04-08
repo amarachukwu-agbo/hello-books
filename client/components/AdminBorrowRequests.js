@@ -8,7 +8,6 @@ class AdminBorrowRequests extends Component {
   }
 
   render() {
-      console.log(this.props);
     if (this.props.isFetchingBorrowRequests) {
       return (
                 <div className="container">
@@ -30,7 +29,10 @@ class AdminBorrowRequests extends Component {
                 <h4 className="center">Borrow Requests</h4>
                 <div className="divider"></div>
                 <div className="review">
-                    { this.props.borrowRequests && <AdminBorrowReq borrowRequests = { this.props.borrowRequests } { ...this.props }/> }  
+                    { this.props.borrowRequests &&
+                    <AdminBorrowReq borrowRequests = { this.props.borrowRequests }
+                    { ...this.props }/>
+                    }
                 </div>
             </div>
     );

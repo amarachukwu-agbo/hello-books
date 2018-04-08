@@ -9,35 +9,34 @@ import { connect } from 'react-redux';
  */
 
 class PrivateRoute extends React.Component {
+  render() {
+    const {
+      isAuthenticated,
+      component: Component,
+      ...props
+    } = this.props;
 
-    render() {
-        const {
-            isAuthenticated,
-            component: Component,
-            ...props
-        } = this.props
-        
-        return (
+    return (
             <Route
                 {...props}
-                render={props =>
-                    isAuthenticated
+                render={componentProps =>
+                    (isAuthenticated
                         ?
                             <Component {...props} />
                         : (
                             <Redirect to={{
                                 pathname: '/login',
-                                state: { from: props.location }
+                                state: { from: componentProps.location },
                             }} />
-                        )
+                        ))
                 }
             />
-        )
-    }
+    );
+  }
 }
 
 const mapStateToProps = state => ({
-    ...state.login,
+  ...state.login,
 });
 
-export default connect(mapStateToProps)(PrivateRoute)
+export default connect(mapStateToProps)(PrivateRoute);
