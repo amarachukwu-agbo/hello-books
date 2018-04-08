@@ -34,9 +34,6 @@ class Favorites extends Component {
                     <span><Link to = { `/books/${favorite.favBook.id}` }> { favorite.favBook.title } </Link></span>
                   </h6>
                   <p><span className="bold">Author: </span><span> { favorite.favBook.author } </span></p>
-                  <div className="row">
-                    <button className="btn btn-small waves-effect red" >Borrow book</button>
-                  </div>
               </div>
             </div>
       ));
