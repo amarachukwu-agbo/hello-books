@@ -247,6 +247,7 @@ export default class Admin extends Users {
         return res.status(201).json({
           msg: 'Request Declined',
           requestId: request.id,
+          status: 'Declined',
           book: bookId,
           user: userId,
         });
