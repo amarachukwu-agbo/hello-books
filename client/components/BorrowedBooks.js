@@ -13,7 +13,7 @@ const BorrowedBooks = (props) => {
 
   return (
         <div className="row">
-            <table class="striped responsive-table">
+            <table className="striped responsive-table">
                 <thead>
                     <tr>
                         <th>Book</th>
@@ -28,7 +28,7 @@ const BorrowedBooks = (props) => {
                             <td><Link to= {`/books/${book.bookId}`}> { book.borrowedBooks.title } </Link></td>
                             <td> { book.createdAt.split('T')[0] } </td>
                             <td> { book.status } </td>
-                            <td> { book.updatedAt.split('T')[0] || '--' } </td>
+                            <td> { book.status === 'Returned' ? book.updatedAt.split('T')[0] : '' } </td>
                             { book.status !== 'Returned' &&
                             <td><button>Return</button></td>
                             }
