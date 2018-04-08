@@ -14,7 +14,6 @@ class Favorites extends Component {
   }
 
   renderFavorites() {
-    console.log(this.props);
     const { isFetching, error, favorites } = this.props;
     if (isFetching) {
       return <div className="row center book-image"><Preloader /></div>;
