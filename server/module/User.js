@@ -517,7 +517,7 @@ export default class Users {
       });
   }
 
-    /* Method lets a user send  a borrow request for a book
+  /* Method lets a user send  a borrow request for a book
     @param req is the request object
     @param res is the response object
     @return borrow request object
