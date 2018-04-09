@@ -13,18 +13,18 @@ class GuestRoute extends React.Component {
     const {
       isAuthenticated,
       component: Component,
-      ...props
+      ...rest
     } = this.props;
     return (
             <Route
-                {...props}
-                render={componentProps =>
+                {...rest}
+                render={props =>
                     (!isAuthenticated
                         ? <Component {...props} />
                         : (
                             <Redirect to={{
                                 pathname: '/',
-                                state: { from: componentProps.location },
+                                state: { from: props.location },
                             }} />
                         ))
                 }
