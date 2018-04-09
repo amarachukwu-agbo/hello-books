@@ -4,12 +4,17 @@ class AdminBorrowReq extends Component {
   constructor(props) {
     super(props);
     this.acceptBorrowRequest = this.acceptBorrowRequest.bind(this);
-    // this.declineBorrowRequest = this.declineBorrowRequest.bind(this);
+    this.declineBorrowRequest = this.declineBorrowRequest.bind(this);
   }
 
   acceptBorrowRequest(userId, bookId, requestIndex) {
     const { handleBorrowRequest } = this.props;
     handleBorrowRequest({ status: 'Accepted' }, userId, bookId, requestIndex);
+  }
+
+  declineBorrowRequest(userId, bookId, requestIndex) {
+    const { handleBorrowRequest } = this.props;
+    handleBorrowRequest({ status: 'Declined' }, userId, bookId, requestIndex);
   }
 
   render() {
@@ -58,7 +63,17 @@ class AdminBorrowReq extends Component {
                                     )
                                 }
                                 >Accept</button></td>
-                                <td> <button className="btn btn-wave waves-effect btn-small red" disabled = { request.status !== 'Pending' }>Decline</button></td>
+                                <td> <button className="btn btn-wave waves-effect btn-small red"
+                                disabled = { request.status !== 'Pending' || isHandlingBorrowRequest }
+                                onClick = {
+                                    this.declineBorrowRequest.bind(
+                                        null,
+                                        request.userId,
+                                        request.borrowRequests.id,
+                                        index,
+                                    )
+                                }
+                                >Decline</button></td>
                             </tr>)}
                     </tbody>
                 </table>
