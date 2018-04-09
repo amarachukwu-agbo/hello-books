@@ -1,4 +1,5 @@
-import { GET_BOOKS_SUCCESS,
+import {
+  GET_BOOKS_SUCCESS,
   GET_BOOKS_REQUEST,
   GET_BOOKS_FAILURE,
   GET_UPVOTED_BOOKS_SUCCESS,
@@ -12,7 +13,8 @@ import { GET_BOOKS_SUCCESS,
   EDIT_BOOK_FAILURE,
   DELETE_BOOK_SUCCESS,
   DELETE_BOOK_REQUEST,
-  DELETE_BOOK_FAILURE } from '../actions/types';
+  DELETE_BOOK_FAILURE,
+} from '../actions/types';
 
 const initialState = {};
 
