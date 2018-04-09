@@ -63,7 +63,7 @@ class Navbar extends Component {
                     <ul className="side-nav" id="mobile-demo">
                         <li>{ `Welcome ${user.firstName}` } </li>
                         <li><Link to={ `/users/${user.id}/favorites` }>Favorites</Link></li>
-                        <li><Link to="/profile">Profile</Link></li>
+                        <li><Link to={ `/users/${user.id}/profile` }>Profile</Link></li>
                         <li><button className="btn btn-flat white-text" onClick={ this.props.logOut }>Log out</button></li>
                     </ul>
                 }
