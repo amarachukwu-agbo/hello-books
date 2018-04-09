@@ -25,6 +25,18 @@
         "no-undef": 0,
         "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
         "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error"
+        "react/jsx-uses-vars": "error",
+        "class-methods-use-this": ["error", {
+            "exceptMethods": [
+              "render",
+              "componentWillMount",
+              "componentDidMount",
+              "componentWillReceiveProps",
+              "shouldComponentUpdate",
+              "componentWillUpdate",
+              "componentDidUpdate",
+              "componentWillUnmount"
+            ]
+          }]
     }
 }
