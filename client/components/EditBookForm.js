@@ -30,7 +30,7 @@ class EditBookForm extends Component {
                 <div className="center-align lighten-2">
                     <h5>Edit Book</h5>
                     { isEditing &&
-                        <div className="row sign-up-success"><p className="center"> Updating book...</p></div>
+                        <div className="row"><p className="center sign-up-success"> Updating book...</p></div>
                     }
                 </div>
                 <div className="row">

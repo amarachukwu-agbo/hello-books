@@ -5,8 +5,10 @@ import AdminBooks from './AdminBooks';
 import Navbar from './Navbar';
 import PageFooter from './PageFooter';
 import Preloader from './Preloader';
+import { getBorrowRequests, handleBorrowRequest } from '../actions/borrowrequests';
 import { getBooks, deleteBook, addBook, editBook } from '../actions/books';
 import BookForm from './BookForm';
+import AdminBorrowRequests from './AdminBorrowRequests';
 
 
 class Admin extends Component {
@@ -54,6 +56,12 @@ class Admin extends Component {
                         <div className="col s1 m2 l3"></div>
                     </div>
                 )} />
+                <Route exact path = { `${match.url}/borrowRequests`} render= {() => (
+                    <div className="row">
+                        <AdminBorrowRequests borrowRequests = { this.props.borrowRequests }
+                        { ...this.props }/>
+                    </div>
+                )} />
             </Switch>
             <br/>
             <PageFooter />
@@ -64,11 +72,17 @@ class Admin extends Component {
 
 const mapStateToProps = state => ({
   ...state.books,
+  ...state.borrowRequests,
 });
 const mapDispatchToProps = dispatch => ({
   getBooks: () => { dispatch(getBooks()); },
   deleteBook: (bookId, bookIndex) => { dispatch(deleteBook(bookId, bookIndex)); },
   editBook: (bookId, bookIndex, book) => { dispatch(editBook(bookId, bookIndex, book)); },
+  getBorrowRequests: () => { dispatch(getBorrowRequests()); },
+  handleBorrowRequest: (action, userId, bookId, requestIndex) => {
+    dispatch(handleBorrowRequest(action, userId, bookId, requestIndex));
+  },
   addBook: (book) => { dispatch(addBook(book)); },
+
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Admin);

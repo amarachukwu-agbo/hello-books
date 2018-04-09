@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
+import PrivateRoute from './PrivateRoute';
+import GuestRoute from './GuestRoute';
+import AdminRoute from './AdminRoute';
 import SignUpPage from './SignUp/SignUpPage';
 import LoginPage from './Login/LoginPage';
 import IndexPage from './Index';
+import NotFound from './NotFound';
 import Books from './Books';
 import User from './User';
 import Admin from './Admin';
@@ -13,12 +17,13 @@ class App extends Component {
     return (
             <Router history = { this.props.history }>
                 <Switch>
-                    <Route exact path = '/signup' component = { SignUpPage } />
-                    <Route exact path = '/login' component = { LoginPage } />
+                    <GuestRoute exact path = '/signup' component = { SignUpPage } />
+                    <GuestRoute exact path = '/login' component = { LoginPage } />
                     <Route exact path = '/' component = { IndexPage } />
                     <Route path = '/books' component = { Books } />
-                    <Route path = '/users' component = { User } />
-                    <Route path = '/admin' component = { Admin } />
+                    <PrivateRoute path = '/users' component = { User } />
+                    <AdminRoute path = '/admin' component = { Admin } />
+                    <Route component = { NotFound } />
                 </Switch>
             </Router>
     );
