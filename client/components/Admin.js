@@ -58,7 +58,8 @@ class Admin extends Component {
                 )} />
                 <Route exact path = { `${match.url}/borrowRequests`} render= {() => (
                     <div className="row">
-                        <AdminBorrowRequests borrowRequests = { this.props.borrowRequests } { ...this.props }/>
+                        <AdminBorrowRequests borrowRequests = { this.props.borrowRequests }
+                        { ...this.props }/>
                     </div>
                 )} />
             </Switch>
@@ -78,10 +79,10 @@ const mapDispatchToProps = dispatch => ({
   deleteBook: (bookId, bookIndex) => { dispatch(deleteBook(bookId, bookIndex)); },
   editBook: (bookId, bookIndex, book) => { dispatch(editBook(bookId, bookIndex, book)); },
   getBorrowRequests: () => { dispatch(getBorrowRequests()); },
-  handleBorrowRequest: (action, userId, bookId, requestIndex) =>
-    { dispatch(handleBorrowRequest(action, userId, bookId, requestIndex));
+  handleBorrowRequest: (action, userId, bookId, requestIndex) => {
+    dispatch(handleBorrowRequest(action, userId, bookId, requestIndex));
   },
   addBook: (book) => { dispatch(addBook(book)); },
-  
+
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Admin);
