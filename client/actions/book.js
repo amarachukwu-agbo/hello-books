@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { GET_BOOK_SUCCESS,
+import {
+  GET_BOOK_SUCCESS,
   GET_BOOK_REQUEST,
   GET_BOOK_FAILURE,
   FAVORITE_REQUEST,
