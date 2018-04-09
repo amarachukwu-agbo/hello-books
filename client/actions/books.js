@@ -18,9 +18,8 @@ import {
   DELETE_BOOK_FAILURE,
 } from './types';
 
+import setHeader from '../helpers/setheader';
 import { apiURL } from './userSignUp';
-
-axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('userToken')}`;
 
 const getBooksRequest = () => ({
   type: GET_BOOKS_REQUEST,
@@ -77,6 +76,7 @@ const addBookFailure = error => ({
 
 export const addBook = book => (dispatch) => {
   dispatch(addingBook());
+  setHeader();
   return axios.post(`${apiURL}/books`, book)
     .then((response) => {
       dispatch(addBookSuccess(response.data.bookEntry));
@@ -108,6 +108,7 @@ const editBookFailure = error => ({
 
 export const editBook = (bookId, bookIndex, book) => (dispatch) => {
   dispatch(editingBook());
+  setHeader();
   return axios.put(`${apiURL}/books/${bookId}`, book)
     .then((response) => {
       dispatch(editBookSuccess(response.data.updatedBook, bookIndex));
@@ -138,6 +139,7 @@ const deleteBookFailure = deleteError => ({
 
 export const deleteBook = (bookId, index) => (dispatch) => {
   dispatch(deleteBookRequest());
+  setHeader();
   return axios.post(`${apiURL}/books/remove/${bookId}`)
     .then((response) => {
       console.log(response);

@@ -7,9 +7,9 @@ import {
   HANDLE_BORROW_REQUEST_SUCCESS,
   HANDLE_BORROW_REQUEST_FAILURE,
 } from './types';
-import { apiURL } from './userSignUp';
 
-axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('userToken')}`;
+import setHeader from '../helpers/setheader';
+import { apiURL } from './userSignUp';
 
 const fetchingBorrowRequests = () => ({
   type: FETCHING_BORROW_REQUESTS,
@@ -27,6 +27,7 @@ const borrowRequestsFailure = error => ({
 
 export const getBorrowRequests = () => (dispatch) => {
   dispatch(fetchingBorrowRequests());
+  setHeader();
   return axios.get(`${apiURL}/borrowrequests`)
     .then((response) => {
       console.log(response.data);
@@ -60,6 +61,7 @@ const handleBorrowRequestFailure = error => ({
 
 export const handleBorrowRequest = (status, userId, bookId, requestIndex) => (dispatch) => {
   dispatch(handlingBorrowRequest());
+  setHeader();
   return axios.put(`${apiURL}/users/${userId}/borrow/${bookId}`, status)
     .then((response) => {
       console.log(response.data);

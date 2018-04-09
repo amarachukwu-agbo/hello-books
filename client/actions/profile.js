@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { FETCHING_PROFILE, PROFILE_SUCCESS, PROFILE_FAILURE } from './types';
 import { apiURL } from './userSignUp';
-
-axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('userToken')}`;
+import setHeader from '../helpers/setheader';
 
 const fetchingProfile = () => ({
   type: FETCHING_PROFILE,
@@ -20,6 +19,7 @@ const profileFailure = error => ({
 
 const getUserProfile = userId => (dispatch) => {
   dispatch(fetchingProfile());
+  setHeader();
   return axios.get(`${apiURL}/users/${userId}`)
     .then((response) => {
       console.log(response.data);
