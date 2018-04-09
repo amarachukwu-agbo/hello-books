@@ -5,7 +5,6 @@ import 'materialize-css';
 import '../public/style/style.scss';
 import store, { history } from './store';
 import App from '../components/App';
-import '../helpers/materialize/index';
 
 render(
     <Provider store = { store }>

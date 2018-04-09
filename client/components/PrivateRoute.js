@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import materialize from '../helpers/materialize';
 
 /**
  * Private route to navigate over private routes
@@ -9,6 +10,10 @@ import { connect } from 'react-redux';
  */
 
 class PrivateRoute extends React.Component {
+  componentDidMount() {
+    materialize();
+  }
+
   render() {
     const {
       isAuthenticated,
