@@ -14,20 +14,20 @@ class AdminRoute extends React.Component {
       isAuthenticated,
       user,
       component: Component,
-      ...props
+      ...rest
     } = this.props;
 
     return (
         <Route
-            {...props}
-                render={componentProps =>
+            {...rest}
+                render={props =>
                     (isAuthenticated && user.role === 'Admin'
                         ?
                             <Component {...props} />
                         : (
                             <Redirect to={{
                                 pathname: '/',
-                                state: { from: componentProps.location },
+                                state: { from: props.location },
                             }} />
                         ))
                 }
