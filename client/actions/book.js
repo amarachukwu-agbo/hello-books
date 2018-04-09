@@ -20,10 +20,8 @@ import {
   REVIEW_BOOK_FAILURE,
 } from './types';
 
-
+import setHeader from '../helpers/setheader';
 import { apiURL } from './userSignUp';
-
-axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('userToken')}`;
 
 const getBookRequest = () => ({
   type: GET_BOOK_REQUEST,
@@ -80,7 +78,7 @@ const favoriteFailure = error => ({
 
 export const favoriteBook = (userId, bookId) => (dispatch) => {
   dispatch(favoriteRequest());
-  console.log(localStorage.getItem('userToken'));
+  setHeader();
   return axios.post(`${apiURL}/users/${userId}/fav/${bookId}`)
     .then((response) => {
       console.log(response);
@@ -112,6 +110,7 @@ const upvoteFailure = error => ({
 
 export const upvoteBook = (userId, bookId) => (dispatch) => {
   dispatch(upvoteRequest());
+  setHeader();
   return axios.post(`${apiURL}/users/${userId}/book/${bookId}/upvote`)
     .then((response) => {
       console.log(response);
@@ -143,6 +142,7 @@ const downvoteFailure = error => ({
 
 export const downvoteBook = (userId, bookId) => (dispatch) => {
   dispatch(downvoteRequest());
+  setHeader();
   return axios.post(`${apiURL}/users/${userId}/book/${bookId}/downvote`)
     .then((response) => {
       console.log(response);
@@ -174,6 +174,7 @@ const borrowBookFailure = error => ({
 
 export const borrowBook = (userId, bookId, request) => (dispatch) => {
   dispatch(borrowBookRequest());
+  setHeader();
   return axios.post(`${apiURL}/users/${userId}/borrow/${bookId}/`, request)
     .then((response) => {
       console.log(response);
@@ -205,6 +206,7 @@ const reviewBookFailure = error => ({
 
 export const reviewBook = (userId, bookId, review) => (dispatch) => {
   dispatch(reviewBookRequest());
+  setHeader();
   return axios.post(`${apiURL}/users/${userId}/review/${bookId}/`, review)
     .then((response) => {
       console.log(response);

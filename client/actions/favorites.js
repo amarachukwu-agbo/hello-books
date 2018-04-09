@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { FETCHING_FAVORITES, FAVORITES_SUCCESS, FAVORITES_FAILURE } from './types';
+import setHeader from '../helpers/setheader';
 import { apiURL } from './userSignUp';
 
-axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('userToken')}`;
 
 const fetchingFavorites = () => ({
   type: FETCHING_FAVORITES,
@@ -20,6 +20,7 @@ const favoritesFailure = error => ({
 
 const getUserFavorites = userId => (dispatch) => {
   dispatch(fetchingFavorites());
+  setHeader();
   return axios.get(`${apiURL}/users/${userId}/favBooks`)
     .then((response) => {
       console.log(response.data);
