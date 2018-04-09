@@ -7,9 +7,11 @@ import PageFooter from './PageFooter';
 import BooksList from './BooksList';
 import Preloader from './Preloader';
 import { getBooks, getMostUpvotedBooks } from '../actions/books';
+import materialize from '../helpers/materialize';
 
 class IndexPage extends Component {
   componentDidMount() {
+    materialize();
     this.props.getBooks();
     this.props.getMostUpvotedBooks();
   }

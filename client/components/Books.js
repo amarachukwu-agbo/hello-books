@@ -7,9 +7,11 @@ import BooksList from './BooksList';
 import BooksDetailsPage from './BookDetailsPage';
 import Preloader from './Preloader';
 import { getBooks } from '../actions/books';
+import materialize from '../helpers/materialize';
 
 class Books extends Component {
   componentDidMount() {
+    materialize();
     this.props.getBooks();
   }
   render() {
