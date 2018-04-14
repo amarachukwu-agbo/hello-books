@@ -6,9 +6,11 @@ import Navbar from './Navbar';
 import PageFooter from './PageFooter';
 import Preloader from './Preloader';
 import { getBorrowRequests, handleBorrowRequest } from '../actions/borrowrequests';
+import getReturnRequests from '../actions/returnrequests';
 import { getBooks, deleteBook, addBook, editBook } from '../actions/books';
 import BookForm from './BookForm';
 import AdminBorrowRequests from './AdminBorrowRequests';
+import AdminReturnRequests from './AdminReturnRequests';
 
 
 class Admin extends Component {
@@ -62,6 +64,12 @@ class Admin extends Component {
                         { ...this.props }/>
                     </div>
                 )} />
+                <Route exact path = { `${match.url}/returnRequests`} render= {() => (
+                    <div className="row">
+                        <AdminReturnRequests returnRequests = { this.props.returnRequests }
+                        { ...this.props }/>
+                    </div>
+                )} />
             </Switch>
             <br/>
             <PageFooter />
@@ -73,12 +81,14 @@ class Admin extends Component {
 const mapStateToProps = state => ({
   ...state.books,
   ...state.borrowRequests,
+  ...state.returnRequests,
 });
 const mapDispatchToProps = dispatch => ({
   getBooks: () => { dispatch(getBooks()); },
   deleteBook: (bookId, bookIndex) => { dispatch(deleteBook(bookId, bookIndex)); },
   editBook: (bookId, bookIndex, book) => { dispatch(editBook(bookId, bookIndex, book)); },
   getBorrowRequests: () => { dispatch(getBorrowRequests()); },
+  getReturnRequests: () => { dispatch(getReturnRequests()); },
   handleBorrowRequest: (action, userId, bookId, requestIndex) => {
     dispatch(handleBorrowRequest(action, userId, bookId, requestIndex));
   },
