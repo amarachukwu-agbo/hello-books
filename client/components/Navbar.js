@@ -23,7 +23,7 @@ class Navbar extends Component {
                                     <li><Link to= '/admin'>Books Catalog</Link></li>
                                     <li><Link to= '/admin/addBook'>Add Book</Link></li>
                                     <li><Link to= '/admin/borrowRequests'>Borrow Requests</Link></li>
-                                    <li><Link to= '/admin/Requests'>Return Requests</Link></li>
+                                    <li><Link to= '/admin/returnRequests'>Return Requests</Link></li>
                                     <li><button className="btn btn-flat white-text" onClick={ this.props.logOut }>Log out</button></li>
                                 </ul>
                             }
