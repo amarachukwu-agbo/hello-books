@@ -584,6 +584,7 @@ export default class Users {
       where: {
         userId,
         bookId,
+        status: 'Not returned',
       },
     })
       .then((borrowed) => {
