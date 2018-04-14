@@ -123,6 +123,7 @@ export const mostUpvotedBooks = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
+        upvotedError: null,
         upvotedBooks: null,
       };
     }
@@ -137,6 +138,7 @@ export const mostUpvotedBooks = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
+        upvotedError: null,
         upvotedBooks: action.books,
       };
     }
