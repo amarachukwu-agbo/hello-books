@@ -28,18 +28,18 @@ class Admin extends Component {
                         <br/>
                         <h4 className="black-text text-darken-4 bold">Admin Dashboard</h4>
                     </div>
-                </div>
-                <br/>
+            </div>
+            <br/>
             <Switch>
                 <Route exact path = { `${match.url}`} render= {() => (
                     <div>
                     { this.props.isFetching &&
-                        <div className="row center book-image">
+                        <div className="row center wrapper">
                             <Preloader />
                         </div>
                     }
                     { this.props.error &&
-                        <div className="row center book-image">
+                        <div className="row center wrapper">
                             <h4 className="flow-text red-text"> {`Oops! Couldn't fetch available books. ${this.props.error}`} </h4>
                         </div>
                     }

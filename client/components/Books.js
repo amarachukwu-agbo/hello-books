@@ -30,7 +30,7 @@ class Books extends Component {
                 <Switch>
                     <Route exact path = {`${match.url}/:bookId`} component = { BooksDetailsPage } />
                     <Route exact path = { `${match.url}`} render= {() => (
-                        <div className="section white">
+                        <div className="section white wrapper">
                         <br/>
                             <div className="container center">
                                 <h4 className="text-darken-3 book-header">Available books</h4>
@@ -48,12 +48,12 @@ class Books extends Component {
 
                             <div className="row">
                                 { this.props.isFetching &&
-                                    <div className="row center book-image">
+                                    <div className="row center">
                                         <Preloader />
                                     </div>
                                 }
                                 { this.props.error &&
-                                    <div className="row center book-image">
+                                    <div className="row center">
                                         <h4 className="flow-text red-text"> {`Oops! Couldn't fetch available books. ${this.props.error}`} </h4>
                                     </div>
                                 }
