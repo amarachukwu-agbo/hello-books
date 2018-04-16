@@ -5,7 +5,6 @@ const BorrowedBooks = (props) => {
   const {
     books, returnBook, user, isSendingRequest, returnRequests,
   } = props;
-  console.log(props);
 
   if (!books.length) {
     return (

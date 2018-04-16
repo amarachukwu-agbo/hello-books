@@ -2,6 +2,7 @@ import {
   GET_BOOKS_SUCCESS,
   GET_BOOKS_REQUEST,
   GET_BOOKS_FAILURE,
+  SEARCH_BOOK,
   GET_UPVOTED_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_REQUEST,
   GET_UPVOTED_BOOKS_FAILURE,
@@ -40,7 +41,16 @@ export const books = (state = initialState, action) => {
         ...state,
         isFetching: false,
         books: action.books,
+        currentlyDisplayed: action.books,
         error: null,
+      };
+    }
+    case SEARCH_BOOK: {
+      return {
+        ...state,
+        value: action.value,
+        currentlyDisplayed: state.books.filter(book =>
+          book.title.toLowerCase().includes(action.value)),
       };
     }
     case ADDING_BOOK: {
@@ -123,6 +133,7 @@ export const mostUpvotedBooks = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
+        upvotedError: null,
         upvotedBooks: null,
       };
     }
@@ -137,6 +148,7 @@ export const mostUpvotedBooks = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
+        upvotedError: null,
         upvotedBooks: action.books,
       };
     }

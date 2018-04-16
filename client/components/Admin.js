@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 import PageFooter from './PageFooter';
 import Preloader from './Preloader';
 import { getBorrowRequests, handleBorrowRequest } from '../actions/borrowrequests';
-import getReturnRequests from '../actions/returnrequests';
+import { getReturnRequests, handleReturnRequest } from '../actions/returnrequests';
 import { getBooks, deleteBook, addBook, editBook } from '../actions/books';
 import BookForm from './BookForm';
 import AdminBorrowRequests from './AdminBorrowRequests';
@@ -91,6 +91,9 @@ const mapDispatchToProps = dispatch => ({
   getReturnRequests: () => { dispatch(getReturnRequests()); },
   handleBorrowRequest: (action, userId, bookId, requestIndex) => {
     dispatch(handleBorrowRequest(action, userId, bookId, requestIndex));
+  },
+  handleReturnRequest: (action, userId, bookId, requestIndex) => {
+    dispatch(handleReturnRequest(action, userId, bookId, requestIndex));
   },
   addBook: (book) => { dispatch(addBook(book)); },
 

@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 
 class AdminReturnReq extends Component {
+  constructor(props) {
+    super(props);
+    this.acceptReturnRequest = this.acceptReturnRequest.bind(this);
+    this.declineReturnRequest = this.declineReturnRequest.bind(this);
+  }
+  acceptReturnRequest(userId, bookId, requestIndex) {
+    const { handleReturnRequest } = this.props;
+    handleReturnRequest({ status: 'Accepted' }, userId, bookId, requestIndex);
+  }
+
+  declineReturnRequest(userId, bookId, requestIndex) {
+    const { handleReturnRequest } = this.props;
+    handleReturnRequest({ status: 'Declined' }, userId, bookId, requestIndex);
+  }
   render() {
     const { returnRequests } = this.props;
     if (!returnRequests.length) {
@@ -32,9 +46,25 @@ class AdminReturnReq extends Component {
                                 <td> { request.status } </td>
                                 <td> <button className="btn btn-wave waves-effect btn-small red"
                                 disabled = { request.status !== 'Pending' }
+                                onClick = {
+                                    this.acceptReturnRequest.bind(
+                                        null,
+                                        request.userId,
+                                        request.bookId,
+                                        index,
+                                    )
+                                }
                                 >Accept</button></td>
                                 <td> <button className="btn btn-wave waves-effect btn-small red"
                                 disabled = { request.status !== 'Pending' }
+                                onClick = {
+                                    this.declineReturnRequest.bind(
+                                        null,
+                                        request.userId,
+                                        request.bookId,
+                                        index,
+                                    )
+                                }
                                 >Decline</button></td>
                             </tr>)}
                     </tbody>
