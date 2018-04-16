@@ -65,7 +65,8 @@ class BookDetails extends Component {
             <p className="bold black-text">Description: <span> {book.description} </span></p>
             <div className='divider'></div><br />
             <div>
-              <button className="btn btn-small red" onClick = { this.toggleModal } disabled= { !this.props.isAuthenticated }>
+              <button className="btn btn-small red" onClick = { this.toggleModal }
+              disabled= { !this.props.isAuthenticated || book.quantity === 0 }>
                 Borrow Book</button>
               <div className="left">
                 <button className="btn btn-small white teal-text left" onClick={this.upvoteBook} disabled={this.props.isUpvoting}>
