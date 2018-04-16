@@ -20,10 +20,10 @@ class Profile extends Component {
     console.log(this.props);
     const { isFetchingProfile, profileError, profile } = this.props;
     if (isFetchingProfile) {
-      return <div className="row center book-image"><Preloader /></div>;
+      return <div className="row center wrapper"><Preloader /></div>;
     }
     if (profileError) {
-      return <div className="row center book-image"> { this.props.profileError }</div>;
+      return <div className="row center wrapper"> { this.props.profileError }</div>;
     }
     if (profile) {
       const returnRequests = profile.userReturnRequests.filter(request => request.status.toLowerCase() !== 'accepted');
