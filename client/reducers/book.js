@@ -1,4 +1,5 @@
-import { GET_BOOK_SUCCESS,
+import {
+  GET_BOOK_SUCCESS,
   GET_BOOK_REQUEST,
   GET_BOOK_FAILURE,
   FAVORITE_REQUEST,
@@ -57,6 +58,7 @@ const book = (state = initialState, action) => {
       };
     }
     case FAVORITE_SUCCESS: {
+      Materialize.toast('Book has been added to favorites', 2000);
       return {
         ...state,
         book: { ...state.book, favCount: action.favCount },
