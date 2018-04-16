@@ -7,6 +7,7 @@ import {
   GET_UPVOTED_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_REQUEST,
   GET_UPVOTED_BOOKS_FAILURE,
+  SEARCH_BOOK,
   ADDING_BOOK,
   ADD_BOOK_SUCCESS,
   ADD_BOOK_FAILURE,
@@ -90,6 +91,11 @@ export const addBook = book => (dispatch) => {
       }
     });
 };
+
+export const searchBook = value => ({
+  type: SEARCH_BOOK,
+  value,
+});
 
 const editingBook = () => ({
   type: EDIT_BOOK_REQUEST,
