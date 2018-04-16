@@ -27,10 +27,10 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   opacity: 0.8;
 }
 
-.modal {
-  background-color: $modal-color;
+.Modal {
+  background-color: $overlay-color;
   bottom: 0;
-  box-shadow: 0 5px 20px 0 $modal-box-color;
+  box-shadow: 0 5px 20px 0 ;
   left: 20%;
   outline: none;
   overflow: auto;
@@ -40,7 +40,7 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   z-index: 2000;
 }
 
-.overlay {
+.Overlay {
   background-color: $overlay-color;
   bottom: 0;
   left: 0;
@@ -78,6 +78,14 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   width: 90%;
 }
 
+.wrapper {
+  min-height: calc(100vh - 50px);
+}
+
+.pageFooter {
+  height: 50px;
+}
+
 .parallax-container,
 .book-header {
   font-family: "Old Standard TT";
@@ -112,10 +120,6 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
 .dashboard {
   height: 15%;
   background: linear-gradient(white, grey),
-}
-
-.drop-down {
-  width: 95%;
 }
 
 @media (max-width: 600px) {

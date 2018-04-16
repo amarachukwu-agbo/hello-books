@@ -27,7 +27,7 @@ class BookForm extends Component {
                 <div className="center-align lighten-2">
                     <h5>Add Book</h5>
                     { isAdding &&
-                        <div className="row sign-up-success"><p className="center"> Adding book...</p></div>
+                        <div className="row"><p className="center sign-up-success"> Adding book...</p></div>
                     }
                 </div>
                 <div className="row">
@@ -41,7 +41,7 @@ class BookForm extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="drop-down right">
+                    <div className="input-field">
                         <label>Subject</label>
                         <Field name="subject" component={renderDropdownList} valueField="value" textField="subject" data= {subjects} />
                     </div>

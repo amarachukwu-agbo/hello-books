@@ -28,7 +28,7 @@ class SignUpPage extends Component {
   render() {
     return (
             <div className="grey lighten-4">
-                <div className="row">
+                <div className="row wrapper">
                     <div className="col s1 m2 l3 "></div>
                     <div className="col s10 m8 l6">
                         <div className="row card-panel">

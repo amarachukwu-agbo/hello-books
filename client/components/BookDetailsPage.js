@@ -14,7 +14,7 @@ class BookDetailsPage extends Component {
   render() {
     if (this.props.isFetching) {
       return (
-                <div className="container">
+                <div className="container wrapper">
                     <div className="row center" style={{ minHeight: '500px' }}>
                     <br/><br/><PreLoader /></div>
                 </div>
@@ -22,13 +22,13 @@ class BookDetailsPage extends Component {
     }
     if (this.props.error) {
       return (
-                <div className="row center" style={{ minHeight: '500px' }}>
+                <div className="row center wrapper">
                    <br/><div className="container"><h4 className="flow-text red-text"> {`Oops! Couldn't fetch requested book. ${this.props.error}`} </h4></div>
                 </div>
       );
     }
     return (
-            <div className="container">
+            <div className="container wrapper">
                 { this.props.book && <BookDetails book = { this.props.book } { ...this.props }/> }
                 <br/>
               { this.props.book &&

@@ -32,7 +32,7 @@ class IndexPage extends Component {
                         <Link to="/login" className="btn btn-large white-text red waves-effect waves-light">Get Started</Link>
                     </div>
                 </div>
-                <div className="section white">
+                <div className="section white wrapper">
                     <br/>
                     <div className="container center">
                         <h4 className="text-darken-3 book-header">Available books</h4>
