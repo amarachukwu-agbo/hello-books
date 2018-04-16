@@ -16,10 +16,10 @@ class Favorites extends Component {
   renderFavorites() {
     const { isFetching, error, favorites } = this.props;
     if (isFetching) {
-      return <div className="row center book-image"><Preloader /></div>;
+      return <div className="row center wrapper"><Preloader /></div>;
     }
     if (error) {
-      return <div className="row center book-image"> { this.props.error }</div>;
+      return <div className="row center wrapper"> { this.props.error }</div>;
     }
     if (favorites) {
       return favorites.map((favorite, index) => (
