@@ -6,7 +6,7 @@ import PageFooter from './PageFooter';
 import Favorites from './Favorites';
 import Profile from './Profile';
 import getUserFavorites from '../actions/favorites';
-import getUserProfile from '../actions/profile';
+import { getUserProfile, returnBook } from '../actions/profile';
 
 const User = props => (
   <div>
@@ -31,5 +31,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getUserFavorites: (userId) => { dispatch(getUserFavorites(userId)); },
   getUserProfile: (userId) => { dispatch(getUserProfile(userId)); },
+  returnBook: (userId, bookId) => {
+    dispatch(returnBook(userId, bookId));
+  },
 });
 export default connect(mapStateToProps, mapDispatchToProps)(User);

@@ -26,19 +26,20 @@ class Profile extends Component {
       return <div className="row center book-image"> { this.props.profileError }</div>;
     }
     if (profile) {
-      const returnRequests = profile.user.userReturnRequests.filter(request => request.status.toLowerCase() !== 'accepted');
-      const borrowRequests = profile.user.userBorrowRequests.filter(request => request.status.toLowerCase() !== 'accepted');
+      const returnRequests = profile.userReturnRequests.filter(request => request.status.toLowerCase() !== 'accepted');
+      const borrowRequests = profile.userBorrowRequests.filter(request => request.status.toLowerCase() !== 'accepted');
 
       return (
             <div className="row" >
               <div className="row card-panel">
                   <h5 className="row grey flow-text">Bio</h5>
-                  <Bio bio= { profile.user } />
+                  <Bio bio= { profile } />
               </div>
 
               <div className="row card-panel">
                   <h5 className="row grey flow-text">Borrowed Books</h5>
-                  <BorrowedBooks books= { profile.user.userBooks } />
+                  <BorrowedBooks books= { profile.userBooks }
+                  returnRequests = { returnRequests } {...this.props }/>
               </div>
 
               <div className="row card-panel">
@@ -48,7 +49,7 @@ class Profile extends Component {
 
               <div className="row card-panel">
                   <h5 className="row grey flow-text">Return Requests</h5>
-                  <ReturnRequests books= { returnRequests }/>
+                  <ReturnRequests books= { returnRequests } { ...this.props }/>
               </div>
             </div>
       );

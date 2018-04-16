@@ -7,6 +7,7 @@ import book from './book';
 import favorites from './favorites';
 import profile from './profile';
 import borrowRequests from './borrowrequests';
+import returnRequests from './returnrequests';
 import { books, mostUpvotedBooks } from './books';
 
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   mostUpvotedBooks,
   favorites,
   borrowRequests,
+  returnRequests,
   profile,
   routing: routerReducer,
 });

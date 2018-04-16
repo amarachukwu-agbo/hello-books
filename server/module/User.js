@@ -584,6 +584,7 @@ export default class Users {
       where: {
         userId,
         bookId,
+        status: 'Not returned',
       },
     })
       .then((borrowed) => {
@@ -600,11 +601,19 @@ export default class Users {
             // Send request if it does not exist
             if (!request) {
               return models.ReturnRequests.create({
-                bookId,
                 userId,
                 comments: req.body.comments,
+                bookId,
               })
-                .then(returnRequest => res.status(201).json({ msg: 'Success', returnRequest }))
+                .then((tempRequest) => {
+                  tempRequest.reload({
+                    include: [{
+                      model: models.Book,
+                      as: 'returnRequests',
+                      attributes: ['title', 'author'],
+                    }],
+                  }).then(returnRequest => res.status(201).json({ msg: 'Success', returnRequest }));
+                })
                 .catch(error => res.status(400).send(error));
             }
             return res.status(403).json({ msg: 'Your request has already been sent' });

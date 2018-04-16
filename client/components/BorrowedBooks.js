@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BorrowedBooks = (props) => {
-  const { books } = props;
+  const {
+    books, returnBook, user, isSendingRequest, returnRequests,
+  } = props;
+  console.log(props);
+
   if (!books.length) {
     return (
         <div className="row center">
@@ -30,7 +34,11 @@ const BorrowedBooks = (props) => {
                             <td> { book.status } </td>
                             <td> { book.status === 'Returned' ? book.updatedAt.split('T')[0] : '' } </td>
                             { book.status !== 'Returned' &&
-                            <td><button>Return</button></td>
+                            !returnRequests.find(request =>
+                                request.bookId === book.bookId) &&
+                            <td><button onClick = { returnBook.bind(null, user.id, book.bookId) }
+                            className = "btn btn-small btn-wave waves-effect red"
+                            disabled = { isSendingRequest } >Return</button></td>
                             }
                         </tr>)}
                 </tbody>
