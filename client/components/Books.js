@@ -3,17 +3,25 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar';
 import PageFooter from './PageFooter';
-import BooksList from './BooksList';
+import Book from './Book';
 import BooksDetailsPage from './BookDetailsPage';
 import Preloader from './Preloader';
-import { getBooks } from '../actions/books';
+import { getBooks, searchBook } from '../actions/books';
 import materialize from '../helpers/materialize';
 
 class Books extends Component {
+  constructor(props) {
+    super(props);
+    this.onInputChange = this.onInputChange.bind(this);
+  }
   componentDidMount() {
     materialize();
     this.props.getBooks();
   }
+  onInputChange(event) {
+    this.props.searchBook(event.target.value);
+  }
+
   render() {
     const { match } = this.props;
     return (
@@ -27,6 +35,17 @@ class Books extends Component {
                             <div className="container center">
                                 <h4 className="text-darken-3 book-header">Available books</h4>
                             </div>
+                            { this.props.books &&
+                                    <div className="container">
+                                        <div className="input-field">
+                                            <label><i className="material-icons">search</i>Search Books...</label>
+                                            <input type="text"
+                                                onChange = {e => this.onInputChange(e) }
+                                            />
+                                        </div>
+                                </div>
+                            }
+
                             <div className="row">
                                 { this.props.isFetching &&
                                     <div className="row center book-image">
@@ -39,7 +58,8 @@ class Books extends Component {
                                     </div>
                                 }
                                 { this.props.books &&
-                                    <BooksList books = { this.props.books } {...this.props} />
+                                    this.props.currentlyDisplayed.map((book, index) =>
+                                        <Book key= { index } book= { book } />)
                                 }
                             </div>
                         </div>)}
@@ -55,5 +75,6 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   getBooks: () => { dispatch(getBooks()); },
+  searchBook: (value) => { dispatch(searchBook(value)); },
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Books);
