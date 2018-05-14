@@ -1,7 +1,5 @@
-
-
 module.exports = {
-  up: (queryInterface, Sequelize) =>
+  up: (queryInterface, Sequelize) => //eslint-disable-line
     queryInterface.bulkInsert(
       'Books',
       [
@@ -149,7 +147,7 @@ module.exports = {
       ], {},
     ),
 
-  down: (queryInterface, Sequelize) => (
+  down: (queryInterface, Sequelize) => ( //eslint-disable-line
     queryInterface.bulkDelete('Books', null, {})
   ),
 };
