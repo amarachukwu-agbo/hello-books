@@ -35,6 +35,20 @@ const userSchema = (sequelize) => {
       values: ['Admin', 'User'],
       allowNull: false,
     },
+    imageURL: {
+      type: Sequelize.STRING,
+      allowNull: true,
+      validate: {
+        validateFormat(imageURL) {
+          if (!imageURL.match(/.\(png | jpeg | jpg | gif | png)$/)) {
+            throw new Error('Image format is not valid');
+          }
+        },
+        isUrl: {
+          msg: 'Image Url must be a valid url',
+        },
+      },
+    },
   });
   // 1 to many notifucations
   User.associate = (models) => {

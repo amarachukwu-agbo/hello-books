@@ -12,7 +12,7 @@ const ReturnRequests = (props) => {
 
   return (
         <div className="row">
-            <table class="striped responsive-table">
+            <table className="striped responsive-table">
                 <thead>
                     <tr>
                         <th>Book</th>

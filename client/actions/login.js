@@ -47,6 +47,7 @@ export const loginUser = user => (dispatch) => {
         } else if (error.response.status === 404) {
           errorMessage = 'User not found';
         } else {
+          console.log(error.response);
           errorMessage = 'An error occured';
         }
         dispatch(loginFailure(errorMessage));

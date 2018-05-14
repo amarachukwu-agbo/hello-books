@@ -27,6 +27,16 @@ module.exports = {
       imageURL: {
         type: Sequelize.STRING,
         allowNull: false,
+        validate: {
+          validateFormat(imageURL) {
+            if (!imageURL.match(/.\(png | jpeg | jpg | gif | png)$/)) {
+              throw new Error('Image format is not valid');
+            }
+          },
+          isUrl: {
+            msg: 'Image Url must be a valid url',
+          },
+        },
       },
       quantity: {
         type: Sequelize.INTEGER,

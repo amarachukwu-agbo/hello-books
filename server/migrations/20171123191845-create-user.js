@@ -30,6 +30,20 @@ module.exports = {
         allowNull: false,
         values: ['Admin', 'User'],
       },
+      imageURL: {
+        type: Sequelize.STRING,
+        allowNull: true,
+        validate: {
+          validateFormat(imageURL) {
+            if (!imageURL.match(/.\(png | jpeg | jpg | gif | png)$/)) {
+              throw new Error('Image Url must be a valid url');
+            }
+          },
+          isUrl: {
+            msg: 'Image Url must be a valid url',
+          },
+        },
+      },
       password: {
         type: Sequelize.STRING,
         allowNull: false,

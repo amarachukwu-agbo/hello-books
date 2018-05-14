@@ -2,7 +2,7 @@
 import Joi from 'joi';
 
 const searchBookSchema = {
-  body: {
+  query: {
     title: Joi.string(),
     author: Joi.string(),
     subject: Joi.string(),
@@ -11,7 +11,7 @@ const searchBookSchema = {
 
 const validateSearchBookSchema = (req, res, next) => {
   const result = Joi.validate(
-    { body: req.body }, searchBookSchema,
+    { query: req.query }, searchBookSchema,
     { allowUnknown: false, abortEarly: false },
   );
   if (result.error) {

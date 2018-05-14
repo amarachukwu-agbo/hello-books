@@ -13,10 +13,10 @@ const Book = (props) => {
                     </Link>
                 </div>
                 <div className="card-content">
-                    <span className="card-title truncate grey-text text-darken-4"> { book.title } </span>
-                    <p> Author| <span className="red-text text-darken-4 bold"> { book.author} </span></p>
-                    <p> Genre| <span className="red-text text-darken-4 bold"> {book.subject} </span></p>
-                    <p> Quantity| <span className="red-text text-darken-4 bold"> { book.quantity} </span></p>
+                    <span className="card-title truncate grey-text text-darken-4">{ book.title }</span>
+                    <p> Author| <span className="red-text text-darken-4 bold">{ book.author}</span></p>
+                    <p> Genre| <span className="red-text text-darken-4 bold">{book.subject}</span></p>
+                    <p> Quantity| <span className="red-text text-darken-4 bold">{ book.quantity}</span></p>
                     <div className="divider"></div>
                     <div className="row">
                         <div className="col s3 btn btn-small btn-flat white teal-text book-icon"><i className="material-icons prefix">thumb_up</i><span>{book.upvotes}</span></div>

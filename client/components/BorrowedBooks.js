@@ -28,7 +28,7 @@ const BorrowedBooks = (props) => {
                 <tbody>
                     { books.map((book, index) =>
                         <tr key={ index }>
-                            <td><Link to= {`/books/${book.bookId}`}> { book.borrowedBooks.title } </Link></td>
+                            <td>{ book.borrowedBooks.title }</td>
                             <td> { book.createdAt.split('T')[0] } </td>
                             <td> { book.status } </td>
                             <td> { book.status === 'Returned' ? book.updatedAt.split('T')[0] : '' } </td>
