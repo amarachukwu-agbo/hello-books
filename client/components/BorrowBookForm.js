@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { renderDateTimePicker, InputText, renderDropdownList } from '../components/InputText';
-import validate from '../helpers/validations/borrowBook';
+import validate from '../helpers/validations/borrowbook';
 
 const borrowReason = [{ reason: 'Assignment', value: 'Assignment' },
   { reason: 'Research', value: 'Research' }, { reason: 'Leisure reading', value: 'Leisure reading' }];

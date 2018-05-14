@@ -3,15 +3,17 @@ import Joi from 'joi';
 
 const querySchema = {
   query: {
-    sort: Joi.string().valid('upvotes'),
-    order: Joi.string().valid('desc'),
+    sort: Joi.string(),
+    order: Joi.string().valid(['desc', 'asc']),
+    limit: Joi.number().integer().positive(),
+    page: Joi.number().integer().positive(),
   },
 };
 
 const validateQuerySchema = (req, res, next) => {
   const result = Joi.validate(
     { query: req.query }, querySchema,
-    { allowUnknown: false, abortEarly: false },
+    { allowUnknown: true, abortEarly: false },
   );
   if (result.error) {
     return res.status(400).json({

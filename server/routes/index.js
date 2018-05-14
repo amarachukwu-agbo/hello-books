@@ -1,6 +1,6 @@
 // import necesary module
 import express from 'express';
-import verifyToken from '../controllers/auth/verifyToken.js';
+import verifyToken from '../middlewares/verifyToken.js';
 import users from '../controllers/users';
 
 const router = express.Router();

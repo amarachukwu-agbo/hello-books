@@ -1,7 +1,16 @@
-// Validation middleware for unique mail in database
-// Import models
-import models from '../../models';
+import models from '../models';
 
+/**
+ * A module that checks if email already exists at sign up
+ * @module emailCheck
+ */
+
+/**
+ * @param {object} req The request object
+ * @param {object} res The response object
+ * @param {Function} next The next function to be executed
+ * @return {void}
+ */
 const emailCheck = (req, res, next) => {
   // Check if email exists in user model
   models.User.find({
