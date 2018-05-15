@@ -54,10 +54,20 @@ export default class Users {
         where:
           { email: req.body.email },
       }).then((user) => {
-        if (!user) return res.status(404).json({ msg: 'User not found' });
+        if (!user) {
+          return res.status(404).json({
+            msg: 'Authentication failed',
+            error: 'User not found',
+          });
+        }
         // Checks if user-provided password is valid
         const passwordMatch = bcryptjs.compareSync(req.body.password, user.password);
-        if (!passwordMatch) return res.status(401).json({ msg: 'Authentication failed' });
+        if (!passwordMatch) {
+          return res.status(401).json({
+            msg: 'Authentication failed',
+            error: 'Password provided does not match the user',
+          });
+        }
         // Provides authenticated user with token
         const token = createToken(user);
         user.password = null;

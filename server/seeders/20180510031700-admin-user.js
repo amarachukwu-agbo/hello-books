@@ -15,7 +15,7 @@ module.exports = {
       'Users',
       [
         {
-          id: 1,
+          id: 10000,
           firstName: 'Amarachi',
           lastName: 'Agbo',
           email: 'amarachukwu.agbo@gmail.com',
@@ -25,7 +25,7 @@ module.exports = {
           updatedAt: '2018-05-10 04:11:52.181+01',
         },
         {
-          id: 2,
+          id: 20000,
           firstName: 'Amarachi',
           lastName: 'Agbo',
           email: 'amarkipkip@gmail.com',
