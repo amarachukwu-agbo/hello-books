@@ -103,14 +103,6 @@ router.post(
   books.reviewBook,
 );
 
-// Endpoint to delete a book
-router.post(
-  '/remove/:bookId',
-  verifyToken,
-  checkAdmin,
-  books.deleteBook,
-);
-
 // Endpoint to get user's profile
 router.get('/:userId', verifyToken, checkUser, users.getUser);
 

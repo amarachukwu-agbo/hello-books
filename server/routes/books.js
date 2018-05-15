@@ -29,6 +29,14 @@ router.put(
   books.updateBook,
 );
 
+// Endpoint to delete a book
+router.post(
+  '/remove/:bookId',
+  verifyToken,
+  checkAdmin,
+  books.deleteBook,
+);
+
 // Endpoint to get book with most upvotes
 router.get('/?sort=upvotes&order=desc', verifyQuery, books.getAllBooks);
 
