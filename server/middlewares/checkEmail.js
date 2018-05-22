@@ -20,14 +20,17 @@ const emailCheck = (req, res, next) => {
   })
     .then((user) => {
       if (user) {
-        return res.status(400).json({
-          msg: 'Signup unsuccessful',
+        return res.status(409).json({
+          message: 'Unsuccessful',
           error: 'Email already exists. Input a different email',
         });
       }
       if (!user) next();
     })
-    .catch(error => res.status(400).json({ error }));
+    .catch(error => res.status(500).json({
+      message: 'Unsucessful',
+      error,
+    }));
 };
 
 export default emailCheck;

@@ -24,7 +24,7 @@ const verifyToken = (req, res, next) => {
 
   // Decode token
   jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
-    if (error) res.status(500).send({ msg: 'Failed to authenticate token' });
+    if (error) res.status(401).send({ msg: 'Failed to authenticate token' });
     req.decoded = decoded;
     next();
   });

@@ -17,7 +17,7 @@ const validateQuerySchema = (req, res, next) => {
   );
   if (result.error) {
     return res.status(400).json({
-      msg: 'Invalid query',
+      message: 'Unsucessful',
       error: result.error.toString(),
     });
   }

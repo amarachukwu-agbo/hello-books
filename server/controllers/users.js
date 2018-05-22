@@ -14,11 +14,8 @@ export default class Users {
   * @return {object}
   */
   static signUp(req, res) {
-    // Hash user's password
     const salt = bcryptjs.genSaltSync(10);
     const hash = bcryptjs.hashSync(req.body.password, salt);
-
-    // Assign user a role
     const userRole = 'User';
 
     return models.User
@@ -30,16 +27,21 @@ export default class Users {
         role: userRole,
       })
       .then((user) => {
-        // Provides user with token
         const token = createToken(user);
-        user.password = null;
         res.status(201).json({
-          msg: 'Signup successful',
-          user,
+          message: 'Successful',
+          user: {
+            id: user.id,
+            firstName: user.firstName,
+            role: user.role,
+          },
           token,
         });
       })
-      .catch(error => res.status(400).json(error));
+      .catch(error => res.status(500).json({
+        message: 'Unsucessful',
+        error,
+      }));
   }
 
   /** Login a user
@@ -48,7 +50,6 @@ export default class Users {
   * @return {object}
   */
   static logIn(req, res) {
-    // Check if user exists in database
     return models.User
       .findOne({
         where:
@@ -56,28 +57,34 @@ export default class Users {
       }).then((user) => {
         if (!user) {
           return res.status(404).json({
-            msg: 'Authentication failed',
+            message: 'Unsucessful',
             error: 'User not found',
           });
         }
-        // Checks if user-provided password is valid
+        // Check if user-provided password is valid
         const passwordMatch = bcryptjs.compareSync(req.body.password, user.password);
         if (!passwordMatch) {
           return res.status(401).json({
-            msg: 'Authentication failed',
+            message: 'Unsuccessful',
             error: 'Password provided does not match the user',
           });
         }
-        // Provides authenticated user with token
         const token = createToken(user);
         user.password = null;
         res.status(201).json({
-          msg: 'Login successful',
-          user,
+          message: 'Successful',
+          user: {
+            id: user.id,
+            firstName: user.firstName,
+            role: user.role,
+          },
           token,
         });
       })
-      .catch(error => res.status(500).json(error));
+      .catch(error => res.status(500).json({
+        message: 'Unsucessful',
+        error,
+      }));
   }
 
   /** Get a user's favorite books
@@ -103,23 +110,25 @@ export default class Users {
       limit,
       offset,
     };
-    // Find user's favorites
     return models.Favorites.findAndCountAll(query)
       .then((books) => {
         const pagination = Helper.pagination(page, offset, limit, books);
         if (books.rows.length) {
           return res.status(200).json({
-            msg: 'Your favorite books were successfully retrieved',
+            message: 'Successful',
             favorites: books.rows,
             pagination,
           });
         }
-        return res.status(404).json({ msg: 'You have no favorites' });
+        return res.status(204).json({
+          message: 'Sucessful',
+          favorites: 'You have no favorites',
+        });
       })
       .catch((error) => {
         res.status(500).send({
-          msg: 'Error fetching favorites book',
-          error: error.toString(),
+          message: 'Unsucesssful',
+          error,
         });
       });
   }
@@ -142,13 +151,21 @@ export default class Users {
       },
     })
       .then((borrow) => {
-        if (borrow) return res.status(403).json({ msg: 'You have not returned book' });
+        if (borrow) {
+          return res.status(403).json({
+            message: 'Unsucessful',
+            error: 'You have not returned this book',
+          });
+        }
         models.Book.findById(bookId)
           .then((book) => {
-            // Check if book is in database
-            if (!book) return res.status(404).json({ msg: 'Book not found' });
             // Check if book is available
-            if (book.quantity === 0) return res.status(403).json({ msg: 'Book is not available' });
+            if (book.quantity === 0) {
+              return res.status(404).json({
+                message: 'Unsucessful',
+                error: 'Book is not available',
+              });
+            }
             // Check if user has sent request before
             return models.BorrowRequests.find({
               where: {
@@ -168,19 +185,28 @@ export default class Users {
                     comments: req.body.comments,
                   })
                     .then(request => res.status(201).json({
-                      msg: 'Borrow request sent',
+                      message: 'Sucessful',
                       request,
                     }))
-                    .catch(error => res.status(400).json({
-                      msg: 'Failed',
+                    .catch(error => res.status(500).json({
+                      message: 'Unsucessful',
                       error,
                     }));
                 }
-                return res.status(403).json({ msg: 'Already sent request' });
+                return res.status(403).json({
+                  message: 'Unsucessful',
+                  error: 'Already sent request',
+                });
               })
-              .catch(error => res.status(500).json(error));
+              .catch(error => res.status(500).json({
+                message: 'Unsucessful',
+                error,
+              }));
           })
-          .catch(error => res.status(500).json(error));
+          .catch(error => res.status(500).json({
+            message: 'Unsucessful',
+            error,
+          }));
       });
   }
 
@@ -202,7 +228,12 @@ export default class Users {
       },
     })
       .then((borrowed) => {
-        if (!borrowed) return res.status(404).json({ msg: 'Book not borrowed' });
+        if (!borrowed) {
+          return res.status(403).json({
+            message: 'Unsucessful',
+            error: 'Book not borrowed',
+          });
+        }
         // Check if request has already been sent
         models.ReturnRequests.find({
           where: {
@@ -227,23 +258,27 @@ export default class Users {
                       attributes: ['title', 'author'],
                     }],
                   }).then(returnRequest => res.status(201).json({
-                    msg: 'Success',
+                    message: 'Successful',
                     returnRequest,
                   }));
                 })
-                .catch(error => res.status(400).send(error));
+                .catch(error => res.status(500).json({
+                  message: 'Unsucessful',
+                  error,
+                }));
             }
             return res.status(403).json({
-              msg: 'Your request has already been sent',
+              message: 'Unsucessful',
+              error: 'Your request has already been sent',
             });
           })
-          .catch(error => res.status(400).json({
-            msg: 'Error sending request',
+          .catch(error => res.status(500).json({
+            message: 'Unsucessful',
             error,
           }));
       })
-      .catch(error => res.status(400).json({
-        msg: 'Error sending request',
+      .catch(error => res.status(500).json({
+        message: 'Unsucessful',
         error,
       }));
   }
@@ -264,15 +299,19 @@ export default class Users {
       },
     })
       .then((request) => {
-        if (!request) return res.status(404).json({ msg: 'Borrow request not found' });
+        if (!request) {
+          return res.status(404).json({
+            message: 'Unsucessful',
+            error: 'Borrow request not found',
+          });
+        }
         if (request.status === 'Pending') {
           return request.update({
             status: req.body.status,
           })
             .then((borrowRequest) => {
-            // Add books to BorrowedBooksTable
+            // Add books to BorrowedBooks Table
               if (req.body.status === 'Accepted') {
-              // Add books to BorrowedBooksTable
                 models.BorrowedBooks.create({
                   userId,
                   bookId,
@@ -282,28 +321,37 @@ export default class Users {
                   .then((book) => {
                     book.increment('borrowCount');
                     book.decrement('quantity');
+
+                    models.Notifications.create({
+                      userId,
+                      bookId,
+                      notification: req.body.status === 'Accepted' ?
+                        `Your request to borrow ${book.title} has been accepted ` :
+                        `Your request to borrow ${book.title} has been declined `,
+                    });
                   })
-                  .catch(error => res.status(400).json({
-                    msg: 'Error handling request',
+                  .catch(error => res.status(500).json({
+                    message: 'Unsucessful',
                     error,
                   }));
                 return res.status(201).json({
-                  msg: 'Accepted request, book borrowed',
+                  message: 'Sucessful',
                   borrowRequest,
                 });
               }
               return res.status(201).json({
-                msg: 'Declined request',
+                message: 'Sucessful',
                 borrowRequest,
               });
             })
-            .catch(error => res.status(400).json({
-              msg: 'Error handling request',
+            .catch(error => res.status(500).json({
+              message: 'Unsucessful',
               error,
             }));
         }
         return res.status(403).json({
-          msg: 'Request has already been handled',
+          message: 'Unsucessful',
+          error: 'Request has already been handled',
         });
       });
   }
@@ -339,20 +387,21 @@ export default class Users {
       .then((requests) => {
         const pagination = Helper.pagination(page, offset, limit, requests);
         if (!requests.rows.length) {
-          return res.status(404).json({
-            msg: 'No borrow requests',
+          return res.status(204).json({
+            message: 'Sucessful',
+            requests: 'No borrow requests',
           });
         }
         return res.status(200).json({
-          msg: 'Successfully got borrow requests',
+          message: 'Successful',
           requests: requests.rows,
           pagination,
         });
       })
       .catch((error) => {
         res.status(500).json({
-          msg: 'Unable to get borrow requests',
-          error: error.toString(),
+          message: 'Unsucessful',
+          error,
         });
       });
   }
@@ -388,19 +437,20 @@ export default class Users {
       .then((requests) => {
         const pagination = Helper.pagination(page, offset, limit, requests);
         if (!requests.rows.length) {
-          return res.status(404).json({
-            msg: 'No return requests',
+          return res.status(204).json({
+            message: 'Sucessful',
+            requests: 'No return requests',
           });
         }
         return res.status(200).json({
-          msg: 'Successfully got return requests',
+          message: 'Successful',
           requests: requests.rows,
           pagination,
         });
       })
       .catch((error) => {
         res.status(500).json({
-          msg: 'Unable to get return requests',
+          message: 'Unable to get return requests',
           error,
         });
       });
@@ -423,16 +473,36 @@ export default class Users {
     })
       .then((request) => {
       // Check if request exists
-        if (!request) return res.status(404).json({ msg: 'Request not found' });
+        if (!request) {
+          return res.status(404).json({
+            message: 'Unsucessful',
+            error: 'Request not found',
+
+          });
+        }
         // Check if request has already been handled
-        if (request.status !== 'Pending') return res.status(403).json({ msg: 'Already handled request' });
+        if (request.status !== 'Pending') {
+          return res.status(403).json({
+            message: 'Unsucessful',
+            error: 'Already handled request',
+          });
+        }
         // Update request status
         request.update({ status: req.body.status });
         // Accepted request
         if (req.body.status === 'Accepted') {
         // Increment book quantity
           models.Book.findById(req.params.bookId)
-            .then(book => book.increment('quantity'));
+            .then((book) => {
+              book.increment('quantity');
+              models.Notifications.create({
+                userId,
+                bookId,
+                notification: req.body.status === 'Accepted' ?
+                  `Your request to return ${book.title} has been accepted ` :
+                  `Your request to return ${book.title} has been declined `,
+              });
+            });
           return models.BorrowedBooks.find({
             where: {
               bookId,
@@ -444,28 +514,31 @@ export default class Users {
             // Change borrowed book status to returned
               borrowed.update({ status: 'Returned' })
                 .then(updated => updated.reload())
-                .then(returnRequest => res.status(201).json({
-                  msg: 'Request Accepted',
+                .then(returnRequest => res.status(200).json({
+                  message: 'Sucessful',
                   returnRequest,
                 }))
-                .catch(err => res.status(500).json({
-                  msg: 'err',
-                  err,
+                .catch(error => res.status(500).json({
+                  message: 'Unsucessful',
+                  error,
                 }));
             })
             .catch(error => res.status(500).json({
-              msg: 'Error',
+              message: 'Unsucessful',
               error,
             }));
         }
-        return res.status(201).json({
-          msg: 'Request Declined',
+        return res.status(200).json({
+          message: 'Request Declined',
           requestId: request.id,
           status: 'Declined',
           book: bookId,
           user: userId,
         });
-      }).catch(err => res.status(500).json(err));
+      }).catch(error => res.status(500).json({
+        message: 'Unsucessful',
+        error,
+      }));
   }
 
   /** Get a user's profile
@@ -529,21 +602,25 @@ export default class Users {
         .then((user) => {
           if (!user) {
             return res.status(404).json({
-              msg: 'User not found',
+              message: 'Unsucessful',
+              error: 'User not found',
             });
           }
           return res.status(200).json({
-            msg: 'Successfully got user',
+            message: 'Successful',
             user,
           });
         })
         .catch((error) => {
           res.status(500).json({
-            msg: 'Could not get user',
+            message: 'Unsucessful',
             error,
           });
         });
     }
-    return res.status(400).json({ msg: 'userId must be a positive integer' });
+    return res.status(400).json({
+      message: 'Unsucessful',
+      error: 'userId must be a positive integer',
+    });
   }
 }

@@ -9,7 +9,10 @@ const loginSchema = {
 const validateLogin = (req, res, next) => {
   const result = Joi.validate(req.body, loginSchema, { allowUnknown: false, abortEarly: false });
   if (result.error) {
-    return res.status(400).json({ msg: 'Login unsuccessful', error: result.error.toString() });
+    return res.status(400).json({
+      message: 'Unsuccessful',
+      error: result.error.toString(),
+    });
   }
   next();
 };

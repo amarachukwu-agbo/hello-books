@@ -1,10 +1,14 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('Downvotes', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('Votes', {
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
+    },
+    voteType: {
+      type: Sequelize.ENUM,
+      values: ['upvote', 'downvote'],
     },
     createdAt: {
       allowNull: false,
@@ -35,5 +39,6 @@ module.exports = {
       },
     },
   }),
-  down: queryInterface => queryInterface.dropTable('Downvotes'),
+  down: queryInterface => queryInterface.dropTable('Votes'),
 };
+

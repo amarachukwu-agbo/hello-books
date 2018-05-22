@@ -18,7 +18,7 @@ const validateHandleRequestSchema = (req, res, next) => {
   );
   if (result.error) {
     return res.status(400).json({
-      msg: 'Request not sent',
+      message: 'Unsucessful',
       error: result.error.toString(),
     });
   }

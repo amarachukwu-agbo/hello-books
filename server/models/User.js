@@ -72,13 +72,9 @@ const userSchema = (sequelize) => {
       foreignKey: 'userId',
       as: 'userReviews',
     });
-    User.hasMany(models.Upvotes, {
+    User.hasMany(models.Votes, {
       foreignKey: 'userId',
-      as: 'userUpvotes',
-    });
-    User.hasMany(models.Downvotes, {
-      foreignKey: 'userId',
-      as: 'userDownvotes',
+      as: 'userVotes',
     });
   };
   return User;

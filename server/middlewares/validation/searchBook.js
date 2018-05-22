@@ -16,7 +16,7 @@ const validateSearchBookSchema = (req, res, next) => {
   );
   if (result.error) {
     return res.status(400).json({
-      msg: 'Cannot search for books',
+      msg: 'Unsucessful',
       error: result.error.toString(),
     });
   }

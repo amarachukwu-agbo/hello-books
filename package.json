@@ -17,7 +17,7 @@
     "serve": "node ./dist/index.js",
     "test:client": "jest",
     "test": "set NODE_ENV=test && sequelize db:migrate && babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/api-postgres-test.js --timeout 10000 --compilers:js babel-core/register",
-    "tests": " set NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/api-postgres-test.js --timeout 10000 --compilers:js babel-core/register",
+    "tests": "export NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/api-postgres-test.js --timeout 10000 --compilers:js babel-core/register",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {

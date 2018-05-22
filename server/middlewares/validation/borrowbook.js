@@ -20,7 +20,7 @@ const validateBorrowBookSchema = (req, res, next) => {
   );
   if (result.error) {
     return res.status(400).json({
-      msg: 'Borrow request not sent',
+      message: 'Unsucessful',
       error: result.error.toString(),
     });
   }

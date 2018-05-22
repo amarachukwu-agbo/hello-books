@@ -7,7 +7,6 @@ const reviewSchema = {
   },
   params: {
     bookId: Joi.number().integer().positive().required(),
-    userId: Joi.number().integer().positive().required(),
   },
 };
 
@@ -18,7 +17,7 @@ const validateReviewSchema = (req, res, next) => {
   );
   if (result.error) {
     return res.status(400).json({
-      msg: 'Your review could not be completed',
+      msg: 'Unsucessful',
       error: result.error.toString(),
     });
   }

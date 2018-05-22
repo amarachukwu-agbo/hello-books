@@ -14,43 +14,25 @@ export default class Book {
   * @return {object}
   */
   static addBook(req, res) {
-    // Check whether book with same title exists
-    models.Book.find({
-      where: {
+    // If book title does not exist create book
+    return models.Book
+      .create({
         title: req.body.title,
-      },
-    })
-      .then((book) => {
-        if (book) {
-          return res.status(400).json({
-            msg: 'Book could not be added',
-            error: 'Book title already exists',
-          });
-        }
-        // If book title does not exist create book
-        return models.Book
-          .create({
-            title: req.body.title,
-            author: req.body.author,
-            description: req.body.description,
-            subject: req.body.subject,
-            imageURL: req.body.imageURL,
-            quantity: req.body.quantity,
-          })
-          .then((bookEntry) => {
-            res.status(201).json({
-              msg: 'Successfully added book',
-              bookEntry,
-            });
-          })
-          .catch(error => res.status(400).json({
-            msg: 'Book could not be added',
-            error,
-          }));
+        author: req.body.author,
+        description: req.body.description,
+        subject: req.body.subject,
+        imageURL: req.body.imageURL,
+        quantity: req.body.quantity,
       })
-      .catch(error => res.status(400).json({
-        msg: 'Book could not be added',
-        error,
+      .then((bookEntry) => {
+        res.status(201).json({
+          message: 'Successful',
+          bookEntry,
+        });
+      })
+      .catch(error => res.status(500).json({
+        message: 'Unsuccessful',
+        error: error.toString(),
       }));
   }
 
@@ -61,29 +43,28 @@ export default class Book {
   */
   static deleteBook(req, res) {
     const bookId = parseInt(req.params.bookId, 10);
-    // Check if bookId is valid
     if (typeof (bookId) === 'number' && bookId > 0) {
       models.Book.destroy({
         where: {
           id: bookId,
         },
       }).then((bookDeleted) => {
-        if (bookDeleted !== 0) {
-          return res.status(201).json({
-            msg: 'Book deleted',
-          });
+        if (bookDeleted) {
+          return res.status(204).json({ message: 'Sucessful' });
         }
         return res.status(404).json({
-          msg: 'Book not found',
+          message: 'Unsuccessful',
+          error: 'Book was not found',
         });
       }).catch(error =>
         res.status(500).json({
-          msg: 'Book could not be deleted',
+          message: 'Unsuccessful',
           error,
         }));
     } else {
       return res.status(400).json({
-        msg: 'bookId must be a positive integer',
+        message: 'Unsuccessful',
+        error: 'bookId must be a positive integer',
       });
     }
   }
@@ -95,173 +76,81 @@ export default class Book {
   */
   static updateBook(req, res) {
     const bookId = parseInt(req.params.bookId, 10);
-
-    // Check if request object is empty
     if (Object.keys(req.body).length === 0) {
-      return res.status(400).json({ msg: 'Nothing to update' });
+      return res.status(400).json({
+        message: 'Unsuccessful',
+        error: 'Nothing to update',
+      });
     }
-
-    return models.Book.findById(bookId)
-      .then((book) => {
-        // Check if book exists
-        if (!book) return res.status(404).json({ msg: 'Book not found' });
-        // Update book
-        return book.update({
-          id: bookId,
-          title: req.body.title || book.title,
-          author: req.body.author || book.author,
-          description: req.body.description || book.description,
-          subject: req.body.subject || book.subject,
-          imageURL: req.body.imageURL || book.imageURL,
-          quantity: req.body.quantity || book.quantity,
-        })
-          .then(updatedBook => res.status(201).json({
-            msg: 'Successfully updated book',
-            updatedBook,
-          }))
-          .catch(error => res.status(500).json({
-            msg: 'Book not updated',
-            error,
-          }));
-      })
+    return book.update({
+      id: bookId,
+      title: req.body.title || book.title,
+      author: req.body.author || book.author,
+      description: req.body.description || book.description,
+      subject: req.body.subject || book.subject,
+      imageURL: req.body.imageURL || book.imageURL,
+      quantity: req.body.quantity || book.quantity,
+    })
+      .then(updatedBook => res.status(200).json({
+        message: 'Successful',
+        updatedBook,
+      }))
       .catch(error => res.status(500).json({
-        msg: 'Book not updated',
+        message: 'Unsucessful',
         error,
       }));
   }
 
 
-  /** Upvote a book
+  /** Upvote or downvote a book
   * @param {object}req - The request object
   * @param {object} res -The response object
   * @return {object}
   */
-  static upvoteBook(req, res) {
-    // Check if book exists in database
-    const bookId = parseInt(req.params.bookId, 10);
-    return models.Book.findById(bookId)
-      .then((book) => {
-        if (!book) return res.status(404).json({ msg: 'Book not found' });
-        // Check if user has upvoted book before
-        models.Upvotes.findOrCreate({
-          where: {
-            bookId: req.params.bookId,
-            userId: req.params.userId,
-          },
-        })
-          .spread((upvote, created) => {
-            if (created === true) {
-              // Check if user has downvoted book before and delete entry if true
-              return models.Downvotes.destroy({
-                where: {
-                  bookId: req.params.bookId,
-                  userId: req.params.userId,
-                },
-              })
-                .then((rowDeleted) => {
-                  // Decrement book downvotes if user has downvoted book before
-                  if (rowDeleted !== 0) book.decrement('downvotes');
-                  // Increment book upvotes and return book
-                  book.increment('upvotes')
-                    .then(upVote => upVote.reload())
-                    .then(upvoteEntry => res.status(201).json({
-                      msg: 'Successfully upvoted book',
-                      upvote: {
-                        userId: req.params.userId,
-                        bookId: req.params.bookId,
-                        book: upvoteEntry,
-                      },
-                    }))
-                    .catch(error => res.status(400).json({
-                      msg: 'Error upvoting book',
-                      error,
-                    }));
-                })
-                .catch(error => res.status(500).json({
-                  msg: 'Error upvoting book',
-                  error,
-                }));
-            }
-
-            return res.status(403).json({ msg: 'Already upvoted book' });
-          })
-          .catch((error) => {
-            res.status(400).json({
-              msg: 'Error upvoting book',
-              error,
-            });
-          });
-      })
-      .catch((error) => {
-        res.status(400).json({ msg: 'Error upvoting book', error });
+  static voteBook(req, res) {
+    const { bookId } = req.params;
+    const userId = req.decoded.id;
+    const voteType = req.url.split('/')[2];
+    models.Votes.find({
+      where: {
+        bookId,
+        userId,
+      },
+    }).then((vote) => {
+      if (vote && vote.voteType === voteType) {
+        return res.status(403).json({
+          message: 'Unsucessful',
+          error: `You have already ${voteType}d this book`,
+        });
+      }
+      if (!vote) {
+        models.Votes.create({
+          userId,
+          bookId,
+          voteType,
+        });
+      }
+      models.Book.findById(bookId).then((book) => {
+        if (vote && vote.voteType !== voteType) {
+          const oldVote = vote.voteType;
+          vote.update({ voteType });
+          book.decrement(`${oldVote}s`);
+        }
+        book.increment(`${voteType}s`)
+          .then(bookVote => bookVote.reload())
+          .then(updatedBook => res.status(201).json({
+            message: 'Successful',
+            vote: {
+              userId: req.params.userId,
+              bookId: req.params.bookId,
+              book: updatedBook,
+            },
+          })).catch(error => res.status(500).json({
+            message: 'Unsucessful',
+            error,
+          }));
       });
-  }
-
-
-  /** Method downvote a book
-  * @param {object}req - The request object
-  * @param {object} res -The response object
-  * @return {object}
-  */
-  static downvoteBook(req, res) {
-    // Check if book exists in database
-    const bookId = parseInt(req.params.bookId, 10);
-    return models.Book.findById(bookId)
-      .then((book) => {
-        if (!book) return res.status(404).json({ msg: 'Book not found' });
-        // Check if user has upvoted book before
-        models.Downvotes.findOrCreate({
-          where: {
-            bookId: req.params.bookId,
-            userId: req.params.userId,
-          },
-        })
-          .spread((upvote, created) => {
-            // Check if user has upvoted book before and delete entry if true
-            if (created === true) {
-              return models.Upvotes.destroy({
-                where: {
-                  bookId: req.params.bookId,
-                  userId: req.params.userId,
-                },
-              })
-                .then((rowDeleted) => {
-                  // Decrement book upvotes if user has upvoted book before
-                  if (rowDeleted !== 0) book.decrement('upvotes');
-                  // Increment book downvotes and return book
-                  book.increment('downvotes')
-                    .then(downVote => downVote.reload())
-                    .then(downvoteEntry => res.status(201).json({
-                      msg: 'Successfully downvoted book',
-                      downvote: {
-                        userId: req.params.userId,
-                        bookId: req.params.bookId,
-                        book: downvoteEntry,
-                      },
-                    }))
-                    .catch(error => res.status(400).json({
-                      msg: 'Error downvoting book',
-                      error,
-                    }));
-                })
-                .catch(error => res.status(500).json({
-                  msg: 'Error downvoting book',
-                  error,
-                }));
-            }
-
-            return res.status(403).json({ msg: 'Already downvoted book' });
-          })
-          .catch((error) => {
-            res.status(400).json({
-              msg: 'Error downvoting book',
-              error,
-            });
-          });
-      })
-      .catch((error) => {
-        res.status(400).json({ msg: 'Error downvoting book', error });
-      });
+    });
   }
 
   /** Make a book a favorite
@@ -271,42 +160,36 @@ export default class Book {
   */
   static favoriteBook(req, res) {
     const bookId = parseInt(req.params.bookId, 10);
-    const userId = parseInt(req.params.userId, 10);
-    models.Book.findById(bookId)
-      .then((book) => {
-        if (!book) return res.status(404).json({ msg: 'Book not found' });
-
-        // Check if user has already added book to favorites
-        return models.Favorites.findOrCreate({
-          where: {
-            bookId,
-            userId,
-          },
-        })
-          .spread((favorite, created) => {
-            // If book is not in user's favorites
-            if (created === true) {
-              // Increase favCount of book
-              return book.increment('favCount')
+    const userId = req.decoded.id;
+    return models.Favorites.findOrCreate({
+      where: {
+        bookId,
+        userId,
+      },
+    })
+      .spread((favorite, created) => {
+        if (created === true) {
+          return models.Book.findById(bookId)
+            .then((book) => {
+              book.increment('favCount')
                 .then(favBook => favBook.reload())
                 .then((favorites) => {
-                  // Return json object
                   res.status(201).json({
-                    msg: `Favorited book ${req.params.bookId}`,
+                    message: 'Successful',
                     favorite,
                     book: favorites,
                   });
                 });
-            }
-            // If book is in user's favorites
-            return res.status(403).json({ msg: 'Already favorited book' });
-          })
-          .catch(error => res.status(400).json({
-            msg: 'Error favoriting book', error,
-          }));
+            });
+        }
+        return res.status(403).json({
+          message: 'Unsuccessful',
+          error: 'Already favorited book',
+        });
       })
       .catch(error => res.status(500).json({
-        msg: 'Error favoriting book', error,
+        message: 'Unsuccessful',
+        error: error.toString(),
       }));
   }
 
@@ -317,13 +200,12 @@ export default class Book {
   */
   static reviewBook(req, res) {
     const bookId = parseInt(req.params.bookId, 10);
-    const userId = parseInt(req.params.userId, 10);
+    const userId = req.decoded.id;
 
     models.Book.find({
       where: {
         id: parseInt(req.params.bookId, 10),
       },
-      // Join book reviews
       include: [
         {
           model: models.Review,
@@ -333,17 +215,14 @@ export default class Book {
               model: models.User,
               as: 'userReviews',
               attributes: {
-                exclude: ['password'],
+                exclude: ['password', 'email', 'role', 'updatedAt'],
               },
             }],
         },
       ],
     })
-      .then((book) => {
-        if (!book) return res.status(404).json({ msg: 'Book not found' });
-
-        // Check if review exists
-        return models.Review.findOrCreate({
+      .then(book =>
+        models.Review.findOrCreate({
           where: {
             bookId,
             userId,
@@ -351,21 +230,26 @@ export default class Book {
           },
         })
           .spread((review, created) => {
-            // If not create review
             if (created === true) {
               return book.reload()
                 .then(reviewedBook =>
-                  res.status(201).json({ msg: `Successfully reviewed book ${bookId}`, reviewedBook }));
+                  res.status(201).json({
+                    message: 'Successful',
+                    reviewedBook,
+                  }));
             }
-            // No review created
-            return res.status(403).json({ msg: 'Your review has already been created' });
+            return res.status(403).json({
+              message: 'Unsuccessful',
+              error: 'Your review has already been created',
+            });
           })
-          .catch(error => res.status(400).send({
-            msg: 'Error reviewing book', error,
-          }));
-      })
-      .catch(error => res.status(400).json({
-        msg: 'Error reviewing book', error,
+          .catch(error => res.status(500).send({
+            message: 'Unsucessful',
+            error,
+          })))
+      .catch(error => res.status(500).json({
+        message: 'Unsucessful',
+        error,
       }));
   }
 
@@ -382,7 +266,6 @@ export default class Book {
     const { page, offset, limit } = Helper.setupPagination(req);
 
     if (sort && sort.includes('votes')) {
-      // Create query parameter for sorting
       const query = {
         include: [{
           model: models.Review,
@@ -403,7 +286,6 @@ export default class Book {
           },
         };
       }
-
       if (sort === 'downvotes') {
         query.where = {
           downvotes: {
@@ -411,17 +293,17 @@ export default class Book {
           },
         };
       }
-
-      return models.Book.findAndCountAll(query)
+      models.Book.findAndCountAll(query)
         .then((books) => {
           const pagination = Helper.pagination(page, offset, limit, books);
           if (!books.rows.length) {
             return res.status(404).json({
-              msg: 'No book found',
+              message: 'Unsucessful',
+              error: 'No book found',
             });
           }
           return res.status(200).json({
-            msg: 'Successfully got all books',
+            message: 'Successful',
             books: books.rows,
             pagination,
           });
@@ -441,21 +323,25 @@ export default class Book {
       offset,
     };
 
-    return models.Book.findAndCountAll(query)
+    models.Book.findAndCountAll(query)
       .then((data) => {
         const pagination = Helper.pagination(page, offset, limit, data);
         if (!data.rows.length) {
           return res.status(404).json({
-            msg: 'No book found',
+            message: 'Unsucessful',
+            error: 'No book found',
           });
         }
         return res.status(200).json({
-          msg: 'Successfully got all books',
+          message: 'Successful',
           books: data.rows,
           pagination,
         });
       })
-      .catch(err => res.status(400).json(err.toString()));
+      .catch(error => res.status(500).json({
+        message: 'Unsuccessful',
+        error,
+      }));
   }
 
   /** Get a book in the database
@@ -468,7 +354,6 @@ export default class Book {
       where: {
         id: parseInt(req.params.bookId, 10),
       },
-      // Join book reviews
       include: [
         {
           model: models.Review,
@@ -483,11 +368,14 @@ export default class Book {
         },
       ],
     })
-      .then((book) => {
-        if (!book) return res.status(404).json({ msg: 'Book not found' });
-        return res.status(200).json({ msg: 'Successfully got book', book });
-      })
-      .catch(err => res.status(400).json(err));
+      .then(book => res.status(200).json({
+        message: 'Successful',
+        book,
+      }))
+      .catch(error => res.status(500).json({
+        message: 'Unsuccessful',
+        error,
+      }));
   }
 
   /** Method lets a user get a book(s) in the database using search parameters
@@ -532,28 +420,29 @@ export default class Book {
       };
     } else {
       return res.status(400).json({
-        msg: 'Input a valid search parameter',
+        message: 'Unsucessful',
+        error: 'Invalid search parameter',
       });
     }
-
     models.Book.findAndCountAll(query)
       .then((books) => {
         const pagination = Helper.pagination(page, offset, limit, books);
         if (!books.rows.length) {
-          return res.status(404).json({
-            msg: 'No book found',
+          return res.status(204).json({
+            message: 'Sucessful',
+            error: 'No book found',
           });
         }
         return res.status(200).json({
-          msg: 'Successfully got all books',
+          message: 'Successful',
           books: books.rows,
           pagination,
         });
       })
       .catch((error) => {
         res.status(500).json({
-          msg: 'Unable to search for books',
-          error: error.toString(),
+          message: 'Unsucessful',
+          error,
         });
       });
   }
