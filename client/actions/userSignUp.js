@@ -2,7 +2,10 @@ import axios from 'axios';
 import { push } from 'react-router-redux';
 import { SIGN_UP_SUCCESS, SIGNING_UP, SIGN_UP_FAILURE } from './types';
 
-export const apiURL = 'https://hello-books-v2.herokuapp.com/api/v1';
+export const apiURL =
+process.env.NODE_ENV === 'production' ?
+  'https://hello-books-v2.herokuapp.com/api/v1' :
+  'http://127.0.0.1:3000/api/v1';
 
 export const signUpSuccess = user => ({
   type: SIGN_UP_SUCCESS,
@@ -29,6 +32,7 @@ export const signUp = user => (dispatch) => {
       }, 2000);
     })
     .catch((error) => {
+      console.log(error.response || error.message);
       if (error.response) {
         dispatch(signUpFailure(error.response.data.error));
       } else {

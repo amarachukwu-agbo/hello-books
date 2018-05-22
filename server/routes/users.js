@@ -1,40 +1,72 @@
 // import necessary modules
 import express from 'express';
 import users from '../controllers/users';
-import verifyToken from '../controllers/auth/verifyToken';
-import verifyFields from '../controllers/validation/verifyFields';
-import emailCheck from '../controllers/validation/email';
-import loginCheck from '../controllers/validation/login';
-import validateReviewSchema from '../controllers/validation/review';
-import validateParamsSchema from '../controllers/validation/params';
-import validateBorrowBookSchema from '../controllers/validation/borrowbook';
-import validateReturnRequestSchema from '../controllers/validation/returnrequest';
-import validateHandleRequestSchema from '../controllers/validation/handlerequest';
+import verifyToken from '../middlewares/verifyToken';
+import signupCheck from '../middlewares/validation/signup';
+import emailCheck from '../middlewares/checkEmail';
+import loginCheck from '../middlewares/validation/login';
+import validateParams from '../middlewares/validation/params';
+import validateBorrowBook from '../middlewares/validation/borrowbook';
+import validateReturnRequest from '../middlewares/validation/returnrequest';
+import validateHandleRequest from '../middlewares/validation/handlerequest';
+import checkAdmin from '../middlewares/checkAdmin';
+import checkUser from '../middlewares/checkUser';
+import { bookCheck } from '../middlewares/checkBook';
 
 
 const router = express.Router();
 // Endpoint for user to signup
-router.post('/signup', verifyFields, emailCheck, users.createUser);
+router.post('/signup', signupCheck, emailCheck, users.signUp);
+
 // Endpoint for user to signin
-router.post('/login', loginCheck, users.authenticateUser);
-// Endpoint for user to upvote a book
-router.post('/:userId/book/:bookId/upvote', verifyToken, validateParamsSchema, users.upVote);
-// Endpoint for user to downvote a book
-router.post('/:userId/book/:bookId/downvote', verifyToken, validateParamsSchema, users.downVote);
-// Endpoint to favorite a book
-router.post('/:userId/fav/:bookId', verifyToken, validateParamsSchema, users.favoriteBook);
-// Endpoint for user to review a book
-router.post('/:userId/review/:bookId', verifyToken, validateReviewSchema, users.reviewBook);
+router.post('/login', loginCheck, users.logIn);
+
 // Endpoint for user to get favorite books
-router.get('/:userId/favbooks', verifyToken, validateParamsSchema, users.getFavoriteBooks);
+router.get(
+  '/:userId/favbooks',
+  verifyToken,
+  checkUser,
+  validateParams,
+  users.getFavoriteBooks,
+);
+
 // Endpoint for user to borrow a book
-router.post('/:userId/borrow/:bookId', verifyToken, validateBorrowBookSchema, users.sendBorrowRequest);
+router.post(
+  '/:userId/borrow/:bookId',
+  verifyToken,
+  validateBorrowBook,
+  bookCheck,
+  users.sendBorrowRequest,
+);
+
 // Endpoint for Admin to handle borrow requests
-router.put('/:userId/borrow/:bookId', verifyToken, validateHandleRequestSchema, users.handleBorrowRequest);
+router.put(
+  '/:userId/borrow/:bookId',
+  verifyToken,
+  checkAdmin,
+  validateHandleRequest,
+  users.handleBorrowRequest,
+);
+
 // Endpoint for user to return book
-router.post('/:userId/return/:bookId', verifyToken, validateReturnRequestSchema, users.sendReturnRequest);
+router.post(
+  '/:userId/return/:bookId',
+  verifyToken,
+  checkUser,
+  validateReturnRequest,
+  users.sendReturnRequest,
+);
+
 // Endpoint for Admin to handle return requests
-router.put('/:userId/return/:bookId', verifyToken, validateHandleRequestSchema, users.handleReturnRequest);
-router.get('/:userId', verifyToken, users.getUser);
+router.put(
+  '/:userId/return/:bookId',
+  verifyToken,
+  checkAdmin,
+  validateHandleRequest,
+  users.handleReturnRequest,
+);
+
+// Endpoint to get user's profile
+router.get('/:userId', verifyToken, checkUser, users.getUser);
 
 export default router;

@@ -17,13 +17,12 @@ class Profile extends Component {
   }
 
   renderProfile() {
-    console.log(this.props);
     const { isFetchingProfile, profileError, profile } = this.props;
     if (isFetchingProfile) {
       return <div className="row center wrapper"><Preloader /></div>;
     }
     if (profileError) {
-      return <div className="row center wrapper"> { this.props.profileError }</div>;
+      return <div className="row center wrapper">{ this.props.profileError }</div>;
     }
     if (profile) {
       const returnRequests = profile.userReturnRequests.filter(request => request.status.toLowerCase() !== 'accepted');
@@ -59,7 +58,7 @@ class Profile extends Component {
   render() {
     return (
         <div className="container">
-            <div className="row center"> <h4 className="book-header"> Your Profile </h4></div>
+            <div className="row center"> <h4 className="book-header">Your Profile</h4></div>
             <div className="row">
                 { this.renderProfile() }
             </div>

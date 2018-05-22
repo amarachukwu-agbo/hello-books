@@ -1,9 +1,9 @@
-// Validation middleware for reviewBook route
+// Validation middleware for borrow and return requests route
 import Joi from 'joi';
 
-const reviewSchema = {
+const handleRequestSchema = {
   body: {
-    review: Joi.string().required(),
+    status: Joi.string().valid('Declined', 'Accepted').required(),
   },
   params: {
     bookId: Joi.number().integer().positive().required(),
@@ -11,18 +11,18 @@ const reviewSchema = {
   },
 };
 
-const validateReviewSchema = (req, res, next) => {
+const validateHandleRequestSchema = (req, res, next) => {
   const result = Joi.validate(
-    { body: req.body, params: req.params }, reviewSchema,
+    { body: req.body, params: req.params }, handleRequestSchema,
     { allowUnknown: false, abortEarly: false },
   );
   if (result.error) {
     return res.status(400).json({
-      msg: 'Your review could not be completed',
+      message: 'Unsucessful',
       error: result.error.toString(),
     });
   }
   next();
 };
 
-export default validateReviewSchema;
+export default validateHandleRequestSchema;

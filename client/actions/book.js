@@ -79,7 +79,7 @@ const favoriteFailure = error => ({
 export const favoriteBook = (userId, bookId) => (dispatch) => {
   dispatch(favoriteRequest());
   setHeader();
-  return axios.post(`${apiURL}/users/${userId}/fav/${bookId}`)
+  return axios.post(`${apiURL}/books/${bookId}/favorite`)
     .then((response) => {
       console.log(response);
       dispatch(favoriteSuccess(response.data.book.favCount));
@@ -111,7 +111,7 @@ const upvoteFailure = error => ({
 export const upvoteBook = (userId, bookId) => (dispatch) => {
   dispatch(upvoteRequest());
   setHeader();
-  return axios.post(`${apiURL}/users/${userId}/book/${bookId}/upvote`)
+  return axios.post(`${apiURL}/books/${bookId}/upvote`)
     .then((response) => {
       console.log(response);
       dispatch(upvoteSuccess(response.data.upvote.book));
@@ -143,7 +143,7 @@ const downvoteFailure = error => ({
 export const downvoteBook = (userId, bookId) => (dispatch) => {
   dispatch(downvoteRequest());
   setHeader();
-  return axios.post(`${apiURL}/users/${userId}/book/${bookId}/downvote`)
+  return axios.post(`${apiURL}/books/${bookId}/downvote`)
     .then((response) => {
       console.log(response);
       dispatch(downvoteSuccess(response.data.downvote.book));
@@ -207,7 +207,7 @@ const reviewBookFailure = error => ({
 export const reviewBook = (userId, bookId, review) => (dispatch) => {
   dispatch(reviewBookRequest());
   setHeader();
-  return axios.post(`${apiURL}/users/${userId}/review/${bookId}/`, review)
+  return axios.post(`${apiURL}/books/${bookId}/review`, review)
     .then((response) => {
       console.log(response);
       dispatch(reviewBookSuccess(response.data.reviewedBook));

@@ -1,11 +1,16 @@
 import fs from 'fs';
 import path from 'path';
 import { Sequelize } from 'sequelize';
-import * as databaseConfig from '../config/config.json';
+// import dotenv from 'dotenv';
+import * as databaseConfig from '../config/config.js';
+
+// dotenv.config();
 
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
+console.log(env);
 const config = databaseConfig[env];
+
 const db = {};
 let sequelize;
 

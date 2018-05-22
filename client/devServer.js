@@ -8,7 +8,7 @@ const compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
-  publicPath: '/static',
+  publicPath: '/',
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));

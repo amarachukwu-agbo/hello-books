@@ -17,7 +17,7 @@ const validateBookSchema = (req, res, next) => {
   );
   if (result.error) {
     return res.status(400).json({
-      msg: 'Book could not be added',
+      message: 'Unsucessful',
       error: result.error.toString(),
     });
   }

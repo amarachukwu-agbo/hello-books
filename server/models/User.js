@@ -35,6 +35,20 @@ const userSchema = (sequelize) => {
       values: ['Admin', 'User'],
       allowNull: false,
     },
+    imageURL: {
+      type: Sequelize.STRING,
+      allowNull: true,
+      validate: {
+        validateFormat(imageURL) {
+          if (!imageURL.match(/.\(png | jpeg | jpg | gif | png)$/)) {
+            throw new Error('Image format is not valid');
+          }
+        },
+        isUrl: {
+          msg: 'Image Url must be a valid url',
+        },
+      },
+    },
   });
   // 1 to many notifucations
   User.associate = (models) => {
@@ -58,13 +72,9 @@ const userSchema = (sequelize) => {
       foreignKey: 'userId',
       as: 'userReviews',
     });
-    User.hasMany(models.Upvotes, {
+    User.hasMany(models.Votes, {
       foreignKey: 'userId',
-      as: 'userUpvotes',
-    });
-    User.hasMany(models.Downvotes, {
-      foreignKey: 'userId',
-      as: 'userDownvotes',
+      as: 'userVotes',
     });
   };
   return User;

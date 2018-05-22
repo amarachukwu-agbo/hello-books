@@ -22,7 +22,7 @@ const validateUpdateBookSchema = (req, res, next) => {
   );
   if (result.error) {
     return res.status(400).json({
-      msg: 'Book not updated',
+      message: 'Unsucessful',
       error: result.error.toString(),
     });
   }

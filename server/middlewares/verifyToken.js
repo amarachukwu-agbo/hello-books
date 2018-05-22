@@ -1,8 +1,19 @@
-// Module verifies tokens
+
+/**
+ * A module that verifies a user's token
+ * @module verifyToken
+*/
+
 import jsonwebtoken from 'jsonwebtoken';
 
 const jwt = jsonwebtoken;
-// Set up middleware to verify a token
+
+/**
+ * @param {object} req The request object
+ * @param {object} res The response object
+ * @param {Function} next The next function to be executed
+ * @return {void}
+ */
 const verifyToken = (req, res, next) => {
   // Get token from header
   if (!req.headers.authorization || req.headers.authorization === undefined) {
@@ -13,9 +24,8 @@ const verifyToken = (req, res, next) => {
 
   // Decode token
   jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
-    if (error) res.status(500).send({ msg: 'Failed to authenticate token' });
+    if (error) res.status(401).send({ msg: 'Failed to authenticate token' });
     req.decoded = decoded;
-    // console.log(req);
     next();
   });
 };

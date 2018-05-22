@@ -73,7 +73,7 @@ class IndexPage extends Component {
                             </div>
                         }
                         { this.props.upvotedBooks &&
-                            <BooksList books = { this.props.upvotedBooks.slice(0, 6) }/>
+                            <BooksList books = { this.props.upvotedBooks }/>
                         }
                     </div>
                 </div>

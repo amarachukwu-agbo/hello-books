@@ -22,11 +22,10 @@ class AdminBooks extends Component {
   render() {
     const { books, deleteBook, isDeleting } = this.props;
     const { isOpen } = this.state;
-    console.log(this.props);
     if (!books.length) {
       return (
         <div className="row center">
-            <p className="grey-text">You have not added any books </p>
+            <p className="grey-text">You have not added any books</p>
         </div>
       );
     }
@@ -67,8 +66,8 @@ class AdminBooks extends Component {
                             <td> { book.subject } </td>
                             <td>{ book.description } </td>
                             <td> { book.quantity } </td>
-                            <td><button className="btn-flat btn-small" onClick= { this.toggleModal.bind(null, book.id, index) }><i class="material-icons blue-text">edit</i></button></td>
-                            <td> <button className="btn-flat btn-small" disabled={ isDeleting } onClick={deleteBook.bind(null, book.id, index)}><i class="material-icons blue-text">delete</i></button></td>
+                            <td><button id= { `editButton${index}` } className="btn-flat btn-small" onClick= { this.toggleModal.bind(null, book.id, index) }><i class="material-icons blue-text">edit</i></button></td>
+                            <td> <button id = {`deleteButton${index}` } className="btn-flat btn-small" disabled={ isDeleting } onClick={deleteBook.bind(null, book.id, index)}><i class="material-icons blue-text">delete</i></button></td>
                         </tr>)}
                 </tbody>
             </table>
