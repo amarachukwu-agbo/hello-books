@@ -17,14 +17,22 @@ const jwt = jsonwebtoken;
 const verifyToken = (req, res, next) => {
   // Get token from header
   if (!req.headers.authorization || req.headers.authorization === undefined) {
-    return res.status(403).send({ msg: 'No token provided' });
+    return res.status(403).send({
+      message: 'Unsuccessful',
+      error: 'No token provided',
+    });
   }
   const authorization = req.headers.authorization.split(' ');
   const token = authorization[1];
 
   // Decode token
   jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
-    if (error) res.status(401).send({ msg: 'Failed to authenticate token' });
+    if (error) {
+      res.status(401).send({
+        message: 'Unsuccessful',
+        error: 'Failed to authenticate token',
+      });
+    }
     req.decoded = decoded;
     next();
   });

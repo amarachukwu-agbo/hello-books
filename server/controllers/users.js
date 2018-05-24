@@ -57,7 +57,7 @@ export default class Users {
       }).then((user) => {
         if (!user) {
           return res.status(404).json({
-            message: 'Unsucessful',
+            message: 'Unsuccessful',
             error: 'User not found',
           });
         }
@@ -120,10 +120,7 @@ export default class Users {
             pagination,
           });
         }
-        return res.status(204).json({
-          message: 'Sucessful',
-          favorites: 'You have no favorites',
-        });
+        return res.status(204).json({});
       })
       .catch((error) => {
         res.status(500).send({
@@ -161,8 +158,8 @@ export default class Users {
           .then((book) => {
             // Check if book is available
             if (book.quantity === 0) {
-              return res.status(404).json({
-                message: 'Unsucessful',
+              return res.status(403).json({
+                message: 'Unsuccessful',
                 error: 'Book is not available',
               });
             }
@@ -184,27 +181,19 @@ export default class Users {
                     returnDate: req.body.returnDate,
                     comments: req.body.comments,
                   })
-                    .then(request => res.status(201).json({
-                      message: 'Sucessful',
+                    .then(request => res.status(202).json({
+                      message: 'Successful',
                       request,
-                    }))
-                    .catch(error => res.status(500).json({
-                      message: 'Unsucessful',
-                      error,
                     }));
                 }
                 return res.status(403).json({
-                  message: 'Unsucessful',
+                  message: 'Unsuccessful',
                   error: 'Already sent request',
                 });
-              })
-              .catch(error => res.status(500).json({
-                message: 'Unsucessful',
-                error,
-              }));
+              });
           })
           .catch(error => res.status(500).json({
-            message: 'Unsucessful',
+            message: 'Unsuccessful',
             error,
           }));
       });
@@ -230,8 +219,8 @@ export default class Users {
       .then((borrowed) => {
         if (!borrowed) {
           return res.status(403).json({
-            message: 'Unsucessful',
-            error: 'Book not borrowed',
+            message: 'Unsuccessful',
+            error: 'You have not borrowed this book',
           });
         }
         // Check if request has already been sent
@@ -261,24 +250,16 @@ export default class Users {
                     message: 'Successful',
                     returnRequest,
                   }));
-                })
-                .catch(error => res.status(500).json({
-                  message: 'Unsucessful',
-                  error,
-                }));
+                });
             }
             return res.status(403).json({
-              message: 'Unsucessful',
+              message: 'Unsuccessful',
               error: 'Your request has already been sent',
             });
-          })
-          .catch(error => res.status(500).json({
-            message: 'Unsucessful',
-            error,
-          }));
+          });
       })
       .catch(error => res.status(500).json({
-        message: 'Unsucessful',
+        message: 'Unsuccessful',
         error,
       }));
   }
@@ -301,80 +282,73 @@ export default class Users {
       .then((request) => {
         if (!request) {
           return res.status(404).json({
-            message: 'Unsucessful',
+            message: 'Unsuccessful',
             error: 'Borrow request not found',
           });
         }
-        if (request.status === 'Pending') {
-          return request.update({
-            status: req.body.status,
-          })
-            .then((borrowRequest) => {
+        return request.update({
+          status: req.body.status,
+        })
+          .then((borrowRequest) => {
             // Add books to BorrowedBooks Table
-              if (req.body.status === 'Accepted') {
-                models.BorrowedBooks.create({
-                  userId,
-                  bookId,
-                });
-                // Increment borrow count and decrement quantity
-                models.Book.findById(bookId)
-                  .then((book) => {
-                    book.increment('borrowCount');
-                    book.decrement('quantity');
+            if (req.body.status === 'Accepted') {
+              models.BorrowedBooks.create({
+                userId,
+                bookId,
+              });
+              // Increment borrow count and decrement quantity
+              models.Book.findById(bookId)
+                .then((book) => {
+                  book.increment('borrowCount');
+                  book.decrement('quantity');
 
-                    models.Notifications.create({
-                      userId,
-                      bookId,
-                      notification: req.body.status === 'Accepted' ?
-                        `Your request to borrow ${book.title} has been accepted ` :
-                        `Your request to borrow ${book.title} has been declined `,
-                    });
-                  })
-                  .catch(error => res.status(500).json({
-                    message: 'Unsucessful',
-                    error,
-                  }));
-                return res.status(201).json({
-                  message: 'Sucessful',
-                  borrowRequest,
+                  models.Notifications.create({
+                    userId,
+                    bookId,
+                    notification: req.body.status === 'Accepted' ?
+                      `Your request to borrow ${book.title} has been accepted ` :
+                      `Your request to borrow ${book.title} has been declined `,
+                  });
                 });
-              }
-              return res.status(201).json({
-                message: 'Sucessful',
+              return res.status(200).json({
+                message: 'Successful',
                 borrowRequest,
               });
-            })
-            .catch(error => res.status(500).json({
-              message: 'Unsucessful',
-              error,
-            }));
-        }
-        return res.status(403).json({
-          message: 'Unsucessful',
-          error: 'Request has already been handled',
-        });
-      });
+            }
+            return res.status(200).json({
+              message: 'Successful',
+              borrowRequest,
+            });
+          });
+      })
+      .catch(error => res.status(500).json({
+        message: 'Unsucessful',
+        error,
+      }));
   }
 
-  /** Get users' borrow requests
+  /** Get user's return or borrow requests
   * @param {object} res -The HTTP response
   * @param {object} req -The HTTP request
   * @return {object}
   */
-  static getBorrowRequests(req, res) {
+  static getRequests(req, res) {
     const { page, offset, limit } = Helper.setupPagination(req);
+    const requestType = req.url.split('/')[1];
+    const requestModel = `${requestType.charAt(0).toUpperCase()}${requestType.slice(1)}`;
+    console.log(requestModel);
     const query = {
       include: [
         {
           model: models.User,
-          as: 'userBorrowRequests',
+          as: `user${requestModel}`,
           attributes: {
             exclude: ['password'],
           },
         },
         {
           model: models.Book,
-          as: 'borrowRequests',
+          as: `${requestType}`,
         },
       ],
       order: [
@@ -383,14 +357,11 @@ export default class Users {
       limit,
       offset,
     };
-    models.BorrowRequests.findAndCountAll(query)
+    models[`${requestModel}`].findAndCountAll(query)
       .then((requests) => {
         const pagination = Helper.pagination(page, offset, limit, requests);
         if (!requests.rows.length) {
-          return res.status(204).json({
-            message: 'Sucessful',
-            requests: 'No borrow requests',
-          });
+          return res.status(204).json({});
         }
         return res.status(200).json({
           message: 'Successful',
@@ -400,57 +371,7 @@ export default class Users {
       })
       .catch((error) => {
         res.status(500).json({
-          message: 'Unsucessful',
-          error,
-        });
-      });
-  }
-
-  /** Get user's return requests
-  * @param {object} res -The HTTP response
-  * @param {object} req -The HTTP request
-  * @return {object}
-  */
-  static getReturnRequests(req, res) {
-    const { page, offset, limit } = Helper.setupPagination(req);
-    const query = {
-      include: [
-        {
-          model: models.User,
-          as: 'userReturnRequests',
-          attributes: {
-            exclude: ['password'],
-          },
-        },
-        {
-          model: models.Book,
-          as: 'returnRequests',
-        },
-      ],
-      order: [
-        ['createdAt', 'DESC'],
-      ],
-      limit,
-      offset,
-    };
-    models.ReturnRequests.findAndCountAll(query)
-      .then((requests) => {
-        const pagination = Helper.pagination(page, offset, limit, requests);
-        if (!requests.rows.length) {
-          return res.status(204).json({
-            message: 'Sucessful',
-            requests: 'No return requests',
-          });
-        }
-        return res.status(200).json({
-          message: 'Successful',
-          requests: requests.rows,
-          pagination,
-        });
-      })
-      .catch((error) => {
-        res.status(500).json({
-          message: 'Unable to get return requests',
+          message: 'Unsuccessful',
           error,
         });
       });
@@ -475,16 +396,9 @@ export default class Users {
       // Check if request exists
         if (!request) {
           return res.status(404).json({
-            message: 'Unsucessful',
-            error: 'Request not found',
+            message: 'Unsuccessful',
+            error: 'Return request not found',
 
-          });
-        }
-        // Check if request has already been handled
-        if (request.status !== 'Pending') {
-          return res.status(403).json({
-            message: 'Unsucessful',
-            error: 'Already handled request',
           });
         }
         // Update request status
@@ -515,18 +429,10 @@ export default class Users {
               borrowed.update({ status: 'Returned' })
                 .then(updated => updated.reload())
                 .then(returnRequest => res.status(200).json({
-                  message: 'Sucessful',
+                  message: 'Successful',
                   returnRequest,
-                }))
-                .catch(error => res.status(500).json({
-                  message: 'Unsucessful',
-                  error,
                 }));
-            })
-            .catch(error => res.status(500).json({
-              message: 'Unsucessful',
-              error,
-            }));
+            });
         }
         return res.status(200).json({
           message: 'Request Declined',
@@ -535,7 +441,8 @@ export default class Users {
           book: bookId,
           user: userId,
         });
-      }).catch(error => res.status(500).json({
+      })
+      .catch(error => res.status(500).json({
         message: 'Unsucessful',
         error,
       }));

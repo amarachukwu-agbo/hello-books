@@ -12,8 +12,9 @@
 
 const checkUser = (req, res, next) => {
   if (req.decoded.id !== parseInt(req.params.userId, 10)) {
-    return res.status(401).json({
-      msg: 'You are not authorized to perform this action',
+    return res.status(403).json({
+      message: 'Unsuccessful',
+      error: 'You are not authorized to perform this action',
     });
   }
   next();

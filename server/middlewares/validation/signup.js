@@ -12,7 +12,7 @@ const validateUser = (req, res, next) => {
   const result = Joi.validate(req.body, userSchema, { allowUnknown: false, abortEarly: false });
   if (result.error) {
     return res.status(400).json({
-      msg: 'Unsuccessful',
+      message: 'Unsuccessful',
       error: result.error.toString(),
     });
   }
