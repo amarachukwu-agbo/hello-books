@@ -1,10 +1,4 @@
 const testData = {
-  admin: {
-    firstName: 'Admin',
-    lastName: 'Control',
-    email: 'admin@gmail.com',
-    password: 'admin',
-  },
   user: {
     firstName: 'Ama',
     lastName: 'Agbo',

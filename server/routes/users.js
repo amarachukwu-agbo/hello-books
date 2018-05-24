@@ -34,6 +34,7 @@ router.get(
 router.post(
   '/:userId/borrow/:bookId',
   verifyToken,
+  checkUser,
   validateBorrowBook,
   bookCheck,
   users.sendBorrowRequest,
