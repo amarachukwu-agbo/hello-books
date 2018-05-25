@@ -16,9 +16,11 @@
     "heroku-postbuild": "npm run client:build && npm run server:build",
     "serve": "node ./dist/index.js",
     "test:client": "jest",
-    "test": "set NODE_ENV=test && sequelize db:migrate && babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/api-postgres-test.js --timeout 10000 --compilers:js babel-core/register",
-    "tests": "export NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate&&babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Test/api-postgres-test.js --timeout 10000 --compilers:js babel-core/register",
-    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "export NODE_ENV=test && sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all && babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/Tests --timeout 10000 --compilers:js babel-core/register",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "db:undo":"NODE_ENV=test sequelize db:migrate:undo:all",
+    "migration": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all"
   },
   "repository": {
     "type": "git",
@@ -84,7 +86,6 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
-    "bcrypt": "^1.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",

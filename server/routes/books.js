@@ -88,6 +88,6 @@ router.post(
 );
 
 // Endpoint to search for a book
-router.get('/search', verifySearchBook, books.searchBooks);
+router.post('/search', verifySearchBook, books.searchBooks);
 
 export default router;

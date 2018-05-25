@@ -50,7 +50,7 @@ export default class Book {
         },
       }).then((bookDeleted) => {
         if (bookDeleted) {
-          return res.status(204).json({ message: 'Sucessful' });
+          return res.status(204).json({});
         }
         return res.status(404).json({
           message: 'Unsuccessful',
@@ -82,21 +82,22 @@ export default class Book {
         error: 'Nothing to update',
       });
     }
-    return book.update({
-      id: bookId,
-      title: req.body.title || book.title,
-      author: req.body.author || book.author,
-      description: req.body.description || book.description,
-      subject: req.body.subject || book.subject,
-      imageURL: req.body.imageURL || book.imageURL,
-      quantity: req.body.quantity || book.quantity,
-    })
-      .then(updatedBook => res.status(200).json({
-        message: 'Successful',
-        updatedBook,
-      }))
+    return models.Book.findById(bookId)
+      .then(book => book.update({
+        id: bookId,
+        title: req.body.title || book.title,
+        author: req.body.author || book.author,
+        description: req.body.description || book.description,
+        subject: req.body.subject || book.subject,
+        imageURL: req.body.imageURL || book.imageURL,
+        quantity: req.body.quantity || book.quantity,
+      })
+        .then(updatedBook => res.status(200).json({
+          message: 'Successful',
+          updatedBook,
+        })))
       .catch(error => res.status(500).json({
-        message: 'Unsucessful',
+        message: 'Unsuccessful',
         error,
       }));
   }
@@ -119,7 +120,7 @@ export default class Book {
     }).then((vote) => {
       if (vote && vote.voteType === voteType) {
         return res.status(403).json({
-          message: 'Unsucessful',
+          message: 'Unsuccessful',
           error: `You have already ${voteType}d this book`,
         });
       }
@@ -262,11 +263,12 @@ export default class Book {
    */
   static getAllBooks(req, res) {
     const order = req.query.order || 'desc';
+    let query;
     const { sort } = req.query;
     const { page, offset, limit } = Helper.setupPagination(req);
 
     if (sort && sort.includes('votes')) {
-      const query = {
+      query = {
         include: [{
           model: models.Review,
           as: 'bookReviews',
@@ -278,7 +280,6 @@ export default class Book {
         limit,
         offset,
       };
-
       if (sort === 'upvotes') {
         query.where = {
           upvotes: {
@@ -293,55 +294,32 @@ export default class Book {
           },
         };
       }
-      models.Book.findAndCountAll(query)
-        .then((books) => {
-          const pagination = Helper.pagination(page, offset, limit, books);
-          if (!books.rows.length) {
-            return res.status(404).json({
-              message: 'Unsucessful',
-              error: 'No book found',
-            });
-          }
-          return res.status(200).json({
-            message: 'Successful',
-            books: books.rows,
-            pagination,
-          });
-        })
-        .catch(error => res.status(400).json(error.toString()));
+    } else {
+      query = {
+        include: [{
+          model: models.Review,
+          as: 'bookReviews',
+        }],
+        order: [
+          ['createdAt', 'DESC'],
+        ],
+        limit,
+        offset,
+      };
     }
-
-    const query = {
-      include: [{
-        model: models.Review,
-        as: 'bookReviews',
-      }],
-      order: [
-        ['createdAt', 'DESC'],
-      ],
-      limit,
-      offset,
-    };
-
-    models.Book.findAndCountAll(query)
-      .then((data) => {
-        const pagination = Helper.pagination(page, offset, limit, data);
-        if (!data.rows.length) {
-          return res.status(404).json({
-            message: 'Unsucessful',
-            error: 'No book found',
-          });
+    return models.Book.findAndCountAll(query)
+      .then((books) => {
+        const pagination = Helper.pagination(page, offset, limit, books);
+        if (!books.rows.length) {
+          return res.status(204);
         }
         return res.status(200).json({
           message: 'Successful',
-          books: data.rows,
+          books: books.rows,
           pagination,
         });
       })
-      .catch(error => res.status(500).json({
-        message: 'Unsuccessful',
-        error,
-      }));
+      .catch(error => res.status(500).json({ message: 'Unsucessful', error }));
   }
 
   /** Get a book in the database
@@ -390,10 +368,8 @@ export default class Book {
       author,
       subject,
     } = req.query;
-
     const { page, offset, limit } = Helper.setupPagination(req);
     let query;
-
     if (title) {
       query = {
         where: {
@@ -418,22 +394,14 @@ export default class Book {
           },
         },
       };
-    } else {
-      return res.status(400).json({
-        message: 'Unsucessful',
-        error: 'Invalid search parameter',
-      });
     }
     models.Book.findAndCountAll(query)
       .then((books) => {
         const pagination = Helper.pagination(page, offset, limit, books);
         if (!books.rows.length) {
-          return res.status(204).json({
-            message: 'Sucessful',
-            error: 'No book found',
-          });
+          return res.status(204).json({});
         }
-        return res.status(200).json({
+        return res.status(201).json({
           message: 'Successful',
           books: books.rows,
           pagination,
@@ -441,7 +409,7 @@ export default class Book {
       })
       .catch((error) => {
         res.status(500).json({
-          message: 'Unsucessful',
+          message: 'Unsuccessful',
           error,
         });
       });

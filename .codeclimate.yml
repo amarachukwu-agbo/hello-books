@@ -1,4 +1,10 @@
+checks:
+  method-lines:
+    enabled: false
 exclude_patterns:
 - "server/migrations/"
+- "server/middlewares"
+- "server/models"
+- "server/Tests"
 - "tests/"
 - "spec/"

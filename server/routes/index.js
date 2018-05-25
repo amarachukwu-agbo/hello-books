@@ -13,18 +13,18 @@ router.get('/', (req, res) => res.status(200).send({
 
 // Endpoint to get all borrow requests
 router.get(
-  '/borrowrequests',
+  '/borrowRequests',
   verifyToken,
   checkAdmin,
-  users.getBorrowRequests,
+  users.getRequests,
 );
 
 // Endpoint to get all return requests
 router.get(
-  '/returnrequests',
+  '/returnRequests',
   verifyToken,
   checkAdmin,
-  users.getReturnRequests,
+  users.getRequests,
 );
 
 export default router;
