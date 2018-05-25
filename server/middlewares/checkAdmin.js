@@ -17,14 +17,15 @@ const checkAdmin = (req, res, next) => {
   models.User.findById(userId)
     .then((user) => {
       if (user.role !== 'Admin') {
-        return res.status(401).json({
-          msg: 'You must be an admin to access this feature',
+        return res.status(403).json({
+          message: 'Unsuccessful',
+          error: 'You must be an admin to access this feature',
         });
       }
       next();
     })
     .catch(error => res.status(500).json({
-      message: 'Unsucessful',
+      message: 'Unsuccessful',
       error: error.toString(),
     }));
 };

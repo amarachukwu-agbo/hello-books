@@ -77,7 +77,7 @@ module.exports = {
           title: 'The Autobiography of Malcolm X',
           author: 'Alex Haley',
           description: 'The Autobiography of Malcolm X stands as the definitive statement of a movement and a man whose work was never completed but whose message is timeless. It is essential reading for anyone who wants to understand America.',
-          quantity: 20,
+          quantity: 0,
           subject: 'Autobiography',
           imageURL: 'https://images-na.ssl-images-amazon.com/images/I/51O5LjozmAL._SX303_BO1,204,203,200_.jpg',
           createdAt: '2018-07-10 04:11:52.181+01',

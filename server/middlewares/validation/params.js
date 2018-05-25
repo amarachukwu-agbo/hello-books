@@ -15,7 +15,7 @@ const validateParamsSchema = (req, res, next) => {
   );
   if (result.error) {
     return res.status(400).json({
-      message: 'Unsucessful',
+      message: 'Unsuccessful',
       error: result.error.toString(),
     });
   }
