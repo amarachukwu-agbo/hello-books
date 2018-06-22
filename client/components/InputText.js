@@ -12,43 +12,42 @@ export const InputText = ({
   input, label, type, icon, defaultValue, meta: { touched, error }, ...rest
 }) => (
     <div>
-        { icon &&
-            <i className="material-icons prefix">{ icon }</i>
-        }
-        <label className = "flow-text truncate active"> { label } </label>
-        <input {...input} type={type} onChange={input.onChange}
-        value = { defaultValue } { ...rest } />
-        {touched && error && <span className = "error flow-text"> {error} </span>}
+      {icon &&
+        <i className="material-icons prefix">{icon}</i>
+      }
+      <label className="flow-text truncate active"> {label} </label>
+      <input {...input} type={type} onChange={input.onChange}
+        value={defaultValue} {...rest} />
+      {touched && error && <span className="error flow-text"> {error} </span>}
     </div>
 );
 
 export const renderDropdownList = ({
   input, meta: { touched, error }, data, valueField, textField,
 }) => (
-      <div>
-          <DropdownList { ...input } onChange={input.onChange} data={data}
-          valueField={valueField} textField={textField}/>
-          {touched && error && <span className = "error flow-text"> {error} </span>}
-      </div>
+    <div>
+      <DropdownList {...input} onChange={input.onChange} data={data}
+        valueField={valueField} textField={textField} />
+      {touched && error && <span className="error flow-text"> {error} </span>}
+    </div>
 );
 
 export const renderDateTimePicker = ({
   input: { onChange, value }, showTime, icon, meta: { touched, error },
 }) => (
     <div>
-        <i className="material-icons prefix">{ icon }</i>
-        <DateTimePicker onChange = { onChange } format = "DD MMM YYYY" time = { showTime}
-            value = { !value ? null : new Date(value) } />
-        {touched && error && <span className = "error flow-text"> {error} </span>}
+      <i className="material-icons prefix">{icon}</i>
+      <DateTimePicker onChange={onChange} format="DD MMM YYYY" time={showTime}
+        value={!value ? null : new Date(value)} />
+      {touched && error && <span className="error flow-text"> {error} </span>}
     </div>
 );
 
 export const TextArea = ({
-  input, label, type, ...rest
+  input, placeholder, type, ...rest
 }) => (
-      <div>
-          <label> { label } </label>
-          <textarea {...input} type={type} { ...rest } />
-      </div>
+    <div>
+      <textarea {...input} type={type} {...rest} placeholder={placeholder} className="materialize-textarea" />
+    </div>
 );
 

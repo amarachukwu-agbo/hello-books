@@ -28,9 +28,8 @@ const returnRequestsFailure = error => ({
 export const getReturnRequests = () => (dispatch) => {
   dispatch(fetchingReturnRequests());
   setHeader();
-  return axios.get(`${apiURL}/returnrequests`)
+  return axios.get(`${apiURL}/returnRequests`)
     .then((response) => {
-      console.log(response.data);
       dispatch(returnRequestsSuccess(response.data.requests));
     })
     .catch((error) => {
@@ -64,14 +63,12 @@ export const handleReturnRequest = (status, userId, bookId, requestIndex) => (di
   setHeader();
   return axios.put(`${apiURL}/users/${userId}/return/${bookId}`, status)
     .then((response) => {
-      console.log(response.data);
-      dispatch(handleReturnRequestSuccess(response.data.msg, requestIndex));
+      dispatch(handleReturnRequestSuccess(response.data.message, requestIndex));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response);
         let errorMessage = '';
-        errorMessage = error.response.msg;
+        errorMessage = error.response.data.error;
         dispatch(handleReturnRequestFailure(errorMessage));
       } else {
         dispatch(handleReturnRequestFailure(error.message));

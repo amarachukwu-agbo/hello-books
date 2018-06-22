@@ -345,6 +345,9 @@ export default class Book {
           }],
         },
       ],
+      order: [
+        [{ model: models.Review, as: 'bookReviews' }, 'createdAt', 'DESC'],
+      ],
     })
       .then(book => res.status(200).json({
         message: 'Successful',
@@ -369,29 +372,31 @@ export default class Book {
       subject,
     } = req.query;
     const { page, offset, limit } = Helper.setupPagination(req);
-    let query;
+    const query = {
+      include: [{
+        model: models.Review,
+        as: 'bookReviews',
+      }],
+      order: [
+        ['createdAt', 'DESC'],
+      ],
+    };
     if (title) {
-      query = {
-        where: {
-          title: {
-            [Sequelize.Op.iLike]: title,
-          },
+      query.where = {
+        title: {
+          [Sequelize.Op.iLike]: title,
         },
       };
     } else if (author) {
-      query = {
-        where: {
-          author: {
-            [Sequelize.Op.iLike]: author,
-          },
+      query.where = {
+        author: {
+          [Sequelize.Op.iLike]: author,
         },
       };
     } else if (subject) {
-      query = {
-        where: {
-          subject: {
-            [Sequelize.Op.iLike]: subject,
-          },
+      query.where = {
+        subject: {
+          [Sequelize.Op.iLike]: subject,
         },
       };
     }
@@ -399,7 +404,10 @@ export default class Book {
       .then((books) => {
         const pagination = Helper.pagination(page, offset, limit, books);
         if (!books.rows.length) {
-          return res.status(204).json({});
+          return res.status(404).json({
+            message: 'Successful',
+            error: 'No book matches search query',
+          });
         }
         return res.status(201).json({
           message: 'Successful',

@@ -7,6 +7,7 @@ import {
   HANDLE_BORROW_REQUEST_FAILURE,
 }
   from '../actions/types';
+import Notify from '../helpers/notify';
 
 const initialState = {};
 
@@ -51,7 +52,7 @@ const borrowRequests = (state = initialState, action) => {
       };
     }
     case HANDLE_BORROW_REQUEST_FAILURE: {
-      Materialize.toast(`Failed to handle request. ${action.error}`);
+      Notify.notifyError(`Failed to handle request. ${action.error}`);
       return {
         ...state,
         isHandlingBorrowRequest: false,

@@ -30,7 +30,6 @@ router.put(
   checkAdmin,
   verifyUpdateBook,
   bookCheck,
-  bookTitleCheck,
   books.updateBook,
 );
 

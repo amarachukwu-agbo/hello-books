@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
+import FileInput from './FileInput';
 import validate from '../helpers/validations/book';
 import { renderDropdownList } from '../components/InputText';
 import { subjects } from '../components/BookForm';
@@ -23,16 +24,16 @@ class EditBookForm extends Component {
 
   render() {
     const { handleSubmit, isEditing } = this.props;
-    console.log(this.props);
 
     return (
             <form onSubmit = { handleSubmit(this.submitForm) } >
                 <div className="center-align lighten-2">
-                    <h5>Edit Book</h5>
+                   <h4 className="modal-header-text">Edit Book</h4>
                     { isEditing &&
                         <div className="row"><p className="center sign-up-success"> Updating book...</p></div>
                     }
                 </div>
+                <div>
                 <div className="row">
                     <div className="input-field">
                         <label className="active">Book Title</label>
@@ -53,12 +54,6 @@ class EditBookForm extends Component {
                 </div>
                 <div className="row">
                     <div className="input-field">
-                        <label className="active">Image URL</label>
-                        <Field name="imageURL" type="text" component="input"/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="input-field">
                         <label className="active">Book Description</label>
                         <Field name="description" type="text" component="input"/>
                     </div>
@@ -69,12 +64,24 @@ class EditBookForm extends Component {
                         <Field name="quantity" type="number" component="input"/>
                     </div>
                 </div>
+                <div className="row">
+          <div className="input-field">
+            <Field name="imageURL" component={FileInput} multiple={false} accept="image/*" id="upload"
+              dropzoneOnDrop={this.handleDrop} label="Image URL" />
+          </div>
+        </div>
                 <br />
                 <div className="row">
                     <div className="col s12 center-align">
-                        <button className="btn waves-effect white teal-text darken-2 waves-light" type="submit" disabled = { isEditing }>Submit <i className="material-icons teal-text right">send</i></button>
+                        <button className="btn waves-effect primary-button waves-light" type="submit" disabled = { isEditing }>Submit
+                        { isEditing ?
+                            <i className="fa fa-spinner fa-spin" />
+                            : <i className="material-icons right">send</i>
+                        }
+                        </button>
                     </div>
                 </div>
+            </div>
             </form>
     );
   }

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { push } from 'react-router-redux';
 import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE, LOG_OUT } from './types';
 import { apiURL } from './userSignUp';
+import setUser from '../helpers/setuser';
 
 const loggingIn = () => ({
   type: LOGGING_IN,
@@ -25,32 +26,15 @@ export const loginUser = user => (dispatch) => {
   dispatch(loggingIn());
   return axios.post(`${apiURL}/users/login`, user)
     .then((response) => {
-      const userInfo = JSON.stringify(response.data.user);
-      localStorage.setItem('userToken', response.data.token);
-      localStorage.setItem('user', userInfo);
+      setUser(response);
       dispatch(loginSuccess(response.data.user));
-      if (response.data.user.role === 'Admin') {
-        setTimeout(() => {
-          dispatch(push('/admin'));
-        }, 1000);
-      } else {
-        setTimeout(() => {
-          dispatch(push('/'));
-        }, 2000);
-      }
+      setTimeout(() => {
+        dispatch(push('/'));
+      }, 3000);
     })
     .catch((error) => {
       if (error.response) {
-        let errorMessage = '';
-        if (error.response.status === 401) {
-          errorMessage = 'Incorrect email or password';
-        } else if (error.response.status === 404) {
-          errorMessage = 'User not found';
-        } else {
-          console.log(error.response);
-          errorMessage = 'An error occured';
-        }
-        dispatch(loginFailure(errorMessage));
+        dispatch(loginFailure(error.response.data.error));
       } else {
         dispatch(loginFailure(error.message));
       }

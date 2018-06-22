@@ -7,6 +7,8 @@ import {
   RETURN_BOOK_FAILURE,
 } from '../actions/types';
 
+import Notify from '../helpers/notify';
+
 const initialState = {};
 
 const profile = (state = initialState, action) => {
@@ -39,7 +41,7 @@ const profile = (state = initialState, action) => {
       };
     }
     case RETURN_BOOK_FAILURE: {
-      Materialize.toast(`Error sending return request.${action.error}`, 2000);
+      Notify.notifyError(`Error sending return request.${action.error}`);
       return {
         ...state,
         isSendingRequest: false,
@@ -47,7 +49,7 @@ const profile = (state = initialState, action) => {
       };
     }
     case RETURN_BOOK_SUCCESS: {
-      Materialize.toast('Your request to return book has been sent', 2000);
+      Notify.notifySuccess('Your request to return book has been sent');
       return {
         ...state,
         isSendingRequest: false,

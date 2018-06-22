@@ -11,17 +11,15 @@ export class LoginForm extends Component {
   }
 
   submitForm(values) {
-    console.log(values);
-    console.log(this.props);
     this.props.handler(values);
   }
 
   render() {
-    const { handleSubmit, submitting } = this.props;
+    const { handleSubmit, isLoggingIn } = this.props;
     return (
             <form onSubmit = { handleSubmit(this.submitForm) } >
-                <div className=" row center-align teal lighten-2">
-                    <h5 className="white-text">Log In</h5>
+                <div className=" row center-align">
+                    <h4>Log In</h4>
                 </div>
                 <div className="row">
                     <div className="input-field col s12">
@@ -36,7 +34,13 @@ export class LoginForm extends Component {
                 <br />
                 <div className="row">
                     <div className="col s12 center-align">
-                        <button className="btn waves-effect waves-light" type="submit" disabled = { submitting }>Submit <i className="material-icons right">send</i></button>
+                        <button className="btn waves-effect primary-button waves-light" type="submit">
+                        Submit
+                        { isLoggingIn ? <i className="fa fa-spinner fa-spin" />
+                        : <i className="material-icons right">send</i>
+                        }
+
+                        </button>
                     </div>
                 </div>
                 <p className="col s12 center-align">Don't have an account yet? <Link to="/signup">Sign Up</Link></p>
@@ -45,7 +49,9 @@ export class LoginForm extends Component {
   }
 }
 
-export default reduxForm({
+const reduxLogin = reduxForm({
   form: 'login',
   validate,
 })(LoginForm);
+
+export default reduxLogin;

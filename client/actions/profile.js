@@ -29,7 +29,6 @@ export const getUserProfile = userId => (dispatch) => {
   setHeader();
   return axios.get(`${apiURL}/users/${userId}`)
     .then((response) => {
-      console.log(response.data);
       dispatch(profileSuccess(response.data.user));
     })
     .catch((error) => {
@@ -62,14 +61,12 @@ export const returnBook = (userId, bookId) => (dispatch) => {
   setHeader();
   return axios.post(`${apiURL}/users/${userId}/return/${bookId}`)
     .then((response) => {
-      console.log(response.data);
       dispatch(returnBookSuccess(response.data.returnRequest));
     })
     .catch((error) => {
       if (error.response) {
         let errorMessage = '';
         errorMessage = error.response.msg;
-        console.log(errorMessage);
         dispatch(returnBookFailure(errorMessage));
       } else {
         dispatch(returnBookFailure(error.message));

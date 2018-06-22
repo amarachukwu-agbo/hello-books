@@ -2,7 +2,9 @@ import {
   GET_BOOKS_SUCCESS,
   GET_BOOKS_REQUEST,
   GET_BOOKS_FAILURE,
-  SEARCH_BOOK,
+  SEARCHING_BOOKS,
+  SEARCH_BOOKS_SUCCESS,
+  SEARCH_BOOKS_FAILURE,
   GET_UPVOTED_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_REQUEST,
   GET_UPVOTED_BOOKS_FAILURE,
@@ -16,6 +18,7 @@ import {
   DELETE_BOOK_REQUEST,
   DELETE_BOOK_FAILURE,
 } from '../actions/types';
+import Notify from '../helpers/notify';
 
 const initialState = {};
 
@@ -25,6 +28,7 @@ export const books = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
+        searchError: null,
         books: null,
         error: null,
       };
@@ -41,16 +45,31 @@ export const books = (state = initialState, action) => {
         ...state,
         isFetching: false,
         books: action.books,
-        currentlyDisplayed: action.books,
         error: null,
+        searchResults: null,
       };
     }
-    case SEARCH_BOOK: {
+    case SEARCHING_BOOKS: {
       return {
         ...state,
-        value: action.value,
-        currentlyDisplayed: state.books.filter(book =>
-          book.title.toLowerCase().includes(action.value)),
+        isSearching: true,
+        searchError: null,
+      };
+    }
+    case SEARCH_BOOKS_FAILURE: {
+      return {
+        ...state,
+        isSearching: false,
+        searchError: action.error,
+      };
+    }
+    case SEARCH_BOOKS_SUCCESS: {
+      return {
+        ...state,
+        isSearching: false,
+        searchError: null,
+        books: null,
+        searchResults: action.books,
       };
     }
     case ADDING_BOOK: {
@@ -61,7 +80,7 @@ export const books = (state = initialState, action) => {
       };
     }
     case ADD_BOOK_FAILURE: {
-      Materialize.toast(`Error adding book. ${action.error}`, 2000);
+      Notify.notifyError(`Error adding book. ${action.error}`);
       return {
         ...state,
         isAdding: false,
@@ -69,11 +88,11 @@ export const books = (state = initialState, action) => {
       };
     }
     case ADD_BOOK_SUCCESS: {
-      Materialize.toast('Book has been added', 2000);
+      Notify.notifySuccess('Book has been added');
       return {
         ...state,
         isAdding: false,
-        books: [...state.books, action.book],
+        books: [action.book, ...state.books.slice(0, -1)],
         addBookError: null,
       };
     }
@@ -84,14 +103,14 @@ export const books = (state = initialState, action) => {
       };
     }
     case EDIT_BOOK_FAILURE: {
-      Materialize.toast(`Error editing book. ${action.error}`, 2000);
+      Notify.notifyError(`Error editing book. ${action.error}`);
       return {
         ...state,
         isEditing: false,
       };
     }
     case EDIT_BOOK_SUCCESS: {
-      Materialize.toast('Book has been updated', 2000);
+      Notify.notifySuccess('Book has been updated');
       return {
         ...state,
         isEditing: false,
@@ -100,7 +119,7 @@ export const books = (state = initialState, action) => {
       };
     }
     case DELETE_BOOK_SUCCESS: {
-      Materialize.toast('Book has been deleted', 2000);
+      Notify.notifySuccess('Book has been deleted');
       return {
         ...state,
         books: [...state.books.slice(0, action.bookIndex),
@@ -109,7 +128,7 @@ export const books = (state = initialState, action) => {
       };
     }
     case DELETE_BOOK_FAILURE: {
-      Materialize.toast(`Book was not deleted. ${action.deleteError}`, 2000);
+      Notify.notifyError(`Book was not deleted. ${action.deleteError}`);
       return {
         ...state,
         isDeleting: false,

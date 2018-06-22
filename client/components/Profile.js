@@ -31,23 +31,22 @@ class Profile extends Component {
       return (
             <div className="row" >
               <div className="row card-panel">
-                  <h5 className="row grey flow-text">Bio</h5>
                   <Bio bio= { profile } />
               </div>
 
-              <div className="row card-panel">
-                  <h5 className="row grey flow-text">Borrowed Books</h5>
+              <div className="row card-panel profile-div">
+                  <h6 className="white-text">Borrowed Books</h6>
                   <BorrowedBooks books= { profile.userBooks }
                   returnRequests = { returnRequests } {...this.props }/>
               </div>
 
-              <div className="row card-panel">
-                  <h5 className="row grey flow-text">Borrow Requests</h5>
+              <div className="row card-panel profile-div">
+                  <h6 className="white-text">Borrow Requests</h6>
                   <BorrowRequests books= { borrowRequests } />
               </div>
 
-              <div className="row card-panel">
-                  <h5 className="row grey flow-text">Return Requests</h5>
+              <div className="row card-panel profile-div">
+                  <h6 className="white-text">Return Requests</h6>
                   <ReturnRequests books= { returnRequests } { ...this.props }/>
               </div>
             </div>

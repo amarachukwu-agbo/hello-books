@@ -28,9 +28,8 @@ const borrowRequestsFailure = error => ({
 export const getBorrowRequests = () => (dispatch) => {
   dispatch(fetchingBorrowRequests());
   setHeader();
-  return axios.get(`${apiURL}/borrowrequests`)
+  return axios.get(`${apiURL}/borrowRequests`)
     .then((response) => {
-      console.log(response.data);
       dispatch(borrowRequestsSuccess(response.data.requests));
     })
     .catch((error) => {
@@ -64,12 +63,10 @@ export const handleBorrowRequest = (status, userId, bookId, requestIndex) => (di
   setHeader();
   return axios.put(`${apiURL}/users/${userId}/borrow/${bookId}`, status)
     .then((response) => {
-      console.log(response.data);
       dispatch(handleBorrowRequestSuccess(response.data.borrowRequest.status, requestIndex));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response);
         let errorMessage = '';
         errorMessage = error.response.msg;
         dispatch(handleBorrowRequestFailure(errorMessage));

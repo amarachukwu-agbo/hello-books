@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import AdminBooks from './AdminBooks';
 import Navbar from './Navbar';
 import PageFooter from './PageFooter';
@@ -21,18 +22,19 @@ class Admin extends Component {
   render() {
     const { match } = this.props;
     return (
-        <div className="row">
+        <div>
             <Navbar />
             <div className="parallax-container z-depth-1 dashboard">
                     <div className="center-align">
                         <br/>
                         <h4 className="black-text text-darken-4 bold">Admin Dashboard</h4>
+                        <ToastContainer />
                     </div>
             </div>
             <br/>
             <Switch>
                 <Route exact path = { `${match.url}`} render= {() => (
-                    <div>
+                    <div className="admin">
                     { this.props.isFetching &&
                         <div className="row center wrapper">
                             <Preloader />
@@ -51,11 +53,11 @@ class Admin extends Component {
                 )} />
                 <Route exact path = { `${match.url}/addBook`} render= {() => (
                     <div className="row">
-                        <div className="col s1 m2 l3"></div>
-                        <div className="card-panel col s12 m8 l6">
+                        <div className="col s2 m3 l4"></div>
+                        <div className="card-panel add-book col s8 m6 l4">
                             <BookForm { ...this.props }/>
                         </div>
-                        <div className="col s1 m2 l3"></div>
+                        <div className="col s2 m3 l4"></div>
                     </div>
                 )} />
                 <Route exact path = { `${match.url}/borrowRequests`} render= {() => (

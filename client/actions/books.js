@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { push } from 'react-router-redux';
 
 import {
   GET_BOOKS_SUCCESS,
@@ -7,7 +8,9 @@ import {
   GET_UPVOTED_BOOKS_SUCCESS,
   GET_UPVOTED_BOOKS_REQUEST,
   GET_UPVOTED_BOOKS_FAILURE,
-  SEARCH_BOOK,
+  SEARCHING_BOOKS,
+  SEARCH_BOOKS_SUCCESS,
+  SEARCH_BOOKS_FAILURE,
   ADDING_BOOK,
   ADD_BOOK_SUCCESS,
   ADD_BOOK_FAILURE,
@@ -81,10 +84,10 @@ export const addBook = book => (dispatch) => {
   return axios.post(`${apiURL}/books`, book)
     .then((response) => {
       dispatch(addBookSuccess(response.data.bookEntry));
+      dispatch(push('/admin'));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response);
         dispatch(addBookFailure(error.response.data.error));
       } else {
         dispatch(addBookFailure(error.message));
@@ -92,10 +95,35 @@ export const addBook = book => (dispatch) => {
     });
 };
 
-export const searchBook = value => ({
-  type: SEARCH_BOOK,
-  value,
+const searchingBooks = () => ({
+  type: SEARCHING_BOOKS,
 });
+
+const searchBooksSuccess = books => ({
+  type: SEARCH_BOOKS_SUCCESS,
+  books,
+});
+
+const searchBooksFailure = error => ({
+  type: SEARCH_BOOKS_FAILURE,
+  error,
+});
+
+export const searchBooks = (searchBy, searchParam) => (dispatch) => {
+  dispatch(searchingBooks());
+  return axios.post(`${apiURL}/books/search?${searchBy}=${searchParam}`)
+    .then((response) => {
+      dispatch(searchBooksSuccess(response.data.books));
+      dispatch(push('/books'));
+    })
+    .catch((error) => {
+      if (error.response) {
+        dispatch(searchBooksFailure(error.response.data.error));
+      } else {
+        dispatch(searchBooksFailure(error.message));
+      }
+    });
+};
 
 const editingBook = () => ({
   type: EDIT_BOOK_REQUEST,
@@ -121,7 +149,6 @@ export const editBook = (bookId, bookIndex, book) => (dispatch) => {
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response);
         dispatch(editBookFailure(error.response.data.error || error.response.data.msg));
       } else {
         dispatch(editBookFailure(error.message));
@@ -146,14 +173,12 @@ const deleteBookFailure = deleteError => ({
 export const deleteBook = (bookId, index) => (dispatch) => {
   dispatch(deleteBookRequest());
   setHeader();
-  return axios.post(`${apiURL}/books/remove/${bookId}`)
-    .then((response) => {
-      console.log(response);
+  return axios.delete(`${apiURL}/books/${bookId}`)
+    .then(() => {
       dispatch(deleteBookSuccess(index));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response.data);
         dispatch(deleteBookFailure(error.response.data.msg || error.response.data.error));
       } else {
         dispatch(deleteBookFailure(error.message));
@@ -165,10 +190,9 @@ export const getMostUpvotedBooks = () => (dispatch) => {
   dispatch(getUpvotedBooksRequest());
   return axios.get(`${apiURL}/books?sort=upvotes&order=desc`)
     .then((response) => {
-      dispatch(getUpvotedBooksSuccess(response.data));
+      dispatch(getUpvotedBooksSuccess(response.data.books));
     })
     .catch((error) => {
       dispatch(getUpvotedBooksFailure(error));
     });
 };
-
