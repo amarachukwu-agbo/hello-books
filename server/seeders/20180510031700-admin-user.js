@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const { ADMIN_PASSWORD } = process.env;
+const { ADMIN_PASSWORD, ADMIN_EMAIL } = process.env;
 
 const hash = bcryptjs.hashSync(ADMIN_PASSWORD, salt);
 
@@ -15,20 +15,10 @@ module.exports = {
       'Users',
       [
         {
-          id: 10000,
-          firstName: 'Amarachi',
-          lastName: 'Agbo',
-          email: 'amarachukwu.agbo@gmail.com',
-          password: hash,
-          role: 'Admin',
-          createdAt: '2018-05-10 04:11:52.181+01',
-          updatedAt: '2018-05-10 04:11:52.181+01',
-        },
-        {
           id: 20000,
           firstName: 'Amarachi',
           lastName: 'Agbo',
-          email: 'amarkipkip@gmail.com',
+          email: ADMIN_EMAIL,
           password: hash,
           role: 'Admin',
           createdAt: '2018-05-10 04:11:52.181+01',
