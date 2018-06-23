@@ -22,20 +22,20 @@ class AdminRoute extends React.Component {
     } = this.props;
 
     return (
-        <Route
-            {...rest}
-                render={props =>
-                    (isAuthenticated && user.role === 'Admin'
-                        ?
-                            <Component {...props} />
-                        : (
-                            <Redirect to={{
-                                pathname: '/',
-                                state: { from: props.location },
-                            }} />
-                        ))
-                }
-            />
+      <Route
+        {...rest}
+        render={props =>
+          (isAuthenticated && user.role === 'Admin'
+            ?
+            <Component {...props} />
+            : (
+              <Redirect to={{
+                pathname: '/',
+                state: { from: props.location },
+              }} />
+            ))
+        }
+      />
     );
   }
 }

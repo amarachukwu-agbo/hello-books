@@ -18,6 +18,7 @@ import {
   REVIEW_BOOK_REQUEST,
   REVIEW_BOOK_FAILURE,
 } from '../actions/types';
+import Notify from '../helpers/notify';
 
 const initialState = {};
 
@@ -51,14 +52,14 @@ const book = (state = initialState, action) => {
       };
     }
     case FAVORITE_FAILURE: {
-      Materialize.toast(action.error, 1000);
+      Notify.notifyError(action.error);
       return {
         ...state,
         isFavoriting: false,
       };
     }
     case FAVORITE_SUCCESS: {
-      Materialize.toast('Book has been added to favorites', 2000);
+      Notify.notifySuccess('Book has been added to favorites');
       return {
         ...state,
         book: { ...state.book, favCount: action.favCount },
@@ -72,7 +73,7 @@ const book = (state = initialState, action) => {
       };
     }
     case UPVOTE_FAILURE: {
-      Materialize.toast(action.error, 1000);
+      Notify.notifyError(action.error);
       return {
         ...state,
         isUpvoting: false,
@@ -92,7 +93,7 @@ const book = (state = initialState, action) => {
       };
     }
     case DOWNVOTE_FAILURE: {
-      Materialize.toast(action.error, 1000);
+      Notify.notifyError(action.error);
       return {
         ...state,
         isDownvoting: false,
@@ -112,14 +113,14 @@ const book = (state = initialState, action) => {
       };
     }
     case BORROW_BOOK_FAILURE: {
-      Materialize.toast(action.error, 1000);
+      Notify.notifyError(action.error);
       return {
         ...state,
         isBorrowing: false,
       };
     }
     case BORROW_BOOK_SUCCESS: {
-      Materialize.toast('Your borrow request has been sent. Check status in your profile', 2000);
+      Notify.notifySuccess('Your borrow request has been sent. Check status in your profile');
       return {
         ...state,
         isBorrowing: false,
@@ -133,7 +134,7 @@ const book = (state = initialState, action) => {
       };
     }
     case REVIEW_BOOK_FAILURE: {
-      Materialize.toast(action.error, 1000);
+      Notify.notifyError(action.error);
       return {
         ...state,
         isReviewing: false,
@@ -142,7 +143,7 @@ const book = (state = initialState, action) => {
     case REVIEW_BOOK_SUCCESS: {
       return {
         ...state,
-        book: action.book,
+        book: { ...action.book, bookReviews: action.book.bookReviews.reverse() },
         isReviewing: false,
       };
     }

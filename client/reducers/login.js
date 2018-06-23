@@ -1,4 +1,5 @@
 import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE, LOG_OUT } from '../actions/types';
+import Notify from '../helpers/notify';
 
 const initialstate = {
   isLoggingIn: false,
@@ -31,6 +32,7 @@ const login = (state = initialstate, action) => {
       };
     }
     case LOGIN_FAILURE: {
+      Notify.notifyError(`Login Failed. ${action.error}`);
       return {
         ...state,
         isLoggingIn: false,

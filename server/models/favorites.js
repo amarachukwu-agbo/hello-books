@@ -19,6 +19,7 @@ const favoriteSchema = (sequelize) => {
       foreignKey: 'bookId',
       as: 'favBook',
       onDelete: 'CASCADE',
+      hooks: true,
     });
   };
   return Favorites;

@@ -19,19 +19,19 @@ class ReviewForm extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-            <form onSubmit={ handleSubmit(this.submitForm) } >
-                <div className="row">
-                    <div className="input-field col s8">
-                        <Field name="review" label="Review" type="textarea" component={ TextArea }/>
-                    </div>
-                    <div className="input-field col s4">
-                        <button className="btn btn-flat btn-small teal" disabled= { this.props.isReviewing }>
-                            <i className="material-icons white-text">comment</i>
+      <form onSubmit={handleSubmit(this.submitForm)} >
+        <div className="books-list">
+          <div className="input-field">
+            <Field name="review" label="Review" type="textarea" placeholder="Add a review ..." component={TextArea} />
+          </div>
+          <div>
+            <button className="btn btn-flat btn-small primary-button" disabled={this.props.isReviewing}>
+              submit
                         </button>
-                    </div>
-                </div>
-                <br />
-            </form>
+          </div>
+        </div>
+        <br />
+      </form>
     );
   }
 }

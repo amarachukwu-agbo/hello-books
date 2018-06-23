@@ -23,7 +23,6 @@ const getUserFavorites = userId => (dispatch) => {
   setHeader();
   return axios.get(`${apiURL}/users/${userId}/favBooks`)
     .then((response) => {
-      console.log(response.data);
       dispatch(favoritesSuccess(response.data.favorites));
     })
     .catch((error) => {

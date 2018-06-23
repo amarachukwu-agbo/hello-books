@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Navbar from './Navbar';
 import PageFooter from './PageFooter';
 import Book from './Book';
 import BooksDetailsPage from './BookDetailsPage';
 import Preloader from './Preloader';
-import { getBooks, searchBook } from '../actions/books';
+import { getBooks, searchBooks } from '../actions/books';
 import materialize from '../helpers/materialize';
+import SearchBar from './Searchbar';
+import notify from '../helpers/notify';
 
 class Books extends Component {
-  constructor(props) {
-    super(props);
-    this.onInputChange = this.onInputChange.bind(this);
-  }
   componentDidMount() {
     materialize();
-    this.props.getBooks();
-  }
-  onInputChange(event) {
-    this.props.searchBook(event.target.value);
+    if (!this.props.searchResults) {
+      this.props.getBooks();
+    }
   }
 
   render() {
@@ -30,23 +28,12 @@ class Books extends Component {
                 <Switch>
                     <Route exact path = {`${match.url}/:bookId`} component = { BooksDetailsPage } />
                     <Route exact path = { `${match.url}`} render= {() => (
-                        <div className="section white wrapper">
+                        <div className="search-section white wrapper">
                         <br/>
-                            <div className="container center">
-                                <h4 className="text-darken-3 book-header">Available books</h4>
-                            </div>
-                            { this.props.books &&
-                                    <div className="container">
-                                        <div className="input-field">
-                                            <label><i className="material-icons">search</i>Search Books...</label>
-                                            <input type="text"
-                                                onChange = {e => this.onInputChange(e) }
-                                            />
-                                        </div>
-                                </div>
-                            }
-
-                            <div className="row">
+                            <SearchBar {...this.props}/>
+                            {this.props.searchError && notify(this.props.searchError) }
+                        <ToastContainer />
+                            <div className="row book-list">
                                 { this.props.isFetching &&
                                     <div className="row center">
                                         <Preloader />
@@ -58,8 +45,21 @@ class Books extends Component {
                                     </div>
                                 }
                                 { this.props.books &&
-                                    this.props.currentlyDisplayed.map((book, index) =>
+                                    this.props.books.map((book, index) =>
                                         <Book key= { index } book= { book } />)
+                                }
+                                { this.props.searchResults &&
+                                    <div>
+                                        <div className="row center">
+                                        <Link to = "/books">
+                                        <button className= "btn btn-flat btn-medium search-button darken-2 waves-effect waves-light"
+                                        onClick = {this.props.getBooks }><i className="material-icons left">arrow_back </i>
+                                        Books Catalog </button>
+                                        </Link>
+                                        </div>
+                                    <div className="row">{this.props.searchResults.map((book, index) =>
+                                        <Book key= { index } book= { book } />)}</div>
+                                    </div>
                                 }
                             </div>
                         </div>)}
@@ -75,6 +75,6 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   getBooks: () => { dispatch(getBooks()); },
-  searchBook: (value) => { dispatch(searchBook(value)); },
+  searchBooks: (searchBy, searchParam) => { dispatch(searchBooks(searchBy, searchParam)); },
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Books);

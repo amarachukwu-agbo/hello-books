@@ -1,10 +1,17 @@
 checks:
   method-lines:
     enabled: false
+  return-statements:
+    enabled: false
+  duplication:
+    enabled: false
+    config:
+      languages:
+      - javascript
 exclude_patterns:
 - "server/migrations/"
 - "server/middlewares"
 - "server/models"
-- "server/Tests"
+- "server/tests"
 - "tests/"
 - "spec/"

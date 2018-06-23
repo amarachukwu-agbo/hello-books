@@ -9,6 +9,10 @@ node_js:
   - node
   - "8"
 
+branches:
+  only: 
+    - develop
+
 before_script:
   - npm install 
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter

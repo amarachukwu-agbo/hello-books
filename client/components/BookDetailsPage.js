@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import { getBook, favoriteBook, upvoteBook, downvoteBook, borrowBook, reviewBook } from '../actions/book';
 import PreLoader from './Preloader';
 import BookDetails from './BookDetails';
@@ -14,27 +15,28 @@ class BookDetailsPage extends Component {
   render() {
     if (this.props.isFetching) {
       return (
-                <div className="container wrapper">
-                    <div className="row center" style={{ minHeight: '500px' }}>
-                    <br/><br/><PreLoader /></div>
-                </div>
+        <div className="container wrapper">
+          <div className="row center" style={{ minHeight: '500px' }}>
+            <br /><br /><PreLoader /></div>
+        </div>
       );
     }
     if (this.props.error) {
       return (
-                <div className="row center wrapper">
-                   <br/><div className="container"><h4 className="flow-text red-text"> {`Oops! Couldn't fetch requested book. ${this.props.error}`} </h4></div>
-                </div>
+        <div className="row center wrapper">
+          <br /><div className="container"><h4 className="flow-text red-text"> {`Oops! Couldn't fetch requested book. ${this.props.error}`} </h4></div>
+        </div>
       );
     }
     return (
-            <div className="container wrapper">
-                { this.props.book && <BookDetails book = { this.props.book } { ...this.props }/> }
-                <br/>
-              { this.props.book &&
-                <Review reviews = { this.props.book.bookReviews } { ...this.props }/>
-              }
-            </div>
+      <div className="container wrapper">
+        <ToastContainer />
+        {this.props.book && <BookDetails book={this.props.book} {...this.props} />}
+        <br />
+        {this.props.book &&
+          <Review reviews={this.props.book.bookReviews} {...this.props} />
+        }
+      </div>
     );
   }
 }

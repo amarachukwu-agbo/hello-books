@@ -1,4 +1,5 @@
 import { SIGN_UP_SUCCESS, SIGNING_UP, SIGN_UP_FAILURE } from '../actions/types';
+import Notify from '../helpers/notify';
 
 const initialState = {
   isSigningUp: false,
@@ -11,6 +12,7 @@ const initialState = {
 const auth = (state = initialState, action) => {
   switch (action.type) {
     case SIGN_UP_FAILURE:
+      Notify.notifyError(action.error);
       return {
         ...state,
         hasErrored: true,
@@ -27,6 +29,7 @@ const auth = (state = initialState, action) => {
         user: null,
       };
     case SIGN_UP_SUCCESS:
+      Notify.notifySuccess('Sign Up Successful');
       return {
         ...state,
         isSigningUp: false,

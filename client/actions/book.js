@@ -42,7 +42,6 @@ export const getBook = params => (dispatch) => {
   dispatch(getBookRequest());
   return axios.get(`${apiURL}/books/${params}`)
     .then((response) => {
-      console.log(response);
       dispatch(getBookSuccess(response.data.book));
     })
     .catch((error) => {
@@ -81,13 +80,11 @@ export const favoriteBook = (userId, bookId) => (dispatch) => {
   setHeader();
   return axios.post(`${apiURL}/books/${bookId}/favorite`)
     .then((response) => {
-      console.log(response);
       dispatch(favoriteSuccess(response.data.book.favCount));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response.data);
-        dispatch(favoriteFailure(error.response.data.msg));
+        dispatch(favoriteFailure(error.response.data.error));
       } else {
         dispatch(favoriteFailure(error.message));
       }
@@ -113,13 +110,11 @@ export const upvoteBook = (userId, bookId) => (dispatch) => {
   setHeader();
   return axios.post(`${apiURL}/books/${bookId}/upvote`)
     .then((response) => {
-      console.log(response);
-      dispatch(upvoteSuccess(response.data.upvote.book));
+      dispatch(upvoteSuccess(response.data.vote.book));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response.data);
-        dispatch(upvoteFailure(error.response.data.msg));
+        dispatch(upvoteFailure(error.response.data.error));
       } else {
         dispatch(upvoteFailure(error.message));
       }
@@ -145,13 +140,11 @@ export const downvoteBook = (userId, bookId) => (dispatch) => {
   setHeader();
   return axios.post(`${apiURL}/books/${bookId}/downvote`)
     .then((response) => {
-      console.log(response);
-      dispatch(downvoteSuccess(response.data.downvote.book));
+      dispatch(downvoteSuccess(response.data.vote.book));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response.data);
-        dispatch(downvoteFailure(error.response.data.msg));
+        dispatch(downvoteFailure(error.response.data.error));
       } else {
         dispatch(downvoteFailure(error.message));
       }
@@ -177,13 +170,11 @@ export const borrowBook = (userId, bookId, request) => (dispatch) => {
   setHeader();
   return axios.post(`${apiURL}/users/${userId}/borrow/${bookId}/`, request)
     .then((response) => {
-      console.log(response);
-      dispatch(borrowBookSuccess(response.data.msg));
+      dispatch(borrowBookSuccess(response.data.message));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response.data);
-        dispatch(borrowBookFailure(error.response.data.msg));
+        dispatch(borrowBookFailure(error.response.data.error));
       } else {
         dispatch(borrowBookFailure(error.message));
       }
@@ -209,12 +200,10 @@ export const reviewBook = (userId, bookId, review) => (dispatch) => {
   setHeader();
   return axios.post(`${apiURL}/books/${bookId}/review`, review)
     .then((response) => {
-      console.log(response);
       dispatch(reviewBookSuccess(response.data.reviewedBook));
     })
     .catch((error) => {
       if (error.response) {
-        console.log(error.response.data);
         dispatch(reviewBookFailure(error.response.data.msg));
       } else {
         dispatch(reviewBookFailure(error.message));

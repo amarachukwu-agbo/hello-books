@@ -1,23 +1,18 @@
 import React from 'react';
+import imagePlaceholder from '../public/images/profile-placeholder.png';
 
 const Bio = props => (
   <div>
     <div className="row">
-      <div className="col s12 m6 l6">
-        <p className="bold"><i className="material-icons prefix teal-text">account_circle</i><span className="bold blue-text">First Name:</span>
-          <span> {props.bio.firstName}</span></p>
+      <div className="profile-img-div left">
+        <img src={imagePlaceholder} className="profile-img responsive-img" />
       </div>
-      <div className="col s12 m6 l6">
-        <p><span className="bold blue-text">LastName: </span><span> {props.bio.lastName}</span></p>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col s12 m6 l6">
-        <p className="bold"><i className="material-icons prefix teal-text">email</i><span className="bold blue-text">Email: </span>
+      <div className="bio-details left collection">
+      <p className="collection-item"><strong className="bold primary-text">First Name: </strong><span> {props.bio.firstName}</span></p>
+        <p className="collection-item"><strong className="bold primary-text">Last Name: </strong><span> {props.bio.lastName}</span></p>
+        <p className="collection-item"><strong className="bold primary-text">Email: </strong>
           <span> {props.bio.email}</span></p>
-      </div>
-      <div className="col s12 m6 l6">
-        <p><span className="bold blue-text">Member Since: </span><span> {props.bio.createdAt.split('T')[0]}</span></p>
+        <p className="collection-item"><strong className="bold primary-text">Member Since: </strong><span> {props.bio.createdAt.split('T')[0]}</span></p>
       </div>
     </div>
   </div>

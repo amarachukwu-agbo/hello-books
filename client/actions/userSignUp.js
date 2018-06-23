@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { push } from 'react-router-redux';
 import { SIGN_UP_SUCCESS, SIGNING_UP, SIGN_UP_FAILURE } from './types';
+import { loginSuccess } from './login';
+import setUser from '../helpers/setuser';
 
 export const apiURL =
 process.env.NODE_ENV === 'production' ?
@@ -26,13 +28,13 @@ export const signUp = user => (dispatch) => {
   return axios.post(`${apiURL}/users/signup`, user)
     .then((response) => {
       dispatch(signUpSuccess(response));
-      localStorage.setItem('userToken', response.data.token);
+      setUser(response);
+      dispatch(loginSuccess(response.data.user));
       setTimeout(() => {
-        dispatch(push('/login'));
+        dispatch(push('/'));
       }, 2000);
     })
     .catch((error) => {
-      console.log(error.response || error.message);
       if (error.response) {
         dispatch(signUpFailure(error.response.data.error));
       } else {

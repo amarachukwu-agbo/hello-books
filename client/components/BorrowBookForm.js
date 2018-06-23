@@ -13,7 +13,6 @@ class BorrowBookForm extends Component {
   }
 
   submitForm(values) {
-    console.log(values);
     const request = { ...values, reason: values.reason.value };
     this.props.borrowBook(this.props.user.id, this.props.book.id, request);
   }
@@ -22,42 +21,42 @@ class BorrowBookForm extends Component {
     const {
       handleSubmit, submitting, book,
     } = this.props;
-    console.log(book);
+
     return (
-            <form onSubmit = { handleSubmit(this.submitForm)}>
-                <div className=" row center-align lighten-2">
-                    <h5>Borrow Book</h5>
-                </div>
+      <form onSubmit={handleSubmit(this.submitForm)}>
+        <div className="row center-align lighten-2">
+          <h4 className="modal-header-text">Borrow Book</h4>
+        </div>
+        <div className="row">
+          <div className="input-field row">
+            <Field name="bookTitle" label="Book Title" defaultValue={book.title} component={InputText} disabled />
+          </div>
+          <div className="input-field row">
+            <label className="active">Return Date</label>
+            <Field name="returnDate" showTime={false} component={renderDateTimePicker} />
+          </div>
+          <div className="input-field row">
+            <Field name="comment" type="text" label="Comment(optional...)" component={InputText} />
+          </div>
+          <div className="input-field row">
+            <label className="active">Reason for borrow</label>
+            <Field name="reason" component={renderDropdownList} data={borrowReason} textField="reason" valueField="value" />
+          </div>
+        </div><br />
+
+        <div className="row">
+          <div className="col s12 center-align">
+            <button className="btn waves-effect waves-light primary-button" type="submit" disabled={submitting} >
+              Submit
                 {
-                    this.props.isBorrowing &&
-                    <div className="row">
-                        <p className="center sign-up-success"> Sending your borrow request... </p>
-                    </div>
+                  this.props.isBorrowing ?
+                    <i className="fa fa-spinner fa-spin" />
+                    : <i className="material-icons right">send</i>
                 }
-
-                <div className="row">
-                    <div className="input-field row">
-                        <Field name="bookTitle" label="Book Title" defaultValue = { book.title } component={InputText} disabled />
-                    </div>
-                    <div className="input-field row">
-                        <label className="active">Return Date</label>
-                        <Field name="returnDate" showTime = { false }component={renderDateTimePicker} />
-                    </div>
-                    <div className="input-field row">
-                        <Field name="comment" type = "text" label="Comment(optional...)" component={InputText} />
-                    </div>
-                    <div className="input-field row">
-                        <label className="active">Reason for borrow</label>
-                        <Field name="reason" component={renderDropdownList} data = { borrowReason } textField = "reason" valueField = "value"/>
-                    </div>
-                </div><br/>
-
-                <div className="row">
-                    <div className="col s12 center-align">
-                        <button className="btn waves-effect waves-light blue" type="submit" disabled={submitting} >Submit <i className="material-icons right">send</i></button>
-                    </div>
-                </div>
-            </form>
+            </button>
+          </div>
+        </div>
+      </form>
 
     );
   }

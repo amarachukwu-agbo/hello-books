@@ -7,6 +7,7 @@ import {
   HANDLE_RETURN_REQUEST_FAILURE,
 }
   from '../actions/types';
+import Notify from '../helpers/notify';
 
 const initialState = {};
 
@@ -51,7 +52,7 @@ const returnRequests = (state = initialState, action) => {
       };
     }
     case HANDLE_RETURN_REQUEST_FAILURE: {
-      Materialize.toast(`Failed to handle request. ${action.error}`, 2000);
+      Notify.notifyError(`Failed to handle request. ${action.error}`);
       return {
         ...state,
         isHandlingReturnRequest: false,

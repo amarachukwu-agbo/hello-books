@@ -1,56 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logo from '../../public/images/logo.png';
+import { ToastContainer } from 'react-toastify';
+import Navbar from '../Navbar';
+import books2 from '../../public/images/books(4).jpg';
 import PageFooter from '../PageFooter';
 import SignUpForm from './SignUpForm';
 import { signUp } from '../../actions/userSignUp';
 
+
 class SignUpPage extends Component {
-  constructor(props) {
-    super(props);
-    this.renderSignUpMessage = this.renderSignUpMessage.bind(this);
-  }
-
-  renderSignUpMessage() {
-    let signUpMessage = '';
-    if (this.props.isSigningUp) {
-      signUpMessage = 'Signing you up...';
-    }
-    if (this.props.hasErrored) {
-      signUpMessage = `Sign up failed. ${this.props.error}`;
-    }
-    if (this.props.user) {
-      signUpMessage = 'Sign up successful';
-    }
-    return signUpMessage;
-  }
-
   render() {
+    const style = {
+      backgroundImage: `url(${books2})`,
+    };
     return (
-            <div className="grey lighten-4">
-                <div className="row wrapper">
-                    <div className="col s1 m2 l3 "></div>
-                    <div className="col s10 m8 l6">
-                        <div className="row card-panel">
-                            <div className="row">
-                                <div className="center-align">
-                                    <img src={logo} alt="logo" className="form-logo" />
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className = "row center-align">
-                                    <span className = {this.props.hasErrored ? 'sign-up-error' : 'sign-up-success' } >
-                                        { this.renderSignUpMessage() }
-                                    </span>
-                                </div>
-                                <SignUpForm handler = { this.props.signUp } />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col s1 m2 l3"></div>
-                </div>
-                <PageFooter />
+      <div className="row wrap">
+        <Navbar />
+        <div className="valign-wrapper" style={style}>
+          <div className="col s1 m2 l4 "></div>
+          <div className="col s10 m7 l5">
+            <div className="row form-wrap card-panel">
+                <ToastContainer />
+                <SignUpForm handler={this.props.signUp} {...this.props}/>
             </div>
+          </div>
+          <div className="col s1 m2 l4"></div>
+        </div>
+        <PageFooter />
+      </div>
     );
   }
 }

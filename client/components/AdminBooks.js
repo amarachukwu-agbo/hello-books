@@ -1,51 +1,47 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
+import { Modal } from 'react-materialize';
 import EditBookForm from './EditBookForm';
 
 class AdminBooks extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isOpen: false,
-    };
     this.toggleModal = this.toggleModal.bind(this);
-    this.book = { bookId: '', bookIndex: '' };
+    this.state = {
+      book: { bookId: '', bookIndex: '' },
+    };
   }
 
-  toggleModal(bookId, bookIndex) {
-    const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen });
-    this.book = { bookId, bookIndex };
-    console.log(this.book);
+  setBook = (bookId, bookIndex) => {
+    this.setState({ book: { bookId, bookIndex } });
+    this.toggleModal();
+  }
+
+
+  toggleModal = () => {
+    $('#edit-modal').modal('open');
   }
 
   render() {
     const { books, deleteBook, isDeleting } = this.props;
-    const { isOpen } = this.state;
     if (!books.length) {
       return (
-        <div className="row center">
+        <div className="row wrapper center">
             <p className="grey-text">You have not added any books</p>
         </div>
       );
     }
 
     return (
-        <div className="review">
-            <h4 className="center">Books Catalog</h4>
+        <div>
+            <h5 className="book-header center">Books Catalog</h5>
             <div className="divider"></div>
-            <Modal isOpen = { isOpen } onRequestClose = { this.toggleModal } className="Modal"
-            shouldCloseOnOverlayClick = { true } overlayClassName="Overlay" ariaHideApp = { false }>
-                <div className="row">
-                    <div className="col s1 m2 l3"></div>
-                    <div className="card-panel col s12 m8 l6">
-                        <EditBookForm index = { this.book.bookIndex } { ...this.props }
-                        book = {this.props.books.find(book => book.id === this.book.bookId) } />
+            <Modal id="edit-modal" actions={null} >
+                <div className="container">
+                        <EditBookForm index = { this.state.book.bookIndex } { ...this.props }
+                         book = {this.state.book}/>
                     </div>
-                    <div className="col s1 m2 l3"></div>
-                </div>
             </Modal>
-            <table class="striped responsive-table">
+            <table className="striped responsive-table">
                 <thead>
                     <tr>
                         <th>Book</th>
@@ -66,8 +62,8 @@ class AdminBooks extends Component {
                             <td> { book.subject } </td>
                             <td>{ book.description } </td>
                             <td> { book.quantity } </td>
-                            <td><button id= { `editButton${index}` } className="btn-flat btn-small" onClick= { this.toggleModal.bind(null, book.id, index) }><i class="material-icons blue-text">edit</i></button></td>
-                            <td> <button id = {`deleteButton${index}` } className="btn-flat btn-small" disabled={ isDeleting } onClick={deleteBook.bind(null, book.id, index)}><i class="material-icons blue-text">delete</i></button></td>
+                            <td><button id= { `editButton${index}` } className="btn-flat btn-small" onClick= { () => { this.setBook(book.id, index); }}><i className="material-icons primary-text">edit</i></button></td>
+                            <td> <button id = {`deleteButton${index}` } className="btn-flat btn-small" disabled={ isDeleting } onClick={ () => { deleteBook(book.id, index); }}><i className="material-icons red-text">delete</i></button></td>
                         </tr>)}
                 </tbody>
             </table>

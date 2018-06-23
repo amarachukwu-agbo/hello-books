@@ -80,8 +80,8 @@ module.exports = {
           quantity: 0,
           subject: 'Autobiography',
           imageURL: 'https://images-na.ssl-images-amazon.com/images/I/51O5LjozmAL._SX303_BO1,204,203,200_.jpg',
-          createdAt: '2018-07-10 04:11:52.181+01',
-          updatedAt: '2018-07-10 04:11:52.181+01',
+          createdAt: '2018-05-10 04:11:52.181+01',
+          updatedAt: '2018-05-10 04:11:52.181+01',
         },
 
         {
@@ -116,8 +116,8 @@ module.exports = {
           quantity: 10,
           subject: 'Romance',
           imageURL: 'https://images-na.ssl-images-amazon.com/images/I/61TbLNxP6rL.jpg',
-          createdAt: '2018-07-10 04:11:52.181+01',
-          updatedAt: '2018-07-10 04:11:52.181+01',
+          createdAt: '2018-05-10 04:11:52.181+01',
+          updatedAt: '2018-05-10 04:11:52.181+01',
         },
 
         {
@@ -140,8 +140,8 @@ module.exports = {
           quantity: 25,
           subject: 'Science and Fiction',
           imageURL: 'https://images-na.ssl-images-amazon.com/images/I/617m43n-HWL._SX331_BO1,204,203,200_.jpg',
-          createdAt: '2018-09-10 04:11:52.181+01',
-          updatedAt: '2018-09-10 04:11:52.181+01',
+          createdAt: '2018-04-10 04:11:52.181+01',
+          updatedAt: '2018-04-10 04:11:52.181+01',
         },
 
       ], {},

@@ -58,26 +58,38 @@ module.exports = (sequelize) => {
     Book.hasMany(models.Review, {
       foreignKey: 'bookId',
       as: 'bookReviews',
+      onDelete: 'cascade',
+      hooks: true,
     });
     Book.hasMany(models.Favorites, {
       foreignKey: 'bookId',
       as: 'favBook',
+      onDelete: 'cascade',
+      hooks: true,
     });
     Book.hasMany(models.Votes, {
       foreignKey: 'bookId',
       as: 'bookVotes',
+      onDelete: 'cascade',
+      hooks: true,
     });
     Book.hasMany(models.BorrowedBooks, {
       foreignKey: 'bookId',
       as: 'borrowedBooks',
+      onDelete: 'cascade',
+      hooks: true,
     });
     Book.hasMany(models.BorrowRequests, {
       foreignKey: 'bookId',
       as: 'borrowRequests',
+      onDelete: 'cascade',
+      hooks: true,
     });
     Book.hasMany(models.ReturnRequests, {
       foreignKey: 'bookId',
       as: 'returnRequests',
+      onDelete: 'cascade',
+      hooks: true,
     });
   };
   return Book;

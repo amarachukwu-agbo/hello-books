@@ -6,15 +6,95 @@ $sucess-color: #008000;
 $overlay-color: rgba(32, 40, 46, 0.5);
 $modal-color: #fff;
 $modal-box-color: rgba(0, 0, 0, 0.5);
+$primary-color: #3F55BA;
+$special-text : 'Playfair Display';
+$nav-color: #1B1B1B;
+
+body {
+  font-family: 'Raleway';
+}
 
 .form-logo {
   height: $form-image;
   width: $form-image;
 }
 
+.input-field input:focus  {
+  color: #191919 !important;
+}
+
+.auth-text {
+  font-weight: 700;
+}
+
+.input-field .prefix.active {
+  color: $primary-color;
+}
+
+.admin {
+  width: 95%;
+  margin: auto;
+}
+
+.admin table {
+  border: 1px solid #D3D3D3;
+  border-radius: 10px;
+}
+
+.admin thead {
+  background-color: $nav-color;
+}
+
+.admin th {
+  color: #ffffff;
+}
+
+.row .input-field input:focus {
+  border-bottom: 1px solid $primary-color !important;
+  box-shadow: 0 1px 0 0 $primary-color !important
+}
+
+.btn:focus {
+  background-color: $primary-color;
+}
+
 .img-logo {
   height: $logo-image;
   width: $logo-image;
+  margin-left: 30px;
+}
+
+.img-upload {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.img-upload img {
+  margin-right: 10px;
+  height: 64px;
+  width: 64px;
+}
+
+.dropzone {
+  width: 100%;
+  border-width: 1px;
+  color: #9E9E9E;
+  border-color: #3575CC;
+  border-style: dashed;
+  border-radius: 5px;
+}
+
+.progress-bar{
+  width: 200px;
+  position: relative;
+  height: 8px;
+  margin-top: 4px;
+}
+.progress-bar .progress{
+  height: 8px;
+  background-color: #ff0000;
+  width: 0;
 }
 
 .books-image {
@@ -22,32 +102,67 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   width: 200px;
 }
 
-.parallax-container {
-  height: 400px;
-  opacity: 0.8;
+#modal-header {
+  margin: 0px !important;
 }
 
-.Modal {
-  background-color: $overlay-color;
-  bottom: 0;
-  box-shadow: 0 5px 20px 0 ;
-  left: 20%;
-  outline: none;
-  overflow: auto;
-  position: absolute;
-  right: 20%;
-  top: 0;
-  z-index: 2000;
+.action-button {
+  background-color: #FF0000;
+  color: #FFF;
 }
 
-.Overlay {
-  background-color: $overlay-color;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1000;
+.action-button:hover {
+  background-color: #FFF;
+  border: 1px solid #FF0000;
+  color: #FF0000 !important;
+}
+
+.primary-button {
+  background-color: $primary-color;
+  color: #FFF;
+}
+
+.primary-button:hover {
+  background-color: #fff;
+  border: 1px solid $primary-color;
+  color: $primary-color !important;
+}
+
+.slider-div {
+  opacity: 0.9;
+  font-family: $special-text;
+  font-stretch: narrower;
+}
+
+.slider-text {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+.slider-div p:first-child {
+  font-size: 3.5rem;
+  line-height: 110%;
+  margin: 5px;
+}
+
+nav li :hover{
+  background-color: grey !important;
+}
+
+.section-search, .foot{
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.section-search input{
+  border-radius: 5px !important;
+}
+
+.search-div{
+  font-weight: 400;
+}
+
+.search-section{
+  margin-top: -25px;
 }
 
 .book-text {
@@ -70,10 +185,6 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   font-size: $error-size;
 }
 
-.favorite-img {
-  height: 120px;
-}
-
 .book-list {
   width: 90%;
 }
@@ -82,23 +193,34 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   min-height: calc(100vh - 50px);
 }
 
-.pageFooter {
-  height: 50px;
+.page-footer {
+  height: 70px;
 }
 
 .parallax-container,
 .book-header {
-  font-family: "Old Standard TT";
+  font-family: $special-text;
   font-stretch: narrower;
+}
+
+.book-details-header {
+  font-family: $special-text;
+  font-stretch: narrower;
+  color: $primary-color;
+}
+
+.book-detail-icons {
+  color: #323232;
+  background-color: #fff;
+}
+
+.book-detail-icons:hover {
+  color: $primary-color;
+  background-color: #fff;
 }
 
 .book-image {
   min-height: 400px;
-}
-
-.card {
-  height: 400px;
-  width: 300px;
 }
 
 .card-image img {
@@ -113,14 +235,115 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
 }
 
 .review {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 10px;
+  margin-top: 0;
+  padding: 0 10px 10px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  max-height: 300px;
+  overflow: scroll;
+}
+
+.search-button {
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  text-align: center;
+}
+
+.search-button:hover {
+  color: #fff;
+  background-color: $primary-color;
+}
+
+.favorite-card {
+  min-height: 150px;
+}
+
+.vertical-divider {
+  border: 1px solid black;
+  width: 1px;
 }
 
 .dashboard {
   height: 15%;
   background: linear-gradient(white, grey),
 }
+
+.nav-wrapper {
+  background-color: #1B1B1B !important;
+}
+
+.author {
+  font-size: 16px;
+}
+
+.favorite-card a, .primary-text, th{
+  color: $primary-color;
+}
+
+.wrap {
+  margin-bottom: 0;
+}
+
+.form-wrap {
+  margin: 25px;
+}
+
+
+.books-list .input-field {
+  margin : 0;
+  padding: 0 10px 0 10px;
+}
+
+.books-list button {
+  margin-left: 10px;
+}
+
+.books-list textarea {
+  padding: 3px 0 0 3px;
+}
+
+.profile-img {
+  width: 200px;
+  border-radius: 5px;
+}
+
+.bio-details {
+  margin-left: 20px;
+  width: 70%;
+  height: 180px;
+}
+
+.profile-div {    
+  margin:30px;
+  min-height: 220px;
+  padding: 5px;
+  background-image: linear-gradient(top, $nav-color, $nav-color 20%, transparent 20%, transparent 100%);
+  background-image: -webkit-linear-gradient(top, $nav-color, $nav-color 20%, transparent 20%, transparent 100%)  
+}
+
+.add-book {
+  margin:30px;
+  padding: 5px;
+  background-image: linear-gradient(top, $nav-color, $nav-color 8%, transparent 8%, transparent 100%);
+  background-image: -webkit-linear-gradient(top, $nav-color, $nav-color 8%, transparent 8%, transparent 100%); 
+}
+
+.add-book h5 {
+  color: #FFF;
+  font-family: $special-text;
+}
+
+.profile-div h6 {
+  margin-bottom: 25px;
+}
+
+.modal-header-text {
+  color: $primary-color;
+  font-family: $special-text;
+  margin-bottom: 30px;
+}
+
 
 @media (max-width: 600px) {
   .brand-logo img {
@@ -130,21 +353,21 @@ $modal-box-color: rgba(0, 0, 0, 0.5);
   .parallax-container .dashboard{
     height: 15%;
   }
+}
 
-  .favorite-img {
-    height: 100px;
+@media (max-width: 820px) {
+  .profile-img {
+    width: 150px;
+    margin: 0;
   }
 
-  .modal {
-    background-color: $modal-color;
-    bottom: 0;
-    box-shadow: 0 5px 20px 0 $modal-box-color;
-    left: 5%;
-    outline: none;
-    overflow: auto;
-    position: absolute;
-    right: 5%;
-    top: 0;
-    z-index: 2000;
+  .profile-img-div {
+    width: 100%;
+    margin-left: 40%;
+  }
+
+  .bio-details {
+    width: 100%;
+    margin: auto;
   }
 }
