@@ -1,13 +1,11 @@
+version: "2"
 checks:
   method-lines:
     enabled: false
   return-statements:
     enabled: false
-  duplication:
+  similar-code:
     enabled: false
-    config:
-      languages:
-      - javascript
 exclude_patterns:
 - "server/migrations/"
 - "server/middlewares"

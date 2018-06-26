@@ -1,6 +1,6 @@
 // Import necessary modules
 import models from '../models';
-import Helper from '../helpers';
+import Helper from '../helpers/Helper';
 
 const Sequelize = require('sequelize');
 

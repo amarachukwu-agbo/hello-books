@@ -1,3 +1,7 @@
+import nodemailer from 'nodemailer';
+
+require('dotenv').config();
+
 /**
  * Helper for controller methods
  * @class Helper
@@ -37,5 +41,29 @@ export default class Helper {
     setup.offset = setup.limit * (setup.page - 1);
 
     return setup;
+  }
+
+  /**
+   * Method sends email notification to user
+   *
+   * @param {string} email - The email address of the user
+   * @param {string} emailSubject - The subject of the email
+   * @param {string} content - The body of the email
+   */
+  static sendEmail({ email, emailSubject, content }) {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.NODEMAILER_EMAIL,
+        pass: process.env.NODEMAILER_PASSWORD,
+      },
+    });
+    const mailOptions = {
+      from: `"Hello Books" <${process.env.NODEMAILER_EMAIL}>`,
+      to: email,
+      subject: emailSubject,
+      html: content,
+    };
+    transporter.sendMail(mailOptions);
   }
 }
