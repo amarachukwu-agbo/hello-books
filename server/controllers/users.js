@@ -2,7 +2,7 @@
 import bcryptjs from 'bcryptjs';
 import models from '../models';
 import createToken from '../helpers/auth/createToken';
-import Helper from '../helpers';
+import Helper from '../helpers/Helper';
 
 /**
  * Class representing a user
@@ -264,7 +264,7 @@ export default class Users {
       }));
   }
 
-  /** Handle a return request
+  /** Handle a borrow request
   * @param {object} res -The HTTP response
   * @param {object} req -The HTTP request
   * @return {object}
@@ -278,6 +278,16 @@ export default class Users {
         bookId,
         status: 'Pending',
       },
+      include: [{
+        model: models.User,
+        as: 'userBorrowRequests',
+        attributes: ['email', 'firstName'],
+      },
+      {
+        model: models.Book,
+        as: 'borrowRequests',
+        attributes: ['title'],
+      }],
     })
       .then((request) => {
         if (!request) {
@@ -301,20 +311,16 @@ export default class Users {
                 .then((book) => {
                   book.increment('borrowCount');
                   book.decrement('quantity');
-
-                  models.Notifications.create({
-                    userId,
-                    bookId,
-                    notification: req.body.status === 'Accepted' ?
-                      `Your request to borrow ${book.title} has been accepted ` :
-                      `Your request to borrow ${book.title} has been declined `,
-                  });
                 });
-              return res.status(200).json({
-                message: 'Successful',
-                borrowRequest,
-              });
             }
+            Helper.sendEmail({
+              email: request.userBorrowRequests.email,
+              emailSubject: `Borrow Request ${req.body.status}`,
+              content: `<h4 style="color: #3F55BA"> Hi <em>${request.userBorrowRequests.firstName},</em></h4>
+              <p>After reviewing your request to borrow <strong>${request.borrowRequests.title}</strong>,
+              the admin has ${req.body.status.toLowerCase()} the request.</p>
+              <h4>Thanks for using Hello Books </h4> <p style="color: #3F55BA"><i>© copyright Hello books 2018</i></p>`,
+            });
             return res.status(200).json({
               message: 'Successful',
               borrowRequest,
@@ -323,7 +329,7 @@ export default class Users {
       })
       .catch(error => res.status(500).json({
         message: 'Unsucessful',
-        error,
+        error: error.toString(),
       }));
   }
 
@@ -391,6 +397,16 @@ export default class Users {
         bookId,
         status: 'Pending',
       },
+      include: [{
+        model: models.User,
+        as: 'userReturnRequests',
+        attributes: ['email', 'firstName'],
+      },
+      {
+        model: models.Book,
+        as: 'returnRequests',
+        attributes: ['title'],
+      }],
     })
       .then((request) => {
       // Check if request exists
@@ -403,19 +419,20 @@ export default class Users {
         }
         // Update request status
         request.update({ status: req.body.status });
+        Helper.sendEmail({
+          email: request.userReturnRequests.email,
+          emailSubject: `Return Request ${req.body.status}`,
+          content: `<h4 style="color: #3F55BA"> Hi <em>${request.userReturnRequests.firstName},</em></h4>
+          <p>After reviewing your request to return <strong>${request.returnRequests.title}</strong>,
+          the admin has ${req.body.status.toLowerCase()} the request.</p>
+          <h4>Thanks for using Hello Books </h4> <p style="color: #3F55BA"><i>© copyright Hello books 2018</i></p>`,
+        });
         // Accepted request
         if (req.body.status === 'Accepted') {
         // Increment book quantity
           models.Book.findById(req.params.bookId)
             .then((book) => {
               book.increment('quantity');
-              models.Notifications.create({
-                userId,
-                bookId,
-                notification: req.body.status === 'Accepted' ?
-                  `Your request to return ${book.title} has been accepted ` :
-                  `Your request to return ${book.title} has been declined `,
-              });
             });
           return models.BorrowedBooks.find({
             where: {

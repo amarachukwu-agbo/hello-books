@@ -104,18 +104,20 @@ Visit [here](https://hello-books-v2.herokuapp.com/docs/#/) for a detailed docume
 ## Contributing
 Contributions are welcome. Interested contributors should follow the steps below
 - Fork the repository
-- Checkout to a new branch for your feature or bug-fix. Name branches after branch [naming conventions](https://github.com/amarachukwu-agbo/hello-books/wiki/PR-Conventions) in Project's wiki.
+- Checkout to a new branch for your feature or bug-fix. Name branches after branch [naming conventions](https://github.com/amarachukwu-agbo/hello-books/wiki/Branch-Naming-Convention) in Project's wiki.
 - Make your changes.
-- Commit your changes. Commits should be detailed and should follow the [commit standards] in [wiki](https://github.com/amarachukwu-agbo/hello-books/wiki/Commit-Message-Conventions) in Project's wiki.
+- Commit your changes. Commits should be detailed and should follow the 
+[commit standards](https://github.com/amarachukwu-agbo/hello-books/wiki/Commit-Message-Conventions) in Project's wiki.
+
 - Raise a pull request against develop following the [pull request standard](https://github.com/amarachukwu-agbo/hello-books/wiki/PR-Conventions) in Project's wiki.
 
 ## FAQ
 #### Who can contribute?
-    We welcome contributions from anyone! Ensure you follow the contribution guidelines above.
+We welcome contributions from anyone! Ensure you follow the contribution guidelines above.
 #### Is there a set standard for PRs to this repository?
-    Yes please check the project [wiki](https://github.com/amarachukwu-agbo/hello-books/wiki) for project conventions.
+Yes please check the project [wiki](https://github.com/amarachukwu-agbo/hello-books/wiki) for project conventions.
 #### Can I clone this application for personal use?
-    Yes!. This application is licensed under MIT, and is open for
-    everybody
+Yes!. This application is licensed under MIT, and is open for everybody
+
 ## License
 This project is licensed under the [MIT License](https://github.com/amarachukwu-agbo/hello-books/blob/develop/LICENSE)
