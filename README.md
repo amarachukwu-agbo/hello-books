@@ -108,6 +108,7 @@ Contributions are welcome. Interested contributors should follow the steps below
 - Make your changes.
 - Commit your changes. Commits should be detailed and should follow the 
 [commit standards](https://github.com/amarachukwu-agbo/hello-books/wiki/Commit-Message-Conventions) in Project's wiki.
+
 - Raise a pull request against develop following the [pull request standard](https://github.com/amarachukwu-agbo/hello-books/wiki/PR-Conventions) in Project's wiki.
 
 ## FAQ
@@ -117,5 +118,6 @@ We welcome contributions from anyone! Ensure you follow the contribution guideli
 Yes please check the project [wiki](https://github.com/amarachukwu-agbo/hello-books/wiki) for project conventions.
 #### Can I clone this application for personal use?
 Yes!. This application is licensed under MIT, and is open for everybody
+
 ## License
 This project is licensed under the [MIT License](https://github.com/amarachukwu-agbo/hello-books/blob/develop/LICENSE)
