@@ -103,7 +103,7 @@ describe('Books Controller', () => {
         .send(testData.book)
         .end((err, res) => {
           expect(res.body.message).to.deep.equal('Unsuccessful');
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.error).to.deep.equal('No token provided');
           done();
         });
@@ -207,12 +207,12 @@ describe('Books Controller', () => {
           done();
         });
     });
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .post('/api/v1/books/1/review')
         .send({ review: 'An amazing read. I loved it!!!' })
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body.error).to.equal('No token provided');
           expect(res.body).to.not.have.property('reviewedBook');
@@ -243,13 +243,13 @@ describe('Books Controller', () => {
           done();
         });
     });
-    it('should return 403 error if review already exists', (done) => {
+    it('should return 409 error if review already exists', (done) => {
       request(app)
         .post('/api/v1/books/1/review')
         .set('Authorization', `Token ${userToken}`)
         .send({ review: 'An amazing read. I loved it!!!' })
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(409);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body.error).to.equal('Your review has already been created');
           done();
@@ -322,11 +322,11 @@ describe('Books Controller', () => {
   });
 
   describe('POST /api/v1/books/1/favorite', () => {
-    it('should throw 403 error for an unauthenticated user', (done) => {
+    it('should throw 401 error for an unauthenticated user', (done) => {
       request(app)
         .post('/api/v1/books/1/favorite')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body.error).to.equal('No token provided');
           done();
@@ -370,12 +370,12 @@ describe('Books Controller', () => {
           done();
         });
     });
-    it('should return 403 error if book is already in user\'s favorites', (done) => {
+    it('should return 409 error if book is already in user\'s favorites', (done) => {
       request(app)
         .post('/api/v1/books/1/favorite')
         .set('Authorization', `Token ${userToken}`)
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(409);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body.error).to.equal('Already favorited book');
           expect(res.body).to.have.not.have.property('favorite');
@@ -385,11 +385,11 @@ describe('Books Controller', () => {
   });
 
   describe('POST /api/v1/books/:bookId/downvote', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .post('/api/v1/books/1/downvote')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.deep.equal('Unsuccessful');
           expect(res.body.error).to.deep.equal('No token provided');
           expect(res.body).to.not.have.property('vote');
@@ -420,12 +420,12 @@ describe('Books Controller', () => {
           done();
         });
     });
-    it('should throw 403 error if user has downvoted book before', (done) => {
+    it('should throw 409 error if user has downvoted book before', (done) => {
       request(app)
         .post('/api/v1/books/1/downvote')
         .set('Authorization', `Token ${userToken}`)
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(409);
           expect(res.body.message).to.deep.equal('Unsuccessful');
           expect(res.body.error).to.deep.equal('You have already downvoted this book');
           done();
@@ -445,11 +445,11 @@ describe('Books Controller', () => {
   });
 
   describe('POST /api/v1/books/:bookId/upvote', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .post('/api/v1/books/1/upvote')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.deep.equal('Unsuccessful');
           expect(res.body.error).to.deep.equal('No token provided');
           expect(res.body).to.not.have.property('vote');
@@ -480,12 +480,12 @@ describe('Books Controller', () => {
           done();
         });
     });
-    it('should throw 403 error if user has upvoted book before', (done) => {
+    it('should throw 409 error if user has upvoted book before', (done) => {
       request(app)
         .post('/api/v1/books/1/upvote')
         .set('Authorization', `Token ${userToken}`)
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(409);
           expect(res.body.message).to.deep.equal('Unsuccessful');
           expect(res.body.error).to.deep.equal('You have already upvoted this book');
           done();
@@ -613,11 +613,11 @@ describe('Books Controller', () => {
   });
 
   describe('DELETE /api/v1/books/:bookId', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .delete('/api/v1/books/88')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body.error).to.equal('No token provided');
           done();
