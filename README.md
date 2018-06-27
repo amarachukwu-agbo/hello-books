@@ -8,7 +8,7 @@ Hello-Books is a simple application that helps manage a library and its processe
 borrow or return a book.
 
 ## API Documentation
-Visit [here](https://hello-books-v2.herokuapp.com/docs/#/) for a detailed documentation on the API endpoints used in the application
+Visit [here](https://hello-books-v2.herokuapp.com/api/v1/docs/#/) for a detailed documentation on the API endpoints used in the application
 
 ## Hosting
 * The API is hosted on https://hello-books-v2.herokuapp.com/api/v1/

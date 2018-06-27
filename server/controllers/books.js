@@ -119,7 +119,7 @@ export default class Book {
       },
     }).then((vote) => {
       if (vote && vote.voteType === voteType) {
-        return res.status(403).json({
+        return res.status(409).json({
           message: 'Unsuccessful',
           error: `You have already ${voteType}d this book`,
         });
@@ -183,7 +183,7 @@ export default class Book {
                 });
             });
         }
-        return res.status(403).json({
+        return res.status(409).json({
           message: 'Unsuccessful',
           error: 'Already favorited book',
         });
@@ -239,7 +239,7 @@ export default class Book {
                     reviewedBook,
                   }));
             }
-            return res.status(403).json({
+            return res.status(409).json({
               message: 'Unsuccessful',
               error: 'Your review has already been created',
             });

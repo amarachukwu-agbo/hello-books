@@ -17,7 +17,7 @@ const jwt = jsonwebtoken;
 const verifyToken = (req, res, next) => {
   // Get token from header
   if (!req.headers.authorization || req.headers.authorization === undefined) {
-    return res.status(403).send({
+    return res.status(401).send({
       message: 'Unsuccessful',
       error: 'No token provided',
     });
@@ -28,9 +28,11 @@ const verifyToken = (req, res, next) => {
   // Decode token
   jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
     if (error) {
+      const errorMessage = error.name === 'TokenExpiredError' ?
+        'Session expired. Login to continue' : 'Failed to authenticate token';
       res.status(401).send({
         message: 'Unsuccessful',
-        error: 'Failed to authenticate token',
+        error: errorMessage,
       });
     }
     req.decoded = decoded;

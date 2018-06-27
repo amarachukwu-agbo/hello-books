@@ -164,11 +164,11 @@ describe('Users Controller', () => {
           done();
         });
     });
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .get('/api/v1/users/2/favbooks')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.have.not.have.property('favorites');
           expect(res.body.error).to.equal('No token provided');
@@ -191,11 +191,11 @@ describe('Users Controller', () => {
   });
 
   describe('POST /api/v1/users/:userId/borrow/:bookId', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .post('/api/v1/users/2/borrow/94')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.have.not.have.property('request');
           expect(res.body.error).to.equal('No token provided');
@@ -219,7 +219,7 @@ describe('Users Controller', () => {
           done();
         });
     });
-    it('should throw 403 error if the request has already been sent', (done) => {
+    it('should throw 409 error if the request has already been sent', (done) => {
       request(app)
         .post('/api/v1/users/2/borrow/94')
         .set('Authorization', `Token ${userToken}`)
@@ -228,7 +228,7 @@ describe('Users Controller', () => {
           returnDate: '12/12/2018',
         })
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(409);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.not.have.property('request');
           expect(res.body.error).to.equal('Already sent request');
@@ -297,11 +297,11 @@ describe('Users Controller', () => {
           done();
         });
     });
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .put('/api/v1/users/2/borrow/94')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.have.not.have.property('borrowRequest');
           expect(res.body.error).to.equal('No token provided');
@@ -403,11 +403,11 @@ describe('Users Controller', () => {
   });
 
   describe('POST /api/v1/users/:userId/return/94', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .post('/api/v1/users/2/return/94')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.have.not.have.property('returnRequest');
           expect(res.body.error).to.equal('No token provided');
@@ -455,12 +455,12 @@ describe('Users Controller', () => {
           done();
         });
     });
-    it('should throw 403 error if a user has already sent the request', (done) => {
+    it('should throw 409 error if a user has already sent the request', (done) => {
       request(app)
         .post('/api/v1/users/2/return/94')
         .set('Authorization', `Token ${userToken}`)
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(409);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.not.have.property('returnRequest');
           expect(res.body.error).to.equal('Your request has already been sent');
@@ -495,11 +495,11 @@ describe('Users Controller', () => {
   });
 
   describe('PUT /api/v1/users/:userId/return/:bookId', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .put('/api/v1/users/2/return/94')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.have.not.have.property('returnRequest');
           expect(res.body.error).to.equal('No token provided');
@@ -586,11 +586,11 @@ describe('Users Controller', () => {
   });
 
   describe('GET /api/v1/borrowRequests', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .get('/api/v1/borrowRequests')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.have.not.have.property('requests');
           expect(res.body.error).to.equal('No token provided');
@@ -624,11 +624,11 @@ describe('Users Controller', () => {
   });
 
   describe('GET /api/v1/returnRequests', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .get('/api/v1/returnRequests')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.have.not.have.property('requests');
           expect(res.body.error).to.equal('No token provided');
@@ -662,11 +662,11 @@ describe('Users Controller', () => {
   });
 
   describe('GET /api/v1/users/:userId', () => {
-    it('should throw 403 error if no token is provided', (done) => {
+    it('should throw 401 error if no token is provided', (done) => {
       request(app)
         .get('/api/v1/users/2')
         .end((err, res) => {
-          expect(res.status).to.equal(403);
+          expect(res.status).to.equal(401);
           expect(res.body.message).to.equal('Unsuccessful');
           expect(res.body).to.have.not.have.property('user');
           expect(res.body.error).to.equal('No token provided');

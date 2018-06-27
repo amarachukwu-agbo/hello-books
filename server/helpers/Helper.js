@@ -37,7 +37,7 @@ export default class Helper {
     const setup = {};
 
     setup.page = req.query.page && req.query.page > 0 ? req.query.page : 1;
-    setup.limit = req.query.limit && req.query.limit > 0 ? req.query.limit : 9;
+    setup.limit = req.query.limit && req.query.limit > 0 ? req.query.limit : 8;
     setup.offset = setup.limit * (setup.page - 1);
 
     return setup;

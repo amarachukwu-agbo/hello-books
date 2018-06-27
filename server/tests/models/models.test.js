@@ -9,7 +9,7 @@ describe('MODEL TEST', () => {
         description: 'Horror book ever',
         author: 'Amarachukwu Agbo',
         quantity: 4,
-        imageUrl: 'https://res.cloudinary.com/amarachukwu/image.jpg',
+        imageURL: 'https://res.cloudinary.com/amarachukwu/image.jpg',
         subject: 'Horror',
       })
         .then((newBook) => {

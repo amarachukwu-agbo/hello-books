@@ -186,7 +186,7 @@ export default class Users {
                       request,
                     }));
                 }
-                return res.status(403).json({
+                return res.status(409).json({
                   message: 'Unsuccessful',
                   error: 'Already sent request',
                 });
@@ -252,7 +252,7 @@ export default class Users {
                   }));
                 });
             }
-            return res.status(403).json({
+            return res.status(409).json({
               message: 'Unsuccessful',
               error: 'Your request has already been sent',
             });
