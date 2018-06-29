@@ -14,7 +14,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Set up swagger-ui-express to serve API docs
-app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+app.use(
+  '/api/v1/docs',
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDoc),
+);
 
 
 // Specify route handlers

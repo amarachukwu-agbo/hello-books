@@ -1,24 +1,24 @@
 const testData = {
-  user: {
+  firstValidUser: {
     firstName: 'Ama',
     lastName: 'Agbo',
     email: 'gody@gmail.com',
     password: 'hhhhhh',
   },
-  secondUser: {
+  secondValidUser: {
     firstName: 'Grace',
     lastName: 'Peters',
     email: 'gracep@gmail.com',
     password: 'hhhhhh',
   },
-  incompleteUser: {
+  missingPasswordUser: {
     firstName: 'Ama',
     lastName: 'Agbo',
     email: 'grace@gmail.com',
   },
-  invalidUser: {
+  invalidDetailsUser: {
     firstName: 1,
-    lastName: 2,
+    lastName: 'Surname',
     email: 'grace',
     password: 4,
   },
@@ -26,37 +26,31 @@ const testData = {
     email: 'grace@gmail.com',
     password: 'hhhhh',
   },
-  book: {
+  validBook: {
     title: 'Half of a yellow sun',
     author: 'Chimamanda Adichie',
     quantity: 4,
     subject: 'Fiction',
-    imageURL: 'http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png',
+    imageURL:
+    'http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png',
     description: 'A novel about history',
   },
-  incompleteBook: {
+  missingQuantityBook: {
     title: 'Half of a yellow sun',
     author: 'Chimamanda Adichie',
     subject: 'Fiction',
-    imageURL: 'http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png',
+    imageURL:
+    'http://chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png',
     description: 'A novel about history',
   },
-  invalidBook: {
+  invalidImageURLBook: {
     title: 'Half of a yellow sun',
     author: 'Chimamanda Adichie',
     subject: 'Fiction',
-    imageURL: '//chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png',
+    imageURL:
+    '//chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png',
     description: 'A novel about history',
   },
-  zeroQuantityBook: {
-    title: 'Half of a yellow sun',
-    author: 'Chimamanda Adichie',
-    subject: 'Fiction',
-    imageURL: '//chimamanda.com/wp-content/uploads/2013/04/book-purplehibiscus.png',
-    description: 'A novel about history',
-    quantity: 0,
-  },
-
 };
 
 export default testData;
