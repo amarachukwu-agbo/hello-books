@@ -62,7 +62,8 @@ export default class Users {
           });
         }
         // Check if user-provided password is valid
-        const passwordMatch = bcryptjs.compareSync(req.body.password, user.password);
+        const passwordMatch = bcryptjs
+          .compareSync(req.body.password, user.password);
         if (!passwordMatch) {
           return res.status(401).json({
             message: 'Unsuccessful',
@@ -113,14 +114,11 @@ export default class Users {
     return models.Favorites.findAndCountAll(query)
       .then((books) => {
         const pagination = Helper.pagination(page, offset, limit, books);
-        if (books.rows.length) {
-          return res.status(200).json({
-            message: 'Successful',
-            favorites: books.rows,
-            pagination,
-          });
-        }
-        return res.status(204).json({});
+        return res.status(200).json({
+          message: 'Successful',
+          favorites: books.rows,
+          pagination,
+        });
       })
       .catch((error) => {
         res.status(500).send({
@@ -316,10 +314,13 @@ export default class Users {
             Helper.sendEmail({
               email: request.userBorrowRequests.email,
               emailSubject: `Borrow Request ${req.body.status}`,
-              content: `<h4 style="color: #3F55BA"> Hi <em>${request.userBorrowRequests.firstName},</em></h4>
-              <p>After reviewing your request to borrow <strong>${request.borrowRequests.title}</strong>,
+              content: `<h4 style="color: #3F55BA"> Hi
+              <em>${request.userBorrowRequests.firstName},</em></h4>
+              <p>After reviewing your request to borrow
+              <strong>${request.borrowRequests.title}</strong>,
               the admin has ${req.body.status.toLowerCase()} the request.</p>
-              <h4>Thanks for using Hello Books </h4> <p style="color: #3F55BA"><i>© copyright Hello books 2018</i></p>`,
+              <h4>Thanks for using Hello Books </h4> <p style="color: #3F55BA">
+              <i>© copyright Hello books 2018</i></p>`,
             });
             return res.status(200).json({
               message: 'Successful',
@@ -341,8 +342,8 @@ export default class Users {
   static getRequests(req, res) {
     const { page, offset, limit } = Helper.setupPagination(req);
     const requestType = req.url.split('/')[1];
-    const requestModel = `${requestType.charAt(0).toUpperCase()}${requestType.slice(1)}`;
-    console.log(requestModel);
+    const requestModel =
+    `${requestType.charAt(0).toUpperCase()}${requestType.slice(1)}`;
     const query = {
       include: [
         {
@@ -366,9 +367,6 @@ export default class Users {
     models[`${requestModel}`].findAndCountAll(query)
       .then((requests) => {
         const pagination = Helper.pagination(page, offset, limit, requests);
-        if (!requests.rows.length) {
-          return res.status(204).json({});
-        }
         return res.status(200).json({
           message: 'Successful',
           requests: requests.rows,
@@ -422,10 +420,13 @@ export default class Users {
         Helper.sendEmail({
           email: request.userReturnRequests.email,
           emailSubject: `Return Request ${req.body.status}`,
-          content: `<h4 style="color: #3F55BA"> Hi <em>${request.userReturnRequests.firstName},</em></h4>
-          <p>After reviewing your request to return <strong>${request.returnRequests.title}</strong>,
+          content: `<h4 style="color: #3F55BA"> Hi <em>
+          ${request.userReturnRequests.firstName},</em></h4>
+          <p>After reviewing your request to return
+          <strong>${request.returnRequests.title}</strong>,
           the admin has ${req.body.status.toLowerCase()} the request.</p>
-          <h4>Thanks for using Hello Books </h4> <p style="color: #3F55BA"><i>© copyright Hello books 2018</i></p>`,
+          <h4>Thanks for using Hello Books </h4> <p style="color: #3F55BA">
+          <i>© copyright Hello books 2018</i></p>`,
         });
         // Accepted request
         if (req.body.status === 'Accepted') {

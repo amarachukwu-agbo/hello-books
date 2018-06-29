@@ -11,6 +11,7 @@ const votesSchema = (sequelize) => {
     voteType: {
       type: Sequelize.ENUM,
       values: ['upvote', 'downvote'],
+      allowNull: false,
     },
   });
   Votes.associate = (models) => {

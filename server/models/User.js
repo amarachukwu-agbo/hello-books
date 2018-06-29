@@ -24,7 +24,10 @@ const userSchema = (sequelize) => {
           msg: 'Your email is not valid. Try again.',
         },
       },
-      unique: true,
+      unique: {
+        args: true,
+        msg: 'A user with this email already exists.',
+      },
     },
     password: {
       type: Sequelize.STRING,
@@ -33,6 +36,7 @@ const userSchema = (sequelize) => {
     role: {
       type: Sequelize.ENUM,
       values: ['Admin', 'User'],
+      defaultValue: 'User',
       allowNull: false,
     },
     imageURL: {

@@ -11,7 +11,10 @@ module.exports = (sequelize) => {
     title: {
       type: Sequelize.STRING,
       allowNull: false,
-      unique: true,
+      unique: {
+        args: true,
+        msg: 'A book with this title already exists',
+      },
     },
     author: {
       type: Sequelize.STRING,
@@ -32,6 +35,11 @@ module.exports = (sequelize) => {
     quantity: {
       type: Sequelize.INTEGER,
       allowNull: false,
+      validate: {
+        isInt: {
+          msg: 'Quantity must be an integer',
+        },
+      },
     },
     borrowCount: {
       type: Sequelize.INTEGER,

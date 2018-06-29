@@ -310,9 +310,6 @@ export default class Book {
     return models.Book.findAndCountAll(query)
       .then((books) => {
         const pagination = Helper.pagination(page, offset, limit, books);
-        if (!books.rows.length) {
-          return res.status(204);
-        }
         return res.status(200).json({
           message: 'Successful',
           books: books.rows,
