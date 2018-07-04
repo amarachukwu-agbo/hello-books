@@ -18,7 +18,7 @@ import {
   REVIEW_BOOK_REQUEST,
   REVIEW_BOOK_FAILURE,
 } from '../actions/types';
-import Notify from '../helpers/notify';
+import Notify from '../helpers/Notify';
 
 const initialState = {};
 
@@ -82,7 +82,11 @@ const book = (state = initialState, action) => {
     case UPVOTE_SUCCESS: {
       return {
         ...state,
-        book: { ...state.book, upvotes: action.book.upvotes, downvotes: action.book.downvotes },
+        book: {
+          ...state.book,
+          upvotes: action.book.upvotes,
+          downvotes: action.book.downvotes,
+        },
         isUpvoting: false,
       };
     }
@@ -102,7 +106,11 @@ const book = (state = initialState, action) => {
     case DOWNVOTE_SUCCESS: {
       return {
         ...state,
-        book: { ...state.book, upvotes: action.book.upvotes, downvotes: action.book.downvotes },
+        book: {
+          ...state.book,
+          upvotes: action.book.upvotes,
+          downvotes: action.book.downvotes,
+        },
         isDownvoting: false,
       };
     }
@@ -120,7 +128,9 @@ const book = (state = initialState, action) => {
       };
     }
     case BORROW_BOOK_SUCCESS: {
-      Notify.notifySuccess('Your borrow request has been sent. Check status in your profile');
+      Notify
+        .notifySuccess(`Your borrow request has been sent
+        .Check status in your profile`);
       return {
         ...state,
         isBorrowing: false,
@@ -143,7 +153,10 @@ const book = (state = initialState, action) => {
     case REVIEW_BOOK_SUCCESS: {
       return {
         ...state,
-        book: { ...action.book, bookReviews: action.book.bookReviews.reverse() },
+        book: {
+          ...action.book,
+          bookReviews: action.book.bookReviews.reverse(),
+        },
         isReviewing: false,
       };
     }

@@ -91,6 +91,7 @@
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "dotenv": "^4.0.0",
+    "dotenv-webpack": "^1.5.7",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "font-awesome": "^4.7.0",

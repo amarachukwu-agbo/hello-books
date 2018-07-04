@@ -33,8 +33,7 @@ export const getUserProfile = userId => (dispatch) => {
     })
     .catch((error) => {
       if (error.response) {
-        let errorMessage = '';
-        errorMessage = error.response.msg;
+        const errorMessage = 'An error occured';
         dispatch(profileFailure(errorMessage));
       } else {
         dispatch(profileFailure(error.message));

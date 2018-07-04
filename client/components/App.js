@@ -9,9 +9,9 @@ import SignUpPage from './SignUp/SignUpPage';
 import LoginPage from './Login/LoginPage';
 import IndexPage from './Index';
 import NotFound from './NotFound';
-import Books from './Books';
-import User from './User';
-import Admin from './Admin';
+import Books from './Books/Books.jsx';
+import User from './User/User.jsx';
+import Admin from './Admin/Admin.jsx';
 
 class App extends Component {
   render() {

@@ -406,7 +406,8 @@ describe('Books Controller', () => {
             .end((err, res) => {
               expect(res.status).to.equal(409);
               expect(res.body.message).to.equal('Unsuccessful');
-              expect(res.body.error).to.equal('Already favorited book');
+              expect(res.body.error).to
+                .equal('Book is already in your favorites');
               expect(res.body).to.have.not.have.property('favorite');
               done();
             });
@@ -793,7 +794,7 @@ describe('Books Controller', () => {
               expect(res.status).to.equal(201);
               expect(res.body.message).to.equal('Successful');
               expect(res.body.books[0].author).to.equal('Chimamanda Adichie');
-              expect(res.body.pagination.bookCount).to.equal(1);
+              expect(res.body.pagination.dataCount).to.equal(1);
               done();
             });
         },
@@ -809,7 +810,7 @@ describe('Books Controller', () => {
               expect(res.body.message).to.equal('Successful');
               expect(res.body.books[0].title).to.equal('Americanah');
               expect(res.body.pagination.currentPage).to.equal(1);
-              expect(res.body.pagination.bookCount).to.equal(1);
+              expect(res.body.pagination.dataCount).to.equal(1);
               done();
             });
         },

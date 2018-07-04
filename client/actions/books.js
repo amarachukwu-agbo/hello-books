@@ -29,9 +29,10 @@ const getBooksRequest = () => ({
   type: GET_BOOKS_REQUEST,
 });
 
-const getBooksSuccess = books => ({
+const getBooksSuccess = ({ books, pagination }) => ({
   type: GET_BOOKS_SUCCESS,
   books,
+  pagination,
 });
 
 const getBooksFailure = error => ({
@@ -43,9 +44,10 @@ const getUpvotedBooksRequest = () => ({
   type: GET_UPVOTED_BOOKS_REQUEST,
 });
 
-const getUpvotedBooksSuccess = books => ({
+const getUpvotedBooksSuccess = ({ books, pagination }) => ({
   type: GET_UPVOTED_BOOKS_SUCCESS,
   books,
+  pagination,
 });
 
 const getUpvotedBooksFailure = error => ({
@@ -53,11 +55,11 @@ const getUpvotedBooksFailure = error => ({
   error,
 });
 
-export const getBooks = () => (dispatch) => {
+export const getBooks = page => (dispatch) => {
   dispatch(getBooksRequest());
-  return axios.get(`${apiURL}/books`)
+  return axios.get(`${apiURL}/books/?page=${page}`)
     .then((response) => {
-      dispatch(getBooksSuccess(response.data.books));
+      dispatch(getBooksSuccess(response.data));
     })
     .catch((error) => {
       dispatch(getBooksFailure(error));
@@ -99,9 +101,10 @@ const searchingBooks = () => ({
   type: SEARCHING_BOOKS,
 });
 
-const searchBooksSuccess = books => ({
+const searchBooksSuccess = ({ books, pagination }) => ({
   type: SEARCH_BOOKS_SUCCESS,
   books,
+  pagination,
 });
 
 const searchBooksFailure = error => ({
@@ -113,7 +116,7 @@ export const searchBooks = (searchBy, searchParam) => (dispatch) => {
   dispatch(searchingBooks());
   return axios.post(`${apiURL}/books/search?${searchBy}=${searchParam}`)
     .then((response) => {
-      dispatch(searchBooksSuccess(response.data.books));
+      dispatch(searchBooksSuccess(response.data));
       dispatch(push('/books'));
     })
     .catch((error) => {
@@ -149,7 +152,8 @@ export const editBook = (bookId, bookIndex, book) => (dispatch) => {
     })
     .catch((error) => {
       if (error.response) {
-        dispatch(editBookFailure(error.response.data.error || error.response.data.msg));
+        dispatch(editBookFailure(error.response.data.error
+          || error.response.data.msg));
       } else {
         dispatch(editBookFailure(error.message));
       }
@@ -179,18 +183,21 @@ export const deleteBook = (bookId, index) => (dispatch) => {
     })
     .catch((error) => {
       if (error.response) {
-        dispatch(deleteBookFailure(error.response.data.msg || error.response.data.error));
+        dispatch(deleteBookFailure(error.response.data.message
+            ||
+            error.response.data.error));
       } else {
         dispatch(deleteBookFailure(error.message));
       }
     });
 };
 
-export const getMostUpvotedBooks = () => (dispatch) => {
+export const getMostUpvotedBooks = page => (dispatch) => {
   dispatch(getUpvotedBooksRequest());
-  return axios.get(`${apiURL}/books?sort=upvotes&order=desc`)
+  return axios
+    .get(`${apiURL}/books?sort=upvotes&order=desc&page=${page}&limit=4`)
     .then((response) => {
-      dispatch(getUpvotedBooksSuccess(response.data.books));
+      dispatch(getUpvotedBooksSuccess(response.data));
     })
     .catch((error) => {
       dispatch(getUpvotedBooksFailure(error));

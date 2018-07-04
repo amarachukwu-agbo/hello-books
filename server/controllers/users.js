@@ -341,7 +341,7 @@ export default class Users {
   */
   static getRequests(req, res) {
     const { page, offset, limit } = Helper.setupPagination(req);
-    const requestType = req.url.split('/')[1];
+    const requestType = req.url.split('/')[1].split('?')[0];
     const requestModel =
     `${requestType.charAt(0).toUpperCase()}${requestType.slice(1)}`;
     const query = {

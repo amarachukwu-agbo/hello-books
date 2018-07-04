@@ -18,7 +18,7 @@ import {
   DELETE_BOOK_REQUEST,
   DELETE_BOOK_FAILURE,
 } from '../actions/types';
-import Notify from '../helpers/notify';
+import Notify from '../helpers/Notify';
 
 const initialState = {};
 
@@ -45,6 +45,7 @@ export const books = (state = initialState, action) => {
         ...state,
         isFetching: false,
         books: action.books,
+        pagination: action.pagination,
         error: null,
         searchResults: null,
       };
@@ -69,6 +70,7 @@ export const books = (state = initialState, action) => {
         isSearching: false,
         searchError: null,
         books: null,
+        pagination: action.pagination,
         searchResults: action.books,
       };
     }
@@ -92,7 +94,6 @@ export const books = (state = initialState, action) => {
       return {
         ...state,
         isAdding: false,
-        books: [action.book, ...state.books.slice(0, -1)],
         addBookError: null,
       };
     }
@@ -169,6 +170,7 @@ export const mostUpvotedBooks = (state = initialState, action) => {
         isLoading: false,
         upvotedError: null,
         upvotedBooks: action.books,
+        upvotedBooksPagination: action.pagination,
       };
     }
     default: {

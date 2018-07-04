@@ -1,8 +1,17 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
+/**
+ * @description stateless component for rendering a user's
+ * borrow requests
+ *
+ * @param {object} props - properties of the component
+ *
+ * @returns {Node} - react node containing the BorrowRequests component
+ */
 const BorrowRequests = (props) => {
-  const { books } = props;
-  if (!books.length) {
+  const { requests } = props;
+  if (!requests.length) {
     return (
       <div className="row center">
         <p className="grey-text">You have no pending borrow requests </p>
@@ -22,16 +31,17 @@ const BorrowRequests = (props) => {
           </tr>
         </thead>
         <tbody>
-          {books.map((book, index) =>
+          {requests.map((request, index) =>
             <tr key={index}>
-              <td> {book.borrowRequests.title} </td>
-              <td> {book.borrowRequests.author} </td>
-              <td> {book.createdAt.split('T')[0]} </td>
+              <td> {request.borrowRequests.title} </td>
+              <td> {request.borrowRequests.author} </td>
+              <td> {request.createdAt.split('T')[0]} </td>
               <td>
                 <button className="btn-flat btn-small">
-                  <span className={book.status === 'Pending' ? 'orange-text' : 'red-text'}>
+                  <span className={request.status === 'Pending' ?
+                  'orange-text' : 'red-text'}>
                     &#9679; </span>
-                  {book.status}
+                  {request.status}
                 </button>
               </td>
             </tr>)}
@@ -39,6 +49,11 @@ const BorrowRequests = (props) => {
       </table>
     </div>
   );
+};
+
+// Prop types validation
+BorrowRequests.propTypes = {
+  requests: propTypes.array.isRequired,
 };
 
 export default BorrowRequests;

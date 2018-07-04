@@ -314,6 +314,77 @@ nav li :hover{
   height: 180px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.pagination-item {
+  margin: 5px;
+  text-align: center;
+  color: $primary-color;
+}
+
+.pagination-item button {
+  padding: 8px;
+}
+
+.pagination-item :first-child{
+  margin-right: 10px;
+}
+
+.pagination-item span {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px;
+  margin: 8px;
+}
+
+.pagination-item span:first-of-type {
+  background-color: white;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  margin: 8px;
+}
+
+.next-icon {
+  font-size: 1.6rem;
+  transition: 0.8ms ease-in-out;
+  padding: 3px;
+}
+
+.next-icon:hover {
+  font-size: 1.7rem;
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.rw-widget .rw-widget-container {
+  height: 46px;
+}
+
+.rw-state-focus > .rw-widget-container {
+  background-color: #fff !important;
+}
+
+.search-result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-result .pagination {
+  margin-top: 0;
+}
+
+.search-result div:first-of-type {
+  margin-right: 30px;
+}
+
 .profile-div {    
   margin:30px;
   min-height: 220px;

@@ -1,36 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+import propTypes from 'prop-types';
 
-class AdminBorrowReq extends Component {
-  constructor(props) {
-    super(props);
-    this.acceptBorrowRequest = this.acceptBorrowRequest.bind(this);
-    this.declineBorrowRequest = this.declineBorrowRequest.bind(this);
-  }
-
-  acceptBorrowRequest(userId, bookId, requestIndex) {
-    const { handleBorrowRequest } = this.props;
-    handleBorrowRequest({ status: 'Accepted' }, userId, bookId, requestIndex);
-  }
-
-  declineBorrowRequest(userId, bookId, requestIndex) {
-    const { handleBorrowRequest } = this.props;
-    handleBorrowRequest({ status: 'Declined' }, userId, bookId, requestIndex);
-  }
-
-
-  render() {
-    const { borrowRequests, isHandlingBorrowRequest } = this.props;
-    if (!borrowRequests) {
-      return (
+/**
+ * @description stateless component form for rendering borrow requests
+ *
+ * @param {func} acceptBorrowRequest - accepts a borrow request
+ * @param {boolean} isHandlingBorrowRequest
+ * @param {array} borrowRequests
+ * @param {func} declineBorrowRequest - declines a borrow request
+ *
+ * @returns {Node} - react node containing the requests
+ */
+const AdminBorrowRequests = ({
+  acceptBorrowRequest,
+  declineBorrowRequest,
+  borrowRequests,
+  isHandlingBorrowRequest,
+}) => {
+  if (!borrowRequests) {
+    return (
         <div className="row center">
           <p className="grey-text">You have no borrow requests </p>
         </div>
-      );
-    }
+    );
+  }
 
-    return (
+  return (
       <div className="row">
-        <table class="striped responsive-table">
+        <table className="striped responsive-table">
           <thead>
             <tr>
               <th>User</th>
@@ -46,7 +43,8 @@ class AdminBorrowReq extends Component {
           <tbody>
             {borrowRequests.map((request, index) =>
               <tr key={index}>
-                <td> {`${request.userBorrowRequests.firstName} ${request.userBorrowRequests.lastName}`} </td>
+                <td> {`${request.userBorrowRequests.firstName} 
+                ${request.userBorrowRequests.lastName}`} </td>
                 <td> {request.borrowRequests.title} </td>
                 <td> {request.reason} </td>
                 <td> {request.returnDate.split('T')[0]} </td>
@@ -59,10 +57,12 @@ class AdminBorrowReq extends Component {
                     &#9679; </span>
                   {request.status}
                 </td>
-                <td> <button className="btn btn-wave waves-effect btn-small primary-button"
-                  disabled={request.status !== 'Pending' || isHandlingBorrowRequest}
+                <td> <button className="btn btn-wave waves-effect
+                  btn-small primary-button"
+                  disabled={request.status !== 'Pending' ||
+                  isHandlingBorrowRequest}
                   onClick={() => {
-                    this.acceptBorrowRequest(
+                    acceptBorrowRequest(
                       request.userId,
                       request.borrowRequests.id,
                       index,
@@ -70,10 +70,12 @@ class AdminBorrowReq extends Component {
                   }
                   }
                 >Accept</button></td>
-                <td> <button className="btn btn-wave action-button waves-effect btn-small"
-                  disabled={request.status !== 'Pending' || isHandlingBorrowRequest}
+                <td> <button className="btn btn-wave action-button
+                  waves-effect btn-small"
+                  disabled={request.status !== 'Pending' ||
+                  isHandlingBorrowRequest}
                   onClick={() => {
-                    this.declineBorrowRequest(
+                    declineBorrowRequest(
                       request.userId,
                       request.borrowRequests.id,
                       index,
@@ -85,8 +87,15 @@ class AdminBorrowReq extends Component {
           </tbody>
         </table>
       </div>
-    );
-  }
-}
+  );
+};
 
-export default AdminBorrowReq;
+// Validates prop types
+AdminBorrowRequests.propTypes = {
+  acceptBorrowRequest: propTypes.func.isRequired,
+  declineBorrowRequest: propTypes.func.isRequired,
+  borrowRequests: propTypes.array.isRequired,
+  isHandlingBorrowRequest: propTypes.bool,
+};
+
+export default AdminBorrowRequests;

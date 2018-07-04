@@ -7,7 +7,7 @@ import {
   HANDLE_BORROW_REQUEST_FAILURE,
 }
   from '../actions/types';
-import Notify from '../helpers/notify';
+import Notify from '../helpers/Notify';
 
 const initialState = {};
 
@@ -25,7 +25,8 @@ const borrowRequests = (state = initialState, action) => {
       return {
         ...state,
         isFetchingBorrowRequests: false,
-        borrowRequests: action.borrowRequests,
+        borrowRequests: action.requests,
+        pagination: action.pagination,
         borrowRequestsError: null,
       };
     }

@@ -1,4 +1,8 @@
-import { FETCHING_FAVORITES, FAVORITES_SUCCESS, FAVORITES_FAILURE } from '../actions/types';
+import {
+  FETCHING_FAVORITES,
+  FAVORITES_SUCCESS,
+  FAVORITES_FAILURE,
+} from '../actions/types';
 
 const initialState = {};
 
@@ -23,6 +27,7 @@ const favorites = (state = initialState, action) => {
         ...state,
         isFetching: false,
         favorites: action.favorites,
+        pagination: action.pagination,
       };
     }
     default: {

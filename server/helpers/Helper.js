@@ -22,7 +22,7 @@ export default class Helper {
     result.pageCount = Math.ceil(count / limit);
     result.pageSize = rows.length;
     result.currentPage = +page;
-    result.bookCount = count;
+    result.dataCount = count;
 
     return result;
   }

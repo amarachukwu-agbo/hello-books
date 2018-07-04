@@ -6,6 +6,7 @@ const searchBookSchema = {
     title: Joi.string(),
     author: Joi.string(),
     subject: Joi.string(),
+    page: Joi.string(),
   },
 };
 
