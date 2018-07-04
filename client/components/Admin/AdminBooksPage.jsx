@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import swal from 'sweetalert';
 import { Modal } from 'react-materialize';
 import { connect } from 'react-redux';
 import Preloader from '../Preloader';
@@ -41,6 +42,21 @@ class AdminBooksPage extends Component {
   setBookForEdit = (bookId, bookIndex) => {
     this.setState({ book: { bookId, bookIndex } });
     this.toggleModal();
+  }
+
+  deleteBook = (bookId, bookIndex) => {
+    swal({
+      title: 'Are you sure you want to delete this book?',
+      text: 'Once deleted, you will not be able to recover the book',
+      icon: 'warning',
+      buttons: ['Cancel', 'Delete'],
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          return this.props.deleteBook(bookId, bookIndex);
+        }
+      });
   }
 
 
@@ -109,8 +125,10 @@ class AdminBooksPage extends Component {
       return (
         <div>
         <AdminBooks books = { this.props.books }
-        setBookForEdit = { this.setBookForEdit }
-        {...this.props }/>
+          setBookForEdit = { this.setBookForEdit }
+          deleteBook = { this.deleteBook }
+          isDeleting = { this.props.isDeleting }
+        />
         <Pagination onPageChange = {page => this.props.getBooks(page) }
               pagination = { this.props.pagination }
             />

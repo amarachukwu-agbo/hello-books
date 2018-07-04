@@ -385,6 +385,11 @@ nav li :hover{
   margin-right: 30px;
 }
 
+.swal-button--cancel {
+  color: #fff;
+  background-color: $primary-color !important;
+}
+
 .profile-div {    
   margin:30px;
   min-height: 220px;
