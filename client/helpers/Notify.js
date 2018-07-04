@@ -1,16 +1,45 @@
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 
+/**
+ * @description class notifies users using alerts
+ *
+ * @class Notify
+ */
 class Notify {
+  /**
+   * @function notifyError
+   * @memberof Notify
+   * @static
+   * @param {string} error
+   *
+   * @returns {void}
+   */
   static notifyError(error) {
-    toast.error(error, { autoClose: 2000, closeButton: false });
+    swal('Error', error, 'error');
   }
 
+  /**
+   * @function notifyInfo
+   * @memberof Notify
+   * @static
+   * @param {string} info
+   *
+   * @returns {void}
+   */
   static notifyInfo(info) {
-    toast(info, { autoClose: 2000, closeButton: false });
+    swal('', info, 'info');
   }
 
+  /**
+   * @function notifySuccess
+   * @memberof Notify
+   * @static
+   * @param {string} message
+   *
+   * @returns {void}
+   */
   static notifySuccess(message) {
-    toast.info(message, { autoClose: 2000, closeButton: false });
+    swal('', message, 'success');
   }
 }
 

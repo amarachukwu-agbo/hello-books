@@ -52,7 +52,7 @@ const book = (state = initialState, action) => {
       };
     }
     case FAVORITE_FAILURE: {
-      Notify.notifyError(action.error);
+      Notify.notifyInfo(action.error);
       return {
         ...state,
         isFavoriting: false,
@@ -73,7 +73,7 @@ const book = (state = initialState, action) => {
       };
     }
     case UPVOTE_FAILURE: {
-      Notify.notifyError(action.error);
+      Notify.notifyInfo(action.error);
       return {
         ...state,
         isUpvoting: false,
@@ -97,7 +97,7 @@ const book = (state = initialState, action) => {
       };
     }
     case DOWNVOTE_FAILURE: {
-      Notify.notifyError(action.error);
+      Notify.notifyInfo(action.error);
       return {
         ...state,
         isDownvoting: false,
@@ -129,8 +129,9 @@ const book = (state = initialState, action) => {
     }
     case BORROW_BOOK_SUCCESS: {
       Notify
-        .notifySuccess(`Your borrow request has been sent
-        .Check status in your profile`);
+        .notifySuccess(`Your request to borrow
+        ${action.book.title} has been sent.
+        Check status in your profile`);
       return {
         ...state,
         isBorrowing: false,

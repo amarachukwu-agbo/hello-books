@@ -244,13 +244,11 @@ nav li :hover{
 }
 
 .review {
-  margin: 10px;
-  margin-top: 0;
   padding: 0 10px 10px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   max-height: 300px;
   overflow: scroll;
+  margin: 8px;
 }
 
 .review-box {
@@ -375,7 +373,7 @@ nav li :hover{
   color: #fff;
 }
 
-.rw-widget .rw-widget-container {
+.rw-widget .rw-widget-picker {
   height: 46px;
 }
 
@@ -399,7 +397,7 @@ nav li :hover{
   margin-right: 30px;
 }
 
-.swal-button--cancel {
+.swal-button--confirm, .swal-button--cancel {
   color: #fff;
   background-color: $primary-color !important;
 }
@@ -407,6 +405,8 @@ nav li :hover{
 .profile-div {    
   margin:30px;
   min-height: 220px;
+  max-height: 350px;
+  overflow: scroll;
   padding: 5px;
   background-image: linear-gradient(top, $nav-color, $nav-color 20%, transparent 20%, transparent 100%);
   background-image: -webkit-linear-gradient(top, $nav-color, $nav-color 20%, transparent 20%, transparent 100%)  

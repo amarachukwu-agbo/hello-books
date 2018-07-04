@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
 import PreLoader from '../Preloader';
 import { getReturnRequests, handleReturnRequest } from
   '../../actions/returnrequests';
@@ -96,10 +95,10 @@ class AdminReturnRequestsPage extends Component {
       <div className="row wrapper">
         <h5 className="center book-header">Return Requests</h5>
         <div className="admin">
-          <ToastContainer />
           {this.props.returnRequests &&
             <div>
             <AdminReturnRequests returnRequests={this.props.returnRequests}
+            isHandlingReturnRequest = { this.props.isHandlingReturnRequest }
             acceptReturnRequest = { this.acceptReturnRequest }
             declineReturnRequest = { this.declineReturnRequest }
               {...this.props} />

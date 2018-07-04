@@ -254,7 +254,8 @@ describe('Users Controller', () => {
               expect(res.status).to.equal(409);
               expect(res.body.message).to.equal('Unsuccessful');
               expect(res.body).to.not.have.property('request');
-              expect(res.body.error).to.equal('Already sent request');
+              expect(res.body.error).to
+                .equal('Your request has already been sent');
               done();
             });
         },

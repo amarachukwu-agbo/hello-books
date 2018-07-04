@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Slider, Slide } from 'react-materialize';
-import { ToastContainer } from 'react-toastify';
 import Navbar from './Navbar';
 import books2 from '../public/images/books(4).jpg';
 import books1 from '../public/images/books(1).jpg';
@@ -60,7 +59,6 @@ class IndexPage extends Component {
 
         <SearchBar {...this.props} />
         {this.props.searchError && Notify.notifyInfo(this.props.searchError)}
-        <ToastContainer />
         <div className="section white wrapper">
           <div className="row center">
             <h4 className="text-darken-3 book-header">Available books</h4>

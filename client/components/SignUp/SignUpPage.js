@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
 import Navbar from '../Navbar';
 import books2 from '../../public/images/books(4).jpg';
 import PageFooter from '../PageFooter';
@@ -20,7 +19,6 @@ class SignUpPage extends Component {
           <div className="col s1 m2 l4 "></div>
           <div className="col s10 m7 l5">
             <div className="row form-wrap card-panel">
-                <ToastContainer />
                 <SignUpForm handler={this.props.signUp} {...this.props}/>
             </div>
           </div>

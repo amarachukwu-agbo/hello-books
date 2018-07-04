@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { ToastContainer } from 'react-toastify';
 import ReviewForm from './Form/ReviewForm.jsx';
 import Notify from '../../helpers/Notify';
 
@@ -85,7 +84,6 @@ class Reviews extends Component {
           {this.props.isAuthenticated &&
             <div className="section">
               <div>
-                <ToastContainer />
                 <ReviewForm submitForm = { this.submitForm }
                   isReviewing = { this.props.isReviewing } />
               </div>
@@ -105,7 +103,7 @@ Reviews.propTypes = {
   isAuthenticated: propTypes.bool,
   isReviewing: propTypes.bool,
   reviewBook: propTypes.func.isRequired,
-  user: propTypes.object.isRequired,
+  user: propTypes.object,
   book: propTypes.object.isRequired,
 };
 

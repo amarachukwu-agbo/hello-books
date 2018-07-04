@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import DropdownList from 'react-widgets/lib/DropdownList';
-import 'react-toastify/dist/ReactToastify.min.css';
+import Notify from '../../helpers/Notify';
 
 // Parameters for searching books to be used in dropdown
 const searchParams = ['Title', 'Author', 'Subject'];
@@ -30,9 +30,18 @@ class SearchBar extends Component {
    */
   searchBook = () => {
     const { searchBy, searchParam } = this.state;
+
     if (searchBy !== 'Search By' && searchParam.trim() !== '') {
       this.props.searchBooks(searchBy.toLowerCase(), searchParam);
       this.setState({ searchParam: '' });
+    }
+
+    if (searchParam.trim() === '') {
+      Notify.notifyError('Search input cannot be empty');
+    }
+
+    if (searchBy === 'Search By') {
+      Notify.notifyInfo('Choose a parameter to search by');
     }
   }
 

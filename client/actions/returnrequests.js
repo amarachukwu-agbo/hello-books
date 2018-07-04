@@ -66,7 +66,7 @@ export const handleReturnRequest =
     return axios.put(`${apiURL}/users/${userId}/return/${bookId}`, status)
       .then((response) => {
         dispatch(handleReturnRequestSuccess(
-          response.data.message,
+          response.data.status,
           requestIndex,
         ));
       })

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
 import propTypes from 'prop-types';
 import {
   getBook,
@@ -57,7 +56,6 @@ class BookDetailsPage extends Component {
     }
     return (
       <div className="container wrapper">
-        <ToastContainer />
         { this.props.book &&
         <BookDetails book={this.props.book} {...this.props} />
         }

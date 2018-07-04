@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
 import PreLoader from '../Preloader';
 import { getBorrowRequests, handleBorrowRequest } from
   '../../actions/borrowrequests';
@@ -100,7 +99,6 @@ class AdminBorrowRequestsPage extends Component {
       <div className="row wrapper">
         <h5 className="center book-header">Borrow Requests</h5>
         <div className="admin">
-          <ToastContainer />
           {this.props.borrowRequests &&
             <div>
             <AdminBorrowRequests borrowRequests={this.props.borrowRequests}

@@ -37,7 +37,7 @@ class BorrowBookForm extends Component {
    */
   submitForm(values) {
     const request = { ...values, reason: values.reason.value };
-    this.props.borrowBook(this.props.user.id, this.props.book.id, request);
+    this.props.borrowBook(this.props.user.id, this.props.book, request);
   }
 
   render() {
