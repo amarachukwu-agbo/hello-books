@@ -307,6 +307,7 @@ export default class Book {
         offset,
       };
     }
+    query.distinct = true;
     return models.Book.findAndCountAll(query)
       .then((books) => {
         const pagination = Helper.pagination(page, offset, limit, books);
@@ -377,6 +378,7 @@ export default class Book {
       order: [
         ['createdAt', 'DESC'],
       ],
+      distinct: true,
     };
     if (title) {
       query.where = {
