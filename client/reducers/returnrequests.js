@@ -7,7 +7,7 @@ import {
   HANDLE_RETURN_REQUEST_FAILURE,
 }
   from '../actions/types';
-import Notify from '../helpers/notify';
+import Notify from '../helpers/Notify';
 
 const initialState = {};
 
@@ -25,7 +25,8 @@ const returnRequests = (state = initialState, action) => {
       return {
         ...state,
         isFetchingReturnRequests: false,
-        returnRequests: action.returnRequests,
+        returnRequests: action.requests,
+        pagination: action.pagination,
         returnRequestsError: null,
       };
     }
@@ -46,7 +47,10 @@ const returnRequests = (state = initialState, action) => {
       return {
         ...state,
         returnRequests: [...state.returnRequests.slice(0, action.index),
-          { ...state.returnRequests[action.index], status: action.status.split(' ')[1] },
+          {
+            ...state.returnRequests[action.index],
+            status: action.status.split(' ')[1],
+          },
           ...state.returnRequests.slice(action.index + 1)],
         isHandlingReturnRequest: false,
       };

@@ -12,10 +12,12 @@ const validate = (values) => {
   if (!values.password || values.password.trim() === '') {
     errors.password = 'Password is required';
   }
-  if (values.password && values.password.trim() !== '' && values.password.length < 7) {
+  if (values.password && values.password.trim() !== ''
+    && values.password.length < 7) {
     errors.password = 'Password must not be less than 6 characters';
   }
-  if (values.password && values.password.trim() !== '' && values.password.length >= 7
+  if (values.password && values.password.trim() !== ''
+    && values.password.length >= 7
         && !new RegExp('^(?=.*[a-z])(?=.*[0-9])').test(values.password)) {
     errors.password = 'Password must contain at least a letter and a number';
   }

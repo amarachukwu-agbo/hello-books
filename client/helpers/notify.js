@@ -6,11 +6,11 @@ class Notify {
   }
 
   static notifyInfo(info) {
-    toast.info(info, { autoClose: 2000, closeButton: false });
+    toast(info, { autoClose: 2000, closeButton: false });
   }
 
   static notifySuccess(message) {
-    toast.success(message, { autoClose: 2000, closeButton: false });
+    toast.info(message, { autoClose: 2000, closeButton: false });
   }
 }
 

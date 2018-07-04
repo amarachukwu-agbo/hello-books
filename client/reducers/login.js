@@ -1,5 +1,10 @@
-import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE, LOG_OUT } from '../actions/types';
-import Notify from '../helpers/notify';
+import {
+  LOGGING_IN,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOG_OUT,
+} from '../actions/types';
+import Notify from '../helpers/Notify';
 
 const initialstate = {
   isLoggingIn: false,

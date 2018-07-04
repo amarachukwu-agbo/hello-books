@@ -15,9 +15,10 @@ const fetchingBorrowRequests = () => ({
   type: FETCHING_BORROW_REQUESTS,
 });
 
-const borrowRequestsSuccess = borrowRequests => ({
+const borrowRequestsSuccess = ({ requests, pagination }) => ({
   type: BORROW_REQUESTS_SUCCESS,
-  borrowRequests,
+  requests,
+  pagination,
 });
 
 const borrowRequestsFailure = error => ({
@@ -25,12 +26,12 @@ const borrowRequestsFailure = error => ({
   error,
 });
 
-export const getBorrowRequests = () => (dispatch) => {
+export const getBorrowRequests = page => (dispatch) => {
   dispatch(fetchingBorrowRequests());
   setHeader();
-  return axios.get(`${apiURL}/borrowRequests`)
+  return axios.get(`${apiURL}/borrowRequests?page=${page}`)
     .then((response) => {
-      dispatch(borrowRequestsSuccess(response.data.requests));
+      dispatch(borrowRequestsSuccess(response.data));
     })
     .catch((error) => {
       if (error.response) {
@@ -58,21 +59,25 @@ const handleBorrowRequestFailure = error => ({
   error,
 });
 
-export const handleBorrowRequest = (status, userId, bookId, requestIndex) => (dispatch) => {
-  dispatch(handlingBorrowRequest());
-  setHeader();
-  return axios.put(`${apiURL}/users/${userId}/borrow/${bookId}`, status)
-    .then((response) => {
-      dispatch(handleBorrowRequestSuccess(response.data.borrowRequest.status, requestIndex));
-    })
-    .catch((error) => {
-      if (error.response) {
-        let errorMessage = '';
-        errorMessage = error.response.msg;
-        dispatch(handleBorrowRequestFailure(errorMessage));
-      } else {
-        dispatch(handleBorrowRequestFailure(error.message));
-      }
-    });
-};
+export const handleBorrowRequest =
+  (status, userId, bookId, requestIndex) => (dispatch) => {
+    dispatch(handlingBorrowRequest());
+    setHeader();
+    return axios.put(`${apiURL}/users/${userId}/borrow/${bookId}`, status)
+      .then((response) => {
+        dispatch(handleBorrowRequestSuccess(
+          response.data.borrowRequest.status,
+          requestIndex,
+        ));
+      })
+      .catch((error) => {
+        if (error.response) {
+          let errorMessage = '';
+          errorMessage = error.response.msg;
+          dispatch(handleBorrowRequestFailure(errorMessage));
+        } else {
+          dispatch(handleBorrowRequestFailure(error.message));
+        }
+      });
+  };
 

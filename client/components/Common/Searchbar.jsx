@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-toastify/dist/ReactToastify.min.css';
 
+// Parameters for searching books to be used in dropdown
 const searchParams = ['Title', 'Author', 'Subject'];
 
+/**
+ * @description container component for searching books
+ *
+ * @class SearchBar
+ *
+ * @extends {React.Component}
+ */
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +22,12 @@ class SearchBar extends Component {
     };
   }
 
+  /**
+   * @method searchBooks
+   * @description handles searching of books
+   *
+   * @returns {void}
+   */
   searchBook = () => {
     const { searchBy, searchParam } = this.state;
     if (searchBy !== 'Search By' && searchParam.trim() !== '') {
@@ -31,22 +46,26 @@ class SearchBar extends Component {
             <div className="col s12 search-div">
               <h5>Search Books</h5>
               <div className="row">
-                <form onSubmit={(e) => { e.preventDefault(); this.searchBook(); }}>
+                <form onSubmit={(e) => {
+                  e.preventDefault();
+                  this.searchBook();
+                }}>
 
                   <div className="col s4 m3 l2">
-
                     <div className="input-field">
                       <DropdownList data={searchParams}
                         disabled={this.props.isSearching}
-                        value={searchBy} onChange={value => this.setState({ searchBy: value })} />
+                        value={searchBy}
+                        onChange={value =>
+                        this.setState({ searchBy: value })} />
                     </div>
                   </div>
 
                   <div className="col s8 m9 l10">
                     <div className="input-field">
-                      <input className="white grey-text text-darken-3" type="text"
+                      <input className="white grey-text text-darken-3"
                         placeholder="Book title, author or subject..."
-                        disabled={this.props.isSearching}
+                        type="text" disabled={this.props.isSearching}
                         value={searchParam} onChange={e =>
                           this.setState({ searchParam: e.target.value })} />
                     </div>
@@ -61,4 +80,11 @@ class SearchBar extends Component {
     );
   }
 }
+
+// propType validation
+SearchBar.propTypes = {
+  searchBooks: propTypes.func.isRequired,
+  isSearching: propTypes.bool,
+};
+
 export default SearchBar;

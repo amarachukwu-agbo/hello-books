@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
+import propTypes from 'prop-types';
 
-class AdminReturnReq extends Component {
-  constructor(props) {
-    super(props);
-    this.acceptReturnRequest = this.acceptReturnRequest.bind(this);
-    this.declineReturnRequest = this.declineReturnRequest.bind(this);
-  }
-  acceptReturnRequest(userId, bookId, requestIndex) {
-    const { handleReturnRequest } = this.props;
-    handleReturnRequest({ status: 'Accepted' }, userId, bookId, requestIndex);
-  }
-
-  declineReturnRequest(userId, bookId, requestIndex) {
-    const { handleReturnRequest } = this.props;
-    handleReturnRequest({ status: 'Declined' }, userId, bookId, requestIndex);
-  }
-  render() {
-    const { returnRequests } = this.props;
-    if (!returnRequests) {
-      return (
+/**
+ * @description stateless component form for rendering return requests
+ *
+ * @param {func} acceptReturnRequest - accepts a return request
+ * @param {boolean} isHandlingReturnRequest
+ * @param {array} returnRequests
+ * @param {func} declineReturnRequest - declines a return request
+ *
+ * @returns {Node} - react node containing the requests
+ */
+const AdminReturnRequests = ({
+  acceptReturnRequest,
+  declineReturnRequest,
+  returnRequests,
+}) => {
+  if (!returnRequests) {
+    return (
         <div className="row center">
           <p className="grey-text">You have no return requests </p>
         </div>
-      );
-    }
+    );
+  }
 
-    return (
+  return (
       <div className="row">
         <table className="striped responsive-table">
           <thead>
@@ -40,7 +39,8 @@ class AdminReturnReq extends Component {
           <tbody>
             {returnRequests.map((request, index) =>
               <tr key={index}>
-                <td> {`${request.userReturnRequests.firstName} ${request.userReturnRequests.lastName}`} </td>
+                <td> {`${request.userReturnRequests.firstName}
+                ${request.userReturnRequests.lastName}`} </td>
                 <td> {request.returnRequests.title} </td>
                 <td> {request.createdAt.split('T')[0]} </td>
                 <td>
@@ -50,10 +50,12 @@ class AdminReturnReq extends Component {
                     &#9679; </span>
                   {request.status}
                 </td>
-                <td> <button className="btn btn-wave waves-effect btn-small primary-button"
-                  disabled={request.status !== 'Pending'}
+                <td> <button className="btn btn-wave waves-effect
+                  btn-small primary-button"
+                  disabled={request.status !== 'Pending' ||
+                  isHandlingReturnRequest }
                   onClick={() => {
-                    this.acceptReturnRequest(
+                    acceptReturnRequest(
                       request.userId,
                       request.bookId,
                       index,
@@ -61,10 +63,12 @@ class AdminReturnReq extends Component {
                   }
                   }
                 >Accept</button></td>
-                <td> <button className="btn btn-wave action-button waves-effect btn-small"
-                  disabled={request.status !== 'Pending'}
+                <td> <button className="btn btn-wave action-button
+                  waves-effect btn-small"
+                  disabled={request.status !== 'Pending' ||
+                  isHandlingReturnRequest }
                   onClick={() => {
-                    this.declineReturnRequest(
+                    declineReturnRequest(
                       request.userId,
                       request.bookId,
                       index,
@@ -76,8 +80,16 @@ class AdminReturnReq extends Component {
           </tbody>
         </table>
       </div>
-    );
-  }
-}
+  );
+};
 
-export default AdminReturnReq;
+// Validates prop types
+AdminReturnRequests.propTypes = {
+  acceptReturnRequest: propTypes.func.isRequired,
+  declineReturnRequest: propTypes.func.isRequired,
+  returnRequests: propTypes.array.isRequired,
+  isHandlingReturnRequest: propTypes.bool,
+};
+
+export default AdminReturnRequests;
+

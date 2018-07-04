@@ -1,8 +1,18 @@
 import React from 'react';
+import propTypes from 'prop-types';
+
+/**
+ * @description stateless component for rendering a user's
+ * return requests
+ *
+ * @param {object} props - properties of the component
+ *
+ * @returns {Node} - react node containing the ReturnRequests component
+ */
 
 const ReturnRequests = (props) => {
-  const { books } = props;
-  if (!books.length) {
+  const { requests } = props;
+  if (!requests.length) {
     return (
       <div className="row center">
         <p className="grey-text">You have no pending return requests </p>
@@ -22,16 +32,17 @@ const ReturnRequests = (props) => {
           </tr>
         </thead>
         <tbody>
-          { books.map((book, index) =>
+          { requests.map((request, index) =>
             <tr key={index}>
-              <td> {book.returnRequests.title} </td>
-              <td> {book.returnRequests.author} </td>
-              <td> {book.createdAt.split('T')[0]} </td>
+              <td> {request.returnRequests.title} </td>
+              <td> {request.returnRequests.author} </td>
+              <td> {request.createdAt.split('T')[0]} </td>
               <td>
                 <button className="btn-flat btn-small">
-                  <span className={book.status === 'Pending' ? 'orange-text' : 'red-text'}>
+                  <span className={request.status === 'Pending' ?
+                  'orange-text' : 'red-text'}>
                     &#9679; </span>
-                  {book.status}
+                  {request.status}
                 </button>
               </td>
             </tr>)}
@@ -41,4 +52,8 @@ const ReturnRequests = (props) => {
   );
 };
 
+// Prop types validation
+ReturnRequests.propTypes = {
+  requests: propTypes.array.isRequired,
+};
 export default ReturnRequests;

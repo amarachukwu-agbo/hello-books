@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { FETCHING_FAVORITES, FAVORITES_SUCCESS, FAVORITES_FAILURE } from './types';
+import {
+  FETCHING_FAVORITES,
+  FAVORITES_SUCCESS,
+  FAVORITES_FAILURE,
+} from './types';
 import setHeader from '../helpers/setheader';
 import { apiURL } from './userSignUp';
 
@@ -8,9 +12,10 @@ const fetchingFavorites = () => ({
   type: FETCHING_FAVORITES,
 });
 
-const favoritesSuccess = favorites => ({
+const favoritesSuccess = ({ favorites, pagination }) => ({
   type: FAVORITES_SUCCESS,
   favorites,
+  pagination,
 });
 
 const favoritesFailure = error => ({
@@ -18,12 +23,12 @@ const favoritesFailure = error => ({
   error,
 });
 
-const getUserFavorites = userId => (dispatch) => {
+const getUserFavorites = (userId, page) => (dispatch) => {
   dispatch(fetchingFavorites());
   setHeader();
-  return axios.get(`${apiURL}/users/${userId}/favBooks`)
+  return axios.get(`${apiURL}/users/${userId}/favBooks?page=${page}`)
     .then((response) => {
-      dispatch(favoritesSuccess(response.data.favorites));
+      dispatch(favoritesSuccess(response.data));
     })
     .catch((error) => {
       if (error.response) {

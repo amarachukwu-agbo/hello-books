@@ -185,7 +185,7 @@ export default class Book {
         }
         return res.status(409).json({
           message: 'Unsuccessful',
-          error: 'Already favorited book',
+          error: 'Book is already in your favorites',
         });
       })
       .catch(error => res.status(500).json({

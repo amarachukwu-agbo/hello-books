@@ -1,5 +1,5 @@
 import { SIGN_UP_SUCCESS, SIGNING_UP, SIGN_UP_FAILURE } from '../actions/types';
-import Notify from '../helpers/notify';
+import Notify from '../helpers/Notify';
 
 const initialState = {
   isSigningUp: false,

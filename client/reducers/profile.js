@@ -7,7 +7,7 @@ import {
   RETURN_BOOK_FAILURE,
 } from '../actions/types';
 
-import Notify from '../helpers/notify';
+import Notify from '../helpers/Notify';
 
 const initialState = {};
 
