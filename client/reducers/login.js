@@ -48,6 +48,7 @@ const login = (state = initialstate, action) => {
       };
     }
     case LOG_OUT: {
+      Notify.notifySuccess('You successfully logged out');
       return {
         ...state,
         isAuthenticated: false,

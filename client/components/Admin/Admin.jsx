@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 import Navbar from '../Navbar';
 import PageFooter from '../PageFooter';
 import AddBookPage from './AddBookPage.jsx';
@@ -22,7 +21,6 @@ const Admin = ({ match }) => (
       <div className="center-align">
         <br />
         <h4 className="black-text text-darken-4 bold">Admin Dashboard</h4>
-        <ToastContainer />
       </div>
     </div>
     <br />

@@ -49,7 +49,7 @@ const returnRequests = (state = initialState, action) => {
         returnRequests: [...state.returnRequests.slice(0, action.index),
           {
             ...state.returnRequests[action.index],
-            status: action.status.split(' ')[1],
+            status: action.status,
           },
           ...state.returnRequests.slice(action.index + 1)],
         isHandlingReturnRequest: false,

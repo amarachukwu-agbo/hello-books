@@ -1,6 +1,9 @@
 /**
- * @method sets user\'s info in localStorage
+ * @method setUser
+ * @description sets user's info in localStorage
  * @param {object} response The HTTP response
+ *
+ * @returns {void}
  */
 const setUser = (response) => {
   const userInfo = JSON.stringify(response.data.user);

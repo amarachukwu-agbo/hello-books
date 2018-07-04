@@ -187,7 +187,7 @@ export default class Users {
                 }
                 return res.status(409).json({
                   message: 'Unsuccessful',
-                  error: 'Already sent request',
+                  error: 'Your request has already been sent',
                 });
               });
           })
@@ -450,12 +450,13 @@ export default class Users {
                 .then(updated => updated.reload())
                 .then(returnRequest => res.status(200).json({
                   message: 'Successful',
+                  status: 'Accepted',
                   returnRequest,
                 }));
             });
         }
         return res.status(200).json({
-          message: 'Request Declined',
+          message: 'Successful',
           requestId: request.id,
           status: 'Declined',
           book: bookId,

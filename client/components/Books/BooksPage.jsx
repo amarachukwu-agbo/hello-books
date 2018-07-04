@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 import SearchBar from '../Common/Searchbar.jsx';
 import Notify from '../../helpers/Notify';
 import BooksList from './BooksList.jsx';
@@ -132,7 +131,6 @@ class BooksPage extends Component {
         <br />
         <SearchBar {...this.props} />
         {this.props.searchError && Notify.notifyInfo(this.props.searchError)}
-        <ToastContainer />
         <div className="row book-list">
           { this.renderPreloader() }
           { this.renderError() }

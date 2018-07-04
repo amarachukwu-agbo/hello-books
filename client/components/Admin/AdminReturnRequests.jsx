@@ -15,6 +15,7 @@ const AdminReturnRequests = ({
   acceptReturnRequest,
   declineReturnRequest,
   returnRequests,
+  isHandlingReturnRequest,
 }) => {
   if (!returnRequests) {
     return (

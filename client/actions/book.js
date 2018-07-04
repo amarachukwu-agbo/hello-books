@@ -154,9 +154,10 @@ const borrowBookRequest = () => ({
   type: BORROW_BOOK_REQUEST,
 });
 
-const borrowBookSuccess = borrowStatus => ({
+const borrowBookSuccess = (borrowStatus, book) => ({
   type: BORROW_BOOK_SUCCESS,
   borrowStatus,
+  book,
 });
 
 const borrowBookFailure = error => ({
@@ -164,12 +165,12 @@ const borrowBookFailure = error => ({
   error,
 });
 
-export const borrowBook = (userId, bookId, request) => (dispatch) => {
+export const borrowBook = (userId, book, request) => (dispatch) => {
   dispatch(borrowBookRequest());
   setHeader();
-  return axios.post(`${apiURL}/users/${userId}/borrow/${bookId}/`, request)
+  return axios.post(`${apiURL}/users/${userId}/borrow/${book.id}/`, request)
     .then((response) => {
-      dispatch(borrowBookSuccess(response.data.message));
+      dispatch(borrowBookSuccess(response.data.request.status, book));
     })
     .catch((error) => {
       if (error.response) {
