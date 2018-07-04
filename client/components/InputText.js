@@ -47,7 +47,8 @@ export const TextArea = ({
   input, placeholder, type, ...rest
 }) => (
     <div>
-      <textarea {...input} type={type} {...rest} placeholder={placeholder} className="materialize-textarea" />
+      <textarea {...input} type={type} {...rest}
+        placeholder={placeholder} className="materialize-textarea" />
     </div>
 );
 

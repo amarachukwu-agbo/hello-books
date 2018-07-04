@@ -110,6 +110,7 @@ export default class Users {
       ],
       limit,
       offset,
+      distinct: true,
     };
     return models.Favorites.findAndCountAll(query)
       .then((books) => {
@@ -363,6 +364,7 @@ export default class Users {
       ],
       limit,
       offset,
+      distinct: true,
     };
     models[`${requestModel}`].findAndCountAll(query)
       .then((requests) => {
