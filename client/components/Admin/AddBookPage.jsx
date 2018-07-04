@@ -35,6 +35,7 @@ class AddBookPage extends Component {
   }
 
   /**
+   * @memberof AddBookPage
    * @method submitForm
    * @description handles form submission
    *
@@ -52,6 +53,7 @@ class AddBookPage extends Component {
   }
 
   /**
+   * @memberof AddBookPage
    * @method handleDrop
    * @description handles drag and drop of images to be uploaded
    *

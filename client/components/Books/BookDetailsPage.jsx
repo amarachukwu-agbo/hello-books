@@ -12,7 +12,7 @@ import {
 } from '../../actions/book';
 import PreLoader from '../Preloader';
 import BookDetails from './BookDetails.jsx';
-import Review from '../Reviews';
+import Review from '../Reviews/Reviews.jsx';
 
 /** @description container class for details of a book
  *
@@ -23,9 +23,10 @@ import Review from '../Reviews';
 
 class BookDetailsPage extends Component {
   /**
-   * @constructor create an instance of BooksDetailsPage component
+   * @method componentDidMount
+   * @description fetches a book from the database
    *
-   * @param {object} props properties for the BooksDetailsPage component
+   * @returns {void}
    */
   componentDidMount() {
     const bookId = parseInt(this.props.match.params.bookId, 10);

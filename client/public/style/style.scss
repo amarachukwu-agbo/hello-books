@@ -54,6 +54,12 @@ body {
   box-shadow: 0 1px 0 0 $primary-color !important
 }
 
+
+.input-field textarea[class=materialize-textarea]:focus {
+  border-bottom: 0.5px solid $nav-color !important;
+  box-shadow: 0 1px 0 0 $nav-color !important
+}
+
 .btn:focus {
   background-color: $primary-color;
 }
@@ -206,7 +212,10 @@ nav li :hover{
 .book-details-header {
   font-family: $special-text;
   font-stretch: narrower;
-  color: $primary-color;
+  text-transform: uppercase;
+  background-color: $nav-color;
+  padding: 10px;
+  color: #fff;
 }
 
 .book-detail-icons {
@@ -242,6 +251,11 @@ nav li :hover{
   border-radius: 3px;
   max-height: 300px;
   overflow: scroll;
+}
+
+.review-box {
+  padding: 3px 10px 3px 10px;
+  margin-top: 5px;
 }
 
 .search-button {

@@ -26,6 +26,7 @@ class EditBookForm extends Component {
   }
 
   /**
+   * @memberOf EditBookForm
    * @method submitForm
    * @description handles form submission
    *
