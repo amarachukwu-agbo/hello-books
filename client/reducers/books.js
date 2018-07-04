@@ -1,3 +1,4 @@
+import swal from 'sweetalert';
 import {
   GET_BOOKS_SUCCESS,
   GET_BOOKS_REQUEST,
@@ -120,7 +121,9 @@ export const books = (state = initialState, action) => {
       };
     }
     case DELETE_BOOK_SUCCESS: {
-      Notify.notifySuccess('Book has been deleted');
+      swal('Book has been successfully deleted', {
+        icon: 'success',
+      });
       return {
         ...state,
         books: [...state.books.slice(0, action.bookIndex),
@@ -129,7 +132,7 @@ export const books = (state = initialState, action) => {
       };
     }
     case DELETE_BOOK_FAILURE: {
-      Notify.notifyError(`Book was not deleted. ${action.deleteError}`);
+      swal(`Book was not deleted. ${action.deleteError}`, 'error');
       return {
         ...state,
         isDeleting: false,

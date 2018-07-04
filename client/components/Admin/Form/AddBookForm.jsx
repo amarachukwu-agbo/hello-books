@@ -118,7 +118,7 @@ BookForm.propTypes = {
   handleSubmit: propTypes.func.isRequired,
   isAdding: propTypes.bool,
   submitForm: propTypes.func.isRequired,
-  uploadedFile: propTypes.string,
+  uploadedFile: propTypes.object,
   uploadError: propTypes.string,
   uploadedFileCloudinaryUrl: propTypes.string,
   handleDrop: propTypes.func.isRequired,
