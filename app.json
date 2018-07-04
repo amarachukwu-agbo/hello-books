@@ -1,0 +1,50 @@
+{
+  "name": "hello-books",
+  "scripts": {
+  },
+  "env": {
+    "ADMIN_EMAIL": {
+      "required": true
+    },
+    "ADMIN_PASSWORD": {
+      "required": true
+    },
+    "CLOUDINARY_URL": {
+      "required": true
+    },
+    "DATABASE_URI": {
+      "required": true
+    },
+    "JWT_SECRET": {
+      "required": true
+    },
+    "NODE_ENV": {
+      "required": true
+    },
+    "NODEMAILER_EMAIL": {
+      "required": true
+    },
+    "NODEMAILER_PASSWORD": {
+      "required": true
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "required": true
+    },
+    "UPLOAD_PRESET": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
