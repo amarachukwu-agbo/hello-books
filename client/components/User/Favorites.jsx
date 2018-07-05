@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import getUserFavorites from '../../actions/favorites';
-import Preloader from '../Preloader';
+import Preloader from '../Common/Preloader.jsx';
 import Pagination from '../Common/Pagination.jsx';
 
 /**

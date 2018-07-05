@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import lensImage from '../../public/images/lens.jpg';
-import Navbar from '../Navbar';
-import PageFooter from '../PageFooter';
+import Navbar from '../Common/Navbar.jsx';
+import PageFooter from '../Common/PageFooter.jsx';
 
 /**
  * @description stateless component that renders when a page is not found

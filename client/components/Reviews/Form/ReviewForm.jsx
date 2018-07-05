@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { reset, reduxForm, Field } from 'redux-form';
-import { TextArea } from '../../InputText';
+import { TextArea } from '../../Common/InputTypes.jsx';
 
 /**
  * @method clears form after submission

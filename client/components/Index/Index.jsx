@@ -1,20 +1,39 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Slider, Slide } from 'react-materialize';
-import Navbar from './Navbar';
-import books4 from '../public/images/books(4).jpg';
-import books1 from '../public/images/books(1).jpg';
-import PageFooter from './PageFooter';
-import BooksList from './Books/BooksList.jsx';
-import Preloader from './Preloader';
-import { getBooks, getMostUpvotedBooks, searchBooks } from '../actions/books';
-import SearchBar from './Common/Searchbar.jsx';
-import Notify from '../helpers/Notify';
-import materialize from '../helpers/materialize';
-import Pagination from './Common/Pagination.jsx';
+import Navbar from '../Common/Navbar.jsx';
+import books4 from '../../public/images/books(4).jpg';
+import books1 from '../../public/images/books(1).jpg';
+import PageFooter from '../Common/PageFooter.jsx';
+import BooksList from '../Books/BooksList.jsx';
+import Preloader from '../Common/Preloader.jsx';
+import {
+  getBooks,
+  getMostUpvotedBooks,
+  searchBooks,
+} from '../../actions/books';
+import SearchBar from '../Common/Searchbar.jsx';
+import Notify from '../../helpers/Notify';
+import materialize from '../../helpers/materialize';
+import Pagination from '../Common/Pagination.jsx';
 
+/**
+ * @description - container component for Index page
+ *
+ * @class IndexPage
+ *
+ * @extends {React.Component}
+ */
 class IndexPage extends Component {
+  /**
+   * @method componentDidMount
+   * @description get books on page 1
+   * and most upvoted books on page 1
+   *
+   * @returns {void}
+   */
   componentDidMount() {
     materialize();
     this.props.getBooks(1);
@@ -129,10 +148,38 @@ class IndexPage extends Component {
     );
   }
 }
+
+// Prop type validation
+IndexPage.propTypes = {
+  getBooks: propTypes.func.isRequired,
+  searchBooks: propTypes.func.isRequired,
+  getMostUpvotedBooks: propTypes.func.isRequired,
+  books: propTypes.array,
+  upvotedBooks: propTypes.array,
+  upvotedError: propTypes.string,
+  isLoading: propTypes.bool,
+  error: propTypes.string,
+  isFetching: propTypes.bool,
+  searchError: propTypes.string,
+};
+
+/**
+ * @description maps state to props
+ * @param {object} state - redux state
+ *
+ * @returns {object} props - props mapped to state
+ */
 const mapStateToProps = state => ({
   ...state.books,
   ...state.mostUpvotedBooks,
 });
+
+/**
+ * @description maps dispatch to props
+ * @param {object} state - redux state
+ *
+ * @returns {object} props - props mapped to dispatch actions
+ */
 const mapDispatchToProps = dispatch => ({
   getBooks: (page) => { dispatch(getBooks(page)); },
   searchBooks: (searchBy, searchParam) => {
@@ -142,4 +189,5 @@ const mapDispatchToProps = dispatch => ({
     dispatch(getMostUpvotedBooks(page));
   },
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);

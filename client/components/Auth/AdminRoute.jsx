@@ -1,18 +1,24 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { Route } from 'react-router';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import materialize from '../helpers/materialize';
+import materialize from '../../helpers/materialize';
 
 /**
- * Private route to admin page
- * If not admin redirects to index page
+ * @description container component for authenticating
+ * routes with admin rights. If not admin redirects to index page
+ *
+ * @class AdminRoute
+ *
+ * @extends {React.Component}
  */
 
 class AdminRoute extends React.Component {
   componentDidMount() {
     materialize();
   }
+
   render() {
     const {
       isAuthenticated,
@@ -40,6 +46,18 @@ class AdminRoute extends React.Component {
   }
 }
 
+AdminRoute.propTypes = {
+  isAuthenticated: propTypes.bool,
+  user: propTypes.object,
+  component: propTypes.func,
+};
+
+/**
+ * @description maps state to props
+ * @param {object} state - redux state
+ *
+ * @returns {object} props - props mapped to state
+ */
 const mapStateToProps = state => ({
   ...state.login,
 });

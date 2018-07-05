@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import 'materialize-css';
 import '../public/style/style.scss';
 import store, { history } from './store';
-import App from '../components/App';
+import App from '../components/App.jsx';
 
 render(
     <Provider store = { store }>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import PreLoader from '../Preloader';
+import PreLoader from '../Common/Preloader.jsx';
 import { getReturnRequests, handleReturnRequest } from
   '../../actions/returnrequests';
 import AdminReturnRequests from './AdminReturnRequests.jsx';

@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import swal from 'sweetalert';
 import { Modal } from 'react-materialize';
 import { connect } from 'react-redux';
-import Preloader from '../Preloader';
+import Preloader from '../Common/Preloader.jsx';
 import AdminBooks from './AdminBooks.jsx';
 import Pagination from '../Common/Pagination.jsx';
 import { getBooks, deleteBook, editBook } from '../../actions/books';
