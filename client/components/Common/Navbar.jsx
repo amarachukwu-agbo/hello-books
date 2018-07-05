@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logOut } from '../actions/login';
-import { getBooks } from '../actions/books';
-import logo from '../public/images/logo.png';
+import { logOut } from '../../actions/login';
+import { getBooks } from '../../actions/books';
+import logo from '../../public/images/logo.png';
 
+/**
+ * @description Navbar container component
+ *
+ * @class Navbar
+ *
+ * @extends {React.Component}
+ */
 class Navbar extends Component {
   render() {
     const { user, isAuthenticated } = this.props;
@@ -16,29 +24,53 @@ class Navbar extends Component {
               <Link to="/" className="brand-logo">
                 <img src={logo} className="img-logo" />
               </Link>
-              <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+              <a href="#" data-activates="mobile-demo"
+                className="button-collapse">
+                <i className="material-icons">menu</i>
+              </a>
+
+              {/* Authenticated Admin Navbar */}
 
               {
                 isAuthenticated && user.role === 'Admin' &&
                 <ul className="right hide-on-med-and-down">
                   <li><Link to='/admin'>Books Catalog</Link></li>
                   <li><Link to='/admin/addBook'>Add Book</Link></li>
-                  <li><Link to='/admin/borrowRequests'>Borrow Requests</Link></li>
-                  <li><Link to='/admin/returnRequests'>Return Requests</Link></li>
-                  <li><button className="btn btn-flat white-text" onClick={this.props.logOut}>Log out</button></li>
+                  <li>
+                    <Link to='/admin/borrowRequests'>
+                      Borrow Requests
+                    </Link></li>
+                  <li>
+                    <Link to='/admin/returnRequests'>
+                      Return Request
+                    </Link>
+                  </li>
+                  <li>
+                    <button className="btn btn-flat white-text"
+                      onClick={this.props.logOut}>Log out
+                    </button>
+                  </li>
                 </ul>
               }
+
+              {/* Authenticated User Navbar */}
 
               {
                 isAuthenticated && user.role === 'User' &&
                 <ul className="right hide-on-med-and-down">
                   <li>{`Welcome ${user.firstName}`} </li>
-                  <li><Link to={`/users/${user.id}/favorites`}>Favorites</Link></li>
-                  <li><Link to={`/users/${user.id}/profile`}>Profile</Link></li>
+                  <li><Link to={'/users/favorites'}>Favorites</Link></li>
+                  <li><Link to={'/users/profile'}>Profile</Link></li>
                   <li><Link to='/books'>Books</Link></li>
-                  <li><button className="btn btn-flat white-text" onClick={this.props.logOut}>Log out</button></li>
+                  <li>
+                    <button className="btn btn-flat white-text"
+                      onClick={this.props.logOut}>Log out
+                    </button>
+                  </li>
                 </ul>
               }
+
+              {/* Guest User Navbar */}
 
               {!isAuthenticated &&
                 <ul className="right hide-on-med-and-down">
@@ -50,6 +82,9 @@ class Navbar extends Component {
             </div>
           </nav>
         </div>
+
+        {/* Navbar Mobile devices */}
+
         {
           isAuthenticated && user.role === 'Admin' &&
           <ul className="side-nav" id="mobile-demo">
@@ -57,7 +92,11 @@ class Navbar extends Component {
             <li><Link to='/admin/addBook'>Add Book</Link></li>
             <li><Link to='/admin/borrowRequests'>Borrow Requests</Link></li>
             <li><Link to='/admin/returnRequests'>Return Requests</Link></li>
-            <li><button className="btn btn-flat white-text" onClick={this.props.logOut}>Log out</button></li>
+            <li>
+              <button className="btn btn-flat white-text"
+                onClick={this.props.logOut}>Log out
+              </button>
+            </li>
           </ul>
         }
 
@@ -65,10 +104,18 @@ class Navbar extends Component {
           this.props.isAuthenticated && user.role === 'User' &&
           <ul className="side-nav" id="mobile-demo">
             <li>{`Welcome ${user.firstName}`} </li>
-            <li><button className="btn btn-flat white-text" onClick={this.props.getBooks}>Books</button></li>
-            <li><Link to={`/users/${user.id}/favorites`}>Favorites</Link></li>
-            <li><Link to={`/users/${user.id}/profile`}>Profile</Link></li>
-            <li><button className="btn btn-flat white-text" onClick={this.props.logOut}>Log out</button></li>
+            <li>
+              <button className="btn btn-flat white-text"
+                onClick={this.props.getBooks}>Books
+              </button>
+            </li>
+            <li><Link to={'/users/favorites'}>Favorites</Link></li>
+            <li><Link to={'/users/profile'}>Profile</Link></li>
+            <li>
+              <button className="btn btn-flat white-text"
+                onClick={this.props.logOut}>Log out
+              </button>
+            </li>
           </ul>
         }
 
@@ -85,11 +132,31 @@ class Navbar extends Component {
   }
 }
 
+// Prop type validation
+Navbar.propTypes = {
+  isAuthenticated: propTypes.bool,
+  user: propTypes.object,
+  logOut: propTypes.func.isRequired,
+  getBooks: propTypes.func.isRequired,
+};
+
+/**
+ * @description maps state to props
+ * @param {object} state - redux state
+ *
+ * @returns {object} props - props mapped to state
+ */
 const mapStateToProps = state => ({
   isAuthenticated: state.login.isAuthenticated,
   user: state.login.user,
 });
 
+/**
+ * @description maps dispatch to props
+ * @param {object} state - redux state
+ *
+ * @returns {object} props - props mapped to dispatch actions
+ */
 const mapDispatchToProps = dispatch => ({
   logOut: () => { dispatch(logOut()); },
   getBooks: () => { dispatch(getBooks()); },

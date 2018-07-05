@@ -1,9 +1,9 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import propTypes from 'prop-types';
-import FileInput from '../../FileInput';
+import DropzoneInput from '../../Common/DropzoneInput.jsx';
 import validate from '../../../helpers/validations/book';
-import { InputText, renderDropdownList } from '../../InputText';
+import { InputText, renderDropdownList } from '../../Common/InputTypes.jsx';
 
 // All genres
 export const subjects = [
@@ -78,7 +78,7 @@ const BookForm = ({
         </div>
         <div className="row">
           <div className="input-field">
-            <Field name="imageURL" component={FileInput}
+            <Field name="imageURL" component={DropzoneInput}
               multiple={false} accept="image/*" id="upload"
               dropzoneOnDrop={handleDrop} label="Image URL" />
           </div>

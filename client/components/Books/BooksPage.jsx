@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../Common/Searchbar.jsx';
 import Notify from '../../helpers/Notify';
 import BooksList from './BooksList.jsx';
-import Preloader from '../Preloader';
+import Preloader from '../Common/Preloader.jsx';
 import Pagination from '../Common/Pagination.jsx';
 import { getBooks, searchBooks } from '../../actions/books';
 import materialize from '../../helpers/materialize';

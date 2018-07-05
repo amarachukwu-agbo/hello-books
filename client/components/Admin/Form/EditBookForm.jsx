@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import FileInput from '../../FileInput';
+import DropzoneInput from '../../Common/DropzoneInput.jsx';
 import validate from '../../../helpers/validations/book';
-import { renderDropdownList } from '../../InputText';
+import { renderDropdownList } from '../../Common/InputTypes.jsx';
 import { subjects } from './AddBookForm.jsx';
 
 /**
@@ -86,7 +86,7 @@ class EditBookForm extends Component {
           </div>
           <div className="row">
             <div className="input-field">
-              <Field name="imageURL" component={FileInput}
+              <Field name="imageURL" component={DropzoneInput}
                 multiple={false} accept="image/*" id="upload"
                 dropzoneOnDrop={this.handleDrop} label="Image URL" />
             </div>

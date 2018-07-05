@@ -1,15 +1,22 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { Route } from 'react-router';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import materialize from '../helpers/materialize';
+import materialize from '../../helpers/materialize';
 
 /**
- * Private route to navigate over private routes
- * If not logged in - goes to login
+ * @description container component for authenticating
+ * routes with user rights. If not authenticated user
+ * redirects to index page
+ *
+ * @class UserRoute
+ *
+ * @extends {React.Component}
  */
 
-class PrivateRoute extends React.Component {
+
+class UserRoute extends React.Component {
   componentDidMount() {
     materialize();
   }
@@ -40,8 +47,19 @@ class PrivateRoute extends React.Component {
   }
 }
 
+UserRoute.propTypes = {
+  isAuthenticated: propTypes.bool,
+  component: propTypes.func,
+};
+
+/**
+ * @description maps state to props
+ * @param {object} state - redux state
+ *
+ * @returns {object} props - props mapped to state
+ */
 const mapStateToProps = state => ({
   ...state.login,
 });
 
-export default connect(mapStateToProps)(PrivateRoute);
+export default connect(mapStateToProps)(UserRoute);

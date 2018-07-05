@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getUserProfile, returnBook } from '../../actions/profile';
-import Preloader from '../Preloader';
+import Preloader from '../Common/Preloader.jsx';
 import BorrowedBooks from './BorrowedBooks.jsx';
 import BorrowRequests from './BorrowRequests.jsx';
 import ReturnRequests from './ReturnRequests.jsx';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from '../Navbar';
-import PageFooter from '../PageFooter';
+import Navbar from '../Common/Navbar.jsx';
+import PageFooter from '../Common/PageFooter.jsx';
 import AddBookPage from './AddBookPage.jsx';
 import AdminBooksPage from './AdminBooksPage.jsx';
 import AdminBorrowRequestsPage from './AdminBorrowRequestsPage.jsx';

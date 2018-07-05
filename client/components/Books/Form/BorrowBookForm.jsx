@@ -5,7 +5,7 @@ import {
   renderDateTimePicker,
   InputText,
   renderDropdownList,
-} from '../../InputText';
+} from '../../Common/InputTypes.jsx';
 import validate from '../../../helpers/validations/borrowbook';
 
 // Data for reason dropdown input field

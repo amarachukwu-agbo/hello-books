@@ -10,7 +10,7 @@ import {
   borrowBook,
   reviewBook,
 } from '../../actions/book';
-import PreLoader from '../Preloader';
+import PreLoader from '../Common/Preloader.jsx';
 import BookDetails from './BookDetails.jsx';
 import Review from '../Reviews/Reviews.jsx';
 

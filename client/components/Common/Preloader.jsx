@@ -1,5 +1,11 @@
 import React from 'react';
 
+/**
+ * @description stateless component for loader
+ * that is displayed while data is loading
+ *
+ * @returns {Node} - react node containing the Preloader component
+ */
 const Preloader = () => (
     <div className="preloader-wrapper medium active">
     <div className="spinner-layer spinner-blue-only">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import PreLoader from '../Preloader';
+import PreLoader from '../Common/Preloader.jsx';
 import { getBorrowRequests, handleBorrowRequest } from
   '../../actions/borrowrequests';
 import AdminBorrowRequests from './AdminBorrowRequests.jsx';
