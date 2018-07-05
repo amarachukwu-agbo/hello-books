@@ -31,6 +31,7 @@ class AdminBooksPage extends Component {
   }
 
   /**
+   * @memberof AdminBooksPage
    * @method setBook
    * @description sets the book to be edited
    *
@@ -44,6 +45,16 @@ class AdminBooksPage extends Component {
     this.toggleModal();
   }
 
+  /**
+   * @memberof AdminBooksPage
+   * @method deleteBook
+   * @description deletes a book
+   *
+   * @param {Number} bookId - book's id
+   * @param {Number} bookIndex - book's index in the books array
+   *
+   * @returns {void}
+   */
   deleteBook = (bookId, bookIndex) => {
     swal({
       title: 'Are you sure you want to delete this book?',
@@ -61,6 +72,7 @@ class AdminBooksPage extends Component {
 
 
   /**
+   * @memberof AdminBooksPage
    * @method toggleModal
    * @description toggles modal for editing a book
    *
@@ -81,6 +93,7 @@ class AdminBooksPage extends Component {
   }
 
   /**
+   * @memberof AdminBooksPage
    * @method renderPreloader
    * @description renders loader when books are still fetching
    *
@@ -115,6 +128,7 @@ class AdminBooksPage extends Component {
   }
 
   /**
+   * @memberof AdminBooksPage
    * @method renderBooks
    * @description renders books
    *

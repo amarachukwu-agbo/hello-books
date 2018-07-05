@@ -6,6 +6,7 @@ import AddBookPage from './AddBookPage.jsx';
 import AdminBooksPage from './AdminBooksPage.jsx';
 import AdminBorrowRequestsPage from './AdminBorrowRequestsPage.jsx';
 import AdminReturnRequestsPage from './AdminReturnRequestsPage.jsx';
+import NotFound from '../Common/NotFound.jsx';
 
 /**
  * @description stateless component for handling all admin routes
@@ -31,6 +32,7 @@ const Admin = ({ match }) => (
         component={ AdminBorrowRequestsPage }/>
       <Route exact path={`${match.url}/returnRequests`}
         component={ AdminReturnRequestsPage}/>
+      <Route component={ NotFound } />
     </Switch>
     <br />
     <PageFooter />

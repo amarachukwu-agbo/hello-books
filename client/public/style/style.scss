@@ -19,6 +19,17 @@ body {
   width: $form-image;
 }
 
+.oops-image {
+  margin-top: 20px;
+  width: 30%;
+  opacity: 0.8;
+}
+
+.not-found-image {
+  width: 15%;
+  margin-top: 20px;
+}
+
 .input-field input:focus  {
   color: #191919 !important;
 }
@@ -153,6 +164,27 @@ body {
 
 nav li :hover{
   background-color: grey !important;
+}
+
+.not-found {
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 8.5rem;
+}
+
+.not-found-wrapper {
+  border-radius: 5px;
+  padding: 0 0 15px 0;
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+
+
+.not-found-wrapper p:first-of-type{
+  text-transform: uppercase;
+  font-size: 1.6rem;
 }
 
 .section-search, .foot{
@@ -400,6 +432,10 @@ nav li :hover{
 .swal-button--confirm, .swal-button--cancel {
   color: #fff;
   background-color: $primary-color !important;
+}
+
+.swal-button--danger {
+  background-color: #FF0000 !important;
 }
 
 .profile-div {    

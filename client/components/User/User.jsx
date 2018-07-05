@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import PageFooter from '../PageFooter';
 import Favorites from './Favorites.jsx';
 import Profile from './Profile.jsx';
+import NotFound from '../Common/NotFound.jsx';
 
 /**
  * @description stateless component for handling all user routes
@@ -17,10 +18,11 @@ const User = ({ match }) => (
         <Navbar />
         <Switch>
           <Route exact path={`${match.url}/:userId/favorites`}
-            component={Favorites}/>
+            component={ Favorites }/>
           <Route exact path={`${match.url}/:userId/profile`}
             component={ Profile }/>
           )}/>
+          <Route component={ NotFound } />
         </Switch>
         <PageFooter />
       </div>

@@ -26,6 +26,7 @@ class BookDetails extends Component {
   }
 
   /**
+   * @memberof BooksDetails
    * @method favoriteBook
    * @description add a book to favorite
    *
@@ -37,6 +38,7 @@ class BookDetails extends Component {
   }
 
   /**
+   * @memberof BooksDetails
    * @method upvoteBook
    * @description upvote a book
    *
@@ -48,6 +50,7 @@ class BookDetails extends Component {
   }
 
   /**
+   * @memberof BooksDetails
    * @method downvoteBook
    * @description downvote a book
    *
@@ -65,7 +68,7 @@ class BookDetails extends Component {
       <div className="row card-panel">
         <Modal id="modal" actions={null}>
             <div className="container">
-                    <BorrowBookForm { ...this.props }/>
+              <BorrowBookForm { ...this.props }/>
             </div>
         </Modal>
         <div className="row center">

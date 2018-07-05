@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
+import oopsImage from '../../public/images/oops.jpg';
 import {
   getBook,
   favoriteBook,
@@ -21,6 +22,11 @@ import Review from '../Reviews/Reviews.jsx';
  */
 
 class BookDetailsPage extends Component {
+  constructor(props) {
+    super(props);
+    this.renderError = this.renderError.bind(this);
+    this.renderPreLoader = this.renderPreLoader.bind(this);
+  }
   /**
    * @method componentDidMount
    * @description fetches a book from the database
@@ -32,7 +38,14 @@ class BookDetailsPage extends Component {
     this.props.getBook(bookId);
   }
 
-  render() {
+  /**
+   * @memberof BookDetailsPage
+   * @method renderPreLoader
+   * @description renders loader while book is being fetched
+   *
+   * @returns {Node} react node containing Preloader component
+   */
+  renderPreLoader() {
     if (this.props.isFetching) {
       return (
         <div className="container wrapper">
@@ -41,27 +54,44 @@ class BookDetailsPage extends Component {
         </div>
       );
     }
-    if (this.props.error) {
+  }
+
+  /**
+   * @memberof BookDetailsPage
+   * @method renderError
+   * @description renders error that occurs while fetching a book
+   *
+   * @returns {Node} react node containing error
+   */
+  renderError() {
+    if (this.props.getBookError) {
       return (
         <div className="row center wrapper">
           <br />
           <div className="container">
-            <h4 className="flow-text red-text">
-                {`Oops! Couldn't fetch requested book.
-                ${this.props.error}`}
-            </h4>
+            <img className="oops-image" src={oopsImage} />
+            <h5 className="flow-text grey-text
+              text-darken-3">
+                {`The book you requested could not be retrieved.
+                ${this.props.getBookError}`}
+            </h5>
           </div>
         </div>
       );
     }
+  }
+
+  render() {
     return (
       <div className="container wrapper">
+        { this.renderPreLoader() }
+        { this.renderError() }
         { this.props.book &&
-        <BookDetails book={this.props.book} {...this.props} />
-        }
-        <br />
-        {this.props.book &&
+        <div>
+          <BookDetails book={this.props.book} {...this.props} />
+          <br />
           <Review reviews={this.props.book.bookReviews} {...this.props} />
+        </div>
         }
       </div>
     );
@@ -77,7 +107,7 @@ BookDetailsPage.propTypes = {
   borrowBook: propTypes.func.isRequired,
   reviewBook: propTypes.func.isRequired,
   isFetching: propTypes.bool,
-  error: propTypes.string,
+  getBookError: propTypes.string,
 };
 
 /**
