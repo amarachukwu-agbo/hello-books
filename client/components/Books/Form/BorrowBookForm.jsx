@@ -61,7 +61,7 @@ class BorrowBookForm extends Component {
             component={renderDateTimePicker} />
           </div>
           <div className="input-field row">
-            <Field name="comment" type="text"
+            <Field name="comments" type="text"
             label="Comment(optional...)" component={InputText} />
           </div>
           <div className="input-field row">
