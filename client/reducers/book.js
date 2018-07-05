@@ -35,7 +35,7 @@ const book = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        error: action.error,
+        getBookError: action.error,
       };
     }
     case GET_BOOK_SUCCESS: {

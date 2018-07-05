@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Slider, Slide } from 'react-materialize';
 import Navbar from './Navbar';
-import books2 from '../public/images/books(4).jpg';
+import books4 from '../public/images/books(4).jpg';
 import books1 from '../public/images/books(1).jpg';
 import PageFooter from './PageFooter';
 import BooksList from './Books/BooksList.jsx';
@@ -28,7 +28,7 @@ class IndexPage extends Component {
         <div>
           <Slider indicators={false} className="slider-div">
             <Slide
-              src={books2}>
+              src={books4}>
               <p className="white-text flow-text slider-text">
                 Welcome to Hello-books
               </p>

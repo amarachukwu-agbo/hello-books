@@ -8,7 +8,7 @@ import AdminRoute from './AdminRoute';
 import SignUpPage from './SignUp/SignUpPage';
 import LoginPage from './Login/LoginPage';
 import IndexPage from './Index';
-import NotFound from './NotFound';
+import NotFound from './Common/NotFound.jsx';
 import Books from './Books/Books.jsx';
 import User from './User/User.jsx';
 import Admin from './Admin/Admin.jsx';

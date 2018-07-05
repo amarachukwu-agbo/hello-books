@@ -7,7 +7,7 @@ import propTypes from 'prop-types';
  *
  * @param {func} deleteBook - handles deletion of a book
  * @param {boolean} isDeleting - provides information about the deleting action
- * @param {func} setBook - sets the book to be edited
+ * @param {func} setBookForEddit - sets the book to be edited
  * @param {array} books - books in the application
  *
  * @returns {Node} - react node containing a table of books

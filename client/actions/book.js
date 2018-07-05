@@ -49,7 +49,7 @@ export const getBook = params => (dispatch) => {
         if (error.response.status === 400) {
           errorMessage = 'Bad Request';
         } else if (error.response.status === 404) {
-          errorMessage = 'Book not found';
+          errorMessage = 'Book was not found.';
         } else {
           errorMessage = 'An error occured';
         }

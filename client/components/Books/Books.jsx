@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import PageFooter from '../PageFooter';
 import BooksPage from './BooksPage.jsx';
 import BooksDetailsPage from './BookDetailsPage.jsx';
+import NotFound from '../Common/NotFound.jsx';
 
 /**
  * @description stateless component for books route
@@ -20,6 +21,7 @@ const Books = ({ match }) => (
             component={BooksDetailsPage} />
           <Route exact path={`${match.url}`}
             component={BooksPage} />
+          <Route component={NotFound} />
         </Switch>
         <PageFooter />
       </div>
