@@ -48,10 +48,10 @@ const handlingBorrowRequest = () => ({
   type: HANDLING_BORROW_REQUEST,
 });
 
-const handleBorrowRequestSuccess = (status, index) => ({
+const handleBorrowRequestSuccess = (status, requestId) => ({
   type: HANDLE_BORROW_REQUEST_SUCCESS,
   status,
-  index,
+  requestId,
 });
 
 const handleBorrowRequestFailure = error => ({
@@ -60,14 +60,14 @@ const handleBorrowRequestFailure = error => ({
 });
 
 export const handleBorrowRequest =
-  (status, userId, bookId, requestIndex) => (dispatch) => {
+  (status, userId, bookId, requestId) => (dispatch) => {
     dispatch(handlingBorrowRequest());
     setHeader();
     return axios.put(`${apiURL}/users/${userId}/borrow/${bookId}`, status)
       .then((response) => {
         dispatch(handleBorrowRequestSuccess(
           response.data.borrowRequest.status,
-          requestIndex,
+          requestId,
         ));
       })
       .catch((error) => {

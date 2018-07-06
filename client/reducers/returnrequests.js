@@ -44,14 +44,16 @@ const returnRequests = (state = initialState, action) => {
       };
     }
     case HANDLE_RETURN_REQUEST_SUCCESS: {
+      const requestIndex = state.returnRequests
+        .findIndex(request => request.id === action.requestId);
       return {
         ...state,
-        returnRequests: [...state.returnRequests.slice(0, action.index),
+        returnRequests: [...state.returnRequests.slice(0, requestIndex),
           {
-            ...state.returnRequests[action.index],
+            ...state.returnRequests[requestIndex],
             status: action.status,
           },
-          ...state.returnRequests.slice(action.index + 1)],
+          ...state.returnRequests.slice(requestIndex + 1)],
         isHandlingReturnRequest: false,
       };
     }

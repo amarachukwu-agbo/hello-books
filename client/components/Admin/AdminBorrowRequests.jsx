@@ -65,7 +65,7 @@ const AdminBorrowRequests = ({
                     acceptBorrowRequest(
                       request.userId,
                       request.borrowRequests.id,
-                      index,
+                      request.id,
                     );
                   }
                   }
@@ -78,7 +78,7 @@ const AdminBorrowRequests = ({
                     declineBorrowRequest(
                       request.userId,
                       request.borrowRequests.id,
-                      index,
+                      request.id,
                     );
                   }
                   }

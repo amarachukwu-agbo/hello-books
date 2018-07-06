@@ -113,22 +113,29 @@ export const books = (state = initialState, action) => {
     }
     case EDIT_BOOK_SUCCESS: {
       Notify.notifySuccess('Book has been updated');
+      const bookIndex = state.books
+        .findIndex(book => book.id === action.bookId);
       return {
         ...state,
         isEditing: false,
-        books: [...state.books.slice(0, action.bookIndex), action.book,
-          ...state.books.slice(action.bookIndex + 1)],
+        books: [...state.books.slice(0, bookIndex), action.book,
+          ...state.books.slice(bookIndex + 1)],
       };
     }
     case DELETE_BOOK_SUCCESS: {
-      swal('Book has been successfully deleted', {
-        icon: 'success',
-      });
+      Notify.notifySuccess('Book has been successfully deleted');
+
+      const bookIndex = state.books
+        .findIndex(book => book.id === action.bookId);
+      state.books.splice(bookIndex, 1);
+
       return {
         ...state,
-        books: [...state.books.slice(0, action.bookIndex),
-          ...state.books.slice(action.bookIndex + 1)],
         isDeleting: false,
+        pagination: {
+          ...state.pagination,
+          dataCount: state.pagination.dataCount - 1,
+        },
       };
     }
     case DELETE_BOOK_FAILURE: {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Dropdown, NavItem } from 'react-materialize';
 import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -34,16 +35,41 @@ class Navbar extends Component {
               {
                 isAuthenticated && user.role === 'Admin' &&
                 <ul className="right hide-on-med-and-down">
-                  <li><Link to='/admin'>Books Catalog</Link></li>
-                  <li><Link to='/admin/addBook'>Add Book</Link></li>
                   <li>
-                    <Link to='/admin/borrowRequests'>
-                      Borrow Requests
-                    </Link></li>
+                    <Dropdown trigger={
+                      <button>
+                        Requests &nbsp;
+                        <i className="fa fa-caret-down" />
+                      </button>}>
+                      <NavItem href='/admin/borrowRequests/'>
+                        Borrow Requests
+                      </NavItem>
+                      <NavItem divider />
+                      <NavItem href='/admin/returnRequests'>
+                        Return Requests
+                      </NavItem>
+                    </Dropdown>
+                  </li>
+                  <li className="second-nav-item">
+                    <Link to='/admin'>Books Catalog</Link>
+                  </li>
                   <li>
-                    <Link to='/admin/returnRequests'>
-                      Return Request
-                    </Link>
+                    <Link to='/admin/addBook'>Add Book</Link>
+                  </li>
+                  <li>
+                    <Dropdown trigger={
+                      <button>
+                        Account &nbsp;
+                        <i className="fa fa-caret-down" />
+                      </button>}>
+                      <NavItem href='/users/favorites'>
+                        Favorites
+                      </NavItem>
+                      <NavItem divider />
+                      <NavItem href='/users/profile'>
+                        Profile
+                      </NavItem>
+                    </Dropdown>
                   </li>
                   <li>
                     <button className="btn btn-flat white-text"
@@ -92,8 +118,10 @@ class Navbar extends Component {
             <li><Link to='/admin/addBook'>Add Book</Link></li>
             <li><Link to='/admin/borrowRequests'>Borrow Requests</Link></li>
             <li><Link to='/admin/returnRequests'>Return Requests</Link></li>
+            <li><Link to='/users/favorites'>Favorites</Link></li>
+            <li><Link to='/users/profile'>Profile</Link></li>
             <li>
-              <button className="btn btn-flat white-text"
+              <button className="btn btn-flat primary-button"
                 onClick={this.props.logOut}>Log out
               </button>
             </li>
@@ -105,14 +133,12 @@ class Navbar extends Component {
           <ul className="side-nav" id="mobile-demo">
             <li>{`Welcome ${user.firstName}`} </li>
             <li>
-              <button className="btn btn-flat white-text"
-                onClick={this.props.getBooks}>Books
-              </button>
+              <Link to={'/books'}>Books</Link>
             </li>
             <li><Link to={'/users/favorites'}>Favorites</Link></li>
             <li><Link to={'/users/profile'}>Profile</Link></li>
             <li>
-              <button className="btn btn-flat white-text"
+              <button className="btn btn-flat primary-button"
                 onClick={this.props.logOut}>Log out
               </button>
             </li>

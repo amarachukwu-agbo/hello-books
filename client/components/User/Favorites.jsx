@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
+import noFavorite from '../../public/images/fav2.png';
 import getUserFavorites from '../../actions/favorites';
 import Preloader from '../Common/Preloader.jsx';
 import Pagination from '../Common/Pagination.jsx';
@@ -27,6 +28,17 @@ class Favorites extends Component {
   }
 
   /**
+   * @method componentDidMount
+   *
+   * @description fetches user's favorites on page 1
+   *
+   * @returns {void}
+   */
+  componentDidMount() {
+    this.getUserFavorites(1);
+  }
+
+  /**
    * @method getUserFavorites
    * @description gets a user's favorites
    * @param {Number} page - page of favorites to be fetched
@@ -36,17 +48,6 @@ class Favorites extends Component {
   getUserFavorites(page) {
     const { user } = this.props;
     this.props.getUserFavorites(user.id, page);
-  }
-
-  /**
-   * @method componentDidMount
-   *
-   * @description fetches user's favorites on page 1
-   *
-   * @returns {void}
-   */
-  componentDidMount() {
-    this.getUserFavorites(1);
   }
 
   /**
@@ -76,10 +77,14 @@ class Favorites extends Component {
         </div>
       );
     }
-    if (!favorites) {
+    if (favorites && !favorites.length) {
       return (
-        <div className="row center wrapper primary-text">
-          You seem to have no favorites
+        <div className="row center wrapper grey-text">
+        <img src={noFavorite} className="no-favorite-image"/>
+          <h5>Looks like you have no favorites</h5>
+          <h6>Click on the heart icon on a book's page to
+            add it to your favorites.
+          </h6>
         </div>
       );
     }

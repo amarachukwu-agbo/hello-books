@@ -44,11 +44,13 @@ const borrowRequests = (state = initialState, action) => {
       };
     }
     case HANDLE_BORROW_REQUEST_SUCCESS: {
+      const requestIndex = state.borrowRequests
+        .findIndex(request => request.id === action.requestId);
       return {
         ...state,
-        borrowRequests: [...state.borrowRequests.slice(0, action.index),
-          { ...state.borrowRequests[action.index], status: action.status },
-          ...state.borrowRequests.slice(action.index + 1)],
+        borrowRequests: [...state.borrowRequests.slice(0, requestIndex),
+          { ...state.borrowRequests[requestIndex], status: action.status },
+          ...state.borrowRequests.slice(requestIndex + 1)],
         isHandlingBorrowRequest: false,
       };
     }
