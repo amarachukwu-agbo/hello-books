@@ -15,7 +15,7 @@ class Notify {
    * @returns {void}
    */
   static notifyError(error) {
-    swal('Error', error, 'error');
+    swal('', error, 'error');
   }
 
   /**

@@ -163,8 +163,7 @@ class AdminBooksPage extends Component {
       <Modal id="edit-modal" actions={null} >
           <div className="container">
             <EditBookForm index = { this.state.book.bookIndex }
-            { ...this.props }
-              book = {this.state.book}/>
+            { ...this.props } />
           </div>
         </Modal>
       }
