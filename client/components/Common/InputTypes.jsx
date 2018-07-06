@@ -32,8 +32,16 @@ export const InputText = ({
         <i className="material-icons prefix">{icon}</i>
       }
       <label className="flow-text truncate active"> {label} </label>
+
+      { defaultValue &&
       <input {...input} type={type} onChange={input.onChange}
-        value={defaultValue} {...rest} />
+        value = {defaultValue} {...rest} />
+      }
+
+      { !defaultValue &&
+        <input {...input} type={type} onChange={input.onChange}
+          {...rest} />
+      }
       {touched && error && <span className="error flow-text"> {error} </span>}
     </div>
 );

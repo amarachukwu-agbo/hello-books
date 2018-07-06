@@ -55,7 +55,7 @@ class AdminBooksPage extends Component {
    *
    * @returns {void}
    */
-  deleteBook = (bookId, bookIndex) => {
+  deleteBook = (bookId) => {
     swal({
       title: 'Are you sure you want to delete this book?',
       text: 'Once deleted, you will not be able to recover the book',
@@ -65,7 +65,7 @@ class AdminBooksPage extends Component {
     })
       .then((willDelete) => {
         if (willDelete) {
-          return this.props.deleteBook(bookId, bookIndex);
+          return this.props.deleteBook(bookId);
         }
       });
   }
@@ -137,7 +137,7 @@ class AdminBooksPage extends Component {
   renderBooks() {
     if (this.props.books) {
       return (
-        <div>
+        <div className="wrapper">
         <AdminBooks books = { this.props.books }
           setBookForEdit = { this.setBookForEdit }
           deleteBook = { this.deleteBook }
@@ -200,11 +200,11 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = dispatch => ({
   getBooks: (page) => { dispatch(getBooks(page)); },
-  deleteBook: (bookId, bookIndex) => {
-    dispatch(deleteBook(bookId, bookIndex));
+  deleteBook: (bookId) => {
+    dispatch(deleteBook(bookId));
   },
-  editBook: (bookId, bookIndex, book) => {
-    dispatch(editBook(bookId, bookIndex, book));
+  editBook: (bookId, book) => {
+    dispatch(editBook(bookId, book));
   },
 });
 

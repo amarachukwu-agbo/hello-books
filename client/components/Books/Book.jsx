@@ -49,7 +49,12 @@ const Book = (props) => {
             <div className="col s3 btn btn-samll btn-flat white
               grey-text text-darken-2 book-icon">
               <i className="material-icons prefix">comment</i>
-              <span>{book.bookReviews.length}</span></div>
+              {
+                book.bookReviews &&
+                <span>{book.bookReviews.length}
+                </span>
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -62,7 +67,7 @@ Book.propTypes = {
   book: propTypes.shape({
     author: propTypes.string.isRequired,
     subject: propTypes.string.isRequired,
-    bookReviews: propTypes.array.isRequired,
+    bookReviews: propTypes.array,
     favCount: propTypes.number.isRequired,
     upvotes: propTypes.number.isRequired,
     downvotes: propTypes.number.isRequired,

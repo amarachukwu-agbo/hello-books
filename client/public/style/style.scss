@@ -25,9 +25,16 @@ body {
   opacity: 0.8;
 }
 
+.no-favorite-image {
+  width: 9%;
+  margin-top: 10px;
+  opacity: 0.4;
+}
+
 .not-found-image {
   width: 15%;
   margin-top: 20px;
+  opacity: 0.85;
 }
 
 .input-field input:focus  {
@@ -102,16 +109,23 @@ body {
   border-radius: 5px;
 }
 
-.progress-bar{
-  width: 200px;
-  position: relative;
-  height: 8px;
-  margin-top: 4px;
+.dropdown-button {
+  background-color: $nav-color !important;
+  border: none;
+  height: 64px;
 }
-.progress-bar .progress{
-  height: 8px;
-  background-color: #ff0000;
-  width: 0;
+
+nav li .dropdown-button:hover, .dropdown-content:hover,
+nav li .active, nav li span i:hover{
+  background-color: $nav-color !important;
+}
+
+nav .dropdown-content a {
+  color: #fff !important;
+}
+
+.second-nav-item {
+  margin-left: 12px;
 }
 
 .books-image {
@@ -179,8 +193,6 @@ nav li :hover{
   margin: auto;
   margin-top: 5%;
 }
-
-
 
 .not-found-wrapper p:first-of-type{
   text-transform: uppercase;

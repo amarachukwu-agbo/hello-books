@@ -60,7 +60,7 @@ const AdminBooks = ({
                 <button id={`deleteButton${index}`}
                   className="btn-flat btn-small"
                   disabled={isDeleting}
-                  onClick={() => { deleteBook(book.id, index); }}>
+                  onClick={() => { deleteBook(book.id); }}>
               <i className="material-icons red-text">delete</i></button></td>
             </tr>)}
         </tbody>

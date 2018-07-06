@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import dotenv from 'dotenv';
 import propTypes from 'prop-types';
 import request from 'superagent/lib/client';
 import { connect } from 'react-redux';
+import {
+  cloudinaryURL,
+  uploadPreset,
+} from '../../helpers/cloudinary';
 import { addBook } from '../../actions/books';
 import AddBookForm from './Form/AddBookForm.jsx';
-
-// Load environment variables
-dotenv.config();
-
-const uploadPreset = process.env.UPLOAD_PRESET;
-const cloudinaryURL = process.env.CLOUDINARY_URL;
 
 /**
  * @description - container component for AddBookForm
@@ -31,6 +28,7 @@ class AddBookPage extends Component {
     this.handleDrop = this.handleDrop.bind(this);
     this.state = {
       uploadedFileCloudinaryUrl: '',
+      isUploadingImage: false,
     };
   }
 
@@ -62,7 +60,10 @@ class AddBookPage extends Component {
    * @returns {void}
    */
   handleDrop(files) {
-    this.setState({ uploadedFile: files[0] });
+    this.setState({
+      uploadedFile: files[0],
+      isUploadingImage: true,
+    });
     const upload = request.post(cloudinaryURL)
       .field('upload_preset', uploadPreset)
       .field('file', files[0]);
@@ -72,11 +73,13 @@ class AddBookPage extends Component {
         this.setState({
           uploadedFileCloudinaryUrl: response.body.secure_url,
           uploadError: '',
+          isUploadingImage: false,
         });
       }
       if (err) {
         this.setState({
           uploadError: 'Error while uploading. Try again',
+          isUploadingImage: false,
         });
       }
     });
@@ -89,6 +92,7 @@ class AddBookPage extends Component {
         <div className="card-panel add-book col s8 m6 l4">
           <AddBookForm submitForm = { this.submitForm }
           uploadedFile = { this.state.uploadedFile }
+          isUploadingImage = { this.state.isUploadingImage}
           uploadError = { this.state.uploadError }
           uploadedFileCloudinaryUrl =
           { this.state.uploadedFileCloudinaryUrl}

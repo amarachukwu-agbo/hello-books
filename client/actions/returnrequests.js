@@ -48,10 +48,10 @@ const handlingReturnRequest = () => ({
   type: HANDLING_RETURN_REQUEST,
 });
 
-const handleReturnRequestSuccess = (status, index) => ({
+const handleReturnRequestSuccess = (status, requestId) => ({
   type: HANDLE_RETURN_REQUEST_SUCCESS,
   status,
-  index,
+  requestId,
 });
 
 const handleReturnRequestFailure = error => ({
@@ -60,14 +60,14 @@ const handleReturnRequestFailure = error => ({
 });
 
 export const handleReturnRequest =
-  (status, userId, bookId, requestIndex) => (dispatch) => {
+  (status, userId, bookId, requestId) => (dispatch) => {
     dispatch(handlingReturnRequest());
     setHeader();
     return axios.put(`${apiURL}/users/${userId}/return/${bookId}`, status)
       .then((response) => {
         dispatch(handleReturnRequestSuccess(
           response.data.status,
-          requestIndex,
+          requestId,
         ));
       })
       .catch((error) => {

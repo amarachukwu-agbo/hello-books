@@ -132,10 +132,10 @@ const editingBook = () => ({
   type: EDIT_BOOK_REQUEST,
 });
 
-const editBookSuccess = (book, bookIndex) => ({
+const editBookSuccess = (book, bookId) => ({
   type: EDIT_BOOK_SUCCESS,
   book,
-  bookIndex,
+  bookId,
 });
 
 const editBookFailure = error => ({
@@ -143,12 +143,12 @@ const editBookFailure = error => ({
   error,
 });
 
-export const editBook = (bookId, bookIndex, book) => (dispatch) => {
+export const editBook = (bookId, book) => (dispatch) => {
   dispatch(editingBook());
   setHeader();
   return axios.put(`${apiURL}/books/${bookId}`, book)
     .then((response) => {
-      dispatch(editBookSuccess(response.data.updatedBook, bookIndex));
+      dispatch(editBookSuccess(response.data.updatedBook, bookId));
     })
     .catch((error) => {
       if (error.response) {
@@ -164,9 +164,9 @@ const deleteBookRequest = () => ({
   type: DELETE_BOOK_REQUEST,
 });
 
-const deleteBookSuccess = bookIndex => ({
+const deleteBookSuccess = bookId => ({
   type: DELETE_BOOK_SUCCESS,
-  bookIndex,
+  bookId,
 });
 
 const deleteBookFailure = deleteError => ({
@@ -174,12 +174,12 @@ const deleteBookFailure = deleteError => ({
   deleteError,
 });
 
-export const deleteBook = (bookId, index) => (dispatch) => {
+export const deleteBook = bookId => (dispatch) => {
   dispatch(deleteBookRequest());
   setHeader();
   return axios.delete(`${apiURL}/books/${bookId}`)
     .then(() => {
-      dispatch(deleteBookSuccess(index));
+      dispatch(deleteBookSuccess(bookId));
     })
     .catch((error) => {
       if (error.response) {

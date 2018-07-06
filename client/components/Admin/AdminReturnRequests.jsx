@@ -59,7 +59,7 @@ const AdminReturnRequests = ({
                     acceptReturnRequest(
                       request.userId,
                       request.bookId,
-                      index,
+                      request.id,
                     );
                   }
                   }
@@ -72,7 +72,7 @@ const AdminReturnRequests = ({
                     declineReturnRequest(
                       request.userId,
                       request.bookId,
-                      index,
+                      request.id,
                     );
                   }
                   }

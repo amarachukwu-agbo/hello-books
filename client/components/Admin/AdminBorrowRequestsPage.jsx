@@ -37,12 +37,12 @@ class AdminBorrowRequestsPage extends Component {
    *
    * @returns {void}
    */
-  acceptBorrowRequest(userId, bookId, requestIndex) {
+  acceptBorrowRequest(userId, bookId, requestId) {
     this.props.handleBorrowRequest(
       { status: 'Accepted' },
       userId,
       bookId,
-      requestIndex,
+      requestId,
     );
   }
 
@@ -56,12 +56,12 @@ class AdminBorrowRequestsPage extends Component {
    *
    * @returns {void}
    */
-  declineBorrowRequest(userId, bookId, requestIndex) {
+  declineBorrowRequest(userId, bookId, requestId) {
     this.props.handleBorrowRequest(
       { status: 'Declined' },
       userId,
       bookId,
-      requestIndex,
+      requestId,
     );
   }
   /**

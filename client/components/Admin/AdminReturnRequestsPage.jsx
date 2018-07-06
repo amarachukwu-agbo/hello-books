@@ -31,12 +31,12 @@ class AdminReturnRequestsPage extends Component {
    *
    * @returns {void}
    */
-  acceptReturnRequest(userId, bookId, requestIndex) {
+  acceptReturnRequest(userId, bookId, requestId) {
     this.props.handleReturnRequest(
       { status: 'Accepted' },
       userId,
       bookId,
-      requestIndex,
+      requestId,
     );
   }
 
@@ -50,12 +50,12 @@ class AdminReturnRequestsPage extends Component {
    *
    * @returns {void}
    */
-  declineReturnRequest(userId, bookId, requestIndex) {
+  declineReturnRequest(userId, bookId, requestId) {
     this.props.handleReturnRequest(
       { status: 'Declined' },
       userId,
       bookId,
-      requestIndex,
+      requestId,
     );
   }
 

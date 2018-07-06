@@ -39,6 +39,7 @@ const BookForm = ({
   uploadedFile,
   uploadError,
   uploadedFileCloudinaryUrl,
+  isUploadingImage,
   handleDrop,
 }) => (
       <form ref="bookForm" onSubmit={handleSubmit(submitForm)} >
@@ -92,6 +93,14 @@ const BookForm = ({
                 }
             </div>
           }
+          {
+            isUploadingImage &&
+            <div className="row center">
+              <span>
+                <i className="fa fa-spinner fa-spin" />
+              </span>
+            </div>
+          }
           { uploadError &&
             <div className="img-upload">
               <p className="red-text"> { uploadError } </p>
@@ -122,6 +131,7 @@ BookForm.propTypes = {
   uploadError: propTypes.string,
   uploadedFileCloudinaryUrl: propTypes.string,
   handleDrop: propTypes.func.isRequired,
+  isUploadingImage: propTypes.bool,
 };
 
 // Redux Form wrapper

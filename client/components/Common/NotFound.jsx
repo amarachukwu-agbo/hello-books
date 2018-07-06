@@ -18,7 +18,7 @@ const NotFound = ({ match }) => (
       <Navbar />
     }
     <div className="center wrapper">
-      <div className="not-found-wrapper card-panel z-depth-5">
+      <div className="not-found-wrapper card-panel z-depth-3">
         <img src={lensImage} className="not-found-image" />
         <h4 className="not-found center primary-text">
           404
@@ -26,7 +26,7 @@ const NotFound = ({ match }) => (
         <p className="center">Oops! Page was not found </p>
         <p className="center primary-text">
           We are sorry the page you requested could not be found.
-      Go back to <Link to={'/'}>homepage ? </Link>
+          Go back to <Link to={'/'}>homepage ? </Link>
         </p>
       </div>
     </div>
