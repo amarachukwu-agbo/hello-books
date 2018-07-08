@@ -22,8 +22,9 @@ import {
   DELETE_BOOK_FAILURE,
 } from './types';
 
-import setHeader from '../helpers/setheader';
-import { apiURL } from './userSignUp';
+import checkError from '../helpers/checkError';
+import setHeader from '../helpers/setHeader';
+import { apiURL } from './signUp';
 
 const getBooksRequest = () => ({
   type: GET_BOOKS_REQUEST,
@@ -62,7 +63,8 @@ export const getBooks = page => (dispatch) => {
       dispatch(getBooksSuccess(response.data));
     })
     .catch((error) => {
-      dispatch(getBooksFailure(error));
+      const errorMessage = checkError(error);
+      dispatch(getBooksFailure(errorMessage));
     });
 };
 
@@ -89,11 +91,8 @@ export const addBook = book => (dispatch) => {
       dispatch(push('/admin'));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(addBookFailure(error.response.data.error));
-      } else {
-        dispatch(addBookFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(addBookFailure(errorMessage));
     });
 };
 
@@ -120,11 +119,8 @@ export const searchBooks = (searchBy, searchParam) => (dispatch) => {
       dispatch(push('/books'));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(searchBooksFailure(error.response.data.error));
-      } else {
-        dispatch(searchBooksFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(searchBooksFailure(errorMessage));
     });
 };
 
@@ -151,12 +147,8 @@ export const editBook = (bookId, book) => (dispatch) => {
       dispatch(editBookSuccess(response.data.updatedBook, bookId));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(editBookFailure(error.response.data.error
-          || error.response.data.msg));
-      } else {
-        dispatch(editBookFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(editBookFailure(errorMessage));
     });
 };
 
@@ -182,13 +174,8 @@ export const deleteBook = bookId => (dispatch) => {
       dispatch(deleteBookSuccess(bookId));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(deleteBookFailure(error.response.data.message
-            ||
-            error.response.data.error));
-      } else {
-        dispatch(deleteBookFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(deleteBookFailure(errorMessage));
     });
 };
 
@@ -200,6 +187,7 @@ export const getMostUpvotedBooks = page => (dispatch) => {
       dispatch(getUpvotedBooksSuccess(response.data));
     })
     .catch((error) => {
-      dispatch(getUpvotedBooksFailure(error));
+      const errorMessage = checkError(error);
+      dispatch(getUpvotedBooksFailure(errorMessage));
     });
 };

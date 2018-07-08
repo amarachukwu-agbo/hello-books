@@ -7,7 +7,7 @@ import swal from 'sweetalert';
  */
 class Notify {
   /**
-   * @function notifyError
+   * @method notifyError
    * @memberof Notify
    * @static
    * @param {string} error
@@ -19,7 +19,7 @@ class Notify {
   }
 
   /**
-   * @function notifyInfo
+   * @method notifyInfo
    * @memberof Notify
    * @static
    * @param {string} info
@@ -31,7 +31,7 @@ class Notify {
   }
 
   /**
-   * @function notifySuccess
+   * @method notifySuccess
    * @memberof Notify
    * @static
    * @param {string} message

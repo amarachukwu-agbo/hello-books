@@ -7,8 +7,9 @@ import {
   RETURN_BOOK_REQUEST,
   RETURN_BOOK_FAILURE,
 } from './types';
-import { apiURL } from './userSignUp';
-import setHeader from '../helpers/setheader';
+import { apiURL } from './signUp';
+import checkError from '../helpers/checkError';
+import setHeader from '../helpers/setHeader';
 
 const fetchingProfile = () => ({
   type: FETCHING_PROFILE,
@@ -32,12 +33,8 @@ export const getUserProfile = userId => (dispatch) => {
       dispatch(profileSuccess(response.data.user));
     })
     .catch((error) => {
-      if (error.response) {
-        const errorMessage = 'An error occured';
-        dispatch(profileFailure(errorMessage));
-      } else {
-        dispatch(profileFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(profileFailure(errorMessage));
     });
 };
 
@@ -63,13 +60,8 @@ export const returnBook = (userId, bookId) => (dispatch) => {
       dispatch(returnBookSuccess(response.data.returnRequest));
     })
     .catch((error) => {
-      if (error.response) {
-        let errorMessage = '';
-        errorMessage = error.response.msg;
-        dispatch(returnBookFailure(errorMessage));
-      } else {
-        dispatch(returnBookFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(returnBookFailure(errorMessage));
     });
 };
 

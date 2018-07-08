@@ -24,10 +24,11 @@ class AdminBooksPage extends Component {
    */
   constructor(props) {
     super(props);
-    this.toggleModal = this.toggleModal.bind(this);
     this.state = {
       book: { bookId: '', bookIndex: null },
     };
+    this.deleteBook = this.deleteBook.bind(this);
+    this.setBookForEdit = this.setBookForEdit.bind(this);
   }
 
   /**
@@ -40,9 +41,9 @@ class AdminBooksPage extends Component {
    *
    * @returns {void}
    */
-  setBookForEdit = (bookId, bookIndex) => {
+  setBookForEdit(bookId, bookIndex) {
     this.setState({ book: { bookId, bookIndex } });
-    this.toggleModal();
+    $('#edit-modal').modal('open');
   }
 
   /**
@@ -55,7 +56,7 @@ class AdminBooksPage extends Component {
    *
    * @returns {void}
    */
-  deleteBook = (bookId) => {
+  deleteBook(bookId) {
     swal({
       title: 'Are you sure you want to delete this book?',
       text: 'Once deleted, you will not be able to recover the book',
@@ -68,18 +69,6 @@ class AdminBooksPage extends Component {
           return this.props.deleteBook(bookId);
         }
       });
-  }
-
-
-  /**
-   * @memberof AdminBooksPage
-   * @method toggleModal
-   * @description toggles modal for editing a book
-   *
-   * @return {void}
-   */
-  toggleModal = () => {
-    $('#edit-modal').modal('open');
   }
 
   /**

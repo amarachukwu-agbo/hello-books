@@ -13,3 +13,4 @@ exclude_patterns:
 - "server/tests"
 - "tests/"
 - "spec/"
+- "client/__tests__"

@@ -33,8 +33,8 @@ const BorrowedBooks = (props) => {
           </tr>
         </thead>
         <tbody>
-          {books.map((book, index) =>
-            <tr key={index}>
+          {books.map(book =>
+            <tr key={book.id}>
               <td>{book.borrowedBooks.title}</td>
               <td> {book.createdAt.split('T')[0]} </td>
               <td> {book.status} </td>

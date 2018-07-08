@@ -56,8 +56,8 @@ class Reviews extends Component {
         </div>
       );
     }
-    return reviews.map((review, index) => (
-      <div className="review-box grey lighten-5" key={index}>
+    return reviews.map(review => (
+      <div className="review-box grey lighten-5" key={review.id}>
         <strong>
           <p className="grey-text text-darken-3">
           <i className="material-icons left">account_circle</i>

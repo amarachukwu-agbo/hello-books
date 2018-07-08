@@ -31,8 +31,8 @@ const BorrowRequests = (props) => {
           </tr>
         </thead>
         <tbody>
-          {requests.map((request, index) =>
-            <tr key={index}>
+          {requests.map(request =>
+            <tr key={request.id}>
               <td> {request.borrowRequests.title} </td>
               <td> {request.borrowRequests.author} </td>
               <td> {request.createdAt.split('T')[0]} </td>

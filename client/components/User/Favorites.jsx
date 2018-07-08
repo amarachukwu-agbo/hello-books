@@ -69,7 +69,7 @@ class Favorites extends Component {
     if (error) {
       return (
         <div className="row center wrapper">
-          <div className="row card-panel">
+          <div className="row">
             <h6 className="flow-text red-text">
               {`Oops! Couldn't fetch your favorites. ${this.props.error}`}
             </h6>
@@ -93,8 +93,8 @@ class Favorites extends Component {
       return (
         <div>
           <div>
-            {favorites.map((favorite, index) =>
-              <div className="row card-panel favorite-card" key={index}>
+            {favorites.map(favorite =>
+              <div className="row card-panel favorite-card" key={favorite.id}>
                 <div className="col s4 m3 l2 " style={{
                   backgroundImage: `url(${favorite.favBook.imageURL})`,
                   backgroundPosition: 'center center',

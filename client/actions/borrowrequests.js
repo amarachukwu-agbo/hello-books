@@ -8,8 +8,9 @@ import {
   HANDLE_BORROW_REQUEST_FAILURE,
 } from './types';
 
-import setHeader from '../helpers/setheader';
-import { apiURL } from './userSignUp';
+import checkError from '../helpers/checkError';
+import setHeader from '../helpers/setHeader';
+import { apiURL } from './signUp';
 
 const fetchingBorrowRequests = () => ({
   type: FETCHING_BORROW_REQUESTS,
@@ -34,13 +35,8 @@ export const getBorrowRequests = page => (dispatch) => {
       dispatch(borrowRequestsSuccess(response.data));
     })
     .catch((error) => {
-      if (error.response) {
-        let errorMessage = '';
-        errorMessage = error.response.msg;
-        dispatch(borrowRequestsFailure(errorMessage));
-      } else {
-        dispatch(borrowRequestsFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(borrowRequestsFailure(errorMessage));
     });
 };
 
@@ -71,13 +67,8 @@ export const handleBorrowRequest =
         ));
       })
       .catch((error) => {
-        if (error.response) {
-          let errorMessage = '';
-          errorMessage = error.response.msg;
-          dispatch(handleBorrowRequestFailure(errorMessage));
-        } else {
-          dispatch(handleBorrowRequestFailure(error.message));
-        }
+        const errorMessage = checkError(error);
+        dispatch(handleBorrowRequestFailure(errorMessage));
       });
   };
 
