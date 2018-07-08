@@ -7,9 +7,9 @@ import {
   HANDLE_RETURN_REQUEST_SUCCESS,
   HANDLE_RETURN_REQUEST_FAILURE,
 } from './types';
-
-import setHeader from '../helpers/setheader';
-import { apiURL } from './userSignUp';
+import checkError from '../helpers/checkError';
+import setHeader from '../helpers/setHeader';
+import { apiURL } from './signUp';
 
 const fetchingReturnRequests = () => ({
   type: FETCHING_RETURN_REQUESTS,
@@ -34,13 +34,8 @@ export const getReturnRequests = page => (dispatch) => {
       dispatch(returnRequestsSuccess(response.data));
     })
     .catch((error) => {
-      if (error.response) {
-        let errorMessage = '';
-        errorMessage = error.response.msg;
-        dispatch(returnRequestsFailure(errorMessage));
-      } else {
-        dispatch(returnRequestsFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(returnRequestsFailure(errorMessage));
     });
 };
 
@@ -71,12 +66,7 @@ export const handleReturnRequest =
         ));
       })
       .catch((error) => {
-        if (error.response) {
-          let errorMessage = '';
-          errorMessage = error.response.data.error;
-          dispatch(handleReturnRequestFailure(errorMessage));
-        } else {
-          dispatch(handleReturnRequestFailure(error.message));
-        }
+        const errorMessage = checkError(error);
+        dispatch(handleReturnRequestFailure(errorMessage));
       });
   };

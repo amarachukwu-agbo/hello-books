@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-materialize';
 import propTypes from 'prop-types';
-import checkAuthentication from '../../helpers/auth';
+import checkAuthentication from '../../helpers/checkAuthentication';
 import BorrowBookForm from './Form/BorrowBookForm.jsx';
 
 /**

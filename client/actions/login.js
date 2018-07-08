@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { push } from 'react-router-redux';
 import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE, LOG_OUT } from './types';
-import { apiURL } from './userSignUp';
-import setUser from '../helpers/setuser';
+import { apiURL } from './signUp';
+import setUser from '../helpers/setUser';
+import checkError from '../helpers/checkError';
 
 const loggingIn = () => ({
   type: LOGGING_IN,
@@ -28,16 +29,11 @@ export const loginUser = user => (dispatch) => {
     .then((response) => {
       setUser(response);
       dispatch(loginSuccess(response.data.user));
-      setTimeout(() => {
-        dispatch(push('/'));
-      }, 3000);
+      dispatch(push('/'));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(loginFailure(error.response.data.error));
-      } else {
-        dispatch(loginFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(loginFailure(errorMessage));
     });
 };
 

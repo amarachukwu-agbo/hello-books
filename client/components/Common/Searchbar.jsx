@@ -16,6 +16,7 @@ const searchParams = ['Title', 'Author', 'Subject'];
 class SearchBar extends Component {
   constructor(props) {
     super(props);
+    this.searchBook = this.searchBook.bind(this);
     this.state = {
       searchBy: 'Search By',
       searchParam: '',
@@ -28,7 +29,7 @@ class SearchBar extends Component {
    *
    * @returns {void}
    */
-  searchBook = () => {
+  searchBook() {
     const { searchBy, searchParam } = this.state;
 
     if (searchBy !== 'Search By' && searchParam.trim() !== '') {

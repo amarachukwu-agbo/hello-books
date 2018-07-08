@@ -5,7 +5,7 @@ import Navbar from '../Common/Navbar.jsx';
 import books2 from '../../public/images/books(4).jpg';
 import PageFooter from '../Common/PageFooter.jsx';
 import SignUpForm from './SignUpForm.jsx';
-import { signUp } from '../../actions/userSignUp';
+import { signUp } from '../../actions/signUp';
 
 /**
  * @description - container component for SignUpForm

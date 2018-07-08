@@ -41,8 +41,8 @@ const AdminBorrowRequests = ({
             </tr>
           </thead>
           <tbody>
-            {borrowRequests.map((request, index) =>
-              <tr key={index}>
+            {borrowRequests.map(request =>
+              <tr key={request.id}>
                 <td> {`${request.userBorrowRequests.firstName} 
                 ${request.userBorrowRequests.lastName}`} </td>
                 <td> {request.borrowRequests.title} </td>

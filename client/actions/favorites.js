@@ -4,8 +4,9 @@ import {
   FAVORITES_SUCCESS,
   FAVORITES_FAILURE,
 } from './types';
-import setHeader from '../helpers/setheader';
-import { apiURL } from './userSignUp';
+import checkError from '../helpers/checkError';
+import setHeader from '../helpers/setHeader';
+import { apiURL } from './signUp';
 
 
 const fetchingFavorites = () => ({
@@ -31,17 +32,8 @@ const getUserFavorites = (userId, page) => (dispatch) => {
       dispatch(favoritesSuccess(response.data));
     })
     .catch((error) => {
-      if (error.response) {
-        let errorMessage = '';
-        if (error.response.status === 404) {
-          errorMessage = 'You currently have no favorites';
-        } else {
-          errorMessage = 'An error occured';
-        }
-        dispatch(favoritesFailure(errorMessage));
-      } else {
-        dispatch(favoritesFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(favoritesFailure(errorMessage));
     });
 };
 
