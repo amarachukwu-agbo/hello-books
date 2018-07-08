@@ -7,7 +7,7 @@ import Notify from '../helpers/Notify';
  *
  * @param {bool} authenticated
  *
- * @returns {void}
+ * @returns {function} - funtion that notifies user
  */
 const checkAuthentication = (authenticated) => {
   if (!authenticated) {

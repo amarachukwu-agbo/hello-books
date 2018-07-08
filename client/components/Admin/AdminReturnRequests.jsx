@@ -38,8 +38,8 @@ const AdminReturnRequests = ({
             </tr>
           </thead>
           <tbody>
-            {returnRequests.map((request, index) =>
-              <tr key={index}>
+            {returnRequests.map(request =>
+              <tr key={request.id}>
                 <td> {`${request.userReturnRequests.firstName}
                 ${request.userReturnRequests.lastName}`} </td>
                 <td> {request.returnRequests.title} </td>

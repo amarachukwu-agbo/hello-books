@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { shallow } from 'enzyme';
 import Book from '../Book';
 
@@ -23,4 +23,4 @@ describe('<Book/>', () => {
     expect(wrapper.containsMatchingElement(<img src = { book.imageURL }
         className="responsive-img" />)).toEqual(true);
   });
-});
+}); */

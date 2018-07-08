@@ -457,10 +457,7 @@ export default class Users {
         }
         return res.status(200).json({
           message: 'Successful',
-          requestId: request.id,
           status: 'Declined',
-          book: bookId,
-          user: userId,
         });
       })
       .catch(error => res.status(500).json({

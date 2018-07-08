@@ -19,8 +19,9 @@ import {
   REVIEW_BOOK_REQUEST,
   REVIEW_BOOK_FAILURE,
 } from './types';
-import setHeader from '../helpers/setheader';
-import { apiURL } from './userSignUp';
+import checkError from '../helpers/checkError';
+import setHeader from '../helpers/setHeader';
+import { apiURL } from './signUp';
 
 const getBookRequest = () => ({
   type: GET_BOOK_REQUEST,
@@ -44,19 +45,14 @@ export const getBook = params => (dispatch) => {
       dispatch(getBookSuccess(response.data.book));
     })
     .catch((error) => {
-      if (error.response) {
-        let errorMessage = '';
-        if (error.response.status === 400) {
-          errorMessage = 'Bad Request';
-        } else if (error.response.status === 404) {
-          errorMessage = 'Book was not found.';
-        } else {
-          errorMessage = 'An error occured';
-        }
-        dispatch(getBookFailure(errorMessage));
+      let errorMessage;
+      if (error.response !== undefined &&
+        error.response.status === 400) {
+        errorMessage = 'Bad request';
       } else {
-        dispatch(getBookFailure(error.message));
+        errorMessage = checkError(error);
       }
+      dispatch(getBookFailure(errorMessage));
     });
 };
 
@@ -74,7 +70,7 @@ const favoriteFailure = error => ({
   error,
 });
 
-export const favoriteBook = (userId, bookId) => (dispatch) => {
+export const favoriteBook = bookId => (dispatch) => {
   dispatch(favoriteRequest());
   setHeader();
   return axios.post(`${apiURL}/books/${bookId}/favorite`)
@@ -82,11 +78,8 @@ export const favoriteBook = (userId, bookId) => (dispatch) => {
       dispatch(favoriteSuccess(response.data.book.favCount));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(favoriteFailure(error.response.data.error));
-      } else {
-        dispatch(favoriteFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(favoriteFailure(errorMessage));
     });
 };
 
@@ -104,7 +97,7 @@ const upvoteFailure = error => ({
   error,
 });
 
-export const upvoteBook = (userId, bookId) => (dispatch) => {
+export const upvoteBook = bookId => (dispatch) => {
   dispatch(upvoteRequest());
   setHeader();
   return axios.post(`${apiURL}/books/${bookId}/upvote`)
@@ -112,11 +105,8 @@ export const upvoteBook = (userId, bookId) => (dispatch) => {
       dispatch(upvoteSuccess(response.data.vote.book));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(upvoteFailure(error.response.data.error));
-      } else {
-        dispatch(upvoteFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(upvoteFailure(errorMessage));
     });
 };
 
@@ -142,11 +132,8 @@ export const downvoteBook = (userId, bookId) => (dispatch) => {
       dispatch(downvoteSuccess(response.data.vote.book));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(downvoteFailure(error.response.data.error));
-      } else {
-        dispatch(downvoteFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(downvoteFailure(errorMessage));
     });
 };
 
@@ -173,11 +160,8 @@ export const borrowBook = (userId, book, request) => (dispatch) => {
       dispatch(borrowBookSuccess(response.data.request.status, book));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(borrowBookFailure(error.response.data.error));
-      } else {
-        dispatch(borrowBookFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(borrowBookFailure(errorMessage));
     });
 };
 
@@ -195,7 +179,7 @@ const reviewBookFailure = error => ({
   error,
 });
 
-export const reviewBook = (userId, bookId, review) => (dispatch) => {
+export const reviewBook = (bookId, review) => (dispatch) => {
   dispatch(reviewBookRequest());
   setHeader();
   return axios.post(`${apiURL}/books/${bookId}/review`, review)
@@ -203,11 +187,8 @@ export const reviewBook = (userId, bookId, review) => (dispatch) => {
       dispatch(reviewBookSuccess(response.data.reviewedBook));
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(reviewBookFailure(error.response.data.msg));
-      } else {
-        dispatch(reviewBookFailure(error.message));
-      }
+      const errorMessage = checkError(error);
+      dispatch(reviewBookFailure(errorMessage));
     });
 };
 

@@ -32,8 +32,8 @@ const ReturnRequests = (props) => {
           </tr>
         </thead>
         <tbody>
-          { requests.map((request, index) =>
-            <tr key={index}>
+          { requests.map(request =>
+            <tr key={request.id}>
               <td> {request.returnRequests.title} </td>
               <td> {request.returnRequests.author} </td>
               <td> {request.createdAt.split('T')[0]} </td>

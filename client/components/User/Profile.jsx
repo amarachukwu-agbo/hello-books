@@ -52,7 +52,7 @@ class Profile extends Component {
     if (profileError) {
       return (
         <div className="row center wrapper">
-          <div className="row card-panel">
+          <div className="row">
             <h6 className="red-text flow-text">
               {`Oops couldn't fetch your profile.
                 ${this.props.profileError}` }

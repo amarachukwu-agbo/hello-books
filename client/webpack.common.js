@@ -11,7 +11,7 @@ module.exports = {
   plugins: [
     new cleanWebPackPlugin(['dist']),
     new Dotenv({
-      path: path.resolve(__dirname, '../.env'),
+      path: path.resolve('./.env'),
     }),
   ],
   node: {
