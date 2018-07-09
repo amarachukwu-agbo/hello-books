@@ -1,15 +1,9 @@
 import { SIGN_UP_SUCCESS, SIGNING_UP, SIGN_UP_FAILURE } from '../actions/types';
 import Notify from '../helpers/Notify';
 
-const initialState = {
-  isSigningUp: false,
-  hasErrored: false,
-  error: null,
-  user: null,
+const initialState = {};
 
-};
-
-const auth = (state = initialState, action) => {
+const signUp = (state = initialState, action) => {
   switch (action.type) {
     case SIGN_UP_FAILURE:
       Notify.notifyError(action.error);
@@ -40,4 +34,4 @@ const auth = (state = initialState, action) => {
   }
 };
 
-export default auth;
+export default signUp;

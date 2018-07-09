@@ -74,7 +74,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  ...state.auth,
+  ...state.signUp,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);

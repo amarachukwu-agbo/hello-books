@@ -139,7 +139,6 @@ const book = (state = initialState, action) => {
       };
     }
     case REVIEW_BOOK_REQUEST: {
-      Notify.notifySuccess('Your review has been created');
       return {
         ...state,
         isReviewing: true,
@@ -153,6 +152,7 @@ const book = (state = initialState, action) => {
       };
     }
     case REVIEW_BOOK_SUCCESS: {
+      Notify.notifySuccess('Your review has been created');
       return {
         ...state,
         book: {

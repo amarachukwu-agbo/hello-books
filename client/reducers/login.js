@@ -6,13 +6,7 @@ import {
 } from '../actions/types';
 import Notify from '../helpers/Notify';
 
-const initialstate = {
-  isLoggingIn: false,
-  isAuthenticated: false,
-  hasErrored: false,
-  error: null,
-  user: null,
-};
+const initialstate = {};
 
 const login = (state = initialstate, action) => {
   switch (action.type) {

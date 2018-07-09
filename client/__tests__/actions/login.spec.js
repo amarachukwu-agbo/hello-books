@@ -24,7 +24,7 @@ describe('Login actions', () => {
         const request = moxios.requests.mostRecent();
         request.respondWith({
           status: 201,
-          response: users.signupResponse,
+          response: users.authResponse,
         });
       });
       const expectedActions = [{

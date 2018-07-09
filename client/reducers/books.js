@@ -79,7 +79,6 @@ export const books = (state = initialState, action) => {
       return {
         ...state,
         isAdding: true,
-        addBookError: null,
       };
     }
     case ADD_BOOK_FAILURE: {
@@ -87,7 +86,6 @@ export const books = (state = initialState, action) => {
       return {
         ...state,
         isAdding: false,
-        addBookError: action.error,
       };
     }
     case ADD_BOOK_SUCCESS: {
@@ -95,7 +93,6 @@ export const books = (state = initialState, action) => {
       return {
         ...state,
         isAdding: false,
-        addBookError: null,
       };
     }
     case EDIT_BOOK_REQUEST: {
