@@ -22,18 +22,18 @@ describe('Signup actions', () => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
         status: 201,
-        response: users.signupResponse,
+        response: users.authResponse,
       });
     });
     const expectedActions = [{
       type: actionTypes.SIGNING_UP,
     }, {
       type: actionTypes.SIGN_UP_SUCCESS,
-      user: users.signupResponse.user,
+      user: users.authResponse.user,
     },
     {
       type: actionTypes.LOGIN_SUCCESS,
-      user: users.signupResponse.user,
+      user: users.authResponse.user,
     },
     {
       payload:

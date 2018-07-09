@@ -32,9 +32,9 @@ class Reviews extends Component {
    * @returns {void}
    */
   submitForm(values) {
-    const { user, book } = this.props;
+    const { book } = this.props;
     if (values.review && values.review.trim() !== '') {
-      this.props.reviewBook(user.id, book.id, values);
+      this.props.reviewBook(book.id, values);
     } else {
       Notify.notifyError('Review must not be empty');
     }

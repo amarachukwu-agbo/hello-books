@@ -47,7 +47,8 @@
     "collectCoverageFrom": [
       "client/**/*.js?(x)",
       "!client/src/*.js",
-      "!client/*.js"
+      "!client/*.js",
+      "!client/reducers/index.js"
     ]
   },
   "homepage": "https://github.com/amarachukwu-agbo/hello-books#readme",

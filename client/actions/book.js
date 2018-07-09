@@ -124,7 +124,7 @@ const downvoteFailure = error => ({
   error,
 });
 
-export const downvoteBook = (userId, bookId) => (dispatch) => {
+export const downvoteBook = bookId => (dispatch) => {
   dispatch(downvoteRequest());
   setHeader();
   return axios.post(`${apiURL}/books/${bookId}/downvote`)

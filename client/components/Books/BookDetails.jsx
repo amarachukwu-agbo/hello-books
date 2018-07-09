@@ -34,7 +34,7 @@ class BookDetails extends Component {
    */
   favoriteBook() {
     checkAuthentication(this.props.isAuthenticated);
-    this.props.favoriteBook(this.props.user.id, this.props.book.id);
+    this.props.favoriteBook(this.props.book.id);
   }
 
   /**
@@ -46,7 +46,7 @@ class BookDetails extends Component {
    */
   upvoteBook() {
     checkAuthentication(this.props.isAuthenticated);
-    this.props.upvoteBook(this.props.user.id, this.props.book.id);
+    this.props.upvoteBook(this.props.book.id);
   }
 
   /**
@@ -58,7 +58,7 @@ class BookDetails extends Component {
    */
   downvoteBook() {
     checkAuthentication(this.props.isAuthenticated);
-    this.props.downvoteBook(this.props.user.id, this.props.book.id);
+    this.props.downvoteBook(this.props.book.id);
   }
 
   render() {

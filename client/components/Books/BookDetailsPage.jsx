@@ -129,14 +129,14 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = dispatch => ({
   getBook: (bookId) => { dispatch(getBook(bookId)); },
-  favoriteBook: (userId, bookId) => { dispatch(favoriteBook(userId, bookId)); },
-  upvoteBook: (userId, bookId) => { dispatch(upvoteBook(userId, bookId)); },
-  downvoteBook: (userId, bookId) => { dispatch(downvoteBook(userId, bookId)); },
+  favoriteBook: (bookId) => { dispatch(favoriteBook(bookId)); },
+  upvoteBook: (bookId) => { dispatch(upvoteBook(bookId)); },
+  downvoteBook: (bookId) => { dispatch(downvoteBook(bookId)); },
   borrowBook: (userId, bookId, request) => {
     dispatch(borrowBook(userId, bookId, request));
   },
-  reviewBook: (userId, bookId, review) => {
-    dispatch(reviewBook(userId, bookId, review));
+  reviewBook: (bookId, review) => {
+    dispatch(reviewBook(bookId, review));
   },
 });
 
