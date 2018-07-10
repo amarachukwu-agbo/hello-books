@@ -11,7 +11,7 @@ const PageFooter = () => (
     <div className="footer-copyright">
       <div className="container center-align grey-text">
         © 2017 Copyright Hello-books
-                    </div>
+      </div>
     </div>
   </footer>
 );
