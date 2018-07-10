@@ -14,7 +14,7 @@ import materialize from '../../helpers/materialize';
  * @extends {React.Component}
  */
 
-class AdminRoute extends React.Component {
+export class AdminRoute extends React.Component {
   componentDidMount() {
     materialize();
   }

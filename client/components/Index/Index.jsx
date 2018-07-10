@@ -3,10 +3,8 @@ import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Slider, Slide } from 'react-materialize';
-import Navbar from '../Common/Navbar.jsx';
 import books4 from '../../public/images/books(4).jpg';
 import books1 from '../../public/images/books(1).jpg';
-import PageFooter from '../Common/PageFooter.jsx';
 import BooksList from '../Books/BooksList.jsx';
 import Preloader from '../Common/Preloader.jsx';
 import {
@@ -43,7 +41,6 @@ class IndexPage extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div>
           <Slider indicators={false} className="slider-div">
             <Slide
@@ -143,7 +140,6 @@ class IndexPage extends Component {
             }
           </div>
         </div>
-        <PageFooter />
       </div>
     );
   }

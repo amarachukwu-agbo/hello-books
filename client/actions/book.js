@@ -19,6 +19,7 @@ import {
   REVIEW_BOOK_REQUEST,
   REVIEW_BOOK_FAILURE,
 } from './types';
+import Notify from '../helpers/Notify';
 import checkError from '../helpers/checkError';
 import setHeader from '../helpers/setHeader';
 import { apiURL } from './signUp';
@@ -65,9 +66,8 @@ const favoriteSuccess = favCount => ({
   favCount,
 });
 
-const favoriteFailure = error => ({
+const favoriteFailure = () => ({
   type: FAVORITE_FAILURE,
-  error,
 });
 
 export const favoriteBook = bookId => (dispatch) => {
@@ -76,10 +76,12 @@ export const favoriteBook = bookId => (dispatch) => {
   return axios.post(`${apiURL}/books/${bookId}/favorite`)
     .then((response) => {
       dispatch(favoriteSuccess(response.data.book.favCount));
+      Notify.notifySuccess('Book has been added to favorites');
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(favoriteFailure(errorMessage));
+      Notify.notifyInfo(errorMessage);
+      dispatch(favoriteFailure());
     });
 };
 
@@ -92,9 +94,8 @@ const upvoteSuccess = book => ({
   book,
 });
 
-const upvoteFailure = error => ({
+const upvoteFailure = () => ({
   type: UPVOTE_FAILURE,
-  error,
 });
 
 export const upvoteBook = bookId => (dispatch) => {
@@ -106,7 +107,8 @@ export const upvoteBook = bookId => (dispatch) => {
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(upvoteFailure(errorMessage));
+      Notify.notifyInfo(errorMessage);
+      dispatch(upvoteFailure());
     });
 };
 
@@ -119,9 +121,8 @@ const downvoteSuccess = book => ({
   book,
 });
 
-const downvoteFailure = error => ({
+const downvoteFailure = () => ({
   type: DOWNVOTE_FAILURE,
-  error,
 });
 
 export const downvoteBook = bookId => (dispatch) => {
@@ -133,7 +134,8 @@ export const downvoteBook = bookId => (dispatch) => {
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(downvoteFailure(errorMessage));
+      Notify.notifyInfo(errorMessage);
+      dispatch(downvoteFailure());
     });
 };
 
@@ -141,15 +143,13 @@ const borrowBookRequest = () => ({
   type: BORROW_BOOK_REQUEST,
 });
 
-const borrowBookSuccess = (borrowStatus, book) => ({
+const borrowBookSuccess = borrowStatus => ({
   type: BORROW_BOOK_SUCCESS,
   borrowStatus,
-  book,
 });
 
-const borrowBookFailure = error => ({
+const borrowBookFailure = () => ({
   type: BORROW_BOOK_FAILURE,
-  error,
 });
 
 export const borrowBook = (userId, book, request) => (dispatch) => {
@@ -157,11 +157,16 @@ export const borrowBook = (userId, book, request) => (dispatch) => {
   setHeader();
   return axios.post(`${apiURL}/users/${userId}/borrow/${book.id}/`, request)
     .then((response) => {
-      dispatch(borrowBookSuccess(response.data.request.status, book));
+      dispatch(borrowBookSuccess(response.data.request.status));
+      Notify
+        .notifySuccess(`Your request to borrow
+        ${book.title} has been sent.
+        Check status in your profile`);
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(borrowBookFailure(errorMessage));
+      dispatch(borrowBookFailure());
+      Notify.notifyInfo(errorMessage);
     });
 };
 
@@ -174,9 +179,8 @@ const reviewBookSuccess = book => ({
   book,
 });
 
-const reviewBookFailure = error => ({
+const reviewBookFailure = () => ({
   type: REVIEW_BOOK_FAILURE,
-  error,
 });
 
 export const reviewBook = (bookId, review) => (dispatch) => {
@@ -185,10 +189,12 @@ export const reviewBook = (bookId, review) => (dispatch) => {
   return axios.post(`${apiURL}/books/${bookId}/review`, review)
     .then((response) => {
       dispatch(reviewBookSuccess(response.data.reviewedBook));
+      Notify.notifySuccess('Your review has been created');
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(reviewBookFailure(errorMessage));
+      dispatch(reviewBookFailure());
+      Notify.notifyError(errorMessage);
     });
 };
 

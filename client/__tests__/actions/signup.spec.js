@@ -64,7 +64,6 @@ describe('Signup actions', () => {
       type: actionTypes.SIGNING_UP,
     }, {
       type: actionTypes.SIGN_UP_FAILURE,
-      error: users.signupErrorResponse.error,
     },
     ];
     const store = mockStore({});

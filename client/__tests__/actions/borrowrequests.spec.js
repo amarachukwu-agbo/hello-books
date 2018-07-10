@@ -56,7 +56,6 @@ describe('Borrow Requests actions', () => {
       type: actionTypes.FETCHING_BORROW_REQUESTS,
     }, {
       type: actionTypes.BORROW_REQUESTS_FAILURE,
-      error: requests.borrowRequestsErrorResponse.error,
     },
     ];
     const store = mockStore({});
@@ -92,7 +91,7 @@ describe('Borrow Requests actions', () => {
       });
   });
   it(`dispatches HANDLING_BORROW_REQUEST and
-    HANDLE_BORROW_REQUEST_SUCCESS when there
+    HANDLE_BORROW_REQUEST_FAILURE when there
     is an error handling borrow requests`, (done) => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
@@ -105,7 +104,6 @@ describe('Borrow Requests actions', () => {
       type: actionTypes.HANDLING_BORROW_REQUEST,
     }, {
       type: actionTypes.HANDLE_BORROW_REQUEST_FAILURE,
-      error: requests.handleBorrowRequestErrorResponse.error,
     },
     ];
     const store = mockStore({});

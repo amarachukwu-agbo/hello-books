@@ -1,7 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from '../Common/Navbar.jsx';
-import PageFooter from '../Common/PageFooter.jsx';
 import BooksPage from './BooksPage.jsx';
 import BooksDetailsPage from './BookDetailsPage.jsx';
 import NotFound from '../Common/NotFound.jsx';
@@ -15,7 +13,6 @@ import NotFound from '../Common/NotFound.jsx';
  */
 const Books = ({ match }) => (
       <div>
-        <Navbar />
         <Switch>
           <Route exact path={`${match.url}/:bookId`}
             component={BooksDetailsPage} />
@@ -23,7 +20,6 @@ const Books = ({ match }) => (
             component={BooksPage} />
           <Route component={NotFound} />
         </Switch>
-        <PageFooter />
       </div>
 );
 

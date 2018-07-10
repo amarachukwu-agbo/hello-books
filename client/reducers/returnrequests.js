@@ -7,7 +7,6 @@ import {
   HANDLE_RETURN_REQUEST_FAILURE,
 }
   from '../actions/types';
-import Notify from '../helpers/Notify';
 
 const initialState = {};
 
@@ -58,7 +57,6 @@ const returnRequests = (state = initialState, action) => {
       };
     }
     case HANDLE_RETURN_REQUEST_FAILURE: {
-      Notify.notifyError(`Failed to handle request. ${action.error}`);
       return {
         ...state,
         isHandlingReturnRequest: false,

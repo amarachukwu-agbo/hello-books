@@ -7,7 +7,6 @@ import {
   HANDLE_BORROW_REQUEST_FAILURE,
 }
   from '../actions/types';
-import Notify from '../helpers/Notify';
 
 const initialState = {};
 
@@ -55,7 +54,6 @@ const borrowRequests = (state = initialState, action) => {
       };
     }
     case HANDLE_BORROW_REQUEST_FAILURE: {
-      Notify.notifyError(`Failed to handle request. ${action.error}`);
       return {
         ...state,
         isHandlingBorrowRequest: false,

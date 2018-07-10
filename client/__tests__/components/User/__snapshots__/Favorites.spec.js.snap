@@ -1,0 +1,1346 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConnectedFavorites/> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Connect(Favorites)
+    error={null}
+    favorites={Array []}
+    getUserFavorites={[Function]}
+    isFetching={false}
+    pagination={null}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    user={
+      Object {
+        "id": 2,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "error": null,
+      "favorites": Array [],
+      "getUserFavorites": [Function],
+      "isFetching": false,
+      "pagination": null,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeSubscription": Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+      "user": Object {
+        "id": 2,
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "error": null,
+        "favorites": Array [],
+        "getUserFavorites": [Function],
+        "isFetching": false,
+        "pagination": null,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "storeSubscription": Subscription {
+          "listeners": Object {
+            "clear": [Function],
+            "get": [Function],
+            "notify": [Function],
+            "subscribe": [Function],
+          },
+          "onStateChange": [Function],
+          "parentSub": undefined,
+          "store": Object {
+            "clearActions": [Function],
+            "dispatch": [Function],
+            "getActions": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+          },
+          "unsubscribe": [Function],
+        },
+        "user": Object {
+          "id": 2,
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<Favorites/> should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorites
+    favorites={
+      Array [
+        Object {
+          "bookId": 99,
+          "createdAt": "2018-06-23T19:14:10.907Z",
+          "favBook": Object {
+            "author": "Andrew Hart",
+            "borrowCount": 0,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "Jan needs this.",
+            "downvotes": 1,
+            "favCount": 1,
+            "id": 99,
+            "imageURL": "https://images.jpg",
+            "quantity": 10,
+            "subject": "Fiction",
+            "title": "Lies That Bind Us",
+            "updatedAt": "2018-06-23T19:14:10.925Z",
+            "upvotes": 0,
+          },
+          "id": 1,
+          "updatedAt": "2018-06-23T19:14:10.907Z",
+          "userId": 3,
+        },
+      ]
+    }
+    getUserFavorites={[Function]}
+    isFetching={false}
+    pagination={
+      Object {
+        "currentPage": 1,
+        "dataCount": 1,
+        "pageCount": 1,
+        "pageSize": 1,
+      }
+    }
+    user={
+      Object {
+        "id": 2,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="row center"
+        >
+          <h4
+            className="book-header"
+          >
+            Your Favorites
+          </h4>
+        </div>,
+        <div
+          className="row"
+        >
+          <div>
+            <div>
+              <div
+                className="row card-panel favorite-card"
+              >
+                <div
+                  className="col s4 m3 l2 "
+                  style={
+                    Object {
+                      "backgroundImage": "url(https://images.jpg)",
+                      "backgroundPosition": "center center",
+                      "backgroundSize": "cover",
+                      "minHeight": "inherit",
+                    }
+                  }
+                />
+                <div
+                  className="col s8 m9 l10"
+                >
+                  <p
+                    className="flow-text"
+                  >
+                    <span
+                      className="bold"
+                    >
+                      Title: 
+                    </span>
+                    <span
+                      className=""
+                    >
+                      <Link
+                        replace={false}
+                        to="/books/99"
+                      >
+                        Lies That Bind Us
+                      </Link>
+                    </span>
+                  </p>
+                  <h6
+                    className="author"
+                  >
+                    <span>
+                      Author: 
+                    </span>
+                    <span>
+                      Andrew Hart
+                    </span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <Pagination
+              onPageChange={[Function]}
+              pagination={
+                Object {
+                  "currentPage": 1,
+                  "dataCount": 1,
+                  "pageCount": 1,
+                  "pageSize": 1,
+                }
+              }
+            />
+          </div>
+        </div>,
+      ],
+      "className": "container wrapper",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h4
+            className="book-header"
+          >
+            Your Favorites
+          </h4>,
+          "className": "row center",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Your Favorites",
+            "className": "book-header",
+          },
+          "ref": null,
+          "rendered": "Your Favorites",
+          "type": "h4",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div>
+            <div>
+              <div
+                className="row card-panel favorite-card"
+              >
+                <div
+                  className="col s4 m3 l2 "
+                  style={
+                    Object {
+                      "backgroundImage": "url(https://images.jpg)",
+                      "backgroundPosition": "center center",
+                      "backgroundSize": "cover",
+                      "minHeight": "inherit",
+                    }
+                  }
+                />
+                <div
+                  className="col s8 m9 l10"
+                >
+                  <p
+                    className="flow-text"
+                  >
+                    <span
+                      className="bold"
+                    >
+                      Title: 
+                    </span>
+                    <span
+                      className=""
+                    >
+                      <Link
+                        replace={false}
+                        to="/books/99"
+                      >
+                        Lies That Bind Us
+                      </Link>
+                    </span>
+                  </p>
+                  <h6
+                    className="author"
+                  >
+                    <span>
+                      Author: 
+                    </span>
+                    <span>
+                      Andrew Hart
+                    </span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <Pagination
+              onPageChange={[Function]}
+              pagination={
+                Object {
+                  "currentPage": 1,
+                  "dataCount": 1,
+                  "pageCount": 1,
+                  "pageSize": 1,
+                }
+              }
+            />
+          </div>,
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                <div
+                  className="row card-panel favorite-card"
+                >
+                  <div
+                    className="col s4 m3 l2 "
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://images.jpg)",
+                        "backgroundPosition": "center center",
+                        "backgroundSize": "cover",
+                        "minHeight": "inherit",
+                      }
+                    }
+                  />
+                  <div
+                    className="col s8 m9 l10"
+                  >
+                    <p
+                      className="flow-text"
+                    >
+                      <span
+                        className="bold"
+                      >
+                        Title: 
+                      </span>
+                      <span
+                        className=""
+                      >
+                        <Link
+                          replace={false}
+                          to="/books/99"
+                        >
+                          Lies That Bind Us
+                        </Link>
+                      </span>
+                    </p>
+                    <h6
+                      className="author"
+                    >
+                      <span>
+                        Author: 
+                      </span>
+                      <span>
+                        Andrew Hart
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+              </div>,
+              <Pagination
+                onPageChange={[Function]}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 1,
+                    "pageCount": 1,
+                    "pageSize": 1,
+                  }
+                }
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="row card-panel favorite-card"
+                  >
+                    <div
+                      className="col s4 m3 l2 "
+                      style={
+                        Object {
+                          "backgroundImage": "url(https://images.jpg)",
+                          "backgroundPosition": "center center",
+                          "backgroundSize": "cover",
+                          "minHeight": "inherit",
+                        }
+                      }
+                    />
+                    <div
+                      className="col s8 m9 l10"
+                    >
+                      <p
+                        className="flow-text"
+                      >
+                        <span
+                          className="bold"
+                        >
+                          Title: 
+                        </span>
+                        <span
+                          className=""
+                        >
+                          <Link
+                            replace={false}
+                            to="/books/99"
+                          >
+                            Lies That Bind Us
+                          </Link>
+                        </span>
+                      </p>
+                      <h6
+                        className="author"
+                      >
+                        <span>
+                          Author: 
+                        </span>
+                        <span>
+                          Andrew Hart
+                        </span>
+                      </h6>
+                    </div>
+                  </div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="col s4 m3 l2 "
+                        style={
+                          Object {
+                            "backgroundImage": "url(https://images.jpg)",
+                            "backgroundPosition": "center center",
+                            "backgroundSize": "cover",
+                            "minHeight": "inherit",
+                          }
+                        }
+                      />,
+                      <div
+                        className="col s8 m9 l10"
+                      >
+                        <p
+                          className="flow-text"
+                        >
+                          <span
+                            className="bold"
+                          >
+                            Title: 
+                          </span>
+                          <span
+                            className=""
+                          >
+                            <Link
+                              replace={false}
+                              to="/books/99"
+                            >
+                              Lies That Bind Us
+                            </Link>
+                          </span>
+                        </p>
+                        <h6
+                          className="author"
+                        >
+                          <span>
+                            Author: 
+                          </span>
+                          <span>
+                            Andrew Hart
+                          </span>
+                        </h6>
+                      </div>,
+                    ],
+                    "className": "row card-panel favorite-card",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "col s4 m3 l2 ",
+                        "style": Object {
+                          "backgroundImage": "url(https://images.jpg)",
+                          "backgroundPosition": "center center",
+                          "backgroundSize": "cover",
+                          "minHeight": "inherit",
+                        },
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <p
+                            className="flow-text"
+                          >
+                            <span
+                              className="bold"
+                            >
+                              Title: 
+                            </span>
+                            <span
+                              className=""
+                            >
+                              <Link
+                                replace={false}
+                                to="/books/99"
+                              >
+                                Lies That Bind Us
+                              </Link>
+                            </span>
+                          </p>,
+                          <h6
+                            className="author"
+                          >
+                            <span>
+                              Author: 
+                            </span>
+                            <span>
+                              Andrew Hart
+                            </span>
+                          </h6>,
+                        ],
+                        "className": "col s8 m9 l10",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <span
+                                className="bold"
+                              >
+                                Title: 
+                              </span>,
+                              <span
+                                className=""
+                              >
+                                <Link
+                                  replace={false}
+                                  to="/books/99"
+                                >
+                                  Lies That Bind Us
+                                </Link>
+                              </span>,
+                            ],
+                            "className": "flow-text",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Title: ",
+                                "className": "bold",
+                              },
+                              "ref": null,
+                              "rendered": "Title: ",
+                              "type": "span",
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": <Link
+                                  replace={false}
+                                  to="/books/99"
+                                >
+                                  Lies That Bind Us
+                                </Link>,
+                                "className": "",
+                              },
+                              "ref": null,
+                              "rendered": Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "class",
+                                "props": Object {
+                                  "children": "Lies That Bind Us",
+                                  "replace": false,
+                                  "to": "/books/99",
+                                },
+                                "ref": null,
+                                "rendered": "Lies That Bind Us",
+                                "type": [Function],
+                              },
+                              "type": "span",
+                            },
+                          ],
+                          "type": "p",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <span>
+                                Author: 
+                              </span>,
+                              <span>
+                                Andrew Hart
+                              </span>,
+                            ],
+                            "className": "author",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Author: ",
+                              },
+                              "ref": null,
+                              "rendered": "Author: ",
+                              "type": "span",
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Andrew Hart",
+                              },
+                              "ref": null,
+                              "rendered": "Andrew Hart",
+                              "type": "span",
+                            },
+                          ],
+                          "type": "h6",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onPageChange": [Function],
+                "pagination": Object {
+                  "currentPage": 1,
+                  "dataCount": 1,
+                  "pageCount": 1,
+                  "pageSize": 1,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="row center"
+          >
+            <h4
+              className="book-header"
+            >
+              Your Favorites
+            </h4>
+          </div>,
+          <div
+            className="row"
+          >
+            <div>
+              <div>
+                <div
+                  className="row card-panel favorite-card"
+                >
+                  <div
+                    className="col s4 m3 l2 "
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://images.jpg)",
+                        "backgroundPosition": "center center",
+                        "backgroundSize": "cover",
+                        "minHeight": "inherit",
+                      }
+                    }
+                  />
+                  <div
+                    className="col s8 m9 l10"
+                  >
+                    <p
+                      className="flow-text"
+                    >
+                      <span
+                        className="bold"
+                      >
+                        Title: 
+                      </span>
+                      <span
+                        className=""
+                      >
+                        <Link
+                          replace={false}
+                          to="/books/99"
+                        >
+                          Lies That Bind Us
+                        </Link>
+                      </span>
+                    </p>
+                    <h6
+                      className="author"
+                    >
+                      <span>
+                        Author: 
+                      </span>
+                      <span>
+                        Andrew Hart
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <Pagination
+                onPageChange={[Function]}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 1,
+                    "pageCount": 1,
+                    "pageSize": 1,
+                  }
+                }
+              />
+            </div>
+          </div>,
+        ],
+        "className": "container wrapper",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h4
+              className="book-header"
+            >
+              Your Favorites
+            </h4>,
+            "className": "row center",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Your Favorites",
+              "className": "book-header",
+            },
+            "ref": null,
+            "rendered": "Your Favorites",
+            "type": "h4",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div>
+              <div>
+                <div
+                  className="row card-panel favorite-card"
+                >
+                  <div
+                    className="col s4 m3 l2 "
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://images.jpg)",
+                        "backgroundPosition": "center center",
+                        "backgroundSize": "cover",
+                        "minHeight": "inherit",
+                      }
+                    }
+                  />
+                  <div
+                    className="col s8 m9 l10"
+                  >
+                    <p
+                      className="flow-text"
+                    >
+                      <span
+                        className="bold"
+                      >
+                        Title: 
+                      </span>
+                      <span
+                        className=""
+                      >
+                        <Link
+                          replace={false}
+                          to="/books/99"
+                        >
+                          Lies That Bind Us
+                        </Link>
+                      </span>
+                    </p>
+                    <h6
+                      className="author"
+                    >
+                      <span>
+                        Author: 
+                      </span>
+                      <span>
+                        Andrew Hart
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <Pagination
+                onPageChange={[Function]}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 1,
+                    "pageCount": 1,
+                    "pageSize": 1,
+                  }
+                }
+              />
+            </div>,
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div>
+                  <div
+                    className="row card-panel favorite-card"
+                  >
+                    <div
+                      className="col s4 m3 l2 "
+                      style={
+                        Object {
+                          "backgroundImage": "url(https://images.jpg)",
+                          "backgroundPosition": "center center",
+                          "backgroundSize": "cover",
+                          "minHeight": "inherit",
+                        }
+                      }
+                    />
+                    <div
+                      className="col s8 m9 l10"
+                    >
+                      <p
+                        className="flow-text"
+                      >
+                        <span
+                          className="bold"
+                        >
+                          Title: 
+                        </span>
+                        <span
+                          className=""
+                        >
+                          <Link
+                            replace={false}
+                            to="/books/99"
+                          >
+                            Lies That Bind Us
+                          </Link>
+                        </span>
+                      </p>
+                      <h6
+                        className="author"
+                      >
+                        <span>
+                          Author: 
+                        </span>
+                        <span>
+                          Andrew Hart
+                        </span>
+                      </h6>
+                    </div>
+                  </div>
+                </div>,
+                <Pagination
+                  onPageChange={[Function]}
+                  pagination={
+                    Object {
+                      "currentPage": 1,
+                      "dataCount": 1,
+                      "pageCount": 1,
+                      "pageSize": 1,
+                    }
+                  }
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="row card-panel favorite-card"
+                    >
+                      <div
+                        className="col s4 m3 l2 "
+                        style={
+                          Object {
+                            "backgroundImage": "url(https://images.jpg)",
+                            "backgroundPosition": "center center",
+                            "backgroundSize": "cover",
+                            "minHeight": "inherit",
+                          }
+                        }
+                      />
+                      <div
+                        className="col s8 m9 l10"
+                      >
+                        <p
+                          className="flow-text"
+                        >
+                          <span
+                            className="bold"
+                          >
+                            Title: 
+                          </span>
+                          <span
+                            className=""
+                          >
+                            <Link
+                              replace={false}
+                              to="/books/99"
+                            >
+                              Lies That Bind Us
+                            </Link>
+                          </span>
+                        </p>
+                        <h6
+                          className="author"
+                        >
+                          <span>
+                            Author: 
+                          </span>
+                          <span>
+                            Andrew Hart
+                          </span>
+                        </h6>
+                      </div>
+                    </div>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "1",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="col s4 m3 l2 "
+                          style={
+                            Object {
+                              "backgroundImage": "url(https://images.jpg)",
+                              "backgroundPosition": "center center",
+                              "backgroundSize": "cover",
+                              "minHeight": "inherit",
+                            }
+                          }
+                        />,
+                        <div
+                          className="col s8 m9 l10"
+                        >
+                          <p
+                            className="flow-text"
+                          >
+                            <span
+                              className="bold"
+                            >
+                              Title: 
+                            </span>
+                            <span
+                              className=""
+                            >
+                              <Link
+                                replace={false}
+                                to="/books/99"
+                              >
+                                Lies That Bind Us
+                              </Link>
+                            </span>
+                          </p>
+                          <h6
+                            className="author"
+                          >
+                            <span>
+                              Author: 
+                            </span>
+                            <span>
+                              Andrew Hart
+                            </span>
+                          </h6>
+                        </div>,
+                      ],
+                      "className": "row card-panel favorite-card",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "col s4 m3 l2 ",
+                          "style": Object {
+                            "backgroundImage": "url(https://images.jpg)",
+                            "backgroundPosition": "center center",
+                            "backgroundSize": "cover",
+                            "minHeight": "inherit",
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <p
+                              className="flow-text"
+                            >
+                              <span
+                                className="bold"
+                              >
+                                Title: 
+                              </span>
+                              <span
+                                className=""
+                              >
+                                <Link
+                                  replace={false}
+                                  to="/books/99"
+                                >
+                                  Lies That Bind Us
+                                </Link>
+                              </span>
+                            </p>,
+                            <h6
+                              className="author"
+                            >
+                              <span>
+                                Author: 
+                              </span>
+                              <span>
+                                Andrew Hart
+                              </span>
+                            </h6>,
+                          ],
+                          "className": "col s8 m9 l10",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                <span
+                                  className="bold"
+                                >
+                                  Title: 
+                                </span>,
+                                <span
+                                  className=""
+                                >
+                                  <Link
+                                    replace={false}
+                                    to="/books/99"
+                                  >
+                                    Lies That Bind Us
+                                  </Link>
+                                </span>,
+                              ],
+                              "className": "flow-text",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": "Title: ",
+                                  "className": "bold",
+                                },
+                                "ref": null,
+                                "rendered": "Title: ",
+                                "type": "span",
+                              },
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": <Link
+                                    replace={false}
+                                    to="/books/99"
+                                  >
+                                    Lies That Bind Us
+                                  </Link>,
+                                  "className": "",
+                                },
+                                "ref": null,
+                                "rendered": Object {
+                                  "instance": null,
+                                  "key": undefined,
+                                  "nodeType": "class",
+                                  "props": Object {
+                                    "children": "Lies That Bind Us",
+                                    "replace": false,
+                                    "to": "/books/99",
+                                  },
+                                  "ref": null,
+                                  "rendered": "Lies That Bind Us",
+                                  "type": [Function],
+                                },
+                                "type": "span",
+                              },
+                            ],
+                            "type": "p",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                <span>
+                                  Author: 
+                                </span>,
+                                <span>
+                                  Andrew Hart
+                                </span>,
+                              ],
+                              "className": "author",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": "Author: ",
+                                },
+                                "ref": null,
+                                "rendered": "Author: ",
+                                "type": "span",
+                              },
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": "Andrew Hart",
+                                },
+                                "ref": null,
+                                "rendered": "Andrew Hart",
+                                "type": "span",
+                              },
+                            ],
+                            "type": "h6",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onPageChange": [Function],
+                  "pagination": Object {
+                    "currentPage": 1,
+                    "dataCount": 1,
+                    "pageCount": 1,
+                    "pageSize": 1,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

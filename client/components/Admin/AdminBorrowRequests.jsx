@@ -17,10 +17,10 @@ const AdminBorrowRequests = ({
   borrowRequests,
   isHandlingBorrowRequest,
 }) => {
-  if (!borrowRequests) {
+  if (!borrowRequests.length) {
     return (
         <div className="row center">
-          <p className="grey-text">You have no borrow requests </p>
+          <p className="grey-text">You have no borrow requests</p>
         </div>
     );
   }
@@ -59,6 +59,7 @@ const AdminBorrowRequests = ({
                 </td>
                 <td> <button className="btn btn-wave waves-effect
                   btn-small primary-button"
+                  id={`accept-button${request.id}`}
                   disabled={request.status !== 'Pending' ||
                   isHandlingBorrowRequest}
                   onClick={() => {
@@ -72,6 +73,7 @@ const AdminBorrowRequests = ({
                 >Accept</button></td>
                 <td> <button className="btn btn-wave action-button
                   waves-effect btn-small"
+                  id={`decline-button${request.id}`}
                   disabled={request.status !== 'Pending' ||
                   isHandlingBorrowRequest}
                   onClick={() => {

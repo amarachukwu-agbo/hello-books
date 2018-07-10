@@ -15,7 +15,7 @@ const ReturnRequests = (props) => {
   if (!requests.length) {
     return (
       <div className="row center">
-        <p className="grey-text">You have no pending return requests </p>
+        <p className="grey-text">You have no pending return requests</p>
       </div>
     );
   }

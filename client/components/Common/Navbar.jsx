@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Dropdown, NavItem } from 'react-materialize';
 import propTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOut } from '../../actions/login';
 import { getBooks } from '../../actions/books';
@@ -22,9 +21,9 @@ class Navbar extends Component {
         <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper">
-              <Link to="/" className="brand-logo">
+              <a href="/" className="brand-logo">
                 <img src={logo} className="img-logo" />
-              </Link>
+              </a>
               <a href="#" data-activates="mobile-demo"
                 className="button-collapse">
                 <i className="material-icons">menu</i>
@@ -51,10 +50,10 @@ class Navbar extends Component {
                     </Dropdown>
                   </li>
                   <li className="second-nav-item">
-                    <Link to='/admin'>Books Catalog</Link>
+                    <a href ='/admin'>Books Catalog</a>
                   </li>
                   <li>
-                    <Link to='/admin/addBook'>Add Book</Link>
+                    <a href='/admin/addBook'>Add Book</a>
                   </li>
                   <li>
                     <Dropdown trigger={
@@ -85,9 +84,9 @@ class Navbar extends Component {
                 isAuthenticated && user.role === 'User' &&
                 <ul className="right hide-on-med-and-down">
                   <li>{`Welcome ${user.firstName}`} </li>
-                  <li><Link to={'/users/favorites'}>Favorites</Link></li>
-                  <li><Link to={'/users/profile'}>Profile</Link></li>
-                  <li><Link to='/books'>Books</Link></li>
+                  <li><a href={'/users/favorites'}>Favorites</a></li>
+                  <li><a href={'/users/profile'}>Profile</a></li>
+                  <li><a href='/books'>Books</a></li>
                   <li>
                     <button className="btn btn-flat white-text"
                       onClick={this.props.logOut}>Log out
@@ -100,9 +99,9 @@ class Navbar extends Component {
 
               {!isAuthenticated &&
                 <ul className="right hide-on-med-and-down">
-                  <li><Link to="/signup">Sign up</Link></li>
-                  <li><Link to="/login">Login</Link></li>
-                  <li><Link to='/books'>Books</Link></li>
+                  <li><a href="/signup">Sign up</a></li>
+                  <li><a href="/login">Login</a></li>
+                  <li><a href='/books'>Books</a></li>
                 </ul>
               }
             </div>
@@ -114,12 +113,12 @@ class Navbar extends Component {
         {
           isAuthenticated && user.role === 'Admin' &&
           <ul className="side-nav" id="mobile-demo">
-            <li><Link to='/admin'>Books Catalog</Link></li>
-            <li><Link to='/admin/addBook'>Add Book</Link></li>
-            <li><Link to='/admin/borrowRequests'>Borrow Requests</Link></li>
-            <li><Link to='/admin/returnRequests'>Return Requests</Link></li>
-            <li><Link to='/users/favorites'>Favorites</Link></li>
-            <li><Link to='/users/profile'>Profile</Link></li>
+            <li><a href='/admin'>Books Catalog</a></li>
+            <li><a href='/admin/addBook'>Add Book</a></li>
+            <li><a href='/admin/borrowRequests'>Borrow Requests</a></li>
+            <li><a href='/admin/returnRequests'>Return Requests</a></li>
+            <li><a href='/users/favorites'>Favorites</a></li>
+            <li><a href='/users/profile'>Profile</a></li>
             <li>
               <button className="btn btn-flat primary-button"
                 onClick={this.props.logOut}>Log out
@@ -133,10 +132,10 @@ class Navbar extends Component {
           <ul className="side-nav" id="mobile-demo">
             <li>{`Welcome ${user.firstName}`} </li>
             <li>
-              <Link to={'/books'}>Books</Link>
+              <a href={'/books'}>Books</a>
             </li>
-            <li><Link to={'/users/favorites'}>Favorites</Link></li>
-            <li><Link to={'/users/profile'}>Profile</Link></li>
+            <li><a href={'/users/favorites'}>Favorites</a></li>
+            <li><a href={'/users/profile'}>Profile</a></li>
             <li>
               <button className="btn btn-flat primary-button"
                 onClick={this.props.logOut}>Log out
@@ -148,9 +147,9 @@ class Navbar extends Component {
         {
           !this.props.isAuthenticated &&
           <ul className="side-nav" id="mobile-demo">
-            <li><Link to='/books'>Books</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/signup">Signup</Link></li>
+            <li><a href='/books'>Books</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li>
           </ul>
         }
       </div>

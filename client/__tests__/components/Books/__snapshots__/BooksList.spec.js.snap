@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BooksList /> should render a list of books correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BooksList
+    books={
+      Array [
+        Object {
+          "author": "A.J.Hartley",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Macbeth: A Novel.",
+          "downvotes": 0,
+          "favCount": 1,
+          "id": 94,
+          "imageURL": "https://images/mages/I/51l6MwpodJL._AA300_.jpg",
+          "quantity": 70,
+          "subject": "Romance",
+          "title": "Macbeth",
+          "updatedAt": "2018-07-06T00:58:12.625Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Trevor Noah",
+          "bookReviews": Array [],
+          "borrowCount": 3,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Born a crime",
+          "downvotes": 0,
+          "favCount": 1,
+          "id": 95,
+          "imageURL": "https://image/images/I/61mJhMWAq8L._AA300_.jpg",
+          "quantity": 18,
+          "subject": "Biography",
+          "title": "Born a Crime",
+          "updatedAt": "2018-07-10T08:49:01.366Z",
+          "upvotes": 1,
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Book
+          book={
+            Object {
+              "author": "A.J.Hartley",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Macbeth: A Novel.",
+              "downvotes": 0,
+              "favCount": 1,
+              "id": 94,
+              "imageURL": "https://images/mages/I/51l6MwpodJL._AA300_.jpg",
+              "quantity": 70,
+              "subject": "Romance",
+              "title": "Macbeth",
+              "updatedAt": "2018-07-06T00:58:12.625Z",
+              "upvotes": 0,
+            }
+          }
+        />,
+        <Book
+          book={
+            Object {
+              "author": "Trevor Noah",
+              "bookReviews": Array [],
+              "borrowCount": 3,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Born a crime",
+              "downvotes": 0,
+              "favCount": 1,
+              "id": 95,
+              "imageURL": "https://image/images/I/61mJhMWAq8L._AA300_.jpg",
+              "quantity": 18,
+              "subject": "Biography",
+              "title": "Born a Crime",
+              "updatedAt": "2018-07-10T08:49:01.366Z",
+              "upvotes": 1,
+            }
+          }
+        />,
+      ],
+      "className": "row",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "94",
+        "nodeType": "function",
+        "props": Object {
+          "book": Object {
+            "author": "A.J.Hartley",
+            "bookReviews": Array [],
+            "borrowCount": 0,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "Macbeth: A Novel.",
+            "downvotes": 0,
+            "favCount": 1,
+            "id": 94,
+            "imageURL": "https://images/mages/I/51l6MwpodJL._AA300_.jpg",
+            "quantity": 70,
+            "subject": "Romance",
+            "title": "Macbeth",
+            "updatedAt": "2018-07-06T00:58:12.625Z",
+            "upvotes": 0,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "95",
+        "nodeType": "function",
+        "props": Object {
+          "book": Object {
+            "author": "Trevor Noah",
+            "bookReviews": Array [],
+            "borrowCount": 3,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "Born a crime",
+            "downvotes": 0,
+            "favCount": 1,
+            "id": 95,
+            "imageURL": "https://image/images/I/61mJhMWAq8L._AA300_.jpg",
+            "quantity": 18,
+            "subject": "Biography",
+            "title": "Born a Crime",
+            "updatedAt": "2018-07-10T08:49:01.366Z",
+            "upvotes": 1,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Book
+            book={
+              Object {
+                "author": "A.J.Hartley",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Macbeth: A Novel.",
+                "downvotes": 0,
+                "favCount": 1,
+                "id": 94,
+                "imageURL": "https://images/mages/I/51l6MwpodJL._AA300_.jpg",
+                "quantity": 70,
+                "subject": "Romance",
+                "title": "Macbeth",
+                "updatedAt": "2018-07-06T00:58:12.625Z",
+                "upvotes": 0,
+              }
+            }
+          />,
+          <Book
+            book={
+              Object {
+                "author": "Trevor Noah",
+                "bookReviews": Array [],
+                "borrowCount": 3,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Born a crime",
+                "downvotes": 0,
+                "favCount": 1,
+                "id": 95,
+                "imageURL": "https://image/images/I/61mJhMWAq8L._AA300_.jpg",
+                "quantity": 18,
+                "subject": "Biography",
+                "title": "Born a Crime",
+                "updatedAt": "2018-07-10T08:49:01.366Z",
+                "upvotes": 1,
+              }
+            }
+          />,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "94",
+          "nodeType": "function",
+          "props": Object {
+            "book": Object {
+              "author": "A.J.Hartley",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Macbeth: A Novel.",
+              "downvotes": 0,
+              "favCount": 1,
+              "id": 94,
+              "imageURL": "https://images/mages/I/51l6MwpodJL._AA300_.jpg",
+              "quantity": 70,
+              "subject": "Romance",
+              "title": "Macbeth",
+              "updatedAt": "2018-07-06T00:58:12.625Z",
+              "upvotes": 0,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "95",
+          "nodeType": "function",
+          "props": Object {
+            "book": Object {
+              "author": "Trevor Noah",
+              "bookReviews": Array [],
+              "borrowCount": 3,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Born a crime",
+              "downvotes": 0,
+              "favCount": 1,
+              "id": 95,
+              "imageURL": "https://image/images/I/61mJhMWAq8L._AA300_.jpg",
+              "quantity": 18,
+              "subject": "Biography",
+              "title": "Born a Crime",
+              "updatedAt": "2018-07-10T08:49:01.366Z",
+              "upvotes": 1,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

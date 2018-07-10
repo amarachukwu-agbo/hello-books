@@ -1,6 +1,5 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 /**
  * @description stateless component for rendering a book
@@ -16,11 +15,11 @@ const Book = (props) => {
       <div className="card">
         <div className="card-image">
           <img src={book.imageURL} className="responsive-img" />
-          <Link to={`/books/${book.id}`}
+          <a href={`/books/${book.id}`}
             className="btn-floating halfway-fab waves-effect
             waves-light small red">
             <i className="material-icons hoverable">chevron_right</i>
-          </Link>
+          </a>
         </div>
         <div className="card-content">
           <span className="card-title truncate grey-text text-darken-4">
@@ -37,17 +36,17 @@ const Book = (props) => {
           </p>
           <div className="divider hide-on-med-and-down"></div>
           <div className="row hide-on-med-and-down">
-            <div className="col s3 btn btn-small btn-flat white grey-text
-            text-darken-2 book-icon">
+            <div className="col s3 btn btn-small grey-text
+              text-darken-2 btn-flat book-icon">
               <i className="material-icons prefix">thumb_up</i>
               <span>{book.upvotes}</span></div>
-              <div className="col s3 btn btn-small btn-flat white
-              grey-text text-darken-2 book-icon">
+              <div className="col s3 btn btn-small grey-text
+                text-darken-2 btn-flat book-icon">
                 <i className="material-icons prefix">favorite_border</i>
                 <span>{book.favCount}</span>
               </div>
-            <div className="col s3 btn btn-samll btn-flat white
-              grey-text text-darken-2 book-icon">
+            <div className="col s3 btn btn-samll grey-text
+              text-darken-2 btn-flat book-icon">
               <i className="material-icons prefix">comment</i>
               {
                 book.bookReviews &&
@@ -65,6 +64,7 @@ const Book = (props) => {
 // Prop type validation
 Book.propTypes = {
   book: propTypes.shape({
+    title: propTypes.string.isRequired,
     author: propTypes.string.isRequired,
     subject: propTypes.string.isRequired,
     bookReviews: propTypes.array,

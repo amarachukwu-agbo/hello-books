@@ -45,9 +45,9 @@ class Profile extends Component {
 
     if (isFetchingProfile) {
       return (
-      <div className="row center wrapper">
-        <Preloader />
-      </div>);
+        <div className="row center wrapper">
+          <Preloader />
+        </div>);
     }
     if (profileError) {
       return (
@@ -55,7 +55,7 @@ class Profile extends Component {
           <div className="row">
             <h6 className="red-text flow-text">
               {`Oops couldn't fetch your profile.
-                ${this.props.profileError}` }
+                ${this.props.profileError}`}
             </h6>
           </div>
         </div>
@@ -68,42 +68,42 @@ class Profile extends Component {
         request.status.toLowerCase() !== 'accepted');
 
       return (
-            <div className="row" >
-              <div className="row card-panel">
-                  <Bio bio= { profile } />
-              </div>
+        <div className="row" >
+          <div className="row card-panel">
+            <Bio bio={profile} />
+          </div>
 
-              <div className="row card-panel profile-div">
-                  <h6 className="white-text">Borrowed Books</h6>
-                  <BorrowedBooks books= { profile.userBooks }
-                  returnRequests = { returnRequests } {...this.props }/>
-              </div>
+          <div className="row card-panel profile-div">
+            <h6 className="white-text">Borrowed Books</h6>
+            <BorrowedBooks books={profile.userBooks}
+              returnRequests={returnRequests} {...this.props} />
+          </div>
 
-              <div className="row card-panel profile-div">
-                  <h6 className="white-text">Borrow Requests</h6>
-                  <BorrowRequests requests= { borrowRequests } />
-              </div>
+          <div className="row card-panel profile-div">
+            <h6 className="white-text">Borrow Requests</h6>
+            <BorrowRequests requests={borrowRequests} />
+          </div>
 
-              <div className="row card-panel profile-div">
-                  <h6 className="white-text">Return Requests</h6>
-                  <ReturnRequests requests= { returnRequests }
-                    { ...this.props }/>
-              </div>
-            </div>
+          <div className="row card-panel profile-div">
+            <h6 className="white-text">Return Requests</h6>
+            <ReturnRequests requests={returnRequests}
+              {...this.props} />
+          </div>
+        </div>
       );
     }
   }
 
   render() {
     return (
-        <div className="container">
-            <div className="row center">
-              <h4 className="book-header">Your Profile</h4>
-            </div>
-            <div className="row">
-                { this.renderProfile() }
-            </div>
+      <div className="container">
+        <div className="row center">
+          <h4 className="book-header">Your Profile</h4>
         </div>
+        <div className="row">
+          {this.renderProfile()}
+        </div>
+      </div>
     );
   }
 }

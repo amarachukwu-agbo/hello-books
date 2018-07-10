@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import books2 from '../../public/images/books(4).jpg';
-import Navbar from '../Common/Navbar.jsx';
-import PageFooter from '../Common/PageFooter.jsx';
 import LoginForm from './LoginForm.jsx';
 import { loginUser } from '../../actions/login';
 
@@ -14,7 +12,7 @@ import { loginUser } from '../../actions/login';
  *
  * @extends {React.Component}
  */
-class LoginPage extends Component {
+export class LoginPage extends Component {
   /**
    * @constructor create an instance of the component
    *
@@ -44,13 +42,12 @@ class LoginPage extends Component {
     };
     return (
       <div className="row wrap" style={style}>
-        <Navbar />
         <div className="wrapper valign-wrapper">
           <div className="col s1 m2 l4 "></div>
           <div className="col s10 m7 l5">
             <div className="row card-panel">
               <div className="row">
-                <LoginForm
+                <LoginForm id="login-form"
                   submitForm={this.submitForm}
                   {...this.props} />
               </div>
@@ -58,7 +55,6 @@ class LoginPage extends Component {
           </div>
           <div className="col s1 m2 l4"></div>
         </div>
-        <PageFooter />
       </div>
     );
   }
@@ -79,17 +75,10 @@ const mapStateToProps = state => ({
   ...state.login,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  loginUser: (user) => {
-    dispatch(loginUser(user));
-  },
-});
+// action creators
+const actionCreators = {
+  loginUser,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, actionCreators)(LoginPage);
 

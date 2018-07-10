@@ -1,4 +1,5 @@
 import Enzyme from 'enzyme';
+import $ from 'jquery';
 import Adapter from 'enzyme-adapter-react-16';
 
 class LocalStorageMock {
@@ -19,6 +20,8 @@ class LocalStorageMock {
   }
 }
 
+global.$ = $;
+global.jQuery = $;
 global.localStorage = new LocalStorageMock();
 
 Enzyme.configure({

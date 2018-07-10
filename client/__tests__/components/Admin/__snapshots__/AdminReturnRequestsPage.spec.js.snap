@@ -1,0 +1,1054 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AdminReturnRequestsPage /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AdminReturnRequestsPage
+    getReturnRequests={[Function]}
+    handleReturnRequest={[Function]}
+    isFetchingReturnRequests={false}
+    pagination={
+      Object {
+        "currentPage": 1,
+        "dataCount": 5,
+        "pageCount": 1,
+        "pageSize": 5,
+      }
+    }
+    returnRequests={
+      Array [
+        Object {
+          "bookId": 98,
+          "comments": null,
+          "createdAt": "2018-06-21T21:09:16.641Z",
+          "id": 2,
+          "returnRequests": Object {
+            "author": "Michelle McNamara",
+            "borrowCount": 4,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "A masterful true crime account of the Golden S.",
+            "downvotes": 2,
+            "favCount": 2,
+            "id": 98,
+            "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+            "quantity": 4,
+            "subject": "True Crime",
+            "title": "I\\"ll Be Gone in the Dark",
+            "updatedAt": "2018-07-06T00:59:36.273Z",
+            "upvotes": 1,
+          },
+          "status": "Accepted",
+          "updatedAt": "2018-06-21T21:11:19.047Z",
+          "userId": 20000,
+          "userReturnRequests": Object {
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "email": "amarkipkip@gmail.com",
+            "firstName": "Amarachi",
+            "id": 20000,
+            "imageURL": null,
+            "lastName": "Agbo",
+            "role": "Admin",
+            "updatedAt": "2018-05-10T03:11:52.181Z",
+          },
+        },
+        Object {
+          "bookId": 89,
+          "comments": null,
+          "createdAt": "2018-06-21T20:58:16.452Z",
+          "id": 1,
+          "returnRequests": Object {
+            "author": "Stephen Covey",
+            "borrowCount": 1,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "Dr. Covey's 7 Habits book is one of inspiring",
+            "downvotes": 0,
+            "favCount": 1,
+            "id": 89,
+            "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+            "quantity": 20,
+            "subject": "Inspiration",
+            "title": "The 7 Habits of Highly Effective People",
+            "updatedAt": "2018-07-05T19:26:24.934Z",
+            "upvotes": 0,
+          },
+          "status": "Accepted",
+          "updatedAt": "2018-06-21T21:05:26.890Z",
+          "userId": 20000,
+          "userReturnRequests": Object {
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "email": "amarkipkip@gmail.com",
+            "firstName": "Amarachi",
+            "id": 20000,
+            "imageURL": null,
+            "lastName": "Agbo",
+            "role": "Admin",
+            "updatedAt": "2018-05-10T03:11:52.181Z",
+          },
+        },
+      ]
+    }
+    returnRequestsError={null}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h5
+          className="center book-header"
+        >
+          Return Requests
+        </h5>,
+        <div
+          className="admin"
+        >
+          <div>
+            <AdminReturnRequests
+              acceptReturnRequest={[Function]}
+              declineReturnRequest={[Function]}
+              getReturnRequests={[Function]}
+              handleReturnRequest={[Function]}
+              isFetchingReturnRequests={false}
+              isHandlingReturnRequest={undefined}
+              pagination={
+                Object {
+                  "currentPage": 1,
+                  "dataCount": 5,
+                  "pageCount": 1,
+                  "pageSize": 5,
+                }
+              }
+              returnRequests={
+                Array [
+                  Object {
+                    "bookId": 98,
+                    "comments": null,
+                    "createdAt": "2018-06-21T21:09:16.641Z",
+                    "id": 2,
+                    "returnRequests": Object {
+                      "author": "Michelle McNamara",
+                      "borrowCount": 4,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "A masterful true crime account of the Golden S.",
+                      "downvotes": 2,
+                      "favCount": 2,
+                      "id": 98,
+                      "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+                      "quantity": 4,
+                      "subject": "True Crime",
+                      "title": "I\\"ll Be Gone in the Dark",
+                      "updatedAt": "2018-07-06T00:59:36.273Z",
+                      "upvotes": 1,
+                    },
+                    "status": "Accepted",
+                    "updatedAt": "2018-06-21T21:11:19.047Z",
+                    "userId": 20000,
+                    "userReturnRequests": Object {
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Amarachi",
+                      "id": 20000,
+                      "imageURL": null,
+                      "lastName": "Agbo",
+                      "role": "Admin",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                    },
+                  },
+                  Object {
+                    "bookId": 89,
+                    "comments": null,
+                    "createdAt": "2018-06-21T20:58:16.452Z",
+                    "id": 1,
+                    "returnRequests": Object {
+                      "author": "Stephen Covey",
+                      "borrowCount": 1,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Dr. Covey's 7 Habits book is one of inspiring",
+                      "downvotes": 0,
+                      "favCount": 1,
+                      "id": 89,
+                      "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+                      "quantity": 20,
+                      "subject": "Inspiration",
+                      "title": "The 7 Habits of Highly Effective People",
+                      "updatedAt": "2018-07-05T19:26:24.934Z",
+                      "upvotes": 0,
+                    },
+                    "status": "Accepted",
+                    "updatedAt": "2018-06-21T21:05:26.890Z",
+                    "userId": 20000,
+                    "userReturnRequests": Object {
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Amarachi",
+                      "id": 20000,
+                      "imageURL": null,
+                      "lastName": "Agbo",
+                      "role": "Admin",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                    },
+                  },
+                ]
+              }
+              returnRequestsError={null}
+            />
+            <Pagination
+              onPageChange={[Function]}
+              pagination={
+                Object {
+                  "currentPage": 1,
+                  "dataCount": 5,
+                  "pageCount": 1,
+                  "pageSize": 5,
+                }
+              }
+            />
+          </div>
+        </div>,
+      ],
+      "className": "row wrapper",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Return Requests",
+          "className": "center book-header",
+        },
+        "ref": null,
+        "rendered": "Return Requests",
+        "type": "h5",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div>
+            <AdminReturnRequests
+              acceptReturnRequest={[Function]}
+              declineReturnRequest={[Function]}
+              getReturnRequests={[Function]}
+              handleReturnRequest={[Function]}
+              isFetchingReturnRequests={false}
+              isHandlingReturnRequest={undefined}
+              pagination={
+                Object {
+                  "currentPage": 1,
+                  "dataCount": 5,
+                  "pageCount": 1,
+                  "pageSize": 5,
+                }
+              }
+              returnRequests={
+                Array [
+                  Object {
+                    "bookId": 98,
+                    "comments": null,
+                    "createdAt": "2018-06-21T21:09:16.641Z",
+                    "id": 2,
+                    "returnRequests": Object {
+                      "author": "Michelle McNamara",
+                      "borrowCount": 4,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "A masterful true crime account of the Golden S.",
+                      "downvotes": 2,
+                      "favCount": 2,
+                      "id": 98,
+                      "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+                      "quantity": 4,
+                      "subject": "True Crime",
+                      "title": "I\\"ll Be Gone in the Dark",
+                      "updatedAt": "2018-07-06T00:59:36.273Z",
+                      "upvotes": 1,
+                    },
+                    "status": "Accepted",
+                    "updatedAt": "2018-06-21T21:11:19.047Z",
+                    "userId": 20000,
+                    "userReturnRequests": Object {
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Amarachi",
+                      "id": 20000,
+                      "imageURL": null,
+                      "lastName": "Agbo",
+                      "role": "Admin",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                    },
+                  },
+                  Object {
+                    "bookId": 89,
+                    "comments": null,
+                    "createdAt": "2018-06-21T20:58:16.452Z",
+                    "id": 1,
+                    "returnRequests": Object {
+                      "author": "Stephen Covey",
+                      "borrowCount": 1,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Dr. Covey's 7 Habits book is one of inspiring",
+                      "downvotes": 0,
+                      "favCount": 1,
+                      "id": 89,
+                      "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+                      "quantity": 20,
+                      "subject": "Inspiration",
+                      "title": "The 7 Habits of Highly Effective People",
+                      "updatedAt": "2018-07-05T19:26:24.934Z",
+                      "upvotes": 0,
+                    },
+                    "status": "Accepted",
+                    "updatedAt": "2018-06-21T21:05:26.890Z",
+                    "userId": 20000,
+                    "userReturnRequests": Object {
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Amarachi",
+                      "id": 20000,
+                      "imageURL": null,
+                      "lastName": "Agbo",
+                      "role": "Admin",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                    },
+                  },
+                ]
+              }
+              returnRequestsError={null}
+            />
+            <Pagination
+              onPageChange={[Function]}
+              pagination={
+                Object {
+                  "currentPage": 1,
+                  "dataCount": 5,
+                  "pageCount": 1,
+                  "pageSize": 5,
+                }
+              }
+            />
+          </div>,
+          "className": "admin",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <AdminReturnRequests
+                acceptReturnRequest={[Function]}
+                declineReturnRequest={[Function]}
+                getReturnRequests={[Function]}
+                handleReturnRequest={[Function]}
+                isFetchingReturnRequests={false}
+                isHandlingReturnRequest={undefined}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 5,
+                    "pageCount": 1,
+                    "pageSize": 5,
+                  }
+                }
+                returnRequests={
+                  Array [
+                    Object {
+                      "bookId": 98,
+                      "comments": null,
+                      "createdAt": "2018-06-21T21:09:16.641Z",
+                      "id": 2,
+                      "returnRequests": Object {
+                        "author": "Michelle McNamara",
+                        "borrowCount": 4,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "A masterful true crime account of the Golden S.",
+                        "downvotes": 2,
+                        "favCount": 2,
+                        "id": 98,
+                        "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+                        "quantity": 4,
+                        "subject": "True Crime",
+                        "title": "I\\"ll Be Gone in the Dark",
+                        "updatedAt": "2018-07-06T00:59:36.273Z",
+                        "upvotes": 1,
+                      },
+                      "status": "Accepted",
+                      "updatedAt": "2018-06-21T21:11:19.047Z",
+                      "userId": 20000,
+                      "userReturnRequests": Object {
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Amarachi",
+                        "id": 20000,
+                        "imageURL": null,
+                        "lastName": "Agbo",
+                        "role": "Admin",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                      },
+                    },
+                    Object {
+                      "bookId": 89,
+                      "comments": null,
+                      "createdAt": "2018-06-21T20:58:16.452Z",
+                      "id": 1,
+                      "returnRequests": Object {
+                        "author": "Stephen Covey",
+                        "borrowCount": 1,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Dr. Covey's 7 Habits book is one of inspiring",
+                        "downvotes": 0,
+                        "favCount": 1,
+                        "id": 89,
+                        "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+                        "quantity": 20,
+                        "subject": "Inspiration",
+                        "title": "The 7 Habits of Highly Effective People",
+                        "updatedAt": "2018-07-05T19:26:24.934Z",
+                        "upvotes": 0,
+                      },
+                      "status": "Accepted",
+                      "updatedAt": "2018-06-21T21:05:26.890Z",
+                      "userId": 20000,
+                      "userReturnRequests": Object {
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Amarachi",
+                        "id": 20000,
+                        "imageURL": null,
+                        "lastName": "Agbo",
+                        "role": "Admin",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                      },
+                    },
+                  ]
+                }
+                returnRequestsError={null}
+              />,
+              <Pagination
+                onPageChange={[Function]}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 5,
+                    "pageCount": 1,
+                    "pageSize": 5,
+                  }
+                }
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "acceptReturnRequest": [Function],
+                "declineReturnRequest": [Function],
+                "getReturnRequests": [Function],
+                "handleReturnRequest": [Function],
+                "isFetchingReturnRequests": false,
+                "isHandlingReturnRequest": undefined,
+                "pagination": Object {
+                  "currentPage": 1,
+                  "dataCount": 5,
+                  "pageCount": 1,
+                  "pageSize": 5,
+                },
+                "returnRequests": Array [
+                  Object {
+                    "bookId": 98,
+                    "comments": null,
+                    "createdAt": "2018-06-21T21:09:16.641Z",
+                    "id": 2,
+                    "returnRequests": Object {
+                      "author": "Michelle McNamara",
+                      "borrowCount": 4,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "A masterful true crime account of the Golden S.",
+                      "downvotes": 2,
+                      "favCount": 2,
+                      "id": 98,
+                      "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+                      "quantity": 4,
+                      "subject": "True Crime",
+                      "title": "I\\"ll Be Gone in the Dark",
+                      "updatedAt": "2018-07-06T00:59:36.273Z",
+                      "upvotes": 1,
+                    },
+                    "status": "Accepted",
+                    "updatedAt": "2018-06-21T21:11:19.047Z",
+                    "userId": 20000,
+                    "userReturnRequests": Object {
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Amarachi",
+                      "id": 20000,
+                      "imageURL": null,
+                      "lastName": "Agbo",
+                      "role": "Admin",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                    },
+                  },
+                  Object {
+                    "bookId": 89,
+                    "comments": null,
+                    "createdAt": "2018-06-21T20:58:16.452Z",
+                    "id": 1,
+                    "returnRequests": Object {
+                      "author": "Stephen Covey",
+                      "borrowCount": 1,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Dr. Covey's 7 Habits book is one of inspiring",
+                      "downvotes": 0,
+                      "favCount": 1,
+                      "id": 89,
+                      "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+                      "quantity": 20,
+                      "subject": "Inspiration",
+                      "title": "The 7 Habits of Highly Effective People",
+                      "updatedAt": "2018-07-05T19:26:24.934Z",
+                      "upvotes": 0,
+                    },
+                    "status": "Accepted",
+                    "updatedAt": "2018-06-21T21:05:26.890Z",
+                    "userId": 20000,
+                    "userReturnRequests": Object {
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Amarachi",
+                      "id": 20000,
+                      "imageURL": null,
+                      "lastName": "Agbo",
+                      "role": "Admin",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                    },
+                  },
+                ],
+                "returnRequestsError": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onPageChange": [Function],
+                "pagination": Object {
+                  "currentPage": 1,
+                  "dataCount": 5,
+                  "pageCount": 1,
+                  "pageSize": 5,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h5
+            className="center book-header"
+          >
+            Return Requests
+          </h5>,
+          <div
+            className="admin"
+          >
+            <div>
+              <AdminReturnRequests
+                acceptReturnRequest={[Function]}
+                declineReturnRequest={[Function]}
+                getReturnRequests={[Function]}
+                handleReturnRequest={[Function]}
+                isFetchingReturnRequests={false}
+                isHandlingReturnRequest={undefined}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 5,
+                    "pageCount": 1,
+                    "pageSize": 5,
+                  }
+                }
+                returnRequests={
+                  Array [
+                    Object {
+                      "bookId": 98,
+                      "comments": null,
+                      "createdAt": "2018-06-21T21:09:16.641Z",
+                      "id": 2,
+                      "returnRequests": Object {
+                        "author": "Michelle McNamara",
+                        "borrowCount": 4,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "A masterful true crime account of the Golden S.",
+                        "downvotes": 2,
+                        "favCount": 2,
+                        "id": 98,
+                        "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+                        "quantity": 4,
+                        "subject": "True Crime",
+                        "title": "I\\"ll Be Gone in the Dark",
+                        "updatedAt": "2018-07-06T00:59:36.273Z",
+                        "upvotes": 1,
+                      },
+                      "status": "Accepted",
+                      "updatedAt": "2018-06-21T21:11:19.047Z",
+                      "userId": 20000,
+                      "userReturnRequests": Object {
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Amarachi",
+                        "id": 20000,
+                        "imageURL": null,
+                        "lastName": "Agbo",
+                        "role": "Admin",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                      },
+                    },
+                    Object {
+                      "bookId": 89,
+                      "comments": null,
+                      "createdAt": "2018-06-21T20:58:16.452Z",
+                      "id": 1,
+                      "returnRequests": Object {
+                        "author": "Stephen Covey",
+                        "borrowCount": 1,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Dr. Covey's 7 Habits book is one of inspiring",
+                        "downvotes": 0,
+                        "favCount": 1,
+                        "id": 89,
+                        "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+                        "quantity": 20,
+                        "subject": "Inspiration",
+                        "title": "The 7 Habits of Highly Effective People",
+                        "updatedAt": "2018-07-05T19:26:24.934Z",
+                        "upvotes": 0,
+                      },
+                      "status": "Accepted",
+                      "updatedAt": "2018-06-21T21:05:26.890Z",
+                      "userId": 20000,
+                      "userReturnRequests": Object {
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Amarachi",
+                        "id": 20000,
+                        "imageURL": null,
+                        "lastName": "Agbo",
+                        "role": "Admin",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                      },
+                    },
+                  ]
+                }
+                returnRequestsError={null}
+              />
+              <Pagination
+                onPageChange={[Function]}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 5,
+                    "pageCount": 1,
+                    "pageSize": 5,
+                  }
+                }
+              />
+            </div>
+          </div>,
+        ],
+        "className": "row wrapper",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Return Requests",
+            "className": "center book-header",
+          },
+          "ref": null,
+          "rendered": "Return Requests",
+          "type": "h5",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div>
+              <AdminReturnRequests
+                acceptReturnRequest={[Function]}
+                declineReturnRequest={[Function]}
+                getReturnRequests={[Function]}
+                handleReturnRequest={[Function]}
+                isFetchingReturnRequests={false}
+                isHandlingReturnRequest={undefined}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 5,
+                    "pageCount": 1,
+                    "pageSize": 5,
+                  }
+                }
+                returnRequests={
+                  Array [
+                    Object {
+                      "bookId": 98,
+                      "comments": null,
+                      "createdAt": "2018-06-21T21:09:16.641Z",
+                      "id": 2,
+                      "returnRequests": Object {
+                        "author": "Michelle McNamara",
+                        "borrowCount": 4,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "A masterful true crime account of the Golden S.",
+                        "downvotes": 2,
+                        "favCount": 2,
+                        "id": 98,
+                        "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+                        "quantity": 4,
+                        "subject": "True Crime",
+                        "title": "I\\"ll Be Gone in the Dark",
+                        "updatedAt": "2018-07-06T00:59:36.273Z",
+                        "upvotes": 1,
+                      },
+                      "status": "Accepted",
+                      "updatedAt": "2018-06-21T21:11:19.047Z",
+                      "userId": 20000,
+                      "userReturnRequests": Object {
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Amarachi",
+                        "id": 20000,
+                        "imageURL": null,
+                        "lastName": "Agbo",
+                        "role": "Admin",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                      },
+                    },
+                    Object {
+                      "bookId": 89,
+                      "comments": null,
+                      "createdAt": "2018-06-21T20:58:16.452Z",
+                      "id": 1,
+                      "returnRequests": Object {
+                        "author": "Stephen Covey",
+                        "borrowCount": 1,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Dr. Covey's 7 Habits book is one of inspiring",
+                        "downvotes": 0,
+                        "favCount": 1,
+                        "id": 89,
+                        "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+                        "quantity": 20,
+                        "subject": "Inspiration",
+                        "title": "The 7 Habits of Highly Effective People",
+                        "updatedAt": "2018-07-05T19:26:24.934Z",
+                        "upvotes": 0,
+                      },
+                      "status": "Accepted",
+                      "updatedAt": "2018-06-21T21:05:26.890Z",
+                      "userId": 20000,
+                      "userReturnRequests": Object {
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Amarachi",
+                        "id": 20000,
+                        "imageURL": null,
+                        "lastName": "Agbo",
+                        "role": "Admin",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                      },
+                    },
+                  ]
+                }
+                returnRequestsError={null}
+              />
+              <Pagination
+                onPageChange={[Function]}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 5,
+                    "pageCount": 1,
+                    "pageSize": 5,
+                  }
+                }
+              />
+            </div>,
+            "className": "admin",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <AdminReturnRequests
+                  acceptReturnRequest={[Function]}
+                  declineReturnRequest={[Function]}
+                  getReturnRequests={[Function]}
+                  handleReturnRequest={[Function]}
+                  isFetchingReturnRequests={false}
+                  isHandlingReturnRequest={undefined}
+                  pagination={
+                    Object {
+                      "currentPage": 1,
+                      "dataCount": 5,
+                      "pageCount": 1,
+                      "pageSize": 5,
+                    }
+                  }
+                  returnRequests={
+                    Array [
+                      Object {
+                        "bookId": 98,
+                        "comments": null,
+                        "createdAt": "2018-06-21T21:09:16.641Z",
+                        "id": 2,
+                        "returnRequests": Object {
+                          "author": "Michelle McNamara",
+                          "borrowCount": 4,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "A masterful true crime account of the Golden S.",
+                          "downvotes": 2,
+                          "favCount": 2,
+                          "id": 98,
+                          "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+                          "quantity": 4,
+                          "subject": "True Crime",
+                          "title": "I\\"ll Be Gone in the Dark",
+                          "updatedAt": "2018-07-06T00:59:36.273Z",
+                          "upvotes": 1,
+                        },
+                        "status": "Accepted",
+                        "updatedAt": "2018-06-21T21:11:19.047Z",
+                        "userId": 20000,
+                        "userReturnRequests": Object {
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "email": "amarkipkip@gmail.com",
+                          "firstName": "Amarachi",
+                          "id": 20000,
+                          "imageURL": null,
+                          "lastName": "Agbo",
+                          "role": "Admin",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                        },
+                      },
+                      Object {
+                        "bookId": 89,
+                        "comments": null,
+                        "createdAt": "2018-06-21T20:58:16.452Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Stephen Covey",
+                          "borrowCount": 1,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Dr. Covey's 7 Habits book is one of inspiring",
+                          "downvotes": 0,
+                          "favCount": 1,
+                          "id": 89,
+                          "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+                          "quantity": 20,
+                          "subject": "Inspiration",
+                          "title": "The 7 Habits of Highly Effective People",
+                          "updatedAt": "2018-07-05T19:26:24.934Z",
+                          "upvotes": 0,
+                        },
+                        "status": "Accepted",
+                        "updatedAt": "2018-06-21T21:05:26.890Z",
+                        "userId": 20000,
+                        "userReturnRequests": Object {
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "email": "amarkipkip@gmail.com",
+                          "firstName": "Amarachi",
+                          "id": 20000,
+                          "imageURL": null,
+                          "lastName": "Agbo",
+                          "role": "Admin",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                        },
+                      },
+                    ]
+                  }
+                  returnRequestsError={null}
+                />,
+                <Pagination
+                  onPageChange={[Function]}
+                  pagination={
+                    Object {
+                      "currentPage": 1,
+                      "dataCount": 5,
+                      "pageCount": 1,
+                      "pageSize": 5,
+                    }
+                  }
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "acceptReturnRequest": [Function],
+                  "declineReturnRequest": [Function],
+                  "getReturnRequests": [Function],
+                  "handleReturnRequest": [Function],
+                  "isFetchingReturnRequests": false,
+                  "isHandlingReturnRequest": undefined,
+                  "pagination": Object {
+                    "currentPage": 1,
+                    "dataCount": 5,
+                    "pageCount": 1,
+                    "pageSize": 5,
+                  },
+                  "returnRequests": Array [
+                    Object {
+                      "bookId": 98,
+                      "comments": null,
+                      "createdAt": "2018-06-21T21:09:16.641Z",
+                      "id": 2,
+                      "returnRequests": Object {
+                        "author": "Michelle McNamara",
+                        "borrowCount": 4,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "A masterful true crime account of the Golden S.",
+                        "downvotes": 2,
+                        "favCount": 2,
+                        "id": 98,
+                        "imageURL": "https://res.cloudinary.com/ama-hello-books-v2/i.jpg",
+                        "quantity": 4,
+                        "subject": "True Crime",
+                        "title": "I\\"ll Be Gone in the Dark",
+                        "updatedAt": "2018-07-06T00:59:36.273Z",
+                        "upvotes": 1,
+                      },
+                      "status": "Accepted",
+                      "updatedAt": "2018-06-21T21:11:19.047Z",
+                      "userId": 20000,
+                      "userReturnRequests": Object {
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Amarachi",
+                        "id": 20000,
+                        "imageURL": null,
+                        "lastName": "Agbo",
+                        "role": "Admin",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                      },
+                    },
+                    Object {
+                      "bookId": 89,
+                      "comments": null,
+                      "createdAt": "2018-06-21T20:58:16.452Z",
+                      "id": 1,
+                      "returnRequests": Object {
+                        "author": "Stephen Covey",
+                        "borrowCount": 1,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Dr. Covey's 7 Habits book is one of inspiring",
+                        "downvotes": 0,
+                        "favCount": 1,
+                        "id": 89,
+                        "imageURL": "https://images-na.ssl-images-amazon.com/images.jpg",
+                        "quantity": 20,
+                        "subject": "Inspiration",
+                        "title": "The 7 Habits of Highly Effective People",
+                        "updatedAt": "2018-07-05T19:26:24.934Z",
+                        "upvotes": 0,
+                      },
+                      "status": "Accepted",
+                      "updatedAt": "2018-06-21T21:05:26.890Z",
+                      "userId": 20000,
+                      "userReturnRequests": Object {
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Amarachi",
+                        "id": 20000,
+                        "imageURL": null,
+                        "lastName": "Agbo",
+                        "role": "Admin",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                      },
+                    },
+                  ],
+                  "returnRequestsError": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onPageChange": [Function],
+                  "pagination": Object {
+                    "currentPage": 1,
+                    "dataCount": 5,
+                    "pageCount": 1,
+                    "pageSize": 5,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

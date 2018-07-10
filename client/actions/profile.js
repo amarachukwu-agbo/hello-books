@@ -10,6 +10,7 @@ import {
 import { apiURL } from './signUp';
 import checkError from '../helpers/checkError';
 import setHeader from '../helpers/setHeader';
+import Notify from '../helpers/Notify';
 
 const fetchingProfile = () => ({
   type: FETCHING_PROFILE,
@@ -47,9 +48,8 @@ const returnBookSuccess = returnRequest => ({
   returnRequest,
 });
 
-const returnBookFailure = error => ({
+const returnBookFailure = () => ({
   type: RETURN_BOOK_FAILURE,
-  error,
 });
 
 export const returnBook = (userId, bookId) => (dispatch) => {
@@ -58,10 +58,12 @@ export const returnBook = (userId, bookId) => (dispatch) => {
   return axios.post(`${apiURL}/users/${userId}/return/${bookId}`)
     .then((response) => {
       dispatch(returnBookSuccess(response.data.returnRequest));
+      Notify.notifySuccess('Your request to return book has been sent');
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(returnBookFailure(errorMessage));
+      dispatch(returnBookFailure());
+      Notify.notifyError(`Error sending return request.${errorMessage}`);
     });
 };
 

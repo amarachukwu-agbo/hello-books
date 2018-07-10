@@ -10,6 +10,7 @@ import {
 import checkError from '../helpers/checkError';
 import setHeader from '../helpers/setHeader';
 import { apiURL } from './signUp';
+import Notify from '../helpers/Notify';
 
 const fetchingReturnRequests = () => ({
   type: FETCHING_RETURN_REQUESTS,
@@ -68,5 +69,6 @@ export const handleReturnRequest =
       .catch((error) => {
         const errorMessage = checkError(error);
         dispatch(handleReturnRequestFailure(errorMessage));
+        Notify.notifyError(`Failed to handle request. ${errorMessage}`);
       });
   };

@@ -1,0 +1,2362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AdminBooks> should display a table with the available books 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AdminBooks
+    books={
+      Array [
+        Object {
+          "author": "Ngozi Adichie",
+          "description": "An enchanting novel",
+          "id": 1,
+          "imageURL": "https://www.images.png",
+          "quantity": 20,
+          "subject": "Fiction",
+          "title": "Half of a yellow sun",
+        },
+        Object {
+          "author": "Ngozi Adichie",
+          "description": "An enchanting novel",
+          "id": 2,
+          "imageURL": "https://www.images.png",
+          "quantity": 10,
+          "subject": "Fiction",
+          "title": "Her every wish",
+        },
+      ]
+    }
+    deleteBook={[Function]}
+    setBookForEdit={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <table
+        className="striped responsive-table"
+      >
+        <thead>
+          <tr>
+            <th>
+              Book
+            </th>
+            <th>
+              Author
+            </th>
+            <th>
+              Image URL
+            </th>
+            <th>
+              Subject
+            </th>
+            <th>
+              Description
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th
+              colSpan="2"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+               
+              Half of a yellow sun
+               
+            </td>
+            <td>
+               
+              Ngozi Adichie
+               
+            </td>
+            <td>
+               
+              https://www.images.png
+               
+            </td>
+            <td>
+               
+              Fiction
+               
+            </td>
+            <td>
+              An enchanting novel
+               
+            </td>
+            <td>
+               
+              20
+               
+            </td>
+            <td>
+              <button
+                className="btn-flat btn-small"
+                id="editButton0"
+                onClick={[Function]}
+              >
+                <i
+                  className="material-icons primary-text"
+                >
+                  edit
+                </i>
+              </button>
+            </td>
+            <td>
+              <button
+                className="btn-flat btn-small"
+                disabled={undefined}
+                id="deleteButton0"
+                onClick={[Function]}
+              >
+                <i
+                  className="material-icons red-text"
+                >
+                  delete
+                </i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+               
+              Her every wish
+               
+            </td>
+            <td>
+               
+              Ngozi Adichie
+               
+            </td>
+            <td>
+               
+              https://www.images.png
+               
+            </td>
+            <td>
+               
+              Fiction
+               
+            </td>
+            <td>
+              An enchanting novel
+               
+            </td>
+            <td>
+               
+              10
+               
+            </td>
+            <td>
+              <button
+                className="btn-flat btn-small"
+                id="editButton1"
+                onClick={[Function]}
+              >
+                <i
+                  className="material-icons primary-text"
+                >
+                  edit
+                </i>
+              </button>
+            </td>
+            <td>
+              <button
+                className="btn-flat btn-small"
+                disabled={undefined}
+                id="deleteButton1"
+                onClick={[Function]}
+              >
+                <i
+                  className="material-icons red-text"
+                >
+                  delete
+                </i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <thead>
+            <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Author
+              </th>
+              <th>
+                Image URL
+              </th>
+              <th>
+                Subject
+              </th>
+              <th>
+                Description
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th
+                colSpan="2"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>,
+          <tbody>
+            <tr>
+              <td>
+                 
+                Half of a yellow sun
+                 
+              </td>
+              <td>
+                 
+                Ngozi Adichie
+                 
+              </td>
+              <td>
+                 
+                https://www.images.png
+                 
+              </td>
+              <td>
+                 
+                Fiction
+                 
+              </td>
+              <td>
+                An enchanting novel
+                 
+              </td>
+              <td>
+                 
+                20
+                 
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                  id="editButton0"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="material-icons primary-text"
+                  >
+                    edit
+                  </i>
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                  disabled={undefined}
+                  id="deleteButton0"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="material-icons red-text"
+                  >
+                    delete
+                  </i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 
+                Her every wish
+                 
+              </td>
+              <td>
+                 
+                Ngozi Adichie
+                 
+              </td>
+              <td>
+                 
+                https://www.images.png
+                 
+              </td>
+              <td>
+                 
+                Fiction
+                 
+              </td>
+              <td>
+                An enchanting novel
+                 
+              </td>
+              <td>
+                 
+                10
+                 
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                  id="editButton1"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="material-icons primary-text"
+                  >
+                    edit
+                  </i>
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                  disabled={undefined}
+                  id="deleteButton1"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="material-icons red-text"
+                  >
+                    delete
+                  </i>
+                </button>
+              </td>
+            </tr>
+          </tbody>,
+        ],
+        "className": "striped responsive-table",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Author
+              </th>
+              <th>
+                Image URL
+              </th>
+              <th>
+                Subject
+              </th>
+              <th>
+                Description
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th
+                colSpan="2"
+              >
+                Action
+              </th>
+            </tr>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <th>
+                  Book
+                </th>,
+                <th>
+                  Author
+                </th>,
+                <th>
+                  Image URL
+                </th>,
+                <th>
+                  Subject
+                </th>,
+                <th>
+                  Description
+                </th>,
+                <th>
+                  Quantity
+                </th>,
+                <th
+                  colSpan="2"
+                >
+                  Action
+                </th>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Book",
+                },
+                "ref": null,
+                "rendered": "Book",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Author",
+                },
+                "ref": null,
+                "rendered": "Author",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Image URL",
+                },
+                "ref": null,
+                "rendered": "Image URL",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Subject",
+                },
+                "ref": null,
+                "rendered": "Subject",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Description",
+                },
+                "ref": null,
+                "rendered": "Description",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Quantity",
+                },
+                "ref": null,
+                "rendered": "Quantity",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Action",
+                  "colSpan": "2",
+                },
+                "ref": null,
+                "rendered": "Action",
+                "type": "th",
+              },
+            ],
+            "type": "tr",
+          },
+          "type": "thead",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <tr>
+                <td>
+                   
+                  Half of a yellow sun
+                   
+                </td>
+                <td>
+                   
+                  Ngozi Adichie
+                   
+                </td>
+                <td>
+                   
+                  https://www.images.png
+                   
+                </td>
+                <td>
+                   
+                  Fiction
+                   
+                </td>
+                <td>
+                  An enchanting novel
+                   
+                </td>
+                <td>
+                   
+                  20
+                   
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                    id="editButton0"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="material-icons primary-text"
+                    >
+                      edit
+                    </i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                    disabled={undefined}
+                    id="deleteButton0"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="material-icons red-text"
+                    >
+                      delete
+                    </i>
+                  </button>
+                </td>
+              </tr>,
+              <tr>
+                <td>
+                   
+                  Her every wish
+                   
+                </td>
+                <td>
+                   
+                  Ngozi Adichie
+                   
+                </td>
+                <td>
+                   
+                  https://www.images.png
+                   
+                </td>
+                <td>
+                   
+                  Fiction
+                   
+                </td>
+                <td>
+                  An enchanting novel
+                   
+                </td>
+                <td>
+                   
+                  10
+                   
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                    id="editButton1"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="material-icons primary-text"
+                    >
+                      edit
+                    </i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                    disabled={undefined}
+                    id="deleteButton1"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="material-icons red-text"
+                    >
+                      delete
+                    </i>
+                  </button>
+                </td>
+              </tr>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <td>
+                     
+                    Half of a yellow sun
+                     
+                  </td>,
+                  <td>
+                     
+                    Ngozi Adichie
+                     
+                  </td>,
+                  <td>
+                     
+                    https://www.images.png
+                     
+                  </td>,
+                  <td>
+                     
+                    Fiction
+                     
+                  </td>,
+                  <td>
+                    An enchanting novel
+                     
+                  </td>,
+                  <td>
+                     
+                    20
+                     
+                  </td>,
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                      id="editButton0"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons primary-text"
+                      >
+                        edit
+                      </i>
+                    </button>
+                  </td>,
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                      disabled={undefined}
+                      id="deleteButton0"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons red-text"
+                      >
+                        delete
+                      </i>
+                    </button>
+                  </td>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Half of a yellow sun",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Half of a yellow sun",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Ngozi Adichie",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Ngozi Adichie",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "https://www.images.png",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "https://www.images.png",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Fiction",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Fiction",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "An enchanting novel",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "An enchanting novel",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      20,
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    20,
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn-flat btn-small"
+                      id="editButton0"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons primary-text"
+                      >
+                        edit
+                      </i>
+                    </button>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="material-icons primary-text"
+                      >
+                        edit
+                      </i>,
+                      "className": "btn-flat btn-small",
+                      "id": "editButton0",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "edit",
+                        "className": "material-icons primary-text",
+                      },
+                      "ref": null,
+                      "rendered": "edit",
+                      "type": "i",
+                    },
+                    "type": "button",
+                  },
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn-flat btn-small"
+                      disabled={undefined}
+                      id="deleteButton0"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons red-text"
+                      >
+                        delete
+                      </i>
+                    </button>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="material-icons red-text"
+                      >
+                        delete
+                      </i>,
+                      "className": "btn-flat btn-small",
+                      "disabled": undefined,
+                      "id": "deleteButton0",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "delete",
+                        "className": "material-icons red-text",
+                      },
+                      "ref": null,
+                      "rendered": "delete",
+                      "type": "i",
+                    },
+                    "type": "button",
+                  },
+                  "type": "td",
+                },
+              ],
+              "type": "tr",
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <td>
+                     
+                    Her every wish
+                     
+                  </td>,
+                  <td>
+                     
+                    Ngozi Adichie
+                     
+                  </td>,
+                  <td>
+                     
+                    https://www.images.png
+                     
+                  </td>,
+                  <td>
+                     
+                    Fiction
+                     
+                  </td>,
+                  <td>
+                    An enchanting novel
+                     
+                  </td>,
+                  <td>
+                     
+                    10
+                     
+                  </td>,
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                      id="editButton1"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons primary-text"
+                      >
+                        edit
+                      </i>
+                    </button>
+                  </td>,
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                      disabled={undefined}
+                      id="deleteButton1"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons red-text"
+                      >
+                        delete
+                      </i>
+                    </button>
+                  </td>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Her every wish",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Her every wish",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Ngozi Adichie",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Ngozi Adichie",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "https://www.images.png",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "https://www.images.png",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Fiction",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Fiction",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "An enchanting novel",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "An enchanting novel",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      10,
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    10,
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn-flat btn-small"
+                      id="editButton1"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons primary-text"
+                      >
+                        edit
+                      </i>
+                    </button>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="material-icons primary-text"
+                      >
+                        edit
+                      </i>,
+                      "className": "btn-flat btn-small",
+                      "id": "editButton1",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "edit",
+                        "className": "material-icons primary-text",
+                      },
+                      "ref": null,
+                      "rendered": "edit",
+                      "type": "i",
+                    },
+                    "type": "button",
+                  },
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn-flat btn-small"
+                      disabled={undefined}
+                      id="deleteButton1"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons red-text"
+                      >
+                        delete
+                      </i>
+                    </button>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="material-icons red-text"
+                      >
+                        delete
+                      </i>,
+                      "className": "btn-flat btn-small",
+                      "disabled": undefined,
+                      "id": "deleteButton1",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "delete",
+                        "className": "material-icons red-text",
+                      },
+                      "ref": null,
+                      "rendered": "delete",
+                      "type": "i",
+                    },
+                    "type": "button",
+                  },
+                  "type": "td",
+                },
+              ],
+              "type": "tr",
+            },
+          ],
+          "type": "tbody",
+        },
+      ],
+      "type": "table",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <table
+          className="striped responsive-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Author
+              </th>
+              <th>
+                Image URL
+              </th>
+              <th>
+                Subject
+              </th>
+              <th>
+                Description
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th
+                colSpan="2"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                 
+                Half of a yellow sun
+                 
+              </td>
+              <td>
+                 
+                Ngozi Adichie
+                 
+              </td>
+              <td>
+                 
+                https://www.images.png
+                 
+              </td>
+              <td>
+                 
+                Fiction
+                 
+              </td>
+              <td>
+                An enchanting novel
+                 
+              </td>
+              <td>
+                 
+                20
+                 
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                  id="editButton0"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="material-icons primary-text"
+                  >
+                    edit
+                  </i>
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                  disabled={undefined}
+                  id="deleteButton0"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="material-icons red-text"
+                  >
+                    delete
+                  </i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 
+                Her every wish
+                 
+              </td>
+              <td>
+                 
+                Ngozi Adichie
+                 
+              </td>
+              <td>
+                 
+                https://www.images.png
+                 
+              </td>
+              <td>
+                 
+                Fiction
+                 
+              </td>
+              <td>
+                An enchanting novel
+                 
+              </td>
+              <td>
+                 
+                10
+                 
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                  id="editButton1"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="material-icons primary-text"
+                  >
+                    edit
+                  </i>
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                  disabled={undefined}
+                  id="deleteButton1"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="material-icons red-text"
+                  >
+                    delete
+                  </i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <thead>
+              <tr>
+                <th>
+                  Book
+                </th>
+                <th>
+                  Author
+                </th>
+                <th>
+                  Image URL
+                </th>
+                <th>
+                  Subject
+                </th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Quantity
+                </th>
+                <th
+                  colSpan="2"
+                >
+                  Action
+                </th>
+              </tr>
+            </thead>,
+            <tbody>
+              <tr>
+                <td>
+                   
+                  Half of a yellow sun
+                   
+                </td>
+                <td>
+                   
+                  Ngozi Adichie
+                   
+                </td>
+                <td>
+                   
+                  https://www.images.png
+                   
+                </td>
+                <td>
+                   
+                  Fiction
+                   
+                </td>
+                <td>
+                  An enchanting novel
+                   
+                </td>
+                <td>
+                   
+                  20
+                   
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                    id="editButton0"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="material-icons primary-text"
+                    >
+                      edit
+                    </i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                    disabled={undefined}
+                    id="deleteButton0"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="material-icons red-text"
+                    >
+                      delete
+                    </i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                   
+                  Her every wish
+                   
+                </td>
+                <td>
+                   
+                  Ngozi Adichie
+                   
+                </td>
+                <td>
+                   
+                  https://www.images.png
+                   
+                </td>
+                <td>
+                   
+                  Fiction
+                   
+                </td>
+                <td>
+                  An enchanting novel
+                   
+                </td>
+                <td>
+                   
+                  10
+                   
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                    id="editButton1"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="material-icons primary-text"
+                    >
+                      edit
+                    </i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                    disabled={undefined}
+                    id="deleteButton1"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="material-icons red-text"
+                    >
+                      delete
+                    </i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>,
+          ],
+          "className": "striped responsive-table",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <tr>
+                <th>
+                  Book
+                </th>
+                <th>
+                  Author
+                </th>
+                <th>
+                  Image URL
+                </th>
+                <th>
+                  Subject
+                </th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Quantity
+                </th>
+                <th
+                  colSpan="2"
+                >
+                  Action
+                </th>
+              </tr>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <th>
+                    Book
+                  </th>,
+                  <th>
+                    Author
+                  </th>,
+                  <th>
+                    Image URL
+                  </th>,
+                  <th>
+                    Subject
+                  </th>,
+                  <th>
+                    Description
+                  </th>,
+                  <th>
+                    Quantity
+                  </th>,
+                  <th
+                    colSpan="2"
+                  >
+                    Action
+                  </th>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Book",
+                  },
+                  "ref": null,
+                  "rendered": "Book",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Author",
+                  },
+                  "ref": null,
+                  "rendered": "Author",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Image URL",
+                  },
+                  "ref": null,
+                  "rendered": "Image URL",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Subject",
+                  },
+                  "ref": null,
+                  "rendered": "Subject",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Description",
+                  },
+                  "ref": null,
+                  "rendered": "Description",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Quantity",
+                  },
+                  "ref": null,
+                  "rendered": "Quantity",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Action",
+                    "colSpan": "2",
+                  },
+                  "ref": null,
+                  "rendered": "Action",
+                  "type": "th",
+                },
+              ],
+              "type": "tr",
+            },
+            "type": "thead",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <tr>
+                  <td>
+                     
+                    Half of a yellow sun
+                     
+                  </td>
+                  <td>
+                     
+                    Ngozi Adichie
+                     
+                  </td>
+                  <td>
+                     
+                    https://www.images.png
+                     
+                  </td>
+                  <td>
+                     
+                    Fiction
+                     
+                  </td>
+                  <td>
+                    An enchanting novel
+                     
+                  </td>
+                  <td>
+                     
+                    20
+                     
+                  </td>
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                      id="editButton0"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons primary-text"
+                      >
+                        edit
+                      </i>
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                      disabled={undefined}
+                      id="deleteButton0"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons red-text"
+                      >
+                        delete
+                      </i>
+                    </button>
+                  </td>
+                </tr>,
+                <tr>
+                  <td>
+                     
+                    Her every wish
+                     
+                  </td>
+                  <td>
+                     
+                    Ngozi Adichie
+                     
+                  </td>
+                  <td>
+                     
+                    https://www.images.png
+                     
+                  </td>
+                  <td>
+                     
+                    Fiction
+                     
+                  </td>
+                  <td>
+                    An enchanting novel
+                     
+                  </td>
+                  <td>
+                     
+                    10
+                     
+                  </td>
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                      id="editButton1"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons primary-text"
+                      >
+                        edit
+                      </i>
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                      disabled={undefined}
+                      id="deleteButton1"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="material-icons red-text"
+                      >
+                        delete
+                      </i>
+                    </button>
+                  </td>
+                </tr>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td>
+                       
+                      Half of a yellow sun
+                       
+                    </td>,
+                    <td>
+                       
+                      Ngozi Adichie
+                       
+                    </td>,
+                    <td>
+                       
+                      https://www.images.png
+                       
+                    </td>,
+                    <td>
+                       
+                      Fiction
+                       
+                    </td>,
+                    <td>
+                      An enchanting novel
+                       
+                    </td>,
+                    <td>
+                       
+                      20
+                       
+                    </td>,
+                    <td>
+                      <button
+                        className="btn-flat btn-small"
+                        id="editButton0"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="material-icons primary-text"
+                        >
+                          edit
+                        </i>
+                      </button>
+                    </td>,
+                    <td>
+                      <button
+                        className="btn-flat btn-small"
+                        disabled={undefined}
+                        id="deleteButton0"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="material-icons red-text"
+                        >
+                          delete
+                        </i>
+                      </button>
+                    </td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Half of a yellow sun",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Half of a yellow sun",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Ngozi Adichie",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Ngozi Adichie",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "https://www.images.png",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "https://www.images.png",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Fiction",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Fiction",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "An enchanting novel",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "An enchanting novel",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        20,
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      20,
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <button
+                        className="btn-flat btn-small"
+                        id="editButton0"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="material-icons primary-text"
+                        >
+                          edit
+                        </i>
+                      </button>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="material-icons primary-text"
+                        >
+                          edit
+                        </i>,
+                        "className": "btn-flat btn-small",
+                        "id": "editButton0",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "edit",
+                          "className": "material-icons primary-text",
+                        },
+                        "ref": null,
+                        "rendered": "edit",
+                        "type": "i",
+                      },
+                      "type": "button",
+                    },
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <button
+                        className="btn-flat btn-small"
+                        disabled={undefined}
+                        id="deleteButton0"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="material-icons red-text"
+                        >
+                          delete
+                        </i>
+                      </button>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="material-icons red-text"
+                        >
+                          delete
+                        </i>,
+                        "className": "btn-flat btn-small",
+                        "disabled": undefined,
+                        "id": "deleteButton0",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "delete",
+                          "className": "material-icons red-text",
+                        },
+                        "ref": null,
+                        "rendered": "delete",
+                        "type": "i",
+                      },
+                      "type": "button",
+                    },
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+              Object {
+                "instance": null,
+                "key": "2",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td>
+                       
+                      Her every wish
+                       
+                    </td>,
+                    <td>
+                       
+                      Ngozi Adichie
+                       
+                    </td>,
+                    <td>
+                       
+                      https://www.images.png
+                       
+                    </td>,
+                    <td>
+                       
+                      Fiction
+                       
+                    </td>,
+                    <td>
+                      An enchanting novel
+                       
+                    </td>,
+                    <td>
+                       
+                      10
+                       
+                    </td>,
+                    <td>
+                      <button
+                        className="btn-flat btn-small"
+                        id="editButton1"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="material-icons primary-text"
+                        >
+                          edit
+                        </i>
+                      </button>
+                    </td>,
+                    <td>
+                      <button
+                        className="btn-flat btn-small"
+                        disabled={undefined}
+                        id="deleteButton1"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="material-icons red-text"
+                        >
+                          delete
+                        </i>
+                      </button>
+                    </td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Her every wish",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Her every wish",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Ngozi Adichie",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Ngozi Adichie",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "https://www.images.png",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "https://www.images.png",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Fiction",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Fiction",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "An enchanting novel",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "An enchanting novel",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        10,
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      10,
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <button
+                        className="btn-flat btn-small"
+                        id="editButton1"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="material-icons primary-text"
+                        >
+                          edit
+                        </i>
+                      </button>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="material-icons primary-text"
+                        >
+                          edit
+                        </i>,
+                        "className": "btn-flat btn-small",
+                        "id": "editButton1",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "edit",
+                          "className": "material-icons primary-text",
+                        },
+                        "ref": null,
+                        "rendered": "edit",
+                        "type": "i",
+                      },
+                      "type": "button",
+                    },
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <button
+                        className="btn-flat btn-small"
+                        disabled={undefined}
+                        id="deleteButton1"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="material-icons red-text"
+                        >
+                          delete
+                        </i>
+                      </button>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="material-icons red-text"
+                        >
+                          delete
+                        </i>,
+                        "className": "btn-flat btn-small",
+                        "disabled": undefined,
+                        "id": "deleteButton1",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "delete",
+                          "className": "material-icons red-text",
+                        },
+                        "ref": null,
+                        "rendered": "delete",
+                        "type": "i",
+                      },
+                      "type": "button",
+                    },
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+            ],
+            "type": "tbody",
+          },
+        ],
+        "type": "table",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

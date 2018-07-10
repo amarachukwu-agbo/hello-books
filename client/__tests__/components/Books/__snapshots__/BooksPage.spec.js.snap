@@ -1,0 +1,1148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BooksPage /> renders successfully 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BooksPage
+    books={
+      Array [
+        Object {
+          "author": "Trevor Noah",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Attuned to the power of la",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 95,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 20,
+          "subject": "Biography",
+          "title": "Born a Crime",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Ken Follet",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "This lush novel, set ",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 92,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 2,
+          "subject": "Thriller",
+          "title": "A Place Called Freedom",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Joanna Gaines",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Magnolia Table is infused with Joanna Gaines",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 97,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 7,
+          "subject": "Recipe",
+          "title": "Magnolia Table: A Collection of Recipes for Gathering",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+      ]
+    }
+    error={null}
+    getBooks={[Function]}
+    isFetching={false}
+    pagination={undefined}
+    searchBooks={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <br />,
+        <SearchBar
+          books={
+            Array [
+              Object {
+                "author": "Trevor Noah",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Attuned to the power of la",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 95,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 20,
+                "subject": "Biography",
+                "title": "Born a Crime",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+              Object {
+                "author": "Ken Follet",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "This lush novel, set ",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 92,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 2,
+                "subject": "Thriller",
+                "title": "A Place Called Freedom",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+              Object {
+                "author": "Joanna Gaines",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Magnolia Table is infused with Joanna Gaines",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 97,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 7,
+                "subject": "Recipe",
+                "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+            ]
+          }
+          error={null}
+          getBooks={[Function]}
+          isFetching={false}
+          pagination={undefined}
+          searchBooks={[Function]}
+        />,
+        undefined,
+        <div
+          className="row book-list"
+        >
+          <div>
+            <BooksList
+              books={
+                Array [
+                  Object {
+                    "author": "Trevor Noah",
+                    "bookReviews": Array [],
+                    "borrowCount": 0,
+                    "createdAt": "2018-05-10T03:11:52.181Z",
+                    "description": "Attuned to the power of la",
+                    "downvotes": 0,
+                    "favCount": 0,
+                    "id": 95,
+                    "imageURL": "https://images-na.ssl-image.jpg",
+                    "quantity": 20,
+                    "subject": "Biography",
+                    "title": "Born a Crime",
+                    "updatedAt": "2018-05-10T03:11:52.181Z",
+                    "upvotes": 0,
+                  },
+                  Object {
+                    "author": "Ken Follet",
+                    "bookReviews": Array [],
+                    "borrowCount": 0,
+                    "createdAt": "2018-05-10T03:11:52.181Z",
+                    "description": "This lush novel, set ",
+                    "downvotes": 0,
+                    "favCount": 0,
+                    "id": 92,
+                    "imageURL": "https://images-na.ssl-image.jpg",
+                    "quantity": 2,
+                    "subject": "Thriller",
+                    "title": "A Place Called Freedom",
+                    "updatedAt": "2018-05-10T03:11:52.181Z",
+                    "upvotes": 0,
+                  },
+                  Object {
+                    "author": "Joanna Gaines",
+                    "bookReviews": Array [],
+                    "borrowCount": 0,
+                    "createdAt": "2018-05-10T03:11:52.181Z",
+                    "description": "Magnolia Table is infused with Joanna Gaines",
+                    "downvotes": 0,
+                    "favCount": 0,
+                    "id": 97,
+                    "imageURL": "https://images-na.ssl-image.jpg",
+                    "quantity": 7,
+                    "subject": "Recipe",
+                    "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                    "updatedAt": "2018-05-10T03:11:52.181Z",
+                    "upvotes": 0,
+                  },
+                ]
+              }
+            />
+            <Pagination
+              onPageChange={[Function]}
+              pagination={undefined}
+            />
+          </div>
+        </div>,
+      ],
+      "className": "search-section white wrapper",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "books": Array [
+            Object {
+              "author": "Trevor Noah",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Attuned to the power of la",
+              "downvotes": 0,
+              "favCount": 0,
+              "id": 95,
+              "imageURL": "https://images-na.ssl-image.jpg",
+              "quantity": 20,
+              "subject": "Biography",
+              "title": "Born a Crime",
+              "updatedAt": "2018-05-10T03:11:52.181Z",
+              "upvotes": 0,
+            },
+            Object {
+              "author": "Ken Follet",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "This lush novel, set ",
+              "downvotes": 0,
+              "favCount": 0,
+              "id": 92,
+              "imageURL": "https://images-na.ssl-image.jpg",
+              "quantity": 2,
+              "subject": "Thriller",
+              "title": "A Place Called Freedom",
+              "updatedAt": "2018-05-10T03:11:52.181Z",
+              "upvotes": 0,
+            },
+            Object {
+              "author": "Joanna Gaines",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Magnolia Table is infused with Joanna Gaines",
+              "downvotes": 0,
+              "favCount": 0,
+              "id": 97,
+              "imageURL": "https://images-na.ssl-image.jpg",
+              "quantity": 7,
+              "subject": "Recipe",
+              "title": "Magnolia Table: A Collection of Recipes for Gathering",
+              "updatedAt": "2018-05-10T03:11:52.181Z",
+              "upvotes": 0,
+            },
+          ],
+          "error": null,
+          "getBooks": [Function],
+          "isFetching": false,
+          "pagination": undefined,
+          "searchBooks": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      undefined,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            undefined,
+            undefined,
+            <div>
+              <BooksList
+                books={
+                  Array [
+                    Object {
+                      "author": "Trevor Noah",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Attuned to the power of la",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 95,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 20,
+                      "subject": "Biography",
+                      "title": "Born a Crime",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                    Object {
+                      "author": "Ken Follet",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "This lush novel, set ",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 92,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 2,
+                      "subject": "Thriller",
+                      "title": "A Place Called Freedom",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                    Object {
+                      "author": "Joanna Gaines",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Magnolia Table is infused with Joanna Gaines",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 97,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 7,
+                      "subject": "Recipe",
+                      "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                  ]
+                }
+              />
+              <Pagination
+                onPageChange={[Function]}
+                pagination={undefined}
+              />
+            </div>,
+            undefined,
+          ],
+          "className": "row book-list",
+        },
+        "ref": null,
+        "rendered": Array [
+          undefined,
+          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <BooksList
+                  books={
+                    Array [
+                      Object {
+                        "author": "Trevor Noah",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Attuned to the power of la",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 95,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 20,
+                        "subject": "Biography",
+                        "title": "Born a Crime",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Ken Follet",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "This lush novel, set ",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 92,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 2,
+                        "subject": "Thriller",
+                        "title": "A Place Called Freedom",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Joanna Gaines",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Magnolia Table is infused with Joanna Gaines",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 97,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 7,
+                        "subject": "Recipe",
+                        "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                    ]
+                  }
+                />,
+                <Pagination
+                  onPageChange={[Function]}
+                  pagination={undefined}
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "books": Array [
+                    Object {
+                      "author": "Trevor Noah",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Attuned to the power of la",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 95,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 20,
+                      "subject": "Biography",
+                      "title": "Born a Crime",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                    Object {
+                      "author": "Ken Follet",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "This lush novel, set ",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 92,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 2,
+                      "subject": "Thriller",
+                      "title": "A Place Called Freedom",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                    Object {
+                      "author": "Joanna Gaines",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Magnolia Table is infused with Joanna Gaines",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 97,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 7,
+                      "subject": "Recipe",
+                      "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onPageChange": [Function],
+                  "pagination": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          undefined,
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <br />,
+          <SearchBar
+            books={
+              Array [
+                Object {
+                  "author": "Trevor Noah",
+                  "bookReviews": Array [],
+                  "borrowCount": 0,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "Attuned to the power of la",
+                  "downvotes": 0,
+                  "favCount": 0,
+                  "id": 95,
+                  "imageURL": "https://images-na.ssl-image.jpg",
+                  "quantity": 20,
+                  "subject": "Biography",
+                  "title": "Born a Crime",
+                  "updatedAt": "2018-05-10T03:11:52.181Z",
+                  "upvotes": 0,
+                },
+                Object {
+                  "author": "Ken Follet",
+                  "bookReviews": Array [],
+                  "borrowCount": 0,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "This lush novel, set ",
+                  "downvotes": 0,
+                  "favCount": 0,
+                  "id": 92,
+                  "imageURL": "https://images-na.ssl-image.jpg",
+                  "quantity": 2,
+                  "subject": "Thriller",
+                  "title": "A Place Called Freedom",
+                  "updatedAt": "2018-05-10T03:11:52.181Z",
+                  "upvotes": 0,
+                },
+                Object {
+                  "author": "Joanna Gaines",
+                  "bookReviews": Array [],
+                  "borrowCount": 0,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "Magnolia Table is infused with Joanna Gaines",
+                  "downvotes": 0,
+                  "favCount": 0,
+                  "id": 97,
+                  "imageURL": "https://images-na.ssl-image.jpg",
+                  "quantity": 7,
+                  "subject": "Recipe",
+                  "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                  "updatedAt": "2018-05-10T03:11:52.181Z",
+                  "upvotes": 0,
+                },
+              ]
+            }
+            error={null}
+            getBooks={[Function]}
+            isFetching={false}
+            pagination={undefined}
+            searchBooks={[Function]}
+          />,
+          undefined,
+          <div
+            className="row book-list"
+          >
+            <div>
+              <BooksList
+                books={
+                  Array [
+                    Object {
+                      "author": "Trevor Noah",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Attuned to the power of la",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 95,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 20,
+                      "subject": "Biography",
+                      "title": "Born a Crime",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                    Object {
+                      "author": "Ken Follet",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "This lush novel, set ",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 92,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 2,
+                      "subject": "Thriller",
+                      "title": "A Place Called Freedom",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                    Object {
+                      "author": "Joanna Gaines",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Magnolia Table is infused with Joanna Gaines",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 97,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 7,
+                      "subject": "Recipe",
+                      "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                  ]
+                }
+              />
+              <Pagination
+                onPageChange={[Function]}
+                pagination={undefined}
+              />
+            </div>
+          </div>,
+        ],
+        "className": "search-section white wrapper",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "books": Array [
+              Object {
+                "author": "Trevor Noah",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Attuned to the power of la",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 95,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 20,
+                "subject": "Biography",
+                "title": "Born a Crime",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+              Object {
+                "author": "Ken Follet",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "This lush novel, set ",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 92,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 2,
+                "subject": "Thriller",
+                "title": "A Place Called Freedom",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+              Object {
+                "author": "Joanna Gaines",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Magnolia Table is infused with Joanna Gaines",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 97,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 7,
+                "subject": "Recipe",
+                "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+            ],
+            "error": null,
+            "getBooks": [Function],
+            "isFetching": false,
+            "pagination": undefined,
+            "searchBooks": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              undefined,
+              undefined,
+              <div>
+                <BooksList
+                  books={
+                    Array [
+                      Object {
+                        "author": "Trevor Noah",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Attuned to the power of la",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 95,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 20,
+                        "subject": "Biography",
+                        "title": "Born a Crime",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Ken Follet",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "This lush novel, set ",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 92,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 2,
+                        "subject": "Thriller",
+                        "title": "A Place Called Freedom",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Joanna Gaines",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Magnolia Table is infused with Joanna Gaines",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 97,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 7,
+                        "subject": "Recipe",
+                        "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                    ]
+                  }
+                />
+                <Pagination
+                  onPageChange={[Function]}
+                  pagination={undefined}
+                />
+              </div>,
+              undefined,
+            ],
+            "className": "row book-list",
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <BooksList
+                    books={
+                      Array [
+                        Object {
+                          "author": "Trevor Noah",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Attuned to the power of la",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 95,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 20,
+                          "subject": "Biography",
+                          "title": "Born a Crime",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                        Object {
+                          "author": "Ken Follet",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "This lush novel, set ",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 92,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 2,
+                          "subject": "Thriller",
+                          "title": "A Place Called Freedom",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                        Object {
+                          "author": "Joanna Gaines",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Magnolia Table is infused with Joanna Gaines",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 97,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 7,
+                          "subject": "Recipe",
+                          "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                      ]
+                    }
+                  />,
+                  <Pagination
+                    onPageChange={[Function]}
+                    pagination={undefined}
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "books": Array [
+                      Object {
+                        "author": "Trevor Noah",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Attuned to the power of la",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 95,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 20,
+                        "subject": "Biography",
+                        "title": "Born a Crime",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Ken Follet",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "This lush novel, set ",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 92,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 2,
+                        "subject": "Thriller",
+                        "title": "A Place Called Freedom",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Joanna Gaines",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Magnolia Table is infused with Joanna Gaines",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 97,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 7,
+                        "subject": "Recipe",
+                        "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "onPageChange": [Function],
+                    "pagination": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            undefined,
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<ConnectedBooksPage/> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Connect(BooksPage)
+    books={null}
+    error="Network Error"
+    getBooks={[Function]}
+    isFetching={false}
+    pagination={
+      Object {
+        "currentPage": 1,
+        "dataCount": 1,
+        "pageCount": 1,
+        "pageSize": 1,
+      }
+    }
+    searchBooks={[Function]}
+    searchResults={
+      Object {
+        "author": "Joanna Gaines",
+        "borrowCount": 0,
+        "createdAt": "2018-05-10T03:11:52.181Z",
+        "description": "A new book",
+        "downvotes": 1,
+        "favCount": 1,
+        "id": 97,
+        "imageURL": "https://images-na.ssl-image.jpg",
+        "quantity": 6,
+        "subject": "Recipe",
+        "title": "A new book",
+        "updatedAt": "2018-06-23T19:14:10.925Z",
+        "upvotes": 0,
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "books": null,
+      "error": "Network Error",
+      "getBooks": [Function],
+      "isFetching": false,
+      "pagination": Object {
+        "currentPage": 1,
+        "dataCount": 1,
+        "pageCount": 1,
+        "pageSize": 1,
+      },
+      "searchBooks": [Function],
+      "searchResults": Object {
+        "author": "Joanna Gaines",
+        "borrowCount": 0,
+        "createdAt": "2018-05-10T03:11:52.181Z",
+        "description": "A new book",
+        "downvotes": 1,
+        "favCount": 1,
+        "id": 97,
+        "imageURL": "https://images-na.ssl-image.jpg",
+        "quantity": 6,
+        "subject": "Recipe",
+        "title": "A new book",
+        "updatedAt": "2018-06-23T19:14:10.925Z",
+        "upvotes": 0,
+      },
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeSubscription": Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "books": null,
+        "error": "Network Error",
+        "getBooks": [Function],
+        "isFetching": false,
+        "pagination": Object {
+          "currentPage": 1,
+          "dataCount": 1,
+          "pageCount": 1,
+          "pageSize": 1,
+        },
+        "searchBooks": [Function],
+        "searchResults": Object {
+          "author": "Joanna Gaines",
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "A new book",
+          "downvotes": 1,
+          "favCount": 1,
+          "id": 97,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 6,
+          "subject": "Recipe",
+          "title": "A new book",
+          "updatedAt": "2018-06-23T19:14:10.925Z",
+          "upvotes": 0,
+        },
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "storeSubscription": Subscription {
+          "listeners": Object {
+            "clear": [Function],
+            "get": [Function],
+            "notify": [Function],
+            "subscribe": [Function],
+          },
+          "onStateChange": [Function],
+          "parentSub": undefined,
+          "store": Object {
+            "clearActions": [Function],
+            "dispatch": [Function],
+            "getActions": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+          },
+          "unsubscribe": [Function],
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

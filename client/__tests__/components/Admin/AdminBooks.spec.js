@@ -1,7 +1,7 @@
-/* import React from 'react';
+import React from 'react';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
-import AdminBooks from '../AdminBooks';
+import AdminBooks from '../../../components/Admin/AdminBooks.jsx';
 
 const props = {
   books: [
@@ -24,14 +24,13 @@ const props = {
       imageURL: 'https://www.images.png',
     },
   ],
-  deleteBook: sinon.spy(),
+  deleteBook: sinon.spy(() => Promise.resolve()),
+  setBookForEdit: sinon.spy(() => Promise.resolve()),
 };
 describe('<AdminBooks>', () => {
   it('should display a table with the available books', () => {
     const wrapper = shallow(<AdminBooks { ...props }/>);
-    expect(wrapper.find('h4').text()).toEqual('Books Catalog');
-    expect(wrapper.find('table').exists()).toBeTruthy();
-    expect(wrapper.find('tr').length).toBe(3);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should not display table if there are no available books', () => {
@@ -41,19 +40,17 @@ describe('<AdminBooks>', () => {
     expect(wrapper.find('div').length).toBe(1);
   });
 
-  it('should call fuction toggleModal when edit button is clicked', () => {
-    const spy = sinon.spy(AdminBooks.prototype, 'toggleModal');
+  it('should call fuction setBookForEdit() when edit button is clicked', () => {
     const wrapper = shallow(<AdminBooks { ...props }/>);
     wrapper.find('#editButton0').simulate('click');
-    expect(spy.calledOnce).toEqual(true);
-    expect(spy.calledWith(1, 0));
-    spy.restore();
+    expect(props.setBookForEdit.calledOnce).toEqual(true);
+    expect(props.setBookForEdit.calledWith(1, 0));
   });
 
-  it('should call fuction deleteBook when delete button is clicked', () => {
+  it('should calls fuction deleteBook when delete button is clicked', () => {
     const wrapper = shallow(<AdminBooks { ...props }/>);
     wrapper.find('#deleteButton0').simulate('click');
     expect(props.deleteBook.calledOnce).toEqual(true);
-    expect(props.deleteBook.calledWith(1, 0)).toEqual(true);
+    expect(props.deleteBook.calledWith(1)).toEqual(true);
   });
-}); */
+});

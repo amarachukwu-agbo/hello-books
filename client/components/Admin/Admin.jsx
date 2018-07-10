@@ -1,7 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from '../Common/Navbar.jsx';
-import PageFooter from '../Common/PageFooter.jsx';
 import AddBookPage from './AddBookPage.jsx';
 import AdminBooksPage from './AdminBooksPage.jsx';
 import AdminBorrowRequestsPage from './AdminBorrowRequestsPage.jsx';
@@ -17,7 +15,6 @@ import NotFound from '../Common/NotFound.jsx';
  */
 const Admin = ({ match }) => (
   <div>
-    <Navbar />
     <div className="parallax-container z-depth-1 dashboard">
       <div className="center-align">
         <br />
@@ -35,7 +32,6 @@ const Admin = ({ match }) => (
       <Route component={ NotFound } />
     </Switch>
     <br />
-    <PageFooter />
   </div>
 );
 

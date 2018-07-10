@@ -104,7 +104,6 @@ describe('Profile actions', () => {
       type: actionTypes.RETURN_BOOK_REQUEST,
     }, {
       type: actionTypes.RETURN_BOOK_FAILURE,
-      error: books.returnBookErrorResponse.error,
     },
     ];
     const store = mockStore({});

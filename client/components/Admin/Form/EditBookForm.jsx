@@ -6,7 +6,7 @@ import request from 'superagent';
 import DropzoneInput from '../../Common/DropzoneInput.jsx';
 import validate from '../../../helpers/validations/book';
 import { InputText, renderDropdownList } from '../../Common/InputTypes.jsx';
-import { subjects } from './AddBookForm.jsx';
+import subjects from '../../../helpers/categories';
 import {
   cloudinaryURL,
   uploadPreset,
@@ -20,12 +20,6 @@ import {
  * @extends {React.Component}
  */
 class EditBookForm extends Component {
-  defaultState = {
-    updatedImageUrl: '',
-    uploadError: '',
-    uploadedFile: null,
-    isuploadingImage: false,
-  };
   /**
    * @constructor create an instance of the component
    *
@@ -35,7 +29,12 @@ class EditBookForm extends Component {
     super(props);
     this.submitForm = this.submitForm.bind(this);
     this.handleDrop = this.handleDrop.bind(this);
-    this.state = this.defaultState;
+    this.state = {
+      updatedImageUrl: '',
+      uploadError: '',
+      uploadedFile: null,
+      isuploadingImage: false,
+    };
   }
 
   /**
@@ -96,8 +95,11 @@ class EditBookForm extends Component {
       imageURL: this.state.updatedImageUrl ?
         this.state.updatedImageUrl : book.imageURL,
     });
-    this.setState({
-      ...this.defaultState,
+    this.setState(defaultState = {
+      updatedImageUrl: '',
+      uploadError: '',
+      uploadedFile: null,
+      isuploadingImage: false,
     });
   }
 

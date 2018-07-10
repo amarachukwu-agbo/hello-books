@@ -1,7 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { reduxForm, Field } from 'redux-form';
-import { Link } from 'react-router-dom';
 import validate from '../../helpers/validations/login';
 import { InputText } from '../Common/InputTypes.jsx';
 
@@ -14,7 +13,7 @@ import { InputText } from '../Common/InputTypes.jsx';
  *
  * @returns {Node} - react node containing LoginForm component
  */
-const LoginForm = ({
+export const LoginForm = ({
   handleSubmit,
   isLoggingIn,
   submitForm,
@@ -25,13 +24,13 @@ const LoginForm = ({
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <Field name="email" type="email"
+          <Field name="email" type="email" id="email"
             icon="email" component={InputText} label="Email" />
         </div>
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <Field name="password" type="password"
+          <Field name="password" type="password" id="password"
             icon="lock" component={InputText} label="Password" />
         </div>
       </div>
@@ -39,6 +38,7 @@ const LoginForm = ({
       <div className="row">
         <div className="col s12 center-align">
           <button className="btn waves-effect primary-button waves-light"
+            id="login-button"
             type="submit">
             Submit
             {isLoggingIn ? <i className="fa fa-spinner fa-spin" />
@@ -50,7 +50,7 @@ const LoginForm = ({
       </div>
       <p className="col s12 center-align">
         Don't have an account yet?
-        <Link to="/signup"> Sign Up</Link>
+        <a href="/signup"> Sign Up</a>
       </p>
     </form>
 );
