@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PreLoader from '../Common/Preloader.jsx';
 import { getBorrowRequests, handleBorrowRequest } from
-  '../../actions/borrowrequests';
+  '../../actions/borrowRequests';
 import AdminBorrowRequests from './AdminBorrowRequests.jsx';
 import Pagination from '../Common/Pagination.jsx';
 
