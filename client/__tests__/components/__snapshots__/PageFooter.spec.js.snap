@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageFooter> should render the footer correctly 1`] = `
+<footer
+  className="page-footer foot lighten-5"
+>
+  <div
+    className="footer-copyright"
+  >
+    <div
+      className="container center-align grey-text"
+    >
+      © 2017 Copyright Hello-books
+    </div>
+  </div>
+</footer>
+`;

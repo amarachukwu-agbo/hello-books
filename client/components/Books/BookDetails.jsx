@@ -33,8 +33,10 @@ class BookDetails extends Component {
    * @returns {void}
    */
   favoriteBook() {
-    checkAuthentication(this.props.isAuthenticated);
-    this.props.favoriteBook(this.props.book.id);
+    if (!this.props.isAuthenticated) {
+      return checkAuthentication();
+    }
+    return this.props.favoriteBook(this.props.book.id);
   }
 
   /**
@@ -45,8 +47,10 @@ class BookDetails extends Component {
    * @returns {void}
    */
   upvoteBook() {
-    checkAuthentication(this.props.isAuthenticated);
-    this.props.upvoteBook(this.props.book.id);
+    if (!this.props.isAuthenticated) {
+      return checkAuthentication();
+    }
+    return this.props.upvoteBook(this.props.book.id);
   }
 
   /**
@@ -57,8 +61,10 @@ class BookDetails extends Component {
    * @returns {void}
    */
   downvoteBook() {
-    checkAuthentication(this.props.isAuthenticated);
-    this.props.downvoteBook(this.props.book.id);
+    if (!this.props.isAuthenticated) {
+      return checkAuthentication();
+    }
+    return this.props.downvoteBook(this.props.book.id);
   }
 
   render() {
@@ -144,7 +150,7 @@ BookDetails.propTypes = {
   isUpvoting: propTypes.bool,
   isDownvoting: propTypes.bool,
   isFavoriting: propTypes.bool,
-  isAuthenticated: propTypes.bool.isRequired,
+  isAuthenticated: propTypes.bool,
 };
 
 export default BookDetails;

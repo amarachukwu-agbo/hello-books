@@ -14,7 +14,7 @@ import { loginUser } from '../../actions/login';
  *
  * @extends {React.Component}
  */
-class LoginPage extends Component {
+export class LoginPage extends Component {
   /**
    * @constructor create an instance of the component
    *
