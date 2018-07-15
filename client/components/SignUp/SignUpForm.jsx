@@ -1,7 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
 import { InputText } from '../Common/InputTypes.jsx';
 import validate from '../../helpers/validations/signup';
 
@@ -25,14 +24,14 @@ const SignUpForm = ({
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <Field name="firstName" type="text"
+          <Field name="firstName" type="text" id="first-name"
             icon="account_circle" component={InputText}
             label="First Name" />
         </div>
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <Field name="lastName" type="text"
+          <Field name="lastName" type="text" id="last-name"
             icon="account_circle" component={InputText}
             label="Last Name" />
         </div>
@@ -41,6 +40,7 @@ const SignUpForm = ({
       <div className="row">
         <div className="input-field col s12">
           <Field name="email" type="email"
+            id="email"
             label="Email" icon="email"
             component={InputText} />
         </div>
@@ -49,6 +49,7 @@ const SignUpForm = ({
       <div className="row">
         <div className="input-field col s12">
           <Field name="password" type="password"
+            id="password"
             label="Password" icon="lock"
             component={InputText} />
         </div>
@@ -56,6 +57,7 @@ const SignUpForm = ({
       <div className="row">
         <div className="input-field col s12">
           <Field name="password2" type="password"
+            id="confirm-password"
             label="Confirm Password" icon="lock"
             component={InputText} />
         </div>
@@ -84,7 +86,7 @@ const SignUpForm = ({
       </div>
       <p className="col s12 center-align">
         Have an account here already?
-          <Link to="/login">Sign In</Link>
+          <a href="/login">Sign In</a>
       </p>
     </form>
 );

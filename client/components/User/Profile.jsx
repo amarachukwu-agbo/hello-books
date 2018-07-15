@@ -16,7 +16,7 @@ import Bio from './Bio.jsx';
  *
  * @extends {React.Component}
  */
-class Profile extends Component {
+export class Profile extends Component {
   constructor(props) {
     super(props);
     this.renderProfile = this.renderProfile.bind(this);
@@ -54,8 +54,8 @@ class Profile extends Component {
         <div className="row center wrapper">
           <div className="row">
             <h6 className="red-text flow-text">
-              {`Oops couldn't fetch your profile.
-                ${this.props.profileError}`}
+              {`Oops couldn't fetch your profile. ${
+                this.props.profileError}`}
             </h6>
           </div>
         </div>
@@ -127,18 +127,11 @@ const mapStateToProps = state => ({
   ...state.profile,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getUserProfile: (userId) => { dispatch(getUserProfile(userId)); },
-  returnBook: (userId, bookId) => {
-    dispatch(returnBook(userId, bookId));
-  },
-});
+// action creators
+const actionCreators = {
+  getUserProfile,
+  returnBook,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, actionCreators)(Profile);
 

@@ -96,6 +96,7 @@ BorrowBookForm.propTypes = {
   book: propTypes.object.isRequired,
   handleSubmit: propTypes.func.isRequired,
   isBorrowing: propTypes.bool,
+  user: propTypes.object,
 };
 
 // Wrap form with reduxForm wrapper

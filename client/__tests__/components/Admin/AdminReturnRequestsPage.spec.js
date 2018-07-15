@@ -24,6 +24,7 @@ describe('<AdminReturnRequestsPage />', () => {
     const tree = shallow(<AdminReturnRequestsPage {...props}/>);
     expect(tree).toMatchSnapshot();
   });
+
   it('calls componentDidMount() method', () => {
     sinon.spy(AdminReturnRequestsPage.prototype, 'componentDidMount');
     mount(<AdminReturnRequestsPage {...props}/>);
@@ -32,6 +33,7 @@ describe('<AdminReturnRequestsPage />', () => {
     expect(props.getReturnRequests.called).toEqual(true);
     expect(props.getReturnRequests.calledWith(1)).toEqual(true);
   });
+
   it('calls acceptReturnRequest() method', () => {
     const wrapper = shallow(<AdminReturnRequestsPage {...props}/>);
     sinon.spy(wrapper.instance(), 'acceptReturnRequest');
@@ -44,6 +46,7 @@ describe('<AdminReturnRequestsPage />', () => {
     expect(wrapper.instance().acceptReturnRequest.calledOnce)
       .toEqual(true);
   });
+
   it('calls declineReturnRequest() method', () => {
     const wrapper = shallow(<AdminReturnRequestsPage {...props}/>);
     sinon.spy(wrapper.instance(), 'declineReturnRequest');
@@ -56,6 +59,7 @@ describe('<AdminReturnRequestsPage />', () => {
     expect(wrapper.instance().declineReturnRequest.calledOnce)
       .toEqual(true);
   });
+
   it('renders the Preloader when the requests are fetching', () => {
     props.isFetchingReturnRequests = true;
     props.returnRequests = null;
@@ -63,6 +67,7 @@ describe('<AdminReturnRequestsPage />', () => {
     const wrapper = shallow(<AdminReturnRequestsPage {...props}/>);
     expect(wrapper.find('Preloader')).toHaveLength(1);
   });
+
   it('renders error when there is an error fetching returnRequets', () => {
     props.returnRequestsError = 'Network error';
     props.isFetchingReturnRequests = false;

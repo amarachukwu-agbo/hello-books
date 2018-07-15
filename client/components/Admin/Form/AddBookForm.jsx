@@ -35,32 +35,34 @@ const BookForm = ({
         </div>
         <div className="row">
           <div className="input-field">
-            <Field name="title" type="text"
+            <Field name="title" type="text" id="title"
               component={InputText} label="Book Title" />
           </div>
         </div>
         <div className="row">
           <div className="input-field">
-            <Field name="author" type="text"
+            <Field name="author" type="text" id="author"
               component={InputText} label="Author" />
           </div>
         </div>
         <div className="row">
           <div className="input-field">
             <label>Subject</label>
-            <Field name="subject" component={renderDropdownList}
+            <Field name="subject" component={renderDropdownList} id="subject"
               valueField="value" textField="subject" data={subjects} />
           </div>
         </div>
         <div className="row">
           <div className="input-field">
             <Field name="description" type="text" component={InputText}
+              id="description"
               label="Description" />
           </div>
         </div>
         <div className="row">
           <div className="input-field">
             <Field name="quantity" type="number"
+              id="quantity"
               component={InputText} label="Quantity" />
           </div>
         </div>
@@ -82,14 +84,14 @@ const BookForm = ({
           }
           {
             isUploadingImage &&
-            <div className="row center">
+            <div className="row center" id="spinner">
               <span>
                 <i className="fa fa-spinner fa-spin" />
               </span>
             </div>
           }
           { uploadError &&
-            <div className="img-upload">
+            <div className="img-upload" id="upload-error">
               <p className="red-text"> { uploadError } </p>
             </div>
           }

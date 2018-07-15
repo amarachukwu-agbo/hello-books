@@ -39,6 +39,7 @@ describe('<BookDetails />', () => {
     const wrapper = shallow(<BookDetails {...props}/>);
     expect(wrapper).toMatchSnapshot();
   });
+
   it(`calls upvoteBook() method when
     upvote button is clicked`, () => {
     const wrapper = shallow(<BookDetails {...props}/>);
@@ -50,7 +51,9 @@ describe('<BookDetails />', () => {
     expect(props.upvoteBook.calledWith(97))
       .toEqual(true);
   });
-  it('calls downvoteBook() method', () => {
+
+  it(`calls downvoteBook() method when
+    downvote button is clicked`, () => {
     const wrapper = shallow(<BookDetails {...props}/>);
     const downvoteButton = wrapper.find('#downvote-book');
     downvoteButton.simulate('click');
@@ -60,7 +63,9 @@ describe('<BookDetails />', () => {
     expect(props.downvoteBook.calledWith(97))
       .toEqual(true);
   });
-  it('calls favoriteBook() method', () => {
+
+  it(`calls favoriteBook() method 
+    when favorite button is clicked`, () => {
     const wrapper = shallow(<BookDetails {...props}/>);
     const favoriteButton = wrapper.find('#favorite-book');
     favoriteButton.simulate('click');
@@ -70,13 +75,15 @@ describe('<BookDetails />', () => {
     expect(props.favoriteBook.calledWith(97))
       .toEqual(true);
   });
+
   it(`opens the borrowBook modal when
-    the borrow book button is`, () => {
+    the borrow book button is clicked`, () => {
     const wrapper = shallow(<BookDetails {...props}/>);
     const borrowButton = wrapper.find('#borrow-book');
     borrowButton.simulate('click');
     expect(jQueryMock.called).toEqual(true);
   });
+
   it(`calls does not call favoriteBook props when
     user is unauthenticated`, () => {
     props.isAuthenticated = false;
@@ -87,23 +94,21 @@ describe('<BookDetails />', () => {
       .toEqual(true);
     expect(props.favoriteBook.called).toEqual(false);
   });
+
   it(`calls does not call downvoteBook props when
     user is unauthenticated`, () => {
     const wrapper = shallow(<BookDetails {...props}/>);
     const deleteButton = wrapper.find('#downvote-book');
     deleteButton.simulate('click');
-    expect(BookDetails.prototype.downvoteBook.called)
-      .toEqual(true);
     expect(props.downvoteBook.called).toEqual(false);
   });
+
   it(`calls does not call upvoteBook props when
     user is unauthenticated`, () => {
     props.isAuthenticated = false;
     const wrapper = shallow(<BookDetails {...props}/>);
     const upvoteButton = wrapper.find('#upvote-book');
     upvoteButton.simulate('click');
-    expect(BookDetails.prototype.upvoteBook.called)
-      .toEqual(true);
     expect(props.upvoteBook.called).toEqual(false);
   });
 });

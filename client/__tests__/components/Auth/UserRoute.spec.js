@@ -14,7 +14,9 @@ const props = {
   Component: Favorites,
   isAuthenticated: false,
   user: null,
-  location: '/books',
+  location: {
+    pathname: '/books',
+  },
 };
 
 const wrapper = mount(<MemoryRouter>
@@ -22,12 +24,12 @@ const wrapper = mount(<MemoryRouter>
 </MemoryRouter>);
 describe('<UserRoute />', () => {
   it(
-    `renders a redirect component when an unauthenticated
+    `renders a redirect component to login page when an unauthenticated
      user tries to access a user route`,
     () => {
       const expected = <Redirect to={{
       pathname: '/login',
-       state: { from: '/books' },
+       state: { from: props.location },
      }} />;
       expect(wrapper.contains(expected)).toEqual(true);
     },

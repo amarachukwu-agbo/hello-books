@@ -15,12 +15,14 @@ import propTypes from 'prop-types';
  */
 const DropzoneInput = ({
   input,
+  id,
   meta: { touched, error },
   dropzoneOnDrop,
   ...props
 }) => (
       <div>
         <Dropzone
+            id={id}
             className="dropzone"
             onDrop={(acceptedFiles, rejectedFiles, e) => {
                 input.onChange(acceptedFiles);

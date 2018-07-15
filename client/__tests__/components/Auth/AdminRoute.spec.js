@@ -18,7 +18,9 @@ const props = {
     id: 20000,
     role: 'User',
   },
-  location: '/books',
+  location: {
+    pathname: '/books',
+  },
 };
 
 const wrapper = mount(<MemoryRouter>
@@ -31,7 +33,7 @@ describe('<AdminRoute />', () => {
     () => {
       const expected = <Redirect to={{
       pathname: '/',
-       state: { from: '/books' },
+       state: { from: props.location },
      }} />;
       expect(wrapper.contains(expected)).toEqual(true);
     },

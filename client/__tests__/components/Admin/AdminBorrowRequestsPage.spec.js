@@ -24,6 +24,7 @@ describe('<AdminBorrowRequestsPage />', () => {
     const tree = shallow(<AdminBorrowRequestsPage {...props}/>);
     expect(tree).toMatchSnapshot();
   });
+
   it('calls componentDidMount() method', () => {
     sinon.spy(AdminBorrowRequestsPage.prototype, 'componentDidMount');
     mount(<AdminBorrowRequestsPage {...props}/>);
@@ -32,6 +33,7 @@ describe('<AdminBorrowRequestsPage />', () => {
     expect(props.getBorrowRequests.called).toEqual(true);
     expect(props.getBorrowRequests.calledWith(1)).toEqual(true);
   });
+
   it('calls acceptBorrowRequest() method', () => {
     const wrapper = shallow(<AdminBorrowRequestsPage {...props}/>);
     sinon.spy(wrapper.instance(), 'acceptBorrowRequest');
@@ -44,6 +46,7 @@ describe('<AdminBorrowRequestsPage />', () => {
     expect(wrapper.instance().acceptBorrowRequest.calledOnce)
       .toEqual(true);
   });
+
   it('calls declineBorrowRequest() method', () => {
     const wrapper = shallow(<AdminBorrowRequestsPage {...props}/>);
     sinon.spy(wrapper.instance(), 'declineBorrowRequest');
@@ -56,6 +59,7 @@ describe('<AdminBorrowRequestsPage />', () => {
     expect(wrapper.instance().declineBorrowRequest.calledOnce)
       .toEqual(true);
   });
+
   it('renders the Preloader when the requests are fetching', () => {
     props.isFetchingBorrowRequests = true;
     props.borrowRequests = null;
@@ -63,6 +67,7 @@ describe('<AdminBorrowRequestsPage />', () => {
     const wrapper = shallow(<AdminBorrowRequestsPage {...props}/>);
     expect(wrapper.find('Preloader')).toHaveLength(1);
   });
+
   it('renders error when there is an error fetching borrowRequets', () => {
     props.borrowRequestsError = 'Network error';
     props.isFetchingBorrowRequests = false;

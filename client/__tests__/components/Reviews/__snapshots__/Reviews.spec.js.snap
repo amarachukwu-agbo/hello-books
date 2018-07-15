@@ -1,0 +1,821 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Reviews /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Reviews
+    book={
+      Object {
+        "author": "Joanna Gaines",
+        "bookReviews": Array [
+          Object {
+            "bookId": 1,
+            "createdAt": "2018-06-24T13:18:52.295Z",
+            "id": 1,
+            "review": "I enjoyed reading this book",
+            "updatedAt": "2018-06-24T13:18:52.295Z",
+            "userId": 3,
+            "userReviews": Object {
+              "createdAt": "2018-06-23T14:42:46.827Z",
+              "firstName": "Grace",
+              "id": 3,
+              "imageURL": null,
+              "lastName": "Jade",
+            },
+          },
+        ],
+        "borrowCount": 0,
+        "createdAt": "2018-05-10T03:11:52.181Z",
+        "description": "A new book",
+        "downvotes": 1,
+        "favCount": 1,
+        "imageURL": "https://images-na.ssl-image.jpg",
+        "quantity": 6,
+        "subject": "Recipe",
+        "title": "A new book",
+        "updatedAt": "2018-06-23T19:14:10.925Z",
+        "upvotes": 0,
+      }
+    }
+    isAuthenticated={true}
+    isReviewing={false}
+    reviewBook={[Function]}
+    reviews={
+      Array [
+        Object {
+          "bookId": 1,
+          "createdAt": "2018-06-24T13:18:52.295Z",
+          "id": 1,
+          "review": "I enjoyed reading this book",
+          "updatedAt": "2018-06-24T13:18:52.295Z",
+          "userId": 3,
+          "userReviews": Object {
+            "createdAt": "2018-06-23T14:42:46.827Z",
+            "firstName": "Grace",
+            "id": 3,
+            "imageURL": null,
+            "lastName": "Jade",
+          },
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="row"
+        >
+          <h5
+            className="header center-align book-header"
+          >
+            Reviews (1)
+          </h5>
+        </div>,
+        <div
+          className="row z-depth-1"
+        >
+          <div
+            className="section"
+          >
+            <div>
+              <ReduxForm
+                isReviewing={false}
+                submitForm={[Function]}
+              />
+            </div>
+          </div>
+          <div
+            className="review"
+          >
+            <div
+              className="review-box grey lighten-5"
+            >
+              <strong>
+                <p
+                  className="grey-text text-darken-3"
+                >
+                  <i
+                    className="material-icons left"
+                  >
+                    account_circle
+                  </i>
+                  Grace Jade
+                  <span
+                    className="right"
+                  >
+                     
+                    2018-06-24
+                     
+                  </span>
+                </p>
+              </strong>
+              <span
+                className="bold"
+              >
+                I enjoyed reading this book
+              </span>
+            </div>
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h5
+            className="header center-align book-header"
+          >
+            Reviews (1)
+          </h5>,
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Reviews (1)",
+            "className": "header center-align book-header",
+          },
+          "ref": null,
+          "rendered": "Reviews (1)",
+          "type": "h5",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="section"
+            >
+              <div>
+                <ReduxForm
+                  isReviewing={false}
+                  submitForm={[Function]}
+                />
+              </div>
+            </div>,
+            <div
+              className="review"
+            >
+              <div
+                className="review-box grey lighten-5"
+              >
+                <strong>
+                  <p
+                    className="grey-text text-darken-3"
+                  >
+                    <i
+                      className="material-icons left"
+                    >
+                      account_circle
+                    </i>
+                    Grace Jade
+                    <span
+                      className="right"
+                    >
+                       
+                      2018-06-24
+                       
+                    </span>
+                  </p>
+                </strong>
+                <span
+                  className="bold"
+                >
+                  I enjoyed reading this book
+                </span>
+              </div>
+            </div>,
+          ],
+          "className": "row z-depth-1",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div>
+                <ReduxForm
+                  isReviewing={false}
+                  submitForm={[Function]}
+                />
+              </div>,
+              "className": "section",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <ReduxForm
+                  isReviewing={false}
+                  submitForm={[Function]}
+                />,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "isReviewing": false,
+                  "submitForm": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="review-box grey lighten-5"
+                >
+                  <strong>
+                    <p
+                      className="grey-text text-darken-3"
+                    >
+                      <i
+                        className="material-icons left"
+                      >
+                        account_circle
+                      </i>
+                      Grace Jade
+                      <span
+                        className="right"
+                      >
+                         
+                        2018-06-24
+                         
+                      </span>
+                    </p>
+                  </strong>
+                  <span
+                    className="bold"
+                  >
+                    I enjoyed reading this book
+                  </span>
+                </div>,
+              ],
+              "className": "review",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong>
+                      <p
+                        className="grey-text text-darken-3"
+                      >
+                        <i
+                          className="material-icons left"
+                        >
+                          account_circle
+                        </i>
+                        Grace Jade
+                        <span
+                          className="right"
+                        >
+                           
+                          2018-06-24
+                           
+                        </span>
+                      </p>
+                    </strong>,
+                    <span
+                      className="bold"
+                    >
+                      I enjoyed reading this book
+                    </span>,
+                  ],
+                  "className": "review-box grey lighten-5",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <p
+                        className="grey-text text-darken-3"
+                      >
+                        <i
+                          className="material-icons left"
+                        >
+                          account_circle
+                        </i>
+                        Grace Jade
+                        <span
+                          className="right"
+                        >
+                           
+                          2018-06-24
+                           
+                        </span>
+                      </p>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <i
+                            className="material-icons left"
+                          >
+                            account_circle
+                          </i>,
+                          "Grace Jade",
+                          <span
+                            className="right"
+                          >
+                             
+                            2018-06-24
+                             
+                          </span>,
+                        ],
+                        "className": "grey-text text-darken-3",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "account_circle",
+                            "className": "material-icons left",
+                          },
+                          "ref": null,
+                          "rendered": "account_circle",
+                          "type": "i",
+                        },
+                        "Grace Jade",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              " ",
+                              "2018-06-24",
+                              " ",
+                            ],
+                            "className": "right",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            " ",
+                            "2018-06-24",
+                            " ",
+                          ],
+                          "type": "span",
+                        },
+                      ],
+                      "type": "p",
+                    },
+                    "type": "strong",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "I enjoyed reading this book",
+                      "className": "bold",
+                    },
+                    "ref": null,
+                    "rendered": "I enjoyed reading this book",
+                    "type": "span",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="row"
+          >
+            <h5
+              className="header center-align book-header"
+            >
+              Reviews (1)
+            </h5>
+          </div>,
+          <div
+            className="row z-depth-1"
+          >
+            <div
+              className="section"
+            >
+              <div>
+                <ReduxForm
+                  isReviewing={false}
+                  submitForm={[Function]}
+                />
+              </div>
+            </div>
+            <div
+              className="review"
+            >
+              <div
+                className="review-box grey lighten-5"
+              >
+                <strong>
+                  <p
+                    className="grey-text text-darken-3"
+                  >
+                    <i
+                      className="material-icons left"
+                    >
+                      account_circle
+                    </i>
+                    Grace Jade
+                    <span
+                      className="right"
+                    >
+                       
+                      2018-06-24
+                       
+                    </span>
+                  </p>
+                </strong>
+                <span
+                  className="bold"
+                >
+                  I enjoyed reading this book
+                </span>
+              </div>
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h5
+              className="header center-align book-header"
+            >
+              Reviews (1)
+            </h5>,
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Reviews (1)",
+              "className": "header center-align book-header",
+            },
+            "ref": null,
+            "rendered": "Reviews (1)",
+            "type": "h5",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="section"
+              >
+                <div>
+                  <ReduxForm
+                    isReviewing={false}
+                    submitForm={[Function]}
+                  />
+                </div>
+              </div>,
+              <div
+                className="review"
+              >
+                <div
+                  className="review-box grey lighten-5"
+                >
+                  <strong>
+                    <p
+                      className="grey-text text-darken-3"
+                    >
+                      <i
+                        className="material-icons left"
+                      >
+                        account_circle
+                      </i>
+                      Grace Jade
+                      <span
+                        className="right"
+                      >
+                         
+                        2018-06-24
+                         
+                      </span>
+                    </p>
+                  </strong>
+                  <span
+                    className="bold"
+                  >
+                    I enjoyed reading this book
+                  </span>
+                </div>
+              </div>,
+            ],
+            "className": "row z-depth-1",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div>
+                  <ReduxForm
+                    isReviewing={false}
+                    submitForm={[Function]}
+                  />
+                </div>,
+                "className": "section",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <ReduxForm
+                    isReviewing={false}
+                    submitForm={[Function]}
+                  />,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "isReviewing": false,
+                    "submitForm": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="review-box grey lighten-5"
+                  >
+                    <strong>
+                      <p
+                        className="grey-text text-darken-3"
+                      >
+                        <i
+                          className="material-icons left"
+                        >
+                          account_circle
+                        </i>
+                        Grace Jade
+                        <span
+                          className="right"
+                        >
+                           
+                          2018-06-24
+                           
+                        </span>
+                      </p>
+                    </strong>
+                    <span
+                      className="bold"
+                    >
+                      I enjoyed reading this book
+                    </span>
+                  </div>,
+                ],
+                "className": "review",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <strong>
+                        <p
+                          className="grey-text text-darken-3"
+                        >
+                          <i
+                            className="material-icons left"
+                          >
+                            account_circle
+                          </i>
+                          Grace Jade
+                          <span
+                            className="right"
+                          >
+                             
+                            2018-06-24
+                             
+                          </span>
+                        </p>
+                      </strong>,
+                      <span
+                        className="bold"
+                      >
+                        I enjoyed reading this book
+                      </span>,
+                    ],
+                    "className": "review-box grey lighten-5",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <p
+                          className="grey-text text-darken-3"
+                        >
+                          <i
+                            className="material-icons left"
+                          >
+                            account_circle
+                          </i>
+                          Grace Jade
+                          <span
+                            className="right"
+                          >
+                             
+                            2018-06-24
+                             
+                          </span>
+                        </p>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <i
+                              className="material-icons left"
+                            >
+                              account_circle
+                            </i>,
+                            "Grace Jade",
+                            <span
+                              className="right"
+                            >
+                               
+                              2018-06-24
+                               
+                            </span>,
+                          ],
+                          "className": "grey-text text-darken-3",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "account_circle",
+                              "className": "material-icons left",
+                            },
+                            "ref": null,
+                            "rendered": "account_circle",
+                            "type": "i",
+                          },
+                          "Grace Jade",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                " ",
+                                "2018-06-24",
+                                " ",
+                              ],
+                              "className": "right",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              " ",
+                              "2018-06-24",
+                              " ",
+                            ],
+                            "type": "span",
+                          },
+                        ],
+                        "type": "p",
+                      },
+                      "type": "strong",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "I enjoyed reading this book",
+                        "className": "bold",
+                      },
+                      "ref": null,
+                      "rendered": "I enjoyed reading this book",
+                      "type": "span",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -12,9 +12,6 @@ const validate = (values) => {
   if (!values.subject) {
     errors.subject = 'Book subject is required';
   }
-  if (!values.description || values.description.trim() === '') {
-    errors.description = 'Book description is required';
-  }
   if (!values.imageURL) {
     errors.imageURL = 'ImageURL is required';
   }

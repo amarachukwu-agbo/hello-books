@@ -1,12 +1,7 @@
-/* import React from 'react';
-import { mount } from 'enzyme';
+import React from 'react';
+import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import Profile from '../Profile';
-import Bio from '../Bio';
-import BorrowRequests from '../BorrowRequests';
-import ReturnRequests from '../ReturnRequests';
-import BorrowedBooks from '../BorrowedBooks';
-import Preloader from '../Preloader';
+import { Profile } from '../../../components/User/Profile';
 
 const props = {
   profile: {
@@ -21,7 +16,7 @@ const props = {
       bookId: 1,
       borrowedBooks: {
         title: 'Children of blood and bone(Legacy of Orisha)',
-        author: 'Tomi Adeyemi'
+        author: 'Tomi Adeyemi',
       },
       createdAt: '2018-03-22T20:36:27.267Z',
       id: 1,
@@ -68,11 +63,11 @@ const props = {
     createdAt: '2018-03-22T20:30:32.540Z',
     updatedAt: '2018-03-22T20:30:32.540Z',
   },
-  getUserProfile: sinon.stub(),
+  getUserProfile: sinon.spy(() => Promise.resolve()),
 };
 
 const spy = sinon.spy(Profile.prototype, 'componentDidMount');
-const wrapper = mount(<Profile {...props}/>);
+const wrapper = shallow(<Profile {...props}/>);
 
 describe('<Profile>', () => {
   it('calls componentDidMount', () => {
@@ -83,42 +78,25 @@ describe('<Profile>', () => {
   });
 
   it('Should be display the user\'s profile correctly', () => {
-    expect(wrapper.find('h4').text()).toEqual('Your Profile');
-    expect(wrapper
-      .containsMatchingElement(<Bio bio = { props.profile } />)).toEqual(true);
-    expect(wrapper.containsMatchingElement(<BorrowedBooks
-      books = { props.userBooks }
-      returnRequests = {props.userReturnRequests}/>)).toEqual(true);
-    expect(wrapper.containsMatchingElement(<ReturnRequests
-      books = { props.userReturnRequests } />))
-      .toEqual(true);
-    expect(wrapper.containsMatchingElement(<BorrowRequests
-      books = { props.userBorrowRequests } />))
-      .toEqual(true);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('renders the preloader if the user\'s profile is being fetched', () => {
     wrapper.setProps({ isFetchingProfile: true });
-    expect(wrapper.containsMatchingElement(<Preloader/>)).toEqual(true);
-    expect(wrapper.containsMatchingElement(<Bio bio = { props.profile } />))
-    .toEqual(false);
-    expect(wrapper.containsMatchingElement(<BorrowedBooks
-      books = { props.userBooks }
-      returnRequests = {props.userReturnRequests}/>)).toEqual(false);
-    expect(wrapper.containsMatchingElement(<ReturnRequests
-      books = { props.userReturnRequests } />))
-      .toEqual(false);
-    expect(wrapper.containsMatchingElement(<BorrowRequests
-      books = { props.userBorrowRequests } />))
-      .toEqual(false);
+    expect(wrapper.find('Preloader')).toHaveLength(1);
+    expect(wrapper.find('Bio')).toHaveLength(0);
+    expect(wrapper.find('BorrowedBooks')).toHaveLength(0);
+    expect(wrapper.find('ReturnRequests')).toHaveLength(0);
+    expect(wrapper.find('BorrowRequests')).toHaveLength(0);
   });
 
   it('renders error if there is an error while fetching profile', () => {
-    wrapper.setProps({ isFetchingProfile: false,
-      profileError: 'An error occured' });
+    wrapper.setProps({
+      isFetchingProfile: false,
+      profileError: 'An error occured',
+    });
     expect(wrapper.find('.wrapper').length).toEqual(1);
-    expect(wrapper.containsMatchingElement(<div>An error occured</div>))
-    .toEqual(true);
-    wrapper.unmount();
+    expect(wrapper.find('h6').text())
+      .toEqual('Oops couldn\'t fetch your profile. An error occured');
   });
-}); */
+});

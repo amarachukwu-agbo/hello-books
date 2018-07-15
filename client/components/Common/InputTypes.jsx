@@ -25,7 +25,7 @@ momentLocalizer();
  * @returns {Node} - react node containing InputText component
  */
 export const InputText = ({
-  input, label, type, icon, defaultValue, meta: { touched, error }, ...rest
+  input, id, label, type, icon, defaultValue, meta: { touched, error }, ...rest
 }) => (
     <div>
       {icon &&
@@ -34,15 +34,15 @@ export const InputText = ({
       <label className="flow-text truncate active"> {label} </label>
 
       { defaultValue &&
-      <input {...input} type={type} onChange={input.onChange}
+      <input {...input} id={id} type={type} onChange={input.onChange}
         value = {defaultValue} {...rest} />
       }
 
       { !defaultValue &&
-        <input {...input} type={type} onChange={input.onChange}
+        <input {...input} id={id} type={type} onChange={input.onChange}
           {...rest} />
       }
-      {touched && error && <span className="error flow-text"> {error} </span>}
+      {touched && error && <span className="error flow-text">{error}</span>}
     </div>
 );
 
@@ -60,12 +60,12 @@ export const InputText = ({
  * @returns {Node} - react node containing Drop down component
  */
 export const renderDropdownList = ({
-  input, meta: { touched, error }, data, valueField, textField,
+  input, id, meta: { touched, error }, data, valueField, textField,
 }) => (
     <div>
       <DropdownList {...input} onChange={input.onChange} data={data}
-        valueField={valueField} textField={textField} />
-      {touched && error && <span className="error flow-text"> {error} </span>}
+        id={id} valueField={valueField} textField={textField} />
+      {touched && error && <span className="error flow-text">{error}</span>}
     </div>
 );
 
@@ -84,13 +84,13 @@ export const renderDropdownList = ({
  * @returns {Node} - react node containing Date time picker component
  */
 export const renderDateTimePicker = ({
-  input: { onChange, value }, showTime, icon, meta: { touched, error },
+  input: { onChange, value }, showTime, id, icon, meta: { touched, error },
 }) => (
     <div>
       <i className="material-icons prefix">{icon}</i>
       <DateTimePicker onChange={onChange} format="DD MMM YYYY" time={showTime}
-        value={!value ? null : new Date(value)} />
-      {touched && error && <span className="error flow-text"> {error} </span>}
+        id={id} value={!value ? null : new Date(value)} />
+      {touched && error && <span className="error flow-text">{error}</span>}
     </div>
 );
 
@@ -105,10 +105,10 @@ export const renderDateTimePicker = ({
  * @returns {Node} - react node containing Text Area component
  */
 export const TextArea = ({
-  input, placeholder, type, ...rest
+  input, id, placeholder, type, ...rest
 }) => (
     <div>
-      <textarea {...input} type={type} {...rest}
+      <textarea id={id} {...input} type={type} {...rest}
         placeholder={placeholder} className="materialize-textarea" />
     </div>
 );

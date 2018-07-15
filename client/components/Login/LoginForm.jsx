@@ -13,7 +13,7 @@ import { InputText } from '../Common/InputTypes.jsx';
  *
  * @returns {Node} - react node containing LoginForm component
  */
-export const LoginForm = ({
+const LoginForm = ({
   handleSubmit,
   isLoggingIn,
   submitForm,

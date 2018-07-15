@@ -1,0 +1,3428 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Profile> Should be display the user's profile correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Profile
+    getUserProfile={[Function]}
+    profile={
+      Object {
+        "createdAt": "2018-03-22T20:30:32.540Z",
+        "email": "amarkipkip@gmail.com",
+        "firstName": "Ama",
+        "id": 2,
+        "lastName": "Kipkip",
+        "role": "User",
+        "updatedAt": "2018-03-22T20:30:32.540Z",
+        "userBooks": Array [
+          Object {
+            "bookId": 1,
+            "borrowedBooks": Object {
+              "author": "Tomi Adeyemi",
+              "title": "Children of blood and bone(Legacy of Orisha)",
+            },
+            "createdAt": "2018-03-22T20:36:27.267Z",
+            "id": 1,
+            "status": "Returned",
+            "updatedAt": "2018-03-22T20:46:43.526Z",
+            "userId": 2,
+          },
+        ],
+        "userBorrowRequests": Array [
+          Object {
+            "bookId": 1,
+            "borrowRequests": Object {
+              "author": "Tomi Adeyemi",
+              "title": "Children of blood and bone(Legacy of Orisha)",
+            },
+            "comments": null,
+            "createdAt": "2018-03-22T20:33:20.579Z",
+            "id": 1,
+            "reason": "Assignment",
+            "returnDate": "2018-12-11T23:00:00.000Z",
+            "status": "Pending",
+            "updatedAt": "2018-03-22T20:36:27.180Z",
+            "userId": 2,
+          },
+        ],
+        "userReturnRequests": Array [
+          Object {
+            "bookId": 1,
+            "comments": null,
+            "createdAt": "2018-03-22T20:43:57.646Z",
+            "id": 1,
+            "returnRequests": Object {
+              "author": "Tomi Adeyemi",
+              "title": "Children of blood and bone(Legacy of Orisha)",
+            },
+            "status": "Pending",
+            "updatedAt": "2018-03-22T20:46:43.496Z",
+            "userId": 2,
+          },
+        ],
+      }
+    }
+    user={
+      Object {
+        "createdAt": "2018-03-22T20:30:32.540Z",
+        "email": "amarkipkip@gmail.com",
+        "firstName": "Ama",
+        "id": 2,
+        "lastName": "Kipkip",
+        "password": null,
+        "role": "User",
+        "updatedAt": "2018-03-22T20:30:32.540Z",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="row center"
+        >
+          <h4
+            className="book-header"
+          >
+            Your Profile
+          </h4>
+        </div>,
+        <div
+          className="row"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="row card-panel"
+            >
+              <Bio
+                bio={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                    "userBooks": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userBorrowRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userReturnRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                  }
+                }
+              />
+            </div>
+            <div
+              className="row card-panel profile-div"
+            >
+              <h6
+                className="white-text"
+              >
+                Borrowed Books
+              </h6>
+              <BorrowedBooks
+                books={
+                  Array [
+                    Object {
+                      "bookId": 1,
+                      "borrowedBooks": Object {
+                        "author": "Tomi Adeyemi",
+                        "title": "Children of blood and bone(Legacy of Orisha)",
+                      },
+                      "createdAt": "2018-03-22T20:36:27.267Z",
+                      "id": 1,
+                      "status": "Returned",
+                      "updatedAt": "2018-03-22T20:46:43.526Z",
+                      "userId": 2,
+                    },
+                  ]
+                }
+                getUserProfile={[Function]}
+                profile={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                    "userBooks": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userBorrowRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userReturnRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                  }
+                }
+                returnRequests={
+                  Array [
+                    Object {
+                      "bookId": 1,
+                      "comments": null,
+                      "createdAt": "2018-03-22T20:43:57.646Z",
+                      "id": 1,
+                      "returnRequests": Object {
+                        "author": "Tomi Adeyemi",
+                        "title": "Children of blood and bone(Legacy of Orisha)",
+                      },
+                      "status": "Pending",
+                      "updatedAt": "2018-03-22T20:46:43.496Z",
+                      "userId": 2,
+                    },
+                  ]
+                }
+                user={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "password": null,
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="row card-panel profile-div"
+            >
+              <h6
+                className="white-text"
+              >
+                Borrow Requests
+              </h6>
+              <BorrowRequests
+                requests={
+                  Array [
+                    Object {
+                      "bookId": 1,
+                      "borrowRequests": Object {
+                        "author": "Tomi Adeyemi",
+                        "title": "Children of blood and bone(Legacy of Orisha)",
+                      },
+                      "comments": null,
+                      "createdAt": "2018-03-22T20:33:20.579Z",
+                      "id": 1,
+                      "reason": "Assignment",
+                      "returnDate": "2018-12-11T23:00:00.000Z",
+                      "status": "Pending",
+                      "updatedAt": "2018-03-22T20:36:27.180Z",
+                      "userId": 2,
+                    },
+                  ]
+                }
+              />
+            </div>
+            <div
+              className="row card-panel profile-div"
+            >
+              <h6
+                className="white-text"
+              >
+                Return Requests
+              </h6>
+              <ReturnRequests
+                getUserProfile={[Function]}
+                profile={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                    "userBooks": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userBorrowRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userReturnRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                  }
+                }
+                requests={
+                  Array [
+                    Object {
+                      "bookId": 1,
+                      "comments": null,
+                      "createdAt": "2018-03-22T20:43:57.646Z",
+                      "id": 1,
+                      "returnRequests": Object {
+                        "author": "Tomi Adeyemi",
+                        "title": "Children of blood and bone(Legacy of Orisha)",
+                      },
+                      "status": "Pending",
+                      "updatedAt": "2018-03-22T20:46:43.496Z",
+                      "userId": 2,
+                    },
+                  ]
+                }
+                user={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "password": null,
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>,
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h4
+            className="book-header"
+          >
+            Your Profile
+          </h4>,
+          "className": "row center",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Your Profile",
+            "className": "book-header",
+          },
+          "ref": null,
+          "rendered": "Your Profile",
+          "type": "h4",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row"
+          >
+            <div
+              className="row card-panel"
+            >
+              <Bio
+                bio={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                    "userBooks": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userBorrowRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userReturnRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                  }
+                }
+              />
+            </div>
+            <div
+              className="row card-panel profile-div"
+            >
+              <h6
+                className="white-text"
+              >
+                Borrowed Books
+              </h6>
+              <BorrowedBooks
+                books={
+                  Array [
+                    Object {
+                      "bookId": 1,
+                      "borrowedBooks": Object {
+                        "author": "Tomi Adeyemi",
+                        "title": "Children of blood and bone(Legacy of Orisha)",
+                      },
+                      "createdAt": "2018-03-22T20:36:27.267Z",
+                      "id": 1,
+                      "status": "Returned",
+                      "updatedAt": "2018-03-22T20:46:43.526Z",
+                      "userId": 2,
+                    },
+                  ]
+                }
+                getUserProfile={[Function]}
+                profile={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                    "userBooks": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userBorrowRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userReturnRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                  }
+                }
+                returnRequests={
+                  Array [
+                    Object {
+                      "bookId": 1,
+                      "comments": null,
+                      "createdAt": "2018-03-22T20:43:57.646Z",
+                      "id": 1,
+                      "returnRequests": Object {
+                        "author": "Tomi Adeyemi",
+                        "title": "Children of blood and bone(Legacy of Orisha)",
+                      },
+                      "status": "Pending",
+                      "updatedAt": "2018-03-22T20:46:43.496Z",
+                      "userId": 2,
+                    },
+                  ]
+                }
+                user={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "password": null,
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="row card-panel profile-div"
+            >
+              <h6
+                className="white-text"
+              >
+                Borrow Requests
+              </h6>
+              <BorrowRequests
+                requests={
+                  Array [
+                    Object {
+                      "bookId": 1,
+                      "borrowRequests": Object {
+                        "author": "Tomi Adeyemi",
+                        "title": "Children of blood and bone(Legacy of Orisha)",
+                      },
+                      "comments": null,
+                      "createdAt": "2018-03-22T20:33:20.579Z",
+                      "id": 1,
+                      "reason": "Assignment",
+                      "returnDate": "2018-12-11T23:00:00.000Z",
+                      "status": "Pending",
+                      "updatedAt": "2018-03-22T20:36:27.180Z",
+                      "userId": 2,
+                    },
+                  ]
+                }
+              />
+            </div>
+            <div
+              className="row card-panel profile-div"
+            >
+              <h6
+                className="white-text"
+              >
+                Return Requests
+              </h6>
+              <ReturnRequests
+                getUserProfile={[Function]}
+                profile={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                    "userBooks": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userBorrowRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userReturnRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                  }
+                }
+                requests={
+                  Array [
+                    Object {
+                      "bookId": 1,
+                      "comments": null,
+                      "createdAt": "2018-03-22T20:43:57.646Z",
+                      "id": 1,
+                      "returnRequests": Object {
+                        "author": "Tomi Adeyemi",
+                        "title": "Children of blood and bone(Legacy of Orisha)",
+                      },
+                      "status": "Pending",
+                      "updatedAt": "2018-03-22T20:46:43.496Z",
+                      "userId": 2,
+                    },
+                  ]
+                }
+                user={
+                  Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "password": null,
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                  }
+                }
+              />
+            </div>
+          </div>,
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="row card-panel"
+              >
+                <Bio
+                  bio={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                />
+              </div>,
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Borrowed Books
+                </h6>
+                <BorrowedBooks
+                  books={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  getUserProfile={[Function]}
+                  profile={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                  returnRequests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  user={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "password": null,
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                    }
+                  }
+                />
+              </div>,
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Borrow Requests
+                </h6>
+                <BorrowRequests
+                  requests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                />
+              </div>,
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Return Requests
+                </h6>
+                <ReturnRequests
+                  getUserProfile={[Function]}
+                  profile={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                  requests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  user={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "password": null,
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                    }
+                  }
+                />
+              </div>,
+            ],
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Bio
+                  bio={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                />,
+                "className": "row card-panel",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "bio": Object {
+                    "createdAt": "2018-03-22T20:30:32.540Z",
+                    "email": "amarkipkip@gmail.com",
+                    "firstName": "Ama",
+                    "id": 2,
+                    "lastName": "Kipkip",
+                    "role": "User",
+                    "updatedAt": "2018-03-22T20:30:32.540Z",
+                    "userBooks": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userBorrowRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "userReturnRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h6
+                    className="white-text"
+                  >
+                    Borrowed Books
+                  </h6>,
+                  <BorrowedBooks
+                    books={
+                      Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ]
+                    }
+                    getUserProfile={[Function]}
+                    profile={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                        "userBooks": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userBorrowRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userReturnRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ],
+                      }
+                    }
+                    returnRequests={
+                      Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ]
+                    }
+                    user={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "password": null,
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                      }
+                    }
+                  />,
+                ],
+                "className": "row card-panel profile-div",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Borrowed Books",
+                    "className": "white-text",
+                  },
+                  "ref": null,
+                  "rendered": "Borrowed Books",
+                  "type": "h6",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "books": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "getUserProfile": [Function],
+                    "profile": Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    },
+                    "returnRequests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "user": Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "password": null,
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h6
+                    className="white-text"
+                  >
+                    Borrow Requests
+                  </h6>,
+                  <BorrowRequests
+                    requests={
+                      Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ]
+                    }
+                  />,
+                ],
+                "className": "row card-panel profile-div",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Borrow Requests",
+                    "className": "white-text",
+                  },
+                  "ref": null,
+                  "rendered": "Borrow Requests",
+                  "type": "h6",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "requests": Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h6
+                    className="white-text"
+                  >
+                    Return Requests
+                  </h6>,
+                  <ReturnRequests
+                    getUserProfile={[Function]}
+                    profile={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                        "userBooks": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userBorrowRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userReturnRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ],
+                      }
+                    }
+                    requests={
+                      Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ]
+                    }
+                    user={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "password": null,
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                      }
+                    }
+                  />,
+                ],
+                "className": "row card-panel profile-div",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Return Requests",
+                    "className": "white-text",
+                  },
+                  "ref": null,
+                  "rendered": "Return Requests",
+                  "type": "h6",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "getUserProfile": [Function],
+                    "profile": Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    },
+                    "requests": Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ],
+                    "user": Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "password": null,
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="row center"
+          >
+            <h4
+              className="book-header"
+            >
+              Your Profile
+            </h4>
+          </div>,
+          <div
+            className="row"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="row card-panel"
+              >
+                <Bio
+                  bio={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Borrowed Books
+                </h6>
+                <BorrowedBooks
+                  books={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  getUserProfile={[Function]}
+                  profile={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                  returnRequests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  user={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "password": null,
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Borrow Requests
+                </h6>
+                <BorrowRequests
+                  requests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                />
+              </div>
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Return Requests
+                </h6>
+                <ReturnRequests
+                  getUserProfile={[Function]}
+                  profile={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                  requests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  user={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "password": null,
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h4
+              className="book-header"
+            >
+              Your Profile
+            </h4>,
+            "className": "row center",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Your Profile",
+              "className": "book-header",
+            },
+            "ref": null,
+            "rendered": "Your Profile",
+            "type": "h4",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="row"
+            >
+              <div
+                className="row card-panel"
+              >
+                <Bio
+                  bio={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Borrowed Books
+                </h6>
+                <BorrowedBooks
+                  books={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowedBooks": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "createdAt": "2018-03-22T20:36:27.267Z",
+                        "id": 1,
+                        "status": "Returned",
+                        "updatedAt": "2018-03-22T20:46:43.526Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  getUserProfile={[Function]}
+                  profile={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                  returnRequests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  user={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "password": null,
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Borrow Requests
+                </h6>
+                <BorrowRequests
+                  requests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "borrowRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:33:20.579Z",
+                        "id": 1,
+                        "reason": "Assignment",
+                        "returnDate": "2018-12-11T23:00:00.000Z",
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:36:27.180Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                />
+              </div>
+              <div
+                className="row card-panel profile-div"
+              >
+                <h6
+                  className="white-text"
+                >
+                  Return Requests
+                </h6>
+                <ReturnRequests
+                  getUserProfile={[Function]}
+                  profile={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    }
+                  }
+                  requests={
+                    Array [
+                      Object {
+                        "bookId": 1,
+                        "comments": null,
+                        "createdAt": "2018-03-22T20:43:57.646Z",
+                        "id": 1,
+                        "returnRequests": Object {
+                          "author": "Tomi Adeyemi",
+                          "title": "Children of blood and bone(Legacy of Orisha)",
+                        },
+                        "status": "Pending",
+                        "updatedAt": "2018-03-22T20:46:43.496Z",
+                        "userId": 2,
+                      },
+                    ]
+                  }
+                  user={
+                    Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "password": null,
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                    }
+                  }
+                />
+              </div>
+            </div>,
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="row card-panel"
+                >
+                  <Bio
+                    bio={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                        "userBooks": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userBorrowRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userReturnRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ],
+                      }
+                    }
+                  />
+                </div>,
+                <div
+                  className="row card-panel profile-div"
+                >
+                  <h6
+                    className="white-text"
+                  >
+                    Borrowed Books
+                  </h6>
+                  <BorrowedBooks
+                    books={
+                      Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ]
+                    }
+                    getUserProfile={[Function]}
+                    profile={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                        "userBooks": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userBorrowRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userReturnRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ],
+                      }
+                    }
+                    returnRequests={
+                      Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ]
+                    }
+                    user={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "password": null,
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                      }
+                    }
+                  />
+                </div>,
+                <div
+                  className="row card-panel profile-div"
+                >
+                  <h6
+                    className="white-text"
+                  >
+                    Borrow Requests
+                  </h6>
+                  <BorrowRequests
+                    requests={
+                      Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ]
+                    }
+                  />
+                </div>,
+                <div
+                  className="row card-panel profile-div"
+                >
+                  <h6
+                    className="white-text"
+                  >
+                    Return Requests
+                  </h6>
+                  <ReturnRequests
+                    getUserProfile={[Function]}
+                    profile={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                        "userBooks": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userBorrowRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userReturnRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ],
+                      }
+                    }
+                    requests={
+                      Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ]
+                    }
+                    user={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "password": null,
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                      }
+                    }
+                  />
+                </div>,
+              ],
+              "className": "row",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Bio
+                    bio={
+                      Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                        "userBooks": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userBorrowRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userReturnRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ],
+                      }
+                    }
+                  />,
+                  "className": "row card-panel",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "bio": Object {
+                      "createdAt": "2018-03-22T20:30:32.540Z",
+                      "email": "amarkipkip@gmail.com",
+                      "firstName": "Ama",
+                      "id": 2,
+                      "lastName": "Kipkip",
+                      "role": "User",
+                      "updatedAt": "2018-03-22T20:30:32.540Z",
+                      "userBooks": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userBorrowRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "userReturnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h6
+                      className="white-text"
+                    >
+                      Borrowed Books
+                    </h6>,
+                    <BorrowedBooks
+                      books={
+                        Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ]
+                      }
+                      getUserProfile={[Function]}
+                      profile={
+                        Object {
+                          "createdAt": "2018-03-22T20:30:32.540Z",
+                          "email": "amarkipkip@gmail.com",
+                          "firstName": "Ama",
+                          "id": 2,
+                          "lastName": "Kipkip",
+                          "role": "User",
+                          "updatedAt": "2018-03-22T20:30:32.540Z",
+                          "userBooks": Array [
+                            Object {
+                              "bookId": 1,
+                              "borrowedBooks": Object {
+                                "author": "Tomi Adeyemi",
+                                "title": "Children of blood and bone(Legacy of Orisha)",
+                              },
+                              "createdAt": "2018-03-22T20:36:27.267Z",
+                              "id": 1,
+                              "status": "Returned",
+                              "updatedAt": "2018-03-22T20:46:43.526Z",
+                              "userId": 2,
+                            },
+                          ],
+                          "userBorrowRequests": Array [
+                            Object {
+                              "bookId": 1,
+                              "borrowRequests": Object {
+                                "author": "Tomi Adeyemi",
+                                "title": "Children of blood and bone(Legacy of Orisha)",
+                              },
+                              "comments": null,
+                              "createdAt": "2018-03-22T20:33:20.579Z",
+                              "id": 1,
+                              "reason": "Assignment",
+                              "returnDate": "2018-12-11T23:00:00.000Z",
+                              "status": "Pending",
+                              "updatedAt": "2018-03-22T20:36:27.180Z",
+                              "userId": 2,
+                            },
+                          ],
+                          "userReturnRequests": Array [
+                            Object {
+                              "bookId": 1,
+                              "comments": null,
+                              "createdAt": "2018-03-22T20:43:57.646Z",
+                              "id": 1,
+                              "returnRequests": Object {
+                                "author": "Tomi Adeyemi",
+                                "title": "Children of blood and bone(Legacy of Orisha)",
+                              },
+                              "status": "Pending",
+                              "updatedAt": "2018-03-22T20:46:43.496Z",
+                              "userId": 2,
+                            },
+                          ],
+                        }
+                      }
+                      returnRequests={
+                        Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ]
+                      }
+                      user={
+                        Object {
+                          "createdAt": "2018-03-22T20:30:32.540Z",
+                          "email": "amarkipkip@gmail.com",
+                          "firstName": "Ama",
+                          "id": 2,
+                          "lastName": "Kipkip",
+                          "password": null,
+                          "role": "User",
+                          "updatedAt": "2018-03-22T20:30:32.540Z",
+                        }
+                      }
+                    />,
+                  ],
+                  "className": "row card-panel profile-div",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Borrowed Books",
+                      "className": "white-text",
+                    },
+                    "ref": null,
+                    "rendered": "Borrowed Books",
+                    "type": "h6",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "books": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowedBooks": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "createdAt": "2018-03-22T20:36:27.267Z",
+                          "id": 1,
+                          "status": "Returned",
+                          "updatedAt": "2018-03-22T20:46:43.526Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "getUserProfile": [Function],
+                      "profile": Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                        "userBooks": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userBorrowRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userReturnRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ],
+                      },
+                      "returnRequests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "user": Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "password": null,
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h6
+                      className="white-text"
+                    >
+                      Borrow Requests
+                    </h6>,
+                    <BorrowRequests
+                      requests={
+                        Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ]
+                      }
+                    />,
+                  ],
+                  "className": "row card-panel profile-div",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Borrow Requests",
+                      "className": "white-text",
+                    },
+                    "ref": null,
+                    "rendered": "Borrow Requests",
+                    "type": "h6",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "requests": Array [
+                        Object {
+                          "bookId": 1,
+                          "borrowRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:33:20.579Z",
+                          "id": 1,
+                          "reason": "Assignment",
+                          "returnDate": "2018-12-11T23:00:00.000Z",
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:36:27.180Z",
+                          "userId": 2,
+                        },
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h6
+                      className="white-text"
+                    >
+                      Return Requests
+                    </h6>,
+                    <ReturnRequests
+                      getUserProfile={[Function]}
+                      profile={
+                        Object {
+                          "createdAt": "2018-03-22T20:30:32.540Z",
+                          "email": "amarkipkip@gmail.com",
+                          "firstName": "Ama",
+                          "id": 2,
+                          "lastName": "Kipkip",
+                          "role": "User",
+                          "updatedAt": "2018-03-22T20:30:32.540Z",
+                          "userBooks": Array [
+                            Object {
+                              "bookId": 1,
+                              "borrowedBooks": Object {
+                                "author": "Tomi Adeyemi",
+                                "title": "Children of blood and bone(Legacy of Orisha)",
+                              },
+                              "createdAt": "2018-03-22T20:36:27.267Z",
+                              "id": 1,
+                              "status": "Returned",
+                              "updatedAt": "2018-03-22T20:46:43.526Z",
+                              "userId": 2,
+                            },
+                          ],
+                          "userBorrowRequests": Array [
+                            Object {
+                              "bookId": 1,
+                              "borrowRequests": Object {
+                                "author": "Tomi Adeyemi",
+                                "title": "Children of blood and bone(Legacy of Orisha)",
+                              },
+                              "comments": null,
+                              "createdAt": "2018-03-22T20:33:20.579Z",
+                              "id": 1,
+                              "reason": "Assignment",
+                              "returnDate": "2018-12-11T23:00:00.000Z",
+                              "status": "Pending",
+                              "updatedAt": "2018-03-22T20:36:27.180Z",
+                              "userId": 2,
+                            },
+                          ],
+                          "userReturnRequests": Array [
+                            Object {
+                              "bookId": 1,
+                              "comments": null,
+                              "createdAt": "2018-03-22T20:43:57.646Z",
+                              "id": 1,
+                              "returnRequests": Object {
+                                "author": "Tomi Adeyemi",
+                                "title": "Children of blood and bone(Legacy of Orisha)",
+                              },
+                              "status": "Pending",
+                              "updatedAt": "2018-03-22T20:46:43.496Z",
+                              "userId": 2,
+                            },
+                          ],
+                        }
+                      }
+                      requests={
+                        Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ]
+                      }
+                      user={
+                        Object {
+                          "createdAt": "2018-03-22T20:30:32.540Z",
+                          "email": "amarkipkip@gmail.com",
+                          "firstName": "Ama",
+                          "id": 2,
+                          "lastName": "Kipkip",
+                          "password": null,
+                          "role": "User",
+                          "updatedAt": "2018-03-22T20:30:32.540Z",
+                        }
+                      }
+                    />,
+                  ],
+                  "className": "row card-panel profile-div",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Return Requests",
+                      "className": "white-text",
+                    },
+                    "ref": null,
+                    "rendered": "Return Requests",
+                    "type": "h6",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "getUserProfile": [Function],
+                      "profile": Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                        "userBooks": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowedBooks": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "createdAt": "2018-03-22T20:36:27.267Z",
+                            "id": 1,
+                            "status": "Returned",
+                            "updatedAt": "2018-03-22T20:46:43.526Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userBorrowRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "borrowRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:33:20.579Z",
+                            "id": 1,
+                            "reason": "Assignment",
+                            "returnDate": "2018-12-11T23:00:00.000Z",
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:36:27.180Z",
+                            "userId": 2,
+                          },
+                        ],
+                        "userReturnRequests": Array [
+                          Object {
+                            "bookId": 1,
+                            "comments": null,
+                            "createdAt": "2018-03-22T20:43:57.646Z",
+                            "id": 1,
+                            "returnRequests": Object {
+                              "author": "Tomi Adeyemi",
+                              "title": "Children of blood and bone(Legacy of Orisha)",
+                            },
+                            "status": "Pending",
+                            "updatedAt": "2018-03-22T20:46:43.496Z",
+                            "userId": 2,
+                          },
+                        ],
+                      },
+                      "requests": Array [
+                        Object {
+                          "bookId": 1,
+                          "comments": null,
+                          "createdAt": "2018-03-22T20:43:57.646Z",
+                          "id": 1,
+                          "returnRequests": Object {
+                            "author": "Tomi Adeyemi",
+                            "title": "Children of blood and bone(Legacy of Orisha)",
+                          },
+                          "status": "Pending",
+                          "updatedAt": "2018-03-22T20:46:43.496Z",
+                          "userId": 2,
+                        },
+                      ],
+                      "user": Object {
+                        "createdAt": "2018-03-22T20:30:32.540Z",
+                        "email": "amarkipkip@gmail.com",
+                        "firstName": "Ama",
+                        "id": 2,
+                        "lastName": "Kipkip",
+                        "password": null,
+                        "role": "User",
+                        "updatedAt": "2018-03-22T20:30:32.540Z",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

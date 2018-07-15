@@ -1,9 +1,9 @@
 import React from 'react';
 import sinon from 'sinon';
+import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import mockData from '../../__mocks__/mockData';
-import { shallow } from 'enzyme';
 import ConnectedFavorites,
 { Favorites } from '../../../components/User/Favorites';
 
@@ -55,7 +55,7 @@ describe('<Favorites/>', () => {
     expect(wrapper.find('h5').text())
       .toEqual('Looks like you have no favorites');
     expect(wrapper.find('h6').text())
-      .toEqual('Click on the heart icon on a book\'s page to add it to your favorites.' );
+      .toEqual('Click on the heart icon on a book\'s page to add it to your favorites.'); /*eslint-disable-line*/
   });
 });
 

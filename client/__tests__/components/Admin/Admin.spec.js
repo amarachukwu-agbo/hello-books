@@ -3,14 +3,15 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import Admin from '../../../components/Admin/Admin.jsx';
-import AddBookPage from '../../../components/Admin/AddBookPage.jsx';
-import AdminBorrowRequestsPage
+import ConnectedAddBookPage from '../../../components/Admin/AddBookPage.jsx';
+import ConnectedAdminBorrowRequestsPage
   from '../../../components/Admin/AdminBorrowRequestsPage.jsx';
-import AdminReturnRequestsPage
+import ConnectedAdminReturnRequestsPage
   from '../../../components/Admin/AdminReturnRequestsPage.jsx';
-import AdminBooksPage from '../../../components/Admin/AdminBooksPage.jsx';
+import ConnectedAdminBooksPage
+  from '../../../components/Admin/AdminBooksPage.jsx';
 import NotFound from '../../../components/Common/NotFound';
 
 const props = {
@@ -29,11 +30,12 @@ describe('<Admin />', () => {
           <Admin {...props} />
         </Provider>
       </MemoryRouter>);
-    expect(wrapper.find(AdminBorrowRequestsPage)).toHaveLength(0);
-    expect(wrapper.find(AdminReturnRequestsPage)).toHaveLength(0);
-    expect(wrapper.find(AddBookPage)).toHaveLength(0);
-    expect(wrapper.find(AdminBooksPage)).toHaveLength(1);
+    expect(wrapper.find(ConnectedAdminBorrowRequestsPage)).toHaveLength(0);
+    expect(wrapper.find(ConnectedAdminReturnRequestsPage)).toHaveLength(0);
+    expect(wrapper.find(ConnectedAddBookPage)).toHaveLength(0);
+    expect(wrapper.find(ConnectedAdminBooksPage)).toHaveLength(1);
   });
+
   it(`should render NotFound component when
     route is not found`, () => {
     props.match.url = '/notFound';
@@ -41,9 +43,9 @@ describe('<Admin />', () => {
       <Admin {...props}/>
     </MemoryRouter>);
     expect(wrapper.find(NotFound)).toHaveLength(1);
-    expect(wrapper.find(AdminBorrowRequestsPage)).toHaveLength(0);
-    expect(wrapper.find(AdminReturnRequestsPage)).toHaveLength(0);
-    expect(wrapper.find(AddBookPage)).toHaveLength(0);
-    expect(wrapper.find(AdminBooksPage)).toHaveLength(0);
+    expect(wrapper.find(ConnectedAdminBorrowRequestsPage)).toHaveLength(0);
+    expect(wrapper.find(ConnectedAdminReturnRequestsPage)).toHaveLength(0);
+    expect(wrapper.find(ConnectedAddBookPage)).toHaveLength(0);
+    expect(wrapper.find(ConnectedAdminBooksPage)).toHaveLength(0);
   });
 });
