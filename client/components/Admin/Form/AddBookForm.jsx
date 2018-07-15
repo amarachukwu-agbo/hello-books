@@ -4,20 +4,7 @@ import propTypes from 'prop-types';
 import DropzoneInput from '../../Common/DropzoneInput.jsx';
 import validate from '../../../helpers/validations/book';
 import { InputText, renderDropdownList } from '../../Common/InputTypes.jsx';
-
-// All genres
-export const subjects = [
-  { subject: 'Fiction', value: 'Fiction' },
-  { subject: 'Romance', value: 'Romance' },
-  { subject: 'Educational', value: 'Educational' },
-  { subject: 'Biography', value: 'Biography' },
-  { subject: 'Crime', value: 'Crime' },
-  { subject: 'Self-help', value: 'Self-help' },
-  { subject: 'Thriller', value: 'Thriller' },
-  { subject: 'Science Fiction', value: 'Science Fiction' },
-  { subject: 'Legends and Myths', value: 'Legends and Myths' },
-  { subject: 'History', value: 'History' },
-];
+import subjects from '../../../helpers/categories';
 
 /**
  * @description stateless component form for adding books
@@ -48,32 +35,34 @@ const BookForm = ({
         </div>
         <div className="row">
           <div className="input-field">
-            <Field name="title" type="text"
+            <Field name="title" type="text" id="title"
               component={InputText} label="Book Title" />
           </div>
         </div>
         <div className="row">
           <div className="input-field">
-            <Field name="author" type="text"
+            <Field name="author" type="text" id="author"
               component={InputText} label="Author" />
           </div>
         </div>
         <div className="row">
           <div className="input-field">
             <label>Subject</label>
-            <Field name="subject" component={renderDropdownList}
+            <Field name="subject" component={renderDropdownList} id="subject"
               valueField="value" textField="subject" data={subjects} />
           </div>
         </div>
         <div className="row">
           <div className="input-field">
             <Field name="description" type="text" component={InputText}
+              id="description"
               label="Description" />
           </div>
         </div>
         <div className="row">
           <div className="input-field">
             <Field name="quantity" type="number"
+              id="quantity"
               component={InputText} label="Quantity" />
           </div>
         </div>
@@ -95,14 +84,14 @@ const BookForm = ({
           }
           {
             isUploadingImage &&
-            <div className="row center">
+            <div className="row center" id="spinner">
               <span>
                 <i className="fa fa-spinner fa-spin" />
               </span>
             </div>
           }
           { uploadError &&
-            <div className="img-upload">
+            <div className="img-upload" id="upload-error">
               <p className="red-text"> { uploadError } </p>
             </div>
           }

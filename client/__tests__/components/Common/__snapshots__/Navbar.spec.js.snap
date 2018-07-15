@@ -1,0 +1,1655 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConnectedNavbar> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Connect(Navbar)
+    isAuthenticated={true}
+    logOut={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    user={
+      Object {
+        "firstName": "Amy",
+        "id": 3,
+        "role": "User",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "isAuthenticated": true,
+      "logOut": [Function],
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeSubscription": Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+      "user": Object {
+        "firstName": "Amy",
+        "id": 3,
+        "role": "User",
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "isAuthenticated": true,
+        "logOut": [Function],
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "storeSubscription": Subscription {
+          "listeners": Object {
+            "clear": [Function],
+            "get": [Function],
+            "notify": [Function],
+            "subscribe": [Function],
+          },
+          "onStateChange": [Function],
+          "parentSub": undefined,
+          "store": Object {
+            "clearActions": [Function],
+            "dispatch": [Function],
+            "getActions": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+          },
+          "unsubscribe": [Function],
+        },
+        "user": Object {
+          "firstName": "Amy",
+          "id": 3,
+          "role": "User",
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<Navbar/> should renders the Navbar correctly for a user 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Navbar
+    isAuthenticated={true}
+    logOut={[Function]}
+    user={
+      Object {
+        "firstName": "Amy",
+        "id": 3,
+        "role": "User",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="navbar-fixed"
+        >
+          <nav>
+            <div
+              className="nav-wrapper"
+            >
+              <a
+                className="brand-logo"
+                href="/"
+              >
+                <img
+                  className="img-logo"
+                  src="test-file-stub"
+                />
+              </a>
+              <a
+                className="button-collapse"
+                data-activates="mobile-demo"
+                href="#"
+              >
+                <i
+                  className="material-icons"
+                >
+                  menu
+                </i>
+              </a>
+              <ul
+                className="right hide-on-med-and-down"
+              >
+                <li>
+                  Welcome Amy
+                   
+                </li>
+                <li>
+                  <a
+                    href="/users/favorites"
+                  >
+                    Favorites
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/users/profile"
+                  >
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/books"
+                  >
+                    Books
+                  </a>
+                </li>
+                <li>
+                  <button
+                    className="btn btn-flat white-text"
+                    id="user-log-out"
+                    onClick={[Function]}
+                  >
+                    Log out
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>,
+        false,
+        <ul
+          className="side-nav"
+          id="mobile-demo"
+        >
+          <li>
+            Welcome Amy
+             
+          </li>
+          <li>
+            <a
+              href="/books"
+            >
+              Books
+            </a>
+          </li>
+          <li>
+            <a
+              href="/users/favorites"
+            >
+              Favorites
+            </a>
+          </li>
+          <li>
+            <a
+              href="/users/profile"
+            >
+              Profile
+            </a>
+          </li>
+          <li>
+            <button
+              className="btn btn-flat primary-button"
+              onClick={[Function]}
+            >
+              Log out
+            </button>
+          </li>
+        </ul>,
+        false,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <nav>
+            <div
+              className="nav-wrapper"
+            >
+              <a
+                className="brand-logo"
+                href="/"
+              >
+                <img
+                  className="img-logo"
+                  src="test-file-stub"
+                />
+              </a>
+              <a
+                className="button-collapse"
+                data-activates="mobile-demo"
+                href="#"
+              >
+                <i
+                  className="material-icons"
+                >
+                  menu
+                </i>
+              </a>
+              <ul
+                className="right hide-on-med-and-down"
+              >
+                <li>
+                  Welcome Amy
+                   
+                </li>
+                <li>
+                  <a
+                    href="/users/favorites"
+                  >
+                    Favorites
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/users/profile"
+                  >
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/books"
+                  >
+                    Books
+                  </a>
+                </li>
+                <li>
+                  <button
+                    className="btn btn-flat white-text"
+                    id="user-log-out"
+                    onClick={[Function]}
+                  >
+                    Log out
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </nav>,
+          "className": "navbar-fixed",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="nav-wrapper"
+            >
+              <a
+                className="brand-logo"
+                href="/"
+              >
+                <img
+                  className="img-logo"
+                  src="test-file-stub"
+                />
+              </a>
+              <a
+                className="button-collapse"
+                data-activates="mobile-demo"
+                href="#"
+              >
+                <i
+                  className="material-icons"
+                >
+                  menu
+                </i>
+              </a>
+              <ul
+                className="right hide-on-med-and-down"
+              >
+                <li>
+                  Welcome Amy
+                   
+                </li>
+                <li>
+                  <a
+                    href="/users/favorites"
+                  >
+                    Favorites
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/users/profile"
+                  >
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/books"
+                  >
+                    Books
+                  </a>
+                </li>
+                <li>
+                  <button
+                    className="btn btn-flat white-text"
+                    id="user-log-out"
+                    onClick={[Function]}
+                  >
+                    Log out
+                  </button>
+                </li>
+              </ul>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <a
+                  className="brand-logo"
+                  href="/"
+                >
+                  <img
+                    className="img-logo"
+                    src="test-file-stub"
+                  />
+                </a>,
+                <a
+                  className="button-collapse"
+                  data-activates="mobile-demo"
+                  href="#"
+                >
+                  <i
+                    className="material-icons"
+                  >
+                    menu
+                  </i>
+                </a>,
+                false,
+                <ul
+                  className="right hide-on-med-and-down"
+                >
+                  <li>
+                    Welcome Amy
+                     
+                  </li>
+                  <li>
+                    <a
+                      href="/users/favorites"
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/users/profile"
+                    >
+                      Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/books"
+                    >
+                      Books
+                    </a>
+                  </li>
+                  <li>
+                    <button
+                      className="btn btn-flat white-text"
+                      id="user-log-out"
+                      onClick={[Function]}
+                    >
+                      Log out
+                    </button>
+                  </li>
+                </ul>,
+                false,
+              ],
+              "className": "nav-wrapper",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    className="img-logo"
+                    src="test-file-stub"
+                  />,
+                  "className": "brand-logo",
+                  "href": "/",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "img-logo",
+                    "src": "test-file-stub",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "a",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <i
+                    className="material-icons"
+                  >
+                    menu
+                  </i>,
+                  "className": "button-collapse",
+                  "data-activates": "mobile-demo",
+                  "href": "#",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "menu",
+                    "className": "material-icons",
+                  },
+                  "ref": null,
+                  "rendered": "menu",
+                  "type": "i",
+                },
+                "type": "a",
+              },
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <li>
+                      Welcome Amy
+                       
+                    </li>,
+                    <li>
+                      <a
+                        href="/users/favorites"
+                      >
+                        Favorites
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="/users/profile"
+                      >
+                        Profile
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="/books"
+                      >
+                        Books
+                      </a>
+                    </li>,
+                    <li>
+                      <button
+                        className="btn btn-flat white-text"
+                        id="user-log-out"
+                        onClick={[Function]}
+                      >
+                        Log out
+                      </button>
+                    </li>,
+                  ],
+                  "className": "right hide-on-med-and-down",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Welcome Amy",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Welcome Amy",
+                      " ",
+                    ],
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="/users/favorites"
+                      >
+                        Favorites
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Favorites",
+                        "href": "/users/favorites",
+                      },
+                      "ref": null,
+                      "rendered": "Favorites",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="/users/profile"
+                      >
+                        Profile
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Profile",
+                        "href": "/users/profile",
+                      },
+                      "ref": null,
+                      "rendered": "Profile",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="/books"
+                      >
+                        Books
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Books",
+                        "href": "/books",
+                      },
+                      "ref": null,
+                      "rendered": "Books",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <button
+                        className="btn btn-flat white-text"
+                        id="user-log-out"
+                        onClick={[Function]}
+                      >
+                        Log out
+                      </button>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Log out",
+                        "className": "btn btn-flat white-text",
+                        "id": "user-log-out",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "Log out",
+                      "type": "button",
+                    },
+                    "type": "li",
+                  },
+                ],
+                "type": "ul",
+              },
+              false,
+            ],
+            "type": "div",
+          },
+          "type": "nav",
+        },
+        "type": "div",
+      },
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              Welcome Amy
+               
+            </li>,
+            <li>
+              <a
+                href="/books"
+              >
+                Books
+              </a>
+            </li>,
+            <li>
+              <a
+                href="/users/favorites"
+              >
+                Favorites
+              </a>
+            </li>,
+            <li>
+              <a
+                href="/users/profile"
+              >
+                Profile
+              </a>
+            </li>,
+            <li>
+              <button
+                className="btn btn-flat primary-button"
+                onClick={[Function]}
+              >
+                Log out
+              </button>
+            </li>,
+          ],
+          "className": "side-nav",
+          "id": "mobile-demo",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Welcome Amy",
+                " ",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Welcome Amy",
+              " ",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <a
+                href="/books"
+              >
+                Books
+              </a>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Books",
+                "href": "/books",
+              },
+              "ref": null,
+              "rendered": "Books",
+              "type": "a",
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <a
+                href="/users/favorites"
+              >
+                Favorites
+              </a>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Favorites",
+                "href": "/users/favorites",
+              },
+              "ref": null,
+              "rendered": "Favorites",
+              "type": "a",
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <a
+                href="/users/profile"
+              >
+                Profile
+              </a>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Profile",
+                "href": "/users/profile",
+              },
+              "ref": null,
+              "rendered": "Profile",
+              "type": "a",
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                className="btn btn-flat primary-button"
+                onClick={[Function]}
+              >
+                Log out
+              </button>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Log out",
+                "className": "btn btn-flat primary-button",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Log out",
+              "type": "button",
+            },
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="navbar-fixed"
+          >
+            <nav>
+              <div
+                className="nav-wrapper"
+              >
+                <a
+                  className="brand-logo"
+                  href="/"
+                >
+                  <img
+                    className="img-logo"
+                    src="test-file-stub"
+                  />
+                </a>
+                <a
+                  className="button-collapse"
+                  data-activates="mobile-demo"
+                  href="#"
+                >
+                  <i
+                    className="material-icons"
+                  >
+                    menu
+                  </i>
+                </a>
+                <ul
+                  className="right hide-on-med-and-down"
+                >
+                  <li>
+                    Welcome Amy
+                     
+                  </li>
+                  <li>
+                    <a
+                      href="/users/favorites"
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/users/profile"
+                    >
+                      Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/books"
+                    >
+                      Books
+                    </a>
+                  </li>
+                  <li>
+                    <button
+                      className="btn btn-flat white-text"
+                      id="user-log-out"
+                      onClick={[Function]}
+                    >
+                      Log out
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>,
+          false,
+          <ul
+            className="side-nav"
+            id="mobile-demo"
+          >
+            <li>
+              Welcome Amy
+               
+            </li>
+            <li>
+              <a
+                href="/books"
+              >
+                Books
+              </a>
+            </li>
+            <li>
+              <a
+                href="/users/favorites"
+              >
+                Favorites
+              </a>
+            </li>
+            <li>
+              <a
+                href="/users/profile"
+              >
+                Profile
+              </a>
+            </li>
+            <li>
+              <button
+                className="btn btn-flat primary-button"
+                onClick={[Function]}
+              >
+                Log out
+              </button>
+            </li>
+          </ul>,
+          false,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <nav>
+              <div
+                className="nav-wrapper"
+              >
+                <a
+                  className="brand-logo"
+                  href="/"
+                >
+                  <img
+                    className="img-logo"
+                    src="test-file-stub"
+                  />
+                </a>
+                <a
+                  className="button-collapse"
+                  data-activates="mobile-demo"
+                  href="#"
+                >
+                  <i
+                    className="material-icons"
+                  >
+                    menu
+                  </i>
+                </a>
+                <ul
+                  className="right hide-on-med-and-down"
+                >
+                  <li>
+                    Welcome Amy
+                     
+                  </li>
+                  <li>
+                    <a
+                      href="/users/favorites"
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/users/profile"
+                    >
+                      Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/books"
+                    >
+                      Books
+                    </a>
+                  </li>
+                  <li>
+                    <button
+                      className="btn btn-flat white-text"
+                      id="user-log-out"
+                      onClick={[Function]}
+                    >
+                      Log out
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </nav>,
+            "className": "navbar-fixed",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="nav-wrapper"
+              >
+                <a
+                  className="brand-logo"
+                  href="/"
+                >
+                  <img
+                    className="img-logo"
+                    src="test-file-stub"
+                  />
+                </a>
+                <a
+                  className="button-collapse"
+                  data-activates="mobile-demo"
+                  href="#"
+                >
+                  <i
+                    className="material-icons"
+                  >
+                    menu
+                  </i>
+                </a>
+                <ul
+                  className="right hide-on-med-and-down"
+                >
+                  <li>
+                    Welcome Amy
+                     
+                  </li>
+                  <li>
+                    <a
+                      href="/users/favorites"
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/users/profile"
+                    >
+                      Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/books"
+                    >
+                      Books
+                    </a>
+                  </li>
+                  <li>
+                    <button
+                      className="btn btn-flat white-text"
+                      id="user-log-out"
+                      onClick={[Function]}
+                    >
+                      Log out
+                    </button>
+                  </li>
+                </ul>
+              </div>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <a
+                    className="brand-logo"
+                    href="/"
+                  >
+                    <img
+                      className="img-logo"
+                      src="test-file-stub"
+                    />
+                  </a>,
+                  <a
+                    className="button-collapse"
+                    data-activates="mobile-demo"
+                    href="#"
+                  >
+                    <i
+                      className="material-icons"
+                    >
+                      menu
+                    </i>
+                  </a>,
+                  false,
+                  <ul
+                    className="right hide-on-med-and-down"
+                  >
+                    <li>
+                      Welcome Amy
+                       
+                    </li>
+                    <li>
+                      <a
+                        href="/users/favorites"
+                      >
+                        Favorites
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/users/profile"
+                      >
+                        Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/books"
+                      >
+                        Books
+                      </a>
+                    </li>
+                    <li>
+                      <button
+                        className="btn btn-flat white-text"
+                        id="user-log-out"
+                        onClick={[Function]}
+                      >
+                        Log out
+                      </button>
+                    </li>
+                  </ul>,
+                  false,
+                ],
+                "className": "nav-wrapper",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <img
+                      className="img-logo"
+                      src="test-file-stub"
+                    />,
+                    "className": "brand-logo",
+                    "href": "/",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "img-logo",
+                      "src": "test-file-stub",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                  "type": "a",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <i
+                      className="material-icons"
+                    >
+                      menu
+                    </i>,
+                    "className": "button-collapse",
+                    "data-activates": "mobile-demo",
+                    "href": "#",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "menu",
+                      "className": "material-icons",
+                    },
+                    "ref": null,
+                    "rendered": "menu",
+                    "type": "i",
+                  },
+                  "type": "a",
+                },
+                false,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <li>
+                        Welcome Amy
+                         
+                      </li>,
+                      <li>
+                        <a
+                          href="/users/favorites"
+                        >
+                          Favorites
+                        </a>
+                      </li>,
+                      <li>
+                        <a
+                          href="/users/profile"
+                        >
+                          Profile
+                        </a>
+                      </li>,
+                      <li>
+                        <a
+                          href="/books"
+                        >
+                          Books
+                        </a>
+                      </li>,
+                      <li>
+                        <button
+                          className="btn btn-flat white-text"
+                          id="user-log-out"
+                          onClick={[Function]}
+                        >
+                          Log out
+                        </button>
+                      </li>,
+                    ],
+                    "className": "right hide-on-med-and-down",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Welcome Amy",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Welcome Amy",
+                        " ",
+                      ],
+                      "type": "li",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <a
+                          href="/users/favorites"
+                        >
+                          Favorites
+                        </a>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Favorites",
+                          "href": "/users/favorites",
+                        },
+                        "ref": null,
+                        "rendered": "Favorites",
+                        "type": "a",
+                      },
+                      "type": "li",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <a
+                          href="/users/profile"
+                        >
+                          Profile
+                        </a>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Profile",
+                          "href": "/users/profile",
+                        },
+                        "ref": null,
+                        "rendered": "Profile",
+                        "type": "a",
+                      },
+                      "type": "li",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <a
+                          href="/books"
+                        >
+                          Books
+                        </a>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Books",
+                          "href": "/books",
+                        },
+                        "ref": null,
+                        "rendered": "Books",
+                        "type": "a",
+                      },
+                      "type": "li",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <button
+                          className="btn btn-flat white-text"
+                          id="user-log-out"
+                          onClick={[Function]}
+                        >
+                          Log out
+                        </button>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Log out",
+                          "className": "btn btn-flat white-text",
+                          "id": "user-log-out",
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "rendered": "Log out",
+                        "type": "button",
+                      },
+                      "type": "li",
+                    },
+                  ],
+                  "type": "ul",
+                },
+                false,
+              ],
+              "type": "div",
+            },
+            "type": "nav",
+          },
+          "type": "div",
+        },
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li>
+                Welcome Amy
+                 
+              </li>,
+              <li>
+                <a
+                  href="/books"
+                >
+                  Books
+                </a>
+              </li>,
+              <li>
+                <a
+                  href="/users/favorites"
+                >
+                  Favorites
+                </a>
+              </li>,
+              <li>
+                <a
+                  href="/users/profile"
+                >
+                  Profile
+                </a>
+              </li>,
+              <li>
+                <button
+                  className="btn btn-flat primary-button"
+                  onClick={[Function]}
+                >
+                  Log out
+                </button>
+              </li>,
+            ],
+            "className": "side-nav",
+            "id": "mobile-demo",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Welcome Amy",
+                  " ",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Welcome Amy",
+                " ",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  href="/books"
+                >
+                  Books
+                </a>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Books",
+                  "href": "/books",
+                },
+                "ref": null,
+                "rendered": "Books",
+                "type": "a",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  href="/users/favorites"
+                >
+                  Favorites
+                </a>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Favorites",
+                  "href": "/users/favorites",
+                },
+                "ref": null,
+                "rendered": "Favorites",
+                "type": "a",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  href="/users/profile"
+                >
+                  Profile
+                </a>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Profile",
+                  "href": "/users/profile",
+                },
+                "ref": null,
+                "rendered": "Profile",
+                "type": "a",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-flat primary-button"
+                  onClick={[Function]}
+                >
+                  Log out
+                </button>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Log out",
+                  "className": "btn btn-flat primary-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Log out",
+                "type": "button",
+              },
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

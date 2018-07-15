@@ -108,7 +108,6 @@ describe('Book actions', () => {
       type: actionTypes.FAVORITE_REQUEST,
     }, {
       type: actionTypes.FAVORITE_FAILURE,
-      error: books.favoriteBookErrorResponse.error,
     },
     ];
     const store = mockStore({});
@@ -156,7 +155,6 @@ describe('Book actions', () => {
       type: actionTypes.UPVOTE_REQUEST,
     }, {
       type: actionTypes.UPVOTE_FAILURE,
-      error: books.upvoteBookErrorResponse.error,
     },
     ];
     const store = mockStore({});
@@ -204,7 +202,6 @@ describe('Book actions', () => {
       type: actionTypes.DOWNVOTE_REQUEST,
     }, {
       type: actionTypes.DOWNVOTE_FAILURE,
-      error: books.downvoteBookErrorResponse.error,
     },
     ];
     const store = mockStore({});
@@ -228,7 +225,6 @@ describe('Book actions', () => {
     }, {
       type: actionTypes.BORROW_BOOK_SUCCESS,
       borrowStatus: books.borrowBookResponse.request.status,
-      book: books.bookDataResponse.book,
     },
     ];
     const store = mockStore({});
@@ -258,7 +254,6 @@ describe('Book actions', () => {
       type: actionTypes.BORROW_BOOK_REQUEST,
     }, {
       type: actionTypes.BORROW_BOOK_FAILURE,
-      error: books.borrowBookErrorResponse.error,
     },
     ];
     const store = mockStore({});
@@ -287,7 +282,6 @@ describe('Book actions', () => {
     }, {
       type: actionTypes.BORROW_BOOK_SUCCESS,
       borrowStatus: books.borrowBookResponse.request.status,
-      book: books.bookDataResponse.book,
     },
     ];
     const store = mockStore({});
@@ -317,7 +311,6 @@ describe('Book actions', () => {
       type: actionTypes.BORROW_BOOK_REQUEST,
     }, {
       type: actionTypes.BORROW_BOOK_FAILURE,
-      error: books.borrowBookErrorResponse.error,
     },
     ];
     const store = mockStore({});
@@ -371,7 +364,6 @@ describe('Book actions', () => {
       type: actionTypes.REVIEW_BOOK_REQUEST,
     }, {
       type: actionTypes.REVIEW_BOOK_FAILURE,
-      error: books.reviewBookErrorResponse.error,
     },
     ];
     const store = mockStore({});

@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AdminBooksPage /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AdminBooksPage
+    deleteBook={[Function]}
+    editBook={[Function]}
+    getBooks={[Function]}
+    isFetching={false}
+    pagination={null}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        undefined,
+        undefined,
+        <h5
+          className="book-header center"
+        >
+          Books Catalog
+        </h5>,
+        <div
+          className="divider"
+        />,
+        undefined,
+        undefined,
+      ],
+      "className": "admin",
+    },
+    "ref": null,
+    "rendered": Array [
+      undefined,
+      undefined,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Books Catalog",
+          "className": "book-header center",
+        },
+        "ref": null,
+        "rendered": "Books Catalog",
+        "type": "h5",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "divider",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      undefined,
+      undefined,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          undefined,
+          undefined,
+          <h5
+            className="book-header center"
+          >
+            Books Catalog
+          </h5>,
+          <div
+            className="divider"
+          />,
+          undefined,
+          undefined,
+        ],
+        "className": "admin",
+      },
+      "ref": null,
+      "rendered": Array [
+        undefined,
+        undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Books Catalog",
+            "className": "book-header center",
+          },
+          "ref": null,
+          "rendered": "Books Catalog",
+          "type": "h5",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "divider",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        undefined,
+        undefined,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

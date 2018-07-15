@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Dropdown, NavItem } from 'react-materialize';
 import propTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOut } from '../../actions/login';
-import { getBooks } from '../../actions/books';
 import logo from '../../public/images/logo.png';
 
 /**
@@ -14,7 +12,7 @@ import logo from '../../public/images/logo.png';
  *
  * @extends {React.Component}
  */
-class Navbar extends Component {
+export class Navbar extends Component {
   render() {
     const { user, isAuthenticated } = this.props;
     return (
@@ -22,9 +20,9 @@ class Navbar extends Component {
         <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper">
-              <Link to="/" className="brand-logo">
+              <a href="/" className="brand-logo">
                 <img src={logo} className="img-logo" />
-              </Link>
+              </a>
               <a href="#" data-activates="mobile-demo"
                 className="button-collapse">
                 <i className="material-icons">menu</i>
@@ -36,7 +34,7 @@ class Navbar extends Component {
                 isAuthenticated && user.role === 'Admin' &&
                 <ul className="right hide-on-med-and-down">
                   <li>
-                    <Dropdown trigger={
+                    <Dropdown id="requests" trigger={
                       <button>
                         Requests &nbsp;
                         <i className="fa fa-caret-down" />
@@ -50,14 +48,14 @@ class Navbar extends Component {
                       </NavItem>
                     </Dropdown>
                   </li>
-                  <li className="second-nav-item">
-                    <Link to='/admin'>Books Catalog</Link>
+                  <li id="books-catalog" className="second-nav-item">
+                    <a href ='/admin'>Books Catalog</a>
+                  </li>
+                  <li id="add-book">
+                    <a href='/admin/addBook'>Add Book</a>
                   </li>
                   <li>
-                    <Link to='/admin/addBook'>Add Book</Link>
-                  </li>
-                  <li>
-                    <Dropdown trigger={
+                    <Dropdown id="account" trigger={
                       <button>
                         Account &nbsp;
                         <i className="fa fa-caret-down" />
@@ -71,7 +69,7 @@ class Navbar extends Component {
                       </NavItem>
                     </Dropdown>
                   </li>
-                  <li>
+                  <li id="log-out">
                     <button className="btn btn-flat white-text"
                       onClick={this.props.logOut}>Log out
                     </button>
@@ -85,11 +83,12 @@ class Navbar extends Component {
                 isAuthenticated && user.role === 'User' &&
                 <ul className="right hide-on-med-and-down">
                   <li>{`Welcome ${user.firstName}`} </li>
-                  <li><Link to={'/users/favorites'}>Favorites</Link></li>
-                  <li><Link to={'/users/profile'}>Profile</Link></li>
-                  <li><Link to='/books'>Books</Link></li>
+                  <li><a href={'/users/favorites'}>Favorites</a></li>
+                  <li><a href={'/users/profile'}>Profile</a></li>
+                  <li><a href='/books'>Books</a></li>
                   <li>
-                    <button className="btn btn-flat white-text"
+                    <button id="user-log-out"
+                    className="btn btn-flat white-text"
                       onClick={this.props.logOut}>Log out
                     </button>
                   </li>
@@ -100,9 +99,9 @@ class Navbar extends Component {
 
               {!isAuthenticated &&
                 <ul className="right hide-on-med-and-down">
-                  <li><Link to="/signup">Sign up</Link></li>
-                  <li><Link to="/login">Login</Link></li>
-                  <li><Link to='/books'>Books</Link></li>
+                  <li id="sign-up"><a href="/signup">Sign up</a></li>
+                  <li id="log-in"><a href="/login">Login</a></li>
+                  <li id="books"><a href='/books'>Books</a></li>
                 </ul>
               }
             </div>
@@ -114,12 +113,12 @@ class Navbar extends Component {
         {
           isAuthenticated && user.role === 'Admin' &&
           <ul className="side-nav" id="mobile-demo">
-            <li><Link to='/admin'>Books Catalog</Link></li>
-            <li><Link to='/admin/addBook'>Add Book</Link></li>
-            <li><Link to='/admin/borrowRequests'>Borrow Requests</Link></li>
-            <li><Link to='/admin/returnRequests'>Return Requests</Link></li>
-            <li><Link to='/users/favorites'>Favorites</Link></li>
-            <li><Link to='/users/profile'>Profile</Link></li>
+            <li><a href='/admin'>Books Catalog</a></li>
+            <li><a href='/admin/addBook'>Add Book</a></li>
+            <li><a href='/admin/borrowRequests'>Borrow Requests</a></li>
+            <li><a href='/admin/returnRequests'>Return Requests</a></li>
+            <li><a href='/users/favorites'>Favorites</a></li>
+            <li><a href='/users/profile'>Profile</a></li>
             <li>
               <button className="btn btn-flat primary-button"
                 onClick={this.props.logOut}>Log out
@@ -133,10 +132,10 @@ class Navbar extends Component {
           <ul className="side-nav" id="mobile-demo">
             <li>{`Welcome ${user.firstName}`} </li>
             <li>
-              <Link to={'/books'}>Books</Link>
+              <a href={'/books'}>Books</a>
             </li>
-            <li><Link to={'/users/favorites'}>Favorites</Link></li>
-            <li><Link to={'/users/profile'}>Profile</Link></li>
+            <li><a href={'/users/favorites'}>Favorites</a></li>
+            <li><a href={'/users/profile'}>Profile</a></li>
             <li>
               <button className="btn btn-flat primary-button"
                 onClick={this.props.logOut}>Log out
@@ -148,9 +147,9 @@ class Navbar extends Component {
         {
           !this.props.isAuthenticated &&
           <ul className="side-nav" id="mobile-demo">
-            <li><Link to='/books'>Books</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/signup">Signup</Link></li>
+            <li><a href='/books'>Books</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li>
           </ul>
         }
       </div>
@@ -163,7 +162,6 @@ Navbar.propTypes = {
   isAuthenticated: propTypes.bool,
   user: propTypes.object,
   logOut: propTypes.func.isRequired,
-  getBooks: propTypes.func.isRequired,
 };
 
 /**
@@ -177,15 +175,9 @@ const mapStateToProps = state => ({
   user: state.login.user,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  logOut: () => { dispatch(logOut()); },
-  getBooks: () => { dispatch(getBooks()); },
-});
+// action creators
+const actionCreators = {
+  logOut,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps, actionCreators)(Navbar);

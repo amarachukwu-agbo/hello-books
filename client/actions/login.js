@@ -4,6 +4,7 @@ import { LOGGING_IN, LOGIN_SUCCESS, LOGIN_FAILURE, LOG_OUT } from './types';
 import { apiURL } from './signUp';
 import setUser from '../helpers/setUser';
 import checkError from '../helpers/checkError';
+import Notify from '../helpers/Notify';
 
 const loggingIn = () => ({
   type: LOGGING_IN,
@@ -14,9 +15,8 @@ export const loginSuccess = user => ({
   user,
 });
 
-const loginFailure = error => ({
+const loginFailure = () => ({
   type: LOGIN_FAILURE,
-  error,
 });
 
 const logOutUser = () => ({
@@ -33,13 +33,15 @@ export const loginUser = user => (dispatch) => {
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(loginFailure(errorMessage));
+      Notify.notifyError(`Login Failed. ${errorMessage}`);
+      dispatch(loginFailure());
     });
 };
 
 export const logOut = () => (dispatch) => {
   dispatch(logOutUser());
   dispatch(push('/'));
+  Notify.notifySuccess('You successfully logged out');
   localStorage.removeItem('userToken');
   localStorage.removeItem('user');
 };

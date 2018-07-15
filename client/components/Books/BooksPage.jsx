@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
 import SearchBar from '../Common/Searchbar.jsx';
 import Notify from '../../helpers/Notify';
 import BooksList from './BooksList.jsx';
@@ -9,7 +10,6 @@ import Pagination from '../Common/Pagination.jsx';
 import { getBooks, searchBooks } from '../../actions/books';
 import materialize from '../../helpers/materialize';
 
-
 /**
  * @description - Container class components for all books
  *
@@ -17,7 +17,7 @@ import materialize from '../../helpers/materialize';
  *
  * @extends {React.Component}
  */
-class BooksPage extends Component {
+export class BooksPage extends Component {
   /**
    * @constructor create an instance of BooksPage component
    *
@@ -66,7 +66,8 @@ class BooksPage extends Component {
       return (
         <div className="row center card-panel">
           <h6 className="flow-text red-text">
-            {`Oops! Couldn't fetch available books. ${this.props.error}`}
+            {`Oops! Couldn't fetch available books. ${
+              this.props.error}`}
           </h6>
         </div>
       );
@@ -82,10 +83,11 @@ class BooksPage extends Component {
     if (this.props.books) {
       return (
         <div>
-            <BooksList books={this.props.books} />
-            <Pagination onPageChange = {page => this.props.getBooks(page) }
-              pagination = { this.props.pagination }
-            />
+          <BooksList books={this.props.books} />
+          <Pagination
+            onPageChange={this.props.getBooks}
+            pagination={this.props.pagination}
+          />
         </div>
       );
     }
@@ -100,27 +102,31 @@ class BooksPage extends Component {
     if (this.props.searchResults) {
       return (
         <div>
-              <div className="row">
-                <BooksList books={ this.props.searchResults} />
-                <div className="search-result">
-                  <div>
-                    <Link to = "/books">
-                      <button className="btn btn-flat btn-medium
+          <div className="row">
+            <BooksList books={this.props.searchResults} />
+            <div className="search-result">
+              <div>
+                <Link to="/books">
+                  <button
+                    id="get-books-button"
+                    className="btn btn-flat btn-medium
                         search-button darken-2 waves-effect waves-light"
-                        onClick = {() => this.props.getBooks(1) }>
-                        <i className="material-icons left">arrow_back </i>
-                        Books Catalog
-                      </button>
-                    </Link>
-                  </div>
-                  <div>
-                    <Pagination onPageChange = {(searchBy, searchParam) =>
-                    this.props.searchBooks(searchBy, searchParam) }
-                      pagination = { this.props.pagination } />
-                  </div>
-                </div>
+                    onClick={() => this.props.getBooks(1)}
+                  >
+                    <i className="material-icons left">arrow_back </i>
+                    Books Catalog
+                  </button>
+                </Link>
               </div>
+              <div>
+                <Pagination
+                  onPageChange={this.props.searchBooks}
+                  pagination={this.props.pagination}
+                />
+              </div>
+            </div>
           </div>
+        </div>
       );
     }
   }
@@ -132,15 +138,25 @@ class BooksPage extends Component {
         <SearchBar {...this.props} />
         {this.props.searchError && Notify.notifyInfo(this.props.searchError)}
         <div className="row book-list">
-          { this.renderPreloader() }
-          { this.renderError() }
-          { this.renderBooks() }
-          { this.renderSearchResults() }
+          {this.renderPreloader()}
+          {this.renderError()}
+          {this.renderBooks()}
+          {this.renderSearchResults()}
         </div>
       </div>
     );
   }
 }
+
+// Prop type validation
+BooksPage.propTypes = {
+  getBooks: propTypes.func.isRequired,
+  searchBooks: propTypes.func.isRequired,
+  searchResults: propTypes.array,
+  books: propTypes.array,
+  isFetching: propTypes.bool,
+  error: propTypes.string,
+};
 
 /**
  * @description maps state to props
@@ -152,16 +168,12 @@ const mapStateToProps = state => ({
   ...state.books,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getBooks: (page) => { dispatch(getBooks(page)); },
-  searchBooks: (searchBy, searchParam, page) => {
-    dispatch(searchBooks(searchBy, searchParam, page));
-  },
-});
-export default connect(mapStateToProps, mapDispatchToProps)(BooksPage);
+// action creators
+const actionCreators = {
+  getBooks,
+  searchBooks,
+};
+export default connect(
+  mapStateToProps,
+  actionCreators,
+)(BooksPage);

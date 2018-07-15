@@ -12,6 +12,8 @@ import NotFound from './Common/NotFound.jsx';
 import Books from './Books/Books.jsx';
 import User from './User/User.jsx';
 import Admin from './Admin/Admin.jsx';
+import Navbar from './Common/Navbar.jsx';
+import PageFooter from './Common/PageFooter.jsx';
 
 /**
  * @description stateless component containing all other components
@@ -21,17 +23,21 @@ import Admin from './Admin/Admin.jsx';
  * @returns {Node}
  */
 const App = ({ history }) => (
-  <Router history={ history }>
-    <Switch>
-      <GuestRoute exact path='/signup' component={ SignUpPage } />
-      <GuestRoute exact path='/login' component={ LoginPage } />
-      <Route exact path='/' component={ IndexPage } />
-      <Route path='/books' component={ Books } />
-      <UserRoute path='/users' component={ User } />
-      <AdminRoute path='/admin' component={ Admin } />
-      <Route component={ NotFound } />
-    </Switch>
-  </Router>
+  <div>
+    <Navbar />
+    <Router history={history}>
+      <Switch>
+        <GuestRoute exact path='/signup' component={SignUpPage} />
+        <GuestRoute exact path='/login' component={LoginPage} />
+        <Route exact path='/' component={IndexPage} />
+        <Route path='/books' component={Books} />
+        <UserRoute path='/users' component={User} />
+        <AdminRoute path='/admin' component={Admin} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
+    <PageFooter />
+  </div>
 );
 
 export default hot(module)(App);

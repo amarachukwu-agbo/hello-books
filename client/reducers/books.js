@@ -1,4 +1,3 @@
-import swal from 'sweetalert';
 import {
   GET_BOOKS_SUCCESS,
   GET_BOOKS_REQUEST,
@@ -19,7 +18,6 @@ import {
   DELETE_BOOK_REQUEST,
   DELETE_BOOK_FAILURE,
 } from '../actions/types';
-import Notify from '../helpers/Notify';
 
 const initialState = {};
 
@@ -82,14 +80,12 @@ export const books = (state = initialState, action) => {
       };
     }
     case ADD_BOOK_FAILURE: {
-      Notify.notifyError(`Error adding book. ${action.error}`);
       return {
         ...state,
         isAdding: false,
       };
     }
     case ADD_BOOK_SUCCESS: {
-      Notify.notifySuccess('Book has been added');
       return {
         ...state,
         isAdding: false,
@@ -102,14 +98,12 @@ export const books = (state = initialState, action) => {
       };
     }
     case EDIT_BOOK_FAILURE: {
-      Notify.notifyError(`Error editing book. ${action.error}`);
       return {
         ...state,
         isEditing: false,
       };
     }
     case EDIT_BOOK_SUCCESS: {
-      Notify.notifySuccess('Book has been updated');
       const bookIndex = state.books
         .findIndex(book => book.id === action.bookId);
       return {
@@ -120,8 +114,6 @@ export const books = (state = initialState, action) => {
       };
     }
     case DELETE_BOOK_SUCCESS: {
-      Notify.notifySuccess('Book has been successfully deleted');
-
       const bookIndex = state.books
         .findIndex(book => book.id === action.bookId);
       state.books.splice(bookIndex, 1);
@@ -136,7 +128,6 @@ export const books = (state = initialState, action) => {
       };
     }
     case DELETE_BOOK_FAILURE: {
-      swal(`Book was not deleted. ${action.deleteError}`, 'error');
       return {
         ...state,
         isDeleting: false,

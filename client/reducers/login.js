@@ -4,7 +4,6 @@ import {
   LOGIN_FAILURE,
   LOG_OUT,
 } from '../actions/types';
-import Notify from '../helpers/Notify';
 
 const initialstate = {};
 
@@ -15,8 +14,6 @@ const login = (state = initialstate, action) => {
         ...state,
         isLoggingIn: true,
         isAuthenticated: false,
-        hasErrored: false,
-        error: null,
         user: null,
       };
     }
@@ -25,24 +22,18 @@ const login = (state = initialstate, action) => {
         ...state,
         isLoggingIn: false,
         isAuthenticated: true,
-        hasErrored: false,
-        error: null,
         user: action.user,
       };
     }
     case LOGIN_FAILURE: {
-      Notify.notifyError(`Login Failed. ${action.error}`);
       return {
         ...state,
         isLoggingIn: false,
         isAuthenticated: false,
-        hasErrored: true,
-        error: action.error,
         user: null,
       };
     }
     case LOG_OUT: {
-      Notify.notifySuccess('You successfully logged out');
       return {
         ...state,
         isAuthenticated: false,

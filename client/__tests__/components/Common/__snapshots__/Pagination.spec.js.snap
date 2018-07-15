@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> renders correctly when floating button is true 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Pagination
+    floatingButton={true}
+    onPageChange={[Function]}
+    pagination={
+      Object {
+        "currentPage": 4,
+        "dataCount": 20,
+        "pageCount": 8,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className="btn-flat btn-small waves-effect waves-light white red-text left"
+          id="floating-previous"
+          onClick={[Function]}
+        >
+          <i
+            className="fa fa-angle-double-left next-icon"
+          />
+        </button>,
+        <button
+          className="btn-flat btn-small waves-effect waves-light white red-text right"
+          id="floating-next"
+          onClick={[Function]}
+        >
+          <i
+            className="fa fa-angle-double-right next-icon"
+          />
+        </button>,
+      ],
+      "className": "row books-list",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <i
+            className="fa fa-angle-double-left next-icon"
+          />,
+          "className": "btn-flat btn-small waves-effect waves-light white red-text left",
+          "id": "floating-previous",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fa fa-angle-double-left next-icon",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <i
+            className="fa fa-angle-double-right next-icon"
+          />,
+          "className": "btn-flat btn-small waves-effect waves-light white red-text right",
+          "id": "floating-next",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fa fa-angle-double-right next-icon",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="btn-flat btn-small waves-effect waves-light white red-text left"
+            id="floating-previous"
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-angle-double-left next-icon"
+            />
+          </button>,
+          <button
+            className="btn-flat btn-small waves-effect waves-light white red-text right"
+            id="floating-next"
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-angle-double-right next-icon"
+            />
+          </button>,
+        ],
+        "className": "row books-list",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <i
+              className="fa fa-angle-double-left next-icon"
+            />,
+            "className": "btn-flat btn-small waves-effect waves-light white red-text left",
+            "id": "floating-previous",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "fa fa-angle-double-left next-icon",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <i
+              className="fa fa-angle-double-right next-icon"
+            />,
+            "className": "btn-flat btn-small waves-effect waves-light white red-text right",
+            "id": "floating-next",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "fa fa-angle-double-right next-icon",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -4,6 +4,7 @@ import { SIGN_UP_SUCCESS, SIGNING_UP, SIGN_UP_FAILURE } from './types';
 import { loginSuccess } from './login';
 import checkError from '../helpers/checkError';
 import setUser from '../helpers/setUser';
+import Notify from '../helpers/Notify';
 
 export const apiURL =
 process.env.NODE_ENV === 'production' ?
@@ -32,9 +33,11 @@ export const signUp = user => (dispatch) => {
       setUser(response);
       dispatch(loginSuccess(response.data.user));
       dispatch(push('/'));
+      Notify.notifySuccess('Sign Up Successful');
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(signUpFailure(errorMessage));
+      dispatch(signUpFailure());
+      Notify.notifyError(errorMessage);
     });
 };

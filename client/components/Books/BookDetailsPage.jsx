@@ -12,7 +12,7 @@ import {
 } from '../../actions/book';
 import PreLoader from '../Common/Preloader.jsx';
 import BookDetails from './BookDetails.jsx';
-import Review from '../Reviews/Reviews.jsx';
+import Reviews from '../Reviews/Reviews.jsx';
 
 /** @description container class for details of a book
  *
@@ -21,7 +21,7 @@ import Review from '../Reviews/Reviews.jsx';
  * @extends {React.Component}
  */
 
-class BookDetailsPage extends Component {
+export class BookDetailsPage extends Component {
   constructor(props) {
     super(props);
     this.renderError = this.renderError.bind(this);
@@ -72,8 +72,8 @@ class BookDetailsPage extends Component {
             <img className="oops-image" src={oopsImage} />
             <h5 className="flow-text grey-text
               text-darken-3">
-                {`The book you requested could not be retrieved.
-                ${this.props.getBookError}`}
+                {`The book you requested could not be retrieved.${
+                  this.props.getBookError}`}
             </h5>
           </div>
         </div>
@@ -90,7 +90,7 @@ class BookDetailsPage extends Component {
         <div>
           <BookDetails book={this.props.book} {...this.props} />
           <br />
-          <Review reviews={this.props.book.bookReviews} {...this.props} />
+          <Reviews reviews={this.props.book.bookReviews} {...this.props} />
         </div>
         }
       </div>
@@ -121,23 +121,14 @@ const mapStateToProps = state => ({
   ...state.login,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getBook: (bookId) => { dispatch(getBook(bookId)); },
-  favoriteBook: (bookId) => { dispatch(favoriteBook(bookId)); },
-  upvoteBook: (bookId) => { dispatch(upvoteBook(bookId)); },
-  downvoteBook: (bookId) => { dispatch(downvoteBook(bookId)); },
-  borrowBook: (userId, bookId, request) => {
-    dispatch(borrowBook(userId, bookId, request));
-  },
-  reviewBook: (bookId, review) => {
-    dispatch(reviewBook(bookId, review));
-  },
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookDetailsPage);
+const actionCreators = {
+  getBook,
+  favoriteBook,
+  upvoteBook,
+  downvoteBook,
+  borrowBook,
+  reviewBook,
+};
+
+export default connect(mapStateToProps, actionCreators)(BookDetailsPage);

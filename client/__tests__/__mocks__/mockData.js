@@ -41,13 +41,25 @@ const mockData = {
         userBooks: [
           {
             id: 4,
-            status: 'Returned',
+            status: 'Not Returned',
             createdAt: '2018-06-24T01:06:38.794Z',
             updatedAt: '2018-06-24T01:20:19.257Z',
             userId: 3,
             bookId: 99,
             borrowedBooks: {
               title: 'Lies That Bind Us',
+              author: 'Andrew Hart',
+            },
+          },
+          {
+            id: 7,
+            status: 'Not Returned',
+            createdAt: '2018-06-24T01:06:38.794Z',
+            updatedAt: '2018-06-24T01:20:19.257Z',
+            userId: 3,
+            bookId: 67,
+            borrowedBooks: {
+              title: 'New Book',
               author: 'Andrew Hart',
             },
           },
@@ -453,7 +465,7 @@ const mockData = {
     },
     searchBooksResponse: {
       message: 'Successful',
-      books: {
+      books: [{
         id: 97,
         title: 'A new book',
         author: 'Joanna Gaines',
@@ -468,6 +480,7 @@ const mockData = {
         createdAt: '2018-05-10T03:11:52.181Z',
         updatedAt: '2018-06-23T19:14:10.925Z',
       },
+      ],
       pagination: {
         pageCount: 1,
         pageSize: 1,

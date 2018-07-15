@@ -11,7 +11,7 @@ import BorrowBookForm from './Form/BorrowBookForm.jsx';
  *
  * @extends {React.Component}
  */
-class BookDetails extends Component {
+export class BookDetails extends Component {
   /**
    * @constructor create an instance of the BooksDetails component
    *
@@ -19,7 +19,6 @@ class BookDetails extends Component {
    */
   constructor(props) {
     super(props);
-    this.state = { isOpen: false };
     this.favoriteBook = this.favoriteBook.bind(this);
     this.upvoteBook = this.upvoteBook.bind(this);
     this.downvoteBook = this.downvoteBook.bind(this);
@@ -95,7 +94,7 @@ class BookDetails extends Component {
             </p>
             <div className='divider'></div>
             <p className="bold black-text">
-              <strong>Copies Borrowed: </strong>
+              <strong>Number of times borrowed: </strong>
               <span> {book.borrowCount} </span>
             </p>
             <div className='divider'></div>
@@ -110,22 +109,28 @@ class BookDetails extends Component {
             <div className='divider'></div><br />
             <div>
               <button className="btn btn-small primary-button"
+              id="borrow-book"
               onClick = { () => { $('#modal').modal('open'); }}
               disabled= { !this.props.isAuthenticated || book.quantity === 0 }>
                 Borrow Book
               </button>
               <div className="left">
                 <button className="btn btn-small book-detail-icons left"
-                  onClick={this.upvoteBook} disabled={this.props.isUpvoting}>
+                  id="upvote-book"
+                  onClick={this.upvoteBook}
+                  disabled={this.props.isUpvoting}>
                   <i className="material-icons prefix">thumb_up</i>
                   <span>{book.upvotes}</span>
                 </button>
-                <button className="btn btn-small book-detail-icons left" onClick
-                 ={this.downvoteBook} disabled={this.props.isDownvoting}>
+                <button className="btn btn-small book-detail-icons left"
+                  id="downvote-book"
+                  onClick={this.downvoteBook}
+                  disabled={this.props.isDownvoting}>
                   <i className="material-icons prefix">thumb_down</i>
                   <span>{book.downvotes}</span>
                 </button>
                 <button className="btn btn-small book-detail-icons left"
+                  id="favorite-book"
                   disabled={this.props.isFavoriting}
                   onClick={this.favoriteBook}>
                   <i className="material-icons prefix">favorite_border</i>

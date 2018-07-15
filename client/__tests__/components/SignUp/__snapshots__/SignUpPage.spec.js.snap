@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignUpPage /> should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SignUpPage
+    signUp={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="valign-wrapper"
+        style={
+          Object {
+            "backgroundImage": "url(test-file-stub)",
+          }
+        }
+      >
+        <div
+          className="col s1 m2 l4 "
+        />
+        <div
+          className="col s10 m7 l5"
+        >
+          <div
+            className="row form-wrap card-panel"
+          >
+            <ReduxForm
+              signUp={[Function]}
+              submitForm={[Function]}
+            />
+          </div>
+        </div>
+        <div
+          className="col s1 m2 l4"
+        />
+      </div>,
+      "className": "row wrap",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="col s1 m2 l4 "
+          />,
+          <div
+            className="col s10 m7 l5"
+          >
+            <div
+              className="row form-wrap card-panel"
+            >
+              <ReduxForm
+                signUp={[Function]}
+                submitForm={[Function]}
+              />
+            </div>
+          </div>,
+          <div
+            className="col s1 m2 l4"
+          />,
+        ],
+        "className": "valign-wrapper",
+        "style": Object {
+          "backgroundImage": "url(test-file-stub)",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "col s1 m2 l4 ",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="row form-wrap card-panel"
+            >
+              <ReduxForm
+                signUp={[Function]}
+                submitForm={[Function]}
+              />
+            </div>,
+            "className": "col s10 m7 l5",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ReduxForm
+                signUp={[Function]}
+                submitForm={[Function]}
+              />,
+              "className": "row form-wrap card-panel",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "signUp": [Function],
+                "submitForm": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "col s1 m2 l4",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="valign-wrapper"
+          style={
+            Object {
+              "backgroundImage": "url(test-file-stub)",
+            }
+          }
+        >
+          <div
+            className="col s1 m2 l4 "
+          />
+          <div
+            className="col s10 m7 l5"
+          >
+            <div
+              className="row form-wrap card-panel"
+            >
+              <ReduxForm
+                signUp={[Function]}
+                submitForm={[Function]}
+              />
+            </div>
+          </div>
+          <div
+            className="col s1 m2 l4"
+          />
+        </div>,
+        "className": "row wrap",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col s1 m2 l4 "
+            />,
+            <div
+              className="col s10 m7 l5"
+            >
+              <div
+                className="row form-wrap card-panel"
+              >
+                <ReduxForm
+                  signUp={[Function]}
+                  submitForm={[Function]}
+                />
+              </div>
+            </div>,
+            <div
+              className="col s1 m2 l4"
+            />,
+          ],
+          "className": "valign-wrapper",
+          "style": Object {
+            "backgroundImage": "url(test-file-stub)",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "col s1 m2 l4 ",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="row form-wrap card-panel"
+              >
+                <ReduxForm
+                  signUp={[Function]}
+                  submitForm={[Function]}
+                />
+              </div>,
+              "className": "col s10 m7 l5",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <ReduxForm
+                  signUp={[Function]}
+                  submitForm={[Function]}
+                />,
+                "className": "row form-wrap card-panel",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "signUp": [Function],
+                  "submitForm": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "col s1 m2 l4",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

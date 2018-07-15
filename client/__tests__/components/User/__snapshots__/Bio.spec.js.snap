@@ -1,0 +1,944 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Bio> should render user's bio correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Bio
+    bio={
+      Object {
+        "createdAt": "2018-05-10T03:11:52.181Z",
+        "email": "tester@gmail.com",
+        "firstName": "Tester",
+        "lastName": "User",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="row"
+      >
+        <div
+          className="profile-img-div left"
+        >
+          <img
+            className="profile-img responsive-img"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="bio-details left collection"
+        >
+          <p
+            className="collection-item"
+          >
+            <strong
+              className="bold primary-text"
+            >
+              First Name: 
+            </strong>
+            <span>
+               
+              Tester
+            </span>
+          </p>
+          <p
+            className="collection-item"
+          >
+            <strong
+              className="bold primary-text"
+            >
+              Last Name:
+            </strong>
+            <span>
+               
+              User
+            </span>
+          </p>
+          <p
+            className="collection-item"
+          >
+            <strong
+              className="bold primary-text"
+            >
+              Email:
+            </strong>
+            <span>
+               
+              tester@gmail.com
+            </span>
+          </p>
+          <p
+            className="collection-item"
+          >
+            <strong
+              className="bold primary-text"
+            >
+              Member Since:
+            </strong>
+            <span>
+               
+              2018-05-10
+            </span>
+          </p>
+        </div>
+      </div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="profile-img-div left"
+          >
+            <img
+              className="profile-img responsive-img"
+              src="test-file-stub"
+            />
+          </div>,
+          <div
+            className="bio-details left collection"
+          >
+            <p
+              className="collection-item"
+            >
+              <strong
+                className="bold primary-text"
+              >
+                First Name: 
+              </strong>
+              <span>
+                 
+                Tester
+              </span>
+            </p>
+            <p
+              className="collection-item"
+            >
+              <strong
+                className="bold primary-text"
+              >
+                Last Name:
+              </strong>
+              <span>
+                 
+                User
+              </span>
+            </p>
+            <p
+              className="collection-item"
+            >
+              <strong
+                className="bold primary-text"
+              >
+                Email:
+              </strong>
+              <span>
+                 
+                tester@gmail.com
+              </span>
+            </p>
+            <p
+              className="collection-item"
+            >
+              <strong
+                className="bold primary-text"
+              >
+                Member Since:
+              </strong>
+              <span>
+                 
+                2018-05-10
+              </span>
+            </p>
+          </div>,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              className="profile-img responsive-img"
+              src="test-file-stub"
+            />,
+            "className": "profile-img-div left",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "profile-img responsive-img",
+              "src": "test-file-stub",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="collection-item"
+              >
+                <strong
+                  className="bold primary-text"
+                >
+                  First Name: 
+                </strong>
+                <span>
+                   
+                  Tester
+                </span>
+              </p>,
+              <p
+                className="collection-item"
+              >
+                <strong
+                  className="bold primary-text"
+                >
+                  Last Name:
+                </strong>
+                <span>
+                   
+                  User
+                </span>
+              </p>,
+              <p
+                className="collection-item"
+              >
+                <strong
+                  className="bold primary-text"
+                >
+                  Email:
+                </strong>
+                <span>
+                   
+                  tester@gmail.com
+                </span>
+              </p>,
+              <p
+                className="collection-item"
+              >
+                <strong
+                  className="bold primary-text"
+                >
+                  Member Since:
+                </strong>
+                <span>
+                   
+                  2018-05-10
+                </span>
+              </p>,
+            ],
+            "className": "bio-details left collection",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong
+                    className="bold primary-text"
+                  >
+                    First Name: 
+                  </strong>,
+                  <span>
+                     
+                    Tester
+                  </span>,
+                ],
+                "className": "collection-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "First Name: ",
+                    "className": "bold primary-text",
+                  },
+                  "ref": null,
+                  "rendered": "First Name: ",
+                  "type": "strong",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Tester",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Tester",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong
+                    className="bold primary-text"
+                  >
+                    Last Name:
+                  </strong>,
+                  <span>
+                     
+                    User
+                  </span>,
+                ],
+                "className": "collection-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Last Name:",
+                    "className": "bold primary-text",
+                  },
+                  "ref": null,
+                  "rendered": "Last Name:",
+                  "type": "strong",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "User",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "User",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong
+                    className="bold primary-text"
+                  >
+                    Email:
+                  </strong>,
+                  <span>
+                     
+                    tester@gmail.com
+                  </span>,
+                ],
+                "className": "collection-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Email:",
+                    "className": "bold primary-text",
+                  },
+                  "ref": null,
+                  "rendered": "Email:",
+                  "type": "strong",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "tester@gmail.com",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "tester@gmail.com",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong
+                    className="bold primary-text"
+                  >
+                    Member Since:
+                  </strong>,
+                  <span>
+                     
+                    2018-05-10
+                  </span>,
+                ],
+                "className": "collection-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Member Since:",
+                    "className": "bold primary-text",
+                  },
+                  "ref": null,
+                  "rendered": "Member Since:",
+                  "type": "strong",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "2018-05-10",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "2018-05-10",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row"
+        >
+          <div
+            className="profile-img-div left"
+          >
+            <img
+              className="profile-img responsive-img"
+              src="test-file-stub"
+            />
+          </div>
+          <div
+            className="bio-details left collection"
+          >
+            <p
+              className="collection-item"
+            >
+              <strong
+                className="bold primary-text"
+              >
+                First Name: 
+              </strong>
+              <span>
+                 
+                Tester
+              </span>
+            </p>
+            <p
+              className="collection-item"
+            >
+              <strong
+                className="bold primary-text"
+              >
+                Last Name:
+              </strong>
+              <span>
+                 
+                User
+              </span>
+            </p>
+            <p
+              className="collection-item"
+            >
+              <strong
+                className="bold primary-text"
+              >
+                Email:
+              </strong>
+              <span>
+                 
+                tester@gmail.com
+              </span>
+            </p>
+            <p
+              className="collection-item"
+            >
+              <strong
+                className="bold primary-text"
+              >
+                Member Since:
+              </strong>
+              <span>
+                 
+                2018-05-10
+              </span>
+            </p>
+          </div>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="profile-img-div left"
+            >
+              <img
+                className="profile-img responsive-img"
+                src="test-file-stub"
+              />
+            </div>,
+            <div
+              className="bio-details left collection"
+            >
+              <p
+                className="collection-item"
+              >
+                <strong
+                  className="bold primary-text"
+                >
+                  First Name: 
+                </strong>
+                <span>
+                   
+                  Tester
+                </span>
+              </p>
+              <p
+                className="collection-item"
+              >
+                <strong
+                  className="bold primary-text"
+                >
+                  Last Name:
+                </strong>
+                <span>
+                   
+                  User
+                </span>
+              </p>
+              <p
+                className="collection-item"
+              >
+                <strong
+                  className="bold primary-text"
+                >
+                  Email:
+                </strong>
+                <span>
+                   
+                  tester@gmail.com
+                </span>
+              </p>
+              <p
+                className="collection-item"
+              >
+                <strong
+                  className="bold primary-text"
+                >
+                  Member Since:
+                </strong>
+                <span>
+                   
+                  2018-05-10
+                </span>
+              </p>
+            </div>,
+          ],
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                className="profile-img responsive-img"
+                src="test-file-stub"
+              />,
+              "className": "profile-img-div left",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "profile-img responsive-img",
+                "src": "test-file-stub",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p
+                  className="collection-item"
+                >
+                  <strong
+                    className="bold primary-text"
+                  >
+                    First Name: 
+                  </strong>
+                  <span>
+                     
+                    Tester
+                  </span>
+                </p>,
+                <p
+                  className="collection-item"
+                >
+                  <strong
+                    className="bold primary-text"
+                  >
+                    Last Name:
+                  </strong>
+                  <span>
+                     
+                    User
+                  </span>
+                </p>,
+                <p
+                  className="collection-item"
+                >
+                  <strong
+                    className="bold primary-text"
+                  >
+                    Email:
+                  </strong>
+                  <span>
+                     
+                    tester@gmail.com
+                  </span>
+                </p>,
+                <p
+                  className="collection-item"
+                >
+                  <strong
+                    className="bold primary-text"
+                  >
+                    Member Since:
+                  </strong>
+                  <span>
+                     
+                    2018-05-10
+                  </span>
+                </p>,
+              ],
+              "className": "bio-details left collection",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong
+                      className="bold primary-text"
+                    >
+                      First Name: 
+                    </strong>,
+                    <span>
+                       
+                      Tester
+                    </span>,
+                  ],
+                  "className": "collection-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "First Name: ",
+                      "className": "bold primary-text",
+                    },
+                    "ref": null,
+                    "rendered": "First Name: ",
+                    "type": "strong",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Tester",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Tester",
+                    ],
+                    "type": "span",
+                  },
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong
+                      className="bold primary-text"
+                    >
+                      Last Name:
+                    </strong>,
+                    <span>
+                       
+                      User
+                    </span>,
+                  ],
+                  "className": "collection-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Last Name:",
+                      "className": "bold primary-text",
+                    },
+                    "ref": null,
+                    "rendered": "Last Name:",
+                    "type": "strong",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "User",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "User",
+                    ],
+                    "type": "span",
+                  },
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong
+                      className="bold primary-text"
+                    >
+                      Email:
+                    </strong>,
+                    <span>
+                       
+                      tester@gmail.com
+                    </span>,
+                  ],
+                  "className": "collection-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Email:",
+                      "className": "bold primary-text",
+                    },
+                    "ref": null,
+                    "rendered": "Email:",
+                    "type": "strong",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "tester@gmail.com",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "tester@gmail.com",
+                    ],
+                    "type": "span",
+                  },
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong
+                      className="bold primary-text"
+                    >
+                      Member Since:
+                    </strong>,
+                    <span>
+                       
+                      2018-05-10
+                    </span>,
+                  ],
+                  "className": "collection-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Member Since:",
+                      "className": "bold primary-text",
+                    },
+                    "ref": null,
+                    "rendered": "Member Since:",
+                    "type": "strong",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "2018-05-10",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "2018-05-10",
+                    ],
+                    "type": "span",
+                  },
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

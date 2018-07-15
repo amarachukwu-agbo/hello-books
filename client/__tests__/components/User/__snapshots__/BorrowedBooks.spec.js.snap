@@ -1,0 +1,1200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BorrowedBooks /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BorrowedBooks
+    books={
+      Array [
+        Object {
+          "bookId": 99,
+          "borrowedBooks": Object {
+            "author": "Andrew Hart",
+            "title": "Lies That Bind Us",
+          },
+          "createdAt": "2018-06-24T01:06:38.794Z",
+          "id": 4,
+          "status": "Not Returned",
+          "updatedAt": "2018-06-24T01:20:19.257Z",
+          "userId": 3,
+        },
+        Object {
+          "bookId": 67,
+          "borrowedBooks": Object {
+            "author": "Andrew Hart",
+            "title": "New Book",
+          },
+          "createdAt": "2018-06-24T01:06:38.794Z",
+          "id": 7,
+          "status": "Not Returned",
+          "updatedAt": "2018-06-24T01:20:19.257Z",
+          "userId": 3,
+        },
+      ]
+    }
+    isSendingRequest={false}
+    returnBook={[Function]}
+    returnRequests={
+      Array [
+        Object {
+          "bookId": 99,
+          "comments": null,
+          "createdAt": "2018-06-24T01:14:32.115Z",
+          "id": 4,
+          "returnRequests": Object {
+            "author": "Andrew Hart",
+            "title": "Lies That Bind Us",
+          },
+          "status": "Accepted",
+          "updatedAt": "2018-06-24T01:20:19.244Z",
+          "userId": 3,
+        },
+      ]
+    }
+    user={
+      Object {
+        "id": 3,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <table
+        className="striped responsive-table"
+      >
+        <thead>
+          <tr>
+            <th>
+              Book
+            </th>
+            <th>
+              Date Borrowed
+            </th>
+            <th>
+              Status
+            </th>
+            <th>
+              Date Returned
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Lies That Bind Us
+            </td>
+            <td>
+               
+              2018-06-24
+               
+            </td>
+            <td>
+               
+              Not Returned
+               
+            </td>
+            <td>
+               
+              
+               
+            </td>
+          </tr>
+          <tr>
+            <td>
+              New Book
+            </td>
+            <td>
+               
+              2018-06-24
+               
+            </td>
+            <td>
+               
+              Not Returned
+               
+            </td>
+            <td>
+               
+              
+               
+            </td>
+            <td>
+              <button
+                className="btn btn-small btn-wave waves-effect primary-button"
+                disabled={false}
+                id="return-button7"
+                onClick={[Function]}
+              >
+                Return
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>,
+      "className": "section",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <thead>
+            <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Date Borrowed
+              </th>
+              <th>
+                Status
+              </th>
+              <th>
+                Date Returned
+              </th>
+            </tr>
+          </thead>,
+          <tbody>
+            <tr>
+              <td>
+                Lies That Bind Us
+              </td>
+              <td>
+                 
+                2018-06-24
+                 
+              </td>
+              <td>
+                 
+                Not Returned
+                 
+              </td>
+              <td>
+                 
+                
+                 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                New Book
+              </td>
+              <td>
+                 
+                2018-06-24
+                 
+              </td>
+              <td>
+                 
+                Not Returned
+                 
+              </td>
+              <td>
+                 
+                
+                 
+              </td>
+              <td>
+                <button
+                  className="btn btn-small btn-wave waves-effect primary-button"
+                  disabled={false}
+                  id="return-button7"
+                  onClick={[Function]}
+                >
+                  Return
+                </button>
+              </td>
+            </tr>
+          </tbody>,
+        ],
+        "className": "striped responsive-table",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Date Borrowed
+              </th>
+              <th>
+                Status
+              </th>
+              <th>
+                Date Returned
+              </th>
+            </tr>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <th>
+                  Book
+                </th>,
+                <th>
+                  Date Borrowed
+                </th>,
+                <th>
+                  Status
+                </th>,
+                <th>
+                  Date Returned
+                </th>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Book",
+                },
+                "ref": null,
+                "rendered": "Book",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Date Borrowed",
+                },
+                "ref": null,
+                "rendered": "Date Borrowed",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Status",
+                },
+                "ref": null,
+                "rendered": "Status",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Date Returned",
+                },
+                "ref": null,
+                "rendered": "Date Returned",
+                "type": "th",
+              },
+            ],
+            "type": "tr",
+          },
+          "type": "thead",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <tr>
+                <td>
+                  Lies That Bind Us
+                </td>
+                <td>
+                   
+                  2018-06-24
+                   
+                </td>
+                <td>
+                   
+                  Not Returned
+                   
+                </td>
+                <td>
+                   
+                  
+                   
+                </td>
+              </tr>,
+              <tr>
+                <td>
+                  New Book
+                </td>
+                <td>
+                   
+                  2018-06-24
+                   
+                </td>
+                <td>
+                   
+                  Not Returned
+                   
+                </td>
+                <td>
+                   
+                  
+                   
+                </td>
+                <td>
+                  <button
+                    className="btn btn-small btn-wave waves-effect primary-button"
+                    disabled={false}
+                    id="return-button7"
+                    onClick={[Function]}
+                  >
+                    Return
+                  </button>
+                </td>
+              </tr>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "4",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <td>
+                    Lies That Bind Us
+                  </td>,
+                  <td>
+                     
+                    2018-06-24
+                     
+                  </td>,
+                  <td>
+                     
+                    Not Returned
+                     
+                  </td>,
+                  <td>
+                     
+                    
+                     
+                  </td>,
+                  false,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Lies That Bind Us",
+                  },
+                  "ref": null,
+                  "rendered": "Lies That Bind Us",
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "2018-06-24",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "2018-06-24",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Not Returned",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Not Returned",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                false,
+              ],
+              "type": "tr",
+            },
+            Object {
+              "instance": null,
+              "key": "7",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <td>
+                    New Book
+                  </td>,
+                  <td>
+                     
+                    2018-06-24
+                     
+                  </td>,
+                  <td>
+                     
+                    Not Returned
+                     
+                  </td>,
+                  <td>
+                     
+                    
+                     
+                  </td>,
+                  <td>
+                    <button
+                      className="btn btn-small btn-wave waves-effect primary-button"
+                      disabled={false}
+                      id="return-button7"
+                      onClick={[Function]}
+                    >
+                      Return
+                    </button>
+                  </td>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "New Book",
+                  },
+                  "ref": null,
+                  "rendered": "New Book",
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "2018-06-24",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "2018-06-24",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Not Returned",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Not Returned",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-small btn-wave waves-effect primary-button"
+                      disabled={false}
+                      id="return-button7"
+                      onClick={[Function]}
+                    >
+                      Return
+                    </button>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Return",
+                      "className": "btn btn-small btn-wave waves-effect primary-button",
+                      "disabled": false,
+                      "id": "return-button7",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Return",
+                    "type": "button",
+                  },
+                  "type": "td",
+                },
+              ],
+              "type": "tr",
+            },
+          ],
+          "type": "tbody",
+        },
+      ],
+      "type": "table",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <table
+          className="striped responsive-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Date Borrowed
+              </th>
+              <th>
+                Status
+              </th>
+              <th>
+                Date Returned
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Lies That Bind Us
+              </td>
+              <td>
+                 
+                2018-06-24
+                 
+              </td>
+              <td>
+                 
+                Not Returned
+                 
+              </td>
+              <td>
+                 
+                
+                 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                New Book
+              </td>
+              <td>
+                 
+                2018-06-24
+                 
+              </td>
+              <td>
+                 
+                Not Returned
+                 
+              </td>
+              <td>
+                 
+                
+                 
+              </td>
+              <td>
+                <button
+                  className="btn btn-small btn-wave waves-effect primary-button"
+                  disabled={false}
+                  id="return-button7"
+                  onClick={[Function]}
+                >
+                  Return
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>,
+        "className": "section",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <thead>
+              <tr>
+                <th>
+                  Book
+                </th>
+                <th>
+                  Date Borrowed
+                </th>
+                <th>
+                  Status
+                </th>
+                <th>
+                  Date Returned
+                </th>
+              </tr>
+            </thead>,
+            <tbody>
+              <tr>
+                <td>
+                  Lies That Bind Us
+                </td>
+                <td>
+                   
+                  2018-06-24
+                   
+                </td>
+                <td>
+                   
+                  Not Returned
+                   
+                </td>
+                <td>
+                   
+                  
+                   
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  New Book
+                </td>
+                <td>
+                   
+                  2018-06-24
+                   
+                </td>
+                <td>
+                   
+                  Not Returned
+                   
+                </td>
+                <td>
+                   
+                  
+                   
+                </td>
+                <td>
+                  <button
+                    className="btn btn-small btn-wave waves-effect primary-button"
+                    disabled={false}
+                    id="return-button7"
+                    onClick={[Function]}
+                  >
+                    Return
+                  </button>
+                </td>
+              </tr>
+            </tbody>,
+          ],
+          "className": "striped responsive-table",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <tr>
+                <th>
+                  Book
+                </th>
+                <th>
+                  Date Borrowed
+                </th>
+                <th>
+                  Status
+                </th>
+                <th>
+                  Date Returned
+                </th>
+              </tr>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <th>
+                    Book
+                  </th>,
+                  <th>
+                    Date Borrowed
+                  </th>,
+                  <th>
+                    Status
+                  </th>,
+                  <th>
+                    Date Returned
+                  </th>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Book",
+                  },
+                  "ref": null,
+                  "rendered": "Book",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Date Borrowed",
+                  },
+                  "ref": null,
+                  "rendered": "Date Borrowed",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Status",
+                  },
+                  "ref": null,
+                  "rendered": "Status",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Date Returned",
+                  },
+                  "ref": null,
+                  "rendered": "Date Returned",
+                  "type": "th",
+                },
+              ],
+              "type": "tr",
+            },
+            "type": "thead",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <tr>
+                  <td>
+                    Lies That Bind Us
+                  </td>
+                  <td>
+                     
+                    2018-06-24
+                     
+                  </td>
+                  <td>
+                     
+                    Not Returned
+                     
+                  </td>
+                  <td>
+                     
+                    
+                     
+                  </td>
+                </tr>,
+                <tr>
+                  <td>
+                    New Book
+                  </td>
+                  <td>
+                     
+                    2018-06-24
+                     
+                  </td>
+                  <td>
+                     
+                    Not Returned
+                     
+                  </td>
+                  <td>
+                     
+                    
+                     
+                  </td>
+                  <td>
+                    <button
+                      className="btn btn-small btn-wave waves-effect primary-button"
+                      disabled={false}
+                      id="return-button7"
+                      onClick={[Function]}
+                    >
+                      Return
+                    </button>
+                  </td>
+                </tr>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "4",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td>
+                      Lies That Bind Us
+                    </td>,
+                    <td>
+                       
+                      2018-06-24
+                       
+                    </td>,
+                    <td>
+                       
+                      Not Returned
+                       
+                    </td>,
+                    <td>
+                       
+                      
+                       
+                    </td>,
+                    false,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Lies That Bind Us",
+                    },
+                    "ref": null,
+                    "rendered": "Lies That Bind Us",
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "2018-06-24",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "2018-06-24",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Not Returned",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Not Returned",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  false,
+                ],
+                "type": "tr",
+              },
+              Object {
+                "instance": null,
+                "key": "7",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td>
+                      New Book
+                    </td>,
+                    <td>
+                       
+                      2018-06-24
+                       
+                    </td>,
+                    <td>
+                       
+                      Not Returned
+                       
+                    </td>,
+                    <td>
+                       
+                      
+                       
+                    </td>,
+                    <td>
+                      <button
+                        className="btn btn-small btn-wave waves-effect primary-button"
+                        disabled={false}
+                        id="return-button7"
+                        onClick={[Function]}
+                      >
+                        Return
+                      </button>
+                    </td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "New Book",
+                    },
+                    "ref": null,
+                    "rendered": "New Book",
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "2018-06-24",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "2018-06-24",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Not Returned",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Not Returned",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <button
+                        className="btn btn-small btn-wave waves-effect primary-button"
+                        disabled={false}
+                        id="return-button7"
+                        onClick={[Function]}
+                      >
+                        Return
+                      </button>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Return",
+                        "className": "btn btn-small btn-wave waves-effect primary-button",
+                        "disabled": false,
+                        "id": "return-button7",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "Return",
+                      "type": "button",
+                    },
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+            ],
+            "type": "tbody",
+          },
+        ],
+        "type": "table",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

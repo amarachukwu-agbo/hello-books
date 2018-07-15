@@ -17,10 +17,10 @@ const AdminReturnRequests = ({
   returnRequests,
   isHandlingReturnRequest,
 }) => {
-  if (!returnRequests) {
+  if (!returnRequests.length) {
     return (
         <div className="row center">
-          <p className="grey-text">You have no return requests </p>
+          <p className="grey-text">You have no return requests</p>
         </div>
     );
   }
@@ -53,6 +53,7 @@ const AdminReturnRequests = ({
                 </td>
                 <td> <button className="btn btn-wave waves-effect
                   btn-small primary-button"
+                  id={`accept-button${request.id}`}
                   disabled={request.status !== 'Pending' ||
                   isHandlingReturnRequest }
                   onClick={() => {
@@ -66,6 +67,7 @@ const AdminReturnRequests = ({
                 >Accept</button></td>
                 <td> <button className="btn btn-wave action-button
                   waves-effect btn-small"
+                  id={`decline-button${request.id}`}
                   disabled={request.status !== 'Pending' ||
                   isHandlingReturnRequest }
                   onClick={() => {

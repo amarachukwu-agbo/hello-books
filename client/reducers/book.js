@@ -18,7 +18,6 @@ import {
   REVIEW_BOOK_REQUEST,
   REVIEW_BOOK_FAILURE,
 } from '../actions/types';
-import Notify from '../helpers/Notify';
 
 const initialState = {};
 
@@ -52,14 +51,12 @@ const book = (state = initialState, action) => {
       };
     }
     case FAVORITE_FAILURE: {
-      Notify.notifyInfo(action.error);
       return {
         ...state,
         isFavoriting: false,
       };
     }
     case FAVORITE_SUCCESS: {
-      Notify.notifySuccess('Book has been added to favorites');
       return {
         ...state,
         book: { ...state.book, favCount: action.favCount },
@@ -73,7 +70,6 @@ const book = (state = initialState, action) => {
       };
     }
     case UPVOTE_FAILURE: {
-      Notify.notifyInfo(action.error);
       return {
         ...state,
         isUpvoting: false,
@@ -97,7 +93,6 @@ const book = (state = initialState, action) => {
       };
     }
     case DOWNVOTE_FAILURE: {
-      Notify.notifyInfo(action.error);
       return {
         ...state,
         isDownvoting: false,
@@ -121,17 +116,12 @@ const book = (state = initialState, action) => {
       };
     }
     case BORROW_BOOK_FAILURE: {
-      Notify.notifyError(action.error);
       return {
         ...state,
         isBorrowing: false,
       };
     }
     case BORROW_BOOK_SUCCESS: {
-      Notify
-        .notifySuccess(`Your request to borrow
-        ${action.book.title} has been sent.
-        Check status in your profile`);
       return {
         ...state,
         isBorrowing: false,
@@ -145,14 +135,12 @@ const book = (state = initialState, action) => {
       };
     }
     case REVIEW_BOOK_FAILURE: {
-      Notify.notifyError(action.error);
       return {
         ...state,
         isReviewing: false,
       };
     }
     case REVIEW_BOOK_SUCCESS: {
-      Notify.notifySuccess('Your review has been created');
       return {
         ...state,
         book: {

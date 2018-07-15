@@ -15,7 +15,8 @@ const BooksList = (props) => {
     return (
       <div className="row center">
         <h3 className="red-text flow-text">
-          Oops! Seems no books are available at the moment </h3>
+          Oops! Seems no books are available at the moment
+        </h3>
       </div>
     );
   }

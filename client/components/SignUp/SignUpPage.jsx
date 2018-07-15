@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Navbar from '../Common/Navbar.jsx';
 import books2 from '../../public/images/books(4).jpg';
-import PageFooter from '../Common/PageFooter.jsx';
 import SignUpForm from './SignUpForm.jsx';
 import { signUp } from '../../actions/signUp';
 
@@ -14,7 +12,7 @@ import { signUp } from '../../actions/signUp';
  *
  * @extends {React.Component}
  */
-class SignUpPage extends Component {
+export class SignUpPage extends Component {
   /**
    * @constructor create an instance of the component
    *
@@ -38,7 +36,7 @@ class SignUpPage extends Component {
     const {
       firstName, lastName, email, password,
     } = values;
-    this.props.handler({
+    this.props.signUp({
       firstName, lastName, email, password,
     });
   }
@@ -49,17 +47,15 @@ class SignUpPage extends Component {
     };
     return (
       <div className="row wrap">
-        <Navbar />
         <div className="valign-wrapper" style={style}>
           <div className="col s1 m2 l4 "></div>
           <div className="col s10 m7 l5">
             <div className="row form-wrap card-panel">
-                <SignUpForm submitForm={this.props.signUp} {...this.props}/>
+                <SignUpForm submitForm={this.submitForm} {...this.props}/>
             </div>
           </div>
           <div className="col s1 m2 l4"></div>
         </div>
-        <PageFooter />
       </div>
     );
   }
@@ -69,12 +65,13 @@ SignUpPage.propTypes = {
   signUp: propTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-  signUp: (user) => { dispatch(signUp(user)); },
-});
 
 const mapStateToProps = state => ({
   ...state.signUp,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);
+const actionCreators = {
+  signUp,
+};
+
+export default connect(mapStateToProps, actionCreators)(SignUpPage);

@@ -16,7 +16,7 @@ const BorrowedBooks = (props) => {
   if (!books.length) {
     return (
       <div className="row center">
-        <p className="grey-text">You have no borrowed books </p>
+        <p className="grey-text">You have no borrowed books</p>
       </div>
     );
   }
@@ -44,6 +44,7 @@ const BorrowedBooks = (props) => {
                 !returnRequests.find(request =>
                   request.bookId === book.bookId) &&
                 <td><button onClick={() => returnBook(user.id, book.bookId)}
+                  id={`return-button${book.id}`}
                   className="btn btn-small btn-wave waves-effect primary-button"
                   disabled={isSendingRequest} >Return</button></td>
               }

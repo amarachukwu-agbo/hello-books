@@ -3,10 +3,8 @@ import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Slider, Slide } from 'react-materialize';
-import Navbar from '../Common/Navbar.jsx';
 import books4 from '../../public/images/books(4).jpg';
 import books1 from '../../public/images/books(1).jpg';
-import PageFooter from '../Common/PageFooter.jsx';
 import BooksList from '../Books/BooksList.jsx';
 import Preloader from '../Common/Preloader.jsx';
 import {
@@ -26,7 +24,7 @@ import Pagination from '../Common/Pagination.jsx';
  *
  * @extends {React.Component}
  */
-class IndexPage extends Component {
+export class IndexPage extends Component {
   /**
    * @method componentDidMount
    * @description get books on page 1
@@ -43,7 +41,6 @@ class IndexPage extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div>
           <Slider indicators={false} className="slider-div">
             <Slide
@@ -91,8 +88,8 @@ class IndexPage extends Component {
             {this.props.error &&
               <div className="row center">
                 <h6 className="flow-text red-text">
-                  {`Oops! Couldn't fetch available books.
-                    ${this.props.error}`}
+                  {`Oops! Couldn't fetch available books. ${
+                    this.props.error}`}
                 </h6>
               </div>
             }
@@ -126,9 +123,10 @@ class IndexPage extends Component {
             }
             {this.props.upvotedError &&
               <div className="row center">
-                <h6 className="flow-text red-text">
-                  {`Oops! Couldn't fetch available books.
-                  ${this.props.upvotedError}`}
+                <h6 id="upvoted-error"
+                  className="flow-text red-text">
+                  {`Oops! Couldn't fetch available books. ${
+                    this.props.upvotedError}`}
                 </h6>
               </div>
             }
@@ -137,13 +135,12 @@ class IndexPage extends Component {
               <BooksList books={this.props.upvotedBooks} />
               <Pagination pagination={this.props.upvotedBooksPagination}
                 floatingButton = { true }
-                onPageChange ={page => (this.props.getMostUpvotedBooks(page))}
+                onPageChange ={this.props.getMostUpvotedBooks}
                 />
               </div>
             }
           </div>
         </div>
-        <PageFooter />
       </div>
     );
   }
@@ -161,6 +158,7 @@ IndexPage.propTypes = {
   error: propTypes.string,
   isFetching: propTypes.bool,
   searchError: propTypes.string,
+  upvotedBooksPagination: propTypes.object,
 };
 
 /**
@@ -174,20 +172,11 @@ const mapStateToProps = state => ({
   ...state.mostUpvotedBooks,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getBooks: (page) => { dispatch(getBooks(page)); },
-  searchBooks: (searchBy, searchParam) => {
-    dispatch(searchBooks(searchBy, searchParam));
-  },
-  getMostUpvotedBooks: (page) => {
-    dispatch(getMostUpvotedBooks(page));
-  },
-});
+// action creators
+const actionCreators = {
+  getBooks,
+  searchBooks,
+  getMostUpvotedBooks,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
+export default connect(mapStateToProps, actionCreators)(IndexPage);

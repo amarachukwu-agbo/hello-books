@@ -28,6 +28,7 @@ const ReviewForm = ({
     <div className="books-list">
       <div className="input-field">
         <Field name="review" label="Review" type="textarea"
+          id="review"
           placeholder="Add a review ..." component={TextArea} />
       </div>
       <div>

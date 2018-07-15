@@ -114,7 +114,6 @@ describe('Books actions', () => {
       type: actionTypes.ADDING_BOOK,
     }, {
       type: actionTypes.ADD_BOOK_FAILURE,
-      error: books.addBookErrorResponse.error,
     },
     ];
     const store = mockStore({});
@@ -215,7 +214,6 @@ describe('Books actions', () => {
       type: actionTypes.EDIT_BOOK_REQUEST,
     }, {
       type: actionTypes.EDIT_BOOK_FAILURE,
-      error: books.editBookErrorResponse.error,
     },
     ];
     const store = mockStore({});
@@ -260,7 +258,6 @@ describe('Books actions', () => {
       type: actionTypes.DELETE_BOOK_REQUEST,
     }, {
       type: actionTypes.DELETE_BOOK_FAILURE,
-      deleteError: books.deleteBookErrorResponse.error,
     },
     ];
     const store = mockStore({});
