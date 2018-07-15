@@ -6,7 +6,7 @@ import * as actionTypes from '../../actions/types';
 import {
   getBorrowRequests,
   handleBorrowRequest,
-} from '../../actions/borrowrequests';
+} from '../../actions/borrowRequests';
 
 describe('Borrow Requests actions', () => {
   const mockStore = configureStore([thunk]);
