@@ -16,7 +16,7 @@ import EditBookForm from './Form/EditBookForm.jsx';
  *
  * @extends {React.Component}
  */
-class AdminBooksPage extends Component {
+export class AdminBooksPage extends Component {
   /**
    * @constructor create an instance of the component
    *
@@ -132,7 +132,7 @@ class AdminBooksPage extends Component {
           deleteBook = { this.deleteBook }
           isDeleting = { this.props.isDeleting }
         />
-        <Pagination onPageChange = {page => this.props.getBooks(page) }
+        <Pagination onPageChange = { this.props.getBooks }
               pagination = { this.props.pagination }
             />
         </div>
@@ -180,20 +180,11 @@ const mapStateToProps = state => ({
   ...state.books,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getBooks: (page) => { dispatch(getBooks(page)); },
-  deleteBook: (bookId) => {
-    dispatch(deleteBook(bookId));
-  },
-  editBook: (bookId, book) => {
-    dispatch(editBook(bookId, book));
-  },
-});
+// action creators
+const actionCreators = {
+  getBooks,
+  deleteBook,
+  editBook,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminBooksPage);
+export default connect(mapStateToProps, actionCreators)(AdminBooksPage);

@@ -14,7 +14,7 @@ const BorrowRequests = (props) => {
   if (!requests.length) {
     return (
       <div className="row center">
-        <p className="grey-text">You have no pending borrow requests </p>
+        <p className="grey-text">You have no pending borrow requests</p>
       </div>
     );
   }

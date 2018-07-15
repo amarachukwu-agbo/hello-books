@@ -52,7 +52,7 @@ class Reviews extends Component {
     if (!reviews.length) {
       return (
         <div className="container center">
-          <p> No Reviews yet.</p>
+          <p>No Reviews yet.</p>
         </div>
       );
     }
@@ -103,7 +103,6 @@ Reviews.propTypes = {
   isAuthenticated: propTypes.bool,
   isReviewing: propTypes.bool,
   reviewBook: propTypes.func.isRequired,
-  user: propTypes.object,
   book: propTypes.object.isRequired,
 };
 

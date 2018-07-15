@@ -1,0 +1,855 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BorrowRequests/> should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BorrowRequests
+    requests={
+      Array [
+        Object {
+          "bookId": 99,
+          "borrowRequests": Object {
+            "author": "Andrew Hart",
+            "title": "Lies That Bind Us",
+          },
+          "comments": "Nil",
+          "createdAt": "2018-06-24T00:52:46.370Z",
+          "id": 5,
+          "reason": "Research",
+          "returnDate": "2018-12-07T23:00:00.000Z",
+          "status": "Accepted",
+          "updatedAt": "2018-06-24T01:06:38.789Z",
+          "userId": 3,
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <table
+        className="striped responsive-table"
+      >
+        <thead>
+          <tr>
+            <th>
+              Book
+            </th>
+            <th>
+              Author
+            </th>
+            <th>
+              Date
+            </th>
+            <th>
+              Status
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+               
+              Lies That Bind Us
+               
+            </td>
+            <td>
+               
+              Andrew Hart
+               
+            </td>
+            <td>
+               
+              2018-06-24
+               
+            </td>
+            <td>
+              <button
+                className="btn-flat btn-small"
+              >
+                <span
+                  className="red-text"
+                >
+                  ● 
+                </span>
+                Accepted
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>,
+      "className": "section",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <thead>
+            <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Author
+              </th>
+              <th>
+                Date
+              </th>
+              <th>
+                Status
+              </th>
+            </tr>
+          </thead>,
+          <tbody>
+            <tr>
+              <td>
+                 
+                Lies That Bind Us
+                 
+              </td>
+              <td>
+                 
+                Andrew Hart
+                 
+              </td>
+              <td>
+                 
+                2018-06-24
+                 
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                >
+                  <span
+                    className="red-text"
+                  >
+                    ● 
+                  </span>
+                  Accepted
+                </button>
+              </td>
+            </tr>
+          </tbody>,
+        ],
+        "className": "striped responsive-table",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Author
+              </th>
+              <th>
+                Date
+              </th>
+              <th>
+                Status
+              </th>
+            </tr>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <th>
+                  Book
+                </th>,
+                <th>
+                  Author
+                </th>,
+                <th>
+                  Date
+                </th>,
+                <th>
+                  Status
+                </th>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Book",
+                },
+                "ref": null,
+                "rendered": "Book",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Author",
+                },
+                "ref": null,
+                "rendered": "Author",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Date",
+                },
+                "ref": null,
+                "rendered": "Date",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Status",
+                },
+                "ref": null,
+                "rendered": "Status",
+                "type": "th",
+              },
+            ],
+            "type": "tr",
+          },
+          "type": "thead",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <tr>
+                <td>
+                   
+                  Lies That Bind Us
+                   
+                </td>
+                <td>
+                   
+                  Andrew Hart
+                   
+                </td>
+                <td>
+                   
+                  2018-06-24
+                   
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                  >
+                    <span
+                      className="red-text"
+                    >
+                      ● 
+                    </span>
+                    Accepted
+                  </button>
+                </td>
+              </tr>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "5",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <td>
+                     
+                    Lies That Bind Us
+                     
+                  </td>,
+                  <td>
+                     
+                    Andrew Hart
+                     
+                  </td>,
+                  <td>
+                     
+                    2018-06-24
+                     
+                  </td>,
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                    >
+                      <span
+                        className="red-text"
+                      >
+                        ● 
+                      </span>
+                      Accepted
+                    </button>
+                  </td>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Lies That Bind Us",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Lies That Bind Us",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "Andrew Hart",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "Andrew Hart",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "2018-06-24",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "2018-06-24",
+                    " ",
+                  ],
+                  "type": "td",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn-flat btn-small"
+                    >
+                      <span
+                        className="red-text"
+                      >
+                        ● 
+                      </span>
+                      Accepted
+                    </button>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="red-text"
+                        >
+                          ● 
+                        </span>,
+                        "Accepted",
+                      ],
+                      "className": "btn-flat btn-small",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "● ",
+                          "className": "red-text",
+                        },
+                        "ref": null,
+                        "rendered": "● ",
+                        "type": "span",
+                      },
+                      "Accepted",
+                    ],
+                    "type": "button",
+                  },
+                  "type": "td",
+                },
+              ],
+              "type": "tr",
+            },
+          ],
+          "type": "tbody",
+        },
+      ],
+      "type": "table",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <table
+          className="striped responsive-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Book
+              </th>
+              <th>
+                Author
+              </th>
+              <th>
+                Date
+              </th>
+              <th>
+                Status
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                 
+                Lies That Bind Us
+                 
+              </td>
+              <td>
+                 
+                Andrew Hart
+                 
+              </td>
+              <td>
+                 
+                2018-06-24
+                 
+              </td>
+              <td>
+                <button
+                  className="btn-flat btn-small"
+                >
+                  <span
+                    className="red-text"
+                  >
+                    ● 
+                  </span>
+                  Accepted
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>,
+        "className": "section",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <thead>
+              <tr>
+                <th>
+                  Book
+                </th>
+                <th>
+                  Author
+                </th>
+                <th>
+                  Date
+                </th>
+                <th>
+                  Status
+                </th>
+              </tr>
+            </thead>,
+            <tbody>
+              <tr>
+                <td>
+                   
+                  Lies That Bind Us
+                   
+                </td>
+                <td>
+                   
+                  Andrew Hart
+                   
+                </td>
+                <td>
+                   
+                  2018-06-24
+                   
+                </td>
+                <td>
+                  <button
+                    className="btn-flat btn-small"
+                  >
+                    <span
+                      className="red-text"
+                    >
+                      ● 
+                    </span>
+                    Accepted
+                  </button>
+                </td>
+              </tr>
+            </tbody>,
+          ],
+          "className": "striped responsive-table",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <tr>
+                <th>
+                  Book
+                </th>
+                <th>
+                  Author
+                </th>
+                <th>
+                  Date
+                </th>
+                <th>
+                  Status
+                </th>
+              </tr>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <th>
+                    Book
+                  </th>,
+                  <th>
+                    Author
+                  </th>,
+                  <th>
+                    Date
+                  </th>,
+                  <th>
+                    Status
+                  </th>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Book",
+                  },
+                  "ref": null,
+                  "rendered": "Book",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Author",
+                  },
+                  "ref": null,
+                  "rendered": "Author",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Date",
+                  },
+                  "ref": null,
+                  "rendered": "Date",
+                  "type": "th",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Status",
+                  },
+                  "ref": null,
+                  "rendered": "Status",
+                  "type": "th",
+                },
+              ],
+              "type": "tr",
+            },
+            "type": "thead",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <tr>
+                  <td>
+                     
+                    Lies That Bind Us
+                     
+                  </td>
+                  <td>
+                     
+                    Andrew Hart
+                     
+                  </td>
+                  <td>
+                     
+                    2018-06-24
+                     
+                  </td>
+                  <td>
+                    <button
+                      className="btn-flat btn-small"
+                    >
+                      <span
+                        className="red-text"
+                      >
+                        ● 
+                      </span>
+                      Accepted
+                    </button>
+                  </td>
+                </tr>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "5",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td>
+                       
+                      Lies That Bind Us
+                       
+                    </td>,
+                    <td>
+                       
+                      Andrew Hart
+                       
+                    </td>,
+                    <td>
+                       
+                      2018-06-24
+                       
+                    </td>,
+                    <td>
+                      <button
+                        className="btn-flat btn-small"
+                      >
+                        <span
+                          className="red-text"
+                        >
+                          ● 
+                        </span>
+                        Accepted
+                      </button>
+                    </td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Lies That Bind Us",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Lies That Bind Us",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Andrew Hart",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Andrew Hart",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "2018-06-24",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "2018-06-24",
+                      " ",
+                    ],
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <button
+                        className="btn-flat btn-small"
+                      >
+                        <span
+                          className="red-text"
+                        >
+                          ● 
+                        </span>
+                        Accepted
+                      </button>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="red-text"
+                          >
+                            ● 
+                          </span>,
+                          "Accepted",
+                        ],
+                        "className": "btn-flat btn-small",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "● ",
+                            "className": "red-text",
+                          },
+                          "ref": null,
+                          "rendered": "● ",
+                          "type": "span",
+                        },
+                        "Accepted",
+                      ],
+                      "type": "button",
+                    },
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+            ],
+            "type": "tbody",
+          },
+        ],
+        "type": "table",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

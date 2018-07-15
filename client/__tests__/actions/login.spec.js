@@ -71,7 +71,6 @@ describe('Login actions', () => {
       },
       {
         type: actionTypes.LOGIN_FAILURE,
-        error: 'Password provided does not match the user',
       },
       ];
       const store = mockStore({});

@@ -14,7 +14,7 @@ import Pagination from '../Common/Pagination.jsx';
  *
  * @returns {Node} - react node containing the book component
  */
-class Favorites extends Component {
+export class Favorites extends Component {
   /**
    * @description creates a new instance of the component
    * @param {object} props component's props
@@ -80,7 +80,7 @@ class Favorites extends Component {
     if (favorites && !favorites.length) {
       return (
         <div className="row center wrapper grey-text">
-        <img src={noFavorite} className="no-favorite-image"/>
+          <img src={noFavorite} className="no-favorite-image" />
           <h5>Looks like you have no favorites</h5>
           <h6>Click on the heart icon on a book's page to
             add it to your favorites.
@@ -91,7 +91,7 @@ class Favorites extends Component {
 
     if (favorites) {
       return (
-        <div>
+        <div id="favorites-container">
           <div>
             {favorites.map(favorite =>
               <div className="row card-panel favorite-card" key={favorite.id}>
@@ -119,7 +119,7 @@ class Favorites extends Component {
               </div>)}
           </div>
           <Pagination pagination={this.props.pagination}
-            onPageChange={page => this.getUserFavorites(page)}
+            onPageChange={this.getUserFavorites}
           />
         </div>
       );
@@ -129,7 +129,7 @@ class Favorites extends Component {
   render() {
     return (
       <div className="container wrapper">
-        <div className="row center">
+        <div className="row center"id="favorites">
           <h4 className="book-header">
             Your Favorites
           </h4>
@@ -148,6 +148,7 @@ Favorites.propTypes = {
   pagination: propTypes.object,
   favorites: propTypes.array,
   error: propTypes.string,
+  user: propTypes.object,
 };
 
 /**
@@ -161,17 +162,10 @@ const mapStateToProps = state => ({
   ...state.favorites,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getUserFavorites: (userId, page) => {
-    dispatch(getUserFavorites(userId, page));
-  },
-});
+// action creators
+const actionCreators = {
+  getUserFavorites,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+export default connect(mapStateToProps, actionCreators)(Favorites);
 

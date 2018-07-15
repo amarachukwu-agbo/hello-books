@@ -14,6 +14,10 @@ body {
   font-family: 'Raleway';
 }
 
+.btn.disbaled {
+  color: #323232 !important;
+}
+
 .form-logo {
   height: $form-image;
   width: $form-image;
@@ -294,6 +298,11 @@ nav li :hover{
   margin-top: 10px;
 }
 
+.book-icon:hover {
+  background-color: #fff;
+  cursor: default;
+}
+
 .review {
   padding: 0 10px 10px 10px;
   border-radius: 3px;
@@ -463,8 +472,8 @@ nav li :hover{
   max-height: 350px;
   overflow: scroll;
   padding: 5px;
-  background-image: linear-gradient(top, $nav-color, $nav-color 20%, transparent 20%, transparent 100%);
-  background-image: -webkit-linear-gradient(top, $nav-color, $nav-color 20%, transparent 20%, transparent 100%)  
+  background-image: linear-gradient(top, $nav-color, $nav-color 50px, transparent 50px, transparent 100%);
+  background-image: -webkit-linear-gradient(top, $nav-color, $nav-color 50px, transparent 50px, transparent 100%)  
 }
 
 .add-book {

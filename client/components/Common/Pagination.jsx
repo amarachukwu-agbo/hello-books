@@ -31,7 +31,9 @@ const Pagination = ({ pagination, onPageChange, floatingButton }) => {
       <div className="row books-list">
         {
           allowPrevious &&
-          <button className="btn-flat btn-small
+          <button
+            id="floating-previous"
+            className="btn-flat btn-small
             waves-effect waves-light white red-text left"
             onClick = {() => onPageChange(previousPage)}
           >
@@ -40,7 +42,9 @@ const Pagination = ({ pagination, onPageChange, floatingButton }) => {
         }
         {
           allowNext &&
-          <button className="btn-flat btn-small
+          <button
+            id="floating-next"
+            className="btn-flat btn-small
             waves-effect waves-light white red-text right"
             onClick = {() => onPageChange(nextPage)}
           >
@@ -57,20 +61,20 @@ const Pagination = ({ pagination, onPageChange, floatingButton }) => {
       <div className="pagination-item">
       <span>{ dataCount } Results</span>
         Displaying Page
-        <span> { currentPage } </span> of
-        <span> { pageCount } </span>
+        <span id="current-page"> { currentPage } </span> of
+        <span id="all-pages"> { pageCount } </span>
       </div>
       {
         allowPrevious &&
         <div className="pagination-item">
-          <button className= "primary-button" onClick = { () =>
+          <button id="previous" className= "primary-button" onClick = { () =>
             onPageChange(previousPage)}> Previous
           </button></div>
       }
       {
         allowNext &&
         <div className="pagination-item">
-          <button className= "primary-button" onClick = { () =>
+          <button id="next" className= "primary-button" onClick = { () =>
             onPageChange(nextPage) }> Next
           </button></div>
       }

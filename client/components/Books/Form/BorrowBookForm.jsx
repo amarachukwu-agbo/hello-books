@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import {
-  renderDateTimePicker,
+  renderDatePicker,
   InputText,
   renderDropdownList,
 } from '../../Common/InputTypes.jsx';
@@ -46,7 +46,7 @@ class BorrowBookForm extends Component {
     } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.submitForm)}>
+      <form id="borrow-book" onSubmit={handleSubmit(this.submitForm)}>
         <div className="row center-align lighten-2">
           <h4 className="modal-header-text">Borrow Book</h4>
         </div>
@@ -56,12 +56,14 @@ class BorrowBookForm extends Component {
             defaultValue={book.title} component={InputText} disabled />
           </div>
           <div className="input-field row">
-            <label className="active">Return Date</label>
-            <Field name="returnDate" showTime={false}
-            component={renderDateTimePicker} />
+            <Field name="returnDate"
+            id="return-date"
+            label="Return Date"
+            component={renderDatePicker} />
           </div>
           <div className="input-field row">
             <Field name="comments" type="text"
+            id="comment"
             label="Comment(optional...)" component={InputText} />
           </div>
           <div className="input-field row">
@@ -74,7 +76,9 @@ class BorrowBookForm extends Component {
         <div className="row">
           <div className="col s12 center-align">
             <button className="btn waves-effect waves-light
-            primary-button" type="submit" disabled={this.props.isBorrowing} >
+            primary-button" type="submit"
+            id="submit-borrow"
+            disabled={this.props.isBorrowing} >
               Submit
                 {
                   this.props.isBorrowing ?
@@ -96,6 +100,7 @@ BorrowBookForm.propTypes = {
   book: propTypes.object.isRequired,
   handleSubmit: propTypes.func.isRequired,
   isBorrowing: propTypes.bool,
+  user: propTypes.object,
 };
 
 // Wrap form with reduxForm wrapper

@@ -17,16 +17,16 @@ const AdminBorrowRequests = ({
   borrowRequests,
   isHandlingBorrowRequest,
 }) => {
-  if (!borrowRequests) {
+  if (!borrowRequests.length) {
     return (
         <div className="row center">
-          <p className="grey-text">You have no borrow requests </p>
+          <p className="grey-text">You have no borrow requests</p>
         </div>
     );
   }
 
   return (
-      <div className="row">
+      <div className="row" id="borrow-requests">
         <table className="striped responsive-table">
           <thead>
             <tr>
@@ -40,8 +40,8 @@ const AdminBorrowRequests = ({
               <th colSpan="2">Action</th>
             </tr>
           </thead>
-          <tbody>
-            {borrowRequests.map(request =>
+          <tbody id="requests">
+            {borrowRequests.map((request, index) =>
               <tr key={request.id}>
                 <td> {`${request.userBorrowRequests.firstName} 
                 ${request.userBorrowRequests.lastName}`} </td>
@@ -59,6 +59,7 @@ const AdminBorrowRequests = ({
                 </td>
                 <td> <button className="btn btn-wave waves-effect
                   btn-small primary-button"
+                  id={`accept-button${index}`}
                   disabled={request.status !== 'Pending' ||
                   isHandlingBorrowRequest}
                   onClick={() => {
@@ -72,6 +73,7 @@ const AdminBorrowRequests = ({
                 >Accept</button></td>
                 <td> <button className="btn btn-wave action-button
                   waves-effect btn-small"
+                  id={`decline-button${index}`}
                   disabled={request.status !== 'Pending' ||
                   isHandlingBorrowRequest}
                   onClick={() => {

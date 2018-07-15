@@ -28,7 +28,7 @@ const Book = (props) => {
           <p className="truncate">Author|
             <span className="red-text text-darken-4 bold">{book.author}</span>
           </p>
-          <p className="truncate"> Genre|
+          <p id="genre" className="truncate"> Genre|
             <span className="red-text text-darken-4 bold">{book.subject}</span>
           </p>
           <p> Quantity|
@@ -36,17 +36,17 @@ const Book = (props) => {
           </p>
           <div className="divider hide-on-med-and-down"></div>
           <div className="row hide-on-med-and-down">
-            <div className="col s3 btn btn-small btn-flat white grey-text
-            text-darken-2 book-icon">
+            <div className="col s3 btn btn-small grey-text
+              text-darken-2 btn-flat book-icon">
               <i className="material-icons prefix">thumb_up</i>
               <span>{book.upvotes}</span></div>
-              <div className="col s3 btn btn-small btn-flat white
-              grey-text text-darken-2 book-icon">
+              <div className="col s3 btn btn-small grey-text
+                text-darken-2 btn-flat book-icon">
                 <i className="material-icons prefix">favorite_border</i>
                 <span>{book.favCount}</span>
               </div>
-            <div className="col s3 btn btn-samll btn-flat white
-              grey-text text-darken-2 book-icon">
+            <div className="col s3 btn btn-samll grey-text
+              text-darken-2 btn-flat book-icon">
               <i className="material-icons prefix">comment</i>
               {
                 book.bookReviews &&

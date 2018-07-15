@@ -11,6 +11,7 @@ import {
 import checkError from '../helpers/checkError';
 import setHeader from '../helpers/setHeader';
 import { apiURL } from './signUp';
+import Notify from '../helpers/Notify';
 
 const fetchingBorrowRequests = () => ({
   type: FETCHING_BORROW_REQUESTS,
@@ -22,9 +23,8 @@ const borrowRequestsSuccess = ({ requests, pagination }) => ({
   pagination,
 });
 
-const borrowRequestsFailure = error => ({
+const borrowRequestsFailure = () => ({
   type: BORROW_REQUESTS_FAILURE,
-  error,
 });
 
 export const getBorrowRequests = page => (dispatch) => {
@@ -50,9 +50,8 @@ const handleBorrowRequestSuccess = (status, requestId) => ({
   requestId,
 });
 
-const handleBorrowRequestFailure = error => ({
+const handleBorrowRequestFailure = () => ({
   type: HANDLE_BORROW_REQUEST_FAILURE,
-  error,
 });
 
 export const handleBorrowRequest =
@@ -68,7 +67,8 @@ export const handleBorrowRequest =
       })
       .catch((error) => {
         const errorMessage = checkError(error);
-        dispatch(handleBorrowRequestFailure(errorMessage));
+        dispatch(handleBorrowRequestFailure());
+        Notify.notifyError(`Failed to handle request. ${errorMessage}`);
       });
   };
 

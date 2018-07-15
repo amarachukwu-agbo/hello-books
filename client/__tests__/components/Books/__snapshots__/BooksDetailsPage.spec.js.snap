@@ -1,0 +1,951 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BooksDetailsPage /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BookDetailsPage
+    book={
+      Object {
+        "author": "Michelle McNamara",
+        "bookReviews": Array [
+          Object {
+            "bookId": 98,
+            "createdAt": "2018-07-10T08:51:25.310Z",
+            "id": 20,
+            "review": "Review",
+            "updatedAt": "2018-07-10T08:51:25.310Z",
+            "userId": 16,
+            "userReviews": Object {
+              "createdAt": "2018-07-08T19:29:20.334Z",
+              "email": "rtochi57@gmail.com",
+              "firstName": "Agbo",
+              "id": 16,
+              "imageURL": null,
+              "lastName": "Tochi",
+              "role": "User",
+              "updatedAt": "2018-07-08T19:29:20.334Z",
+            },
+          },
+        ],
+        "borrowCount": 6,
+        "createdAt": "2018-05-10T03:11:52.181Z",
+        "description": "A masterful true crime account of the Golden State Killer.",
+        "downvotes": 4,
+        "favCount": 3,
+        "id": 98,
+        "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+        "quantity": 3,
+        "subject": "True Crime",
+        "title": "I\\"ll Be Gone in the Dark",
+        "updatedAt": "2018-07-10T15:46:02.771Z",
+        "upvotes": 1,
+      }
+    }
+    borrowBook={[Function]}
+    favoriteBook={[Function]}
+    getBook={[Function]}
+    getBookError={null}
+    isFetching={false}
+    match={
+      Object {
+        "params": Object {
+          "bookId": 97,
+        },
+      }
+    }
+    reviewBook={[Function]}
+    upvoteBook={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        undefined,
+        undefined,
+        <div
+          id="book-details"
+        >
+          <BookDetails
+            book={
+              Object {
+                "author": "Michelle McNamara",
+                "bookReviews": Array [
+                  Object {
+                    "bookId": 98,
+                    "createdAt": "2018-07-10T08:51:25.310Z",
+                    "id": 20,
+                    "review": "Review",
+                    "updatedAt": "2018-07-10T08:51:25.310Z",
+                    "userId": 16,
+                    "userReviews": Object {
+                      "createdAt": "2018-07-08T19:29:20.334Z",
+                      "email": "rtochi57@gmail.com",
+                      "firstName": "Agbo",
+                      "id": 16,
+                      "imageURL": null,
+                      "lastName": "Tochi",
+                      "role": "User",
+                      "updatedAt": "2018-07-08T19:29:20.334Z",
+                    },
+                  },
+                ],
+                "borrowCount": 6,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "A masterful true crime account of the Golden State Killer.",
+                "downvotes": 4,
+                "favCount": 3,
+                "id": 98,
+                "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                "quantity": 3,
+                "subject": "True Crime",
+                "title": "I\\"ll Be Gone in the Dark",
+                "updatedAt": "2018-07-10T15:46:02.771Z",
+                "upvotes": 1,
+              }
+            }
+            borrowBook={[Function]}
+            favoriteBook={[Function]}
+            getBook={[Function]}
+            getBookError={null}
+            isFetching={false}
+            match={
+              Object {
+                "params": Object {
+                  "bookId": 97,
+                },
+              }
+            }
+            reviewBook={[Function]}
+            upvoteBook={[Function]}
+          />
+          <br />
+          <Reviews
+            book={
+              Object {
+                "author": "Michelle McNamara",
+                "bookReviews": Array [
+                  Object {
+                    "bookId": 98,
+                    "createdAt": "2018-07-10T08:51:25.310Z",
+                    "id": 20,
+                    "review": "Review",
+                    "updatedAt": "2018-07-10T08:51:25.310Z",
+                    "userId": 16,
+                    "userReviews": Object {
+                      "createdAt": "2018-07-08T19:29:20.334Z",
+                      "email": "rtochi57@gmail.com",
+                      "firstName": "Agbo",
+                      "id": 16,
+                      "imageURL": null,
+                      "lastName": "Tochi",
+                      "role": "User",
+                      "updatedAt": "2018-07-08T19:29:20.334Z",
+                    },
+                  },
+                ],
+                "borrowCount": 6,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "A masterful true crime account of the Golden State Killer.",
+                "downvotes": 4,
+                "favCount": 3,
+                "id": 98,
+                "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                "quantity": 3,
+                "subject": "True Crime",
+                "title": "I\\"ll Be Gone in the Dark",
+                "updatedAt": "2018-07-10T15:46:02.771Z",
+                "upvotes": 1,
+              }
+            }
+            borrowBook={[Function]}
+            favoriteBook={[Function]}
+            getBook={[Function]}
+            getBookError={null}
+            isFetching={false}
+            match={
+              Object {
+                "params": Object {
+                  "bookId": 97,
+                },
+              }
+            }
+            reviewBook={[Function]}
+            reviews={
+              Array [
+                Object {
+                  "bookId": 98,
+                  "createdAt": "2018-07-10T08:51:25.310Z",
+                  "id": 20,
+                  "review": "Review",
+                  "updatedAt": "2018-07-10T08:51:25.310Z",
+                  "userId": 16,
+                  "userReviews": Object {
+                    "createdAt": "2018-07-08T19:29:20.334Z",
+                    "email": "rtochi57@gmail.com",
+                    "firstName": "Agbo",
+                    "id": 16,
+                    "imageURL": null,
+                    "lastName": "Tochi",
+                    "role": "User",
+                    "updatedAt": "2018-07-08T19:29:20.334Z",
+                  },
+                },
+              ]
+            }
+            upvoteBook={[Function]}
+          />
+        </div>,
+      ],
+      "className": "container wrapper",
+    },
+    "ref": null,
+    "rendered": Array [
+      undefined,
+      undefined,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <BookDetails
+              book={
+                Object {
+                  "author": "Michelle McNamara",
+                  "bookReviews": Array [
+                    Object {
+                      "bookId": 98,
+                      "createdAt": "2018-07-10T08:51:25.310Z",
+                      "id": 20,
+                      "review": "Review",
+                      "updatedAt": "2018-07-10T08:51:25.310Z",
+                      "userId": 16,
+                      "userReviews": Object {
+                        "createdAt": "2018-07-08T19:29:20.334Z",
+                        "email": "rtochi57@gmail.com",
+                        "firstName": "Agbo",
+                        "id": 16,
+                        "imageURL": null,
+                        "lastName": "Tochi",
+                        "role": "User",
+                        "updatedAt": "2018-07-08T19:29:20.334Z",
+                      },
+                    },
+                  ],
+                  "borrowCount": 6,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "A masterful true crime account of the Golden State Killer.",
+                  "downvotes": 4,
+                  "favCount": 3,
+                  "id": 98,
+                  "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                  "quantity": 3,
+                  "subject": "True Crime",
+                  "title": "I\\"ll Be Gone in the Dark",
+                  "updatedAt": "2018-07-10T15:46:02.771Z",
+                  "upvotes": 1,
+                }
+              }
+              borrowBook={[Function]}
+              favoriteBook={[Function]}
+              getBook={[Function]}
+              getBookError={null}
+              isFetching={false}
+              match={
+                Object {
+                  "params": Object {
+                    "bookId": 97,
+                  },
+                }
+              }
+              reviewBook={[Function]}
+              upvoteBook={[Function]}
+            />,
+            <br />,
+            <Reviews
+              book={
+                Object {
+                  "author": "Michelle McNamara",
+                  "bookReviews": Array [
+                    Object {
+                      "bookId": 98,
+                      "createdAt": "2018-07-10T08:51:25.310Z",
+                      "id": 20,
+                      "review": "Review",
+                      "updatedAt": "2018-07-10T08:51:25.310Z",
+                      "userId": 16,
+                      "userReviews": Object {
+                        "createdAt": "2018-07-08T19:29:20.334Z",
+                        "email": "rtochi57@gmail.com",
+                        "firstName": "Agbo",
+                        "id": 16,
+                        "imageURL": null,
+                        "lastName": "Tochi",
+                        "role": "User",
+                        "updatedAt": "2018-07-08T19:29:20.334Z",
+                      },
+                    },
+                  ],
+                  "borrowCount": 6,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "A masterful true crime account of the Golden State Killer.",
+                  "downvotes": 4,
+                  "favCount": 3,
+                  "id": 98,
+                  "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                  "quantity": 3,
+                  "subject": "True Crime",
+                  "title": "I\\"ll Be Gone in the Dark",
+                  "updatedAt": "2018-07-10T15:46:02.771Z",
+                  "upvotes": 1,
+                }
+              }
+              borrowBook={[Function]}
+              favoriteBook={[Function]}
+              getBook={[Function]}
+              getBookError={null}
+              isFetching={false}
+              match={
+                Object {
+                  "params": Object {
+                    "bookId": 97,
+                  },
+                }
+              }
+              reviewBook={[Function]}
+              reviews={
+                Array [
+                  Object {
+                    "bookId": 98,
+                    "createdAt": "2018-07-10T08:51:25.310Z",
+                    "id": 20,
+                    "review": "Review",
+                    "updatedAt": "2018-07-10T08:51:25.310Z",
+                    "userId": 16,
+                    "userReviews": Object {
+                      "createdAt": "2018-07-08T19:29:20.334Z",
+                      "email": "rtochi57@gmail.com",
+                      "firstName": "Agbo",
+                      "id": 16,
+                      "imageURL": null,
+                      "lastName": "Tochi",
+                      "role": "User",
+                      "updatedAt": "2018-07-08T19:29:20.334Z",
+                    },
+                  },
+                ]
+              }
+              upvoteBook={[Function]}
+            />,
+          ],
+          "id": "book-details",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "book": Object {
+                "author": "Michelle McNamara",
+                "bookReviews": Array [
+                  Object {
+                    "bookId": 98,
+                    "createdAt": "2018-07-10T08:51:25.310Z",
+                    "id": 20,
+                    "review": "Review",
+                    "updatedAt": "2018-07-10T08:51:25.310Z",
+                    "userId": 16,
+                    "userReviews": Object {
+                      "createdAt": "2018-07-08T19:29:20.334Z",
+                      "email": "rtochi57@gmail.com",
+                      "firstName": "Agbo",
+                      "id": 16,
+                      "imageURL": null,
+                      "lastName": "Tochi",
+                      "role": "User",
+                      "updatedAt": "2018-07-08T19:29:20.334Z",
+                    },
+                  },
+                ],
+                "borrowCount": 6,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "A masterful true crime account of the Golden State Killer.",
+                "downvotes": 4,
+                "favCount": 3,
+                "id": 98,
+                "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                "quantity": 3,
+                "subject": "True Crime",
+                "title": "I\\"ll Be Gone in the Dark",
+                "updatedAt": "2018-07-10T15:46:02.771Z",
+                "upvotes": 1,
+              },
+              "borrowBook": [Function],
+              "favoriteBook": [Function],
+              "getBook": [Function],
+              "getBookError": null,
+              "isFetching": false,
+              "match": Object {
+                "params": Object {
+                  "bookId": 97,
+                },
+              },
+              "reviewBook": [Function],
+              "upvoteBook": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "book": Object {
+                "author": "Michelle McNamara",
+                "bookReviews": Array [
+                  Object {
+                    "bookId": 98,
+                    "createdAt": "2018-07-10T08:51:25.310Z",
+                    "id": 20,
+                    "review": "Review",
+                    "updatedAt": "2018-07-10T08:51:25.310Z",
+                    "userId": 16,
+                    "userReviews": Object {
+                      "createdAt": "2018-07-08T19:29:20.334Z",
+                      "email": "rtochi57@gmail.com",
+                      "firstName": "Agbo",
+                      "id": 16,
+                      "imageURL": null,
+                      "lastName": "Tochi",
+                      "role": "User",
+                      "updatedAt": "2018-07-08T19:29:20.334Z",
+                    },
+                  },
+                ],
+                "borrowCount": 6,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "A masterful true crime account of the Golden State Killer.",
+                "downvotes": 4,
+                "favCount": 3,
+                "id": 98,
+                "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                "quantity": 3,
+                "subject": "True Crime",
+                "title": "I\\"ll Be Gone in the Dark",
+                "updatedAt": "2018-07-10T15:46:02.771Z",
+                "upvotes": 1,
+              },
+              "borrowBook": [Function],
+              "favoriteBook": [Function],
+              "getBook": [Function],
+              "getBookError": null,
+              "isFetching": false,
+              "match": Object {
+                "params": Object {
+                  "bookId": 97,
+                },
+              },
+              "reviewBook": [Function],
+              "reviews": Array [
+                Object {
+                  "bookId": 98,
+                  "createdAt": "2018-07-10T08:51:25.310Z",
+                  "id": 20,
+                  "review": "Review",
+                  "updatedAt": "2018-07-10T08:51:25.310Z",
+                  "userId": 16,
+                  "userReviews": Object {
+                    "createdAt": "2018-07-08T19:29:20.334Z",
+                    "email": "rtochi57@gmail.com",
+                    "firstName": "Agbo",
+                    "id": 16,
+                    "imageURL": null,
+                    "lastName": "Tochi",
+                    "role": "User",
+                    "updatedAt": "2018-07-08T19:29:20.334Z",
+                  },
+                },
+              ],
+              "upvoteBook": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          undefined,
+          undefined,
+          <div
+            id="book-details"
+          >
+            <BookDetails
+              book={
+                Object {
+                  "author": "Michelle McNamara",
+                  "bookReviews": Array [
+                    Object {
+                      "bookId": 98,
+                      "createdAt": "2018-07-10T08:51:25.310Z",
+                      "id": 20,
+                      "review": "Review",
+                      "updatedAt": "2018-07-10T08:51:25.310Z",
+                      "userId": 16,
+                      "userReviews": Object {
+                        "createdAt": "2018-07-08T19:29:20.334Z",
+                        "email": "rtochi57@gmail.com",
+                        "firstName": "Agbo",
+                        "id": 16,
+                        "imageURL": null,
+                        "lastName": "Tochi",
+                        "role": "User",
+                        "updatedAt": "2018-07-08T19:29:20.334Z",
+                      },
+                    },
+                  ],
+                  "borrowCount": 6,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "A masterful true crime account of the Golden State Killer.",
+                  "downvotes": 4,
+                  "favCount": 3,
+                  "id": 98,
+                  "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                  "quantity": 3,
+                  "subject": "True Crime",
+                  "title": "I\\"ll Be Gone in the Dark",
+                  "updatedAt": "2018-07-10T15:46:02.771Z",
+                  "upvotes": 1,
+                }
+              }
+              borrowBook={[Function]}
+              favoriteBook={[Function]}
+              getBook={[Function]}
+              getBookError={null}
+              isFetching={false}
+              match={
+                Object {
+                  "params": Object {
+                    "bookId": 97,
+                  },
+                }
+              }
+              reviewBook={[Function]}
+              upvoteBook={[Function]}
+            />
+            <br />
+            <Reviews
+              book={
+                Object {
+                  "author": "Michelle McNamara",
+                  "bookReviews": Array [
+                    Object {
+                      "bookId": 98,
+                      "createdAt": "2018-07-10T08:51:25.310Z",
+                      "id": 20,
+                      "review": "Review",
+                      "updatedAt": "2018-07-10T08:51:25.310Z",
+                      "userId": 16,
+                      "userReviews": Object {
+                        "createdAt": "2018-07-08T19:29:20.334Z",
+                        "email": "rtochi57@gmail.com",
+                        "firstName": "Agbo",
+                        "id": 16,
+                        "imageURL": null,
+                        "lastName": "Tochi",
+                        "role": "User",
+                        "updatedAt": "2018-07-08T19:29:20.334Z",
+                      },
+                    },
+                  ],
+                  "borrowCount": 6,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "A masterful true crime account of the Golden State Killer.",
+                  "downvotes": 4,
+                  "favCount": 3,
+                  "id": 98,
+                  "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                  "quantity": 3,
+                  "subject": "True Crime",
+                  "title": "I\\"ll Be Gone in the Dark",
+                  "updatedAt": "2018-07-10T15:46:02.771Z",
+                  "upvotes": 1,
+                }
+              }
+              borrowBook={[Function]}
+              favoriteBook={[Function]}
+              getBook={[Function]}
+              getBookError={null}
+              isFetching={false}
+              match={
+                Object {
+                  "params": Object {
+                    "bookId": 97,
+                  },
+                }
+              }
+              reviewBook={[Function]}
+              reviews={
+                Array [
+                  Object {
+                    "bookId": 98,
+                    "createdAt": "2018-07-10T08:51:25.310Z",
+                    "id": 20,
+                    "review": "Review",
+                    "updatedAt": "2018-07-10T08:51:25.310Z",
+                    "userId": 16,
+                    "userReviews": Object {
+                      "createdAt": "2018-07-08T19:29:20.334Z",
+                      "email": "rtochi57@gmail.com",
+                      "firstName": "Agbo",
+                      "id": 16,
+                      "imageURL": null,
+                      "lastName": "Tochi",
+                      "role": "User",
+                      "updatedAt": "2018-07-08T19:29:20.334Z",
+                    },
+                  },
+                ]
+              }
+              upvoteBook={[Function]}
+            />
+          </div>,
+        ],
+        "className": "container wrapper",
+      },
+      "ref": null,
+      "rendered": Array [
+        undefined,
+        undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <BookDetails
+                book={
+                  Object {
+                    "author": "Michelle McNamara",
+                    "bookReviews": Array [
+                      Object {
+                        "bookId": 98,
+                        "createdAt": "2018-07-10T08:51:25.310Z",
+                        "id": 20,
+                        "review": "Review",
+                        "updatedAt": "2018-07-10T08:51:25.310Z",
+                        "userId": 16,
+                        "userReviews": Object {
+                          "createdAt": "2018-07-08T19:29:20.334Z",
+                          "email": "rtochi57@gmail.com",
+                          "firstName": "Agbo",
+                          "id": 16,
+                          "imageURL": null,
+                          "lastName": "Tochi",
+                          "role": "User",
+                          "updatedAt": "2018-07-08T19:29:20.334Z",
+                        },
+                      },
+                    ],
+                    "borrowCount": 6,
+                    "createdAt": "2018-05-10T03:11:52.181Z",
+                    "description": "A masterful true crime account of the Golden State Killer.",
+                    "downvotes": 4,
+                    "favCount": 3,
+                    "id": 98,
+                    "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                    "quantity": 3,
+                    "subject": "True Crime",
+                    "title": "I\\"ll Be Gone in the Dark",
+                    "updatedAt": "2018-07-10T15:46:02.771Z",
+                    "upvotes": 1,
+                  }
+                }
+                borrowBook={[Function]}
+                favoriteBook={[Function]}
+                getBook={[Function]}
+                getBookError={null}
+                isFetching={false}
+                match={
+                  Object {
+                    "params": Object {
+                      "bookId": 97,
+                    },
+                  }
+                }
+                reviewBook={[Function]}
+                upvoteBook={[Function]}
+              />,
+              <br />,
+              <Reviews
+                book={
+                  Object {
+                    "author": "Michelle McNamara",
+                    "bookReviews": Array [
+                      Object {
+                        "bookId": 98,
+                        "createdAt": "2018-07-10T08:51:25.310Z",
+                        "id": 20,
+                        "review": "Review",
+                        "updatedAt": "2018-07-10T08:51:25.310Z",
+                        "userId": 16,
+                        "userReviews": Object {
+                          "createdAt": "2018-07-08T19:29:20.334Z",
+                          "email": "rtochi57@gmail.com",
+                          "firstName": "Agbo",
+                          "id": 16,
+                          "imageURL": null,
+                          "lastName": "Tochi",
+                          "role": "User",
+                          "updatedAt": "2018-07-08T19:29:20.334Z",
+                        },
+                      },
+                    ],
+                    "borrowCount": 6,
+                    "createdAt": "2018-05-10T03:11:52.181Z",
+                    "description": "A masterful true crime account of the Golden State Killer.",
+                    "downvotes": 4,
+                    "favCount": 3,
+                    "id": 98,
+                    "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                    "quantity": 3,
+                    "subject": "True Crime",
+                    "title": "I\\"ll Be Gone in the Dark",
+                    "updatedAt": "2018-07-10T15:46:02.771Z",
+                    "upvotes": 1,
+                  }
+                }
+                borrowBook={[Function]}
+                favoriteBook={[Function]}
+                getBook={[Function]}
+                getBookError={null}
+                isFetching={false}
+                match={
+                  Object {
+                    "params": Object {
+                      "bookId": 97,
+                    },
+                  }
+                }
+                reviewBook={[Function]}
+                reviews={
+                  Array [
+                    Object {
+                      "bookId": 98,
+                      "createdAt": "2018-07-10T08:51:25.310Z",
+                      "id": 20,
+                      "review": "Review",
+                      "updatedAt": "2018-07-10T08:51:25.310Z",
+                      "userId": 16,
+                      "userReviews": Object {
+                        "createdAt": "2018-07-08T19:29:20.334Z",
+                        "email": "rtochi57@gmail.com",
+                        "firstName": "Agbo",
+                        "id": 16,
+                        "imageURL": null,
+                        "lastName": "Tochi",
+                        "role": "User",
+                        "updatedAt": "2018-07-08T19:29:20.334Z",
+                      },
+                    },
+                  ]
+                }
+                upvoteBook={[Function]}
+              />,
+            ],
+            "id": "book-details",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "book": Object {
+                  "author": "Michelle McNamara",
+                  "bookReviews": Array [
+                    Object {
+                      "bookId": 98,
+                      "createdAt": "2018-07-10T08:51:25.310Z",
+                      "id": 20,
+                      "review": "Review",
+                      "updatedAt": "2018-07-10T08:51:25.310Z",
+                      "userId": 16,
+                      "userReviews": Object {
+                        "createdAt": "2018-07-08T19:29:20.334Z",
+                        "email": "rtochi57@gmail.com",
+                        "firstName": "Agbo",
+                        "id": 16,
+                        "imageURL": null,
+                        "lastName": "Tochi",
+                        "role": "User",
+                        "updatedAt": "2018-07-08T19:29:20.334Z",
+                      },
+                    },
+                  ],
+                  "borrowCount": 6,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "A masterful true crime account of the Golden State Killer.",
+                  "downvotes": 4,
+                  "favCount": 3,
+                  "id": 98,
+                  "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                  "quantity": 3,
+                  "subject": "True Crime",
+                  "title": "I\\"ll Be Gone in the Dark",
+                  "updatedAt": "2018-07-10T15:46:02.771Z",
+                  "upvotes": 1,
+                },
+                "borrowBook": [Function],
+                "favoriteBook": [Function],
+                "getBook": [Function],
+                "getBookError": null,
+                "isFetching": false,
+                "match": Object {
+                  "params": Object {
+                    "bookId": 97,
+                  },
+                },
+                "reviewBook": [Function],
+                "upvoteBook": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "book": Object {
+                  "author": "Michelle McNamara",
+                  "bookReviews": Array [
+                    Object {
+                      "bookId": 98,
+                      "createdAt": "2018-07-10T08:51:25.310Z",
+                      "id": 20,
+                      "review": "Review",
+                      "updatedAt": "2018-07-10T08:51:25.310Z",
+                      "userId": 16,
+                      "userReviews": Object {
+                        "createdAt": "2018-07-08T19:29:20.334Z",
+                        "email": "rtochi57@gmail.com",
+                        "firstName": "Agbo",
+                        "id": 16,
+                        "imageURL": null,
+                        "lastName": "Tochi",
+                        "role": "User",
+                        "updatedAt": "2018-07-08T19:29:20.334Z",
+                      },
+                    },
+                  ],
+                  "borrowCount": 6,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "A masterful true crime account of the Golden State Killer.",
+                  "downvotes": 4,
+                  "favCount": 3,
+                  "id": 98,
+                  "imageURL": "https://res/adolfo-felix-586654-unsplash_ukhitd.jpg",
+                  "quantity": 3,
+                  "subject": "True Crime",
+                  "title": "I\\"ll Be Gone in the Dark",
+                  "updatedAt": "2018-07-10T15:46:02.771Z",
+                  "upvotes": 1,
+                },
+                "borrowBook": [Function],
+                "favoriteBook": [Function],
+                "getBook": [Function],
+                "getBookError": null,
+                "isFetching": false,
+                "match": Object {
+                  "params": Object {
+                    "bookId": 97,
+                  },
+                },
+                "reviewBook": [Function],
+                "reviews": Array [
+                  Object {
+                    "bookId": 98,
+                    "createdAt": "2018-07-10T08:51:25.310Z",
+                    "id": 20,
+                    "review": "Review",
+                    "updatedAt": "2018-07-10T08:51:25.310Z",
+                    "userId": 16,
+                    "userReviews": Object {
+                      "createdAt": "2018-07-08T19:29:20.334Z",
+                      "email": "rtochi57@gmail.com",
+                      "firstName": "Agbo",
+                      "id": 16,
+                      "imageURL": null,
+                      "lastName": "Tochi",
+                      "role": "User",
+                      "updatedAt": "2018-07-08T19:29:20.334Z",
+                    },
+                  },
+                ],
+                "upvoteBook": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

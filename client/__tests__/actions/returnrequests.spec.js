@@ -6,7 +6,7 @@ import * as actionTypes from '../../actions/types';
 import {
   getReturnRequests,
   handleReturnRequest,
-} from '../../actions/returnrequests';
+} from '../../actions/returnRequests';
 
 describe('Return Requests actions', () => {
   const mockStore = configureStore([thunk]);

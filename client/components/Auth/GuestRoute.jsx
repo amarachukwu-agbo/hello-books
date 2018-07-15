@@ -14,7 +14,7 @@ import { Redirect } from 'react-router-dom';
  * @extends {React.Component}
  */
 
-class GuestRoute extends React.Component {
+export class GuestRoute extends React.Component {
   render() {
     const {
       isAuthenticated,

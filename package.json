@@ -15,11 +15,13 @@
     "start:client": "node ./client/devServer.js",
     "heroku-postbuild": "npm run client:build && npm run server:build",
     "serve": "node ./dist/index.js",
-    "test:client": "jest",
+    "test:client": "jest -u && codecov",
     "test": "export NODE_ENV=test && sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all && babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive -R spec ./server/tests --timeout 10000 --compilers:js babel-core/register",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "db:undo": "NODE_ENV=test sequelize db:migrate:undo:all",
     "migration": "sequelize db:migrate",
+    "e2e": "nightwatch",
+    "all:tests": "npm test && npm run test:client",
     "seed": "sequelize db:seed:all"
   },
   "repository": {
@@ -33,11 +35,26 @@
     "url": "https://github.com/amarachukwu-agbo/hello-books/issues"
   },
   "jest": {
+    "rootDir": "client",
+    "roots": [
+      "<rootDir>"
+    ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__tests__/__mocks__/fileMock.js",
       "\\.(css|scss|less)$": "identity-obj-proxy"
     },
-    "setupTestFrameworkScriptFile": "./client/__tests__/setupTests.js",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/__tests__",
+      "<rootDir>/coverage",
+      "<rootDir>/src",
+      "<rootDir>/src/store.js",
+      "<rootDir>/devServer.js",
+      "<rootDir>/webpack.common.js",
+      "<rootDir>/webpack.dev.js",
+      "<rootDir>/webpack.prod.js",
+      "<rootDir>/reducers/index.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/__tests__/setupTests.js",
     "testMatch": [
       "**/**/__tests__/**/*.spec.js?(x)",
       "**/**/__tests__/?(*.)(spec|test).js?(x)"
@@ -45,10 +62,7 @@
     "verbose": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "client/**/*.js?(x)",
-      "!client/src/*.js",
-      "!client/*.js",
-      "!client/reducers/index.js"
+      "**/*.js?(x)"
     ]
   },
   "homepage": "https://github.com/amarachukwu-agbo/hello-books#readme",
@@ -80,6 +94,7 @@
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "istanbul": "^1.0.0-alpha",
+    "jest": "22.4.3",
     "jsdoc": "^3.5.5",
     "mocha": "^2.4.5",
     "mocha-lcov-reporter": "^1.3.0",
@@ -137,8 +152,9 @@
     "redux-thunk": "^2.2.0",
     "save-dev": "^2.0.0",
     "sequelize": "^4.37.4",
-    "sinon": "^4.5.0",
+    "sinon": "4.5.0",
     "superagent": "^3.8.3",
+    "superagent-nock": "^0.4.0",
     "supertest": "^3.0.0",
     "swagger-ui-express": "^3.0.10",
     "sweetalert": "^2.1.0",

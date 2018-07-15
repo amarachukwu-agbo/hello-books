@@ -16,7 +16,7 @@ import materialize from '../../helpers/materialize';
  */
 
 
-class UserRoute extends React.Component {
+export class UserRoute extends React.Component {
   componentDidMount() {
     materialize();
   }

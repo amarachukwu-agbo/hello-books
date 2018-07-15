@@ -14,7 +14,7 @@ import Pagination from '../Common/Pagination.jsx';
  *
  * @extends {React.Component}
  */
-class AdminBorrowRequestsPage extends Component {
+export class AdminBorrowRequestsPage extends Component {
   /**
    * @constructor create an instance of the component
    *
@@ -89,8 +89,9 @@ class AdminBorrowRequestsPage extends Component {
           <br />
           <div className="container">
             <h4 className="flow-text red-text">
-            {`Oops! Couldn't fetch borrow requests.
-            ${this.props.borrowRequestsError}`}
+              {`Oops! Couldn't fetch borrow requests. ${
+                this.props.borrowRequestsError
+              }`}
             </h4></div>
         </div>
       );
@@ -100,21 +101,15 @@ class AdminBorrowRequestsPage extends Component {
         <h5 className="center book-header">Borrow Requests</h5>
         <div className="admin">
           {this.props.borrowRequests &&
-            <div>
-            <AdminBorrowRequests borrowRequests={this.props.borrowRequests}
-            acceptBorrowRequest = { this.acceptBorrowRequest }
-            declineBorrowRequest = { this.declineBorrowRequest }
-              {...this.props} />
-            <Pagination onPageChange = {page =>
-              this.props.getBorrowRequests(page) }
-              pagination = { this.props.pagination }
-            />
-        </div>
-          }
-          {
-            !this.props.borrowRequests &&
-            <div className="row center">
-              <p className="grey-text">You have no borrow requests </p>
+            <div id="admin-borrow-requests">
+              <AdminBorrowRequests borrowRequests={this.props.borrowRequests}
+                acceptBorrowRequest={this.acceptBorrowRequest}
+                declineBorrowRequest={this.declineBorrowRequest}
+                {...this.props} />
+              <Pagination
+                onPageChange={this.props.getBorrowRequests}
+                pagination={this.props.pagination}
+              />
             </div>
           }
         </div>
@@ -143,20 +138,13 @@ const mapStateToProps = state => ({
   ...state.borrowRequests,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getBorrowRequests: (page) => { dispatch(getBorrowRequests(page)); },
-  handleBorrowRequest: (action, userId, bookId, requestIndex) => {
-    dispatch(handleBorrowRequest(action, userId, bookId, requestIndex));
-  },
-});
+// action creators
+const actionCreators = {
+  getBorrowRequests,
+  handleBorrowRequest,
+};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  actionCreators,
 )(AdminBorrowRequestsPage);

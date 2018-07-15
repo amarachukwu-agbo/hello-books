@@ -34,7 +34,6 @@ class SearchBar extends Component {
 
     if (searchBy !== 'Search By' && searchParam.trim() !== '') {
       this.props.searchBooks(searchBy.toLowerCase(), searchParam);
-      this.setState({ searchParam: '' });
     }
 
     if (searchParam.trim() === '') {
@@ -64,6 +63,7 @@ class SearchBar extends Component {
                   <div className="col s4 m3 l2">
                     <div className="input-field">
                       <DropdownList data={searchParams}
+                        id="drop-down-list"
                         disabled={this.props.isSearching}
                         value={searchBy}
                         onChange={value =>
@@ -75,6 +75,7 @@ class SearchBar extends Component {
                     <div className="input-field">
                       <input className="white grey-text text-darken-3"
                         placeholder="Book title, author or subject..."
+                        id="search-input"
                         type="text" disabled={this.props.isSearching}
                         value={searchParam} onChange={e =>
                           this.setState({ searchParam: e.target.value })} />
@@ -82,7 +83,6 @@ class SearchBar extends Component {
                   </div>
                 </form>
               </div>
-
             </div>
           </div>
         </div>

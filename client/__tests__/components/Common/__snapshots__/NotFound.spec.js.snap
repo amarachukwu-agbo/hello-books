@@ -1,0 +1,423 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Not Found /> should render the Not found page correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NotFound />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="center wrapper"
+      >
+        <div
+          className="not-found-wrapper card-panel z-depth-3"
+        >
+          <img
+            className="not-found-image"
+            src="test-file-stub"
+          />
+          <h4
+            className="not-found center primary-text"
+          >
+            404
+          </h4>
+          <p
+            className="center"
+            id="oops"
+          >
+            Oops! Page was not found
+          </p>
+          <p
+            className="center primary-text"
+            id="sorry"
+          >
+            We are sorry the page you requested could not be found. Go back to 
+            <a
+              href="/"
+              id="home"
+            >
+              homepage ? 
+            </a>
+          </p>
+        </div>
+      </div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="not-found-wrapper card-panel z-depth-3"
+        >
+          <img
+            className="not-found-image"
+            src="test-file-stub"
+          />
+          <h4
+            className="not-found center primary-text"
+          >
+            404
+          </h4>
+          <p
+            className="center"
+            id="oops"
+          >
+            Oops! Page was not found
+          </p>
+          <p
+            className="center primary-text"
+            id="sorry"
+          >
+            We are sorry the page you requested could not be found. Go back to 
+            <a
+              href="/"
+              id="home"
+            >
+              homepage ? 
+            </a>
+          </p>
+        </div>,
+        "className": "center wrapper",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <img
+              className="not-found-image"
+              src="test-file-stub"
+            />,
+            <h4
+              className="not-found center primary-text"
+            >
+              404
+            </h4>,
+            <p
+              className="center"
+              id="oops"
+            >
+              Oops! Page was not found
+            </p>,
+            <p
+              className="center primary-text"
+              id="sorry"
+            >
+              We are sorry the page you requested could not be found. Go back to 
+              <a
+                href="/"
+                id="home"
+              >
+                homepage ? 
+              </a>
+            </p>,
+          ],
+          "className": "not-found-wrapper card-panel z-depth-3",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "not-found-image",
+              "src": "test-file-stub",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "404",
+              "className": "not-found center primary-text",
+            },
+            "ref": null,
+            "rendered": "404",
+            "type": "h4",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Oops! Page was not found",
+              "className": "center",
+              "id": "oops",
+            },
+            "ref": null,
+            "rendered": "Oops! Page was not found",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "We are sorry the page you requested could not be found. Go back to ",
+                <a
+                  href="/"
+                  id="home"
+                >
+                  homepage ? 
+                </a>,
+              ],
+              "className": "center primary-text",
+              "id": "sorry",
+            },
+            "ref": null,
+            "rendered": Array [
+              "We are sorry the page you requested could not be found. Go back to ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "homepage ? ",
+                  "href": "/",
+                  "id": "home",
+                },
+                "ref": null,
+                "rendered": "homepage ? ",
+                "type": "a",
+              },
+            ],
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="center wrapper"
+        >
+          <div
+            className="not-found-wrapper card-panel z-depth-3"
+          >
+            <img
+              className="not-found-image"
+              src="test-file-stub"
+            />
+            <h4
+              className="not-found center primary-text"
+            >
+              404
+            </h4>
+            <p
+              className="center"
+              id="oops"
+            >
+              Oops! Page was not found
+            </p>
+            <p
+              className="center primary-text"
+              id="sorry"
+            >
+              We are sorry the page you requested could not be found. Go back to 
+              <a
+                href="/"
+                id="home"
+              >
+                homepage ? 
+              </a>
+            </p>
+          </div>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="not-found-wrapper card-panel z-depth-3"
+          >
+            <img
+              className="not-found-image"
+              src="test-file-stub"
+            />
+            <h4
+              className="not-found center primary-text"
+            >
+              404
+            </h4>
+            <p
+              className="center"
+              id="oops"
+            >
+              Oops! Page was not found
+            </p>
+            <p
+              className="center primary-text"
+              id="sorry"
+            >
+              We are sorry the page you requested could not be found. Go back to 
+              <a
+                href="/"
+                id="home"
+              >
+                homepage ? 
+              </a>
+            </p>
+          </div>,
+          "className": "center wrapper",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <img
+                className="not-found-image"
+                src="test-file-stub"
+              />,
+              <h4
+                className="not-found center primary-text"
+              >
+                404
+              </h4>,
+              <p
+                className="center"
+                id="oops"
+              >
+                Oops! Page was not found
+              </p>,
+              <p
+                className="center primary-text"
+                id="sorry"
+              >
+                We are sorry the page you requested could not be found. Go back to 
+                <a
+                  href="/"
+                  id="home"
+                >
+                  homepage ? 
+                </a>
+              </p>,
+            ],
+            "className": "not-found-wrapper card-panel z-depth-3",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "not-found-image",
+                "src": "test-file-stub",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "404",
+                "className": "not-found center primary-text",
+              },
+              "ref": null,
+              "rendered": "404",
+              "type": "h4",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Oops! Page was not found",
+                "className": "center",
+                "id": "oops",
+              },
+              "ref": null,
+              "rendered": "Oops! Page was not found",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "We are sorry the page you requested could not be found. Go back to ",
+                  <a
+                    href="/"
+                    id="home"
+                  >
+                    homepage ? 
+                  </a>,
+                ],
+                "className": "center primary-text",
+                "id": "sorry",
+              },
+              "ref": null,
+              "rendered": Array [
+                "We are sorry the page you requested could not be found. Go back to ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "homepage ? ",
+                    "href": "/",
+                    "id": "home",
+                  },
+                  "ref": null,
+                  "rendered": "homepage ? ",
+                  "type": "a",
+                },
+              ],
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

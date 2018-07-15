@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddBookPage /> should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddBookPage
+    addBook={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="col s2 m3 l4"
+        />,
+        <div
+          className="card-panel add-book col s8 m6 l4"
+        >
+          <ReduxForm
+            addBook={[Function]}
+            handleDrop={[Function]}
+            isUploadingImage={false}
+            submitForm={[Function]}
+            uploadError={undefined}
+            uploadedFile={undefined}
+            uploadedFileCloudinaryUrl=""
+          />
+        </div>,
+        <div
+          className="col s2 m3 l4"
+        />,
+      ],
+      "className": "row",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "col s2 m3 l4",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ReduxForm
+            addBook={[Function]}
+            handleDrop={[Function]}
+            isUploadingImage={false}
+            submitForm={[Function]}
+            uploadError={undefined}
+            uploadedFile={undefined}
+            uploadedFileCloudinaryUrl=""
+          />,
+          "className": "card-panel add-book col s8 m6 l4",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "addBook": [Function],
+            "handleDrop": [Function],
+            "isUploadingImage": false,
+            "submitForm": [Function],
+            "uploadError": undefined,
+            "uploadedFile": undefined,
+            "uploadedFileCloudinaryUrl": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "col s2 m3 l4",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="col s2 m3 l4"
+          />,
+          <div
+            className="card-panel add-book col s8 m6 l4"
+          >
+            <ReduxForm
+              addBook={[Function]}
+              handleDrop={[Function]}
+              isUploadingImage={false}
+              submitForm={[Function]}
+              uploadError={undefined}
+              uploadedFile={undefined}
+              uploadedFileCloudinaryUrl=""
+            />
+          </div>,
+          <div
+            className="col s2 m3 l4"
+          />,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "col s2 m3 l4",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ReduxForm
+              addBook={[Function]}
+              handleDrop={[Function]}
+              isUploadingImage={false}
+              submitForm={[Function]}
+              uploadError={undefined}
+              uploadedFile={undefined}
+              uploadedFileCloudinaryUrl=""
+            />,
+            "className": "card-panel add-book col s8 m6 l4",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "addBook": [Function],
+              "handleDrop": [Function],
+              "isUploadingImage": false,
+              "submitForm": [Function],
+              "uploadError": undefined,
+              "uploadedFile": undefined,
+              "uploadedFileCloudinaryUrl": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "col s2 m3 l4",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

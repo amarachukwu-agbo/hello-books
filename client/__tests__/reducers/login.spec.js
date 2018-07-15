@@ -19,8 +19,6 @@ describe('Login reducer', () => {
     expect(newState).toEqual({
       isLoggingIn: true,
       isAuthenticated: false,
-      hasErrored: false,
-      error: null,
       user: null,
     });
   });
@@ -35,8 +33,6 @@ describe('Login reducer', () => {
     expect(newState).toEqual({
       isLoggingIn: false,
       isAuthenticated: true,
-      hasErrored: false,
-      error: null,
       user: users.authResponse,
     });
   });
@@ -51,8 +47,6 @@ describe('Login reducer', () => {
     expect(newState).toEqual({
       isLoggingIn: false,
       isAuthenticated: false,
-      hasErrored: true,
-      error: action.error,
       user: null,
     });
   });

@@ -6,8 +6,8 @@ import login from './login';
 import book from './book';
 import favorites from './favorites';
 import profile from './profile';
-import borrowRequests from './borrowrequests';
-import returnRequests from './returnrequests';
+import borrowRequests from './borrowRequests';
+import returnRequests from './returnRequests';
 import { books, mostUpvotedBooks } from './books';
 
 const rootReducer = combineReducers({

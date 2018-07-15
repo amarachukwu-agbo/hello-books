@@ -16,7 +16,7 @@ import AddBookForm from './Form/AddBookForm.jsx';
  *
  * @extends {React.Component}
  */
-class AddBookPage extends Component {
+export class AddBookPage extends Component {
   /**
    * @constructor create an instance of the component
    *
@@ -110,18 +110,13 @@ AddBookPage.propTypes = {
   addBook: propTypes.func.isRequired,
 };
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  addBook: (book) => { dispatch(addBook(book)); },
-});
+// action creators
+const actionCreators = {
+  addBook,
+}
 
 export default connect(
   null,
-  mapDispatchToProps,
+  actionCreators,
 )(AddBookPage);
 

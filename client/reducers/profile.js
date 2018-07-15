@@ -7,8 +7,6 @@ import {
   RETURN_BOOK_FAILURE,
 } from '../actions/types';
 
-import Notify from '../helpers/Notify';
-
 const initialState = {};
 
 const profile = (state = initialState, action) => {
@@ -41,7 +39,6 @@ const profile = (state = initialState, action) => {
       };
     }
     case RETURN_BOOK_FAILURE: {
-      Notify.notifyError(`Error sending return request.${action.error}`);
       return {
         ...state,
         isSendingRequest: false,
@@ -49,7 +46,6 @@ const profile = (state = initialState, action) => {
       };
     }
     case RETURN_BOOK_SUCCESS: {
-      Notify.notifySuccess('Your request to return book has been sent');
       return {
         ...state,
         isSendingRequest: false,

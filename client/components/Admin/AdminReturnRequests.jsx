@@ -17,16 +17,16 @@ const AdminReturnRequests = ({
   returnRequests,
   isHandlingReturnRequest,
 }) => {
-  if (!returnRequests) {
+  if (!returnRequests.length) {
     return (
         <div className="row center">
-          <p className="grey-text">You have no return requests </p>
+          <p className="grey-text">You have no return requests</p>
         </div>
     );
   }
 
   return (
-      <div className="row">
+      <div className="row" id="return-requests">
         <table className="striped responsive-table">
           <thead>
             <tr>
@@ -37,7 +37,7 @@ const AdminReturnRequests = ({
               <th colSpan="2">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="requests">
             {returnRequests.map(request =>
               <tr key={request.id}>
                 <td> {`${request.userReturnRequests.firstName}
@@ -53,6 +53,7 @@ const AdminReturnRequests = ({
                 </td>
                 <td> <button className="btn btn-wave waves-effect
                   btn-small primary-button"
+                  id={`accept-button${request.id}`}
                   disabled={request.status !== 'Pending' ||
                   isHandlingReturnRequest }
                   onClick={() => {
@@ -66,6 +67,7 @@ const AdminReturnRequests = ({
                 >Accept</button></td>
                 <td> <button className="btn btn-wave action-button
                   waves-effect btn-small"
+                  id={`decline-button${request.id}`}
                   disabled={request.status !== 'Pending' ||
                   isHandlingReturnRequest }
                   onClick={() => {

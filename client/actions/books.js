@@ -25,6 +25,7 @@ import {
 import checkError from '../helpers/checkError';
 import setHeader from '../helpers/setHeader';
 import { apiURL } from './signUp';
+import Notify from '../helpers/Notify';
 
 const getBooksRequest = () => ({
   type: GET_BOOKS_REQUEST,
@@ -77,9 +78,8 @@ const addBookSuccess = book => ({
   book,
 });
 
-const addBookFailure = error => ({
+const addBookFailure = () => ({
   type: ADD_BOOK_FAILURE,
-  error,
 });
 
 export const addBook = book => (dispatch) => {
@@ -88,11 +88,13 @@ export const addBook = book => (dispatch) => {
   return axios.post(`${apiURL}/books`, book)
     .then((response) => {
       dispatch(addBookSuccess(response.data.bookEntry));
+      Notify.notifySuccess('Book has been added');
       dispatch(push('/admin'));
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(addBookFailure(errorMessage));
+      dispatch(addBookFailure());
+      Notify.notifyError(`Error adding book. ${errorMessage}`);
     });
 };
 
@@ -134,9 +136,8 @@ const editBookSuccess = (book, bookId) => ({
   bookId,
 });
 
-const editBookFailure = error => ({
+const editBookFailure = () => ({
   type: EDIT_BOOK_FAILURE,
-  error,
 });
 
 export const editBook = (bookId, book) => (dispatch) => {
@@ -145,10 +146,12 @@ export const editBook = (bookId, book) => (dispatch) => {
   return axios.put(`${apiURL}/books/${bookId}`, book)
     .then((response) => {
       dispatch(editBookSuccess(response.data.updatedBook, bookId));
+      Notify.notifySuccess('Book has been updated');
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(editBookFailure(errorMessage));
+      dispatch(editBookFailure());
+      Notify.notifyError(`Error editing book. ${errorMessage}`);
     });
 };
 
@@ -161,9 +164,8 @@ const deleteBookSuccess = bookId => ({
   bookId,
 });
 
-const deleteBookFailure = deleteError => ({
+const deleteBookFailure = () => ({
   type: DELETE_BOOK_FAILURE,
-  deleteError,
 });
 
 export const deleteBook = bookId => (dispatch) => {
@@ -172,10 +174,12 @@ export const deleteBook = bookId => (dispatch) => {
   return axios.delete(`${apiURL}/books/${bookId}`)
     .then(() => {
       dispatch(deleteBookSuccess(bookId));
+      Notify.notifySuccess('Book has been successfully deleted');
     })
     .catch((error) => {
       const errorMessage = checkError(error);
-      dispatch(deleteBookFailure(errorMessage));
+      dispatch(deleteBookFailure());
+      Notify.notifyError(errorMessage);
     });
 };
 

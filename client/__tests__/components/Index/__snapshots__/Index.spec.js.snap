@@ -1,0 +1,3479 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConnectedIndexPage /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Connect(IndexPage)
+    books={
+      Array [
+        Object {
+          "author": "Trevor Noah",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Attuned to the power of la",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 95,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 20,
+          "subject": "Biography",
+          "title": "Born a Crime",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Ken Follet",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "This lush novel, set ",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 92,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 2,
+          "subject": "Thriller",
+          "title": "A Place Called Freedom",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Joanna Gaines",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Magnolia Table is infused with Joanna Gaines",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 97,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 7,
+          "subject": "Recipe",
+          "title": "Magnolia Table: A Collection of Recipes for Gathering",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+      ]
+    }
+    error={null}
+    getBooks={[Function]}
+    getMostUpvotedBooks={[Function]}
+    isFetching={false}
+    isLoading={null}
+    searchBooks={[Function]}
+    searchError={null}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    upvotedBooks={
+      Array [
+        Object {
+          "author": "Paul McClain",
+          "bookReviews": Array [],
+          "borrowCount": 1,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Magnolia Table",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 96,
+          "imageURL": "https://images-na.ssl.jpg",
+          "quantity": 20,
+          "subject": "Romance",
+          "title": "Love and Ruin",
+          "updatedAt": "2018-06-22T12:22:48.895Z",
+          "upvotes": 1,
+        },
+        Object {
+          "author": "Sheryl Sandberg",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-06-22T08:56:20.614Z",
+          "description": "A guide on how women can balance career and family",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 1,
+          "imageURL": "https://res.cloudinary.com.jpg",
+          "quantity": 20,
+          "subject": "Self-help",
+          "title": "Lean In",
+          "updatedAt": "2018-06-22T12:22:28.308Z",
+          "upvotes": 1,
+        },
+      ]
+    }
+    upvotedBooksPagination={
+      Object {
+        "currentPage": 1,
+        "dataCount": 2,
+        "pageCount": 1,
+        "pageSize": 2,
+      }
+    }
+    upvotedError={null}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "books": Array [
+        Object {
+          "author": "Trevor Noah",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Attuned to the power of la",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 95,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 20,
+          "subject": "Biography",
+          "title": "Born a Crime",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Ken Follet",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "This lush novel, set ",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 92,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 2,
+          "subject": "Thriller",
+          "title": "A Place Called Freedom",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Joanna Gaines",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Magnolia Table is infused with Joanna Gaines",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 97,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 7,
+          "subject": "Recipe",
+          "title": "Magnolia Table: A Collection of Recipes for Gathering",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+      ],
+      "error": null,
+      "getBooks": [Function],
+      "getMostUpvotedBooks": [Function],
+      "isFetching": false,
+      "isLoading": null,
+      "searchBooks": [Function],
+      "searchError": null,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeSubscription": Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+      "upvotedBooks": Array [
+        Object {
+          "author": "Paul McClain",
+          "bookReviews": Array [],
+          "borrowCount": 1,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Magnolia Table",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 96,
+          "imageURL": "https://images-na.ssl.jpg",
+          "quantity": 20,
+          "subject": "Romance",
+          "title": "Love and Ruin",
+          "updatedAt": "2018-06-22T12:22:48.895Z",
+          "upvotes": 1,
+        },
+        Object {
+          "author": "Sheryl Sandberg",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-06-22T08:56:20.614Z",
+          "description": "A guide on how women can balance career and family",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 1,
+          "imageURL": "https://res.cloudinary.com.jpg",
+          "quantity": 20,
+          "subject": "Self-help",
+          "title": "Lean In",
+          "updatedAt": "2018-06-22T12:22:28.308Z",
+          "upvotes": 1,
+        },
+      ],
+      "upvotedBooksPagination": Object {
+        "currentPage": 1,
+        "dataCount": 2,
+        "pageCount": 1,
+        "pageSize": 2,
+      },
+      "upvotedError": null,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "books": Array [
+          Object {
+            "author": "Trevor Noah",
+            "bookReviews": Array [],
+            "borrowCount": 0,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "Attuned to the power of la",
+            "downvotes": 0,
+            "favCount": 0,
+            "id": 95,
+            "imageURL": "https://images-na.ssl-image.jpg",
+            "quantity": 20,
+            "subject": "Biography",
+            "title": "Born a Crime",
+            "updatedAt": "2018-05-10T03:11:52.181Z",
+            "upvotes": 0,
+          },
+          Object {
+            "author": "Ken Follet",
+            "bookReviews": Array [],
+            "borrowCount": 0,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "This lush novel, set ",
+            "downvotes": 0,
+            "favCount": 0,
+            "id": 92,
+            "imageURL": "https://images-na.ssl-image.jpg",
+            "quantity": 2,
+            "subject": "Thriller",
+            "title": "A Place Called Freedom",
+            "updatedAt": "2018-05-10T03:11:52.181Z",
+            "upvotes": 0,
+          },
+          Object {
+            "author": "Joanna Gaines",
+            "bookReviews": Array [],
+            "borrowCount": 0,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "Magnolia Table is infused with Joanna Gaines",
+            "downvotes": 0,
+            "favCount": 0,
+            "id": 97,
+            "imageURL": "https://images-na.ssl-image.jpg",
+            "quantity": 7,
+            "subject": "Recipe",
+            "title": "Magnolia Table: A Collection of Recipes for Gathering",
+            "updatedAt": "2018-05-10T03:11:52.181Z",
+            "upvotes": 0,
+          },
+        ],
+        "error": null,
+        "getBooks": [Function],
+        "getMostUpvotedBooks": [Function],
+        "isFetching": false,
+        "isLoading": null,
+        "searchBooks": [Function],
+        "searchError": null,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "storeSubscription": Subscription {
+          "listeners": Object {
+            "clear": [Function],
+            "get": [Function],
+            "notify": [Function],
+            "subscribe": [Function],
+          },
+          "onStateChange": [Function],
+          "parentSub": undefined,
+          "store": Object {
+            "clearActions": [Function],
+            "dispatch": [Function],
+            "getActions": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+          },
+          "unsubscribe": [Function],
+        },
+        "upvotedBooks": Array [
+          Object {
+            "author": "Paul McClain",
+            "bookReviews": Array [],
+            "borrowCount": 1,
+            "createdAt": "2018-05-10T03:11:52.181Z",
+            "description": "Magnolia Table",
+            "downvotes": 0,
+            "favCount": 0,
+            "id": 96,
+            "imageURL": "https://images-na.ssl.jpg",
+            "quantity": 20,
+            "subject": "Romance",
+            "title": "Love and Ruin",
+            "updatedAt": "2018-06-22T12:22:48.895Z",
+            "upvotes": 1,
+          },
+          Object {
+            "author": "Sheryl Sandberg",
+            "bookReviews": Array [],
+            "borrowCount": 0,
+            "createdAt": "2018-06-22T08:56:20.614Z",
+            "description": "A guide on how women can balance career and family",
+            "downvotes": 0,
+            "favCount": 0,
+            "id": 1,
+            "imageURL": "https://res.cloudinary.com.jpg",
+            "quantity": 20,
+            "subject": "Self-help",
+            "title": "Lean In",
+            "updatedAt": "2018-06-22T12:22:28.308Z",
+            "upvotes": 1,
+          },
+        ],
+        "upvotedBooksPagination": Object {
+          "currentPage": 1,
+          "dataCount": 2,
+          "pageCount": 1,
+          "pageSize": 2,
+        },
+        "upvotedError": null,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<IndexPage /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <IndexPage
+    books={
+      Array [
+        Object {
+          "author": "Trevor Noah",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Attuned to the power of la",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 95,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 20,
+          "subject": "Biography",
+          "title": "Born a Crime",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Ken Follet",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "This lush novel, set ",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 92,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 2,
+          "subject": "Thriller",
+          "title": "A Place Called Freedom",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+        Object {
+          "author": "Joanna Gaines",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Magnolia Table is infused with Joanna Gaines",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 97,
+          "imageURL": "https://images-na.ssl-image.jpg",
+          "quantity": 7,
+          "subject": "Recipe",
+          "title": "Magnolia Table: A Collection of Recipes for Gathering",
+          "updatedAt": "2018-05-10T03:11:52.181Z",
+          "upvotes": 0,
+        },
+      ]
+    }
+    error={null}
+    getBooks={[Function]}
+    getMostUpvotedBooks={[Function]}
+    isFetching={false}
+    isLoading={null}
+    searchBooks={[Function]}
+    searchError={null}
+    upvotedBooks={
+      Array [
+        Object {
+          "author": "Paul McClain",
+          "bookReviews": Array [],
+          "borrowCount": 1,
+          "createdAt": "2018-05-10T03:11:52.181Z",
+          "description": "Magnolia Table",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 96,
+          "imageURL": "https://images-na.ssl.jpg",
+          "quantity": 20,
+          "subject": "Romance",
+          "title": "Love and Ruin",
+          "updatedAt": "2018-06-22T12:22:48.895Z",
+          "upvotes": 1,
+        },
+        Object {
+          "author": "Sheryl Sandberg",
+          "bookReviews": Array [],
+          "borrowCount": 0,
+          "createdAt": "2018-06-22T08:56:20.614Z",
+          "description": "A guide on how women can balance career and family",
+          "downvotes": 0,
+          "favCount": 0,
+          "id": 1,
+          "imageURL": "https://res.cloudinary.com.jpg",
+          "quantity": 20,
+          "subject": "Self-help",
+          "title": "Lean In",
+          "updatedAt": "2018-06-22T12:22:28.308Z",
+          "upvotes": 1,
+        },
+      ]
+    }
+    upvotedBooksPagination={
+      Object {
+        "currentPage": 1,
+        "dataCount": 2,
+        "pageCount": 1,
+        "pageSize": 2,
+      }
+    }
+    upvotedError={null}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <Slider
+            className="slider-div"
+            fullscreen={false}
+            indicators={false}
+            interval={6000}
+          >
+            <Slide
+              placement="center"
+              src="test-file-stub"
+            >
+              <p
+                className="white-text flow-text slider-text"
+                id="welcome"
+              >
+                Welcome to Hello-books
+              </p>
+              <p
+                className="white-text flow-text slider-text flow-text"
+                id="borrow"
+              >
+                Borrow your favorite books on our platform!!!
+              </p>
+              <Link
+                className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                id="get-started"
+                replace={false}
+                to="/login"
+              >
+                Get Started
+              </Link>
+            </Slide>
+            <Slide
+              placement="left"
+              src="test-file-stub"
+            >
+              <p
+                className="white-text flow-text slider-text bold"
+                id="rate-review"
+              >
+                Rate and review books
+              </p>
+              <p
+                className="white-text flow-text slider-text flow-text bold"
+                id="review"
+              >
+                View others' reviews of books and give yours
+              </p>
+              <Link
+                className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                replace={false}
+                to="/login"
+              >
+                Get Started
+              </Link>
+            </Slide>
+          </Slider>
+        </div>,
+        <SearchBar
+          books={
+            Array [
+              Object {
+                "author": "Trevor Noah",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Attuned to the power of la",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 95,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 20,
+                "subject": "Biography",
+                "title": "Born a Crime",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+              Object {
+                "author": "Ken Follet",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "This lush novel, set ",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 92,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 2,
+                "subject": "Thriller",
+                "title": "A Place Called Freedom",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+              Object {
+                "author": "Joanna Gaines",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Magnolia Table is infused with Joanna Gaines",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 97,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 7,
+                "subject": "Recipe",
+                "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+            ]
+          }
+          error={null}
+          getBooks={[Function]}
+          getMostUpvotedBooks={[Function]}
+          isFetching={false}
+          isLoading={null}
+          searchBooks={[Function]}
+          searchError={null}
+          upvotedBooks={
+            Array [
+              Object {
+                "author": "Paul McClain",
+                "bookReviews": Array [],
+                "borrowCount": 1,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Magnolia Table",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 96,
+                "imageURL": "https://images-na.ssl.jpg",
+                "quantity": 20,
+                "subject": "Romance",
+                "title": "Love and Ruin",
+                "updatedAt": "2018-06-22T12:22:48.895Z",
+                "upvotes": 1,
+              },
+              Object {
+                "author": "Sheryl Sandberg",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-06-22T08:56:20.614Z",
+                "description": "A guide on how women can balance career and family",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 1,
+                "imageURL": "https://res.cloudinary.com.jpg",
+                "quantity": 20,
+                "subject": "Self-help",
+                "title": "Lean In",
+                "updatedAt": "2018-06-22T12:22:28.308Z",
+                "upvotes": 1,
+              },
+            ]
+          }
+          upvotedBooksPagination={
+            Object {
+              "currentPage": 1,
+              "dataCount": 2,
+              "pageCount": 1,
+              "pageSize": 2,
+            }
+          }
+          upvotedError={null}
+        />,
+        null,
+        <div
+          className="section white wrapper"
+        >
+          <div
+            className="row center"
+            id="available"
+          >
+            <h4
+              className="text-darken-3 book-header"
+            >
+              Available books
+            </h4>
+          </div>
+          <div
+            className="row book-list"
+          >
+            <div>
+              <BooksList
+                books={
+                  Array [
+                    Object {
+                      "author": "Trevor Noah",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Attuned to the power of la",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 95,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 20,
+                      "subject": "Biography",
+                      "title": "Born a Crime",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                    Object {
+                      "author": "Ken Follet",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "This lush novel, set ",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 92,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 2,
+                      "subject": "Thriller",
+                      "title": "A Place Called Freedom",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                    Object {
+                      "author": "Joanna Gaines",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Magnolia Table is infused with Joanna Gaines",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 97,
+                      "imageURL": "https://images-na.ssl-image.jpg",
+                      "quantity": 7,
+                      "subject": "Recipe",
+                      "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                      "updatedAt": "2018-05-10T03:11:52.181Z",
+                      "upvotes": 0,
+                    },
+                  ]
+                }
+              />
+              <div
+                className="row center"
+              >
+                <Link
+                  replace={false}
+                  to="/books"
+                >
+                  <button
+                    className="btn btn-medium primary-button waves-effect waves-light"
+                    id="all-books"
+                  >
+                    View All Books
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div
+            className="container"
+          >
+            <div
+              className="divider z-depth-1"
+            />
+          </div>
+          <div
+            className="row center"
+            id="most-popular"
+          >
+            <h4
+              className="book-header text-darken-3"
+            >
+              Most popular among readers
+            </h4>
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="row book-list"
+              id="most-popular-books"
+            >
+              <BooksList
+                books={
+                  Array [
+                    Object {
+                      "author": "Paul McClain",
+                      "bookReviews": Array [],
+                      "borrowCount": 1,
+                      "createdAt": "2018-05-10T03:11:52.181Z",
+                      "description": "Magnolia Table",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 96,
+                      "imageURL": "https://images-na.ssl.jpg",
+                      "quantity": 20,
+                      "subject": "Romance",
+                      "title": "Love and Ruin",
+                      "updatedAt": "2018-06-22T12:22:48.895Z",
+                      "upvotes": 1,
+                    },
+                    Object {
+                      "author": "Sheryl Sandberg",
+                      "bookReviews": Array [],
+                      "borrowCount": 0,
+                      "createdAt": "2018-06-22T08:56:20.614Z",
+                      "description": "A guide on how women can balance career and family",
+                      "downvotes": 0,
+                      "favCount": 0,
+                      "id": 1,
+                      "imageURL": "https://res.cloudinary.com.jpg",
+                      "quantity": 20,
+                      "subject": "Self-help",
+                      "title": "Lean In",
+                      "updatedAt": "2018-06-22T12:22:28.308Z",
+                      "upvotes": 1,
+                    },
+                  ]
+                }
+              />
+              <Pagination
+                floatingButton={true}
+                onPageChange={[Function]}
+                pagination={
+                  Object {
+                    "currentPage": 1,
+                    "dataCount": 2,
+                    "pageCount": 1,
+                    "pageSize": 2,
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <Slider
+            className="slider-div"
+            fullscreen={false}
+            indicators={false}
+            interval={6000}
+          >
+            <Slide
+              placement="center"
+              src="test-file-stub"
+            >
+              <p
+                className="white-text flow-text slider-text"
+                id="welcome"
+              >
+                Welcome to Hello-books
+              </p>
+              <p
+                className="white-text flow-text slider-text flow-text"
+                id="borrow"
+              >
+                Borrow your favorite books on our platform!!!
+              </p>
+              <Link
+                className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                id="get-started"
+                replace={false}
+                to="/login"
+              >
+                Get Started
+              </Link>
+            </Slide>
+            <Slide
+              placement="left"
+              src="test-file-stub"
+            >
+              <p
+                className="white-text flow-text slider-text bold"
+                id="rate-review"
+              >
+                Rate and review books
+              </p>
+              <p
+                className="white-text flow-text slider-text flow-text bold"
+                id="review"
+              >
+                View others' reviews of books and give yours
+              </p>
+              <Link
+                className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                replace={false}
+                to="/login"
+              >
+                Get Started
+              </Link>
+            </Slide>
+          </Slider>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Slide
+                placement="center"
+                src="test-file-stub"
+              >
+                <p
+                  className="white-text flow-text slider-text"
+                  id="welcome"
+                >
+                  Welcome to Hello-books
+                </p>
+                <p
+                  className="white-text flow-text slider-text flow-text"
+                  id="borrow"
+                >
+                  Borrow your favorite books on our platform!!!
+                </p>
+                <Link
+                  className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                  id="get-started"
+                  replace={false}
+                  to="/login"
+                >
+                  Get Started
+                </Link>
+              </Slide>,
+              <Slide
+                placement="left"
+                src="test-file-stub"
+              >
+                <p
+                  className="white-text flow-text slider-text bold"
+                  id="rate-review"
+                >
+                  Rate and review books
+                </p>
+                <p
+                  className="white-text flow-text slider-text flow-text bold"
+                  id="review"
+                >
+                  View others' reviews of books and give yours
+                </p>
+                <Link
+                  className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                  replace={false}
+                  to="/login"
+                >
+                  Get Started
+                </Link>
+              </Slide>,
+            ],
+            "className": "slider-div",
+            "fullscreen": false,
+            "indicators": false,
+            "interval": 6000,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <p
+                    className="white-text flow-text slider-text"
+                    id="welcome"
+                  >
+                    Welcome to Hello-books
+                  </p>,
+                  <p
+                    className="white-text flow-text slider-text flow-text"
+                    id="borrow"
+                  >
+                    Borrow your favorite books on our platform!!!
+                  </p>,
+                  <Link
+                    className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                    id="get-started"
+                    replace={false}
+                    to="/login"
+                  >
+                    Get Started
+                  </Link>,
+                ],
+                "placement": "center",
+                "src": "test-file-stub",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Welcome to Hello-books",
+                    "className": "white-text flow-text slider-text",
+                    "id": "welcome",
+                  },
+                  "ref": null,
+                  "rendered": "Welcome to Hello-books",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Borrow your favorite books on our platform!!!",
+                    "className": "white-text flow-text slider-text flow-text",
+                    "id": "borrow",
+                  },
+                  "ref": null,
+                  "rendered": "Borrow your favorite books on our platform!!!",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Get Started",
+                    "className": "btn btn-large primary-button white-text darken-2 waves-effect waves-light",
+                    "id": "get-started",
+                    "replace": false,
+                    "to": "/login",
+                  },
+                  "ref": null,
+                  "rendered": "Get Started",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <p
+                    className="white-text flow-text slider-text bold"
+                    id="rate-review"
+                  >
+                    Rate and review books
+                  </p>,
+                  <p
+                    className="white-text flow-text slider-text flow-text bold"
+                    id="review"
+                  >
+                    View others' reviews of books and give yours
+                  </p>,
+                  <Link
+                    className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                    replace={false}
+                    to="/login"
+                  >
+                    Get Started
+                  </Link>,
+                ],
+                "placement": "left",
+                "src": "test-file-stub",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Rate and review books",
+                    "className": "white-text flow-text slider-text bold",
+                    "id": "rate-review",
+                  },
+                  "ref": null,
+                  "rendered": "Rate and review books",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "View others' reviews of books and give yours",
+                    "className": "white-text flow-text slider-text flow-text bold",
+                    "id": "review",
+                  },
+                  "ref": null,
+                  "rendered": "View others' reviews of books and give yours",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Get Started",
+                    "className": "btn btn-large primary-button white-text darken-2 waves-effect waves-light",
+                    "replace": false,
+                    "to": "/login",
+                  },
+                  "ref": null,
+                  "rendered": "Get Started",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "books": Array [
+            Object {
+              "author": "Trevor Noah",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Attuned to the power of la",
+              "downvotes": 0,
+              "favCount": 0,
+              "id": 95,
+              "imageURL": "https://images-na.ssl-image.jpg",
+              "quantity": 20,
+              "subject": "Biography",
+              "title": "Born a Crime",
+              "updatedAt": "2018-05-10T03:11:52.181Z",
+              "upvotes": 0,
+            },
+            Object {
+              "author": "Ken Follet",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "This lush novel, set ",
+              "downvotes": 0,
+              "favCount": 0,
+              "id": 92,
+              "imageURL": "https://images-na.ssl-image.jpg",
+              "quantity": 2,
+              "subject": "Thriller",
+              "title": "A Place Called Freedom",
+              "updatedAt": "2018-05-10T03:11:52.181Z",
+              "upvotes": 0,
+            },
+            Object {
+              "author": "Joanna Gaines",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Magnolia Table is infused with Joanna Gaines",
+              "downvotes": 0,
+              "favCount": 0,
+              "id": 97,
+              "imageURL": "https://images-na.ssl-image.jpg",
+              "quantity": 7,
+              "subject": "Recipe",
+              "title": "Magnolia Table: A Collection of Recipes for Gathering",
+              "updatedAt": "2018-05-10T03:11:52.181Z",
+              "upvotes": 0,
+            },
+          ],
+          "error": null,
+          "getBooks": [Function],
+          "getMostUpvotedBooks": [Function],
+          "isFetching": false,
+          "isLoading": null,
+          "searchBooks": [Function],
+          "searchError": null,
+          "upvotedBooks": Array [
+            Object {
+              "author": "Paul McClain",
+              "bookReviews": Array [],
+              "borrowCount": 1,
+              "createdAt": "2018-05-10T03:11:52.181Z",
+              "description": "Magnolia Table",
+              "downvotes": 0,
+              "favCount": 0,
+              "id": 96,
+              "imageURL": "https://images-na.ssl.jpg",
+              "quantity": 20,
+              "subject": "Romance",
+              "title": "Love and Ruin",
+              "updatedAt": "2018-06-22T12:22:48.895Z",
+              "upvotes": 1,
+            },
+            Object {
+              "author": "Sheryl Sandberg",
+              "bookReviews": Array [],
+              "borrowCount": 0,
+              "createdAt": "2018-06-22T08:56:20.614Z",
+              "description": "A guide on how women can balance career and family",
+              "downvotes": 0,
+              "favCount": 0,
+              "id": 1,
+              "imageURL": "https://res.cloudinary.com.jpg",
+              "quantity": 20,
+              "subject": "Self-help",
+              "title": "Lean In",
+              "updatedAt": "2018-06-22T12:22:28.308Z",
+              "upvotes": 1,
+            },
+          ],
+          "upvotedBooksPagination": Object {
+            "currentPage": 1,
+            "dataCount": 2,
+            "pageCount": 1,
+            "pageSize": 2,
+          },
+          "upvotedError": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      null,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="row center"
+              id="available"
+            >
+              <h4
+                className="text-darken-3 book-header"
+              >
+                Available books
+              </h4>
+            </div>,
+            <div
+              className="row book-list"
+            >
+              <div>
+                <BooksList
+                  books={
+                    Array [
+                      Object {
+                        "author": "Trevor Noah",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Attuned to the power of la",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 95,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 20,
+                        "subject": "Biography",
+                        "title": "Born a Crime",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Ken Follet",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "This lush novel, set ",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 92,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 2,
+                        "subject": "Thriller",
+                        "title": "A Place Called Freedom",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Joanna Gaines",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Magnolia Table is infused with Joanna Gaines",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 97,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 7,
+                        "subject": "Recipe",
+                        "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                    ]
+                  }
+                />
+                <div
+                  className="row center"
+                >
+                  <Link
+                    replace={false}
+                    to="/books"
+                  >
+                    <button
+                      className="btn btn-medium primary-button waves-effect waves-light"
+                      id="all-books"
+                    >
+                      View All Books
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>,
+            <div
+              className="container"
+            >
+              <div
+                className="divider z-depth-1"
+              />
+            </div>,
+            <div
+              className="row center"
+              id="most-popular"
+            >
+              <h4
+                className="book-header text-darken-3"
+              >
+                Most popular among readers
+              </h4>
+            </div>,
+            <div
+              className="row"
+            >
+              <div
+                className="row book-list"
+                id="most-popular-books"
+              >
+                <BooksList
+                  books={
+                    Array [
+                      Object {
+                        "author": "Paul McClain",
+                        "bookReviews": Array [],
+                        "borrowCount": 1,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Magnolia Table",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 96,
+                        "imageURL": "https://images-na.ssl.jpg",
+                        "quantity": 20,
+                        "subject": "Romance",
+                        "title": "Love and Ruin",
+                        "updatedAt": "2018-06-22T12:22:48.895Z",
+                        "upvotes": 1,
+                      },
+                      Object {
+                        "author": "Sheryl Sandberg",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-06-22T08:56:20.614Z",
+                        "description": "A guide on how women can balance career and family",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 1,
+                        "imageURL": "https://res.cloudinary.com.jpg",
+                        "quantity": 20,
+                        "subject": "Self-help",
+                        "title": "Lean In",
+                        "updatedAt": "2018-06-22T12:22:28.308Z",
+                        "upvotes": 1,
+                      },
+                    ]
+                  }
+                />
+                <Pagination
+                  floatingButton={true}
+                  onPageChange={[Function]}
+                  pagination={
+                    Object {
+                      "currentPage": 1,
+                      "dataCount": 2,
+                      "pageCount": 1,
+                      "pageSize": 2,
+                    }
+                  }
+                />
+              </div>
+            </div>,
+          ],
+          "className": "section white wrapper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h4
+                className="text-darken-3 book-header"
+              >
+                Available books
+              </h4>,
+              "className": "row center",
+              "id": "available",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Available books",
+                "className": "text-darken-3 book-header",
+              },
+              "ref": null,
+              "rendered": "Available books",
+              "type": "h4",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                false,
+                null,
+                <div>
+                  <BooksList
+                    books={
+                      Array [
+                        Object {
+                          "author": "Trevor Noah",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Attuned to the power of la",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 95,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 20,
+                          "subject": "Biography",
+                          "title": "Born a Crime",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                        Object {
+                          "author": "Ken Follet",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "This lush novel, set ",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 92,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 2,
+                          "subject": "Thriller",
+                          "title": "A Place Called Freedom",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                        Object {
+                          "author": "Joanna Gaines",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Magnolia Table is infused with Joanna Gaines",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 97,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 7,
+                          "subject": "Recipe",
+                          "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                      ]
+                    }
+                  />
+                  <div
+                    className="row center"
+                  >
+                    <Link
+                      replace={false}
+                      to="/books"
+                    >
+                      <button
+                        className="btn btn-medium primary-button waves-effect waves-light"
+                        id="all-books"
+                      >
+                        View All Books
+                      </button>
+                    </Link>
+                  </div>
+                </div>,
+              ],
+              "className": "row book-list",
+            },
+            "ref": null,
+            "rendered": Array [
+              false,
+              null,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <BooksList
+                      books={
+                        Array [
+                          Object {
+                            "author": "Trevor Noah",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Attuned to the power of la",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 95,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 20,
+                            "subject": "Biography",
+                            "title": "Born a Crime",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                          Object {
+                            "author": "Ken Follet",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "This lush novel, set ",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 92,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 2,
+                            "subject": "Thriller",
+                            "title": "A Place Called Freedom",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                          Object {
+                            "author": "Joanna Gaines",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Magnolia Table is infused with Joanna Gaines",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 97,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 7,
+                            "subject": "Recipe",
+                            "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                        ]
+                      }
+                    />,
+                    <div
+                      className="row center"
+                    >
+                      <Link
+                        replace={false}
+                        to="/books"
+                      >
+                        <button
+                          className="btn btn-medium primary-button waves-effect waves-light"
+                          id="all-books"
+                        >
+                          View All Books
+                        </button>
+                      </Link>
+                    </div>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "books": Array [
+                        Object {
+                          "author": "Trevor Noah",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Attuned to the power of la",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 95,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 20,
+                          "subject": "Biography",
+                          "title": "Born a Crime",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                        Object {
+                          "author": "Ken Follet",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "This lush novel, set ",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 92,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 2,
+                          "subject": "Thriller",
+                          "title": "A Place Called Freedom",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                        Object {
+                          "author": "Joanna Gaines",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Magnolia Table is infused with Joanna Gaines",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 97,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 7,
+                          "subject": "Recipe",
+                          "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/books"
+                      >
+                        <button
+                          className="btn btn-medium primary-button waves-effect waves-light"
+                          id="all-books"
+                        >
+                          View All Books
+                        </button>
+                      </Link>,
+                      "className": "row center",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <button
+                          className="btn btn-medium primary-button waves-effect waves-light"
+                          id="all-books"
+                        >
+                          View All Books
+                        </button>,
+                        "replace": false,
+                        "to": "/books",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "View All Books",
+                          "className": "btn btn-medium primary-button waves-effect waves-light",
+                          "id": "all-books",
+                        },
+                        "ref": null,
+                        "rendered": "View All Books",
+                        "type": "button",
+                      },
+                      "type": [Function],
+                    },
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="divider z-depth-1"
+              />,
+              "className": "container",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "divider z-depth-1",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h4
+                className="book-header text-darken-3"
+              >
+                Most popular among readers
+              </h4>,
+              "className": "row center",
+              "id": "most-popular",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Most popular among readers",
+                "className": "book-header text-darken-3",
+              },
+              "ref": null,
+              "rendered": "Most popular among readers",
+              "type": "h4",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                null,
+                null,
+                <div
+                  className="row book-list"
+                  id="most-popular-books"
+                >
+                  <BooksList
+                    books={
+                      Array [
+                        Object {
+                          "author": "Paul McClain",
+                          "bookReviews": Array [],
+                          "borrowCount": 1,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Magnolia Table",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 96,
+                          "imageURL": "https://images-na.ssl.jpg",
+                          "quantity": 20,
+                          "subject": "Romance",
+                          "title": "Love and Ruin",
+                          "updatedAt": "2018-06-22T12:22:48.895Z",
+                          "upvotes": 1,
+                        },
+                        Object {
+                          "author": "Sheryl Sandberg",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-06-22T08:56:20.614Z",
+                          "description": "A guide on how women can balance career and family",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 1,
+                          "imageURL": "https://res.cloudinary.com.jpg",
+                          "quantity": 20,
+                          "subject": "Self-help",
+                          "title": "Lean In",
+                          "updatedAt": "2018-06-22T12:22:28.308Z",
+                          "upvotes": 1,
+                        },
+                      ]
+                    }
+                  />
+                  <Pagination
+                    floatingButton={true}
+                    onPageChange={[Function]}
+                    pagination={
+                      Object {
+                        "currentPage": 1,
+                        "dataCount": 2,
+                        "pageCount": 1,
+                        "pageSize": 2,
+                      }
+                    }
+                  />
+                </div>,
+              ],
+              "className": "row",
+            },
+            "ref": null,
+            "rendered": Array [
+              null,
+              null,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <BooksList
+                      books={
+                        Array [
+                          Object {
+                            "author": "Paul McClain",
+                            "bookReviews": Array [],
+                            "borrowCount": 1,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Magnolia Table",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 96,
+                            "imageURL": "https://images-na.ssl.jpg",
+                            "quantity": 20,
+                            "subject": "Romance",
+                            "title": "Love and Ruin",
+                            "updatedAt": "2018-06-22T12:22:48.895Z",
+                            "upvotes": 1,
+                          },
+                          Object {
+                            "author": "Sheryl Sandberg",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-06-22T08:56:20.614Z",
+                            "description": "A guide on how women can balance career and family",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 1,
+                            "imageURL": "https://res.cloudinary.com.jpg",
+                            "quantity": 20,
+                            "subject": "Self-help",
+                            "title": "Lean In",
+                            "updatedAt": "2018-06-22T12:22:28.308Z",
+                            "upvotes": 1,
+                          },
+                        ]
+                      }
+                    />,
+                    <Pagination
+                      floatingButton={true}
+                      onPageChange={[Function]}
+                      pagination={
+                        Object {
+                          "currentPage": 1,
+                          "dataCount": 2,
+                          "pageCount": 1,
+                          "pageSize": 2,
+                        }
+                      }
+                    />,
+                  ],
+                  "className": "row book-list",
+                  "id": "most-popular-books",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "books": Array [
+                        Object {
+                          "author": "Paul McClain",
+                          "bookReviews": Array [],
+                          "borrowCount": 1,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Magnolia Table",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 96,
+                          "imageURL": "https://images-na.ssl.jpg",
+                          "quantity": 20,
+                          "subject": "Romance",
+                          "title": "Love and Ruin",
+                          "updatedAt": "2018-06-22T12:22:48.895Z",
+                          "upvotes": 1,
+                        },
+                        Object {
+                          "author": "Sheryl Sandberg",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-06-22T08:56:20.614Z",
+                          "description": "A guide on how women can balance career and family",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 1,
+                          "imageURL": "https://res.cloudinary.com.jpg",
+                          "quantity": 20,
+                          "subject": "Self-help",
+                          "title": "Lean In",
+                          "updatedAt": "2018-06-22T12:22:28.308Z",
+                          "upvotes": 1,
+                        },
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "floatingButton": true,
+                      "onPageChange": [Function],
+                      "pagination": Object {
+                        "currentPage": 1,
+                        "dataCount": 2,
+                        "pageCount": 1,
+                        "pageSize": 2,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <Slider
+              className="slider-div"
+              fullscreen={false}
+              indicators={false}
+              interval={6000}
+            >
+              <Slide
+                placement="center"
+                src="test-file-stub"
+              >
+                <p
+                  className="white-text flow-text slider-text"
+                  id="welcome"
+                >
+                  Welcome to Hello-books
+                </p>
+                <p
+                  className="white-text flow-text slider-text flow-text"
+                  id="borrow"
+                >
+                  Borrow your favorite books on our platform!!!
+                </p>
+                <Link
+                  className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                  id="get-started"
+                  replace={false}
+                  to="/login"
+                >
+                  Get Started
+                </Link>
+              </Slide>
+              <Slide
+                placement="left"
+                src="test-file-stub"
+              >
+                <p
+                  className="white-text flow-text slider-text bold"
+                  id="rate-review"
+                >
+                  Rate and review books
+                </p>
+                <p
+                  className="white-text flow-text slider-text flow-text bold"
+                  id="review"
+                >
+                  View others' reviews of books and give yours
+                </p>
+                <Link
+                  className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                  replace={false}
+                  to="/login"
+                >
+                  Get Started
+                </Link>
+              </Slide>
+            </Slider>
+          </div>,
+          <SearchBar
+            books={
+              Array [
+                Object {
+                  "author": "Trevor Noah",
+                  "bookReviews": Array [],
+                  "borrowCount": 0,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "Attuned to the power of la",
+                  "downvotes": 0,
+                  "favCount": 0,
+                  "id": 95,
+                  "imageURL": "https://images-na.ssl-image.jpg",
+                  "quantity": 20,
+                  "subject": "Biography",
+                  "title": "Born a Crime",
+                  "updatedAt": "2018-05-10T03:11:52.181Z",
+                  "upvotes": 0,
+                },
+                Object {
+                  "author": "Ken Follet",
+                  "bookReviews": Array [],
+                  "borrowCount": 0,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "This lush novel, set ",
+                  "downvotes": 0,
+                  "favCount": 0,
+                  "id": 92,
+                  "imageURL": "https://images-na.ssl-image.jpg",
+                  "quantity": 2,
+                  "subject": "Thriller",
+                  "title": "A Place Called Freedom",
+                  "updatedAt": "2018-05-10T03:11:52.181Z",
+                  "upvotes": 0,
+                },
+                Object {
+                  "author": "Joanna Gaines",
+                  "bookReviews": Array [],
+                  "borrowCount": 0,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "Magnolia Table is infused with Joanna Gaines",
+                  "downvotes": 0,
+                  "favCount": 0,
+                  "id": 97,
+                  "imageURL": "https://images-na.ssl-image.jpg",
+                  "quantity": 7,
+                  "subject": "Recipe",
+                  "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                  "updatedAt": "2018-05-10T03:11:52.181Z",
+                  "upvotes": 0,
+                },
+              ]
+            }
+            error={null}
+            getBooks={[Function]}
+            getMostUpvotedBooks={[Function]}
+            isFetching={false}
+            isLoading={null}
+            searchBooks={[Function]}
+            searchError={null}
+            upvotedBooks={
+              Array [
+                Object {
+                  "author": "Paul McClain",
+                  "bookReviews": Array [],
+                  "borrowCount": 1,
+                  "createdAt": "2018-05-10T03:11:52.181Z",
+                  "description": "Magnolia Table",
+                  "downvotes": 0,
+                  "favCount": 0,
+                  "id": 96,
+                  "imageURL": "https://images-na.ssl.jpg",
+                  "quantity": 20,
+                  "subject": "Romance",
+                  "title": "Love and Ruin",
+                  "updatedAt": "2018-06-22T12:22:48.895Z",
+                  "upvotes": 1,
+                },
+                Object {
+                  "author": "Sheryl Sandberg",
+                  "bookReviews": Array [],
+                  "borrowCount": 0,
+                  "createdAt": "2018-06-22T08:56:20.614Z",
+                  "description": "A guide on how women can balance career and family",
+                  "downvotes": 0,
+                  "favCount": 0,
+                  "id": 1,
+                  "imageURL": "https://res.cloudinary.com.jpg",
+                  "quantity": 20,
+                  "subject": "Self-help",
+                  "title": "Lean In",
+                  "updatedAt": "2018-06-22T12:22:28.308Z",
+                  "upvotes": 1,
+                },
+              ]
+            }
+            upvotedBooksPagination={
+              Object {
+                "currentPage": 1,
+                "dataCount": 2,
+                "pageCount": 1,
+                "pageSize": 2,
+              }
+            }
+            upvotedError={null}
+          />,
+          null,
+          <div
+            className="section white wrapper"
+          >
+            <div
+              className="row center"
+              id="available"
+            >
+              <h4
+                className="text-darken-3 book-header"
+              >
+                Available books
+              </h4>
+            </div>
+            <div
+              className="row book-list"
+            >
+              <div>
+                <BooksList
+                  books={
+                    Array [
+                      Object {
+                        "author": "Trevor Noah",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Attuned to the power of la",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 95,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 20,
+                        "subject": "Biography",
+                        "title": "Born a Crime",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Ken Follet",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "This lush novel, set ",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 92,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 2,
+                        "subject": "Thriller",
+                        "title": "A Place Called Freedom",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                      Object {
+                        "author": "Joanna Gaines",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Magnolia Table is infused with Joanna Gaines",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 97,
+                        "imageURL": "https://images-na.ssl-image.jpg",
+                        "quantity": 7,
+                        "subject": "Recipe",
+                        "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                        "updatedAt": "2018-05-10T03:11:52.181Z",
+                        "upvotes": 0,
+                      },
+                    ]
+                  }
+                />
+                <div
+                  className="row center"
+                >
+                  <Link
+                    replace={false}
+                    to="/books"
+                  >
+                    <button
+                      className="btn btn-medium primary-button waves-effect waves-light"
+                      id="all-books"
+                    >
+                      View All Books
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div
+              className="container"
+            >
+              <div
+                className="divider z-depth-1"
+              />
+            </div>
+            <div
+              className="row center"
+              id="most-popular"
+            >
+              <h4
+                className="book-header text-darken-3"
+              >
+                Most popular among readers
+              </h4>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="row book-list"
+                id="most-popular-books"
+              >
+                <BooksList
+                  books={
+                    Array [
+                      Object {
+                        "author": "Paul McClain",
+                        "bookReviews": Array [],
+                        "borrowCount": 1,
+                        "createdAt": "2018-05-10T03:11:52.181Z",
+                        "description": "Magnolia Table",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 96,
+                        "imageURL": "https://images-na.ssl.jpg",
+                        "quantity": 20,
+                        "subject": "Romance",
+                        "title": "Love and Ruin",
+                        "updatedAt": "2018-06-22T12:22:48.895Z",
+                        "upvotes": 1,
+                      },
+                      Object {
+                        "author": "Sheryl Sandberg",
+                        "bookReviews": Array [],
+                        "borrowCount": 0,
+                        "createdAt": "2018-06-22T08:56:20.614Z",
+                        "description": "A guide on how women can balance career and family",
+                        "downvotes": 0,
+                        "favCount": 0,
+                        "id": 1,
+                        "imageURL": "https://res.cloudinary.com.jpg",
+                        "quantity": 20,
+                        "subject": "Self-help",
+                        "title": "Lean In",
+                        "updatedAt": "2018-06-22T12:22:28.308Z",
+                        "upvotes": 1,
+                      },
+                    ]
+                  }
+                />
+                <Pagination
+                  floatingButton={true}
+                  onPageChange={[Function]}
+                  pagination={
+                    Object {
+                      "currentPage": 1,
+                      "dataCount": 2,
+                      "pageCount": 1,
+                      "pageSize": 2,
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <Slider
+              className="slider-div"
+              fullscreen={false}
+              indicators={false}
+              interval={6000}
+            >
+              <Slide
+                placement="center"
+                src="test-file-stub"
+              >
+                <p
+                  className="white-text flow-text slider-text"
+                  id="welcome"
+                >
+                  Welcome to Hello-books
+                </p>
+                <p
+                  className="white-text flow-text slider-text flow-text"
+                  id="borrow"
+                >
+                  Borrow your favorite books on our platform!!!
+                </p>
+                <Link
+                  className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                  id="get-started"
+                  replace={false}
+                  to="/login"
+                >
+                  Get Started
+                </Link>
+              </Slide>
+              <Slide
+                placement="left"
+                src="test-file-stub"
+              >
+                <p
+                  className="white-text flow-text slider-text bold"
+                  id="rate-review"
+                >
+                  Rate and review books
+                </p>
+                <p
+                  className="white-text flow-text slider-text flow-text bold"
+                  id="review"
+                >
+                  View others' reviews of books and give yours
+                </p>
+                <Link
+                  className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                  replace={false}
+                  to="/login"
+                >
+                  Get Started
+                </Link>
+              </Slide>
+            </Slider>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Slide
+                  placement="center"
+                  src="test-file-stub"
+                >
+                  <p
+                    className="white-text flow-text slider-text"
+                    id="welcome"
+                  >
+                    Welcome to Hello-books
+                  </p>
+                  <p
+                    className="white-text flow-text slider-text flow-text"
+                    id="borrow"
+                  >
+                    Borrow your favorite books on our platform!!!
+                  </p>
+                  <Link
+                    className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                    id="get-started"
+                    replace={false}
+                    to="/login"
+                  >
+                    Get Started
+                  </Link>
+                </Slide>,
+                <Slide
+                  placement="left"
+                  src="test-file-stub"
+                >
+                  <p
+                    className="white-text flow-text slider-text bold"
+                    id="rate-review"
+                  >
+                    Rate and review books
+                  </p>
+                  <p
+                    className="white-text flow-text slider-text flow-text bold"
+                    id="review"
+                  >
+                    View others' reviews of books and give yours
+                  </p>
+                  <Link
+                    className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                    replace={false}
+                    to="/login"
+                  >
+                    Get Started
+                  </Link>
+                </Slide>,
+              ],
+              "className": "slider-div",
+              "fullscreen": false,
+              "indicators": false,
+              "interval": 6000,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <p
+                      className="white-text flow-text slider-text"
+                      id="welcome"
+                    >
+                      Welcome to Hello-books
+                    </p>,
+                    <p
+                      className="white-text flow-text slider-text flow-text"
+                      id="borrow"
+                    >
+                      Borrow your favorite books on our platform!!!
+                    </p>,
+                    <Link
+                      className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                      id="get-started"
+                      replace={false}
+                      to="/login"
+                    >
+                      Get Started
+                    </Link>,
+                  ],
+                  "placement": "center",
+                  "src": "test-file-stub",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Welcome to Hello-books",
+                      "className": "white-text flow-text slider-text",
+                      "id": "welcome",
+                    },
+                    "ref": null,
+                    "rendered": "Welcome to Hello-books",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Borrow your favorite books on our platform!!!",
+                      "className": "white-text flow-text slider-text flow-text",
+                      "id": "borrow",
+                    },
+                    "ref": null,
+                    "rendered": "Borrow your favorite books on our platform!!!",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Get Started",
+                      "className": "btn btn-large primary-button white-text darken-2 waves-effect waves-light",
+                      "id": "get-started",
+                      "replace": false,
+                      "to": "/login",
+                    },
+                    "ref": null,
+                    "rendered": "Get Started",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <p
+                      className="white-text flow-text slider-text bold"
+                      id="rate-review"
+                    >
+                      Rate and review books
+                    </p>,
+                    <p
+                      className="white-text flow-text slider-text flow-text bold"
+                      id="review"
+                    >
+                      View others' reviews of books and give yours
+                    </p>,
+                    <Link
+                      className="btn btn-large primary-button white-text darken-2 waves-effect waves-light"
+                      replace={false}
+                      to="/login"
+                    >
+                      Get Started
+                    </Link>,
+                  ],
+                  "placement": "left",
+                  "src": "test-file-stub",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Rate and review books",
+                      "className": "white-text flow-text slider-text bold",
+                      "id": "rate-review",
+                    },
+                    "ref": null,
+                    "rendered": "Rate and review books",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "View others' reviews of books and give yours",
+                      "className": "white-text flow-text slider-text flow-text bold",
+                      "id": "review",
+                    },
+                    "ref": null,
+                    "rendered": "View others' reviews of books and give yours",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Get Started",
+                      "className": "btn btn-large primary-button white-text darken-2 waves-effect waves-light",
+                      "replace": false,
+                      "to": "/login",
+                    },
+                    "ref": null,
+                    "rendered": "Get Started",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "books": Array [
+              Object {
+                "author": "Trevor Noah",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Attuned to the power of la",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 95,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 20,
+                "subject": "Biography",
+                "title": "Born a Crime",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+              Object {
+                "author": "Ken Follet",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "This lush novel, set ",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 92,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 2,
+                "subject": "Thriller",
+                "title": "A Place Called Freedom",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+              Object {
+                "author": "Joanna Gaines",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Magnolia Table is infused with Joanna Gaines",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 97,
+                "imageURL": "https://images-na.ssl-image.jpg",
+                "quantity": 7,
+                "subject": "Recipe",
+                "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                "updatedAt": "2018-05-10T03:11:52.181Z",
+                "upvotes": 0,
+              },
+            ],
+            "error": null,
+            "getBooks": [Function],
+            "getMostUpvotedBooks": [Function],
+            "isFetching": false,
+            "isLoading": null,
+            "searchBooks": [Function],
+            "searchError": null,
+            "upvotedBooks": Array [
+              Object {
+                "author": "Paul McClain",
+                "bookReviews": Array [],
+                "borrowCount": 1,
+                "createdAt": "2018-05-10T03:11:52.181Z",
+                "description": "Magnolia Table",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 96,
+                "imageURL": "https://images-na.ssl.jpg",
+                "quantity": 20,
+                "subject": "Romance",
+                "title": "Love and Ruin",
+                "updatedAt": "2018-06-22T12:22:48.895Z",
+                "upvotes": 1,
+              },
+              Object {
+                "author": "Sheryl Sandberg",
+                "bookReviews": Array [],
+                "borrowCount": 0,
+                "createdAt": "2018-06-22T08:56:20.614Z",
+                "description": "A guide on how women can balance career and family",
+                "downvotes": 0,
+                "favCount": 0,
+                "id": 1,
+                "imageURL": "https://res.cloudinary.com.jpg",
+                "quantity": 20,
+                "subject": "Self-help",
+                "title": "Lean In",
+                "updatedAt": "2018-06-22T12:22:28.308Z",
+                "upvotes": 1,
+              },
+            ],
+            "upvotedBooksPagination": Object {
+              "currentPage": 1,
+              "dataCount": 2,
+              "pageCount": 1,
+              "pageSize": 2,
+            },
+            "upvotedError": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="row center"
+                id="available"
+              >
+                <h4
+                  className="text-darken-3 book-header"
+                >
+                  Available books
+                </h4>
+              </div>,
+              <div
+                className="row book-list"
+              >
+                <div>
+                  <BooksList
+                    books={
+                      Array [
+                        Object {
+                          "author": "Trevor Noah",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Attuned to the power of la",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 95,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 20,
+                          "subject": "Biography",
+                          "title": "Born a Crime",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                        Object {
+                          "author": "Ken Follet",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "This lush novel, set ",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 92,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 2,
+                          "subject": "Thriller",
+                          "title": "A Place Called Freedom",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                        Object {
+                          "author": "Joanna Gaines",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Magnolia Table is infused with Joanna Gaines",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 97,
+                          "imageURL": "https://images-na.ssl-image.jpg",
+                          "quantity": 7,
+                          "subject": "Recipe",
+                          "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                          "updatedAt": "2018-05-10T03:11:52.181Z",
+                          "upvotes": 0,
+                        },
+                      ]
+                    }
+                  />
+                  <div
+                    className="row center"
+                  >
+                    <Link
+                      replace={false}
+                      to="/books"
+                    >
+                      <button
+                        className="btn btn-medium primary-button waves-effect waves-light"
+                        id="all-books"
+                      >
+                        View All Books
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>,
+              <div
+                className="container"
+              >
+                <div
+                  className="divider z-depth-1"
+                />
+              </div>,
+              <div
+                className="row center"
+                id="most-popular"
+              >
+                <h4
+                  className="book-header text-darken-3"
+                >
+                  Most popular among readers
+                </h4>
+              </div>,
+              <div
+                className="row"
+              >
+                <div
+                  className="row book-list"
+                  id="most-popular-books"
+                >
+                  <BooksList
+                    books={
+                      Array [
+                        Object {
+                          "author": "Paul McClain",
+                          "bookReviews": Array [],
+                          "borrowCount": 1,
+                          "createdAt": "2018-05-10T03:11:52.181Z",
+                          "description": "Magnolia Table",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 96,
+                          "imageURL": "https://images-na.ssl.jpg",
+                          "quantity": 20,
+                          "subject": "Romance",
+                          "title": "Love and Ruin",
+                          "updatedAt": "2018-06-22T12:22:48.895Z",
+                          "upvotes": 1,
+                        },
+                        Object {
+                          "author": "Sheryl Sandberg",
+                          "bookReviews": Array [],
+                          "borrowCount": 0,
+                          "createdAt": "2018-06-22T08:56:20.614Z",
+                          "description": "A guide on how women can balance career and family",
+                          "downvotes": 0,
+                          "favCount": 0,
+                          "id": 1,
+                          "imageURL": "https://res.cloudinary.com.jpg",
+                          "quantity": 20,
+                          "subject": "Self-help",
+                          "title": "Lean In",
+                          "updatedAt": "2018-06-22T12:22:28.308Z",
+                          "upvotes": 1,
+                        },
+                      ]
+                    }
+                  />
+                  <Pagination
+                    floatingButton={true}
+                    onPageChange={[Function]}
+                    pagination={
+                      Object {
+                        "currentPage": 1,
+                        "dataCount": 2,
+                        "pageCount": 1,
+                        "pageSize": 2,
+                      }
+                    }
+                  />
+                </div>
+              </div>,
+            ],
+            "className": "section white wrapper",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <h4
+                  className="text-darken-3 book-header"
+                >
+                  Available books
+                </h4>,
+                "className": "row center",
+                "id": "available",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Available books",
+                  "className": "text-darken-3 book-header",
+                },
+                "ref": null,
+                "rendered": "Available books",
+                "type": "h4",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  false,
+                  null,
+                  <div>
+                    <BooksList
+                      books={
+                        Array [
+                          Object {
+                            "author": "Trevor Noah",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Attuned to the power of la",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 95,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 20,
+                            "subject": "Biography",
+                            "title": "Born a Crime",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                          Object {
+                            "author": "Ken Follet",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "This lush novel, set ",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 92,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 2,
+                            "subject": "Thriller",
+                            "title": "A Place Called Freedom",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                          Object {
+                            "author": "Joanna Gaines",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Magnolia Table is infused with Joanna Gaines",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 97,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 7,
+                            "subject": "Recipe",
+                            "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                        ]
+                      }
+                    />
+                    <div
+                      className="row center"
+                    >
+                      <Link
+                        replace={false}
+                        to="/books"
+                      >
+                        <button
+                          className="btn btn-medium primary-button waves-effect waves-light"
+                          id="all-books"
+                        >
+                          View All Books
+                        </button>
+                      </Link>
+                    </div>
+                  </div>,
+                ],
+                "className": "row book-list",
+              },
+              "ref": null,
+              "rendered": Array [
+                false,
+                null,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <BooksList
+                        books={
+                          Array [
+                            Object {
+                              "author": "Trevor Noah",
+                              "bookReviews": Array [],
+                              "borrowCount": 0,
+                              "createdAt": "2018-05-10T03:11:52.181Z",
+                              "description": "Attuned to the power of la",
+                              "downvotes": 0,
+                              "favCount": 0,
+                              "id": 95,
+                              "imageURL": "https://images-na.ssl-image.jpg",
+                              "quantity": 20,
+                              "subject": "Biography",
+                              "title": "Born a Crime",
+                              "updatedAt": "2018-05-10T03:11:52.181Z",
+                              "upvotes": 0,
+                            },
+                            Object {
+                              "author": "Ken Follet",
+                              "bookReviews": Array [],
+                              "borrowCount": 0,
+                              "createdAt": "2018-05-10T03:11:52.181Z",
+                              "description": "This lush novel, set ",
+                              "downvotes": 0,
+                              "favCount": 0,
+                              "id": 92,
+                              "imageURL": "https://images-na.ssl-image.jpg",
+                              "quantity": 2,
+                              "subject": "Thriller",
+                              "title": "A Place Called Freedom",
+                              "updatedAt": "2018-05-10T03:11:52.181Z",
+                              "upvotes": 0,
+                            },
+                            Object {
+                              "author": "Joanna Gaines",
+                              "bookReviews": Array [],
+                              "borrowCount": 0,
+                              "createdAt": "2018-05-10T03:11:52.181Z",
+                              "description": "Magnolia Table is infused with Joanna Gaines",
+                              "downvotes": 0,
+                              "favCount": 0,
+                              "id": 97,
+                              "imageURL": "https://images-na.ssl-image.jpg",
+                              "quantity": 7,
+                              "subject": "Recipe",
+                              "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                              "updatedAt": "2018-05-10T03:11:52.181Z",
+                              "upvotes": 0,
+                            },
+                          ]
+                        }
+                      />,
+                      <div
+                        className="row center"
+                      >
+                        <Link
+                          replace={false}
+                          to="/books"
+                        >
+                          <button
+                            className="btn btn-medium primary-button waves-effect waves-light"
+                            id="all-books"
+                          >
+                            View All Books
+                          </button>
+                        </Link>
+                      </div>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "books": Array [
+                          Object {
+                            "author": "Trevor Noah",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Attuned to the power of la",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 95,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 20,
+                            "subject": "Biography",
+                            "title": "Born a Crime",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                          Object {
+                            "author": "Ken Follet",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "This lush novel, set ",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 92,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 2,
+                            "subject": "Thriller",
+                            "title": "A Place Called Freedom",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                          Object {
+                            "author": "Joanna Gaines",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Magnolia Table is infused with Joanna Gaines",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 97,
+                            "imageURL": "https://images-na.ssl-image.jpg",
+                            "quantity": 7,
+                            "subject": "Recipe",
+                            "title": "Magnolia Table: A Collection of Recipes for Gathering",
+                            "updatedAt": "2018-05-10T03:11:52.181Z",
+                            "upvotes": 0,
+                          },
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <Link
+                          replace={false}
+                          to="/books"
+                        >
+                          <button
+                            className="btn btn-medium primary-button waves-effect waves-light"
+                            id="all-books"
+                          >
+                            View All Books
+                          </button>
+                        </Link>,
+                        "className": "row center",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": <button
+                            className="btn btn-medium primary-button waves-effect waves-light"
+                            id="all-books"
+                          >
+                            View All Books
+                          </button>,
+                          "replace": false,
+                          "to": "/books",
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "View All Books",
+                            "className": "btn btn-medium primary-button waves-effect waves-light",
+                            "id": "all-books",
+                          },
+                          "ref": null,
+                          "rendered": "View All Books",
+                          "type": "button",
+                        },
+                        "type": [Function],
+                      },
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="divider z-depth-1"
+                />,
+                "className": "container",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "divider z-depth-1",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <h4
+                  className="book-header text-darken-3"
+                >
+                  Most popular among readers
+                </h4>,
+                "className": "row center",
+                "id": "most-popular",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Most popular among readers",
+                  "className": "book-header text-darken-3",
+                },
+                "ref": null,
+                "rendered": "Most popular among readers",
+                "type": "h4",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  null,
+                  null,
+                  <div
+                    className="row book-list"
+                    id="most-popular-books"
+                  >
+                    <BooksList
+                      books={
+                        Array [
+                          Object {
+                            "author": "Paul McClain",
+                            "bookReviews": Array [],
+                            "borrowCount": 1,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Magnolia Table",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 96,
+                            "imageURL": "https://images-na.ssl.jpg",
+                            "quantity": 20,
+                            "subject": "Romance",
+                            "title": "Love and Ruin",
+                            "updatedAt": "2018-06-22T12:22:48.895Z",
+                            "upvotes": 1,
+                          },
+                          Object {
+                            "author": "Sheryl Sandberg",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-06-22T08:56:20.614Z",
+                            "description": "A guide on how women can balance career and family",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 1,
+                            "imageURL": "https://res.cloudinary.com.jpg",
+                            "quantity": 20,
+                            "subject": "Self-help",
+                            "title": "Lean In",
+                            "updatedAt": "2018-06-22T12:22:28.308Z",
+                            "upvotes": 1,
+                          },
+                        ]
+                      }
+                    />
+                    <Pagination
+                      floatingButton={true}
+                      onPageChange={[Function]}
+                      pagination={
+                        Object {
+                          "currentPage": 1,
+                          "dataCount": 2,
+                          "pageCount": 1,
+                          "pageSize": 2,
+                        }
+                      }
+                    />
+                  </div>,
+                ],
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Array [
+                null,
+                null,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <BooksList
+                        books={
+                          Array [
+                            Object {
+                              "author": "Paul McClain",
+                              "bookReviews": Array [],
+                              "borrowCount": 1,
+                              "createdAt": "2018-05-10T03:11:52.181Z",
+                              "description": "Magnolia Table",
+                              "downvotes": 0,
+                              "favCount": 0,
+                              "id": 96,
+                              "imageURL": "https://images-na.ssl.jpg",
+                              "quantity": 20,
+                              "subject": "Romance",
+                              "title": "Love and Ruin",
+                              "updatedAt": "2018-06-22T12:22:48.895Z",
+                              "upvotes": 1,
+                            },
+                            Object {
+                              "author": "Sheryl Sandberg",
+                              "bookReviews": Array [],
+                              "borrowCount": 0,
+                              "createdAt": "2018-06-22T08:56:20.614Z",
+                              "description": "A guide on how women can balance career and family",
+                              "downvotes": 0,
+                              "favCount": 0,
+                              "id": 1,
+                              "imageURL": "https://res.cloudinary.com.jpg",
+                              "quantity": 20,
+                              "subject": "Self-help",
+                              "title": "Lean In",
+                              "updatedAt": "2018-06-22T12:22:28.308Z",
+                              "upvotes": 1,
+                            },
+                          ]
+                        }
+                      />,
+                      <Pagination
+                        floatingButton={true}
+                        onPageChange={[Function]}
+                        pagination={
+                          Object {
+                            "currentPage": 1,
+                            "dataCount": 2,
+                            "pageCount": 1,
+                            "pageSize": 2,
+                          }
+                        }
+                      />,
+                    ],
+                    "className": "row book-list",
+                    "id": "most-popular-books",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "books": Array [
+                          Object {
+                            "author": "Paul McClain",
+                            "bookReviews": Array [],
+                            "borrowCount": 1,
+                            "createdAt": "2018-05-10T03:11:52.181Z",
+                            "description": "Magnolia Table",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 96,
+                            "imageURL": "https://images-na.ssl.jpg",
+                            "quantity": 20,
+                            "subject": "Romance",
+                            "title": "Love and Ruin",
+                            "updatedAt": "2018-06-22T12:22:48.895Z",
+                            "upvotes": 1,
+                          },
+                          Object {
+                            "author": "Sheryl Sandberg",
+                            "bookReviews": Array [],
+                            "borrowCount": 0,
+                            "createdAt": "2018-06-22T08:56:20.614Z",
+                            "description": "A guide on how women can balance career and family",
+                            "downvotes": 0,
+                            "favCount": 0,
+                            "id": 1,
+                            "imageURL": "https://res.cloudinary.com.jpg",
+                            "quantity": 20,
+                            "subject": "Self-help",
+                            "title": "Lean In",
+                            "updatedAt": "2018-06-22T12:22:28.308Z",
+                            "upvotes": 1,
+                          },
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "floatingButton": true,
+                        "onPageChange": [Function],
+                        "pagination": Object {
+                          "currentPage": 1,
+                          "dataCount": 2,
+                          "pageCount": 1,
+                          "pageSize": 2,
+                        },
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

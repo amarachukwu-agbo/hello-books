@@ -14,7 +14,7 @@ import Pagination from '../Common/Pagination.jsx';
  *
  * @extends {React.Component}
  */
-class AdminReturnRequestsPage extends Component {
+export class AdminReturnRequestsPage extends Component {
   constructor(props) {
     super(props);
     this.acceptReturnRequest = this.acceptReturnRequest.bind(this);
@@ -84,8 +84,9 @@ class AdminReturnRequestsPage extends Component {
           <br />
           <div className="container">
             <h4 className="flow-text red-text">
-              {`Oops! Couldn't fetch return requests.
-              ${this.props.returnRequestsError}`}
+              {`Oops! Couldn't fetch return requests. ${
+                this.props.returnRequestsError
+              }`}
             </h4>
           </div>
         </div>
@@ -96,22 +97,16 @@ class AdminReturnRequestsPage extends Component {
         <h5 className="center book-header">Return Requests</h5>
         <div className="admin">
           {this.props.returnRequests &&
-            <div>
+            <div id="admin-return-requests">
             <AdminReturnRequests returnRequests={this.props.returnRequests}
             isHandlingReturnRequest = { this.props.isHandlingReturnRequest }
             acceptReturnRequest = { this.acceptReturnRequest }
             declineReturnRequest = { this.declineReturnRequest }
               {...this.props} />
-              <Pagination onPageChange = {page =>
-                this.props.getReturnRequests(page) }
+              <Pagination
+                onPageChange = {this.props.getReturnRequests }
                 pagination = { this.props.pagination }
               />
-            </div>
-          }
-          {
-            !this.props.returnRequests &&
-            <div className="row center">
-              <p className="grey-text">You have no return requests </p>
             </div>
           }
         </div>
@@ -140,20 +135,13 @@ const mapStateToProps = state => ({
   ...state.returnRequests,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getReturnRequests: (page) => { dispatch(getReturnRequests(page)); },
-  handleReturnRequest: (action, userId, bookId, requestIndex) => {
-    dispatch(handleReturnRequest(action, userId, bookId, requestIndex));
-  },
-});
+// action creators
+const actionCreators = {
+  getReturnRequests,
+  handleReturnRequest,
+};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  actionCreators,
 )(AdminReturnRequestsPage);

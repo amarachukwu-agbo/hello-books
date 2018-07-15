@@ -18,8 +18,6 @@ describe('SignUp reducer', () => {
 
     expect(newState).toEqual({
       isSigningUp: true,
-      hasErrored: false,
-      error: null,
       user: null,
     });
   });
@@ -45,9 +43,7 @@ describe('SignUp reducer', () => {
     const newState = signUp(initialState, action);
 
     expect(newState).toEqual({
-      hasErrored: true,
       isSigningUp: false,
-      error: users.signupErrorResponse.error,
       user: null,
     });
   });

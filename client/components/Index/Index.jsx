@@ -3,10 +3,8 @@ import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Slider, Slide } from 'react-materialize';
-import Navbar from '../Common/Navbar.jsx';
 import books4 from '../../public/images/books(4).jpg';
 import books1 from '../../public/images/books(1).jpg';
-import PageFooter from '../Common/PageFooter.jsx';
 import BooksList from '../Books/BooksList.jsx';
 import Preloader from '../Common/Preloader.jsx';
 import {
@@ -26,7 +24,7 @@ import Pagination from '../Common/Pagination.jsx';
  *
  * @extends {React.Component}
  */
-class IndexPage extends Component {
+export class IndexPage extends Component {
   /**
    * @method componentDidMount
    * @description get books on page 1
@@ -43,29 +41,32 @@ class IndexPage extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div>
           <Slider indicators={false} className="slider-div">
             <Slide
               src={books4}>
-              <p className="white-text flow-text slider-text">
+              <p className="white-text flow-text slider-text" id="welcome">
                 Welcome to Hello-books
               </p>
-              <p className="white-text flow-text slider-text flow-text">
+              <p className="white-text flow-text slider-text flow-text"
+                id="borrow">
                 Borrow your favorite books on our platform!!!
               </p>
               <Link to="/login" className="btn btn-large primary-button
-                white-text darken-2 waves-effect waves-light">
+                white-text darken-2 waves-effect waves-light"
+                id="get-started">
                 Get Started
               </Link>
             </Slide>
             <Slide
               src={books1}
               placement="left">
-              <p className="white-text flow-text slider-text bold">
+              <p className="white-text flow-text slider-text bold"
+                id="rate-review">
                 Rate and review books
               </p>
-              <p className="white-text flow-text slider-text flow-text bold">
+              <p className="white-text flow-text slider-text flow-text bold"
+                id="review">
                 View others' reviews of books and give yours
               </p>
               <Link to="/login" className="btn btn-large primary-button
@@ -79,8 +80,10 @@ class IndexPage extends Component {
         <SearchBar {...this.props} />
         {this.props.searchError && Notify.notifyInfo(this.props.searchError)}
         <div className="section white wrapper">
-          <div className="row center">
-            <h4 className="text-darken-3 book-header">Available books</h4>
+          <div className="row center" id="available">
+            <h4
+            className="text-darken-3 book-header"
+            >Available books</h4>
           </div>
           <div className="row book-list">
             {this.props.isFetching &&
@@ -91,8 +94,8 @@ class IndexPage extends Component {
             {this.props.error &&
               <div className="row center">
                 <h6 className="flow-text red-text">
-                  {`Oops! Couldn't fetch available books.
-                    ${this.props.error}`}
+                  {`Oops! Couldn't fetch available books. ${
+                    this.props.error}`}
                 </h6>
               </div>
             }
@@ -102,7 +105,8 @@ class IndexPage extends Component {
                 <div className="row center">
                   <Link to="/books">
                     <button className="btn btn-medium
-                      primary-button waves-effect waves-light">
+                      primary-button waves-effect waves-light"
+                      id="all-books">
                       View All Books
                     </button>
                   </Link>
@@ -113,7 +117,7 @@ class IndexPage extends Component {
           <div className="container">
             <div className="divider z-depth-1"></div>
           </div>
-          <div className="row center">
+          <div className="row center" id="most-popular">
             <h4 className="book-header text-darken-3">
               Most popular among readers
             </h4>
@@ -126,24 +130,25 @@ class IndexPage extends Component {
             }
             {this.props.upvotedError &&
               <div className="row center">
-                <h6 className="flow-text red-text">
-                  {`Oops! Couldn't fetch available books.
-                  ${this.props.upvotedError}`}
+                <h6 id="upvoted-error"
+                  className="flow-text red-text">
+                  {`Oops! Couldn't fetch available books. ${
+                    this.props.upvotedError}`}
                 </h6>
               </div>
             }
             {this.props.upvotedBooks &&
-              <div className = "row book-list">
+              <div className = "row book-list"
+              id="most-popular-books">
               <BooksList books={this.props.upvotedBooks} />
               <Pagination pagination={this.props.upvotedBooksPagination}
                 floatingButton = { true }
-                onPageChange ={page => (this.props.getMostUpvotedBooks(page))}
+                onPageChange ={this.props.getMostUpvotedBooks}
                 />
               </div>
             }
           </div>
         </div>
-        <PageFooter />
       </div>
     );
   }
@@ -161,6 +166,7 @@ IndexPage.propTypes = {
   error: propTypes.string,
   isFetching: propTypes.bool,
   searchError: propTypes.string,
+  upvotedBooksPagination: propTypes.object,
 };
 
 /**
@@ -174,20 +180,11 @@ const mapStateToProps = state => ({
   ...state.mostUpvotedBooks,
 });
 
-/**
- * @description maps dispatch to props
- * @param {object} state - redux state
- *
- * @returns {object} props - props mapped to dispatch actions
- */
-const mapDispatchToProps = dispatch => ({
-  getBooks: (page) => { dispatch(getBooks(page)); },
-  searchBooks: (searchBy, searchParam) => {
-    dispatch(searchBooks(searchBy, searchParam));
-  },
-  getMostUpvotedBooks: (page) => {
-    dispatch(getMostUpvotedBooks(page));
-  },
-});
+// action creators
+const actionCreators = {
+  getBooks,
+  searchBooks,
+  getMostUpvotedBooks,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
+export default connect(mapStateToProps, actionCreators)(IndexPage);
