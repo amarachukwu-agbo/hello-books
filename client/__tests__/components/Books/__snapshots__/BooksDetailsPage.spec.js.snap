@@ -72,7 +72,9 @@ ShallowWrapper {
       "children": Array [
         undefined,
         undefined,
-        <div>
+        <div
+          id="book-details"
+        >
           <BookDetails
             book={
               Object {
@@ -346,6 +348,7 @@ ShallowWrapper {
               upvoteBook={[Function]}
             />,
           ],
+          "id": "book-details",
         },
         "ref": null,
         "rendered": Array [
@@ -507,7 +510,9 @@ ShallowWrapper {
         "children": Array [
           undefined,
           undefined,
-          <div>
+          <div
+            id="book-details"
+          >
             <BookDetails
               book={
                 Object {
@@ -781,6 +786,7 @@ ShallowWrapper {
                 upvoteBook={[Function]}
               />,
             ],
+            "id": "book-details",
           },
           "ref": null,
           "rendered": Array [

@@ -28,7 +28,7 @@ const Book = (props) => {
           <p className="truncate">Author|
             <span className="red-text text-darken-4 bold">{book.author}</span>
           </p>
-          <p className="truncate"> Genre|
+          <p id="genre" className="truncate"> Genre|
             <span className="red-text text-darken-4 bold">{book.subject}</span>
           </p>
           <p> Quantity|

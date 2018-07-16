@@ -1,13 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import DropdownList from 'react-widgets/lib/DropdownList';
-import DateTimePicker from 'react-widgets/lib/DateTimePicker';
-import momentLocalizer from 'react-widgets-moment';
-import Moment from 'moment';
 import 'react-widgets/lib/scss/react-widgets.scss';
-
-Moment.locale('en');
-momentLocalizer();
 
 /**
  * @description stateless component for text inputs
@@ -83,16 +77,16 @@ export const renderDropdownList = ({
  *
  * @returns {Node} - react node containing Date time picker component
  */
-export const renderDateTimePicker = ({
-  input: { onChange, value }, showTime, id, icon, meta: { touched, error },
+export const renderDatePicker = ({
+  input: { onChange }, label, id, meta: { touched, error },
 }) => (
     <div>
-      <i className="material-icons prefix">{icon}</i>
-      <DateTimePicker onChange={onChange} format="DD MMM YYYY" time={showTime}
-        id={id} value={!value ? null : new Date(value)} />
+      <label className="flow-text truncate active"> {label} </label>
+      <input type="date" onChange={onChange} id={id}/>
       {touched && error && <span className="error flow-text">{error}</span>}
     </div>
 );
+
 
 /**
  * @description stateless component for Text area
@@ -124,7 +118,7 @@ InputText.propTypes = {
 };
 
 // Prop type validation for renderDateTimePicker
-renderDateTimePicker.propTypes = {
+renderDatePicker.propTypes = {
   input: propTypes.object,
   showTime: propTypes.bool,
   icon: propTypes.string,

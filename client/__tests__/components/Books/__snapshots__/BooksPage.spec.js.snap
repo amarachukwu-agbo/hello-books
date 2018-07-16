@@ -140,7 +140,9 @@ ShallowWrapper {
         <div
           className="row book-list"
         >
-          <div>
+          <div
+            id="books-container"
+          >
             <BooksList
               books={
                 Array [
@@ -289,7 +291,9 @@ ShallowWrapper {
           "children": Array [
             undefined,
             undefined,
-            <div>
+            <div
+              id="books-container"
+            >
               <BooksList
                 books={
                   Array [
@@ -422,6 +426,7 @@ ShallowWrapper {
                   pagination={undefined}
                 />,
               ],
+              "id": "books-container",
             },
             "ref": null,
             "rendered": Array [
@@ -578,7 +583,9 @@ ShallowWrapper {
           <div
             className="row book-list"
           >
-            <div>
+            <div
+              id="books-container"
+            >
               <BooksList
                 books={
                   Array [
@@ -727,7 +734,9 @@ ShallowWrapper {
             "children": Array [
               undefined,
               undefined,
-              <div>
+              <div
+                id="books-container"
+              >
                 <BooksList
                   books={
                     Array [
@@ -860,6 +869,7 @@ ShallowWrapper {
                     pagination={undefined}
                   />,
                 ],
+                "id": "books-container",
               },
               "ref": null,
               "rendered": Array [

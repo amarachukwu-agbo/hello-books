@@ -47,7 +47,7 @@ export class LoginPage extends Component {
           <div className="col s10 m7 l5">
             <div className="row card-panel">
               <div className="row">
-                <LoginForm id="login-form"
+                <LoginForm
                   submitForm={this.submitForm}
                   {...this.props} />
               </div>

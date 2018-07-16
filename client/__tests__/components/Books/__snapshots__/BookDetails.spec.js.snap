@@ -54,6 +54,7 @@ ShallowWrapper {
         >
           <div
             className="container"
+            id="borrow-modal"
           >
             <ReduxForm
               book={
@@ -114,6 +115,7 @@ ShallowWrapper {
           >
             <p
               className="black-text"
+              id="author"
             >
               <strong>
                 Author: 
@@ -130,6 +132,7 @@ ShallowWrapper {
             />
             <p
               className="bold black-text"
+              id="subject"
             >
               <strong>
                 Category: 
@@ -145,6 +148,7 @@ ShallowWrapper {
             />
             <p
               className="bold black-text"
+              id="borrowCount"
             >
               <strong>
                 Number of times borrowed: 
@@ -160,6 +164,7 @@ ShallowWrapper {
             />
             <p
               className="bold black-text"
+              id="quantity"
             >
               <strong>
                 Copies Available: 
@@ -175,6 +180,7 @@ ShallowWrapper {
             />
             <p
               className="bold black-text"
+              id="description"
             >
               <strong>
                 Description: 
@@ -212,7 +218,9 @@ ShallowWrapper {
                   >
                     thumb_up
                   </i>
-                  <span>
+                  <span
+                    id="upvote-count"
+                  >
                     0
                   </span>
                 </button>
@@ -227,7 +235,9 @@ ShallowWrapper {
                   >
                     thumb_down
                   </i>
-                  <span>
+                  <span
+                    id="downvote-count"
+                  >
                     0
                   </span>
                 </button>
@@ -242,7 +252,9 @@ ShallowWrapper {
                   >
                     favorite_border
                   </i>
-                  <span>
+                  <span
+                    id="favorite-count"
+                  >
                     0
                   </span>
                 </button>
@@ -264,6 +276,7 @@ ShallowWrapper {
           "bottomSheet": false,
           "children": <div
             className="container"
+            id="borrow-modal"
           >
             <ReduxForm
               book={
@@ -333,6 +346,7 @@ ShallowWrapper {
               upvoteBook={[Function]}
             />,
             "className": "container",
+            "id": "borrow-modal",
           },
           "ref": null,
           "rendered": Object {
@@ -439,6 +453,7 @@ ShallowWrapper {
             >
               <p
                 className="black-text"
+                id="author"
               >
                 <strong>
                   Author: 
@@ -455,6 +470,7 @@ ShallowWrapper {
               />
               <p
                 className="bold black-text"
+                id="subject"
               >
                 <strong>
                   Category: 
@@ -470,6 +486,7 @@ ShallowWrapper {
               />
               <p
                 className="bold black-text"
+                id="borrowCount"
               >
                 <strong>
                   Number of times borrowed: 
@@ -485,6 +502,7 @@ ShallowWrapper {
               />
               <p
                 className="bold black-text"
+                id="quantity"
               >
                 <strong>
                   Copies Available: 
@@ -500,6 +518,7 @@ ShallowWrapper {
               />
               <p
                 className="bold black-text"
+                id="description"
               >
                 <strong>
                   Description: 
@@ -537,7 +556,9 @@ ShallowWrapper {
                     >
                       thumb_up
                     </i>
-                    <span>
+                    <span
+                      id="upvote-count"
+                    >
                       0
                     </span>
                   </button>
@@ -552,7 +573,9 @@ ShallowWrapper {
                     >
                       thumb_down
                     </i>
-                    <span>
+                    <span
+                      id="downvote-count"
+                    >
                       0
                     </span>
                   </button>
@@ -567,7 +590,9 @@ ShallowWrapper {
                     >
                       favorite_border
                     </i>
-                    <span>
+                    <span
+                      id="favorite-count"
+                    >
                       0
                     </span>
                   </button>
@@ -613,6 +638,7 @@ ShallowWrapper {
               "children": Array [
                 <p
                   className="black-text"
+                  id="author"
                 >
                   <strong>
                     Author: 
@@ -629,6 +655,7 @@ ShallowWrapper {
                 />,
                 <p
                   className="bold black-text"
+                  id="subject"
                 >
                   <strong>
                     Category: 
@@ -644,6 +671,7 @@ ShallowWrapper {
                 />,
                 <p
                   className="bold black-text"
+                  id="borrowCount"
                 >
                   <strong>
                     Number of times borrowed: 
@@ -659,6 +687,7 @@ ShallowWrapper {
                 />,
                 <p
                   className="bold black-text"
+                  id="quantity"
                 >
                   <strong>
                     Copies Available: 
@@ -674,6 +703,7 @@ ShallowWrapper {
                 />,
                 <p
                   className="bold black-text"
+                  id="description"
                 >
                   <strong>
                     Description: 
@@ -711,7 +741,9 @@ ShallowWrapper {
                       >
                         thumb_up
                       </i>
-                      <span>
+                      <span
+                        id="upvote-count"
+                      >
                         0
                       </span>
                     </button>
@@ -726,7 +758,9 @@ ShallowWrapper {
                       >
                         thumb_down
                       </i>
-                      <span>
+                      <span
+                        id="downvote-count"
+                      >
                         0
                       </span>
                     </button>
@@ -741,7 +775,9 @@ ShallowWrapper {
                       >
                         favorite_border
                       </i>
-                      <span>
+                      <span
+                        id="favorite-count"
+                      >
                         0
                       </span>
                     </button>
@@ -769,6 +805,7 @@ ShallowWrapper {
                     </span>,
                   ],
                   "className": "black-text",
+                  "id": "author",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -833,6 +870,7 @@ ShallowWrapper {
                     </span>,
                   ],
                   "className": "bold black-text",
+                  "id": "subject",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -896,6 +934,7 @@ ShallowWrapper {
                     </span>,
                   ],
                   "className": "bold black-text",
+                  "id": "borrowCount",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -959,6 +998,7 @@ ShallowWrapper {
                     </span>,
                   ],
                   "className": "bold black-text",
+                  "id": "quantity",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -1022,6 +1062,7 @@ ShallowWrapper {
                     </span>,
                   ],
                   "className": "bold black-text",
+                  "id": "description",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -1106,7 +1147,9 @@ ShallowWrapper {
                         >
                           thumb_up
                         </i>
-                        <span>
+                        <span
+                          id="upvote-count"
+                        >
                           0
                         </span>
                       </button>
@@ -1121,7 +1164,9 @@ ShallowWrapper {
                         >
                           thumb_down
                         </i>
-                        <span>
+                        <span
+                          id="downvote-count"
+                        >
                           0
                         </span>
                       </button>
@@ -1136,7 +1181,9 @@ ShallowWrapper {
                         >
                           favorite_border
                         </i>
-                        <span>
+                        <span
+                          id="favorite-count"
+                        >
                           0
                         </span>
                       </button>
@@ -1177,7 +1224,9 @@ ShallowWrapper {
                           >
                             thumb_up
                           </i>
-                          <span>
+                          <span
+                            id="upvote-count"
+                          >
                             0
                           </span>
                         </button>,
@@ -1192,7 +1241,9 @@ ShallowWrapper {
                           >
                             thumb_down
                           </i>
-                          <span>
+                          <span
+                            id="downvote-count"
+                          >
                             0
                           </span>
                         </button>,
@@ -1207,7 +1258,9 @@ ShallowWrapper {
                           >
                             favorite_border
                           </i>
-                          <span>
+                          <span
+                            id="favorite-count"
+                          >
                             0
                           </span>
                         </button>,
@@ -1227,7 +1280,9 @@ ShallowWrapper {
                             >
                               thumb_up
                             </i>,
-                            <span>
+                            <span
+                              id="upvote-count"
+                            >
                               0
                             </span>,
                           ],
@@ -1256,6 +1311,7 @@ ShallowWrapper {
                             "nodeType": "host",
                             "props": Object {
                               "children": 0,
+                              "id": "upvote-count",
                             },
                             "ref": null,
                             "rendered": 0,
@@ -1275,7 +1331,9 @@ ShallowWrapper {
                             >
                               thumb_down
                             </i>,
-                            <span>
+                            <span
+                              id="downvote-count"
+                            >
                               0
                             </span>,
                           ],
@@ -1304,6 +1362,7 @@ ShallowWrapper {
                             "nodeType": "host",
                             "props": Object {
                               "children": 0,
+                              "id": "downvote-count",
                             },
                             "ref": null,
                             "rendered": 0,
@@ -1323,7 +1382,9 @@ ShallowWrapper {
                             >
                               favorite_border
                             </i>,
-                            <span>
+                            <span
+                              id="favorite-count"
+                            >
                               0
                             </span>,
                           ],
@@ -1352,6 +1413,7 @@ ShallowWrapper {
                             "nodeType": "host",
                             "props": Object {
                               "children": 0,
+                              "id": "favorite-count",
                             },
                             "ref": null,
                             "rendered": 0,
@@ -1391,6 +1453,7 @@ ShallowWrapper {
           >
             <div
               className="container"
+              id="borrow-modal"
             >
               <ReduxForm
                 book={
@@ -1451,6 +1514,7 @@ ShallowWrapper {
             >
               <p
                 className="black-text"
+                id="author"
               >
                 <strong>
                   Author: 
@@ -1467,6 +1531,7 @@ ShallowWrapper {
               />
               <p
                 className="bold black-text"
+                id="subject"
               >
                 <strong>
                   Category: 
@@ -1482,6 +1547,7 @@ ShallowWrapper {
               />
               <p
                 className="bold black-text"
+                id="borrowCount"
               >
                 <strong>
                   Number of times borrowed: 
@@ -1497,6 +1563,7 @@ ShallowWrapper {
               />
               <p
                 className="bold black-text"
+                id="quantity"
               >
                 <strong>
                   Copies Available: 
@@ -1512,6 +1579,7 @@ ShallowWrapper {
               />
               <p
                 className="bold black-text"
+                id="description"
               >
                 <strong>
                   Description: 
@@ -1549,7 +1617,9 @@ ShallowWrapper {
                     >
                       thumb_up
                     </i>
-                    <span>
+                    <span
+                      id="upvote-count"
+                    >
                       0
                     </span>
                   </button>
@@ -1564,7 +1634,9 @@ ShallowWrapper {
                     >
                       thumb_down
                     </i>
-                    <span>
+                    <span
+                      id="downvote-count"
+                    >
                       0
                     </span>
                   </button>
@@ -1579,7 +1651,9 @@ ShallowWrapper {
                     >
                       favorite_border
                     </i>
-                    <span>
+                    <span
+                      id="favorite-count"
+                    >
                       0
                     </span>
                   </button>
@@ -1601,6 +1675,7 @@ ShallowWrapper {
             "bottomSheet": false,
             "children": <div
               className="container"
+              id="borrow-modal"
             >
               <ReduxForm
                 book={
@@ -1670,6 +1745,7 @@ ShallowWrapper {
                 upvoteBook={[Function]}
               />,
               "className": "container",
+              "id": "borrow-modal",
             },
             "ref": null,
             "rendered": Object {
@@ -1776,6 +1852,7 @@ ShallowWrapper {
               >
                 <p
                   className="black-text"
+                  id="author"
                 >
                   <strong>
                     Author: 
@@ -1792,6 +1869,7 @@ ShallowWrapper {
                 />
                 <p
                   className="bold black-text"
+                  id="subject"
                 >
                   <strong>
                     Category: 
@@ -1807,6 +1885,7 @@ ShallowWrapper {
                 />
                 <p
                   className="bold black-text"
+                  id="borrowCount"
                 >
                   <strong>
                     Number of times borrowed: 
@@ -1822,6 +1901,7 @@ ShallowWrapper {
                 />
                 <p
                   className="bold black-text"
+                  id="quantity"
                 >
                   <strong>
                     Copies Available: 
@@ -1837,6 +1917,7 @@ ShallowWrapper {
                 />
                 <p
                   className="bold black-text"
+                  id="description"
                 >
                   <strong>
                     Description: 
@@ -1874,7 +1955,9 @@ ShallowWrapper {
                       >
                         thumb_up
                       </i>
-                      <span>
+                      <span
+                        id="upvote-count"
+                      >
                         0
                       </span>
                     </button>
@@ -1889,7 +1972,9 @@ ShallowWrapper {
                       >
                         thumb_down
                       </i>
-                      <span>
+                      <span
+                        id="downvote-count"
+                      >
                         0
                       </span>
                     </button>
@@ -1904,7 +1989,9 @@ ShallowWrapper {
                       >
                         favorite_border
                       </i>
-                      <span>
+                      <span
+                        id="favorite-count"
+                      >
                         0
                       </span>
                     </button>
@@ -1950,6 +2037,7 @@ ShallowWrapper {
                 "children": Array [
                   <p
                     className="black-text"
+                    id="author"
                   >
                     <strong>
                       Author: 
@@ -1966,6 +2054,7 @@ ShallowWrapper {
                   />,
                   <p
                     className="bold black-text"
+                    id="subject"
                   >
                     <strong>
                       Category: 
@@ -1981,6 +2070,7 @@ ShallowWrapper {
                   />,
                   <p
                     className="bold black-text"
+                    id="borrowCount"
                   >
                     <strong>
                       Number of times borrowed: 
@@ -1996,6 +2086,7 @@ ShallowWrapper {
                   />,
                   <p
                     className="bold black-text"
+                    id="quantity"
                   >
                     <strong>
                       Copies Available: 
@@ -2011,6 +2102,7 @@ ShallowWrapper {
                   />,
                   <p
                     className="bold black-text"
+                    id="description"
                   >
                     <strong>
                       Description: 
@@ -2048,7 +2140,9 @@ ShallowWrapper {
                         >
                           thumb_up
                         </i>
-                        <span>
+                        <span
+                          id="upvote-count"
+                        >
                           0
                         </span>
                       </button>
@@ -2063,7 +2157,9 @@ ShallowWrapper {
                         >
                           thumb_down
                         </i>
-                        <span>
+                        <span
+                          id="downvote-count"
+                        >
                           0
                         </span>
                       </button>
@@ -2078,7 +2174,9 @@ ShallowWrapper {
                         >
                           favorite_border
                         </i>
-                        <span>
+                        <span
+                          id="favorite-count"
+                        >
                           0
                         </span>
                       </button>
@@ -2106,6 +2204,7 @@ ShallowWrapper {
                       </span>,
                     ],
                     "className": "black-text",
+                    "id": "author",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -2170,6 +2269,7 @@ ShallowWrapper {
                       </span>,
                     ],
                     "className": "bold black-text",
+                    "id": "subject",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -2233,6 +2333,7 @@ ShallowWrapper {
                       </span>,
                     ],
                     "className": "bold black-text",
+                    "id": "borrowCount",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -2296,6 +2397,7 @@ ShallowWrapper {
                       </span>,
                     ],
                     "className": "bold black-text",
+                    "id": "quantity",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -2359,6 +2461,7 @@ ShallowWrapper {
                       </span>,
                     ],
                     "className": "bold black-text",
+                    "id": "description",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -2443,7 +2546,9 @@ ShallowWrapper {
                           >
                             thumb_up
                           </i>
-                          <span>
+                          <span
+                            id="upvote-count"
+                          >
                             0
                           </span>
                         </button>
@@ -2458,7 +2563,9 @@ ShallowWrapper {
                           >
                             thumb_down
                           </i>
-                          <span>
+                          <span
+                            id="downvote-count"
+                          >
                             0
                           </span>
                         </button>
@@ -2473,7 +2580,9 @@ ShallowWrapper {
                           >
                             favorite_border
                           </i>
-                          <span>
+                          <span
+                            id="favorite-count"
+                          >
                             0
                           </span>
                         </button>
@@ -2514,7 +2623,9 @@ ShallowWrapper {
                             >
                               thumb_up
                             </i>
-                            <span>
+                            <span
+                              id="upvote-count"
+                            >
                               0
                             </span>
                           </button>,
@@ -2529,7 +2640,9 @@ ShallowWrapper {
                             >
                               thumb_down
                             </i>
-                            <span>
+                            <span
+                              id="downvote-count"
+                            >
                               0
                             </span>
                           </button>,
@@ -2544,7 +2657,9 @@ ShallowWrapper {
                             >
                               favorite_border
                             </i>
-                            <span>
+                            <span
+                              id="favorite-count"
+                            >
                               0
                             </span>
                           </button>,
@@ -2564,7 +2679,9 @@ ShallowWrapper {
                               >
                                 thumb_up
                               </i>,
-                              <span>
+                              <span
+                                id="upvote-count"
+                              >
                                 0
                               </span>,
                             ],
@@ -2593,6 +2710,7 @@ ShallowWrapper {
                               "nodeType": "host",
                               "props": Object {
                                 "children": 0,
+                                "id": "upvote-count",
                               },
                               "ref": null,
                               "rendered": 0,
@@ -2612,7 +2730,9 @@ ShallowWrapper {
                               >
                                 thumb_down
                               </i>,
-                              <span>
+                              <span
+                                id="downvote-count"
+                              >
                                 0
                               </span>,
                             ],
@@ -2641,6 +2761,7 @@ ShallowWrapper {
                               "nodeType": "host",
                               "props": Object {
                                 "children": 0,
+                                "id": "downvote-count",
                               },
                               "ref": null,
                               "rendered": 0,
@@ -2660,7 +2781,9 @@ ShallowWrapper {
                               >
                                 favorite_border
                               </i>,
-                              <span>
+                              <span
+                                id="favorite-count"
+                              >
                                 0
                               </span>,
                             ],
@@ -2689,6 +2812,7 @@ ShallowWrapper {
                               "nodeType": "host",
                               "props": Object {
                                 "children": 0,
+                                "id": "favorite-count",
                               },
                               "ref": null,
                               "rendered": 0,

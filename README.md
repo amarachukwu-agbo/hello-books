@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/amarachukwu-agbo/hello-books.svg?branch=develop)](https://travis-ci.org/amarachukwu-agbo/hello-books)
 [![Coverage Status](http://coveralls.io/repos/github/amarachukwu-agbo/hello-books/badge.svg?branch=develop)](https://coveralls.io/github/amarachukwu-agbo/hello-books?branch=develop)
+[![codecov](https://codecov.io/gh/amarachukwu-agbo/hello-books/branch/develop/graph/badge.svg)](https://codecov.io/gh/amarachukwu-agbo/hello-books)
 [![](https://img.shields.io/badge/Protected_by-Hound-a873d1.svg)](https://houndci.com)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e82d32cd9204d56c8172/maintainability)](https://codeclimate.com/github/amarachukwu-agbo/hello-books/maintainability)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
@@ -89,8 +90,14 @@ Visit [here](https://hello-books-v2.herokuapp.com/api/v1/docs/#/) for a detailed
 - Implememted with `Jest`, `Enzyme`
   Run the command
   ```
-    npm test:client
+    npm run test:client
   ```
+### End-to-end tests
+- Implemented with `Selenium`, `Nightwatch`
+    Run the command
+    ```
+      npm run e2e
+    ```
 
 ## Limitations
 - Users token expires after 24 hours and user has to obtain another token.

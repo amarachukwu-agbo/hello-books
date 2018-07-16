@@ -82,7 +82,7 @@ export class BooksPage extends Component {
   renderBooks() {
     if (this.props.books) {
       return (
-        <div>
+        <div id="books-container">
           <BooksList books={this.props.books} />
           <Pagination
             onPageChange={this.props.getBooks}
@@ -102,7 +102,7 @@ export class BooksPage extends Component {
     if (this.props.searchResults) {
       return (
         <div>
-          <div className="row">
+          <div className="row" id="search-results">
             <BooksList books={this.props.searchResults} />
             <div className="search-result">
               <div>

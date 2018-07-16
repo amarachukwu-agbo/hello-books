@@ -92,6 +92,7 @@ ShallowWrapper {
           </p>
           <p
             className="truncate"
+            id="genre"
           >
              Genre|
             <span
@@ -200,6 +201,7 @@ ShallowWrapper {
             </p>
             <p
               className="truncate"
+              id="genre"
             >
                Genre|
               <span
@@ -356,6 +358,7 @@ ShallowWrapper {
               </p>,
               <p
                 className="truncate"
+                id="genre"
               >
                  Genre|
                 <span
@@ -479,6 +482,7 @@ ShallowWrapper {
                   </span>,
                 ],
                 "className": "truncate",
+                "id": "genre",
               },
               "ref": null,
               "rendered": Array [
@@ -781,6 +785,7 @@ ShallowWrapper {
             </p>
             <p
               className="truncate"
+              id="genre"
             >
                Genre|
               <span
@@ -889,6 +894,7 @@ ShallowWrapper {
               </p>
               <p
                 className="truncate"
+                id="genre"
               >
                  Genre|
                 <span
@@ -1045,6 +1051,7 @@ ShallowWrapper {
                 </p>,
                 <p
                   className="truncate"
+                  id="genre"
                 >
                    Genre|
                   <span
@@ -1168,6 +1175,7 @@ ShallowWrapper {
                     </span>,
                   ],
                   "className": "truncate",
+                  "id": "genre",
                 },
                 "ref": null,
                 "rendered": Array [

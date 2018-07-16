@@ -69,22 +69,22 @@ export class Profile extends Component {
 
       return (
         <div className="row" >
-          <div className="row card-panel">
+          <div className="row card-panel" id="bio">
             <Bio bio={profile} />
           </div>
 
-          <div className="row card-panel profile-div">
+          <div className="row card-panel profile-div" id="borrowed">
             <h6 className="white-text">Borrowed Books</h6>
             <BorrowedBooks books={profile.userBooks}
               returnRequests={returnRequests} {...this.props} />
           </div>
 
-          <div className="row card-panel profile-div">
+          <div className="row card-panel profile-div" id="borrow-requests">
             <h6 className="white-text">Borrow Requests</h6>
             <BorrowRequests requests={borrowRequests} />
           </div>
 
-          <div className="row card-panel profile-div">
+          <div className="row card-panel profile-div" id="return-requests">
             <h6 className="white-text">Return Requests</h6>
             <ReturnRequests requests={returnRequests}
               {...this.props} />
@@ -97,10 +97,10 @@ export class Profile extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row center">
+        <div className="row center" id="profile">
           <h4 className="book-header">Your Profile</h4>
         </div>
-        <div className="row">
+        <div className="row" id="profile-container">
           {this.renderProfile()}
         </div>
       </div>

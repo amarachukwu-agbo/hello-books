@@ -107,7 +107,7 @@ class EditBookForm extends Component {
     const { handleSubmit, isEditing } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.submitForm)} >
+      <form id="edit-book-form" onSubmit={handleSubmit(this.submitForm)} >
         <div className="center-align lighten-2">
           <h4 className="modal-header-text">Edit Book</h4>
         </div>
@@ -115,32 +115,37 @@ class EditBookForm extends Component {
           <div className="row">
             <div className="input-field">
               <label className="active">Book Title</label>
-              <Field name="title" type="text" component={InputText} />
+              <Field name="title"
+                id="title" type="text" component={InputText} />
             </div>
           </div>
           <div className="row">
             <div className="input-field">
               <label className="active">Author</label>
-              <Field name="author" type="text" component={InputText} />
+              <Field name="author"
+               id="author" type="text" component={InputText} />
             </div>
           </div>
           <div className="row">
             <div className="input-field">
               <label className="active">Subject</label>
               <Field name="subject" component={renderDropdownList}
+              id="subject"
               valueField="value" textField="subject" data={subjects} />
             </div>
           </div>
           <div className="row">
             <div className="input-field">
               <label className="active">Book Description</label>
-              <Field name="description" type="text" component={InputText} />
+              <Field name="description" type="text"
+              id="description" component={InputText} />
             </div>
           </div>
           <div className="row">
             <div className="input-field">
               <label className="active">Quantity</label>
-              <Field name="quantity" type="number" component={InputText} />
+              <Field name="quantity"
+              id="quantity" type="number" component={InputText} />
             </div>
           </div>
           <div className="row">
@@ -177,7 +182,8 @@ class EditBookForm extends Component {
           <div className="row">
             <div className="col s12 center-align">
               <button className="btn waves-effect
-              primary-button waves-light" type="submit"
+              primary-button waves-light"
+              id="submit-form" type="submit"
               disabled={isEditing}>Submit
                         {isEditing ?
                   <i className="fa fa-spinner fa-spin" />

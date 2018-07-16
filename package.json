@@ -20,6 +20,7 @@
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "db:undo": "NODE_ENV=test sequelize db:migrate:undo:all",
     "migration": "sequelize db:migrate",
+    "e2e": "nightwatch",
     "all:tests": "npm test && npm run test:client",
     "seed": "sequelize db:seed:all"
   },

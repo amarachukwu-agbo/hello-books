@@ -170,6 +170,7 @@ ShallowWrapper {
               <a
                 className="brand-logo"
                 href="/"
+                id="brand-logo"
               >
                 <img
                   className="img-logo"
@@ -284,6 +285,7 @@ ShallowWrapper {
               <a
                 className="brand-logo"
                 href="/"
+                id="brand-logo"
               >
                 <img
                   className="img-logo"
@@ -355,6 +357,7 @@ ShallowWrapper {
               <a
                 className="brand-logo"
                 href="/"
+                id="brand-logo"
               >
                 <img
                   className="img-logo"
@@ -422,6 +425,7 @@ ShallowWrapper {
                 <a
                   className="brand-logo"
                   href="/"
+                  id="brand-logo"
                 >
                   <img
                     className="img-logo"
@@ -495,6 +499,7 @@ ShallowWrapper {
                   />,
                   "className": "brand-logo",
                   "href": "/",
+                  "id": "brand-logo",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -915,6 +920,7 @@ ShallowWrapper {
                 <a
                   className="brand-logo"
                   href="/"
+                  id="brand-logo"
                 >
                   <img
                     className="img-logo"
@@ -1029,6 +1035,7 @@ ShallowWrapper {
                 <a
                   className="brand-logo"
                   href="/"
+                  id="brand-logo"
                 >
                   <img
                     className="img-logo"
@@ -1100,6 +1107,7 @@ ShallowWrapper {
                 <a
                   className="brand-logo"
                   href="/"
+                  id="brand-logo"
                 >
                   <img
                     className="img-logo"
@@ -1167,6 +1175,7 @@ ShallowWrapper {
                   <a
                     className="brand-logo"
                     href="/"
+                    id="brand-logo"
                   >
                     <img
                       className="img-logo"
@@ -1240,6 +1249,7 @@ ShallowWrapper {
                     />,
                     "className": "brand-logo",
                     "href": "/",
+                    "id": "brand-logo",
                   },
                   "ref": null,
                   "rendered": Object {
