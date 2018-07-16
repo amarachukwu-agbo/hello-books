@@ -3,7 +3,7 @@ const validate = (values) => {
   if (!values.returnDate) {
     errors.returnDate = 'Input a return date';
   }
-  if (values.returnDate < Date.now()) {
+  if (new Date(values.returnDate) - (Date.now()) < 0) {
     errors.returnDate = 'Date must be greater than today';
   }
   if (!values.reason) {
