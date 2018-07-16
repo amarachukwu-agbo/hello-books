@@ -29,7 +29,7 @@ const BookForm = ({
   isUploadingImage,
   handleDrop,
 }) => (
-      <form onSubmit={handleSubmit(submitForm)} >
+      <form id="add-book-form" onSubmit={handleSubmit(submitForm)} >
         <div className="center-align lighten-2">
           <h5 className="modal-header-text">Add Book</h5>
         </div>

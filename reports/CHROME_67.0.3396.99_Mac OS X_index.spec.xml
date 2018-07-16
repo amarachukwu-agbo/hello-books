@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="34">
+
+  <testsuite name="index.spec"
+    errors="0" failures="0" hostname="" id="" package="index.spec" skipped="0"
+    tests="34" time="162.4" timestamp="Mon, 16 Jul 2018 13:26:42 GMT">
+  
+    <testcase name="Index Page Test" classname="index.spec" time="11.59" assertions="29">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see errors if there are errors when filling the sign up form" classname="index.spec" time="3.326" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see error if email already exists when signing up" classname="index.spec" time="3.734" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see errors if there are errors when logging in" classname="index.spec" time="2.662" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see not found error when logging in if they are not signed up" classname="index.spec" time="4.395" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see error when logging in if their password is wrong" classname="index.spec" time="2.757" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see be able to login into the application" classname="index.spec" time="2.781" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="User should be able to see the books in the application" classname="index.spec" time="8.281" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see error if there is validation error while searching for a book" classname="index.spec" time="6.105" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see notification if book searched for was not found" classname="index.spec" time="6.191" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="User should be able to search for books in the application by subject, author, title" classname="index.spec" time="5.800" assertions="12">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see an error when they try to view a book that does not exist" classname="index.spec" time="2.269" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see be able to view a book in the application" classname="index.spec" time="2.751" assertions="17">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see be able to upvote a book in the application" classname="index.spec" time="7.365" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see an error when they try to upvote a book more than once" classname="index.spec" time="2.955" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see be able to downvote a book in the application" classname="index.spec" time="7.382" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see an error when they try to downvote a book more than once" classname="index.spec" time="2.896" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should be able to add a book to their favorites" classname="index.spec" time="7.422" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see an error when they to favorite a book already in their favorites" classname="index.spec" time="2.923" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should be able to review a book" classname="index.spec" time="3.256" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should get an error when adding an empty review" classname="index.spec" time="1.197" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should be able to borrow a book" classname="index.spec" time="8.880" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see an error if the request to borrow a book has already been sent" classname="index.spec" time="8.890" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should be view their favorites" classname="index.spec" time="2.396" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should be view their profile" classname="index.spec" time="2.395" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should be able to log out of the application" classname="index.spec" time="3.003" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="An authenticated admin should be able to view the books catalog on the Admin Dashboard" classname="index.spec" time="5.219" assertions="12">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="An authenticated admin should see errors if there are validation errors when adding a book" classname="index.spec" time="4.995" assertions="10">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="An authenticated admin should be able to add a book" classname="index.spec" time="5.632" assertions="11">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="An authenticated admin should see error when adding a book if book title  already exists" classname="index.spec" time="5.572" assertions="10">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="An authenticated admin should see errors if there are validation errors when editing a book" classname="index.spec" time="4.906" assertions="17">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="An authenticated admin should be able to edit a book" classname="index.spec" time="5.462" assertions="17">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="An authenticated admin should be able to delete a book" classname="index.spec" time="4.660" assertions="10">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Users should see a 404 page if a page is not found" classname="index.spec" time="2.339" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

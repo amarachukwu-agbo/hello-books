@@ -27,7 +27,7 @@ const AdminBooks = ({
   }
 
   return (
-    <div>
+    <div id="admin-books-catalog">
       <table className="striped responsive-table">
         <thead>
           <tr>
@@ -40,7 +40,7 @@ const AdminBooks = ({
             <th colSpan="2">Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="all-books">
           {books.map((book, index) =>
             <tr key={book.id}>
               <td> {book.title} </td>

@@ -1,0 +1,7 @@
+'Users should be able to add a book to their favorites':
+  browser => AddBookToFavorites(browser),
+  'Users should see an error when they to favorite a book already in their favorites':
+  browser => AddBookToFavoritesError(browser),
+  'Users should be able to review a book': browser => ReviewBook(browser),
+  'Users should get an error when adding an empty review':
+  browser => ReviewBookError(browser),

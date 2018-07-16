@@ -61,8 +61,8 @@ const Pagination = ({ pagination, onPageChange, floatingButton }) => {
       <div className="pagination-item">
       <span>{ dataCount } Results</span>
         Displaying Page
-        <span> { currentPage } </span> of
-        <span> { pageCount } </span>
+        <span id="current-page"> { currentPage } </span> of
+        <span id="all-pages"> { pageCount } </span>
       </div>
       {
         allowPrevious &&

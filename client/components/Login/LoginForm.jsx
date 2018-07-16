@@ -18,7 +18,7 @@ const LoginForm = ({
   isLoggingIn,
   submitForm,
 }) => (
-    <form onSubmit={handleSubmit(submitForm)} >
+    <form id="login-form" onSubmit={handleSubmit(submitForm)} >
       <div className=" row center-align">
         <h4>Log In</h4>
       </div>
@@ -29,7 +29,8 @@ const LoginForm = ({
         </div>
       </div>
       <div className="row">
-        <div className="input-field col s12">
+        <div className="input-field col s12"
+          id="login-password-container">
           <Field name="password" type="password" id="password"
             icon="lock" component={InputText} label="Password" />
         </div>

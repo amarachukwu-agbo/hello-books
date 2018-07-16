@@ -20,7 +20,7 @@ export class Navbar extends Component {
         <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper">
-              <a href="/" className="brand-logo">
+              <a href="/" className="brand-logo" id="brand-logo">
                 <img src={logo} className="img-logo" />
               </a>
               <a href="#" data-activates="mobile-demo"
