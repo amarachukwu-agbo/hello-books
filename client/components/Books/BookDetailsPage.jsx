@@ -68,7 +68,7 @@ export class BookDetailsPage extends Component {
       return (
         <div className="row center wrapper">
           <br />
-          <div className="container">
+          <div className="container" id="not-found-book">
             <img className="oops-image" src={oopsImage} />
             <h5 className="flow-text grey-text
               text-darken-3">
@@ -87,7 +87,7 @@ export class BookDetailsPage extends Component {
         { this.renderPreLoader() }
         { this.renderError() }
         { this.props.book &&
-        <div>
+        <div id="book-details">
           <BookDetails book={this.props.book} {...this.props} />
           <br />
           <Reviews reviews={this.props.book.bookReviews} {...this.props} />

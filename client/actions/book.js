@@ -159,9 +159,8 @@ export const borrowBook = (userId, book, request) => (dispatch) => {
     .then((response) => {
       dispatch(borrowBookSuccess(response.data.request.status));
       Notify
-        .notifySuccess(`Your request to borrow
-        ${book.title} has been sent.
-        Check status in your profile`);
+        .notifySuccess(`Your request to borrow ${
+          book.title} has been sent. Check status in your profile`);
     })
     .catch((error) => {
       const errorMessage = checkError(error);

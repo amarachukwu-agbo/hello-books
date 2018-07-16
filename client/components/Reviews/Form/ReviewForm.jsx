@@ -24,7 +24,7 @@ const ReviewForm = ({
   submitForm,
   isReviewing,
 }) => (
-  <form onSubmit={handleSubmit(submitForm)} >
+  <form id="review-form" onSubmit={handleSubmit(submitForm)} >
     <div className="books-list">
       <div className="input-field">
         <Field name="review" label="Review" type="textarea"

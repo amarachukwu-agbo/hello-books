@@ -15,10 +15,10 @@ const NotFound = () => (
         <h4 className="not-found center primary-text">
           404
     </h4>
-        <p className="center">Oops! Page was not found </p>
-        <p className="center primary-text">
+        <p className="center" id="oops">Oops! Page was not found</p>
+        <p className="center primary-text" id="sorry">
           We are sorry the page you requested could not be found.
-          Go back to <a href={'/'}>homepage ? </a>
+          Go back to <a id="home" href={'/'}>homepage ? </a>
         </p>
       </div>
     </div>

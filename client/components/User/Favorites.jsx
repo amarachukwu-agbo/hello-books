@@ -91,7 +91,7 @@ export class Favorites extends Component {
 
     if (favorites) {
       return (
-        <div>
+        <div id="favorites-container">
           <div>
             {favorites.map(favorite =>
               <div className="row card-panel favorite-card" key={favorite.id}>
@@ -129,7 +129,7 @@ export class Favorites extends Component {
   render() {
     return (
       <div className="container wrapper">
-        <div className="row center">
+        <div className="row center"id="favorites">
           <h4 className="book-header">
             Your Favorites
           </h4>

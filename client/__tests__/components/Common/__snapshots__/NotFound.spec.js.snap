@@ -34,15 +34,18 @@ ShallowWrapper {
           </h4>
           <p
             className="center"
+            id="oops"
           >
-            Oops! Page was not found 
+            Oops! Page was not found
           </p>
           <p
             className="center primary-text"
+            id="sorry"
           >
             We are sorry the page you requested could not be found. Go back to 
             <a
               href="/"
+              id="home"
             >
               homepage ? 
             </a>
@@ -70,15 +73,18 @@ ShallowWrapper {
           </h4>
           <p
             className="center"
+            id="oops"
           >
-            Oops! Page was not found 
+            Oops! Page was not found
           </p>
           <p
             className="center primary-text"
+            id="sorry"
           >
             We are sorry the page you requested could not be found. Go back to 
             <a
               href="/"
+              id="home"
             >
               homepage ? 
             </a>
@@ -104,15 +110,18 @@ ShallowWrapper {
             </h4>,
             <p
               className="center"
+              id="oops"
             >
-              Oops! Page was not found 
+              Oops! Page was not found
             </p>,
             <p
               className="center primary-text"
+              id="sorry"
             >
               We are sorry the page you requested could not be found. Go back to 
               <a
                 href="/"
+                id="home"
               >
                 homepage ? 
               </a>
@@ -151,11 +160,12 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Oops! Page was not found ",
+              "children": "Oops! Page was not found",
               "className": "center",
+              "id": "oops",
             },
             "ref": null,
-            "rendered": "Oops! Page was not found ",
+            "rendered": "Oops! Page was not found",
             "type": "p",
           },
           Object {
@@ -167,11 +177,13 @@ ShallowWrapper {
                 "We are sorry the page you requested could not be found. Go back to ",
                 <a
                   href="/"
+                  id="home"
                 >
                   homepage ? 
                 </a>,
               ],
               "className": "center primary-text",
+              "id": "sorry",
             },
             "ref": null,
             "rendered": Array [
@@ -183,6 +195,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": "homepage ? ",
                   "href": "/",
+                  "id": "home",
                 },
                 "ref": null,
                 "rendered": "homepage ? ",
@@ -221,15 +234,18 @@ ShallowWrapper {
             </h4>
             <p
               className="center"
+              id="oops"
             >
-              Oops! Page was not found 
+              Oops! Page was not found
             </p>
             <p
               className="center primary-text"
+              id="sorry"
             >
               We are sorry the page you requested could not be found. Go back to 
               <a
                 href="/"
+                id="home"
               >
                 homepage ? 
               </a>
@@ -257,15 +273,18 @@ ShallowWrapper {
             </h4>
             <p
               className="center"
+              id="oops"
             >
-              Oops! Page was not found 
+              Oops! Page was not found
             </p>
             <p
               className="center primary-text"
+              id="sorry"
             >
               We are sorry the page you requested could not be found. Go back to 
               <a
                 href="/"
+                id="home"
               >
                 homepage ? 
               </a>
@@ -291,15 +310,18 @@ ShallowWrapper {
               </h4>,
               <p
                 className="center"
+                id="oops"
               >
-                Oops! Page was not found 
+                Oops! Page was not found
               </p>,
               <p
                 className="center primary-text"
+                id="sorry"
               >
                 We are sorry the page you requested could not be found. Go back to 
                 <a
                   href="/"
+                  id="home"
                 >
                   homepage ? 
                 </a>
@@ -338,11 +360,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Oops! Page was not found ",
+                "children": "Oops! Page was not found",
                 "className": "center",
+                "id": "oops",
               },
               "ref": null,
-              "rendered": "Oops! Page was not found ",
+              "rendered": "Oops! Page was not found",
               "type": "p",
             },
             Object {
@@ -354,11 +377,13 @@ ShallowWrapper {
                   "We are sorry the page you requested could not be found. Go back to ",
                   <a
                     href="/"
+                    id="home"
                   >
                     homepage ? 
                   </a>,
                 ],
                 "className": "center primary-text",
+                "id": "sorry",
               },
               "ref": null,
               "rendered": Array [
@@ -370,6 +395,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "homepage ? ",
                     "href": "/",
+                    "id": "home",
                   },
                   "ref": null,
                   "rendered": "homepage ? ",

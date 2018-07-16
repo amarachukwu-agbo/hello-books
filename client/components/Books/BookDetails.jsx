@@ -11,7 +11,7 @@ import BorrowBookForm from './Form/BorrowBookForm.jsx';
  *
  * @extends {React.Component}
  */
-export class BookDetails extends Component {
+class BookDetails extends Component {
   /**
    * @constructor create an instance of the BooksDetails component
    *
@@ -72,7 +72,7 @@ export class BookDetails extends Component {
     return (
       <div className="row card-panel">
         <Modal id="modal" actions={null}>
-            <div className="container">
+            <div className="container" id="borrow-modal">
               <BorrowBookForm { ...this.props }/>
             </div>
         </Modal>
@@ -85,25 +85,25 @@ export class BookDetails extends Component {
             <img src={book.imageURL} className="responsive-img book-image" />
           </div>
           <div className="col s12 m8 l8">
-            <p className="black-text">
+            <p className="black-text" id="author">
               <strong>Author: </strong> <span> {book.author} </span>
             </p>
             <div className='divider'></div>
-            <p className="bold black-text">
+            <p className="bold black-text" id="subject">
               <strong>Category: </strong><span> {book.subject} </span>
             </p>
             <div className='divider'></div>
-            <p className="bold black-text">
+            <p className="bold black-text" id="borrowCount">
               <strong>Number of times borrowed: </strong>
               <span> {book.borrowCount} </span>
             </p>
             <div className='divider'></div>
-            <p className="bold black-text">
+            <p className="bold black-text" id="quantity">
               <strong>Copies Available: </strong>
               <span> {book.quantity} </span>
             </p>
             <div className='divider'></div>
-            <p className="bold black-text">
+            <p className="bold black-text" id="description">
               <strong>Description: </strong>
               <span> {book.description} </span></p>
             <div className='divider'></div><br />
@@ -120,21 +120,21 @@ export class BookDetails extends Component {
                   onClick={this.upvoteBook}
                   disabled={this.props.isUpvoting}>
                   <i className="material-icons prefix">thumb_up</i>
-                  <span>{book.upvotes}</span>
+                  <span id="upvote-count">{book.upvotes}</span>
                 </button>
                 <button className="btn btn-small book-detail-icons left"
                   id="downvote-book"
                   onClick={this.downvoteBook}
                   disabled={this.props.isDownvoting}>
                   <i className="material-icons prefix">thumb_down</i>
-                  <span>{book.downvotes}</span>
+                  <span id="downvote-count">{book.downvotes}</span>
                 </button>
                 <button className="btn btn-small book-detail-icons left"
                   id="favorite-book"
                   disabled={this.props.isFavoriting}
                   onClick={this.favoriteBook}>
                   <i className="material-icons prefix">favorite_border</i>
-                  <span>{book.favCount}</span>
+                  <span id="favorite-count">{book.favCount}</span>
                 </button>
               </div>
             </div>

@@ -34,7 +34,6 @@ class SearchBar extends Component {
 
     if (searchBy !== 'Search By' && searchParam.trim() !== '') {
       this.props.searchBooks(searchBy.toLowerCase(), searchParam);
-      this.setState({ searchParam: '' });
     }
 
     if (searchParam.trim() === '') {

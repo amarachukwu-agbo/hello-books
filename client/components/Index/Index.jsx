@@ -45,24 +45,28 @@ export class IndexPage extends Component {
           <Slider indicators={false} className="slider-div">
             <Slide
               src={books4}>
-              <p className="white-text flow-text slider-text">
+              <p className="white-text flow-text slider-text" id="welcome">
                 Welcome to Hello-books
               </p>
-              <p className="white-text flow-text slider-text flow-text">
+              <p className="white-text flow-text slider-text flow-text"
+                id="borrow">
                 Borrow your favorite books on our platform!!!
               </p>
               <Link to="/login" className="btn btn-large primary-button
-                white-text darken-2 waves-effect waves-light">
+                white-text darken-2 waves-effect waves-light"
+                id="get-started">
                 Get Started
               </Link>
             </Slide>
             <Slide
               src={books1}
               placement="left">
-              <p className="white-text flow-text slider-text bold">
+              <p className="white-text flow-text slider-text bold"
+                id="rate-review">
                 Rate and review books
               </p>
-              <p className="white-text flow-text slider-text flow-text bold">
+              <p className="white-text flow-text slider-text flow-text bold"
+                id="review">
                 View others' reviews of books and give yours
               </p>
               <Link to="/login" className="btn btn-large primary-button
@@ -76,8 +80,10 @@ export class IndexPage extends Component {
         <SearchBar {...this.props} />
         {this.props.searchError && Notify.notifyInfo(this.props.searchError)}
         <div className="section white wrapper">
-          <div className="row center">
-            <h4 className="text-darken-3 book-header">Available books</h4>
+          <div className="row center" id="available">
+            <h4
+            className="text-darken-3 book-header"
+            >Available books</h4>
           </div>
           <div className="row book-list">
             {this.props.isFetching &&
@@ -99,7 +105,8 @@ export class IndexPage extends Component {
                 <div className="row center">
                   <Link to="/books">
                     <button className="btn btn-medium
-                      primary-button waves-effect waves-light">
+                      primary-button waves-effect waves-light"
+                      id="all-books">
                       View All Books
                     </button>
                   </Link>
@@ -110,7 +117,7 @@ export class IndexPage extends Component {
           <div className="container">
             <div className="divider z-depth-1"></div>
           </div>
-          <div className="row center">
+          <div className="row center" id="most-popular">
             <h4 className="book-header text-darken-3">
               Most popular among readers
             </h4>
@@ -131,7 +138,8 @@ export class IndexPage extends Component {
               </div>
             }
             {this.props.upvotedBooks &&
-              <div className = "row book-list">
+              <div className = "row book-list"
+              id="most-popular-books">
               <BooksList books={this.props.upvotedBooks} />
               <Pagination pagination={this.props.upvotedBooksPagination}
                 floatingButton = { true }
